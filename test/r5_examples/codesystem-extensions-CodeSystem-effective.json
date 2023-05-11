@@ -1,0 +1,17 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "codesystem-extensions-CodeSystem-effective",
+  "url": "http://hl7.org/fhir/SearchParameter/codesystem-extensions-CodeSystem-effective",
+  "version": "5.0.0",
+  "name": "effective",
+  "status": "draft",
+  "experimental": true,
+  "description": "Optional Extensions Element",
+  "code": "effective",
+  "base": [
+    "CodeSystem"
+  ],
+  "type": "date",
+  "expression": "CodeSystem.extension(\u0027http://hl7.org/fhir/StructureDefinition/codesystem-effectiveDate\u0027.value)",
+  "processingMode": "normal"
+}

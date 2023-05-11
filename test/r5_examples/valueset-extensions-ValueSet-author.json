@@ -1,0 +1,17 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "valueset-extensions-ValueSet-author",
+  "url": "http://hl7.org/fhir/SearchParameter/valueset-extensions-ValueSet-author",
+  "version": "5.0.0",
+  "name": "author",
+  "status": "draft",
+  "experimental": true,
+  "description": "Optional Extensions Element",
+  "code": "author",
+  "base": [
+    "ValueSet"
+  ],
+  "type": "string",
+  "expression": "CodeSystem.extension(\u0027http://hl7.org/fhir/StructureDefinition/valueset-author\u0027).value",
+  "processingMode": "normal"
+}
