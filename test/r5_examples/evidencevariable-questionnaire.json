@@ -5,37 +5,22 @@
     {
       "resourceType": "ValueSet",
       "id": "vs2",
-      "name": "Type options for EvidenceVariable.characteristic.definitionByTypeAndValue.value[x]",
+      "name": "Type options for EvidenceVariable.versionAlgorithm[x]",
       "status": "active",
-      "description": "Type options for EvidenceVariable.characteristic.definitionByTypeAndValue.value[x]",
+      "description": "Type options for EvidenceVariable.versionAlgorithm[x]",
       "expansion": {
-        "identifier": "urn:uuid:98dca8a5-4beb-4495-aefc-ce3ba7cab092",
-        "timestamp": "2022-12-14T07:16:35+11:00",
+        "identifier": "urn:uuid:04d219d1-1015-4406-bd09-63de65eeb96f",
+        "timestamp": "2023-03-31T19:27:06+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "CodeableConcept",
-            "display": "CodeableConcept"
+            "code": "string",
+            "display": "string"
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "boolean",
-            "display": "boolean"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Quantity",
-            "display": "Quantity"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Range",
-            "display": "Range"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "id",
-            "display": "id"
+            "code": "Coding",
+            "display": "Coding"
           }
         ]
       }
@@ -47,8 +32,8 @@
       "status": "active",
       "description": "Type options for EvidenceVariable.characteristic.definitionByTypeAndValue.value[x]",
       "expansion": {
-        "identifier": "urn:uuid:8bc23f34-8f6a-414b-9441-eea0eca03d56",
-        "timestamp": "2022-12-14T07:16:35+11:00",
+        "identifier": "urn:uuid:663378f3-89b2-4dd4-9627-b11d482a1675",
+        "timestamp": "2023-03-31T19:27:06+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -81,12 +66,12 @@
     {
       "resourceType": "ValueSet",
       "id": "vs4",
-      "name": "Type options for EvidenceVariable.characteristic.timeFromEvent.event[x]",
+      "name": "Type options for EvidenceVariable.characteristic.definitionByTypeAndValue.value[x]",
       "status": "active",
-      "description": "Type options for EvidenceVariable.characteristic.timeFromEvent.event[x]",
+      "description": "Type options for EvidenceVariable.characteristic.definitionByTypeAndValue.value[x]",
       "expansion": {
-        "identifier": "urn:uuid:d36290fb-95eb-4c12-85b5-57855a5f2ce4",
-        "timestamp": "2022-12-14T07:16:35+11:00",
+        "identifier": "urn:uuid:7de5782b-483f-4a12-a27c-8053188a6ed0",
+        "timestamp": "2023-03-31T19:27:06+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -95,8 +80,18 @@
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "dateTime",
-            "display": "dateTime"
+            "code": "boolean",
+            "display": "boolean"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Quantity",
+            "display": "Quantity"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Range",
+            "display": "Range"
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -109,12 +104,58 @@
     {
       "resourceType": "ValueSet",
       "id": "vs5",
+      "name": "Type options for EvidenceVariable.characteristic.instances[x]",
+      "status": "active",
+      "description": "Type options for EvidenceVariable.characteristic.instances[x]",
+      "expansion": {
+        "identifier": "urn:uuid:18834110-2040-42d3-90f2-ece894a6c67d",
+        "timestamp": "2023-03-31T19:27:06+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Quantity",
+            "display": "Quantity"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Range",
+            "display": "Range"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs6",
+      "name": "Type options for EvidenceVariable.characteristic.duration[x]",
+      "status": "active",
+      "description": "Type options for EvidenceVariable.characteristic.duration[x]",
+      "expansion": {
+        "identifier": "urn:uuid:c9db06a8-106a-49f9-bdf2-79aea7f52079",
+        "timestamp": "2023-03-31T19:27:06+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Quantity",
+            "display": "Quantity"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Range",
+            "display": "Range"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs7",
       "name": "Type options for EvidenceVariable.characteristic.timeFromEvent.event[x]",
       "status": "active",
       "description": "Type options for EvidenceVariable.characteristic.timeFromEvent.event[x]",
       "expansion": {
-        "identifier": "urn:uuid:83b2ac9f-1fcf-46a8-a5ce-8f0960c61ac9",
-        "timestamp": "2022-12-14T07:16:35+11:00",
+        "identifier": "urn:uuid:0c68772d-8ce5-4dc8-908f-e8cf7bd72672",
+        "timestamp": "2023-03-31T19:27:06+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -136,13 +177,87 @@
     },
     {
       "resourceType": "ValueSet",
-      "id": "vs6",
+      "id": "vs8",
+      "name": "Type options for EvidenceVariable.characteristic.instances[x]",
+      "status": "active",
+      "description": "Type options for EvidenceVariable.characteristic.instances[x]",
+      "expansion": {
+        "identifier": "urn:uuid:00c51544-45bd-4289-823d-655437ffd682",
+        "timestamp": "2023-03-31T19:27:06+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Quantity",
+            "display": "Quantity"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Range",
+            "display": "Range"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs9",
+      "name": "Type options for EvidenceVariable.characteristic.duration[x]",
+      "status": "active",
+      "description": "Type options for EvidenceVariable.characteristic.duration[x]",
+      "expansion": {
+        "identifier": "urn:uuid:a2f77e7b-2b41-4050-8385-ce6fef187a7e",
+        "timestamp": "2023-03-31T19:27:06+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Quantity",
+            "display": "Quantity"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Range",
+            "display": "Range"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs10",
+      "name": "Type options for EvidenceVariable.characteristic.timeFromEvent.event[x]",
+      "status": "active",
+      "description": "Type options for EvidenceVariable.characteristic.timeFromEvent.event[x]",
+      "expansion": {
+        "identifier": "urn:uuid:451ab52b-2dd4-406b-a853-3d61c5014587",
+        "timestamp": "2023-03-31T19:27:06+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "CodeableConcept",
+            "display": "CodeableConcept"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "dateTime",
+            "display": "dateTime"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "id",
+            "display": "id"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs11",
       "name": "Type options for EvidenceVariable.category.value[x]",
       "status": "active",
       "description": "Type options for EvidenceVariable.category.value[x]",
       "expansion": {
-        "identifier": "urn:uuid:97c8cf5d-3332-4c11-b087-dae93a7897e0",
-        "timestamp": "2022-12-14T07:16:35+11:00",
+        "identifier": "urn:uuid:61ab60c3-3344-43d8-bb47-9885123c02ac",
+        "timestamp": "2023-03-31T19:27:06+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -169,10 +284,10 @@
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International (Clinical Decision Support)",
   "item": [
     {
@@ -316,7 +431,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -369,7 +484,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -458,7 +573,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.extension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -486,7 +601,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -523,7 +638,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.url-flyover",
-              "text": "An absolute URI that is used to identify this evidence variable when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this evidence variable is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the evidence variable is stored on different servers. Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.\n\nThe determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). \n\nIn some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.",
+              "text": "An absolute URI that is used to identify this evidence variable when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which an authoritative instance of this evidence variable is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the evidence variable is stored on different servers. In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the meta.source element to indicate where the current master source of the resource can be found.",
               "type": "display"
             },
             {
@@ -631,6 +746,88 @@
               "type": "string",
               "required": false,
               "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            }
+          ],
+          "linkId": "EvidenceVariable.versionAlgorithm[x]",
+          "text": "How to compare versions",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "EvidenceVariable.versionAlgorithm[x]-flyover",
+              "text": "Indicates the mechanism used to compare versions to determine which is more current. If set as a string, this is a FHIRPath expression that has two additional context variables passed in - %version1 and %version2 and will return a negative number if version1 is newer, a positive number if version2 is newer, and a 0 if the version ordering can\u0027t successfully be determined.",
+              "type": "display"
+            },
+            {
+              "linkId": "EvidenceVariable.versionAlgorithm[x]._type",
+              "text": "type",
+              "type": "coding",
+              "required": false,
+              "repeats": false,
+              "answerConstraint": "optionsOnly",
+              "answerValueSet": "#vs2",
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                      "valueString": "string"
+                    }
+                  ],
+                  "linkId": "EvidenceVariable.versionAlgorithm[x]._null",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "EvidenceVariable.versionAlgorithm[x]._null.value",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                      "valueString": "Coding"
+                    }
+                  ],
+                  "linkId": "EvidenceVariable.versionAlgorithm[x]._null",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "EvidenceVariable.versionAlgorithm[x]._null.value",
+                      "type": "coding",
+                      "required": false,
+                      "repeats": false,
+                      "answerConstraint": "optionsOnly"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -769,50 +966,6 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-              "valueInteger": 1
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-              "valueString": "string"
-            }
-          ],
-          "linkId": "EvidenceVariable.subtitle",
-          "type": "group",
-          "required": false,
-          "repeats": true,
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "flyover",
-                        "display": "Fly-over"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "EvidenceVariable.subtitle-flyover",
-              "text": "An explanatory or alternate title for the EvidenceVariable giving additional information about its content.",
-              "type": "display"
-            },
-            {
-              "linkId": "EvidenceVariable.subtitle.value",
-              "text": "Subordinate title of the EvidenceVariable",
-              "type": "string",
-              "required": false,
-              "repeats": false
-            }
-          ]
-        },
-        {
-          "extension": [
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
               "valueInteger": 1
             },
@@ -846,7 +999,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.status-flyover",
-              "text": "The status of this evidence variable. Enables tracking the life-cycle of the content. Allows filtering of evidence variables that are appropriate for use versus not.",
+              "text": "The status of this evidence variable. Enables tracking the life-cycle of the content. Allows filtering of evidence variables that are appropriate for use versus not.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -935,7 +1088,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.date-flyover",
-              "text": "The date  (and optionally time) when the evidence variable was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence variable changes. The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.",
+              "text": "The date  (and optionally time) when the evidence variable was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence variable changes. The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence variable. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1000,7 +1153,7 @@
           "item": [
             {
               "linkId": "EvidenceVariable.contact-display",
-              "text": "Extensions to ContactDetail include: contactReference, contactAddress, and contributionTime (see [Clinical Reasoning Module](clinicalreasoning-module.html)).",
+              "text": "Extensions to ContactDetail include: contactReference, contactAddress, and contributionTime (see [Clinical Reasoning Module](clinicalreasoning-module.html)).\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1146,6 +1299,50 @@
               "valueString": "string"
             }
           ],
+          "linkId": "EvidenceVariable.purpose",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "EvidenceVariable.purpose-flyover",
+              "text": "Explanation of why this EvidenceVariable is needed and why it has been designed as it has. This element does not describe the usage of the EvidenceVariable. Instead, it provides traceability of \u0027\u0027why\u0027\u0027 the resource is either needed or \u0027\u0027why\u0027\u0027 it is defined as it is. This may be used to point to source materials or specifications that drove the structure of this EvidenceVariable.",
+              "type": "display"
+            },
+            {
+              "linkId": "EvidenceVariable.purpose.value",
+              "text": "Why this EvidenceVariable is defined",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "string"
+            }
+          ],
           "linkId": "EvidenceVariable.copyright",
           "type": "group",
           "required": false,
@@ -1187,6 +1384,50 @@
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "string"
+            }
+          ],
+          "linkId": "EvidenceVariable.copyrightLabel",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "EvidenceVariable.copyrightLabel-flyover",
+              "text": "A short string (\u003c50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. \u0027All rights reserved\u0027, \u0027Some rights reserved\u0027). The (c) symbol should NOT be included in this string. It will be added by software when rendering the notation. Full details about licensing, restrictions, warrantees, etc. goes in the more general \u0027copyright\u0027 element.",
+              "type": "display"
+            },
+            {
+              "linkId": "EvidenceVariable.copyrightLabel.value",
+              "text": "Copyright holder and year(s)",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
               "valueString": "datetime"
             }
           ],
@@ -1211,7 +1452,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.approvalDate-flyover",
-              "text": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.",
+              "text": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1255,12 +1496,12 @@
                 }
               ],
               "linkId": "EvidenceVariable.lastReviewDate-flyover",
-              "text": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.",
+              "text": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date. If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
               "linkId": "EvidenceVariable.lastReviewDate.value",
-              "text": "When the resource was last reviewed",
+              "text": "When the resource was last reviewed by the publisher",
               "type": "dateTime",
               "required": false,
               "repeats": false
@@ -1300,7 +1541,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.effectivePeriod-flyover",
-              "text": "The period during which the resource content was or is planned to be in active use.",
+              "text": "The period during which the resource content was or is planned to be in active use. The effective period for an EvidenceVariable determines when the content is applicable for usage and is independent of publication and review dates. For example, a variable intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1394,7 +1635,7 @@
           "item": [
             {
               "linkId": "EvidenceVariable.reviewer-display",
-              "text": "Extensions to ContactDetail include: contactReference, contactAddress, and contributionTime (see [Clinical Reasoning Module](clinicalreasoning-module.html)).",
+              "text": "Extensions to ContactDetail include: contactReference, contactAddress, and contributionTime (see [Clinical Reasoning Module](clinicalreasoning-module.html)).\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1413,7 +1654,7 @@
                 }
               ],
               "linkId": "EvidenceVariable.reviewer-flyover",
-              "text": "An individual or organization primarily responsible for review of some aspect of the content.",
+              "text": "An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the content.",
               "type": "display"
             }
           ]
@@ -1427,7 +1668,7 @@
           "item": [
             {
               "linkId": "EvidenceVariable.endorser-display",
-              "text": "Extensions to ContactDetail include: contactReference, contactAddress, and contributionTime (see [Clinical Reasoning Module](clinicalreasoning-module.html)).",
+              "text": "Extensions to ContactDetail include: contactReference, contactAddress, and contributionTime (see [Clinical Reasoning Module](clinicalreasoning-module.html)).\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1446,14 +1687,14 @@
                 }
               ],
               "linkId": "EvidenceVariable.endorser-flyover",
-              "text": "An individual or organization responsible for officially endorsing the content for use in some setting.",
+              "text": "An individual or organization asserted by the publisher to be responsible for officially endorsing the content for use in some setting.",
               "type": "display"
             }
           ]
         },
         {
           "linkId": "EvidenceVariable.relatedArtifact",
-          "text": "Additional documentation, citations, etc.",
+          "text": "Additional documentation, citations, etc",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -1626,7 +1867,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.characteristic.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1654,7 +1895,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.characteristic.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1864,7 +2105,7 @@
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                      "valueCode": "EvidenceVariable, Group, Evidence, Evidence"
+                      "valueCode": "EvidenceVariable, Group, Evidence"
                     },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1984,11 +2225,16 @@
                 }
               ],
               "linkId": "EvidenceVariable.characteristic.definitionExpression",
-              "text": "Defines the characteristic (without using type and value) by a Expression",
+              "text": "Defines the characteristic (without using type and value) by an expression",
               "type": "group",
               "required": false,
               "repeats": false,
               "item": [
+                {
+                  "linkId": "EvidenceVariable.characteristic.definitionExpression-display",
+                  "text": "When another element provides a definition of the characteristic, the definitionExpression content SHALL match the definition (only adding technical concepts necessary for implementation) without changing the meaning.",
+                  "type": "display"
+                },
                 {
                   "extension": [
                     {
@@ -2047,7 +2293,7 @@
                 },
                 {
                   "linkId": "EvidenceVariable.characteristic.definitionId.value",
-                  "text": "Defines the characteristic (without using type and value) by a id",
+                  "text": "Defines the characteristic (without using type and value) by an id",
                   "type": "string",
                   "required": false,
                   "repeats": false
@@ -2153,7 +2399,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -2181,7 +2427,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -2331,7 +2577,7 @@
                       "extension": [
                         {
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                          "valueCode": "Device, DeviceMetric, DeviceMetric"
+                          "valueCode": "Device, DeviceMetric"
                         },
                         {
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -2389,7 +2635,7 @@
                       "required": false,
                       "repeats": false,
                       "answerConstraint": "optionsOnly",
-                      "answerValueSet": "#vs2",
+                      "answerValueSet": "#vs3",
                       "item": [
                         {
                           "extension": [
@@ -2575,7 +2821,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.offset",
-                  "text": "Reference point for valueQuantity",
+                  "text": "Reference point for valueQuantity or valueRange",
                   "type": "group",
                   "required": false,
                   "repeats": true,
@@ -2596,7 +2842,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.offset-flyover",
-                      "text": "Defines the reference point for comparison when valueQuantity is not compared to zero.",
+                      "text": "Defines the reference point for comparison when valueQuantity or valueRange is not compared to zero.",
                       "type": "display"
                     },
                     {
@@ -2717,7 +2963,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.definitionByCombination.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -2745,7 +2991,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.definitionByCombination.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -2942,7 +3188,7 @@
                             }
                           ],
                           "linkId": "EvidenceVariable.characteristic.extension-flyover",
-                          "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                          "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                           "type": "display"
                         }
                       ]
@@ -2970,7 +3216,7 @@
                             }
                           ],
                           "linkId": "EvidenceVariable.characteristic.modifierExtension-flyover",
-                          "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                          "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                           "type": "display"
                         }
                       ]
@@ -3180,7 +3426,7 @@
                           "extension": [
                             {
                               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                              "valueCode": "EvidenceVariable, Group, Evidence, Evidence"
+                              "valueCode": "EvidenceVariable, Group, Evidence"
                             },
                             {
                               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -3300,11 +3546,16 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.definitionByCombination.characteristic.definitionExpression",
-                      "text": "Defines the characteristic (without using type and value) by a Expression",
+                      "text": "Defines the characteristic (without using type and value) by an expression",
                       "type": "group",
                       "required": false,
                       "repeats": false,
                       "item": [
+                        {
+                          "linkId": "EvidenceVariable.characteristic.definitionExpression-display",
+                          "text": "When another element provides a definition of the characteristic, the definitionExpression content SHALL match the definition (only adding technical concepts necessary for implementation) without changing the meaning.",
+                          "type": "display"
+                        },
                         {
                           "extension": [
                             {
@@ -3363,7 +3614,7 @@
                         },
                         {
                           "linkId": "EvidenceVariable.characteristic.definitionId.value",
-                          "text": "Defines the characteristic (without using type and value) by a id",
+                          "text": "Defines the characteristic (without using type and value) by an id",
                           "type": "string",
                           "required": false,
                           "repeats": false
@@ -3469,7 +3720,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.extension-flyover",
-                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                               "type": "display"
                             }
                           ]
@@ -3497,7 +3748,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.modifierExtension-flyover",
-                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                               "type": "display"
                             }
                           ]
@@ -3647,7 +3898,7 @@
                               "extension": [
                                 {
                                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                                  "valueCode": "Device, DeviceMetric, DeviceMetric"
+                                  "valueCode": "Device, DeviceMetric"
                                 },
                                 {
                                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -3705,7 +3956,7 @@
                               "required": false,
                               "repeats": false,
                               "answerConstraint": "optionsOnly",
-                              "answerValueSet": "#vs3",
+                              "answerValueSet": "#vs4",
                               "item": [
                                 {
                                   "extension": [
@@ -3891,7 +4142,7 @@
                             }
                           ],
                           "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.offset",
-                          "text": "Reference point for valueQuantity",
+                          "text": "Reference point for valueQuantity or valueRange",
                           "type": "group",
                           "required": false,
                           "repeats": true,
@@ -3912,7 +4163,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.definitionByTypeAndValue.offset-flyover",
-                              "text": "Defines the reference point for comparison when valueQuantity is not compared to zero.",
+                              "text": "Defines the reference point for comparison when valueQuantity or valueRange is not compared to zero.",
                               "type": "display"
                             },
                             {
@@ -3935,8 +4186,260 @@
                       ]
                     },
                     {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                          "valueInteger": 1
+                        }
+                      ],
+                      "linkId": "EvidenceVariable.characteristic.instances[x]",
+                      "text": "Number of occurrences meeting the characteristic",
+                      "type": "group",
+                      "required": false,
+                      "repeats": true,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                    "code": "flyover",
+                                    "display": "Fly-over"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "EvidenceVariable.characteristic.instances[x]-flyover",
+                          "text": "Number of occurrences meeting the characteristic.",
+                          "type": "display"
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._type",
+                          "text": "type",
+                          "type": "coding",
+                          "required": false,
+                          "repeats": false,
+                          "answerConstraint": "optionsOnly",
+                          "answerValueSet": "#vs5",
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                  "valueString": "Quantity"
+                                }
+                              ],
+                              "linkId": "EvidenceVariable.characteristic.instances[x]._null",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.comparator",
+                                  "text": "comp:",
+                                  "type": "coding",
+                                  "required": false,
+                                  "repeats": false,
+                                  "answerConstraint": "optionsOnly"
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.value",
+                                  "text": "value:",
+                                  "type": "decimal",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.units",
+                                  "text": "units:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.code",
+                                  "text": "coded units:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.system",
+                                  "text": "units system:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                }
+                              ]
+                            },
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                  "valueString": "Range"
+                                }
+                              ],
+                              "linkId": "EvidenceVariable.characteristic.instances[x]._null",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.low",
+                                  "text": "low:",
+                                  "type": "decimal",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.high",
+                                  "text": "high:",
+                                  "type": "decimal",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.instances[x]._null.units",
+                                  "text": "units:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                          "valueInteger": 1
+                        }
+                      ],
+                      "linkId": "EvidenceVariable.characteristic.duration[x]",
+                      "text": "Length of time in which the characteristic is met",
+                      "type": "group",
+                      "required": false,
+                      "repeats": true,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                    "code": "flyover",
+                                    "display": "Fly-over"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "EvidenceVariable.characteristic.duration[x]-flyover",
+                          "text": "Length of time in which the characteristic is met.",
+                          "type": "display"
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._type",
+                          "text": "type",
+                          "type": "coding",
+                          "required": false,
+                          "repeats": false,
+                          "answerConstraint": "optionsOnly",
+                          "answerValueSet": "#vs6",
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                  "valueString": "Quantity"
+                                }
+                              ],
+                              "linkId": "EvidenceVariable.characteristic.duration[x]._null",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.comparator",
+                                  "text": "comp:",
+                                  "type": "coding",
+                                  "required": false,
+                                  "repeats": false,
+                                  "answerConstraint": "optionsOnly"
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.value",
+                                  "text": "value:",
+                                  "type": "decimal",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.units",
+                                  "text": "units:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.code",
+                                  "text": "coded units:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.system",
+                                  "text": "units system:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                }
+                              ]
+                            },
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                  "valueString": "Range"
+                                }
+                              ],
+                              "linkId": "EvidenceVariable.characteristic.duration[x]._null",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.low",
+                                  "text": "low:",
+                                  "type": "decimal",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.high",
+                                  "text": "high:",
+                                  "type": "decimal",
+                                  "required": false,
+                                  "repeats": false
+                                },
+                                {
+                                  "linkId": "EvidenceVariable.characteristic.duration[x]._null.units",
+                                  "text": "units:",
+                                  "type": "string",
+                                  "required": false,
+                                  "repeats": false
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
                       "linkId": "EvidenceVariable.characteristic.definitionByCombination.characteristic.timeFromEvent",
-                      "text": "Observation time from study specified event",
+                      "text": "Timing in which the characteristic is determined",
                       "type": "group",
                       "required": false,
                       "repeats": true,
@@ -3957,7 +4460,7 @@
                             }
                           ],
                           "linkId": "EvidenceVariable.characteristic.timeFromEvent-flyover",
-                          "text": "Observation time from study specified event.",
+                          "text": "Timing in which the characteristic is determined.",
                           "type": "display"
                         },
                         {
@@ -4027,7 +4530,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.timeFromEvent.extension-flyover",
-                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                               "type": "display"
                             }
                           ]
@@ -4055,7 +4558,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.timeFromEvent.modifierExtension-flyover",
-                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                               "type": "display"
                             }
                           ]
@@ -4177,7 +4680,7 @@
                               "required": false,
                               "repeats": false,
                               "answerConstraint": "optionsOnly",
-                              "answerValueSet": "#vs4",
+                              "answerValueSet": "#vs7",
                               "item": [
                                 {
                                   "extension": [
@@ -4282,7 +4785,7 @@
                             }
                           ],
                           "linkId": "EvidenceVariable.characteristic.timeFromEvent.quantity",
-                          "text": "Used to express the observation at a defined amount of time after the study start",
+                          "text": "Used to express the observation at a defined amount of time before or after the event",
                           "type": "group",
                           "required": false,
                           "repeats": true,
@@ -4303,7 +4806,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.timeFromEvent.quantity-flyover",
-                              "text": "Used to express the observation at a defined amount of time after the study start.",
+                              "text": "Used to express the observation at a defined amount of time before or after the event.",
                               "type": "display"
                             },
                             {
@@ -4356,7 +4859,7 @@
                             }
                           ],
                           "linkId": "EvidenceVariable.characteristic.timeFromEvent.range",
-                          "text": "Used to express the observation within a period after the study start",
+                          "text": "Used to express the observation within a period before and/or after the event",
                           "type": "group",
                           "required": false,
                           "repeats": true,
@@ -4377,7 +4880,7 @@
                                 }
                               ],
                               "linkId": "EvidenceVariable.characteristic.timeFromEvent.range-flyover",
-                              "text": "Used to express the observation within a period after the study start.",
+                              "text": "Used to express the observation within a period before and/or after the event.",
                               "type": "display"
                             },
                             {
@@ -4410,8 +4913,260 @@
               ]
             },
             {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                }
+              ],
+              "linkId": "EvidenceVariable.characteristic.instances[x]",
+              "text": "Number of occurrences meeting the characteristic",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "EvidenceVariable.characteristic.instances[x]-flyover",
+                  "text": "Number of occurrences meeting the characteristic.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "EvidenceVariable.characteristic.instances[x]._type",
+                  "text": "type",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOnly",
+                  "answerValueSet": "#vs8",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                          "valueString": "Quantity"
+                        }
+                      ],
+                      "linkId": "EvidenceVariable.characteristic.instances[x]._null",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.comparator",
+                          "text": "comp:",
+                          "type": "coding",
+                          "required": false,
+                          "repeats": false,
+                          "answerConstraint": "optionsOnly"
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.value",
+                          "text": "value:",
+                          "type": "decimal",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.units",
+                          "text": "units:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.code",
+                          "text": "coded units:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.system",
+                          "text": "units system:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                          "valueString": "Range"
+                        }
+                      ],
+                      "linkId": "EvidenceVariable.characteristic.instances[x]._null",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.low",
+                          "text": "low:",
+                          "type": "decimal",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.high",
+                          "text": "high:",
+                          "type": "decimal",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.instances[x]._null.units",
+                          "text": "units:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                }
+              ],
+              "linkId": "EvidenceVariable.characteristic.duration[x]",
+              "text": "Length of time in which the characteristic is met",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "EvidenceVariable.characteristic.duration[x]-flyover",
+                  "text": "Length of time in which the characteristic is met.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "EvidenceVariable.characteristic.duration[x]._type",
+                  "text": "type",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOnly",
+                  "answerValueSet": "#vs9",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                          "valueString": "Quantity"
+                        }
+                      ],
+                      "linkId": "EvidenceVariable.characteristic.duration[x]._null",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.comparator",
+                          "text": "comp:",
+                          "type": "coding",
+                          "required": false,
+                          "repeats": false,
+                          "answerConstraint": "optionsOnly"
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.value",
+                          "text": "value:",
+                          "type": "decimal",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.units",
+                          "text": "units:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.code",
+                          "text": "coded units:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.system",
+                          "text": "units system:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                          "valueString": "Range"
+                        }
+                      ],
+                      "linkId": "EvidenceVariable.characteristic.duration[x]._null",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.low",
+                          "text": "low:",
+                          "type": "decimal",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.high",
+                          "text": "high:",
+                          "type": "decimal",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "EvidenceVariable.characteristic.duration[x]._null.units",
+                          "text": "units:",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "linkId": "EvidenceVariable.characteristic.timeFromEvent",
-              "text": "Observation time from study specified event",
+              "text": "Timing in which the characteristic is determined",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -4432,7 +5187,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.characteristic.timeFromEvent-flyover",
-                  "text": "Observation time from study specified event.",
+                  "text": "Timing in which the characteristic is determined.",
                   "type": "display"
                 },
                 {
@@ -4502,7 +5257,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.timeFromEvent.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -4530,7 +5285,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.timeFromEvent.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -4652,7 +5407,7 @@
                       "required": false,
                       "repeats": false,
                       "answerConstraint": "optionsOnly",
-                      "answerValueSet": "#vs5",
+                      "answerValueSet": "#vs10",
                       "item": [
                         {
                           "extension": [
@@ -4757,7 +5512,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.characteristic.timeFromEvent.quantity",
-                  "text": "Used to express the observation at a defined amount of time after the study start",
+                  "text": "Used to express the observation at a defined amount of time before or after the event",
                   "type": "group",
                   "required": false,
                   "repeats": true,
@@ -4778,7 +5533,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.timeFromEvent.quantity-flyover",
-                      "text": "Used to express the observation at a defined amount of time after the study start.",
+                      "text": "Used to express the observation at a defined amount of time before or after the event.",
                       "type": "display"
                     },
                     {
@@ -4831,7 +5586,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.characteristic.timeFromEvent.range",
-                  "text": "Used to express the observation within a period after the study start",
+                  "text": "Used to express the observation within a period before and/or after the event",
                   "type": "group",
                   "required": false,
                   "repeats": true,
@@ -4852,7 +5607,7 @@
                         }
                       ],
                       "linkId": "EvidenceVariable.characteristic.timeFromEvent.range-flyover",
-                      "text": "Used to express the observation within a period after the study start.",
+                      "text": "Used to express the observation within a period before and/or after the event.",
                       "type": "display"
                     },
                     {
@@ -5020,7 +5775,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.category.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -5048,7 +5803,7 @@
                     }
                   ],
                   "linkId": "EvidenceVariable.category.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -5136,7 +5891,7 @@
                   "required": false,
                   "repeats": false,
                   "answerConstraint": "optionsOnly",
-                  "answerValueSet": "#vs6",
+                  "answerValueSet": "#vs11",
                   "item": [
                     {
                       "extension": [

@@ -17,7 +17,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3143"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ExampleMetadata",
   "title": "Metadata Example",
   "status": "draft",

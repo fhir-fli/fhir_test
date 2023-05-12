@@ -59,9 +59,6 @@
 	<referrer>
 		<reference value="Practitioner/example"/>
 	</referrer>
-	<interpreter>
-		<reference value="Practitioner/example"/>
-	</interpreter>
 	<endpoint>
 		<reference value="Endpoint/example-wadors"/>
 	</endpoint>

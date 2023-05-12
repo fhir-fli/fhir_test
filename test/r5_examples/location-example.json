@@ -45,19 +45,17 @@
           "use": "work"
         }
       ]
-    },
-    {
-      "address": {
-        "use": "work",
-        "line": [
-          "Galapagosweg 91, Building A"
-        ],
-        "city": "Den Burg",
-        "postalCode": "9105 PZ",
-        "country": "NLD"
-      }
     }
   ],
+  "address": {
+    "use": "work",
+    "line": [
+      "Galapagosweg 91, Building A"
+    ],
+    "city": "Den Burg",
+    "postalCode": "9105 PZ",
+    "country": "NLD"
+  },
   "form": {
     "coding": [
       {
@@ -75,6 +73,17 @@
   "managingOrganization": {
     "reference": "Organization/f001"
   },
+  "characteristic": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/location-characteristic",
+          "code": "wheelchair",
+          "display": "Wheelchair accessible"
+        }
+      ]
+    }
+  ],
   "endpoint": [
     {
       "reference": "Endpoint/example"

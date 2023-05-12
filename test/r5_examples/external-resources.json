@@ -2,7 +2,7 @@
   "resourceType": "Bundle",
   "id": "externals",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "tag": [
       {
         "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",

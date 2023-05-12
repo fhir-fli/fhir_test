@@ -12,15 +12,7 @@
       "value": "urn:uuid:1111-1111-1111-1113"
     }
   ],
-  "status": {
-    "coding": [
-      {
-        "system": "http://hl7.org/fhir/genomicstudy-status",
-        "code": "available",
-        "display": "Available"
-      }
-    ]
-  },
+  "status": "available",
   "type": [
     {
       "coding": [
@@ -87,9 +79,11 @@
       ],
       "instantiatesUri": "https://pubmed.ncbi.nlm.nih.gov/33927380/",
       "title": "Maternal Sequence Variation Detection Using Next Generation Sequencing",
-      "subject": {
-        "reference": "Patient/mother"
-      },
+      "focus": [
+        {
+          "reference": "Patient/mother"
+        }
+      ],
       "specimen": [
         {
           "reference": "Specimen/specimenMother"
@@ -135,9 +129,11 @@
       ],
       "instantiatesUri": "https://pubmed.ncbi.nlm.nih.gov/33927380/",
       "title": "Paternal Sequence Variation Detection Using Next Generation Sequencing",
-      "subject": {
-        "reference": "Patient/father"
-      },
+      "focus": [
+        {
+          "reference": "Patient/father"
+        }
+      ],
       "specimen": [
         {
           "reference": "Specimen/specimenFather"
@@ -183,9 +179,17 @@
       ],
       "instantiatesUri": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885382/",
       "title": "De Novo Mutation Detection and Interpretation",
-      "subject": {
-        "reference": "Patient/proband"
-      },
+      "focus": [
+        {
+          "reference": "Patient/denovoChild"
+        },
+        {
+          "reference": "RelatedPerson/relatedPersonDenovoFather"
+        },
+        {
+          "reference": "RelatedPerson/relatedPersonDenovoMother"
+        }
+      ],
       "date": "2022-07-01T03:01:10-06:00",
       "note": [
         {

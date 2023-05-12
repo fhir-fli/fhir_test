@@ -7,10 +7,10 @@
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2020-12-28T16:55:11+11:00",
+  "date": "2020-12-28T05:55:11+00:00",
   "publisher": "HL7",
   "item": [
     {
@@ -159,7 +159,7 @@
                 }
               ],
               "linkId": "GuidanceResponse.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -212,7 +212,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -329,7 +329,7 @@
                 }
               ],
               "linkId": "GuidanceResponse.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -644,7 +644,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Patient, Group, Group"
+                  "valueCode": "Patient, Group"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -698,7 +698,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Encounter, Encounter"
+                  "valueCode": "Encounter"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -796,7 +796,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Device, Device"
+                  "valueCode": "Device"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -820,7 +820,7 @@
           "item": [
             {
               "linkId": "GuidanceResponse.reason-display",
-              "text": "Although this reference can be used to point to any resource, it is typically expected to refer to subject-specific data appropriate to the subject of the guidance. For example, patient-based decision support would be expected to reference patient-level data. In addition, implementations should provide as much detail as possible by using the [targetElement](extension-targetelement.html) and [targetPath](extension-targetpath.html) extensions to indicate the specific elements relevant to providing the reason for the guidance.",
+              "text": "Although this reference can be used to point to any resource, it is typically expected to refer to subject-specific data appropriate to the subject of the guidance. For example, patient-based decision support would be expected to reference patient-level data. In addition, implementations should provide as much detail as possible by using the [http://hl7.org/fhir/StructureDefinition/targetElement](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-targetElement.html) and [http://hl7.org/fhir/StructureDefinition/targetPath](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-targetPath.html) extensions to indicate the specific elements relevant to providing the reason for the guidance.",
               "type": "display"
             },
             {
@@ -881,6 +881,10 @@
         {
           "extension": [
             {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
               "valueString": "Reference"
             }
@@ -913,7 +917,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "OperationOutcome, OperationOutcome"
+                  "valueCode": "OperationOutcome"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -967,7 +971,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Parameters, Parameters"
+                  "valueCode": "Parameters"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -984,10 +988,6 @@
         },
         {
           "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-              "valueInteger": 1
-            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
               "valueString": "Reference"
@@ -1021,7 +1021,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "CarePlan, RequestOrchestration, RequestOrchestration"
+                  "valueCode": "Appointment, AppointmentResponse, CarePlan, Claim, CommunicationRequest, Contract, CoverageEligibilityRequest, DeviceRequest, EnrollmentRequest, ImmunizationRecommendation, MedicationRequest, NutritionOrder, RequestOrchestration, ServiceRequest, SupplyRequest, Task, VisionPrescription"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",

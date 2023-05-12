@@ -30,9 +30,9 @@
 
 	<created value="2014-08-16"/>
 
-	<provider>
+	<reporter>
 		<reference value="Organization/1"/>
-	</provider>
+	</reporter>
 
 	<payment>
 		<reference value="PaymentReconciliation/ER2500"/>

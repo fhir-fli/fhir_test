@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>planDefinition</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="plandefinition.html">PlanDefinition</a>
@@ -47,11 +51,10 @@
         <tr>
           <td>IN</td>
           <td>url</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#canonical">canonical</a>
-            <br/>(
-            <a href="search.html#reference">reference</a>)
           </td>
           <td/>
           <td>
@@ -64,6 +67,7 @@
         <tr>
           <td>IN</td>
           <td>version</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -79,6 +83,7 @@
         <tr>
           <td>IN</td>
           <td>subject</td>
+          <td/>
           <td>1..*</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -96,6 +101,7 @@
         <tr>
           <td>IN</td>
           <td>encounter</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -113,6 +119,7 @@
         <tr>
           <td>IN</td>
           <td>practitioner</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -130,6 +137,7 @@
         <tr>
           <td>IN</td>
           <td>organization</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -147,6 +155,7 @@
         <tr>
           <td>IN</td>
           <td>userType</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -162,6 +171,7 @@
         <tr>
           <td>IN</td>
           <td>userLanguage</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -177,6 +187,7 @@
         <tr>
           <td>IN</td>
           <td>userTaskContext</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -192,6 +203,7 @@
         <tr>
           <td>IN</td>
           <td>setting</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -207,6 +219,7 @@
         <tr>
           <td>IN</td>
           <td>settingContext</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -222,6 +235,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>0..*</td>
           <td>
             <a href="bundle.html">Bundle</a>
@@ -248,13 +262,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/PlanDefinition-apply"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Apply"/>
   <title value="Apply"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -284,6 +298,7 @@
   <parameter>
     <name value="planDefinition"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The plan definition to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter is required, or a url (and optionally version) must be supplied"/>
@@ -292,16 +307,17 @@
   <parameter>
     <name value="url"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The url of the plan definition to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter (and optionally the version), or the planDefinition parameter must be supplied"/>
     <type value="canonical"/>
     <targetProfile value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
-    <searchType value="reference"/>
   </parameter>
   <parameter>
     <name value="version"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The version of the plan definition to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter may only be used if the url parameter is supplied."/>

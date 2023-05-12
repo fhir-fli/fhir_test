@@ -91,10 +91,12 @@
       }
     ]
   },
-  "subject": {
-    "reference": "Patient/f201",
-    "display": "Roel"
-  },
+  "subject": [
+    {
+      "reference": "Patient/f201",
+      "display": "Roel"
+    }
+  ],
   "note": [
     {
       "text": "Both parents, both brothers and both children (twin) are still alive."

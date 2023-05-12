@@ -44,21 +44,21 @@
       <code value="INFA"/>
     </coding>
   </regulatoryBasis>
+  <decision value="permit"/>
+
+
   <provision>
-    <type value="permit"/>
-    <provision>
-      <type value="deny"/>
-      <actor>
-        <role>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-            <code value="CST"/>
-          </coding>
-        </role>
-        <reference>
-          <reference value="Organization/f001"/>
-        </reference>
-      </actor>
-    </provision>
+    <actor>
+      <role>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+          <code value="CST"/>
+        </coding>
+      </role>
+      <reference>
+        <reference value="Organization/f001"/>
+      </reference>
+    </actor>
   </provision>
+
 </Consent>

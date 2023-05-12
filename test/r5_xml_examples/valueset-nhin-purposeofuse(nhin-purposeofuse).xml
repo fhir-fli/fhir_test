@@ -51,7 +51,7 @@
         <element>
           <code value="SYSADMIN"/>
           <target>
-            <code value="SYSADMIN"/>
+            <code value="SYSADMN"/>
             <relationship value="equivalent"/>
           </target>
         </element>
@@ -64,15 +64,12 @@
         </element>
         <element>
           <code value="PSYCHOTHERAPY"/>
-          <target>
-            <code value="PSYCHOTHERAPY"/>
-            <relationship value="equivalent"/>
-          </target>
+          <noMap value="true"/>
         </element>
         <element>
           <code value="TRAINING"/>
           <target>
-            <code value="TRAINING"/>
+            <code value="TRAIN"/>
             <relationship value="equivalent"/>
           </target>
         </element>
@@ -158,7 +155,7 @@
         <element>
           <code value="COVERAGE"/>
           <target>
-            <code value="OVAUTH"/>
+            <code value="COVAUTH"/>
             <relationship value="equivalent"/>
           </target>
         </element>
@@ -180,7 +177,7 @@
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.3.3142"/>
   </identifier>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="NHINPurposeOfUse"/>
   <title value="NHIN PurposeOfUse"/>
   <status value="active"/>

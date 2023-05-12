@@ -18,7 +18,7 @@
     {
       "request": {
         "method": "GET",
-        "url": "/MedicationUsage?patient\u003dexample"
+        "url": "/MedicationStatement?patient\u003dexample"
       }
     },
     {

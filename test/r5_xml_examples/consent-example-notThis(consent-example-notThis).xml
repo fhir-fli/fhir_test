@@ -13,13 +13,13 @@
       <p>The following scenario is based on existing jurisdictional policy and are realized in existing systems in Canada. 
 	      The default policy is one of implied consent for the provision of care, so these scenarios all deal with withdrawal or withholding consent for that purpose. 
 	       Withhold or withdraw consent for disclosure of a specific record (e.g. Lab Order/Result) 
-	    </p>
+      </p>
       <p>
     Patient "Donal D DUCK"'s Primary Care Provider, Dr. Philip Primary, has ordered a set of lab test which Adam 
    wishes to keep as private as possible.  At the sample collection facility, he indicates that he would 
    like withhold consent to disclose the order and all results associated with that specific order from 
    all other providers  
-   </p>
+      </p>
     </div>
   </text>
   <status value="active"/>
@@ -42,23 +42,23 @@
     <title value="The terms of the consent in lawyer speak."/>
       <!--  likely use url pointer to common text  -->
   </sourceAttachment>
-  
+
   <regulatoryBasis>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
       <code value="INFA"/>
     </coding>
   </regulatoryBasis>
-  <provision>  <!--  this is opt-in - e.g. everything approved unless otherwise stated  -->
-    <type value="permit"/>
-    <provision>
-      <type value="deny"/>
-      <data>
-        <meaning value="related"/>
-        <reference>
-          <reference value="MedicationRequest/medrx0305"/>
-        </reference>
-      </data>
-    </provision>
+  <decision value="permit"/>
+    <!--  this is opt-in - e.g. everything approved unless otherwise stated  -->
+
+  <provision>
+    <data>
+      <meaning value="related"/>
+      <reference>
+        <reference value="MedicationRequest/medrx0305"/>
+      </reference>
+    </data>
   </provision>
+
 </Consent>

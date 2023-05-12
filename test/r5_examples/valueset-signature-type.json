@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "signature-type",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -24,12 +24,12 @@
       "value": "urn:oid:1.2.840.10065.1.12"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "SignatureTypeCodes",
   "title": "Signature Type Codes",
   "status": "draft",
   "experimental": true,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "HL7 FHIR",
   "contact": [
     {

@@ -5,22 +5,22 @@
     {
       "resourceType": "ValueSet",
       "id": "vs2",
-      "name": "Type options for ConceptMap.sourceScope[x]",
+      "name": "Type options for ConceptMap.versionAlgorithm[x]",
       "status": "active",
-      "description": "Type options for ConceptMap.sourceScope[x]",
+      "description": "Type options for ConceptMap.versionAlgorithm[x]",
       "expansion": {
-        "identifier": "urn:uuid:ddf8d469-3149-43cd-b0c0-b569d3d57896",
-        "timestamp": "2022-12-14T07:16:14+11:00",
+        "identifier": "urn:uuid:ca48caf0-1ff6-46f2-a5ef-30a27f2875a0",
+        "timestamp": "2023-03-31T19:26:48+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "uri",
-            "display": "uri"
+            "code": "string",
+            "display": "string"
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "ValueSet",
-            "display": "ValueSet"
+            "code": "Coding",
+            "display": "Coding"
           }
         ]
       }
@@ -28,12 +28,12 @@
     {
       "resourceType": "ValueSet",
       "id": "vs3",
-      "name": "Type options for ConceptMap.targetScope[x]",
+      "name": "Type options for ConceptMap.sourceScope[x]",
       "status": "active",
-      "description": "Type options for ConceptMap.targetScope[x]",
+      "description": "Type options for ConceptMap.sourceScope[x]",
       "expansion": {
-        "identifier": "urn:uuid:e7d1c33c-d851-4c5d-9413-7c32f3b5a76e",
-        "timestamp": "2022-12-14T07:16:14+11:00",
+        "identifier": "urn:uuid:e350ba13-7002-4ab4-af6e-d3403eb096f7",
+        "timestamp": "2023-03-31T19:26:48+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -51,18 +51,36 @@
     {
       "resourceType": "ValueSet",
       "id": "vs4",
-      "name": "Type options for ConceptMap.group.element.target.dependsOn.value[x]",
+      "name": "Type options for ConceptMap.targetScope[x]",
       "status": "active",
-      "description": "Type options for ConceptMap.group.element.target.dependsOn.value[x]",
+      "description": "Type options for ConceptMap.targetScope[x]",
       "expansion": {
-        "identifier": "urn:uuid:375db481-517a-46eb-80d5-731d0c446ff9",
-        "timestamp": "2022-12-14T07:16:14+11:00",
+        "identifier": "urn:uuid:ecb849a0-65cc-4b70-99c4-f28acc45b4bb",
+        "timestamp": "2023-03-31T19:26:48+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "code",
-            "display": "code"
+            "code": "uri",
+            "display": "uri"
           },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "ValueSet",
+            "display": "ValueSet"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs5",
+      "name": "Type options for ConceptMap.group.element.target.property.value[x]",
+      "status": "active",
+      "description": "Type options for ConceptMap.group.element.target.property.value[x]",
+      "expansion": {
+        "identifier": "urn:uuid:8614d970-5589-40ee-9d2f-1fab1a53ac40",
+        "timestamp": "2023-03-31T19:26:48+00:00",
+        "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
             "code": "Coding",
@@ -95,13 +113,46 @@
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "uri",
-            "display": "uri"
+            "code": "code",
+            "display": "code"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs6",
+      "name": "Type options for ConceptMap.group.element.target.dependsOn.value[x]",
+      "status": "active",
+      "description": "Type options for ConceptMap.group.element.target.dependsOn.value[x]",
+      "expansion": {
+        "identifier": "urn:uuid:96ac880d-1172-4dfc-af78-e53b73a54d9a",
+        "timestamp": "2023-03-31T19:26:48+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "code",
+            "display": "code"
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "id",
-            "display": "id"
+            "code": "Coding",
+            "display": "Coding"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "string",
+            "display": "string"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "boolean",
+            "display": "boolean"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Quantity",
+            "display": "Quantity"
           }
         ]
       }
@@ -113,10 +164,10 @@
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2020-12-28T16:55:11+11:00",
+  "date": "2020-12-28T05:55:11+00:00",
   "publisher": "HL7",
   "item": [
     {
@@ -265,7 +316,7 @@
                 }
               ],
               "linkId": "ConceptMap.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -318,7 +369,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -435,7 +486,7 @@
                 }
               ],
               "linkId": "ConceptMap.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -596,6 +647,88 @@
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
               "valueInteger": 1
+            }
+          ],
+          "linkId": "ConceptMap.versionAlgorithm[x]",
+          "text": "How to compare versions",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ConceptMap.versionAlgorithm[x]-flyover",
+              "text": "Indicates the mechanism used to compare versions to determine which ConceptMap is more current. If set as a string, this is a FHIRPath expression that has two additional context variables passed in - %version1 and %version2 and will return a negative number if version1 is newer, a positive number if version2 and a 0 if the version ordering can\u0027t be successfully be determined.",
+              "type": "display"
+            },
+            {
+              "linkId": "ConceptMap.versionAlgorithm[x]._type",
+              "text": "type",
+              "type": "coding",
+              "required": false,
+              "repeats": false,
+              "answerConstraint": "optionsOnly",
+              "answerValueSet": "#vs2",
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                      "valueString": "string"
+                    }
+                  ],
+                  "linkId": "ConceptMap.versionAlgorithm[x]._null",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "ConceptMap.versionAlgorithm[x]._null.value",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                      "valueString": "Coding"
+                    }
+                  ],
+                  "linkId": "ConceptMap.versionAlgorithm[x]._null",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "ConceptMap.versionAlgorithm[x]._null.value",
+                      "type": "coding",
+                      "required": false,
+                      "repeats": false,
+                      "answerConstraint": "optionsOnly"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
@@ -719,7 +852,7 @@
                 }
               ],
               "linkId": "ConceptMap.status-flyover",
-              "text": "The status of this concept map. Enables tracking the life-cycle of the content. Allows filtering of concept maps that are appropriate for use versus not.",
+              "text": "The status of this concept map. Enables tracking the life-cycle of the content. Allows filtering of concept maps that are appropriate for use versus not.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -812,7 +945,7 @@
                 }
               ],
               "linkId": "ConceptMap.date-flyover",
-              "text": "The date  (and optionally time) when the concept map was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes. The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the concept map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.",
+              "text": "The date  (and optionally time) when the concept map was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes. The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the concept map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -877,7 +1010,7 @@
           "item": [
             {
               "linkId": "ConceptMap.contact-display",
-              "text": "May be a web site, an email address, a telephone number, etc.",
+              "text": "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1011,7 +1144,7 @@
                 }
               ],
               "linkId": "ConceptMap.jurisdiction-flyover",
-              "text": "A legal or geographic region in which the concept map is intended to be used. It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended.",
+              "text": "A legal or geographic region in which the concept map is intended to be used. It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended.\n\nDEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new \u0027jurisdiction\u0027 code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#jurisdiction and useContext.valueCodeableConcept indicating the jurisdiction.)",
               "type": "display"
             },
             {
@@ -1127,6 +1260,50 @@
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "string"
+            }
+          ],
+          "linkId": "ConceptMap.copyrightLabel",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ConceptMap.copyrightLabel-flyover",
+              "text": "A short string (\u003c50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. \u0027All rights reserved\u0027, \u0027Some rights reserved\u0027). The (c) symbol should NOT be included in this string. It will be added by software when rendering the notation. Full details about licensing, restrictions, warrantees, etc. goes in the more general \u0027copyright\u0027 element.",
+              "type": "display"
+            },
+            {
+              "linkId": "ConceptMap.copyrightLabel.value",
+              "text": "Copyright holder and year(s)",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
               "valueString": "datetime"
             }
           ],
@@ -1151,7 +1328,7 @@
                 }
               ],
               "linkId": "ConceptMap.approvalDate-flyover",
-              "text": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage. The \u0027date\u0027 element may be more recent than the approval date because of minor changes or editorial corrections.",
+              "text": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage. The \u0027date\u0027 element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1195,12 +1372,12 @@
                 }
               ],
               "linkId": "ConceptMap.lastReviewDate-flyover",
-              "text": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date. If specified, this date follows the original approval date.",
+              "text": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date. If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
               "linkId": "ConceptMap.lastReviewDate.value",
-              "text": "When the ConceptMap was last reviewed",
+              "text": "When the ConceptMap was last reviewed by the publisher",
               "type": "dateTime",
               "required": false,
               "repeats": false
@@ -1240,7 +1417,7 @@
                 }
               ],
               "linkId": "ConceptMap.effectivePeriod-flyover",
-              "text": "The period during which the ConceptMap content was or is planned to be in active use. The effective period for a ConceptMap  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.",
+              "text": "The period during which the ConceptMap content was or is planned to be in active use. The effective period for a ConceptMap  determines when the content is applicable for usage and is independent of publication and review dates. For example, a map intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1267,7 +1444,7 @@
             }
           ],
           "linkId": "ConceptMap.topic",
-          "text": "E.g. Education, Treatment, Assessment, etc.",
+          "text": "E.g. Education, Treatment, Assessment, etc",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -1288,7 +1465,7 @@
                 }
               ],
               "linkId": "ConceptMap.topic-flyover",
-              "text": "Descriptions related to the content of the ConceptMap. Topics provide a high-level categorization as well as keywords for the ConceptMap that can be useful for filtering and searching. This element provides topical categorization and keywords for the ConceptMap, as opposed to the more structured context-of-use information provided in the useContext element",
+              "text": "Descriptions related to the content of the ConceptMap. Topics provide a high-level categorization as well as keywords for the ConceptMap that can be useful for filtering and searching. DEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new \u0027topic\u0027 code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#topic and useContext.valueCodeableConcept indicating the topic)",
               "type": "display"
             },
             {
@@ -1372,6 +1549,11 @@
           "repeats": true,
           "item": [
             {
+              "linkId": "ConceptMap.reviewer-display",
+              "text": "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
+              "type": "display"
+            },
+            {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -1387,7 +1569,7 @@
                 }
               ],
               "linkId": "ConceptMap.reviewer-flyover",
-              "text": "An individual or organization primarily responsible for review of some aspect of the ConceptMap.",
+              "text": "An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the ConceptMap.",
               "type": "display"
             }
           ]
@@ -1399,6 +1581,11 @@
           "required": false,
           "repeats": true,
           "item": [
+            {
+              "linkId": "ConceptMap.endorser-display",
+              "text": "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
+              "type": "display"
+            },
             {
               "extension": [
                 {
@@ -1415,14 +1602,14 @@
                 }
               ],
               "linkId": "ConceptMap.endorser-flyover",
-              "text": "An individual or organization responsible for officially endorsing the ConceptMap for use in some setting.",
+              "text": "An individual or organization asserted by the publisher to be responsible for officially endorsing the ConceptMap for use in some setting.",
               "type": "display"
             }
           ]
         },
         {
           "linkId": "ConceptMap.relatedArtifact",
-          "text": "Additional documentation, citations, etc.",
+          "text": "Additional documentation, citations, etc",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -1450,6 +1637,688 @@
               "linkId": "ConceptMap.relatedArtifact-flyover",
               "text": "Related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor and successor artifacts.",
               "type": "display"
+            }
+          ]
+        },
+        {
+          "linkId": "ConceptMap.property",
+          "text": "Additional properties of the mapping",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "ConceptMap.property-display",
+              "text": "Properties may be used to supply for example, mapping priority, provenance, presentation hints, flag as experimental, and additional documentation. Multiple occurrences of ConceptMap.group.element.target.property may occur for a ConceptMap.property where ConceptMap.group.element.target.property.code is the same and the values in ConceptMap.group.element.target.property.value differ.",
+              "type": "display"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ConceptMap.property-flyover",
+              "text": "A property defines a slot through which additional information can be provided about a map from source -\u003e target.",
+              "type": "display"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "string"
+                }
+              ],
+              "linkId": "ConceptMap.property.id",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.id-flyover",
+                  "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.property.id.value",
+                  "text": "Unique id for inter-element referencing",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "ConceptMap.property.extension",
+              "text": "Additional content defined by implementations",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.extension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "linkId": "ConceptMap.property.modifierExtension",
+              "text": "Extensions that cannot be ignored even if unrecognized",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.modifierExtension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "code"
+                }
+              ],
+              "linkId": "ConceptMap.property.code",
+              "type": "group",
+              "required": true,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.code-flyover",
+                  "text": "A code that is used to identify the property. The code is used internally (in ConceptMap.group.element.target.property.code) and also in the $translate operation.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.property.code.value",
+                  "text": "code",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOnly"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "uri"
+                }
+              ],
+              "linkId": "ConceptMap.property.uri",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.uri-flyover",
+                  "text": "Reference to the formal meaning of the property.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.property.uri.value",
+                  "text": "Formal identifier for the property",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "string"
+                }
+              ],
+              "linkId": "ConceptMap.property.description",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.description-flyover",
+                  "text": "A description of the property - why it is defined, and how its value might be used.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.property.description.value",
+                  "text": "Why the property is defined, and/or what it conveys",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "code"
+                }
+              ],
+              "linkId": "ConceptMap.property.type",
+              "type": "group",
+              "required": true,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.type-flyover",
+                  "text": "The type of the property value.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.property.type.value",
+                  "text": "type",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOrType"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "uri"
+                }
+              ],
+              "linkId": "ConceptMap.property.system",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.property.system-flyover",
+                  "text": "The CodeSystem that defines the codes from which values of type ```code``` in property values.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.property.system.value",
+                  "text": "The CodeSystem from which code values come",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "ConceptMap.additionalAttribute",
+          "text": "Definition of an additional attribute to act as a data source or target",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "ConceptMap.additionalAttribute-display",
+              "text": "Additional attributes are used to define additional data elements where mapping data can be found. For an example, see [Specimen Type v2 -\u003e SNOMED CT Mapping(conceptmap-example-specimen-type.html)",
+              "type": "display"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ConceptMap.additionalAttribute-flyover",
+              "text": "An additionalAttribute defines an additional data element found in the source or target data model where the data will come from or be mapped to. Some mappings are based on data in addition to the source data element, where codes in multiple fields are combined to a single field (or vice versa).",
+              "type": "display"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "string"
+                }
+              ],
+              "linkId": "ConceptMap.additionalAttribute.id",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.id-flyover",
+                  "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.additionalAttribute.id.value",
+                  "text": "Unique id for inter-element referencing",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "ConceptMap.additionalAttribute.extension",
+              "text": "Additional content defined by implementations",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.extension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "linkId": "ConceptMap.additionalAttribute.modifierExtension",
+              "text": "Extensions that cannot be ignored even if unrecognized",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.modifierExtension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "type": "display"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "code"
+                }
+              ],
+              "linkId": "ConceptMap.additionalAttribute.code",
+              "type": "group",
+              "required": true,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.code-flyover",
+                  "text": "A code that is used to identify this additional data attribute. The code is used internally in ConceptMap.group.element.target.dependsOn.attribute and ConceptMap.group.element.target.product.attribute.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.additionalAttribute.code.value",
+                  "text": "code",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOnly"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "uri"
+                }
+              ],
+              "linkId": "ConceptMap.additionalAttribute.uri",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.uri-flyover",
+                  "text": "Reference to the formal definition of the source/target data element. For elements defined by the FHIR specification, or using a FHIR logical model, the correct format is {canonical-url}#{element-id}.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.additionalAttribute.uri.value",
+                  "text": "Formal identifier for the data element referred to in this attribte",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "string"
+                }
+              ],
+              "linkId": "ConceptMap.additionalAttribute.description",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.description-flyover",
+                  "text": "A description of the additional attribute and/or the data element it refers to - why it is defined, and how the value might be used in mappings, and a discussion of issues associated with the use of the data element.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.additionalAttribute.description.value",
+                  "text": "Why the additional attribute is defined, and/or what the data element it refers to is",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "code"
+                }
+              ],
+              "linkId": "ConceptMap.additionalAttribute.type",
+              "type": "group",
+              "required": true,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "ConceptMap.additionalAttribute.type-flyover",
+                  "text": "The type of the source data contained in this concept map for this data element. When the source or target is not content defined by FHIR, some additional application logic might be required to map from the FHIR Datatype to the externally defined content",
+                  "type": "display"
+                },
+                {
+                  "linkId": "ConceptMap.additionalAttribute.type.value",
+                  "text": "type",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOrType"
+                }
+              ]
             }
           ]
         },
@@ -1492,7 +2361,7 @@
               "required": false,
               "repeats": false,
               "answerConstraint": "optionsOnly",
-              "answerValueSet": "#vs2",
+              "answerValueSet": "#vs3",
               "item": [
                 {
                   "extension": [
@@ -1573,7 +2442,7 @@
               "required": false,
               "repeats": false,
               "answerConstraint": "optionsOnly",
-              "answerValueSet": "#vs3",
+              "answerValueSet": "#vs4",
               "item": [
                 {
                   "extension": [
@@ -1708,7 +2577,7 @@
                     }
                   ],
                   "linkId": "ConceptMap.group.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1736,7 +2605,7 @@
                     }
                   ],
                   "linkId": "ConceptMap.group.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1933,7 +2802,7 @@
                         }
                       ],
                       "linkId": "ConceptMap.group.element.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -1961,7 +2830,7 @@
                         }
                       ],
                       "linkId": "ConceptMap.group.element.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -2087,12 +2956,12 @@
                         }
                       ],
                       "linkId": "ConceptMap.group.element.valueSet-flyover",
-                      "text": "The set of codes being mapped.",
+                      "text": "The set of concepts from the ConceptMap.group.source code system which are all being mapped to the target as part of this mapping rule. If the value set expansion is empty then there are no source concepts to map in this rule.",
                       "type": "display"
                     },
                     {
                       "linkId": "ConceptMap.group.element.valueSet.value",
-                      "text": "Identifies elements being mapped",
+                      "text": "Identifies the set of concepts being mapped",
                       "type": "string",
                       "required": false,
                       "repeats": false
@@ -2131,7 +3000,7 @@
                         }
                       ],
                       "linkId": "ConceptMap.group.element.noMap-flyover",
-                      "text": "If noMap \u003d true this indicates that no mapping to a target concept exists for this source concept.",
+                      "text": "If noMap \u003d true this indicates that no mapping to a target concept exists for this source concept. If noMap \u003d true, then the behavior of ConceptMap.group.unmapped (if present) does not apply.",
                       "type": "display"
                     },
                     {
@@ -2241,7 +3110,7 @@
                             }
                           ],
                           "linkId": "ConceptMap.group.element.target.extension-flyover",
-                          "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                          "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                           "type": "display"
                         }
                       ]
@@ -2269,7 +3138,7 @@
                             }
                           ],
                           "linkId": "ConceptMap.group.element.target.modifierExtension-flyover",
-                          "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                          "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                           "type": "display"
                         }
                       ]
@@ -2395,12 +3264,12 @@
                             }
                           ],
                           "linkId": "ConceptMap.group.element.target.valueSet-flyover",
-                          "text": "The set of codes that the map refers to.",
+                          "text": "The set of concepts from the ConceptMap.group.target code system which are all being mapped to as part of this mapping rule. The effect of using this data element is the same as having multiple ConceptMap.group.element.target elements with one for each concept in the ConceptMap.group.element.target.valueSet value set. If the the value set expansion is empty then the source concept(s) are unmapped and the behavior of ConceptMap.group.unmapped (if present) applies.",
                           "type": "display"
                         },
                         {
                           "linkId": "ConceptMap.group.element.target.valueSet.value",
-                          "text": "Identifies the set of target elements",
+                          "text": "Identifies the set of target concepts",
                           "type": "string",
                           "required": false,
                           "repeats": false
@@ -2501,6 +3370,361 @@
                       ]
                     },
                     {
+                      "linkId": "ConceptMap.group.element.target.property",
+                      "text": "Property value for the source -\u003e target mapping",
+                      "type": "group",
+                      "required": false,
+                      "repeats": true,
+                      "item": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                              "valueCodeableConcept": {
+                                "coding": [
+                                  {
+                                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                    "code": "flyover",
+                                    "display": "Fly-over"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "linkId": "ConceptMap.group.element.target.property-flyover",
+                          "text": "A property value for this source -\u003e target mapping.",
+                          "type": "display"
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                              "valueInteger": 1
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                              "valueString": "string"
+                            }
+                          ],
+                          "linkId": "ConceptMap.group.element.target.property.id",
+                          "type": "group",
+                          "required": false,
+                          "repeats": true,
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "flyover",
+                                        "display": "Fly-over"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "ConceptMap.group.element.target.property.id-flyover",
+                              "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+                              "type": "display"
+                            },
+                            {
+                              "linkId": "ConceptMap.group.element.target.property.id.value",
+                              "text": "Unique id for inter-element referencing",
+                              "type": "string",
+                              "required": false,
+                              "repeats": false
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "ConceptMap.group.element.target.property.extension",
+                          "text": "Additional content defined by implementations",
+                          "type": "group",
+                          "required": false,
+                          "repeats": true,
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "flyover",
+                                        "display": "Fly-over"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "ConceptMap.group.element.target.property.extension-flyover",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "type": "display"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "ConceptMap.group.element.target.property.modifierExtension",
+                          "text": "Extensions that cannot be ignored even if unrecognized",
+                          "type": "group",
+                          "required": false,
+                          "repeats": true,
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "flyover",
+                                        "display": "Fly-over"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "ConceptMap.group.element.target.property.modifierExtension-flyover",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "type": "display"
+                            }
+                          ]
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+                              "valueInteger": 1
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                              "valueInteger": 1
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                              "valueString": "code"
+                            }
+                          ],
+                          "linkId": "ConceptMap.group.element.target.property.code",
+                          "type": "group",
+                          "required": true,
+                          "repeats": true,
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "flyover",
+                                        "display": "Fly-over"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "ConceptMap.group.element.target.property.code-flyover",
+                              "text": "A reference to a mapping property defined in ConceptMap.property.",
+                              "type": "display"
+                            },
+                            {
+                              "linkId": "ConceptMap.group.element.target.property.code.value",
+                              "text": "code",
+                              "type": "coding",
+                              "required": false,
+                              "repeats": false,
+                              "answerConstraint": "optionsOnly"
+                            }
+                          ]
+                        },
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
+                              "valueInteger": 1
+                            },
+                            {
+                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                              "valueInteger": 1
+                            }
+                          ],
+                          "linkId": "ConceptMap.group.element.target.property.value[x]",
+                          "text": "Value of the property for this concept",
+                          "type": "group",
+                          "required": true,
+                          "repeats": true,
+                          "item": [
+                            {
+                              "extension": [
+                                {
+                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                                  "valueCodeableConcept": {
+                                    "coding": [
+                                      {
+                                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                        "code": "flyover",
+                                        "display": "Fly-over"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "linkId": "ConceptMap.group.element.target.property.value[x]-flyover",
+                              "text": "The value of this property. If the type chosen for this element is \u0027code\u0027, then the property SHALL be defined in a ConceptMap.property element.",
+                              "type": "display"
+                            },
+                            {
+                              "linkId": "ConceptMap.group.element.target.property.value[x]._type",
+                              "text": "type",
+                              "type": "coding",
+                              "required": false,
+                              "repeats": false,
+                              "answerConstraint": "optionsOnly",
+                              "answerValueSet": "#vs5",
+                              "item": [
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "Coding"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "type": "coding",
+                                      "required": false,
+                                      "repeats": false,
+                                      "answerConstraint": "optionsOnly"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "string"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "type": "string",
+                                      "required": false,
+                                      "repeats": false
+                                    }
+                                  ]
+                                },
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "integer"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "type": "integer",
+                                      "required": false,
+                                      "repeats": false
+                                    }
+                                  ]
+                                },
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "boolean"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "type": "boolean",
+                                      "required": false,
+                                      "repeats": false
+                                    }
+                                  ]
+                                },
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "datetime"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "type": "dateTime",
+                                      "required": false,
+                                      "repeats": false
+                                    }
+                                  ]
+                                },
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "decimal"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "type": "decimal",
+                                      "required": false,
+                                      "repeats": false
+                                    }
+                                  ]
+                                },
+                                {
+                                  "extension": [
+                                    {
+                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                                      "valueString": "code"
+                                    }
+                                  ],
+                                  "linkId": "ConceptMap.group.element.target.property.value[x]._null",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "ConceptMap.group.element.target.property.value[x]._null.value",
+                                      "text": "value[x]",
+                                      "type": "coding",
+                                      "required": false,
+                                      "repeats": false,
+                                      "answerConstraint": "optionsOnly"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
                       "linkId": "ConceptMap.group.element.target.dependsOn",
                       "text": "Other properties required for this mapping",
                       "type": "group",
@@ -2523,7 +3747,7 @@
                             }
                           ],
                           "linkId": "ConceptMap.group.element.target.dependsOn-flyover",
-                          "text": "A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified property can be resolved, and it has the specified value.",
+                          "text": "A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified data attribute can be resolved, and it has the specified value.",
                           "type": "display"
                         },
                         {
@@ -2593,7 +3817,7 @@
                                 }
                               ],
                               "linkId": "ConceptMap.group.element.target.dependsOn.extension-flyover",
-                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                               "type": "display"
                             }
                           ]
@@ -2621,7 +3845,7 @@
                                 }
                               ],
                               "linkId": "ConceptMap.group.element.target.dependsOn.modifierExtension-flyover",
-                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                              "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                               "type": "display"
                             }
                           ]
@@ -2638,10 +3862,10 @@
                             },
                             {
                               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "uri"
+                              "valueString": "code"
                             }
                           ],
-                          "linkId": "ConceptMap.group.element.target.dependsOn.property",
+                          "linkId": "ConceptMap.group.element.target.dependsOn.attribute",
                           "type": "group",
                           "required": true,
                           "repeats": true,
@@ -2661,16 +3885,17 @@
                                   }
                                 }
                               ],
-                              "linkId": "ConceptMap.group.element.target.dependsOn.property-flyover",
-                              "text": "A reference to a property that holds a value the map depends on. This value can be supplied to the $translate operation to select the appropriate targets.",
+                              "linkId": "ConceptMap.group.element.target.dependsOn.attribute-flyover",
+                              "text": "A reference to the additional attribute that holds a value the map depends on.",
                               "type": "display"
                             },
                             {
-                              "linkId": "ConceptMap.group.element.target.dependsOn.property.value",
-                              "text": "A reference to a property that may be required to refine the mapping",
-                              "type": "string",
+                              "linkId": "ConceptMap.group.element.target.dependsOn.attribute.value",
+                              "text": "attribute",
+                              "type": "coding",
                               "required": false,
-                              "repeats": false
+                              "repeats": false,
+                              "answerConstraint": "optionsOnly"
                             }
                           ]
                         },
@@ -2682,7 +3907,7 @@
                             }
                           ],
                           "linkId": "ConceptMap.group.element.target.dependsOn.value[x]",
-                          "text": "Value of the referenced property",
+                          "text": "Value of the referenced data element",
                           "type": "group",
                           "required": false,
                           "repeats": true,
@@ -2703,7 +3928,7 @@
                                 }
                               ],
                               "linkId": "ConceptMap.group.element.target.dependsOn.value[x]-flyover",
-                              "text": "Property value that the map depends on.",
+                              "text": "Data element value that the map depends on / produces. If the data type is a code, then the code system is .group.source for .dependsOn.valueCode and .group.target for .product.valueCode.",
                               "type": "display"
                             },
                             {
@@ -2713,7 +3938,7 @@
                               "required": false,
                               "repeats": false,
                               "answerConstraint": "optionsOnly",
-                              "answerValueSet": "#vs4",
+                              "answerValueSet": "#vs6",
                               "item": [
                                 {
                                   "extension": [
@@ -2776,24 +4001,6 @@
                                   "extension": [
                                     {
                                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                                      "valueString": "integer"
-                                    }
-                                  ],
-                                  "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null",
-                                  "type": "group",
-                                  "item": [
-                                    {
-                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.value",
-                                      "type": "integer",
-                                      "required": false,
-                                      "repeats": false
-                                    }
-                                  ]
-                                },
-                                {
-                                  "extension": [
-                                    {
-                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
                                       "valueString": "boolean"
                                     }
                                   ],
@@ -2812,68 +4019,44 @@
                                   "extension": [
                                     {
                                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                                      "valueString": "datetime"
+                                      "valueString": "Quantity"
                                     }
                                   ],
                                   "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null",
                                   "type": "group",
                                   "item": [
                                     {
-                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.value",
-                                      "type": "dateTime",
+                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.comparator",
+                                      "text": "comp:",
+                                      "type": "coding",
                                       "required": false,
-                                      "repeats": false
-                                    }
-                                  ]
-                                },
-                                {
-                                  "extension": [
-                                    {
-                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                                      "valueString": "decimal"
-                                    }
-                                  ],
-                                  "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null",
-                                  "type": "group",
-                                  "item": [
+                                      "repeats": false,
+                                      "answerConstraint": "optionsOnly"
+                                    },
                                     {
                                       "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.value",
+                                      "text": "value:",
                                       "type": "decimal",
                                       "required": false,
                                       "repeats": false
-                                    }
-                                  ]
-                                },
-                                {
-                                  "extension": [
+                                    },
                                     {
-                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                                      "valueString": "uri"
-                                    }
-                                  ],
-                                  "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null",
-                                  "type": "group",
-                                  "item": [
-                                    {
-                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.value",
+                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.units",
+                                      "text": "units:",
                                       "type": "string",
                                       "required": false,
                                       "repeats": false
-                                    }
-                                  ]
-                                },
-                                {
-                                  "extension": [
+                                    },
                                     {
-                                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                                      "valueString": "string"
-                                    }
-                                  ],
-                                  "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null",
-                                  "type": "group",
-                                  "item": [
+                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.code",
+                                      "text": "coded units:",
+                                      "type": "string",
+                                      "required": false,
+                                      "repeats": false
+                                    },
                                     {
-                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.value",
+                                      "linkId": "ConceptMap.group.element.target.dependsOn.value[x]._null.system",
+                                      "text": "units system:",
                                       "type": "string",
                                       "required": false,
                                       "repeats": false
@@ -2916,12 +4099,12 @@
                                 }
                               ],
                               "linkId": "ConceptMap.group.element.target.dependsOn.valueSet-flyover",
-                              "text": "This mapping applies if the property value is a code from this value set.",
+                              "text": "This mapping applies if the data element value is a code from this value set.",
                               "type": "display"
                             },
                             {
                               "linkId": "ConceptMap.group.element.target.dependsOn.valueSet.value",
-                              "text": "The mapping depends on a property with a value from this value set",
+                              "text": "The mapping depends on a data element with a value from this value set",
                               "type": "string",
                               "required": false,
                               "repeats": false
@@ -2932,7 +4115,7 @@
                     },
                     {
                       "linkId": "ConceptMap.group.element.target.product",
-                      "text": "Other properties that this mapping also produces",
+                      "text": "Other data elements that this mapping also produces",
                       "type": "group",
                       "required": false,
                       "repeats": true,
@@ -2953,7 +4136,7 @@
                             }
                           ],
                           "linkId": "ConceptMap.group.element.target.product-flyover",
-                          "text": "Product is the output of a ConceptMap that provides additional values relevant to the interpretation of the mapping target.",
+                          "text": "Product is the output of a ConceptMap that provides additional values that go in other attributes / data elemnts of the target data.",
                           "type": "display"
                         }
                       ]
@@ -2970,14 +4153,14 @@
                 }
               ],
               "linkId": "ConceptMap.group.unmapped",
-              "text": "What to do when there is no mapping target for the source concept",
+              "text": "What to do when there is no mapping target for the source concept and ConceptMap.group.element.noMap is not true",
               "type": "group",
               "required": false,
               "repeats": false,
               "item": [
                 {
                   "linkId": "ConceptMap.group.unmapped-display",
-                  "text": "This only applies if the source code has a system value that matches the system defined for the group.",
+                  "text": "The \u0027unmapped\u0027 element is ignored if a code is specified to have relationship \u003d not-related-to or if ConceptMap.group.element.noMap \u003d true.",
                   "type": "display"
                 },
                 {
@@ -2996,7 +4179,7 @@
                     }
                   ],
                   "linkId": "ConceptMap.group.unmapped-flyover",
-                  "text": "What to do when there is no mapping to a target concept from the source concept.  This provides the \"default\" to be applied when there is no target concept mapping specified.  The \u0027unmapped\u0027 element is ignored if a code is specified to have relationship \u003d not-related-to.",
+                  "text": "What to do when there is no mapping to a target concept from the source concept and ConceptMap.group.element.noMap is not true. This provides the \"default\" to be applied when there is no target concept mapping specified or the expansion of ConceptMap.group.element.target.valueSet is empty.",
                   "type": "display"
                 },
                 {
@@ -3066,7 +4249,7 @@
                         }
                       ],
                       "linkId": "ConceptMap.group.unmapped.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -3094,7 +4277,7 @@
                         }
                       ],
                       "linkId": "ConceptMap.group.unmapped.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]

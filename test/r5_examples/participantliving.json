@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/ParticipantLiving",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ParticipantLiving",
   "title": "participantliving",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "rim",
@@ -88,8 +88,9 @@
       {
         "id": "ParticipantLiving.birthDate",
         "path": "ParticipantLiving.birthDate",
-        "short": "The date of birth for the individual",
-        "definition": "The date of birth for the individual.",
+        "short": "The date of birth for the {{title}}",
+        "definition": "The date when the {{title}} was born.",
+        "requirements": "Used for identity verification and may drive other business processes.",
         "min": 0,
         "max": "1",
         "base": {
@@ -118,7 +119,7 @@
         "id": "ParticipantLiving.gender",
         "path": "ParticipantLiving.gender",
         "short": "male | female | other | unknown",
-        "definition": "Administrative Gender - the gender that the participant is considered to have for administration and record keeping purposes.",
+        "definition": "Administrative Gender - the gender that the {{title}} is considered to have for administration and record keeping purposes.",
         "requirements": "Needed for identification of the individual, in combination with (at least) name and birth date.",
         "min": 0,
         "max": "1",
@@ -146,7 +147,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "The gender of a person used for administrative purposes."
             },
             {
@@ -159,14 +160,15 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender|5.0.0-snapshot3"
+          "description": "The gender of a person used for administrative purposes.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender|5.0.0-cibuild"
         }
       },
       {
         "id": "ParticipantLiving.photo",
         "path": "ParticipantLiving.photo",
-        "short": "Image of the participant",
-        "definition": "Image of the participant.",
+        "short": "Image of the {{title}",
+        "definition": "A facial image of the {{title}}.",
         "requirements": "Many EHR systems have the capability to capture an image of the participant. Fits with newer social media usage too.",
         "min": 0,
         "max": "*",
@@ -195,8 +197,9 @@
       {
         "id": "ParticipantLiving.communication",
         "path": "ParticipantLiving.communication",
-        "short": "The language which can be used to communicate with the participant",
-        "definition": "The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. \"en\" for English, or \"en-US\" for American English versus \"en-AU\" for Australian English.",
+        "short": "Language used by {{title}}",
+        "definition": "The language which can be used to communicate with the {{title}}.",
+        "comment": "The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. \"en\" for English, or \"en-US\" for American English versus \"en-AU\" for Australian English.",
         "requirements": "Most systems in multilingual countries will want to convey language. Not all systems actually need the regional dialect.",
         "min": 0,
         "max": "*",
@@ -224,12 +227,8 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
-              "valueString": "A human language."
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
-              "valueCanonical": "http://hl7.org/fhir/ValueSet/all-languages"
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
+              "valueString": "IETF language tag for a human language."
             },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
@@ -240,9 +239,15 @@
               "valueBoolean": true
             }
           ],
-          "strength": "preferred",
-          "description": "IETF language tag",
-          "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+          "strength": "required",
+          "description": "IETF language tag for a human language.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild",
+          "additional": [
+            {
+              "purpose": "starter",
+              "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+            }
+          ]
         }
       }
     ]

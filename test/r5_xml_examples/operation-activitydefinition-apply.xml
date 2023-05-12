@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>activityDefinition</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="activitydefinition.html">ActivityDefinition</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>subject</td>
+          <td/>
           <td>1..*</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -64,6 +69,7 @@
         <tr>
           <td>IN</td>
           <td>encounter</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -81,6 +87,7 @@
         <tr>
           <td>IN</td>
           <td>practitioner</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -98,6 +105,7 @@
         <tr>
           <td>IN</td>
           <td>organization</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -115,6 +123,7 @@
         <tr>
           <td>IN</td>
           <td>userType</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -130,6 +139,7 @@
         <tr>
           <td>IN</td>
           <td>userLanguage</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -145,6 +155,7 @@
         <tr>
           <td>IN</td>
           <td>userTaskContext</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -160,6 +171,7 @@
         <tr>
           <td>IN</td>
           <td>setting</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -175,6 +187,7 @@
         <tr>
           <td>IN</td>
           <td>settingContext</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -190,6 +203,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="resource.html">Resource</a>
@@ -216,13 +230,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/ActivityDefinition-apply"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Apply"/>
   <title value="Apply"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -252,6 +266,7 @@
   <parameter>
     <name value="activityDefinition"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The activity definition to apply. If the operation is invoked on an instance, this parameter is not allowed. If the operation is invoked at the type level, this parameter is required"/>

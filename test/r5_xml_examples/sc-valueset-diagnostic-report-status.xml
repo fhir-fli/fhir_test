@@ -7,10 +7,10 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>DiagnosticReportStatusCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-diagnostic-report-status)</h2>
       <p>Mapping from 
-        <a href="valueset-diagnostic-report-status.html">http://hl7.org/fhir/ValueSet/diagnostic-report-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-diagnostic-report-status.html">Diagnostic Report Status</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
-      <p>DRAFT. Published on 2020-12-28T16:55:11+11:00 by HL7 (FHIR Project) (
+      <p>DRAFT. Published on 2020-12-28T05:55:11Z by HL7 (FHIR Project) (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>, 
         <a href="mailto:fhir@lists.hl7.org">fhir@lists.hl7.org</a>). 
       </p>
@@ -21,7 +21,7 @@
       <br/>
       <p>
         <b>Group 1</b>Mapping from 
-        <a href="codesystem-diagnostic-report-status.html">DiagnosticReportStatus</a> to 
+        <a href="codesystem-diagnostic-report-status.html">Diagnostic Report Status</a> to 
         <a href="codesystem-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <table class="grid">
@@ -52,6 +52,13 @@
         </tr>
         <tr>
           <td>preliminary</td>
+          <td>
+            <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
+          </td>
+          <td>draft</td>
+        </tr>
+        <tr>
+          <td>modified</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
@@ -110,12 +117,12 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-diagnostic-report-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="DiagnosticReportStatusCanonicalMap"/>
-  <title value="Canonical Mapping for &quot;DiagnosticReportStatus&quot;"/>
+  <title value="Canonical Mapping for &quot;Diagnostic Report Status&quot;"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2020-12-28T16:55:11+11:00"/>
+  <date value="2020-12-28T05:55:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -156,6 +163,13 @@
     </element>
     <element>
       <code value="preliminary"/>
+      <target>
+        <code value="draft"/>
+        <relationship value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="modified"/>
       <target>
         <code value="draft"/>
         <relationship value="equivalent"/>

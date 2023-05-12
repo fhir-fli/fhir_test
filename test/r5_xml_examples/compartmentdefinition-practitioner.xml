@@ -71,7 +71,7 @@ The following resources may be in this compartment:
  
         <tr>
           <td>
-            <a href="careplan.html">CarePlan</a>
+            <a href="biologicallyderivedproductdispense.html">BiologicallyDerivedProductDispense</a>
           </td>
           <td>performer</td>
         </tr>
@@ -162,6 +162,13 @@ The following resources may be in this compartment:
  
         <tr>
           <td>
+            <a href="deviceassociation.html">DeviceAssociation</a>
+          </td>
+          <td>operator</td>
+        </tr>
+ 
+        <tr>
+          <td>
             <a href="devicerequest.html">DeviceRequest</a>
           </td>
           <td>requester, performer</td>
@@ -172,13 +179,6 @@ The following resources may be in this compartment:
             <a href="diagnosticreport.html">DiagnosticReport</a>
           </td>
           <td>performer</td>
-        </tr>
- 
-        <tr>
-          <td>
-            <a href="documentmanifest.html">DocumentManifest</a>
-          </td>
-          <td>subject, author, recipient</td>
         </tr>
  
         <tr>
@@ -253,13 +253,6 @@ The following resources may be in this compartment:
  
         <tr>
           <td>
-            <a href="medicationadministration.html">MedicationAdministration</a>
-          </td>
-          <td>performer</td>
-        </tr>
- 
-        <tr>
-          <td>
             <a href="medicationdispense.html">MedicationDispense</a>
           </td>
           <td>performer, receiver</td>
@@ -274,7 +267,7 @@ The following resources may be in this compartment:
  
         <tr>
           <td>
-            <a href="medicationusage.html">MedicationUsage</a>
+            <a href="medicationstatement.html">MedicationStatement</a>
           </td>
           <td>source</td>
         </tr>
@@ -283,7 +276,7 @@ The following resources may be in this compartment:
           <td>
             <a href="messageheader.html">MessageHeader</a>
           </td>
-          <td>receiver, author, responsible, enterer</td>
+          <td>receiver, author, responsible</td>
         </tr>
  
         <tr>
@@ -318,7 +311,7 @@ The following resources may be in this compartment:
           <td>
             <a href="paymentnotice.html">PaymentNotice</a>
           </td>
-          <td>provider</td>
+          <td>reporter</td>
         </tr>
  
         <tr>
@@ -479,6 +472,10 @@ The following resources are never in this compartment:
         </li>
  
         <li>
+          <a href="careplan.html">CarePlan</a>
+        </li>
+ 
+        <li>
           <a href="chargeitemdefinition.html">ChargeItemDefinition</a>
         </li>
  
@@ -536,6 +533,10 @@ The following resources are never in this compartment:
  
         <li>
           <a href="deviceusage.html">DeviceUsage</a>
+        </li>
+ 
+        <li>
+          <a href="encounterhistory.html">EncounterHistory</a>
         </li>
  
         <li>
@@ -627,6 +628,10 @@ The following resources are never in this compartment:
         </li>
  
         <li>
+          <a href="inventoryitem.html">InventoryItem</a>
+        </li>
+ 
+        <li>
           <a href="inventoryreport.html">InventoryReport</a>
         </li>
  
@@ -652,6 +657,10 @@ The following resources are never in this compartment:
  
         <li>
           <a href="medication.html">Medication</a>
+        </li>
+ 
+        <li>
+          <a href="medicationadministration.html">MedicationAdministration</a>
         </li>
  
         <li>
@@ -803,6 +812,10 @@ The following resources are never in this compartment:
         </li>
  
         <li>
+          <a href="testplan.html">TestPlan</a>
+        </li>
+ 
+        <li>
           <a href="testreport.html">TestReport</a>
         </li>
  
@@ -826,11 +839,11 @@ The following resources are never in this compartment:
     </div>
   </text>
   <url value="http://hl7.org/fhir/CompartmentDefinition/practitioner"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Base FHIR compartment definition for Practitioner"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="FHIR Project Team"/>
   <contact>
     <telecom>
@@ -888,6 +901,10 @@ The following resources are never in this compartment:
     <code value="BiologicallyDerivedProduct"/>
   </resource>
   <resource>
+    <code value="BiologicallyDerivedProductDispense"/>
+    <param value="performer"/>
+  </resource>
+  <resource>
     <code value="BodyStructure"/>
   </resource>
   <resource>
@@ -898,7 +915,6 @@ The following resources are never in this compartment:
   </resource>
   <resource>
     <code value="CarePlan"/>
-    <param value="performer"/>
   </resource>
   <resource>
     <code value="CareTeam"/>
@@ -992,6 +1008,10 @@ The following resources are never in this compartment:
     <code value="Device"/>
   </resource>
   <resource>
+    <code value="DeviceAssociation"/>
+    <param value="operator"/>
+  </resource>
+  <resource>
     <code value="DeviceDefinition"/>
   </resource>
   <resource>
@@ -1013,12 +1033,6 @@ The following resources are never in this compartment:
     <param value="performer"/>
   </resource>
   <resource>
-    <code value="DocumentManifest"/>
-    <param value="subject"/>
-    <param value="author"/>
-    <param value="recipient"/>
-  </resource>
-  <resource>
     <code value="DocumentReference"/>
     <param value="subject"/>
     <param value="author"/>
@@ -1028,6 +1042,9 @@ The following resources are never in this compartment:
     <code value="Encounter"/>
     <param value="practitioner"/>
     <param value="participant"/>
+  </resource>
+  <resource>
+    <code value="EncounterHistory"/>
   </resource>
   <resource>
     <code value="Endpoint"/>
@@ -1119,6 +1136,9 @@ The following resources are never in this compartment:
     <code value="InsurancePlan"/>
   </resource>
   <resource>
+    <code value="InventoryItem"/>
+  </resource>
+  <resource>
     <code value="InventoryReport"/>
   </resource>
   <resource>
@@ -1153,7 +1173,6 @@ The following resources are never in this compartment:
   </resource>
   <resource>
     <code value="MedicationAdministration"/>
-    <param value="performer"/>
   </resource>
   <resource>
     <code value="MedicationDispense"/>
@@ -1168,7 +1187,7 @@ The following resources are never in this compartment:
     <param value="requester"/>
   </resource>
   <resource>
-    <code value="MedicationUsage"/>
+    <code value="MedicationStatement"/>
     <param value="source"/>
   </resource>
   <resource>
@@ -1182,7 +1201,6 @@ The following resources are never in this compartment:
     <param value="receiver"/>
     <param value="author"/>
     <param value="responsible"/>
-    <param value="enterer"/>
   </resource>
   <resource>
     <code value="MolecularSequence"/>
@@ -1229,7 +1247,7 @@ The following resources are never in this compartment:
   </resource>
   <resource>
     <code value="PaymentNotice"/>
-    <param value="provider"/>
+    <param value="reporter"/>
   </resource>
   <resource>
     <code value="PaymentReconciliation"/>
@@ -1365,6 +1383,9 @@ The following resources are never in this compartment:
   </resource>
   <resource>
     <code value="TerminologyCapabilities"/>
+  </resource>
+  <resource>
+    <code value="TestPlan"/>
   </resource>
   <resource>
     <code value="TestReport"/>

@@ -11,11 +11,11 @@
   },
   "destination": [
     {
+      "endpointUrl": "llp:10.11.12.14:5432",
       "name": "Acme Message Gateway",
       "target": {
         "reference": "Device/example"
       },
-      "endpoint": "llp:10.11.12.14:5432",
       "receiver": {
         "reference": "http://acme.com/ehr/fhir/Practitioner/2323-33-4"
       }
@@ -24,21 +24,18 @@
   "sender": {
     "reference": "Organization/1"
   },
-  "enterer": {
-    "reference": "Practitioner/example"
-  },
   "author": {
     "reference": "Practitioner/example"
   },
   "source": {
+    "endpointUrl": "llp:10.11.12.13:5432",
     "name": "Acme Central Patient Registry",
     "software": "FooBar Patient Manager",
     "version": "3.1.45.AABB",
     "contact": {
       "system": "phone",
       "value": "+1 (555) 123 4567"
-    },
-    "endpoint": "llp:10.11.12.13:5432"
+    }
   },
   "reason": {
     "coding": [

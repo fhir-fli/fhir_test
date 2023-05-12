@@ -469,7 +469,7 @@
         "link": [
           {
             "relation": "self",
-            "url": "http://test.fhir.org/r5/MedicationUsage?_format\u003dapplication/fhir+xml\u0026search-id\u003d0f08b401-5120-4444-9a83-3fd21d33df\u0026\u0026patient\u003dexample\u0026_sort\u003d_id"
+            "url": "http://test.fhir.org/r5/MedicationStatement?_format\u003dapplication/fhir+xml\u0026search-id\u003d0f08b401-5120-4444-9a83-3fd21d33df\u0026\u0026patient\u003dexample\u0026_sort\u003d_id"
           }
         ]
       },

@@ -1,117 +1,16 @@
 {
   "resourceType": "Questionnaire",
   "id": "qgen-CarePlan1",
-  "contained": [
-    {
-      "resourceType": "ValueSet",
-      "id": "vs2",
-      "name": "Type options for CarePlan.activity.plannedActivityDetail.scheduled[x]",
-      "status": "active",
-      "description": "Type options for CarePlan.activity.plannedActivityDetail.scheduled[x]",
-      "expansion": {
-        "identifier": "urn:uuid:0b16d59a-bac4-48f9-850d-f7e826038bb4",
-        "timestamp": "2022-12-14T07:16:04+11:00",
-        "contains": [
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Timing",
-            "display": "Timing"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Period",
-            "display": "Period"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "string",
-            "display": "string"
-          }
-        ]
-      }
-    },
-    {
-      "resourceType": "ValueSet",
-      "id": "vs3",
-      "name": "Type options for CarePlan.activity.plannedActivityDetail.reported[x]",
-      "status": "active",
-      "description": "Type options for CarePlan.activity.plannedActivityDetail.reported[x]",
-      "expansion": {
-        "identifier": "urn:uuid:b24a1831-1d6a-4748-a817-ab921971c48d",
-        "timestamp": "2022-12-14T07:16:04+11:00",
-        "contains": [
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "boolean",
-            "display": "boolean"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Patient",
-            "display": "Patient"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "RelatedPerson",
-            "display": "RelatedPerson"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Practitioner",
-            "display": "Practitioner"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "PractitionerRole",
-            "display": "PractitionerRole"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Organization",
-            "display": "Organization"
-          }
-        ]
-      }
-    },
-    {
-      "resourceType": "ValueSet",
-      "id": "vs4",
-      "name": "Type options for CarePlan.activity.plannedActivityDetail.product[x]",
-      "status": "active",
-      "description": "Type options for CarePlan.activity.plannedActivityDetail.product[x]",
-      "expansion": {
-        "identifier": "urn:uuid:fa4c8f07-2307-4d35-8723-3ad4f7e4b4d4",
-        "timestamp": "2022-12-14T07:16:04+11:00",
-        "contains": [
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "CodeableConcept",
-            "display": "CodeableConcept"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Medication",
-            "display": "Medication"
-          },
-          {
-            "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Substance",
-            "display": "Substance"
-          }
-        ]
-      }
-    }
-  ],
   "url": "http://hl7.org/fhir/Questionnaire/qgen-CarePlan1",
   "identifier": [
     {
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International (Patient Care)",
   "item": [
     {
@@ -250,7 +149,7 @@
                 }
               ],
               "linkId": "CarePlan.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -303,7 +202,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -392,7 +291,7 @@
                 }
               ],
               "linkId": "CarePlan.extension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -420,7 +319,7 @@
                 }
               ],
               "linkId": "CarePlan.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -595,7 +494,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "CarePlan, ServiceRequest, RequestOrchestration, NutritionOrder, NutritionOrder"
+                  "valueCode": "CarePlan, ServiceRequest, RequestOrchestration, NutritionOrder"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -645,7 +544,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "CarePlan, CarePlan"
+                  "valueCode": "CarePlan"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -695,7 +594,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "CarePlan, CarePlan"
+                  "valueCode": "CarePlan"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -988,7 +887,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Patient, Group, Group"
+                  "valueCode": "Patient, Group"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1042,7 +941,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Encounter, Encounter"
+                  "valueCode": "Encounter"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1192,7 +1091,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Patient, Practitioner, PractitionerRole, Device, RelatedPerson, Organization, CareTeam, CareTeam"
+                  "valueCode": "Patient, Practitioner, PractitionerRole, Device, RelatedPerson, Organization, CareTeam"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1242,7 +1141,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Patient, Practitioner, PractitionerRole, Device, RelatedPerson, Organization, CareTeam, CareTeam"
+                  "valueCode": "Patient, Practitioner, PractitionerRole, Device, RelatedPerson, Organization, CareTeam"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1292,7 +1191,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "CareTeam, CareTeam"
+                  "valueCode": "CareTeam"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1375,7 +1274,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Resource, Resource"
+                  "valueCode": "Resource"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1425,7 +1324,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Goal, Goal"
+                  "valueCode": "Goal"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1533,7 +1432,7 @@
                     }
                   ],
                   "linkId": "CarePlan.activity.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1561,14 +1460,14 @@
                     }
                   ],
                   "linkId": "CarePlan.activity.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
             },
             {
               "linkId": "CarePlan.activity.performedActivity",
-              "text": "Results of the activity (concept, or Appointment, Encounter, Procedure, etc)",
+              "text": "Results of the activity (concept, or Appointment, Encounter, Procedure, etc.)",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -1594,7 +1493,7 @@
                     }
                   ],
                   "linkId": "CarePlan.activity.performedActivity-flyover",
-                  "text": "Identifies the activity that was performed. For example, an activity could be patient education, exercise, or a medication administration. The reference to an \"event\" resource, such as Procedure or Encounter or Observation, represents the activity that was performed. The requested activity can be conveyed using CarePlan.activity.plannedActivityDetail OR using the CarePlan.activity.plannedActivityReference (a reference to a “request” resource).",
+                  "text": "Identifies the activity that was performed. For example, an activity could be patient education, exercise, or a medication administration. The reference to an \"event\" resource, such as Procedure or Encounter or Observation, represents the activity that was performed. The requested activity can be conveyed using the CarePlan.activity.plannedActivityReference (a reference to a “request” resource).",
                   "type": "display"
                 }
               ]
@@ -1665,14 +1564,14 @@
                     }
                   ],
                   "linkId": "CarePlan.activity.plannedActivityReference-flyover",
-                  "text": "The details of the proposed activity represented in a specific resource. Standard extension exists ([resource-pertainsToGoal](extension-resource-pertainstogoal.html)) that allows goals to be referenced from any of the referenced resources in CarePlan.activity.plannedActivityReference.  \nThe goal should be visible when the resource referenced by CarePlan.activity.plannedActivityReference is viewed independently from the CarePlan.  Requests that are pointed to by a CarePlan using this element should *not* point to this CarePlan using the \"basedOn\" element.  i.e. Requests that are part of a CarePlan are not \"based on\" the CarePlan.",
+                  "text": "The details of the proposed activity represented in a specific resource. Standard extension exists ([http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-resource-pertainsToGoal.html)) that allows goals to be referenced from any of the referenced resources in CarePlan.activity.plannedActivityReference.  \nThe goal should be visible when the resource referenced by CarePlan.activity.plannedActivityReference is viewed independently from the CarePlan.  Requests that are pointed to by a CarePlan using this element should *not* point to this CarePlan using the \"basedOn\" element.  i.e. Requests that are part of a CarePlan are not \"based on\" the CarePlan.",
                   "type": "display"
                 },
                 {
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                      "valueCode": "Appointment, CommunicationRequest, DeviceRequest, MedicationRequest, NutritionOrder, Task, ServiceRequest, VisionPrescription, RequestOrchestration, ImmunizationRecommendation, SupplyRequest, SupplyRequest"
+                      "valueCode": "Appointment, CommunicationRequest, DeviceRequest, MedicationRequest, NutritionOrder, Task, ServiceRequest, VisionPrescription, RequestOrchestration, ImmunizationRecommendation, SupplyRequest"
                     },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -1684,1155 +1583,6 @@
                   "type": "reference",
                   "required": false,
                   "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                }
-              ],
-              "linkId": "CarePlan.activity.plannedActivityDetail",
-              "text": "In-line definition of activity",
-              "type": "group",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail-flyover",
-                  "text": "A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn\u0027t know about specific resources such as procedure etc.",
-                  "type": "display"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "string"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.id",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.id-flyover",
-                      "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.id.value",
-                      "text": "Unique id for inter-element referencing",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "linkId": "CarePlan.activity.plannedActivityDetail.extension",
-                  "text": "Additional content defined by implementations",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-                      "type": "display"
-                    }
-                  ]
-                },
-                {
-                  "linkId": "CarePlan.activity.plannedActivityDetail.modifierExtension",
-                  "text": "Extensions that cannot be ignored even if unrecognized",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-                      "type": "display"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "code"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.kind",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.kind-flyover",
-                      "text": "A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.kind.value",
-                      "text": "kind",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOrType"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "uri"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.instantiatesCanonical",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.instantiatesCanonical-flyover",
-                      "text": "The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.instantiatesCanonical.value",
-                      "text": "Instantiates FHIR protocol or definition",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "uri"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.instantiatesUri",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.instantiatesUri-flyover",
-                      "text": "The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity. This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.instantiatesUri.value",
-                      "text": "Instantiates external protocol or definition",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "CodeableConcept"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.code",
-                  "text": "Detail type of activity",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.code-flyover",
-                      "text": "Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter. Tends to be less relevant for activities involving particular products.  Codes should not convey negation - use \"prohibited\" instead.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.code.coding",
-                      "text": "code:",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.code.text",
-                      "text": "text:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "linkId": "CarePlan.activity.plannedActivityDetail.reason",
-                  "text": "Why activity should be done or why activity was prohibited",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.reason-display",
-                      "text": "This could be a diagnosis code.  If a full condition record exists, us reason.reference instead. Conditions can be identified at the activity level that are not identified as reasons for the overall plan.",
-                      "type": "display"
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.reason-flyover",
-                      "text": "Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited - either a coded concept, or another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.",
-                      "type": "display"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "Reference"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.goal",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.goal-flyover",
-                      "text": "Internal reference that identifies the goals that this activity is intended to contribute towards meeting.",
-                      "type": "display"
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                          "valueCode": "Goal, Goal"
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
-                          "valueString": "subject\u003d$subj\u0026patient\u003d$subj\u0026encounter\u003d$encounter"
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.goal.value",
-                      "text": "Goals this activity relates to",
-                      "type": "reference",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "code"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.status",
-                  "type": "group",
-                  "required": true,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.status-flyover",
-                      "text": "Identifies what progress is being made for the specific activity. Some aspects of status can be inferred based on the resources linked in actionTaken.  Note that \"status\" is only as current as the plan was most recently updated.  \nThe unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn\u0027t know the current state of the activity.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.status.value",
-                      "text": "status",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOrType"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "CodeableConcept"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.statusReason",
-                  "text": "Reason for current status",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.statusReason-flyover",
-                      "text": "Provides reason why the activity isn\u0027t yet started, is on hold, was cancelled, etc. Will generally not be present if status is \"complete\".  Be sure to prompt to update this (or at least remove the existing value) if the status is changed.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.statusReason.coding",
-                      "text": "code:",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.statusReason.text",
-                      "text": "text:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "boolean"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.doNotPerform",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.doNotPerform-flyover",
-                      "text": "If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan. This element is labeled as a modifier because it marks an activity as an activity that is not to be performed.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.doNotPerform.value",
-                      "text": "If true, activity is prohibiting action",
-                      "type": "boolean",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]",
-                  "text": "When activity is to occur",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]-flyover",
-                      "text": "The period, timing or frequency upon which the described activity is to occur.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._type",
-                      "text": "type",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly",
-                      "answerValueSet": "#vs2",
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "Schedule"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null.text",
-                              "text": "text:",
-                              "type": "string",
-                              "required": false,
-                              "repeats": false
-                            },
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null.date",
-                              "text": "date:",
-                              "type": "dateTime",
-                              "required": false,
-                              "repeats": false
-                            },
-                            {
-                              "extension": [
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                                  "valueCode": "Patient"
-                                },
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                                  "valueCode": "Practitioner"
-                                },
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                                  "valueCode": "RelatedPerson"
-                                }
-                              ],
-                              "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null.author",
-                              "text": "author:",
-                              "type": "reference",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "Period"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null.low",
-                              "text": "start:",
-                              "type": "dateTime",
-                              "required": false,
-                              "repeats": false
-                            },
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null.end",
-                              "text": "end:",
-                              "type": "dateTime",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "string"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.scheduled[x]._null.value",
-                              "type": "string",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.location",
-                  "text": "Where it should happen",
-                  "type": "group",
-                  "required": false,
-                  "repeats": false,
-                  "item": [
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.location-display",
-                      "text": "May reference a specific clinical location or may identify a type of location.",
-                      "type": "display"
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.location-flyover",
-                      "text": "Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.",
-                      "type": "display"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]",
-                  "text": "Reported rather than primary record",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]-flyover",
-                      "text": "Indicates if this record was captured as a secondary \u0027reported\u0027 record rather than as an original primary source-of-truth record.  It may also indicate the source of the report.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]._type",
-                      "text": "type",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly",
-                      "answerValueSet": "#vs3",
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "boolean"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]._null.value",
-                              "type": "boolean",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "Reference"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "extension": [
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                                  "valueCode": "Patient, RelatedPerson, Practitioner, PractitionerRole, Organization, Organization"
-                                },
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
-                                  "valueString": "subject\u003d$subj\u0026patient\u003d$subj\u0026encounter\u003d$encounter"
-                                }
-                              ],
-                              "linkId": "CarePlan.activity.plannedActivityDetail.reported[x]._null.value",
-                              "type": "reference",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "Reference"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.performer",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.performer-flyover",
-                      "text": "Identifies who\u0027s expected to be involved in the activity. A performer MAY also be a participant in the care plan.",
-                      "type": "display"
-                    },
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                          "valueCode": "Practitioner, PractitionerRole, Organization, RelatedPerson, Patient, CareTeam, HealthcareService, Device, Device"
-                        },
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
-                          "valueString": "subject\u003d$subj\u0026patient\u003d$subj\u0026encounter\u003d$encounter"
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.performer.value",
-                      "text": "Who will be responsible?",
-                      "type": "reference",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.product[x]",
-                  "text": "What is to be administered/supplied",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.product[x]-flyover",
-                      "text": "Identifies the food, drug or other product to be consumed or supplied in the activity.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.product[x]._type",
-                      "text": "type",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly",
-                      "answerValueSet": "#vs4",
-                      "item": [
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "CodeableConcept"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.product[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.product[x]._null.coding",
-                              "text": "code:",
-                              "type": "coding",
-                              "required": false,
-                              "repeats": false,
-                              "answerConstraint": "optionsOnly"
-                            },
-                            {
-                              "linkId": "CarePlan.activity.plannedActivityDetail.product[x]._null.text",
-                              "text": "text:",
-                              "type": "string",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        },
-                        {
-                          "extension": [
-                            {
-                              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                              "valueString": "Reference"
-                            }
-                          ],
-                          "linkId": "CarePlan.activity.plannedActivityDetail.product[x]._null",
-                          "type": "group",
-                          "item": [
-                            {
-                              "extension": [
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                                  "valueCode": "Medication, Substance, Substance"
-                                },
-                                {
-                                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
-                                  "valueString": "subject\u003d$subj\u0026patient\u003d$subj\u0026encounter\u003d$encounter"
-                                }
-                              ],
-                              "linkId": "CarePlan.activity.plannedActivityDetail.product[x]._null.value",
-                              "type": "reference",
-                              "required": false,
-                              "repeats": false
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "Quantity"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount",
-                  "text": "How to consume/day?",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount-flyover",
-                      "text": "Identifies the quantity expected to be consumed in a given day.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount.comparator",
-                      "text": "comp:",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount.value",
-                      "text": "value:",
-                      "type": "decimal",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount.units",
-                      "text": "units:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount.code",
-                      "text": "coded units:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.dailyAmount.system",
-                      "text": "units system:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "Quantity"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.quantity",
-                  "text": "How much to administer/supply/consume",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.quantity-flyover",
-                      "text": "Identifies the quantity expected to be supplied, administered or consumed by the subject.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.quantity.comparator",
-                      "text": "comp:",
-                      "type": "coding",
-                      "required": false,
-                      "repeats": false,
-                      "answerConstraint": "optionsOnly"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.quantity.value",
-                      "text": "value:",
-                      "type": "decimal",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.quantity.units",
-                      "text": "units:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.quantity.code",
-                      "text": "coded units:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.quantity.system",
-                      "text": "units system:",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "string"
-                    }
-                  ],
-                  "linkId": "CarePlan.activity.plannedActivityDetail.description",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "CarePlan.activity.plannedActivityDetail.description-flyover",
-                      "text": "This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "CarePlan.activity.plannedActivityDetail.description.value",
-                      "text": "Extra info describing activity to perform",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
                 }
               ]
             }

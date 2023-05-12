@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>resource</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="resource.html">Resource</a>
@@ -47,12 +51,13 @@
         <tr>
           <td>IN</td>
           <td>mode</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
           </td>
           <td>
-            <a href="valueset-resource-validation-mode.html">http://hl7.org/fhir/ValueSet/resource-validation-mode|5.0.0-snapshot3</a> (Required)
+            <a href="valueset-resource-validation-mode.html">Resource Validation Mode</a> (Required)
           </td>
           <td>
             <div>
@@ -64,6 +69,7 @@
         <tr>
           <td>IN</td>
           <td>profile</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#canonical">canonical</a>
@@ -77,8 +83,29 @@
           </td>
         </tr>
         <tr>
+          <td>IN</td>
+          <td>usageContext 
+            <a style="padding-left: 3px; padding-right: 3px; border: 1px grey solid; font-weight: bold; color: black; background-color: #fff5e6" href="versions.html#std-process" title="Standards Status = Trial Use">TU</a>
+          </td>
+          <td/>
+          <td>0..*</td>
+          <td>
+            <a href="metadatatypes.html#UsageContext">UsageContext</a>
+          </td>
+          <td/>
+          <td>
+            <div>
+              <p>Indicates an implementation context that applies to this validation.  Influences which 
+                <a href="terminologies.html#binding">additionalBindings</a> are relevant.  NOTE: Expectations around subsumption testing, etc. are not yet defined and may be server-specific.
+              </p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="operationoutcome.html">OperationOutcome</a>
@@ -97,7 +124,7 @@
 
         <p>This operation returns a 200 Ok provided that it was possible to perform validation, irrespective of whether validation issues were found.  However, it is possible that certain errors in the validated content (e.g. invalid character set, broken JSON, etc.) may cause the overall validation operation to fail with a 4xx or 5xx series response.</p>
 
-        <p>Note: the correct behaviour of validation with regard to language (especially for Coding.display) is currently undefined, and further development and testing may lead to specific requirements or recommendations in subsequent releases</p>
+        <p>Note: the correct behavior of validation with regard to language (especially for Coding.display) is currently undefined, and further development and testing may lead to specific requirements or recommendations in subsequent releases</p>
 
         <p>Future versions of this specifcation may add additional validation parameters. A candidate list is maintained with the 
           <a href="https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator">FHIR Validator Documentation</a>
@@ -113,13 +140,13 @@
     <valueCode value="normative"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/Resource-validate"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Validate"/>
   <title value="Validate a resource"/>
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -141,7 +168,7 @@
   </jurisdiction>
   <affectsState value="false"/>
   <code value="validate"/>
-  <comment value="This operation may be used during design and development to validate application design. It can also be used at run-time. One possible use might be that a client asks the server whether a proposed update is valid as the user is editing a dialog and displays an updated error to the user. The operation can be used as part of a light-weight two phase commit protocol but there is no expectation that the server will hold the content of the resource after this operation is used, or that the server guarantees to successfully perform an actual create, update or delete after the validation operation completes.&#xA;&#xA;This operation returns a 200 Ok provided that it was possible to perform validation, irrespective of whether validation issues were found.  However, it is possible that certain errors in the validated content (e.g. invalid character set, broken JSON, etc.) may cause the overall validation operation to fail with a 4xx or 5xx series response.&#xA;&#xA;Note: the correct behaviour of validation with regard to language (especially for Coding.display) is currently undefined, and further development and testing may lead to specific requirements or recommendations in subsequent releases&#xA;&#xA;Future versions of this specifcation may add additional validation parameters. A candidate list is maintained with the [FHIR Validator Documentation](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)"/>
+  <comment value="This operation may be used during design and development to validate application design. It can also be used at run-time. One possible use might be that a client asks the server whether a proposed update is valid as the user is editing a dialog and displays an updated error to the user. The operation can be used as part of a light-weight two phase commit protocol but there is no expectation that the server will hold the content of the resource after this operation is used, or that the server guarantees to successfully perform an actual create, update or delete after the validation operation completes.&#xA;&#xA;This operation returns a 200 Ok provided that it was possible to perform validation, irrespective of whether validation issues were found.  However, it is possible that certain errors in the validated content (e.g. invalid character set, broken JSON, etc.) may cause the overall validation operation to fail with a 4xx or 5xx series response.&#xA;&#xA;Note: the correct behavior of validation with regard to language (especially for Coding.display) is currently undefined, and further development and testing may lead to specific requirements or recommendations in subsequent releases&#xA;&#xA;Future versions of this specifcation may add additional validation parameters. A candidate list is maintained with the [FHIR Validator Documentation](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)"/>
   <resource value="Resource"/>
   <system value="false"/>
   <type value="true"/>
@@ -166,7 +193,7 @@
         <valueString value="ResourceValidationMode"/>
       </extension>
       <strength value="required"/>
-      <valueSet value="http://hl7.org/fhir/ValueSet/resource-validation-mode|5.0.0-snapshot3"/>
+      <valueSet value="http://hl7.org/fhir/ValueSet/resource-validation-mode|5.0.0-cibuild"/>
     </binding>
   </parameter>
   <parameter>
@@ -176,6 +203,17 @@
     <max value="1"/>
     <documentation value="If this is nominated, then the resource is validated against this specific profile. If a profile is nominated, and the server cannot validate against the nominated profile, it SHALL return an error"/>
     <type value="canonical"/>
+  </parameter>
+  <parameter>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+      <valueCode value="trial-use"/>
+    </extension>
+    <name value="usageContext"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Indicates an implementation context that applies to this validation.  Influences which [additionalBindings](terminologies.html#binding) are relevant.  NOTE: Expectations around subsumption testing, etc. are not yet defined and may be server-specific."/>
+    <type value="UsageContext"/>
   </parameter>
   <parameter>
     <name value="return"/>

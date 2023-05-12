@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "lipid-ldl-codes",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -24,8 +24,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3211"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "LDLCodes",
+  "title": "L D L Codes",
   "status": "draft",
   "experimental": false,
   "date": "2015-06-23T10:59:44+10:00",

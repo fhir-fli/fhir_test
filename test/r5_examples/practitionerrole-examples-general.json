@@ -24,24 +24,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "17561000",
+                "display": "Cardiologist"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.011",
-                "display": "Cardiothoracal surgery"
+                "system": "http://snomed.info/sct",
+                "code": "394603008",
+                "display": "Cardiothoracic surgery"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -76,8 +74,9 @@
           {
             "coding": [
               {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0286",
-                "code": "RP"
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "General physician"
               }
             ]
           }
@@ -129,7 +128,18 @@
         "organization": {
           "reference": "Organization/2",
           "display": "Good Health Clinic"
-        }
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "General physician"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -155,6 +165,13 @@
         },
         "code": [
           {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "59944000",
+                "display": "Psychologist"
+              }
+            ],
             "text": "On call physcologist"
           }
         ],
@@ -210,24 +227,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "General physician"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.015",
-                "display": "Physician"
+                "system": "http://snomed.info/sct",
+                "code": "394814009",
+                "display": "General practice"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -253,24 +268,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "General physician"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.018",
-                "display": "Ear-, Nose and Throat"
+                "system": "http://snomed.info/sct",
+                "code": "394604002",
+                "display": "Surgery-Ear, nose and throat surgery"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -293,12 +306,18 @@
         },
         "code": [
           {
-            "text": "Primary Surgon"
+            "text": "Primary Surgeon"
           }
         ],
         "specialty": [
           {
-            "text": "Orthopedic"
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394604002",
+                "display": "Surgery-Ear, nose and throat surgery"
+              }
+            ]
           }
         ]
       }
@@ -447,24 +466,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "General physician"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.018",
-                "display": "Keel- neus- en oorarts"
+                "system": "http://snomed.info/sct",
+                "code": "394604002",
+                "display": "Surgery-Ear, nose and throat surgery"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -490,24 +507,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "159010009",
+                "display": "Hospital pharmacist"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "17.000",
+                "system": "http://snomed.info/sct",
+                "code": "46255001",
                 "display": "Pharmacist"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -533,24 +548,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "59058001",
+                "display": "General physician"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.018",
-                "display": "Ear-, Nose and Throat"
+                "system": "http://snomed.info/sct",
+                "code": "394604002",
+                "display": "Surgery-Ear, nose and throat surgery"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -576,24 +589,22 @@
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.000",
-                "display": "Arts"
+                "system": "http://snomed.info/sct",
+                "code": "17561000",
+                "display": "Cardiologist"
               }
-            ],
-            "text": "Care role"
+            ]
           }
         ],
         "specialty": [
           {
             "coding": [
               {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                "code": "01.011",
-                "display": "Cardiothoracal surgery"
+                "system": "http://snomed.info/sct",
+                "code": "394603008",
+                "display": "Cardiothoracic surgery"
               }
-            ],
-            "text": "specialization"
+            ]
           }
         ]
       }
@@ -631,8 +642,8 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "9632001",
-                "display": "Nursing procedure"
+                "code": "394618009",
+                "display": "Hospital nurse"
               }
             ]
           }

@@ -2,14 +2,14 @@
   "resourceType": "CodeSystem",
   "id": "research-study-party-role",
   "meta": {
-    "lastUpdated": "2022-12-13T20:12:54+00:00",
+    "lastUpdated": "2023-03-31T19:23:11+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
   },
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\u003cp\u003eThis code system \u003ccode\u003ehttp://hl7.org/fhir/research-study-party-role\u003c/code\u003e defines the following codes:\u003c/p\u003e\u003ctable class\u003d\"codes\"\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003e\u003cb\u003eCode\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eDefinition\u003c/b\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003esponsor\u003ca name\u003d\"research-study-party-role-sponsor\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003esponsor\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003elead-sponsor\u003ca name\u003d\"research-study-party-role-lead-sponsor\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003elead-sponsor\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003esponsor-investigator\u003ca name\u003d\"research-study-party-role-sponsor-investigator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003esponsor-investigator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003eprimary-investigator\u003ca name\u003d\"research-study-party-role-primary-investigator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003eprimary-investigator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003ecollaborator\u003ca name\u003d\"research-study-party-role-collaborator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003ecollaborator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003efunding-source\u003ca name\u003d\"research-study-party-role-funding-source\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003efunding-source\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003erecruitment-contact\u003ca name\u003d\"research-study-party-role-recruitment-contact\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003erecruitment-contact\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003egeneral-contact\u003ca name\u003d\"research-study-party-role-general-contact\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003egeneral-contact\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003esub-investigator\u003ca name\u003d\"research-study-party-role-sub-investigator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003esub-investigator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003estudy-director\u003ca name\u003d\"research-study-party-role-study-director\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003estudy-director\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003estudy-chair\u003ca name\u003d\"research-study-party-role-study-chair\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003estudy-chair\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\u003cp\u003eThis code system \u003ccode\u003ehttp://hl7.org/fhir/research-study-party-role\u003c/code\u003e defines the following codes:\u003c/p\u003e\u003ctable class\u003d\"codes\"\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003e\u003cb\u003eCode\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eDisplay\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eDefinition\u003c/b\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003esponsor\u003ca name\u003d\"research-study-party-role-sponsor\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003esponsor\u003c/td\u003e\u003ctd\u003esponsor\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003elead-sponsor\u003ca name\u003d\"research-study-party-role-lead-sponsor\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003elead-sponsor\u003c/td\u003e\u003ctd\u003elead-sponsor\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003esponsor-investigator\u003ca name\u003d\"research-study-party-role-sponsor-investigator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003esponsor-investigator\u003c/td\u003e\u003ctd\u003esponsor-investigator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003eprimary-investigator\u003ca name\u003d\"research-study-party-role-primary-investigator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003eprimary-investigator\u003c/td\u003e\u003ctd\u003eprimary-investigator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003ecollaborator\u003ca name\u003d\"research-study-party-role-collaborator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003ecollaborator\u003c/td\u003e\u003ctd\u003ecollaborator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003efunding-source\u003ca name\u003d\"research-study-party-role-funding-source\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003efunding-source\u003c/td\u003e\u003ctd\u003efunding-source\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003egeneral-contact\u003ca name\u003d\"research-study-party-role-general-contact\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003egeneral-contact\u003c/td\u003e\u003ctd\u003egeneral-contact\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003erecruitment-contact\u003ca name\u003d\"research-study-party-role-recruitment-contact\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003erecruitment-contact\u003c/td\u003e\u003ctd\u003erecruitment-contact\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003esub-investigator\u003ca name\u003d\"research-study-party-role-sub-investigator\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003esub-investigator\u003c/td\u003e\u003ctd\u003esub-investigator\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003estudy-director\u003ca name\u003d\"research-study-party-role-study-director\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003estudy-director\u003c/td\u003e\u003ctd\u003estudy-director\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003estudy-chair\u003ca name\u003d\"research-study-party-role-study-chair\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003estudy-chair\u003c/td\u003e\u003ctd\u003estudy-chair\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd style\u003d\"white-space:nowrap\"\u003eirb\u003ca name\u003d\"research-study-party-role-irb\"\u003e \u003c/a\u003e\u003c/td\u003e\u003ctd\u003eInstitutional Review Board\u003c/td\u003e\u003ctd/\u003e\u003c/tr\u003e\u003c/table\u003e\u003c/div\u003e"
   },
   "extension": [
     {
@@ -32,7 +32,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.1968"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ResearchStudyPartyRole",
   "title": "Research Study Party Role",
   "status": "active",
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "description": "Codes that convey the type of party role that is provided.",
+  "description": "This is a ResearchStudy\u0027s party role.",
   "jurisdiction": [
     {
       "coding": [
@@ -100,14 +100,14 @@
       "definition": "funding-source"
     },
     {
-      "code": "recruitment-contact",
-      "display": "recruitment-contact",
-      "definition": "recruitment-contact"
-    },
-    {
       "code": "general-contact",
       "display": "general-contact",
       "definition": "general-contact"
+    },
+    {
+      "code": "recruitment-contact",
+      "display": "recruitment-contact",
+      "definition": "recruitment-contact"
     },
     {
       "code": "sub-investigator",
@@ -123,6 +123,10 @@
       "code": "study-chair",
       "display": "study-chair",
       "definition": "study-chair"
+    },
+    {
+      "code": "irb",
+      "display": "Institutional Review Board"
     }
   ]
 }

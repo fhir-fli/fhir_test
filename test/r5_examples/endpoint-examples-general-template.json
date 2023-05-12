@@ -37,17 +37,21 @@
         "managingOrganization": {
           "display": "Telstra Health"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "CarePlan"
+                "coding": [
+                  {
+                    "code": "CarePlan"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/fhir+xml"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/fhir+xml"
         ],
         "address": "https://sqlonfhir-dstu2.azurewebsites.net/fhir"
       }
@@ -76,17 +80,21 @@
         "managingOrganization": {
           "display": "Telstra Health"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "QuestionnaireResponse"
+                "coding": [
+                  {
+                    "code": "QuestionnaireResponse"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/fhir+xml"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/fhir+xml"
         ],
         "address": "https://sqlonfhir-dstu2.azurewebsites.net/fhir"
       }
@@ -115,17 +123,21 @@
         "managingOrganization": {
           "display": "Telstra Health"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "ServiceRequest"
+                "coding": [
+                  {
+                    "code": "ServiceRequest"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/fhir+xml"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/fhir+xml"
         ],
         "address": "https://sqlonfhir-dstu2.azurewebsites.net/fhir"
       }
@@ -154,17 +166,21 @@
         "managingOrganization": {
           "display": "Epic demo organization"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "ServiceRequest QuestionnaireResponse"
+                "coding": [
+                  {
+                    "code": "ServiceRequest QuestionnaireResponse"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/fhir+json"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/fhir+json"
         ],
         "address": "https://open.epic.com/Interface/FHIR"
       }
@@ -193,17 +209,21 @@
         "managingOrganization": {
           "display": "Telstra Health"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "ServiceRequest"
+                "coding": [
+                  {
+                    "code": "ServiceRequest"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/fhir+xml"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/fhir+xml"
         ],
         "address": "mailto:subscriptions@example.org"
       }
@@ -232,17 +252,21 @@
         "managingOrganization": {
           "display": "Telstra Health"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "CDA-EventSummary"
+                "coding": [
+                  {
+                    "code": "CDA-EventSummary"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/pdf"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/pdf"
         ],
         "address": "https://sqlonfhir-dstu2.azurewebsites.net/fhir"
       }
@@ -254,7 +278,7 @@
         "id": "77",
         "text": {
           "status": "generated",
-          "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n              v2 referral Requests, REF-I12\u003cbr/\u003e\n              Address: 127.0.0.1\u003c/div\u003e"
+          "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n              v2 referral Requests, REF-I12\u003cbr/\u003e\n              Address: mllp://127.0.0.1:4001\u003c/div\u003e"
         },
         "status": "active",
         "connectionType": [
@@ -271,19 +295,23 @@
         "managingOrganization": {
           "display": "Epic demo organization"
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "REF-I12"
+                "coding": [
+                  {
+                    "code": "REF-I12"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "x-application/hl7-v2+er7"
             ]
           }
         ],
-        "payloadMimeType": [
-          "application/hl7-v2"
-        ],
-        "address": "127.0.0.1"
+        "address": "mllp://127.0.0.1:4001"
       }
     },
     {
@@ -310,17 +338,21 @@
         "managingOrganization": {
           "display": "Multi-site Co."
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                "coding": [
+                  {
+                    "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/dicom; variant\u003dDICOM WADO-RS"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/dicom; variant\u003dDICOM WADO-RS"
         ],
         "address": "https://pacs.hospital.org/dicomweb"
       }
@@ -349,17 +381,21 @@
         "managingOrganization": {
           "display": "Multi-site Co."
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                "coding": [
+                  {
+                    "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/dicom; variant\u003dDICOM QIDO-RS"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/dicom; variant\u003dDICOM QIDO-RS"
         ],
         "address": "https://pacs.hospital.org/dicomweb"
       }
@@ -388,17 +424,21 @@
         "managingOrganization": {
           "display": "Multi-site Co."
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                "coding": [
+                  {
+                    "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/dicom; variant\u003dDICOM STOW-RS"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/dicom; variant\u003dDICOM STOW-RS"
         ],
         "address": "https://pacs.hospital.org/dicomweb"
       }
@@ -427,17 +467,21 @@
         "managingOrganization": {
           "display": "Multi-site Co."
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                "coding": [
+                  {
+                    "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/dicom; variant\u003dDICOM STOW-RS"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/dicom; variant\u003dDICOM STOW-RS"
         ],
         "address": "https://pacs.hospital.org/dicomweb"
       }
@@ -466,17 +510,21 @@
         "managingOrganization": {
           "display": "Multi-site Co."
         },
-        "payloadType": [
+        "payload": [
           {
-            "coding": [
+            "type": [
               {
-                "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                "coding": [
+                  {
+                    "code": "varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"
+                  }
+                ]
               }
+            ],
+            "mimeType": [
+              "application/dicom; variant\u003dDICOM WADO-URI"
             ]
           }
-        ],
-        "payloadMimeType": [
-          "application/dicom; variant\u003dDICOM WADO-URI"
         ],
         "address": "https://pacs.hospital.org/wadoUri"
       }

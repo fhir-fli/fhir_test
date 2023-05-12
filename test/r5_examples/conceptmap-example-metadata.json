@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "extensions",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \u003ch2\u003eExampleMetadata (http://hl7.org/fhir/ConceptMap/example-metadata)\u003c/h2\u003e\n      \u003cp\u003eMapping from \n        \u003ca href\u003d\"valueset-address-use.html\"\u003ehttp://hl7.org/fhir/ValueSet/address-use\u003c/a\u003e to \n        \u003ca href\u003d\"http://terminology.hl7.org/4.0.0/ValueSet-v3-AddressUse.html\"\u003ehttp://terminology.hl7.org/ValueSet/v3-AddressUse\u003c/a\u003e\n      \u003c/p\u003e\n      \u003cp\u003eDRAFT (not intended for production usage). Published on 2021-07-21 by FHIR (Example) (FHIR project team: \n        \u003ca href\u003d\"http://hl7.org/fhir\"\u003ehttp://hl7.org/fhir\u003c/a\u003e). \n      \u003c/p\u003e\n      \u003cdiv\u003e\n        \u003cp\u003eThis is an example concept map that illustrates usage of the metadata resource elements introduced in R5\u003c/p\u003e\n\n      \u003c/div\u003e\n      \u003cbr/\u003e\n      \u003cp\u003e\n        \u003cb\u003eGroup 1\u003c/b\u003eMapping from \n        \u003ca href\u003d\"codesystem-address-use.html\"\u003eAddressUse\u003c/a\u003e to \n        \u003ca href\u003d\"http://terminology.hl7.org/4.0.0/CodeSystem-v3-AddressUse.html\"\u003eAddressUse\u003c/a\u003e\n      \u003c/p\u003e\n      \u003ctable class\u003d\"grid\"\u003e\n        \u003ctr\u003e\n          \u003ctd\u003e\n            \u003cb\u003eSource Code\u003c/b\u003e\n          \u003c/td\u003e\n          \u003ctd\u003e\n            \u003cb\u003eRelationship\u003c/b\u003e\n          \u003c/td\u003e\n          \u003ctd\u003e\n            \u003cb\u003eTarget Code\u003c/b\u003e\n          \u003c/td\u003e\n          \u003ctd\u003e\n            \u003cb\u003eComment\u003c/b\u003e\n          \u003c/td\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003ehome\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#equivalent\" title\u003d\"equivalent\"\u003eis equivalent to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eH (home)\u003c/td\u003e\n          \u003ctd/\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003ework\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#equivalent\" title\u003d\"equivalent\"\u003eis equivalent to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eWP (work place)\u003c/td\u003e\n          \u003ctd/\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003etemp\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#equivalent\" title\u003d\"equivalent\"\u003eis equivalent to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eTMP (temporary address)\u003c/td\u003e\n          \u003ctd/\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003eold\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#not-related-to\" title\u003d\"not-related-to\"\u003eis not related to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eBAD (bad address)\u003c/td\u003e\n          \u003ctd\u003eIn the HL7 v3 AD, old is handled by the usablePeriod element, but you have to provide a time, there\u0027s no simple equivalent of flagging an address as old\u003c/td\u003e\n        \u003c/tr\u003e\n      \u003c/table\u003e\n    \u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \u003ch2\u003eExampleMetadata (http://hl7.org/fhir/ConceptMap/example-metadata)\u003c/h2\u003e\n      \u003cp\u003eMapping from \n        \u003ca href\u003d\"valueset-address-use.html\"\u003eAddressUse\u003c/a\u003e to \n        \u003ca href\u003d\"http://terminology.hl7.org/5.1.0/ValueSet-v3-AddressUse.html\"\u003eAddressUse\u003c/a\u003e\n      \u003c/p\u003e\n      \u003cp\u003eDRAFT (not intended for production usage). Published on 2021-07-21 by FHIR (Example) (FHIR project team: \n        \u003ca href\u003d\"http://hl7.org/fhir\"\u003ehttp://hl7.org/fhir\u003c/a\u003e). \n      \u003c/p\u003e\n      \u003cdiv\u003e\n        \u003cp\u003eThis is an example concept map that illustrates usage of the metadata resource elements introduced in R5\u003c/p\u003e\n\n      \u003c/div\u003e\n      \u003cbr/\u003e\n      \u003cp\u003e\n        \u003cb\u003eGroup 1\u003c/b\u003eMapping from \n        \u003ca href\u003d\"codesystem-address-use.html\"\u003eAddressUse\u003c/a\u003e to \n        \u003ca href\u003d\"http://terminology.hl7.org/5.1.0/CodeSystem-v3-AddressUse.html\"\u003eAddressUse\u003c/a\u003e\n      \u003c/p\u003e\n      \u003ctable class\u003d\"grid\"\u003e\n        \u003ctr\u003e\n          \u003ctd\u003e\n            \u003cb\u003eSource Code\u003c/b\u003e\n          \u003c/td\u003e\n          \u003ctd\u003e\n            \u003cb\u003eRelationship\u003c/b\u003e\n          \u003c/td\u003e\n          \u003ctd\u003e\n            \u003cb\u003eTarget Code\u003c/b\u003e\n          \u003c/td\u003e\n          \u003ctd\u003e\n            \u003cb\u003eComment\u003c/b\u003e\n          \u003c/td\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003ehome\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#equivalent\" title\u003d\"equivalent\"\u003eis equivalent to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eH (home address)\u003c/td\u003e\n          \u003ctd/\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003ework\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#equivalent\" title\u003d\"equivalent\"\u003eis equivalent to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eWP (work place)\u003c/td\u003e\n          \u003ctd/\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003etemp (Temporary)\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#equivalent\" title\u003d\"equivalent\"\u003eis equivalent to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eTMP (temporary address)\u003c/td\u003e\n          \u003ctd/\u003e\n        \u003c/tr\u003e\n        \u003ctr\u003e\n          \u003ctd\u003eold (Old / Incorrect)\u003c/td\u003e\n          \u003ctd\u003e\n            \u003ca href\u003d\"codesystem-concept-map-relationship.html#not-related-to\" title\u003d\"not-related-to\"\u003eis not related to\u003c/a\u003e\n          \u003c/td\u003e\n          \u003ctd\u003eBAD (bad address)\u003c/td\u003e\n          \u003ctd\u003eIn the HL7 v3 AD, old is handled by the usablePeriod element, but you have to provide a time, there\u0027s no simple equivalent of flagging an address as old\u003c/td\u003e\n        \u003c/tr\u003e\n      \u003c/table\u003e\n    \u003c/div\u003e"
   },
   "url": "http://hl7.org/fhir/ConceptMap/example-metadata",
   "identifier": [
@@ -17,7 +17,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.14.5"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ExampleMetadata",
   "title": "Metadata Example",
   "status": "draft",
@@ -112,18 +112,18 @@
       "element": [
         {
           "code": "home",
-          "display": "home",
+          "display": "Home",
           "target": [
             {
               "code": "H",
-              "display": "home",
+              "display": "home address",
               "relationship": "equivalent"
             }
           ]
         },
         {
           "code": "work",
-          "display": "work",
+          "display": "Work",
           "target": [
             {
               "code": "WP",
@@ -134,7 +134,7 @@
         },
         {
           "code": "temp",
-          "display": "temp",
+          "display": "Temporary",
           "target": [
             {
               "code": "TMP",
@@ -145,7 +145,7 @@
         },
         {
           "code": "old",
-          "display": "old",
+          "display": "Old / Incorrect",
           "target": [
             {
               "code": "BAD",

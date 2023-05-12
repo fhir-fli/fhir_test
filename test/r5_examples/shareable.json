@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/Shareable",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "Shareable",
   "title": "shareable",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -29,7 +29,7 @@
       ]
     }
   ],
-  "description": "Logical Model: A pattern to be followed by resources that represent a shareable knowledge artifact such as a ValueSet, Profile, Library, Decision Support Rule, or Quality Measure.",
+  "description": "Logical Model: A pattern to be followed by [canonical resources](canonicalresource.html) that meet minimal requirements for sharing via registries or similar mechanisms.",
   "jurisdiction": [
     {
       "coding": [
@@ -42,7 +42,7 @@
     }
   ],
   "purpose": "The intent of this pattern is to ensure that artifacts have enough metadata to make sharing them through a public repository reliable.",
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "rim",
@@ -65,7 +65,7 @@
         "id": "Shareable",
         "path": "Shareable",
         "short": "Shareable Pattern",
-        "definition": "A pattern to be followed by resources that represent a shareable knowledge artifact such as a ValueSet, Profile, Library, Decision Support Rule, or Quality Measure.",
+        "definition": "A pattern to be followed by [canonical resources](canonicalresource.html) that meet minimal requirements for sharing via registries or similar mechanisms.",
         "comment": "The Shareable pattern establishes the minimum expectations for exchanging an artifact, including the URL, version, name, and publisher. Knowledge artifact resources would typically define a Shareable profile based on this pattern, rather than adopting the constraints directly on the resource.",
         "min": 0,
         "max": "*",
@@ -162,6 +162,50 @@
         ],
         "isModifier": false,
         "isSummary": true
+      },
+      {
+        "id": "Shareable.versionAlgorithm[x]",
+        "path": "Shareable.versionAlgorithm[x]",
+        "short": "How to compare versions",
+        "definition": "Indicates the mechanism used to compare versions to determine which is more current.",
+        "comment": "If set as a string, this is a FHIRPath expression that has two additional context variables passed in - %version1 and %version2 and will return a negative number if version1 is newer, a positive number if version2 and a 0 if the version ordering can\u0027t be successfully be determined.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Shareable.versionAlgorithm[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          },
+          {
+            "code": "Coding"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() \u003e id.count())",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "VersionAlgorithm"
+            }
+          ],
+          "strength": "extensible",
+          "description": "Indicates the mechanism used to compare versions to determine which is more current",
+          "valueSet": "http://hl7.org/fhir/ValueSet/version-algorithm"
+        }
       },
       {
         "id": "Shareable.name",
@@ -267,7 +311,7 @@
           ],
           "strength": "required",
           "description": "The lifecycle status of an artifact.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0-snapshot3"
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0-cibuild"
         }
       },
       {
@@ -403,7 +447,7 @@
           ],
           "strength": "required",
           "description": "A level of knowledge representation provided by this artifact",
-          "valueSet": "http://hl7.org/fhir/ValueSet/knowledge-representation-level|5.0.0-snapshot3"
+          "valueSet": "http://hl7.org/fhir/ValueSet/knowledge-representation-level|5.0.0-cibuild"
         }
       }
     ]

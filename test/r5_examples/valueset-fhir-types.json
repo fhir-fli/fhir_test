@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "fhir-types",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-04-01T06:23:11.471+11:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -32,12 +32,12 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3299"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "FHIRTypes",
   "title": "All FHIR Types",
   "status": "active",
-  "experimental": true,
-  "date": "2022-12-14T07:12:54+11:00",
+  "experimental": false,
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "HL7 (FHIR Project)",
   "contact": [
     {

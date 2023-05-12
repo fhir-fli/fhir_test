@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>id</td>
+          <td>type</td>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#id">id</a>
@@ -39,7 +43,7 @@
           <td/>
           <td>
             <div>
-              <p>At the Instance level, this parameter is ignored. At the Resource level, one or more parameters containing a FHIR id for a Subscription to get a token for. In the absense of any specified ids, the server may either return a token for all Subscriptions available to the caller with a channel-type of websocket or fail the request.</p>
+              <p>At the Instance level, this parameter is ignored. At the Resource level, one or more parameters containing a FHIR id for a Subscription to get a token for. In the absence of any specified ids, the server may either return a token for all Subscriptions available to the caller with a channel-type of websocket or fail the request.</p>
 
             </div>
           </td>
@@ -47,6 +51,7 @@
         <tr>
           <td>OUT</td>
           <td>token</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -54,7 +59,7 @@
           <td/>
           <td>
             <div>
-              <p>An access token that a client may use to show authorization during a websocket connection.</p>
+              <p>An access token that a client may use to show authorization during a websocket connection. The security details of the token are implementation-dependent and beyond the scope of this operation definition.</p>
 
             </div>
           </td>
@@ -62,6 +67,7 @@
         <tr>
           <td>OUT</td>
           <td>expiration</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#dateTime">dateTime</a>
@@ -77,6 +83,7 @@
         <tr>
           <td>OUT</td>
           <td>subscription</td>
+          <td/>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -92,6 +99,7 @@
         <tr>
           <td>OUT</td>
           <td>websocket-url</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#url">url</a>
@@ -105,7 +113,6 @@
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -115,13 +122,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/Subscription-get-ws-binding-token"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="GetWsBindingToken"/>
   <title value="Get a binding token for use in a websocket connection"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -150,9 +157,10 @@
   <parameter>
     <name value="id"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="At the Instance level, this parameter is ignored. At the Resource level, one or more parameters containing a FHIR id for a Subscription to get a token for. In the absense of any specified ids, the server may either return a token for all Subscriptions available to the caller with a channel-type of websocket or fail the request."/>
+    <documentation value="At the Instance level, this parameter is ignored. At the Resource level, one or more parameters containing a FHIR id for a Subscription to get a token for. In the absence of any specified ids, the server may either return a token for all Subscriptions available to the caller with a channel-type of websocket or fail the request."/>
     <type value="id"/>
   </parameter>
   <parameter>
@@ -160,7 +168,7 @@
     <use value="out"/>
     <min value="1"/>
     <max value="1"/>
-    <documentation value="An access token that a client may use to show authorization during a websocket connection."/>
+    <documentation value="An access token that a client may use to show authorization during a websocket connection. The security details of the token are implementation-dependent and beyond the scope of this operation definition."/>
     <type value="string"/>
   </parameter>
   <parameter>

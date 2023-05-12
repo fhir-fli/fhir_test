@@ -41,18 +41,15 @@
       ]
     }
   ],
-  "provision": {
-    "type": "deny",
-    "provision": [
-      {
-        "type": "permit",
-        "period": {
-          "start": "1964-01-01",
-          "end": "2019-01-01"
-        }
+  "decision": "deny",
+  "provision": [
+    {
+      "period": {
+        "start": "1964-01-01",
+        "end": "2019-01-01"
       }
-    ]
-  },
+    }
+  ],
   "meta": {
     "tag": [
       {

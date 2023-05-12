@@ -16,6 +16,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -31,6 +34,7 @@
         <tr>
           <td>IN</td>
           <td>name</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -46,6 +50,7 @@
         <tr>
           <td>IN</td>
           <td>concept</td>
+          <td/>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a>
@@ -61,6 +66,7 @@
         <tr>
           <td>IN</td>
           <td>version</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -76,6 +82,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="conceptmap.html">ConceptMap</a>
@@ -89,7 +96,6 @@
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -99,13 +105,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Closure"/>
   <title value="Closure Table Maintenance"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>

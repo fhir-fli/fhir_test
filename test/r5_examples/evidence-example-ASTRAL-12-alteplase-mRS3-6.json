@@ -3,7 +3,7 @@
   "id": "example-ASTRAL-12-alteplase-mRS3-6",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \u003cp\u003e\n        \u0026quot;Risk of mRS3-6 at 90 days after Alteplase for Stroke if ASTRAL score 12\u0026quot; is a univariate risk estimate.\n      \u003c/p\u003e\n\t\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \n      \u003cp\u003e\n        \u0026quot;Risk of mRS3-6 at 90 days after Alteplase for Stroke if ASTRAL score 12\u0026quot; is a univariate risk estimate.\n      \u003c/p\u003e\n\t\n    \u003c/div\u003e"
   },
   "url": "http://hl7.org/fhir/Evidence/example-ASTRAL-12-alteplase-mRS3-6",
   "identifier": [
@@ -12,6 +12,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.10.2"
     }
   ],
+  "name": "RiskOfMRS36At90DaysAfterAlteplaseForStrokeIfASTRALScore12",
   "title": "Risk of mRS3-6 at 90 days after Alteplase for Stroke if ASTRAL score 12",
   "status": "draft",
   "relatedArtifact": [
@@ -114,7 +115,7 @@
     {
       "coding": [
         {
-          "system": "http://hl7.org/fhir/research-study-classifiers",
+          "system": "http://hl7.org/fhir/study-design",
           "code": "SEVCO:01016",
           "display": "Uncontrolled cohort design"
         }
@@ -161,7 +162,7 @@
       "rating": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/certainty-rating",
+            "system": "http://hl7.org/fhir/certainty-rating",
             "code": "high",
             "display": "High quality"
           }
@@ -181,7 +182,7 @@
           "rating": {
             "coding": [
               {
-                "system": "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                "system": "http://hl7.org/fhir/certainty-rating",
                 "code": "no-concern",
                 "display": "no serious concern"
               }
@@ -202,7 +203,7 @@
           "rating": {
             "coding": [
               {
-                "system": "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                "system": "http://hl7.org/fhir/certainty-rating",
                 "code": "no-concern",
                 "display": "no serious concern"
               }
@@ -222,7 +223,7 @@
           "rating": {
             "coding": [
               {
-                "system": "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                "system": "http://hl7.org/fhir/certainty-rating",
                 "code": "no-concern",
                 "display": "no serious concern"
               }
@@ -243,7 +244,7 @@
           "rating": {
             "coding": [
               {
-                "system": "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                "system": "http://hl7.org/fhir/certainty-rating",
                 "code": "no-concern",
                 "display": "no serious concern"
               }
@@ -263,7 +264,7 @@
           "rating": {
             "coding": [
               {
-                "system": "http://terminology.hl7.org/CodeSystem/certainty-rating",
+                "system": "http://hl7.org/fhir/certainty-rating",
                 "code": "no-concern",
                 "display": "no serious concern"
               }

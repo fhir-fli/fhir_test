@@ -9,8 +9,8 @@
       "status": "active",
       "description": "Type options for Device.property.value[x]",
       "expansion": {
-        "identifier": "urn:uuid:5b65540b-1721-4a2f-89ec-cb9f0b31a022",
-        "timestamp": "2022-12-14T07:16:21+11:00",
+        "identifier": "urn:uuid:bb14e82a-0548-49dd-b006-011041f56dab",
+        "timestamp": "2023-03-31T19:26:54+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -57,10 +57,10 @@
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International (Orders and Observations)",
   "item": [
     {
@@ -199,7 +199,7 @@
                 }
               ],
               "linkId": "Device.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -252,7 +252,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -341,7 +341,7 @@
                 }
               ],
               "linkId": "Device.extension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -369,7 +369,7 @@
                 }
               ],
               "linkId": "Device.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -461,7 +461,7 @@
                 }
               ],
               "linkId": "Device.displayName-flyover",
-              "text": "The name used to display by default when the device is referenced. Based on intent of use by the resource creator, this may reflect one of the names in Device.deviceName, or may be another simple name.",
+              "text": "The name used to display by default when the device is referenced. Based on intent of use by the resource creator, this may reflect one of the names in Device.name, or may be another simple name.",
               "type": "display"
             },
             {
@@ -605,7 +605,7 @@
                     }
                   ],
                   "linkId": "Device.udiCarrier.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -633,7 +633,7 @@
                     }
                   ],
                   "linkId": "Device.udiCarrier.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -939,7 +939,7 @@
                 }
               ],
               "linkId": "Device.status-flyover",
-              "text": "The Device record status. This is not the status of the device like availability. This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.",
+              "text": "The Device record status. This is not the status of the device like availability.",
               "type": "display"
             },
             {
@@ -1285,7 +1285,7 @@
           ]
         },
         {
-          "linkId": "Device.deviceName",
+          "linkId": "Device.name",
           "text": "The name or names of the device as known to the manufacturer and/or patient",
           "type": "group",
           "required": false,
@@ -1306,7 +1306,7 @@
                   }
                 }
               ],
-              "linkId": "Device.deviceName-flyover",
+              "linkId": "Device.name-flyover",
               "text": "This represents the manufacturer\u0027s name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.",
               "type": "display"
             },
@@ -1321,7 +1321,7 @@
                   "valueString": "string"
                 }
               ],
-              "linkId": "Device.deviceName.id",
+              "linkId": "Device.name.id",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -1341,12 +1341,12 @@
                       }
                     }
                   ],
-                  "linkId": "Device.deviceName.id-flyover",
+                  "linkId": "Device.name.id-flyover",
                   "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
                   "type": "display"
                 },
                 {
-                  "linkId": "Device.deviceName.id.value",
+                  "linkId": "Device.name.id.value",
                   "text": "Unique id for inter-element referencing",
                   "type": "string",
                   "required": false,
@@ -1355,7 +1355,7 @@
               ]
             },
             {
-              "linkId": "Device.deviceName.extension",
+              "linkId": "Device.name.extension",
               "text": "Additional content defined by implementations",
               "type": "group",
               "required": false,
@@ -1376,14 +1376,14 @@
                       }
                     }
                   ],
-                  "linkId": "Device.deviceName.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "linkId": "Device.name.extension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
             },
             {
-              "linkId": "Device.deviceName.modifierExtension",
+              "linkId": "Device.name.modifierExtension",
               "text": "Extensions that cannot be ignored even if unrecognized",
               "type": "group",
               "required": false,
@@ -1404,8 +1404,8 @@
                       }
                     }
                   ],
-                  "linkId": "Device.deviceName.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "linkId": "Device.name.modifierExtension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1425,7 +1425,7 @@
                   "valueString": "string"
                 }
               ],
-              "linkId": "Device.deviceName.name",
+              "linkId": "Device.name.value",
               "type": "group",
               "required": true,
               "repeats": true,
@@ -1445,13 +1445,13 @@
                       }
                     }
                   ],
-                  "linkId": "Device.deviceName.name-flyover",
-                  "text": "The name that identifies the device.",
+                  "linkId": "Device.name.value-flyover",
+                  "text": "The actual name that identifies the device.",
                   "type": "display"
                 },
                 {
-                  "linkId": "Device.deviceName.name.value",
-                  "text": "The name that identifies the device",
+                  "linkId": "Device.name.value.value",
+                  "text": "The term that names the device",
                   "type": "string",
                   "required": false,
                   "repeats": false
@@ -1473,7 +1473,7 @@
                   "valueString": "code"
                 }
               ],
-              "linkId": "Device.deviceName.type",
+              "linkId": "Device.name.type",
               "type": "group",
               "required": true,
               "repeats": true,
@@ -1493,17 +1493,61 @@
                       }
                     }
                   ],
-                  "linkId": "Device.deviceName.type-flyover",
-                  "text": "The type of deviceName. Note that ManufactureDeviceName means that the name is the name as given by the manufacturer, not the name of the manufacturer.\nRegisteredName | UserFriendlyName | PatientReportedName.",
+                  "linkId": "Device.name.type-flyover",
+                  "text": "Indicates the kind of name. RegisteredName | UserFriendlyName | PatientReportedName.",
                   "type": "display"
                 },
                 {
-                  "linkId": "Device.deviceName.type.value",
+                  "linkId": "Device.name.type.value",
                   "text": "type",
                   "type": "coding",
                   "required": false,
                   "repeats": false,
                   "answerConstraint": "optionsOrType"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "boolean"
+                }
+              ],
+              "linkId": "Device.name.display",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "Device.name.display-flyover",
+                  "text": "Indicates the default or preferred name to be displayed.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "Device.name.display.value",
+                  "text": "The preferred device name",
+                  "type": "boolean",
+                  "required": false,
+                  "repeats": false
                 }
               ]
             }
@@ -1788,7 +1832,7 @@
                     }
                   ],
                   "linkId": "Device.version.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -1816,7 +1860,7 @@
                     }
                   ],
                   "linkId": "Device.version.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -2028,8 +2072,8 @@
           ]
         },
         {
-          "linkId": "Device.specialization",
-          "text": "The standard(s) the device supports",
+          "linkId": "Device.conformsTo",
+          "text": "Identifies the standards, specifications, or formal guidances for the capabilities supported by the device",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -2049,8 +2093,8 @@
                   }
                 }
               ],
-              "linkId": "Device.specialization-flyover",
-              "text": "The standards to which the device adheres and may be certified to in support of its capabilities, e.g., communication, performance, process, or measurement standards.",
+              "linkId": "Device.conformsTo-flyover",
+              "text": "Identifies the standards, specifications, or formal guidances for the capabilities supported by the device. The device may be certified as conformant to these specifications e.g., communication, performance, process, measurement, or specialization standards.",
               "type": "display"
             },
             {
@@ -2064,7 +2108,7 @@
                   "valueString": "string"
                 }
               ],
-              "linkId": "Device.specialization.id",
+              "linkId": "Device.conformsTo.id",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -2084,12 +2128,12 @@
                       }
                     }
                   ],
-                  "linkId": "Device.specialization.id-flyover",
+                  "linkId": "Device.conformsTo.id-flyover",
                   "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
                   "type": "display"
                 },
                 {
-                  "linkId": "Device.specialization.id.value",
+                  "linkId": "Device.conformsTo.id.value",
                   "text": "Unique id for inter-element referencing",
                   "type": "string",
                   "required": false,
@@ -2098,7 +2142,7 @@
               ]
             },
             {
-              "linkId": "Device.specialization.extension",
+              "linkId": "Device.conformsTo.extension",
               "text": "Additional content defined by implementations",
               "type": "group",
               "required": false,
@@ -2119,14 +2163,14 @@
                       }
                     }
                   ],
-                  "linkId": "Device.specialization.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "linkId": "Device.conformsTo.extension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
             },
             {
-              "linkId": "Device.specialization.modifierExtension",
+              "linkId": "Device.conformsTo.modifierExtension",
               "text": "Extensions that cannot be ignored even if unrecognized",
               "type": "group",
               "required": false,
@@ -2147,9 +2191,62 @@
                       }
                     }
                   ],
-                  "linkId": "Device.specialization.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "linkId": "Device.conformsTo.modifierExtension-flyover",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+                  "valueInteger": 1
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                  "valueString": "CodeableConcept"
+                }
+              ],
+              "linkId": "Device.conformsTo.category",
+              "text": "Describes the common type of the standard, specification, or formal guidance.  communication | performance | measurement",
+              "type": "group",
+              "required": false,
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "Device.conformsTo.category-flyover",
+                  "text": "Describes the type of the standard, specification, or formal guidance.",
+                  "type": "display"
+                },
+                {
+                  "linkId": "Device.conformsTo.category.coding",
+                  "text": "code:",
+                  "type": "coding",
+                  "required": false,
+                  "repeats": false,
+                  "answerConstraint": "optionsOnly"
+                },
+                {
+                  "linkId": "Device.conformsTo.category.text",
+                  "text": "text:",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
                 }
               ]
             },
@@ -2168,8 +2265,8 @@
                   "valueString": "CodeableConcept"
                 }
               ],
-              "linkId": "Device.specialization.systemType",
-              "text": "Code of the system that identifies the standard that the device adheres to",
+              "linkId": "Device.conformsTo.specification",
+              "text": "Identifies the standard, specification, or formal guidance that the device adheres to",
               "type": "group",
               "required": true,
               "repeats": true,
@@ -2189,12 +2286,12 @@
                       }
                     }
                   ],
-                  "linkId": "Device.specialization.systemType-flyover",
-                  "text": "Code that specifies the system that identifies the specific standard that the device adheres to.",
+                  "linkId": "Device.conformsTo.specification-flyover",
+                  "text": "Code that identifies the specific standard, specification, protocol, formal guidance, regulation, legislation, or certification scheme to which the device adheres.",
                   "type": "display"
                 },
                 {
-                  "linkId": "Device.specialization.systemType.coding",
+                  "linkId": "Device.conformsTo.specification.coding",
                   "text": "code:",
                   "type": "coding",
                   "required": false,
@@ -2202,7 +2299,7 @@
                   "answerConstraint": "optionsOnly"
                 },
                 {
-                  "linkId": "Device.specialization.systemType.text",
+                  "linkId": "Device.conformsTo.specification.text",
                   "text": "text:",
                   "type": "string",
                   "required": false,
@@ -2221,7 +2318,7 @@
                   "valueString": "string"
                 }
               ],
-              "linkId": "Device.specialization.version",
+              "linkId": "Device.conformsTo.version",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -2241,61 +2338,16 @@
                       }
                     }
                   ],
-                  "linkId": "Device.specialization.version-flyover",
-                  "text": "The version of the standard that is used to operate and communicate.",
+                  "linkId": "Device.conformsTo.version-flyover",
+                  "text": "Identifies the specific form or variant of the standard, specification, or formal guidance. This may be a \u0027version number\u0027, release, document edition, publication year, or other label.",
                   "type": "display"
                 },
                 {
-                  "linkId": "Device.specialization.version.value",
-                  "text": "Standard version used",
+                  "linkId": "Device.conformsTo.version.value",
+                  "text": "Specific form or variant of the standard",
                   "type": "string",
                   "required": false,
                   "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "Coding"
-                }
-              ],
-              "linkId": "Device.specialization.category",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.specialization.category-flyover",
-                  "text": "Kind of standards that the device adheres to, e.g., communication, performance or communication.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.specialization.category.value",
-                  "text": "communication | performance | measurement",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
                 }
               ]
             }
@@ -2303,11 +2355,16 @@
         },
         {
           "linkId": "Device.property",
-          "text": "The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties",
+          "text": "Inherent, essentially fixed, characteristics of the device.  e.g., time properties, size, material, etc.",
           "type": "group",
           "required": false,
           "repeats": true,
           "item": [
+            {
+              "linkId": "Device.property-display",
+              "text": "Dynamic or current properties, such as settings, of an individual device are described using a Device instance-specific [DeviceMetric] and recorded using [Observation].  Static characteristics of a device could also be documented in an associated [DeviceDefinition] instance. The Device instance\u0027s properties, and their values, could be, but need not be, the same as those described in an associated DeviceDefinition.",
+              "type": "display"
+            },
             {
               "extension": [
                 {
@@ -2324,7 +2381,7 @@
                 }
               ],
               "linkId": "Device.property-flyover",
-              "text": "Characteristics or features of the device that are otherwise not captured in available attributes, e.g., actual configuration settings, time or timing attributes, resolution, accuracy, and physical attributes.  The focus is on properties of the device actually in use while DeviceDefinition focuses on properties that are available to be used.",
+              "text": "Static or essentially fixed characteristics or features of the device (e.g., time or timing attributes, resolution, accuracy, intended use or instructions for use, and physical attributes) that are not otherwise captured in more specific attributes.",
               "type": "display"
             },
             {
@@ -2394,7 +2451,7 @@
                     }
                   ],
                   "linkId": "Device.property.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -2422,7 +2479,7 @@
                     }
                   ],
                   "linkId": "Device.property.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -2464,7 +2521,7 @@
                     }
                   ],
                   "linkId": "Device.property.type-flyover",
-                  "text": "Code that specifies the property being represented. No codes are specified but the MDC codes are an example: https://terminology.hl7.org/MDC.html.",
+                  "text": "Code that specifies the property, such as resolution, color, size, being represented.",
                   "type": "display"
                 },
                 {
@@ -2496,7 +2553,7 @@
                 }
               ],
               "linkId": "Device.property.value[x]",
-              "text": "Property value - as a code, quantity, boolean, string or attachment",
+              "text": "Value of the property",
               "type": "group",
               "required": true,
               "repeats": true,
@@ -2517,7 +2574,7 @@
                     }
                   ],
                   "linkId": "Device.property.value[x]-flyover",
-                  "text": "Property value - can be a code, quantity, boolean, string or attachment. The string is used for properties that are intrinsically text, such as warning text, or assemlby instructions. CodeableConcept.text also supports unencoded text but should be used where the characteristic is a concept that might be coded but there is no assigned code for the present value. For example, a security class can be a code like \u0027Class 1\u0027 but in some cases may contain a string like \u0027Depending on the settings\u0027 - in this case the property is normally coded but this is an exception",
+                  "text": "The value of the property specified by the associated property.type code. The text element in CodeableConcept.text is used for properties which would usually be coded (such as the size of an implant, or a security classification) but for which there is not currently an appropriate concept in the vocabulary (e.g. a custom implant size, or a security classification which depends on configuration). Otherwise the string choice type is used for descriptive properties, or instructions.",
                   "type": "display"
                 },
                 {
@@ -2708,8 +2765,18 @@
           ]
         },
         {
-          "linkId": "Device.operation",
-          "text": "The details about the device when it is in use to describe the actions, conditions and status",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "CodeableConcept"
+            }
+          ],
+          "linkId": "Device.mode",
+          "text": "The designated condition for performing a task",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -2729,472 +2796,40 @@
                   }
                 }
               ],
-              "linkId": "Device.operation-flyover",
-              "text": "The status of the device itself - whether it is switched on, or activated, etc.",
+              "linkId": "Device.mode-flyover",
+              "text": "The designated condition for performing a task with the device.",
               "type": "display"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "string"
-                }
-              ],
-              "linkId": "Device.operation.id",
-              "type": "group",
+              "linkId": "Device.mode.coding",
+              "text": "code:",
+              "type": "coding",
               "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.id-flyover",
-                  "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.operation.id.value",
-                  "text": "Unique id for inter-element referencing",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
+              "repeats": false,
+              "answerConstraint": "optionsOnly"
             },
             {
-              "linkId": "Device.operation.extension",
-              "text": "Additional content defined by implementations",
-              "type": "group",
+              "linkId": "Device.mode.text",
+              "text": "text:",
+              "type": "string",
               "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-                  "type": "display"
-                }
-              ]
-            },
-            {
-              "linkId": "Device.operation.modifierExtension",
-              "text": "Extensions that cannot be ignored even if unrecognized",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-                  "type": "display"
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "CodeableConcept"
-                }
-              ],
-              "linkId": "Device.operation.status",
-              "text": "Device operational condition",
-              "type": "group",
-              "required": true,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.status-flyover",
-                  "text": "The state or condition of the device\u0027s operation.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.operation.status.coding",
-                  "text": "code:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.operation.status.text",
-                  "text": "text:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "CodeableConcept"
-                }
-              ],
-              "linkId": "Device.operation.statusReason",
-              "text": "The rationale given for the current operational status",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.statusReason-flyover",
-                  "text": "The reasons given for the current operational status - i.e. why is the device switched on etc.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.operation.statusReason.coding",
-                  "text": "code:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.operation.statusReason.text",
-                  "text": "text:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "Reference"
-                }
-              ],
-              "linkId": "Device.operation.operator",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.operator-flyover",
-                  "text": "The individual performing the action enabled by the device.",
-                  "type": "display"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                      "valueCode": "Patient, Practitioner, RelatedPerson, RelatedPerson"
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
-                      "valueString": "subject\u003d$subj\u0026patient\u003d$subj\u0026encounter\u003d$encounter"
-                    }
-                  ],
-                  "linkId": "Device.operation.operator.value",
-                  "text": "The individual performing the action enabled by the device",
-                  "type": "reference",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "CodeableConcept"
-                }
-              ],
-              "linkId": "Device.operation.mode",
-              "text": "The designated condition for performing a task",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.mode-flyover",
-                  "text": "The designated condition for performing a task with the device.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.operation.mode.coding",
-                  "text": "code:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.operation.mode.text",
-                  "text": "text:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "Quantity"
-                }
-              ],
-              "linkId": "Device.operation.cycle",
-              "text": "The series of occurrences that repeats during the operation of the device",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.cycle-flyover",
-                  "text": "The series of occurrences that repeats during the operation of the device.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.operation.cycle.comparator",
-                  "text": "comp:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.operation.cycle.value",
-                  "text": "value:",
-                  "type": "decimal",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "Device.operation.cycle.units",
-                  "text": "units:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "Device.operation.cycle.code",
-                  "text": "coded units:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "Device.operation.cycle.system",
-                  "text": "units system:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "Quantity"
-                }
-              ],
-              "linkId": "Device.operation.duration",
-              "text": "A measurement of time during the device\u0027s operation (e.g., days, hours, mins, etc)",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.operation.duration-flyover",
-                  "text": "A measurement of time during the device\u0027s operation (e.g., days, hours, mins, etc).",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.operation.duration.comparator",
-                  "text": "comp:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.operation.duration.value",
-                  "text": "value:",
-                  "type": "decimal",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "Device.operation.duration.units",
-                  "text": "units:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "Device.operation.duration.code",
-                  "text": "coded units:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "Device.operation.duration.system",
-                  "text": "units system:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
+              "repeats": false
             }
           ]
         },
         {
-          "linkId": "Device.association",
-          "text": "Current association of the device",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "Quantity"
+            }
+          ],
+          "linkId": "Device.cycle",
+          "text": "The series of occurrences that repeats during the operation of the device",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -3214,303 +2849,119 @@
                   }
                 }
               ],
-              "linkId": "Device.association-flyover",
-              "text": "The details about the device when it is affixed or inside of a patient.",
+              "linkId": "Device.cycle-flyover",
+              "text": "The series of occurrences that repeats during the operation of the device.",
               "type": "display"
             },
             {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "string"
-                }
-              ],
-              "linkId": "Device.association.id",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.association.id-flyover",
-                  "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.association.id.value",
-                  "text": "Unique id for inter-element referencing",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "linkId": "Device.association.extension",
-              "text": "Additional content defined by implementations",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.association.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-                  "type": "display"
-                }
-              ]
-            },
-            {
-              "linkId": "Device.association.modifierExtension",
-              "text": "Extensions that cannot be ignored even if unrecognized",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.association.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-                  "type": "display"
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-minOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "CodeableConcept"
-                }
-              ],
-              "linkId": "Device.association.status",
-              "text": "Device useage state",
-              "type": "group",
-              "required": true,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.association.status-flyover",
-                  "text": "The state of the usage or application of the device.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.association.status.coding",
-                  "text": "code:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.association.status.text",
-                  "text": "text:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "CodeableConcept"
-                }
-              ],
-              "linkId": "Device.association.statusReason",
-              "text": "The reasons given for the current association status",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.association.statusReason-flyover",
-                  "text": "The reasons given for the current association status - i.e. why is the device explanted, or attached to the patient, etc.",
-                  "type": "display"
-                },
-                {
-                  "linkId": "Device.association.statusReason.coding",
-                  "text": "code:",
-                  "type": "coding",
-                  "required": false,
-                  "repeats": false,
-                  "answerConstraint": "optionsOnly"
-                },
-                {
-                  "linkId": "Device.association.statusReason.text",
-                  "text": "text:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                  "valueString": "Reference"
-                }
-              ],
-              "linkId": "Device.association.humanSubject",
-              "type": "group",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "linkId": "Device.association.humanSubject-flyover",
-                  "text": "The individual to whom the device is affixed or inserted in their body.",
-                  "type": "display"
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                      "valueCode": "Patient, Patient"
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
-                      "valueString": "subject\u003d$subj\u0026patient\u003d$subj\u0026encounter\u003d$encounter"
-                    }
-                  ],
-                  "linkId": "Device.association.humanSubject.value",
-                  "text": "The individual associated with the device",
-                  "type": "reference",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                  "valueInteger": 1
-                }
-              ],
-              "linkId": "Device.association.bodyStructure",
-              "text": "Current anatomical location of device in/on humanSubject",
-              "type": "group",
+              "linkId": "Device.cycle.comparator",
+              "text": "comp:",
+              "type": "coding",
               "required": false,
               "repeats": false,
-              "item": [
+              "answerConstraint": "optionsOnly"
+            },
+            {
+              "linkId": "Device.cycle.value",
+              "text": "value:",
+              "type": "decimal",
+              "required": false,
+              "repeats": false
+            },
+            {
+              "linkId": "Device.cycle.units",
+              "text": "units:",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            },
+            {
+              "linkId": "Device.cycle.code",
+              "text": "coded units:",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            },
+            {
+              "linkId": "Device.cycle.system",
+              "text": "units system:",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "Quantity"
+            }
+          ],
+          "linkId": "Device.duration",
+          "text": "A measurement of time during the device\u0027s operation (e.g., days, hours, mins, etc.)",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
                 {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ]
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
                       }
-                    }
-                  ],
-                  "linkId": "Device.association.bodyStructure-flyover",
-                  "text": "The current anatomical location of the device in/on the humanSubject where it is attached or placed.",
-                  "type": "display"
+                    ]
+                  }
                 }
-              ]
+              ],
+              "linkId": "Device.duration-flyover",
+              "text": "A measurement of time during the device\u0027s operation (e.g., days, hours, mins, etc.).",
+              "type": "display"
+            },
+            {
+              "linkId": "Device.duration.comparator",
+              "text": "comp:",
+              "type": "coding",
+              "required": false,
+              "repeats": false,
+              "answerConstraint": "optionsOnly"
+            },
+            {
+              "linkId": "Device.duration.value",
+              "text": "value:",
+              "type": "decimal",
+              "required": false,
+              "repeats": false
+            },
+            {
+              "linkId": "Device.duration.units",
+              "text": "units:",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            },
+            {
+              "linkId": "Device.duration.code",
+              "text": "coded units:",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            },
+            {
+              "linkId": "Device.duration.system",
+              "text": "units system:",
+              "type": "string",
+              "required": false,
+              "repeats": false
             }
           ]
         },
@@ -3553,7 +3004,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Organization, Organization"
+                  "valueCode": "Organization"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -3664,7 +3115,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Location, Location"
+                  "valueCode": "Location"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -3758,7 +3209,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Endpoint, Endpoint"
+                  "valueCode": "Endpoint"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -3781,6 +3232,11 @@
           "repeats": true,
           "item": [
             {
+              "linkId": "Device.gateway-display",
+              "text": "The Device.gateway may be used when the Device being referenced has a gateway and/or to capture one or more gateways associated with the device. If the Gateway is included in the Observation resource, the Observation.gatewayDevice should be used instead.",
+              "type": "display"
+            },
+            {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -3796,7 +3252,7 @@
                 }
               ],
               "linkId": "Device.gateway-flyover",
-              "text": "The linked device acting as a communication/data collector, translator or controller for the current device (e.g., mobile phone application that relays a blood pressure device\u0027s data).",
+              "text": "The linked device acting as a communication controller, data collector, translator, or concentrator for the current device (e.g., mobile phone application that relays a blood pressure device\u0027s data).",
               "type": "display"
             }
           ]
@@ -3923,7 +3379,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Device, Device"
+                  "valueCode": "Device"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",

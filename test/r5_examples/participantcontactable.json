@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/ParticipantContactable",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ParticipantContactable",
   "title": "participantcontactable",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "rim",
@@ -88,8 +88,8 @@
       {
         "id": "ParticipantContactable.telecom",
         "path": "ParticipantContactable.telecom",
-        "short": "A contact detail for the participant",
-        "definition": "A contact detail (e.g. a telephone number or an email address) by which the participant may be contacted.",
+        "short": "A contact detail for the {{title}}",
+        "definition": "A contact detail (e.g. a telephone number or an email address) by which the {{title}} may be contacted.",
         "requirements": "Participants have (primary) ways to contact them in some way such as phone, email.",
         "min": 0,
         "max": "*",
@@ -124,9 +124,9 @@
       {
         "id": "ParticipantContactable.address",
         "path": "ParticipantContactable.address",
-        "short": "An address for the individual",
-        "definition": "An address for the participant.",
-        "requirements": "May need to keep track of participant addresses for contacting, billing or reporting requirements and also to help with identification.",
+        "short": "An address for the {{title}}",
+        "definition": "An address where the {{title}} can be reached.",
+        "requirements": "May need to keep track of {{title}} addresses for contacting, billing or reporting requirements and also to help with identification.",
         "min": 0,
         "max": "*",
         "base": {

@@ -43,6 +43,16 @@
     }
   ],
   "status": "current",
+  "modality": [
+    {
+      "coding": [
+        {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "US"
+        }
+      ]
+    }
+  ],
   "subject": {
     "reference": "Patient/example"
   },
@@ -51,19 +61,22 @@
       "concept": {
         "coding": [
           {
-            "system": "http://dicom.nema.org/resources/ontology/DCM",
-            "code": "US"
+            "system": "http://snomed.info/sct",
+            "code": "399067008",
+            "display": "Lateral projection"
           }
         ]
       }
-    },
+    }
+  ],
+  "bodySite": [
     {
       "concept": {
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "399067008",
-            "display": "Lateral projection"
+            "code": "67734004",
+            "display": "Upper Trunk Structure"
           }
         ]
       }

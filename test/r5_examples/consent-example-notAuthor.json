@@ -41,29 +41,26 @@
       ]
     }
   ],
-  "provision": {
-    "type": "permit",
-    "provision": [
-      {
-        "type": "deny",
-        "actor": [
-          {
-            "role": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                  "code": "CST"
-                }
-              ]
-            },
-            "reference": {
-              "reference": "Organization/f001"
-            }
+  "decision": "permit",
+  "provision": [
+    {
+      "actor": [
+        {
+          "role": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                "code": "CST"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "Organization/f001"
           }
-        ]
-      }
-    ]
-  },
+        }
+      ]
+    }
+  ],
   "meta": {
     "tag": [
       {

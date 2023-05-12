@@ -7,7 +7,7 @@
       <display value="test health data"/>
     </security>
   </meta>
-  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Device</b><a name="example-udi2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Device "example-udi2" </p></div><p><b>identifier</b>: A99971312345600</p><h3>UdiCarriers</h3><table class="grid"><tr><td>-</td><td><b>DeviceIdentifier</b></td><td><b>Issuer</b></td><td><b>Jurisdiction</b></td></tr><tr><td>*</td><td>A9999XYZ100T0474</td><td><a href="http://hl7.org/fhir/NamingSystem/iccbba-other">http://hl7.org/fhir/NamingSystem/iccbba-other</a></td><td><a href="http://hl7.org/fhir/NamingSystem/fda-udi">http://hl7.org/fhir/NamingSystem/fda-udi</a></td></tr></table><p><b>status</b>: inactive</p><p><b>manufacturer</b>: Acme Devices, Inc</p><p><b>manufactureDate</b>: 2013-02-01</p><p><b>expirationDate</b>: <span title=" &#x9;013032 = this is the manufacturing date expressed in YYYDDD (three digit year, three digit day number) ">2014-02-01</span></p><h3>Associations</h3><table class="grid"><tr><td>-</td><td><b>Status</b></td><td><b>HumanSubject</b></td></tr><tr><td>*</td><td>attached <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (device-associationstatus#attached)</span></td><td><a href="patient-example.html">Patient/example</a> "Peter CHALMERS"</td></tr></table></div></text><identifier>
+  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Device</b><a name="example-udi2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Device "example-udi2" </p></div><p><b>identifier</b>: A99971312345600</p><h3>UdiCarriers</h3><table class="grid"><tr><td>-</td><td><b>DeviceIdentifier</b></td><td><b>Issuer</b></td><td><b>Jurisdiction</b></td></tr><tr><td>*</td><td>A9999XYZ100T0474</td><td><a href="http://hl7.org/fhir/NamingSystem/iccbba-other">http://hl7.org/fhir/NamingSystem/iccbba-other</a></td><td><a href="http://hl7.org/fhir/NamingSystem/fda-udi">http://hl7.org/fhir/NamingSystem/fda-udi</a></td></tr></table><p><b>status</b>: inactive</p><p><b>manufacturer</b>: Acme Devices, Inc</p><p><b>manufactureDate</b>: 2013-02-01</p><p><b>expirationDate</b>: <span title=" &#x9;013032 = this is the manufacturing date expressed in YYYDDD (three digit year, three digit day number) ">2014-02-01</span></p></div></text><identifier>
 	   <type>
 	     <coding>
      	     <system value="http://hl7.org/fhir/NamingSystem/iccbba-din"/>
@@ -26,15 +26,15 @@
 	    <!--  	013032 = this is the manufacturing date expressed in YYYDDD (three digit year, three digit day number)  -->
 	<expirationDate value="2014-02-01"/>
 	    <!--  014032 = this is the expiration date expressed in YYYDDD (three digit year, three digit day number)  -->
-	<association>
+	    <!--   <association>
 	  <status> 
 	     <coding>
-		   <system value="http://terminology.hl7.org/CodeSystem/device-associationstatus"/>
+		   <system value="http://terminology.hl7.org/CodeSystem/device-associationstatus" />
            <code value="attached"/>
 		 </coding>
 	  </status>
       <humanSubject>
 		<reference value="Patient/example"/>
 	  </humanSubject>
-	</association>
+	</association>   -->
 </Device>

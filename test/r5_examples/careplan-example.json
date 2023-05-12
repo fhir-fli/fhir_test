@@ -106,64 +106,15 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "161832001",
-                "display": "Progressive weight loss"
+                "code": "6397004",
+                "display": "Muscular strength development exercise"
               }
             ]
-          }
-        },
-        {
-          "reference": {
-            "reference": "Observation/example",
-            "display": "Weight Measured"
           }
         }
       ],
-      "plannedActivityDetail": {
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "3141-9",
-              "display": "Weight Measured"
-            },
-            {
-              "system": "http://snomed.info/sct",
-              "code": "27113001",
-              "display": "Body weight"
-            }
-          ]
-        },
-        "status": "completed",
-        "statusReason": {
-          "text": "Achieved weight loss to mitigate diabetes risk."
-        },
-        "doNotPerform": false,
-        "scheduledTiming": {
-          "repeat": {
-            "frequency": 1,
-            "period": 1,
-            "periodUnit": "d"
-          }
-        },
-        "location": {
-          "concept": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "PTRES",
-                "display": "Patient\u0027s Residence"
-              }
-            ]
-          }
-        },
-        "reportedBoolean": false,
-        "performer": [
-          {
-            "reference": "Patient/example",
-            "display": "Peter James Chalmers"
-          }
-        ]
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/benchpress"
       }
     }
   ],

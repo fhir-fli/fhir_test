@@ -16,6 +16,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -31,6 +34,7 @@
         <tr>
           <td>IN</td>
           <td>id</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -46,34 +50,33 @@
         <tr>
           <td>IN</td>
           <td>sourceType</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
           </td>
           <td>
-            <a href="valueset-namingsystem-identifier-type.html">http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-snapshot3</a> (Required)
+            <a href="valueset-namingsystem-identifier-type.html">Naming System Identifier Type</a> (Required)
           </td>
-          <td>
-            <div/>
-          </td>
+          <td/>
         </tr>
         <tr>
           <td>IN</td>
           <td>targetType</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
           </td>
           <td>
-            <a href="valueset-namingsystem-identifier-type.html">http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-snapshot3</a> (Required)
+            <a href="valueset-namingsystem-identifier-type.html">Naming System Identifier Type</a> (Required)
           </td>
-          <td>
-            <div/>
-          </td>
+          <td/>
         </tr>
         <tr>
           <td>IN</td>
           <td>preferredOnly</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -89,6 +92,7 @@
         <tr>
           <td>IN</td>
           <td>date</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#dateTime">dateTime</a>
@@ -104,6 +108,7 @@
         <tr>
           <td>OUT</td>
           <td>result</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -119,6 +124,7 @@
         <tr>
           <td>OUT</td>
           <td>targetIdentifier</td>
+          <td/>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -134,6 +140,7 @@
         <tr>
           <td>OUT</td>
           <td>targetIdentifer.preferred</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -149,6 +156,7 @@
         <tr>
           <td>OUT</td>
           <td>targetIdentifier.period</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#Period">Period</a>
@@ -179,13 +187,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/NamingSystem-translate-id"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="TranslateId"/>
   <title value="Translate id"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -197,7 +205,7 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
-  <description value="This operation returns an identifier of the target type. The operation takes 5 parameters:     &#xA;&#xA;* a source identifier value - either a URI, an OID, or a v2 table 0396 (other) code  &#xA;*  a code for what type of identifier the source identifier is     &#xA;&#xA;* a code for what kind of identifier is desired (URI, OID, v2 table 0396 identifier)     &#xA;&#xA;* a optional parameter preferredOnly for whether only the preferred identifier is desired     &#xA;&#xA;* an optional date to return only identifiers that have a validity period that includes that date   &#xA;&#xA;and returns either the requested identifier(s), or an HTTP errors response with an OperationOutcome because either the provided identifier was not recognized, or the requested identiifer type is not known."/>
+  <description value="This operation returns an identifier of the target type. The operation takes 5 parameters:     &#xA;&#xA;* a source identifier value - either a URI, an OID, or a v2 table 0396 (other) code  &#xA;*  a code for what type of identifier the source identifier is     &#xA;&#xA;* a code for what kind of identifier is desired (URI, OID, v2 table 0396 identifier)     &#xA;&#xA;* an optional parameter preferredOnly for whether only the preferred identifier is desired     &#xA;&#xA;* an optional date to return only identifiers that have a validity period that includes that date   &#xA;&#xA;and returns either the requested identifier(s), or an HTTP errors response with an OperationOutcome because either the provided identifier was not recognized, or the requested identiifer type is not known."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -231,7 +239,7 @@
         <valueString value="NamingSystemIdentifierType"/>
       </extension>
       <strength value="required"/>
-      <valueSet value="http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-snapshot3"/>
+      <valueSet value="http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-cibuild"/>
     </binding>
   </parameter>
   <parameter>
@@ -245,7 +253,7 @@
         <valueString value="NamingSystemIdentifierType"/>
       </extension>
       <strength value="required"/>
-      <valueSet value="http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-snapshot3"/>
+      <valueSet value="http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-cibuild"/>
     </binding>
   </parameter>
   <parameter>

@@ -2,14 +2,14 @@
   "resourceType": "CodeSystem",
   "id": "contract-legalstate",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
   },
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003eEach definition includes usage notes explaining\n            the precedence order in contract lifecycle - i.e., while only some stages are required,\n            the order in which they may occur is deterministic; and a map to comparable FHIR and v.3\n            status codes. It follows guidance about use of status codes in FHIR in\n            \u003ca href\u003d\"sc.html\"\u003ethe Status Codes Grid\u003c/a\u003e.\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003eEach definition includes usage notes explaining\n            the precedence order in contract lifecycle - i.e., while only some stages are required,\n            the order in which they may occur is deterministic; and a map to comparable FHIR and v.3\n            status codes. It follows guidance about use of status codes in FHIR in\n            \n      \u003ca href\u003d\"sc.html\"\u003ethe Status Codes Grid\u003c/a\u003e.\n    \u003c/div\u003e"
   },
   "extension": [
     {
@@ -24,8 +24,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.1207"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ContractLegalState",
+  "title": "Contract Legal State",
   "status": "active",
   "experimental": true,
   "date": "2017-02-13",

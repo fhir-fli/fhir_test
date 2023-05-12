@@ -7,8 +7,8 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>GoalAchievementStatusCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-goal-achievement)</h2>
       <p>Mapping from 
-        <a href="valueset-goal-achievement.html">http://hl7.org/fhir/ValueSet/goal-achievement</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-goal-achievement.html">Goal Achievement Status</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <p>DRAFT. Published on ?ngen-10? by HL7 International - Patient Care WG (
         <a href="http://www.hl7.org/Special/committees/patientcare/">http://www.hl7.org/Special/com...</a>). 
@@ -20,7 +20,7 @@
       <br/>
       <p>
         <b>Group 1</b>Mapping from 
-        <a href="http://terminology.hl7.org/4.0.0/CodeSystem-goal-achievement.html">Goal achievement status</a> to 
+        <a href="http://terminology.hl7.org/5.1.0/CodeSystem-goal-achievement.html">Goal achievement status</a> to 
         <a href="codesystem-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <table class="grid">
@@ -102,9 +102,9 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-goal-achievement"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="GoalAchievementStatusCanonicalMap"/>
-  <title value="Canonical Mapping for &quot;GoalAchievementStatus&quot;"/>
+  <title value="Canonical Mapping for &quot;Goal Achievement Status&quot;"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - Patient Care WG"/>

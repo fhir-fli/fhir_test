@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "icd-10-procedures",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -37,7 +37,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.566"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ICD10ProcedureCodes",
   "title": "ICD-10 Procedure Codes",
   "status": "draft",

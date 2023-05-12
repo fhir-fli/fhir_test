@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>system</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>version</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -62,6 +67,7 @@
         <tr>
           <td>IN</td>
           <td>property</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
@@ -75,6 +81,7 @@
         <tr>
           <td>IN</td>
           <td>property.code</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -90,6 +97,7 @@
         <tr>
           <td>IN</td>
           <td>property.value</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a> | 
@@ -110,6 +118,7 @@
         <tr>
           <td>IN</td>
           <td>property.subproperty</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
@@ -123,6 +132,7 @@
         <tr>
           <td>IN</td>
           <td>property.subproperty.code</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -138,6 +148,7 @@
         <tr>
           <td>IN</td>
           <td>property.subproperty.value</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a> | 
@@ -158,6 +169,7 @@
         <tr>
           <td>IN</td>
           <td>exact</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -173,6 +185,7 @@
         <tr>
           <td>IN</td>
           <td>compositional</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -188,6 +201,7 @@
         <tr>
           <td>OUT</td>
           <td>match</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
@@ -201,6 +215,7 @@
         <tr>
           <td>OUT</td>
           <td>match.code</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a>
@@ -216,6 +231,7 @@
         <tr>
           <td>OUT</td>
           <td>match.unmatched</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
@@ -229,6 +245,7 @@
         <tr>
           <td>OUT</td>
           <td>match.unmatched.code</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -244,6 +261,7 @@
         <tr>
           <td>OUT</td>
           <td>match.unmatched.value</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a> | 
@@ -264,6 +282,7 @@
         <tr>
           <td>OUT</td>
           <td>match.unmatched.property</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
@@ -277,6 +296,7 @@
         <tr>
           <td>OUT</td>
           <td>match.unmatched.property.code</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -292,6 +312,7 @@
         <tr>
           <td>OUT</td>
           <td>match.unmatched.property.value</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a> | 
@@ -312,6 +333,7 @@
         <tr>
           <td>OUT</td>
           <td>match.comment</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -325,7 +347,6 @@
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -335,13 +356,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/CodeSystem-find-matches"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="FindMatches"/>
   <title value="Finding codes based on supplied properties"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -370,6 +391,7 @@
   <parameter>
     <name value="system"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The system in which composition is to be performed. This must be provided unless the operation is invoked on a code system instance"/>
@@ -378,6 +400,7 @@
   <parameter>
     <name value="version"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The version of the system for the inferencing to be performed"/>

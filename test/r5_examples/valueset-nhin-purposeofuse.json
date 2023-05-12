@@ -47,7 +47,7 @@
               "code": "SYSADMIN",
               "target": [
                 {
-                  "code": "SYSADMIN",
+                  "code": "SYSADMN",
                   "relationship": "equivalent"
                 }
               ]
@@ -63,18 +63,13 @@
             },
             {
               "code": "PSYCHOTHERAPY",
-              "target": [
-                {
-                  "code": "PSYCHOTHERAPY",
-                  "relationship": "equivalent"
-                }
-              ]
+              "noMap": true
             },
             {
               "code": "TRAINING",
               "target": [
                 {
-                  "code": "TRAINING",
+                  "code": "TRAIN",
                   "relationship": "equivalent"
                 }
               ]
@@ -184,7 +179,7 @@
               "code": "COVERAGE",
               "target": [
                 {
-                  "code": "OVAUTH",
+                  "code": "COVAUTH",
                   "relationship": "equivalent"
                 }
               ]
@@ -216,7 +211,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3142"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "NHINPurposeOfUse",
   "title": "NHIN PurposeOfUse",
   "status": "active",

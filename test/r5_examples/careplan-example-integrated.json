@@ -199,73 +199,18 @@
           "text": "Eve eats one meal a day with her parents"
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-09-10"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g1"
-          }
-        ],
-        "status": "not-started",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-09-10"
-        },
-        "description": "Eve will review photos of high and low density foods and share with her parents"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-1"
       }
     },
     {
-      "progress": [
-        {
-          "time": "2012-09-10",
-          "text": "Eve will sleep in her bed more often than the couch"
-        }
-      ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-09-10"
-          }
-        ],
-        "kind": "CommunicationRequest",
-        "goal": [
-          {
-            "reference": "#g1"
-          }
-        ],
-        "status": "not-started",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-09-10"
-        },
-        "description": "Eve will ask her dad to asist her to put the head of her bed on blocks"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-2"
       }
     },
     {
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-09-10"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g2"
-          }
-        ],
-        "status": "in-progress",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-09-10"
-        },
-        "description": "Eve will reduce her intake of coffee and chocolate"
+      "plannedActivityReference": {
+        "reference": "NutritionOrder/activity-3"
       }
     },
     {
@@ -279,24 +224,8 @@
           "text": "Eve is still walking the dogs."
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-09-10"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g3"
-          }
-        ],
-        "status": "in-progress",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-08-27"
-        },
-        "description": "Eve will walk her friend\u0027s dog up and down a big hill 15-30 minutes 3 days a week"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-4"
       }
     },
     {
@@ -310,45 +239,13 @@
           "text": "Eve did not walk to her parents the last week, but has plans to start again"
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-09-10"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g3"
-          }
-        ],
-        "status": "in-progress",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-23"
-        },
-        "description": "Eve will walk 3 blocks to her parents house twice a week"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-5"
       }
     },
     {
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-08-13"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g4"
-          }
-        ],
-        "status": "in-progress",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-23"
-        },
-        "description": "Eve will use a calendar to check off after medications are taken"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-6"
       }
     },
     {
@@ -362,24 +259,8 @@
           "text": "Since her skin is improved Eve has not been using the light treatment as often, maybe once a week.  She would like to increase to 3 times a week again"
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-08-27"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g5"
-          }
-        ],
-        "status": "in-progress",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-23"
-        },
-        "description": "Eve will use her lights MWF after her shower for 3 minutes"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-7"
       }
     },
     {
@@ -389,24 +270,8 @@
           "text": "Eve created a chart as a reminer to take the medications that do not fit in her pill box"
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-09-10"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g4"
-          }
-        ],
-        "status": "in-progress",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-10"
-        },
-        "description": "Eve will use a calendar of a chart to help her remember when to take her medications"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-8"
       }
     },
     {
@@ -420,45 +285,13 @@
           "text": "Eve prefers to focus on walking at this time"
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-08-23"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g3"
-          }
-        ],
-        "status": "on-hold",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-23"
-        },
-        "description": "Eve will start using stretch bands and one step 2 days a week Mon/Wed 6-7am and maybe Friday afternoon"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-9"
       }
     },
     {
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-07-23"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g4"
-          }
-        ],
-        "status": "completed",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-10"
-        },
-        "description": "Eve will match a printed medication worksheet with the medication bottles at home"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-10"
       }
     },
     {
@@ -468,24 +301,8 @@
           "text": "Eve now has some of her medications set up in pill packs by her pharmacist"
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-07-16"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g4"
-          }
-        ],
-        "status": "completed",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-10"
-        },
-        "description": "Eve will get a medication box to sort her pills.  She will have one for scheduled medications and one for as needed"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-11"
       }
     },
     {
@@ -499,24 +316,8 @@
           "text": "hold until \"less busy\""
         }
       ],
-      "plannedActivityDetail": {
-        "extension": [
-          {
-            "url": "http://example.org/fhir/StructureDefinition/RevisionDate",
-            "valueDate": "2012-08-13"
-          }
-        ],
-        "goal": [
-          {
-            "reference": "#g3"
-          }
-        ],
-        "status": "on-hold",
-        "doNotPerform": false,
-        "scheduledPeriod": {
-          "start": "2012-07-23"
-        },
-        "description": "Eve will open \"The Firm\" DVD workout package and listen to it"
+      "plannedActivityReference": {
+        "reference": "ServiceRequest/activity-12"
       }
     }
   ],

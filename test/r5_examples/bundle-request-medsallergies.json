@@ -12,7 +12,7 @@
     {
       "request": {
         "method": "GET",
-        "url": "/MedicationUsage?patient\u003dexample\u0026_list\u003d$current-medications"
+        "url": "/MedicationStatement?patient\u003dexample\u0026_list\u003d$current-medications"
       }
     },
     {
@@ -30,7 +30,7 @@
     {
       "request": {
         "method": "GET",
-        "url": "/MedicationUsage?patient\u003dexample\u0026notgiven:not\u003dtrue"
+        "url": "/MedicationStatement?patient\u003dexample\u0026notgiven:not\u003dtrue"
       }
     }
   ],

@@ -7,10 +7,10 @@
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International (Orders and Observations)",
   "item": [
     {
@@ -149,7 +149,7 @@
                 }
               ],
               "linkId": "InventoryReport.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -202,7 +202,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -291,7 +291,7 @@
                 }
               ],
               "linkId": "InventoryReport.extension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -319,7 +319,7 @@
                 }
               ],
               "linkId": "InventoryReport.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -332,7 +332,7 @@
             }
           ],
           "linkId": "InventoryReport.identifier",
-          "text": "Identifiers for the report",
+          "text": "Business identifier for the report",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -353,7 +353,7 @@
                 }
               ],
               "linkId": "InventoryReport.identifier-flyover",
-              "text": "Identifiers for the InventoryReport.",
+              "text": "Business identifier for the InventoryReport.",
               "type": "display"
             },
             {
@@ -542,7 +542,7 @@
             }
           ],
           "linkId": "InventoryReport.operationTypeReason",
-          "text": "The reason for this count - regular count, ad-hoc count, new arrivals, etc.",
+          "text": "The reason for this count - regular count, ad-hoc count, new arrivals, etc",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -670,7 +670,7 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                  "valueCode": "Practitioner, Patient, RelatedPerson, Device, Device"
+                  "valueCode": "Practitioner, Patient, RelatedPerson, Device"
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -830,7 +830,7 @@
                     }
                   ],
                   "linkId": "InventoryReport.inventoryListing.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -858,7 +858,7 @@
                     }
                   ],
                   "linkId": "InventoryReport.inventoryListing.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -902,7 +902,7 @@
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                      "valueCode": "Location, Location"
+                      "valueCode": "Location"
                     },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -929,7 +929,7 @@
                 }
               ],
               "linkId": "InventoryReport.inventoryListing.itemStatus",
-              "text": "The status of the items",
+              "text": "The status of the items that are being reported",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -1015,7 +1015,7 @@
               ]
             },
             {
-              "linkId": "InventoryReport.inventoryListing.items",
+              "linkId": "InventoryReport.inventoryListing.item",
               "text": "The item or items in this listing",
               "type": "group",
               "required": false,
@@ -1036,7 +1036,7 @@
                       }
                     }
                   ],
-                  "linkId": "InventoryReport.inventoryListing.items-flyover",
+                  "linkId": "InventoryReport.inventoryListing.item-flyover",
                   "text": "The item or items in this listing.",
                   "type": "display"
                 },
@@ -1051,7 +1051,7 @@
                       "valueString": "string"
                     }
                   ],
-                  "linkId": "InventoryReport.inventoryListing.items.id",
+                  "linkId": "InventoryReport.inventoryListing.item.id",
                   "type": "group",
                   "required": false,
                   "repeats": true,
@@ -1071,12 +1071,12 @@
                           }
                         }
                       ],
-                      "linkId": "InventoryReport.inventoryListing.items.id-flyover",
+                      "linkId": "InventoryReport.inventoryListing.item.id-flyover",
                       "text": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
                       "type": "display"
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.id.value",
+                      "linkId": "InventoryReport.inventoryListing.item.id.value",
                       "text": "Unique id for inter-element referencing",
                       "type": "string",
                       "required": false,
@@ -1085,7 +1085,7 @@
                   ]
                 },
                 {
-                  "linkId": "InventoryReport.inventoryListing.items.extension",
+                  "linkId": "InventoryReport.inventoryListing.item.extension",
                   "text": "Additional content defined by implementations",
                   "type": "group",
                   "required": false,
@@ -1106,14 +1106,14 @@
                           }
                         }
                       ],
-                      "linkId": "InventoryReport.inventoryListing.items.extension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "linkId": "InventoryReport.inventoryListing.item.extension-flyover",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
                 },
                 {
-                  "linkId": "InventoryReport.inventoryListing.items.modifierExtension",
+                  "linkId": "InventoryReport.inventoryListing.item.modifierExtension",
                   "text": "Extensions that cannot be ignored even if unrecognized",
                   "type": "group",
                   "required": false,
@@ -1134,8 +1134,8 @@
                           }
                         }
                       ],
-                      "linkId": "InventoryReport.inventoryListing.items.modifierExtension-flyover",
-                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                      "linkId": "InventoryReport.inventoryListing.item.modifierExtension-flyover",
+                      "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                       "type": "display"
                     }
                   ]
@@ -1151,8 +1151,8 @@
                       "valueString": "CodeableConcept"
                     }
                   ],
-                  "linkId": "InventoryReport.inventoryListing.items.category",
-                  "text": "The category of the item or items",
+                  "linkId": "InventoryReport.inventoryListing.item.category",
+                  "text": "The inventory category or classification of the items being reported",
                   "type": "group",
                   "required": false,
                   "repeats": true,
@@ -1172,12 +1172,12 @@
                           }
                         }
                       ],
-                      "linkId": "InventoryReport.inventoryListing.items.category-flyover",
-                      "text": "The category of the item or items.",
+                      "linkId": "InventoryReport.inventoryListing.item.category-flyover",
+                      "text": "The inventory category or classification of the items being reported. This is meant not for defining the product, but for inventory categories e.g. \u0027pending recount\u0027 or \u0027damaged\u0027.",
                       "type": "display"
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.category.coding",
+                      "linkId": "InventoryReport.inventoryListing.item.category.coding",
                       "text": "code:",
                       "type": "coding",
                       "required": false,
@@ -1185,7 +1185,7 @@
                       "answerConstraint": "optionsOnly"
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.category.text",
+                      "linkId": "InventoryReport.inventoryListing.item.category.text",
                       "text": "text:",
                       "type": "string",
                       "required": false,
@@ -1208,8 +1208,8 @@
                       "valueString": "Quantity"
                     }
                   ],
-                  "linkId": "InventoryReport.inventoryListing.items.quantity",
-                  "text": "The quantity of the item or items",
+                  "linkId": "InventoryReport.inventoryListing.item.quantity",
+                  "text": "The quantity of the item or items being reported",
                   "type": "group",
                   "required": true,
                   "repeats": true,
@@ -1229,12 +1229,12 @@
                           }
                         }
                       ],
-                      "linkId": "InventoryReport.inventoryListing.items.quantity-flyover",
-                      "text": "The quantity of the item or items.",
+                      "linkId": "InventoryReport.inventoryListing.item.quantity-flyover",
+                      "text": "The quantity of the item or items being reported.",
                       "type": "display"
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.quantity.comparator",
+                      "linkId": "InventoryReport.inventoryListing.item.quantity.comparator",
                       "text": "comp:",
                       "type": "coding",
                       "required": false,
@@ -1242,28 +1242,28 @@
                       "answerConstraint": "optionsOnly"
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.quantity.value",
+                      "linkId": "InventoryReport.inventoryListing.item.quantity.value",
                       "text": "value:",
                       "type": "decimal",
                       "required": false,
                       "repeats": false
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.quantity.units",
+                      "linkId": "InventoryReport.inventoryListing.item.quantity.units",
                       "text": "units:",
                       "type": "string",
                       "required": false,
                       "repeats": false
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.quantity.code",
+                      "linkId": "InventoryReport.inventoryListing.item.quantity.code",
                       "text": "coded units:",
                       "type": "string",
                       "required": false,
                       "repeats": false
                     },
                     {
-                      "linkId": "InventoryReport.inventoryListing.items.quantity.system",
+                      "linkId": "InventoryReport.inventoryListing.item.quantity.system",
                       "text": "units system:",
                       "type": "string",
                       "required": false,
@@ -1282,7 +1282,7 @@
                       "valueInteger": 1
                     }
                   ],
-                  "linkId": "InventoryReport.inventoryListing.items.item",
+                  "linkId": "InventoryReport.inventoryListing.item.item",
                   "text": "The code or reference to the item type",
                   "type": "group",
                   "required": true,
@@ -1303,185 +1303,9 @@
                           }
                         }
                       ],
-                      "linkId": "InventoryReport.inventoryListing.items.item-flyover",
+                      "linkId": "InventoryReport.inventoryListing.item.item-flyover",
                       "text": "The code or reference to the item type.",
                       "type": "display"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "string"
-                    }
-                  ],
-                  "linkId": "InventoryReport.inventoryListing.items.lot",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "InventoryReport.inventoryListing.items.lot-flyover",
-                      "text": "The lot number of the item or items.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "InventoryReport.inventoryListing.items.lot.value",
-                      "text": "The lot number of the item or items",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "string"
-                    }
-                  ],
-                  "linkId": "InventoryReport.inventoryListing.items.serial",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "InventoryReport.inventoryListing.items.serial-flyover",
-                      "text": "The serial number of the item.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "InventoryReport.inventoryListing.items.serial.value",
-                      "text": "The serial number of the item",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "datetime"
-                    }
-                  ],
-                  "linkId": "InventoryReport.inventoryListing.items.expiry",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "InventoryReport.inventoryListing.items.expiry-flyover",
-                      "text": "The expiry date of the item or items.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "InventoryReport.inventoryListing.items.expiry.value",
-                      "text": "The expiry date of the item or items",
-                      "type": "dateTime",
-                      "required": false,
-                      "repeats": false
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-                      "valueInteger": 1
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
-                      "valueString": "datetime"
-                    }
-                  ],
-                  "linkId": "InventoryReport.inventoryListing.items.manufacturingDate",
-                  "type": "group",
-                  "required": false,
-                  "repeats": true,
-                  "item": [
-                    {
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "linkId": "InventoryReport.inventoryListing.items.manufacturingDate-flyover",
-                      "text": "The manufacturingDate of the item or items.",
-                      "type": "display"
-                    },
-                    {
-                      "linkId": "InventoryReport.inventoryListing.items.manufacturingDate.value",
-                      "text": "The manufacturingDate of the item or items",
-                      "type": "dateTime",
-                      "required": false,
-                      "repeats": false
                     }
                   ]
                 }
@@ -1491,10 +1315,6 @@
         },
         {
           "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
-              "valueInteger": 1
-            },
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
               "valueString": "Annotation"

@@ -28,6 +28,7 @@
       ]
     }
   ],
+  "description": "Message definition base example",
   "purpose": "Defines a base example for other MessageDefinition instances.",
   "eventCoding": {
     "system": "http://example.org/fhir/message-events",

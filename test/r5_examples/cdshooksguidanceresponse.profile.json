@@ -26,15 +26,15 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.5.1485"
     }
   ],
-  "version": "5.0.0-snapshot3",
-  "name": "CDS Hooks GuidanceResponse",
-  "title": "CDS Hooks GuidanceResponse",
+  "version": "5.0.0-cibuild",
+  "name": "CDSHooksGuidanceResponse",
+  "title": "C D S  Hooks  Guidance Response",
   "status": "draft",
   "experimental": false,
   "date": "2020-12-28T16:55:11+11:00",
   "publisher": "HL7",
   "description": "Defines a GuidanceResponse that represents the response container for a CDS Hooks response",
-  "fhirVersion": "5.0.0",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "workflow",
@@ -83,7 +83,7 @@
             "key": "dom-3",
             "severity": "error",
             "human": "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
-            "expression": "contained.where(((\u0027#\u0027+id in (%resource.descendants().reference | %resource.descendants().ofType(canonical) | %resource.descendants().ofType(uri) | %resource.descendants().ofType(url))) or descendants().where(reference \u003d \u0027#\u0027).exists() or descendants().where(as(canonical) \u003d \u0027#\u0027).exists() or descendants().where(as(canonical) \u003d \u0027#\u0027).exists()).not()).trace(\u0027unmatched\u0027, id).empty()",
+            "expression": "contained.where(((\u0027#\u0027+id in (%resource.descendants().reference | %resource.descendants().ofType(canonical) | %resource.descendants().ofType(uri) | %resource.descendants().ofType(url))) or descendants().where(reference \u003d \u0027#\u0027).exists() or descendants().where(ofType(canonical) \u003d \u0027#\u0027).exists() or descendants().where(ofType(canonical) \u003d \u0027#\u0027).exists()).not()).trace(\u0027unmatched\u0027, id).empty()",
             "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
           },
           {
@@ -124,7 +124,7 @@
         "mapping": [
           {
             "identity": "rim",
-            "map": "Entity. Role, or Act"
+            "map": "Entity, Role, or Act"
           },
           {
             "identity": "workflow",
@@ -199,7 +199,7 @@
         "path": "GuidanceResponse.implicitRules",
         "short": "A set of rules under which this content was created",
         "definition": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
-        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
         "min": 0,
         "max": "1",
         "base": {
@@ -223,7 +223,7 @@
         ],
         "mustSupport": false,
         "isModifier": true,
-        "isModifierReason": "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it\u0027s meaning or interpretation",
+        "isModifierReason": "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies its meaning or interpretation",
         "isSummary": true
       },
       {
@@ -259,10 +259,6 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
-              "valueCanonical": "http://hl7.org/fhir/ValueSet/all-languages"
-            },
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
               "valueString": "Language"
             },
@@ -271,9 +267,15 @@
               "valueBoolean": true
             }
           ],
-          "strength": "preferred",
-          "description": "IETF language tag",
-          "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+          "strength": "required",
+          "description": "IETF language tag for a human language",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild",
+          "additional": [
+            {
+              "purpose": "starter",
+              "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+            }
+          ]
         }
       },
       {
@@ -299,6 +301,9 @@
           {
             "code": "Narrative"
           }
+        ],
+        "condition": [
+          "dom-6"
         ],
         "constraint": [
           {
@@ -341,6 +346,12 @@
           {
             "code": "Resource"
           }
+        ],
+        "condition": [
+          "dom-2",
+          "dom-4",
+          "dom-3",
+          "dom-5"
         ],
         "mustSupport": false,
         "isModifier": false,
@@ -443,7 +454,7 @@
         "id": "GuidanceResponse.modifierExtension",
         "path": "GuidanceResponse.modifierExtension",
         "short": "Extensions that cannot be ignored",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -613,13 +624,7 @@
           ],
           "strength": "example",
           "valueSet": "http://hl7.org/fhir/ValueSet/guidance-module-code"
-        },
-        "mapping": [
-          {
-            "identity": "workflow",
-            "map": "Event.instantiatesUri | Event.instantiatesCanonical"
-          }
-        ]
+        }
       },
       {
         "id": "GuidanceResponse.module[x]:moduleUri",
@@ -660,13 +665,7 @@
           ],
           "strength": "example",
           "valueSet": "http://hl7.org/fhir/ValueSet/guidance-module-code"
-        },
-        "mapping": [
-          {
-            "identity": "workflow",
-            "map": "Event.instantiatesUri | Event.instantiatesCanonical"
-          }
-        ]
+        }
       },
       {
         "id": "GuidanceResponse.status",
@@ -708,7 +707,7 @@
           ],
           "strength": "required",
           "description": "The status of a guidance response.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/guidance-response-status|5.0.0-snapshot3"
+          "valueSet": "http://hl7.org/fhir/ValueSet/guidance-response-status|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -762,10 +761,6 @@
           {
             "identity": "w5",
             "map": "FiveWs.subject[x]"
-          },
-          {
-            "identity": "w5",
-            "map": "FiveWs.subject"
           }
         ]
       },
@@ -901,7 +896,7 @@
         "path": "GuidanceResponse.reason",
         "short": "Why guidance is needed",
         "definition": "Describes the reason for the guidance response in coded or textual form, or Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response.",
-        "comment": "Although this reference can be used to point to any resource, it is typically expected to refer to subject-specific data appropriate to the subject of the guidance. For example, patient-based decision support would be expected to reference patient-level data. In addition, implementations should provide as much detail as possible by using the [targetElement](extension-targetelement.html) and [targetPath](extension-targetpath.html) extensions to indicate the specific elements relevant to providing the reason for the guidance.",
+        "comment": "Although this reference can be used to point to any resource, it is typically expected to refer to subject-specific data appropriate to the subject of the guidance. For example, patient-based decision support would be expected to reference patient-level data. In addition, implementations should provide as much detail as possible by using the [http://hl7.org/fhir/StructureDefinition/targetElement](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-targetElement.html) and [http://hl7.org/fhir/StructureDefinition/targetPath](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-targetPath.html) extensions to indicate the specific elements relevant to providing the reason for the guidance.",
         "min": 0,
         "max": "*",
         "base": {
@@ -979,11 +974,11 @@
         "short": "Messages resulting from the evaluation of the artifact or artifacts",
         "definition": "Messages resulting from the evaluation of the artifact or artifacts. As part of evaluating the request, the engine may produce informational or warning messages. These messages will be provided by this element.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "GuidanceResponse.evaluationMessage",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -1045,18 +1040,33 @@
         "short": "Proposed actions, if any",
         "definition": "The actions, if any, produced by the evaluation of the artifact.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "GuidanceResponse.result",
           "min": 0,
-          "max": "1"
+          "max": "*"
         },
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Appointment",
+              "http://hl7.org/fhir/StructureDefinition/AppointmentResponse",
               "http://hl7.org/fhir/StructureDefinition/CarePlan",
-              "http://hl7.org/fhir/StructureDefinition/RequestOrchestration"
+              "http://hl7.org/fhir/StructureDefinition/Claim",
+              "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/Contract",
+              "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest",
+              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
+              "http://hl7.org/fhir/StructureDefinition/EnrollmentRequest",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+              "http://hl7.org/fhir/StructureDefinition/RequestOrchestration",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "http://hl7.org/fhir/StructureDefinition/SupplyRequest",
+              "http://hl7.org/fhir/StructureDefinition/Task",
+              "http://hl7.org/fhir/StructureDefinition/VisionPrescription"
             ]
           }
         ],

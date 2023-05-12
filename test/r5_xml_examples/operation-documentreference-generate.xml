@@ -16,6 +16,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -31,6 +34,7 @@
         <tr>
           <td>IN</td>
           <td>url</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -46,6 +50,7 @@
         <tr>
           <td>IN</td>
           <td>persist</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -60,15 +65,18 @@
         </tr>
         <tr>
           <td>OUT</td>
-          <td>docRef</td>
-          <td>0..1</td>
+          <td>return</td>
+          <td/>
+          <td>1..1</td>
           <td>
-            <a href="documentreference.html">DocumentReference</a>
+            <a href="bundle.html">Bundle</a>
           </td>
           <td/>
           <td>
             <div>
-              <p>The server either returns a single document reference, or it returns an error. If the input url refers to another server, it is at the discretion of the server whether to retrieve it or return an error.</p>
+              <p>The bundle type is &quot;searchset&quot;containing 
+                <a href="documentreference.html">DocumentReference</a> resource and may include a Binary. If the input url refers to another server, it is at the discretion of the server whether to retrieve it or return an error.
+              </p>
 
             </div>
           </td>
@@ -90,13 +98,13 @@ server whether to retrieve it or return an error.</p>
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/DocumentReference-generate"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Generate"/>
   <title value="Generate a DocumentReference from a document"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -140,11 +148,11 @@ server whether to retrieve it or return an error.</p>
     <type value="boolean"/>
   </parameter>
   <parameter>
-    <name value="docRef"/>
+    <name value="return"/>
     <use value="out"/>
-    <min value="0"/>
+    <min value="1"/>
     <max value="1"/>
-    <documentation value="The server either returns a single document reference, or it returns an error. If the input url refers to another server, it is at the discretion of the server whether to retrieve it or return an error."/>
-    <type value="DocumentReference"/>
+    <documentation value="The bundle type is &quot;searchset&quot;containing [DocumentReference](documentreference.html) resource and may include a Binary. If the input url refers to another server, it is at the discretion of the server whether to retrieve it or return an error."/>
+    <type value="Bundle"/>
   </parameter>
 </OperationDefinition>

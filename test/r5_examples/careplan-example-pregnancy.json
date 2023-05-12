@@ -104,6 +104,140 @@
         "reference": "Patient/1",
         "display": "Eve Everywoman"
       }
+    },
+    {
+      "resourceType": "Appointment",
+      "id": "activity-1",
+      "status": "booked",
+      "description": "The first antenatal encounter. This is where a detailed physical examination is performed and the pregnanacy discussed with the mother-to-be.",
+      "start": "2013-02-14T10:38:00+00:00",
+      "end": "2013-02-14T10:50:00+00:00",
+      "requestedPeriod": [
+        {
+          "start": "2013-02-14",
+          "end": "2013-02-28"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/1",
+        "display": "Eve Everywoman"
+      },
+      "participant": [
+        {
+          "actor": {
+            "reference": "Patient/1",
+            "display": "Eve Everywoman"
+          },
+          "required": true,
+          "status": "accepted"
+        },
+        {
+          "type": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                  "code": "ATND"
+                }
+              ]
+            }
+          ],
+          "actor": {
+            "reference": "#pr1",
+            "display": "Mavis Midwife"
+          },
+          "required": true,
+          "status": "accepted"
+        }
+      ]
+    },
+    {
+      "resourceType": "Appointment",
+      "id": "activity-2",
+      "status": "proposed",
+      "description": "The second antenatal encounter. Discuss any issues that arose from the first antenatal encounter",
+      "requestedPeriod": [
+        {
+          "start": "2013-03-01",
+          "end": "2013-03-14"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/1",
+        "display": "Eve Everywoman"
+      },
+      "participant": [
+        {
+          "actor": {
+            "reference": "Patient/1",
+            "display": "Eve Everywoman"
+          },
+          "required": true,
+          "status": "accepted"
+        },
+        {
+          "type": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                  "code": "ATND"
+                }
+              ]
+            }
+          ],
+          "actor": {
+            "reference": "#pr1",
+            "display": "Mavis Midwife"
+          },
+          "required": true,
+          "status": "accepted"
+        }
+      ]
+    },
+    {
+      "resourceType": "Appointment",
+      "id": "activity-3",
+      "status": "proposed",
+      "description": "The delivery.",
+      "requestedPeriod": [
+        {
+          "start": "2013-09-01",
+          "end": "2013-09-14"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/1",
+        "display": "Eve Everywoman"
+      },
+      "participant": [
+        {
+          "actor": {
+            "reference": "Patient/1",
+            "display": "Eve Everywoman"
+          },
+          "required": true,
+          "status": "accepted"
+        },
+        {
+          "type": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                  "code": "ATND"
+                }
+              ]
+            }
+          ],
+          "actor": {
+            "reference": "#pr1",
+            "display": "Mavis Midwife"
+          },
+          "required": true,
+          "status": "accepted"
+        }
+      ]
     }
   ],
   "extension": [
@@ -153,96 +287,18 @@
           "valueUri": "http://orionhealth.com/fhir/careplan/1andetails"
         }
       ],
-      "plannedActivityDetail": {
-        "kind": "Appointment",
-        "code": {
-          "coding": [
-            {
-              "system": "http://example.org/mySystem",
-              "code": "1an"
-            }
-          ],
-          "text": "First Antenatal encounter"
-        },
-        "status": "scheduled",
-        "doNotPerform": false,
-        "scheduledTiming": {
-          "repeat": {
-            "boundsPeriod": {
-              "start": "2013-02-14",
-              "end": "2013-02-28"
-            }
-          }
-        },
-        "performer": [
-          {
-            "reference": "#pr1",
-            "display": "Mavis Midwife"
-          }
-        ],
-        "description": "The first antenatal encounter. This is where a detailed physical examination is performed.             and the pregnanacy discussed with the mother-to-be."
+      "plannedActivityReference": {
+        "reference": "#activity-1"
       }
     },
     {
-      "plannedActivityDetail": {
-        "kind": "Appointment",
-        "code": {
-          "coding": [
-            {
-              "system": "http://example.org/mySystem",
-              "code": "an"
-            }
-          ],
-          "text": "Follow-up Antenatal encounter"
-        },
-        "status": "not-started",
-        "doNotPerform": false,
-        "scheduledTiming": {
-          "repeat": {
-            "boundsPeriod": {
-              "start": "2013-03-01",
-              "end": "2013-03-14"
-            }
-          }
-        },
-        "performer": [
-          {
-            "reference": "#pr1",
-            "display": "Mavis Midwife"
-          }
-        ],
-        "description": "The second antenatal encounter. Discuss any issues that arose from the first antenatal encounter"
+      "plannedActivityReference": {
+        "reference": "#activity-2"
       }
     },
     {
-      "plannedActivityDetail": {
-        "kind": "Appointment",
-        "code": {
-          "coding": [
-            {
-              "system": "http://example.org/mySystem",
-              "code": "del"
-            }
-          ],
-          "text": "Delivery"
-        },
-        "status": "not-started",
-        "doNotPerform": false,
-        "scheduledTiming": {
-          "repeat": {
-            "boundsPeriod": {
-              "start": "2013-09-01",
-              "end": "2013-09-14"
-            }
-          }
-        },
-        "performer": [
-          {
-            "reference": "#pr1",
-            "display": "Mavis Midwife"
-          }
-        ],
-        "description": "The delivery."
+      "plannedActivityReference": {
+        "reference": "#activity-3"
       }
     }
   ],

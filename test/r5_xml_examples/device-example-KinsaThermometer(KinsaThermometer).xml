@@ -7,7 +7,7 @@
       <display value="test health data"/>
     </security>
   </meta>
-  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Device</b><a name="KinsaThermometer"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Device "KinsaThermometer" </p></div><p><b>identifier</b>: System Identifier: 00-00-52-49-20-45-4C-42, Bluetooth Address: 10-CE-A9-80-14-66</p><h3>UdiCarriers</h3><table class="grid"><tr><td>-</td><td><b>DeviceIdentifier</b></td><td><b>Issuer</b></td><td><b>Jurisdiction</b></td><td><b>CarrierHRF</b></td><td><b>EntryType</b></td></tr><tr><td>*</td><td>18479793050726</td><td><a href="http://hl7.org/fhir/NamingSystem/gs1-di">http://hl7.org/fhir/NamingSystem/gs1-di</a></td><td><a href="http://hl7.org/fhir/NamingSystem/fda-udi">http://hl7.org/fhir/NamingSystem/fda-udi</a></td><td>(01)18479793050726(21)1i9JfKh</td><td>unknown</td></tr></table><p><b>manufacturer</b>: Kinsa</p><p><b>serialNumber</b>: 1i9JfKh</p><h3>DeviceNames</h3><table class="grid"><tr><td>-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td>*</td><td>KS_1i9JfKh</td><td>user-friendly-name</td></tr></table><p><b>modelNumber</b>: KS_1i9JfKh</p><p><b>type</b>: MDC_MOC_VMS_MDS_SIMP: Personal Health Device <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#65573 "MDC_MOC_VMS_MDS_SIMP")</span></p><blockquote><p><b>version</b></p><p><b>type</b>: MDC_ID_PROD_SPEC_FW: Firmware revision <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#531976)</span></p><p><b>value</b>: 1.00</p></blockquote><blockquote><p><b>version</b></p><p><b>type</b>: MDC_ID_PROD_SPEC_SW: Software revision <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#531975)</span></p><p><b>value</b>: V2.19</p></blockquote><blockquote><p><b>version</b></p><p><b>type</b>: MDC_ID_PROD_SPEC_SW: Hardware revision <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#531974)</span></p><p><b>value</b>: 1.00</p></blockquote><h3>Specializations</h3><table class="grid"><tr><td>-</td><td><b>SystemType</b></td><td><b>Version</b></td></tr><tr><td>*</td><td>MDC_DEV_SPEC_PROFILE_TEMP: Thermometer <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#528392)</span></td><td>1</td></tr></table><h3>Properties</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#68220)</span></td><td>MDC_TIME_SYNC_NONE: No time synchronization <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#532224)</span></td></tr></table></div></text><identifier>
+  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Device</b><a name="KinsaThermometer"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Device "KinsaThermometer" </p></div><p><b>identifier</b>: System Identifier: 00-00-52-49-20-45-4C-42, Bluetooth Address: 10-CE-A9-80-14-66</p><h3>UdiCarriers</h3><table class="grid"><tr><td>-</td><td><b>DeviceIdentifier</b></td><td><b>Issuer</b></td><td><b>Jurisdiction</b></td><td><b>CarrierHRF</b></td><td><b>EntryType</b></td></tr><tr><td>*</td><td>18479793050726</td><td><a href="http://hl7.org/fhir/NamingSystem/gs1-di">http://hl7.org/fhir/NamingSystem/gs1-di</a></td><td><a href="http://hl7.org/fhir/NamingSystem/fda-udi">http://hl7.org/fhir/NamingSystem/fda-udi</a></td><td>(01)18479793050726(21)1i9JfKh</td><td>unknown</td></tr></table><p><b>manufacturer</b>: Kinsa</p><p><b>serialNumber</b>: 1i9JfKh</p><h3>Names</h3><table class="grid"><tr><td>-</td><td><b>Value</b></td><td><b>Type</b></td></tr><tr><td>*</td><td>KS_1i9JfKh</td><td>user-friendly-name</td></tr></table><p><b>modelNumber</b>: KS_1i9JfKh</p><p><b>type</b>: MDC_MOC_VMS_MDS_SIMP: Personal Health Device <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#65573 "MDC_MOC_VMS_MDS_SIMP")</span></p><blockquote><p><b>version</b></p><p><b>type</b>: MDC_ID_PROD_SPEC_FW: Firmware revision <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#531976)</span></p><p><b>value</b>: 1.00</p></blockquote><blockquote><p><b>version</b></p><p><b>type</b>: MDC_ID_PROD_SPEC_SW: Software revision <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#531975)</span></p><p><b>value</b>: V2.19</p></blockquote><blockquote><p><b>version</b></p><p><b>type</b>: MDC_ID_PROD_SPEC_SW: Hardware revision <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#531974)</span></p><p><b>value</b>: 1.00</p></blockquote><h3>ConformsTos</h3><table class="grid"><tr><td>-</td><td><b>Specification</b></td><td><b>Version</b></td></tr><tr><td>*</td><td>MDC_DEV_SPEC_PROFILE_TEMP: Thermometer <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#528392)</span></td><td>1</td></tr></table><h3>Properties</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>MDC_TIME_SYNC_PROTOCOL: Time synchronization protocol <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#68220)</span></td><td>MDC_TIME_SYNC_NONE: No time synchronization <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-mdc.html">ISO 11073-10101 Health informatics - Point-of-care</a>#532224)</span></td></tr></table></div></text><identifier>
     <type>
       <coding>
         <system value="http://terminology.hl7.org/CodeSystem/ContinuaDeviceIdentifiers"/>
@@ -38,10 +38,10 @@
   </udiCarrier>
   <manufacturer value="Kinsa"/>
   <serialNumber value="1i9JfKh"/>
-  <deviceName>
-    <name value="KS_1i9JfKh"/>
+  <name>
+    <value value="KS_1i9JfKh"/>
     <type value="user-friendly-name"/>
-  </deviceName>
+  </name>
   <modelNumber value="KS_1i9JfKh"/>
   <type>
     <coding>
@@ -81,16 +81,16 @@
     </type>
     <value value="1.00"/>
   </version>
-  <specialization>
-    <systemType>
+  <conformsTo>
+    <specification>
       <coding>
         <system value="urn:iso:std:iso:11073:10101"/>
         <code value="528392"/>
       </coding>
       <text value="MDC_DEV_SPEC_PROFILE_TEMP: Thermometer"/>
-    </systemType>
+    </specification>
     <version value="1"/>
-  </specialization>
+  </conformsTo>
   <property>
     <type>
       <coding>

@@ -55,18 +55,22 @@
   "period": {
     "start": "2014-09-01"
   },
-  "payloadType": [
+  "payload": [
     {
-      "coding": [
+      "type": [
         {
-          "system": "http://hl7.org/fhir/fhir-types",
-          "code": "CarePlan"
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/fhir-types",
+              "code": "CarePlan"
+            }
+          ]
         }
+      ],
+      "mimeType": [
+        "application/fhir+xml"
       ]
     }
-  ],
-  "payloadMimeType": [
-    "application/fhir+xml"
   ],
   "address": "http://fhir3.healthintersections.com.au/open/CarePlan",
   "header": [

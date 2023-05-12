@@ -12,7 +12,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>IndicatorToRequestPriority (http://cds-hooks.hl7.org/ConceptMap/indicator-to-request-priority)</h2>
       <p>Mapping from http://cds-hooks.hl7.org/ValueSet/indicator to 
-        <a href="valueset-request-priority.html">http://hl7.org/fhir/ValueSet/request-priority</a>
+        <a href="valueset-request-priority.html">RequestPriority</a>
       </p>
       <p>DRAFT. Published on ?ngen-10? by null. </p>
       <div>
@@ -66,7 +66,9 @@
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.14.6"/>
   </identifier>
+  <version value="5.0.0-cibuild"/>
   <name value="IndicatorToRequestPriority"/>
+  <title value="Indicator To Request Priority"/>
   <status value="draft"/>
   <experimental value="false"/>
   <description value="This concept map defines a mapping from CDS Hooks indicator to request priority."/>

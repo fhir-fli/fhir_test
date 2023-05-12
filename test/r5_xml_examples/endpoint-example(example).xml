@@ -46,17 +46,19 @@
 		<system value="email"/>
 		<value value="endpointmanager@example.org"/>
 		<use value="work"/>
-    </contact>
+	</contact>
 	<period>
 		<start value="2014-09-01"/>
 	</period>
-	<payloadType>
-		<coding>
-      <system value="http://hl7.org/fhir/fhir-types"/>
-		 	<code value="CarePlan"/>
-		</coding>
-	</payloadType>
-	<payloadMimeType value="application/fhir+xml"/>
+	<payload>
+		<type>
+			<coding>
+				<system value="http://hl7.org/fhir/fhir-types"/>
+				<code value="CarePlan"/>
+			</coding>
+		</type>
+		<mimeType value="application/fhir+xml"/>
+	</payload>
 
 	<address value="http://fhir3.healthintersections.com.au/open/CarePlan"/>
 	  <!--  Not a valid bearer token, but is here for demonstration purposes  -->

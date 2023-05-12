@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "encounter-reason",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -15,6 +15,14 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
       "valueCode": "pa"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "draft"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
     }
   ],
   "url": "http://hl7.org/fhir/ValueSet/encounter-reason",
@@ -34,11 +42,11 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.2.146"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "EncounterReasonCodes",
   "title": "Encounter Reason Codes",
   "status": "draft",
-  "experimental": false,
+  "experimental": true,
   "publisher": "FHIR Project team",
   "contact": [
     {

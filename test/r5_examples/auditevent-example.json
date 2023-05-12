@@ -30,7 +30,7 @@
   "outcome": {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/audit-event-outcome",
-      "code": "success",
+      "code": "0",
       "display": "Success"
     }
   },

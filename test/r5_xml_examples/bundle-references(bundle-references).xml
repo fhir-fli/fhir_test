@@ -29,6 +29,7 @@
     <fullUrl value="urn:uuid:04121321-4af5-424c-a0e1-ed3aab1c349d"/>
     <resource>
       <Patient>
+        <id value="temp"/>
       <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;"><b>Anonymous Patient</b> (no stated gender), DoB Unknown</p><hr/></div></text></Patient>
     </resource>
   </entry>

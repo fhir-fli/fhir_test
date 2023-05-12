@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "related-artifact-type-expanded",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-04-01T06:23:11.471+11:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
@@ -32,10 +32,10 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.1884"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "RelatedArtifactTypeExpanded",
-  "title": "RelatedArtifactTypeExpanded",
-  "status": "active",
+  "title": "Related Artifact Type Expanded",
+  "status": "draft",
   "experimental": false,
   "date": "2020-12-28T16:55:11+11:00",
   "publisher": "HL7 (FHIR Project)",

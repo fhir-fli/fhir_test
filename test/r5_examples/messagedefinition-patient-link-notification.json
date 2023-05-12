@@ -13,7 +13,7 @@
     }
   ],
   "version": "1",
-  "name": "PATIENT-LINK-NOTIFICATION",
+  "name": "PATIENTLINKNOTIFICATION",
   "title": "Link Patients Notification",
   "status": "draft",
   "experimental": true,

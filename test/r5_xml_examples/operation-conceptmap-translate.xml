@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>url</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>conceptMap</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="conceptmap.html">ConceptMap</a>
@@ -62,6 +67,7 @@
         <tr>
           <td>IN</td>
           <td>conceptMapVersion</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -77,6 +83,7 @@
         <tr>
           <td>IN</td>
           <td>sourceCode</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -92,6 +99,7 @@
         <tr>
           <td>IN</td>
           <td>system</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -107,6 +115,7 @@
         <tr>
           <td>IN</td>
           <td>version</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -122,6 +131,7 @@
         <tr>
           <td>IN</td>
           <td>sourceScope</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -137,6 +147,7 @@
         <tr>
           <td>IN</td>
           <td>sourceCoding</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a>
@@ -152,6 +163,7 @@
         <tr>
           <td>IN</td>
           <td>sourceCodeableConcept</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -167,6 +179,7 @@
         <tr>
           <td>IN</td>
           <td>targetCode</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -182,6 +195,7 @@
         <tr>
           <td>IN</td>
           <td>targetCoding</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -197,6 +211,7 @@
         <tr>
           <td>IN</td>
           <td>targetCodeableConcept</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -212,6 +227,7 @@
         <tr>
           <td>IN</td>
           <td>targetScope</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -227,6 +243,7 @@
         <tr>
           <td>IN</td>
           <td>targetSystem</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -242,19 +259,21 @@
         <tr>
           <td>IN</td>
           <td>dependency</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
           <td>
             <div>
-              <p>Another element that may help produce the correct mapping</p>
+              <p>Data from another attribute that may help produce the correct mapping</p>
 
             </div>
           </td>
         </tr>
         <tr>
           <td>IN</td>
-          <td>dependency.element</td>
+          <td>dependency.attribute</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -262,7 +281,7 @@
           <td/>
           <td>
             <div>
-              <p>The element for this dependency</p>
+              <p>The attribute for this dependency</p>
 
             </div>
           </td>
@@ -270,22 +289,19 @@
         <tr>
           <td>IN</td>
           <td>dependency.value</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a> | 
             <a href="datatypes.html#Coding">Coding</a> | 
             <a href="datatypes.html#string">string</a> | 
-            <a href="datatypes.html#integer">integer</a> | 
             <a href="datatypes.html#boolean">boolean</a> | 
-            <a href="datatypes.html#dateTime">dateTime</a> | 
-            <a href="datatypes.html#decimal">decimal</a> | 
-            <a href="datatypes.html#uri">uri</a> | 
-            <a href="datatypes.html#id">id</a>
+            <a href="datatypes.html#Quantity">Quantity</a>
           </td>
           <td/>
           <td>
             <div>
-              <p>The value for this dependency</p>
+              <p>The data value for this dependency</p>
 
             </div>
           </td>
@@ -293,6 +309,7 @@
         <tr>
           <td>OUT</td>
           <td>result</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -308,6 +325,7 @@
         <tr>
           <td>OUT</td>
           <td>message</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -323,6 +341,7 @@
         <tr>
           <td>OUT</td>
           <td>match</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
@@ -336,6 +355,7 @@
         <tr>
           <td>OUT</td>
           <td>match.relationship</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -353,6 +373,7 @@
         <tr>
           <td>OUT</td>
           <td>match.concept</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a>
@@ -367,20 +388,22 @@
         </tr>
         <tr>
           <td>OUT</td>
-          <td>match.product</td>
+          <td>match.property</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
           <td>
             <div>
-              <p>An element that is the product of this mapping</p>
+              <p>A property of this mapping (may be used to supply for example, mapping priority, provenance, presentation hints, flag as experimental, and additional documentation)</p>
 
             </div>
           </td>
         </tr>
         <tr>
           <td>OUT</td>
-          <td>match.product.property</td>
+          <td>match.property.uri</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -388,7 +411,59 @@
           <td/>
           <td>
             <div>
-              <p>The element for this product</p>
+              <p>The uri that identifies the property</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>match.property.value</td>
+          <td/>
+          <td>1..1</td>
+          <td>
+            <a href="datatypes.html#Coding">Coding</a> | 
+            <a href="datatypes.html#string">string</a> | 
+            <a href="datatypes.html#integer">integer</a> | 
+            <a href="datatypes.html#boolean">boolean</a> | 
+            <a href="datatypes.html#dateTime">dateTime</a> | 
+            <a href="datatypes.html#decimal">decimal</a> | 
+            <a href="datatypes.html#code">code</a>
+          </td>
+          <td/>
+          <td>
+            <div>
+              <p>The value of the property</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>match.product</td>
+          <td/>
+          <td>0..*</td>
+          <td></td>
+          <td/>
+          <td>
+            <div>
+              <p>A data value to go in an attribute that is the product of this mapping</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>match.product.attribute</td>
+          <td/>
+          <td>1..1</td>
+          <td>
+            <a href="datatypes.html#uri">uri</a>
+          </td>
+          <td/>
+          <td>
+            <div>
+              <p>The attribute for this product</p>
 
             </div>
           </td>
@@ -396,17 +471,14 @@
         <tr>
           <td>OUT</td>
           <td>match.product.value</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a> | 
             <a href="datatypes.html#Coding">Coding</a> | 
             <a href="datatypes.html#string">string</a> | 
-            <a href="datatypes.html#integer">integer</a> | 
             <a href="datatypes.html#boolean">boolean</a> | 
-            <a href="datatypes.html#dateTime">dateTime</a> | 
-            <a href="datatypes.html#decimal">decimal</a> | 
-            <a href="datatypes.html#uri">uri</a> | 
-            <a href="datatypes.html#id">id</a>
+            <a href="datatypes.html#Quantity">Quantity</a>
           </td>
           <td/>
           <td>
@@ -419,19 +491,21 @@
         <tr>
           <td>OUT</td>
           <td>match.dependsOn</td>
+          <td/>
           <td>0..*</td>
           <td></td>
           <td/>
           <td>
             <div>
-              <p>An element that this mapping depends on</p>
+              <p>An data value in an additional attribute that this mapping depends on</p>
 
             </div>
           </td>
         </tr>
         <tr>
           <td>OUT</td>
-          <td>match.dependsOn.property</td>
+          <td>match.dependsOn.attribute</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -439,7 +513,7 @@
           <td/>
           <td>
             <div>
-              <p>The element for this product</p>
+              <p>The attribute for this product</p>
 
             </div>
           </td>
@@ -447,6 +521,7 @@
         <tr>
           <td>OUT</td>
           <td>match.dependsOn.value</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a> | 
@@ -470,6 +545,7 @@
         <tr>
           <td>OUT</td>
           <td>match.originMap</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -483,7 +559,6 @@
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -493,13 +568,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Translate"/>
   <title value="Concept Translation"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -528,6 +603,7 @@
   <parameter>
     <name value="url"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="A canonical URL for a concept map. The server must know the concept map (e.g. it is defined explicitly in the server's concept maps, or it is defined implicitly by some code system known to the server."/>
@@ -536,6 +612,7 @@
   <parameter>
     <name value="conceptMap"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The concept map is provided directly as part of the request. Servers may choose not to accept concept maps in this fashion."/>
@@ -544,6 +621,7 @@
   <parameter>
     <name value="conceptMapVersion"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The identifier that is used to identify a specific version of the concept map to be used for the translation. This is an arbitrary value managed by the concept map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available."/>
@@ -642,13 +720,13 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="Another element that may help produce the correct mapping"/>
+    <documentation value="Data from another attribute that may help produce the correct mapping"/>
     <part>
-      <name value="element"/>
+      <name value="attribute"/>
       <use value="in"/>
       <min value="0"/>
       <max value="1"/>
-      <documentation value="The element for this dependency"/>
+      <documentation value="The attribute for this dependency"/>
       <type value="uri"/>
     </part>
     <part>
@@ -662,28 +740,16 @@
         <valueUri value="string"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-        <valueUri value="integer"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
         <valueUri value="boolean"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-        <valueUri value="dateTime"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-        <valueUri value="decimal"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-        <valueUri value="uri"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-        <valueUri value="id"/>
+        <valueUri value="Quantity"/>
       </extension>
       <name value="value"/>
       <use value="in"/>
       <min value="0"/>
       <max value="1"/>
-      <documentation value="The value for this dependency"/>
+      <documentation value="The data value for this dependency"/>
       <type value="Element"/>
     </part>
   </parameter>
@@ -726,23 +792,20 @@
       <type value="Coding"/>
     </part>
     <part>
-      <name value="product"/>
+      <name value="property"/>
       <use value="out"/>
       <min value="0"/>
       <max value="*"/>
-      <documentation value="An element that is the product of this mapping"/>
+      <documentation value="A property of this mapping (may be used to supply for example, mapping priority, provenance, presentation hints, flag as experimental, and additional documentation)"/>
       <part>
-        <name value="property"/>
+        <name value="uri"/>
         <use value="out"/>
         <min value="1"/>
         <max value="1"/>
-        <documentation value="The element for this product"/>
+        <documentation value="The uri that identifies the property"/>
         <type value="uri"/>
       </part>
       <part>
-        <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-          <valueUri value="code"/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
           <valueUri value="Coding"/>
         </extension>
@@ -762,10 +825,45 @@
           <valueUri value="decimal"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-          <valueUri value="uri"/>
+          <valueUri value="code"/>
+        </extension>
+        <name value="value"/>
+        <use value="out"/>
+        <min value="1"/>
+        <max value="1"/>
+        <documentation value="The value of the property"/>
+        <type value="Element"/>
+      </part>
+    </part>
+    <part>
+      <name value="product"/>
+      <use value="out"/>
+      <min value="0"/>
+      <max value="*"/>
+      <documentation value="A data value to go in an attribute that is the product of this mapping"/>
+      <part>
+        <name value="attribute"/>
+        <use value="out"/>
+        <min value="1"/>
+        <max value="1"/>
+        <documentation value="The attribute for this product"/>
+        <type value="uri"/>
+      </part>
+      <part>
+        <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
+          <valueUri value="code"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
-          <valueUri value="id"/>
+          <valueUri value="Coding"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
+          <valueUri value="string"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
+          <valueUri value="boolean"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/operationdefinition-allowed-type">
+          <valueUri value="Quantity"/>
         </extension>
         <name value="value"/>
         <use value="out"/>
@@ -780,13 +878,13 @@
       <use value="out"/>
       <min value="0"/>
       <max value="*"/>
-      <documentation value="An element that this mapping depends on"/>
+      <documentation value="An data value in an additional attribute that this mapping depends on"/>
       <part>
-        <name value="property"/>
+        <name value="attribute"/>
         <use value="out"/>
         <min value="1"/>
         <max value="1"/>
-        <documentation value="The element for this product"/>
+        <documentation value="The attribute for this product"/>
         <type value="uri"/>
       </part>
       <part>

@@ -1,6 +1,10 @@
 {
   "resourceType": "Bundle",
   "id": "10bb101f-a121-4264-a920-67be9cb82c74",
+  "identifier": {
+    "system": "urn:example-org:sender.identifiers",
+    "value": "efdd254b-0e09-4164-883e-35cf3871715f"
+  },
   "type": "message",
   "timestamp": "2015-07-14T11:15:33+10:00",
   "entry": [
@@ -18,16 +22,7 @@
           "code": "patient-link"
         },
         "source": {
-          "endpoint": "http://example.org/clients/ehr-lite"
-        },
-        "responsible": {
-          "reference": "http://acme.com/ehr/fhir/Practitioner/2323-33-4"
-        },
-        "response": {
-          "identifier": {
-            "value": "efdd254b-0e09-4164-883e-35cf3871715f"
-          },
-          "code": "ok"
+          "endpointUrl": "http://example.org/clients/ehr-lite"
         },
         "focus": [
           {

@@ -7,8 +7,8 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ContractResourceStatusCodesCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-contract-status)</h2>
       <p>Mapping from 
-        <a href="valueset-contract-status.html">http://hl7.org/fhir/ValueSet/contract-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-contract-status.html">Contract Resource Status Codes</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <p>DRAFT. Published on ?ngen-10? by Financial Management (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>). 
@@ -20,7 +20,7 @@
       <br/>
       <p>
         <b>Group 1</b>Mapping from 
-        <a href="codesystem-contract-status.html">ContractStatus</a> to 
+        <a href="codesystem-contract-status.html">Contract Status</a> to 
         <a href="codesystem-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <table class="grid">
@@ -144,7 +144,7 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-contract-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ContractResourceStatusCodesCanonicalMap"/>
   <title value="Canonical Mapping for &quot;Contract Resource Status Codes&quot;"/>
   <status value="draft"/>

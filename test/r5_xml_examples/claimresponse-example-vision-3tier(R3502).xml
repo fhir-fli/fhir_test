@@ -98,7 +98,9 @@
 					<code value="eligpercent"/>
 				</coding>
 			</category>
-			<value value="80.00"/>
+			<quantity>
+				<value value="80.00"/>
+			</quantity>
 		</adjudication>
 
 		<adjudication>
@@ -147,7 +149,9 @@
 						<code value="eligpercent"/>
 					</coding>
 				</category>
-				<value value="80.00"/>
+				<quantity>
+					<value value="80.00"/>
+				</quantity>
 			</adjudication>
 
 			<adjudication>
@@ -184,7 +188,9 @@
 						<code value="eligpercent"/>
 					</coding>
 				</category>
-				<value value="80.00"/>
+				<quantity>
+					<value value="80.00"/>
+				</quantity>
 			</adjudication>
 
 			<adjudication>
@@ -221,7 +227,9 @@
 							<code value="eligpercent"/>
 						</coding>
 					</category>
-					<value value="80.00"/>
+					<quantity>
+						<value value="80.00"/>
+					</quantity>
 				</adjudication>
 
 				<adjudication>
@@ -258,7 +266,9 @@
 							<code value="eligpercent"/>
 						</coding>
 					</category>
-					<value value="80.00"/>
+					<quantity>
+						<value value="80.00"/>
+					</quantity>
 				</adjudication>
 
 				<adjudication>
@@ -296,7 +306,9 @@
 							<code value="eligpercent"/>
 						</coding>
 					</category>
-					<value value="80.00"/>
+					<quantity>
+						<value value="80.00"/>
+					</quantity>
 				</adjudication>
 
 				<adjudication>
@@ -335,7 +347,9 @@
 						<code value="eligpercent"/>
 					</coding>
 				</category>
-				<value value="80.00"/>
+				<quantity>
+					<value value="80.00"/>
+				</quantity>
 			</adjudication>
 
 			<adjudication>
@@ -414,7 +428,12 @@
 
 	<processNote>
 		<number value="1"/>
-		<type value="display"/>
+		<type>
+			<coding>
+				<system value="http://hl7.org/fhir/note-type"/>
+				<code value="display"/>
+			</coding>
+		</type>
 		<text value="After hours surcharge declined"/>
 		<language>
 			<coding>

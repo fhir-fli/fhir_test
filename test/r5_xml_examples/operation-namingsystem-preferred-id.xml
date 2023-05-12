@@ -16,6 +16,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -31,6 +34,7 @@
         <tr>
           <td>IN</td>
           <td>id</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -46,20 +50,20 @@
         <tr>
           <td>IN</td>
           <td>type</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
           </td>
           <td>
-            <a href="valueset-namingsystem-identifier-type.html">http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-snapshot3</a> (Required)
+            <a href="valueset-namingsystem-identifier-type.html">Naming System Identifier Type</a> (Required)
           </td>
-          <td>
-            <div/>
-          </td>
+          <td/>
         </tr>
         <tr>
           <td>IN</td>
           <td>date</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#dateTime">dateTime</a>
@@ -75,6 +79,7 @@
         <tr>
           <td>OUT</td>
           <td>result</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -105,13 +110,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/NamingSystem-preferred-id"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="PreferredId"/>
   <title value="Fetch Preferred id"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -157,7 +162,7 @@
         <valueString value="NamingSystemIdentifierType"/>
       </extension>
       <strength value="required"/>
-      <valueSet value="http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-snapshot3"/>
+      <valueSet value="http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|5.0.0-cibuild"/>
     </binding>
   </parameter>
   <parameter>
@@ -165,7 +170,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value=" If specified, the operation will indicate what the preferred identifier was on the specified date.  If not specified, the operation will provide the preferred identifier as of 'now'"/>
+    <documentation value="If specified, the operation will indicate what the preferred identifier was on the specified date.  If not specified, the operation will provide the preferred identifier as of 'now'"/>
     <type value="dateTime"/>
   </parameter>
   <parameter>

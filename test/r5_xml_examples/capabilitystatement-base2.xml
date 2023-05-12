@@ -62,11 +62,11 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/CapabilityStatement/base2"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Base FHIR Capability Statement (Empty)"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="FHIR Project Team"/>
   <contact>
     <telecom>
@@ -79,7 +79,7 @@
   <software>
     <name value="Insert your software name here..."/>
   </software>
-  <fhirVersion value="5.0.0-snapshot3"/>
+  <fhirVersion value="5.0.0-cibuild"/>
   <format value="xml"/>
   <format value="json"/>
   <rest>

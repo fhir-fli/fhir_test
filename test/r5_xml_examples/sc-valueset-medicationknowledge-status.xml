@@ -7,8 +7,8 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MedicationKnowledgeStatusCodesCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-medicationknowledge-status)</h2>
       <p>Mapping from 
-        <a href="valueset-medicationknowledge-status.html">http://hl7.org/fhir/ValueSet/medicationknowledge-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-medicationknowledge-status.html">MedicationKnowledge Status Codes</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <p>DRAFT. Published on ?ngen-10? by FHIR Project team (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>). 
@@ -60,7 +60,7 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-medicationknowledge-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="MedicationKnowledgeStatusCodesCanonicalMap"/>
   <title value="Canonical Mapping for &quot;MedicationKnowledge Status Codes&quot;"/>
   <status value="draft"/>

@@ -19,7 +19,7 @@
     "reference": "http://benefitsinc.com/fhir/claimresponse/CR12345"
   },
   "created": "2014-08-16",
-  "provider": {
+  "reporter": {
     "reference": "Organization/1"
   },
   "payment": {

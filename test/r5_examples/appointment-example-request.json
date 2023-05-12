@@ -58,6 +58,12 @@
   ],
   "description": "Discussion on the results of your recent MRI",
   "minutesDuration": 15,
+  "requestedPeriod": [
+    {
+      "start": "2016-06-02",
+      "end": "2016-06-09"
+    }
+  ],
   "slot": [
     {
       "reference": "Slot/example"
@@ -103,12 +109,6 @@
       },
       "required": true,
       "status": "accepted"
-    }
-  ],
-  "requestedPeriod": [
-    {
-      "start": "2016-06-02",
-      "end": "2016-06-09"
     }
   ],
   "meta": {

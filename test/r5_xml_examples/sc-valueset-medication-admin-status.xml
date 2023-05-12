@@ -7,8 +7,8 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MedicationAdministrationStatusCodesCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-medication-admin-status)</h2>
       <p>Mapping from 
-        <a href="valueset-medication-admin-status.html">http://hl7.org/fhir/ValueSet/medication-admin-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-medication-admin-status.html">MedicationAdministration Status Codes</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <p>DRAFT. Published on ?ngen-10? by FHIR Project team (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>). 
@@ -88,7 +88,7 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-medication-admin-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="MedicationAdministrationStatusCodesCanonicalMap"/>
   <title value="Canonical Mapping for &quot;MedicationAdministration Status Codes&quot;"/>
   <status value="draft"/>

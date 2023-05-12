@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "operation-outcome",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00"
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00"
   },
   "text": {
     "status": "generated",
@@ -23,7 +23,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/operation-outcome",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "OperationOutcomeCodes",
   "title": "Operation Outcome Codes",
   "status": "draft",

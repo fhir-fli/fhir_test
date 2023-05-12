@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>id</td>
+          <td>type</td>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#id">id</a>
@@ -39,7 +43,7 @@
           <td/>
           <td>
             <div>
-              <p>At the Instance level, this parameter is ignored.  At the Resource level, one or more parameters containing a FHIR id for a Subscription to get status information for. In the absence of any specified ids, the server returns the status for all Subscriptions available to the caller. Multiple values are joined via OR (e.g., &quot;id1&quot; OR &quot;id2&quot;).</p>
+              <p>At the Instance level, this parameter is ignored. At the Resource level, one or more FHIR ids to Subscription resources to get status information for. In the absence of any specified ids, the server returns the status for all Subscriptions available to the caller. Multiple values are joined via OR (e.g., &quot;id1&quot; OR &quot;id2&quot;).</p>
 
             </div>
           </td>
@@ -47,14 +51,17 @@
         <tr>
           <td>IN</td>
           <td>status</td>
+          <td>type</td>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#code">code</a>
           </td>
-          <td/>
+          <td>
+            <a href="valueset-subscription-status.html">Subscription Status</a> (Required)
+          </td>
           <td>
             <div>
-              <p>At the Instance level, this parameter is ignored. At the Resource level, a Subscription status to filter by (e.g., &quot;active&quot;). In the absence of any specified status values, the server does not filter contents based on the status. Multiple values are joined via OR (e.g., &quot;error&quot; OR &quot;off&quot;).</p>
+              <p>At the Instance level, this parameter is ignored. At the Resource level, a Subscription status code to filter by (e.g., &quot;active&quot;). In the absence of any specified status values, the server does not filter contents based on the status. Multiple values are joined via OR (e.g., &quot;error&quot; OR &quot;off&quot;).</p>
 
             </div>
           </td>
@@ -62,6 +69,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="bundle.html">Bundle</a>
@@ -69,13 +77,12 @@
           <td/>
           <td>
             <div>
-              <p>The operation returns a bundle containing one or more SubscriptionStatus resources, one per Subscription being queried. The Bundle type is &quot;searchset&quot;.</p>
+              <p>The operation returns a bundle containing zero or more SubscriptionStatus resources, one per Subscription in the request that was found. The Bundle type is &quot;searchset&quot;.</p>
 
             </div>
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -85,13 +92,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/Subscription-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Status"/>
   <title value="Get Current Subscription Status for One or More Subscriptions"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -120,25 +127,31 @@
   <parameter>
     <name value="id"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="At the Instance level, this parameter is ignored.  At the Resource level, one or more parameters containing a FHIR id for a Subscription to get status information for. In the absence of any specified ids, the server returns the status for all Subscriptions available to the caller. Multiple values are joined via OR (e.g., &quot;id1&quot; OR &quot;id2&quot;)."/>
+    <documentation value="At the Instance level, this parameter is ignored. At the Resource level, one or more FHIR ids to Subscription resources to get status information for. In the absence of any specified ids, the server returns the status for all Subscriptions available to the caller. Multiple values are joined via OR (e.g., &quot;id1&quot; OR &quot;id2&quot;)."/>
     <type value="id"/>
   </parameter>
   <parameter>
     <name value="status"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="At the Instance level, this parameter is ignored. At the Resource level, a Subscription status to filter by (e.g., &quot;active&quot;). In the absence of any specified status values, the server does not filter contents based on the status. Multiple values are joined via OR (e.g., &quot;error&quot; OR &quot;off&quot;)."/>
+    <documentation value="At the Instance level, this parameter is ignored. At the Resource level, a Subscription status code to filter by (e.g., &quot;active&quot;). In the absence of any specified status values, the server does not filter contents based on the status. Multiple values are joined via OR (e.g., &quot;error&quot; OR &quot;off&quot;)."/>
     <type value="code"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="http://hl7.org/fhir/ValueSet/subscription-status|5.0.0-cibuild"/>
+    </binding>
   </parameter>
   <parameter>
     <name value="return"/>
     <use value="out"/>
     <min value="1"/>
     <max value="1"/>
-    <documentation value="The operation returns a bundle containing one or more SubscriptionStatus resources, one per Subscription being queried. The Bundle type is &quot;searchset&quot;."/>
+    <documentation value="The operation returns a bundle containing zero or more SubscriptionStatus resources, one per Subscription in the request that was found. The Bundle type is &quot;searchset&quot;."/>
     <type value="Bundle"/>
   </parameter>
 </OperationDefinition>

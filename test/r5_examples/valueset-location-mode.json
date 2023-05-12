@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "location-mode",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -22,7 +22,7 @@
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-      "valueInteger": 3
+      "valueInteger": 5
     }
   ],
   "url": "http://hl7.org/fhir/ValueSet/location-mode",
@@ -42,9 +42,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.2.181"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "LocationMode",
-  "title": "LocationMode",
+  "title": "Location Mode",
   "status": "draft",
   "experimental": false,
   "date": "2020-12-28T16:55:11+11:00",

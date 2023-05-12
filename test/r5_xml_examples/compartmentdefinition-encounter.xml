@@ -92,13 +92,6 @@ The following resources may be in this compartment:
  
         <tr>
           <td>
-            <a href="documentmanifest.html">DocumentManifest</a>
-          </td>
-          <td>related-ref</td>
-        </tr>
- 
-        <tr>
-          <td>
             <a href="documentreference.html">DocumentReference</a>
           </td>
           <td>context</td>
@@ -109,6 +102,13 @@ The following resources may be in this compartment:
             <a href="encounter.html">Encounter</a>
           </td>
           <td>{def}</td>
+        </tr>
+ 
+        <tr>
+          <td>
+            <a href="encounterhistory.html">EncounterHistory</a>
+          </td>
+          <td>encounter</td>
         </tr>
  
         <tr>
@@ -141,7 +141,7 @@ The following resources may be in this compartment:
  
         <tr>
           <td>
-            <a href="medicationusage.html">MedicationUsage</a>
+            <a href="medicationstatement.html">MedicationStatement</a>
           </td>
           <td>encounter</td>
         </tr>
@@ -271,6 +271,10 @@ The following resources are never in this compartment:
         </li>
  
         <li>
+          <a href="biologicallyderivedproductdispense.html">BiologicallyDerivedProductDispense</a>
+        </li>
+ 
+        <li>
           <a href="bodystructure.html">BodyStructure</a>
         </li>
  
@@ -344,6 +348,10 @@ The following resources are never in this compartment:
  
         <li>
           <a href="device.html">Device</a>
+        </li>
+ 
+        <li>
+          <a href="deviceassociation.html">DeviceAssociation</a>
         </li>
  
         <li>
@@ -464,6 +472,10 @@ The following resources are never in this compartment:
  
         <li>
           <a href="insuranceplan.html">InsurancePlan</a>
+        </li>
+ 
+        <li>
+          <a href="inventoryitem.html">InventoryItem</a>
         </li>
  
         <li>
@@ -707,6 +719,10 @@ The following resources are never in this compartment:
         </li>
  
         <li>
+          <a href="testplan.html">TestPlan</a>
+        </li>
+ 
+        <li>
           <a href="testreport.html">TestReport</a>
         </li>
  
@@ -730,11 +746,11 @@ The following resources are never in this compartment:
     </div>
   </text>
   <url value="http://hl7.org/fhir/CompartmentDefinition/encounter"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Base FHIR compartment definition for Encounter"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="FHIR Project Team"/>
   <contact>
     <telecom>
@@ -783,6 +799,9 @@ The following resources are never in this compartment:
   </resource>
   <resource>
     <code value="BiologicallyDerivedProduct"/>
+  </resource>
+  <resource>
+    <code value="BiologicallyDerivedProductDispense"/>
   </resource>
   <resource>
     <code value="BodyStructure"/>
@@ -874,6 +893,9 @@ The following resources are never in this compartment:
     <code value="Device"/>
   </resource>
   <resource>
+    <code value="DeviceAssociation"/>
+  </resource>
+  <resource>
     <code value="DeviceDefinition"/>
   </resource>
   <resource>
@@ -894,16 +916,16 @@ The following resources are never in this compartment:
     <param value="encounter"/>
   </resource>
   <resource>
-    <code value="DocumentManifest"/>
-    <param value="related-ref"/>
-  </resource>
-  <resource>
     <code value="DocumentReference"/>
     <param value="context"/>
   </resource>
   <resource>
     <code value="Encounter"/>
     <param value="{def}"/>
+  </resource>
+  <resource>
+    <code value="EncounterHistory"/>
+    <param value="encounter"/>
   </resource>
   <resource>
     <code value="Endpoint"/>
@@ -988,6 +1010,9 @@ The following resources are never in this compartment:
     <code value="InsurancePlan"/>
   </resource>
   <resource>
+    <code value="InventoryItem"/>
+  </resource>
+  <resource>
     <code value="InventoryReport"/>
   </resource>
   <resource>
@@ -1033,7 +1058,7 @@ The following resources are never in this compartment:
     <param value="encounter"/>
   </resource>
   <resource>
-    <code value="MedicationUsage"/>
+    <code value="MedicationStatement"/>
     <param value="encounter"/>
   </resource>
   <resource>
@@ -1210,6 +1235,9 @@ The following resources are never in this compartment:
   </resource>
   <resource>
     <code value="TerminologyCapabilities"/>
+  </resource>
+  <resource>
+    <code value="TestPlan"/>
   </resource>
   <resource>
     <code value="TestReport"/>

@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>measure</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="measure.html">Measure</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>url</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#canonical">canonical</a>
@@ -62,6 +67,7 @@
         <tr>
           <td>IN</td>
           <td>version</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -77,6 +83,7 @@
         <tr>
           <td>IN</td>
           <td>subject</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -94,6 +101,7 @@
         <tr>
           <td>IN</td>
           <td>periodStart</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#date">date</a>
@@ -109,6 +117,7 @@
         <tr>
           <td>IN</td>
           <td>periodEnd</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#date">date</a>
@@ -124,6 +133,7 @@
         <tr>
           <td>IN</td>
           <td>reportType</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -131,7 +141,10 @@
           <td/>
           <td>
             <div>
-              <p>The type of measure report: subject, subject-list, or population. If not specified, a default value of subject will be used if the subject parameter is supplied, otherwise, population will be used</p>
+              <p>The type of measure report: individual, subject-list, or summary. If not specified, a default value of individual will be used if the subject parameter is supplied, otherwise, summary will be used. NOTE: Implementations should support the use of 
+                <code>subject</code> for individual and 
+                <code>population</code> for summary for backwards compatibility with existing implementations.
+              </p>
 
             </div>
           </td>
@@ -139,6 +152,7 @@
         <tr>
           <td>IN</td>
           <td>provider</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -156,6 +170,7 @@
         <tr>
           <td>IN</td>
           <td>location</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -173,6 +188,7 @@
         <tr>
           <td>IN</td>
           <td>lastReceivedOn</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#dateTime">dateTime</a>
@@ -188,6 +204,7 @@
         <tr>
           <td>IN</td>
           <td>parameters</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="parameters.html">Parameters</a>
@@ -203,6 +220,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>0..*</td>
           <td>
             <a href="bundle.html">Bundle</a>
@@ -229,13 +247,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/Measure-evaluate-measure"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="EvaluateMeasure"/>
   <title value="Evaluate Measure"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -265,6 +283,7 @@
   <parameter>
     <name value="measure"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The measure to evaluate. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter is required, or a url (and optionally version) must be supplied."/>
@@ -273,6 +292,7 @@
   <parameter>
     <name value="url"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The url of the plan measure to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter (and optionally the version), or the measure parameter must be supplied"/>
@@ -282,6 +302,7 @@
   <parameter>
     <name value="version"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The version of the measure to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter may only be used if the url parameter is supplied."/>
@@ -317,7 +338,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The type of measure report: subject, subject-list, or population. If not specified, a default value of subject will be used if the subject parameter is supplied, otherwise, population will be used"/>
+    <documentation value="The type of measure report: individual, subject-list, or summary. If not specified, a default value of individual will be used if the subject parameter is supplied, otherwise, summary will be used. NOTE: Implementations should support the use of `subject` for individual and `population` for summary for backwards compatibility with existing implementations."/>
     <type value="code"/>
   </parameter>
   <parameter>

@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>url</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>codeSystem</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="codesystem.html">CodeSystem</a>
@@ -62,6 +67,7 @@
         <tr>
           <td>IN</td>
           <td>code</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -77,6 +83,7 @@
         <tr>
           <td>IN</td>
           <td>version</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -92,6 +99,7 @@
         <tr>
           <td>IN</td>
           <td>display</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -107,6 +115,7 @@
         <tr>
           <td>IN</td>
           <td>coding</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#Coding">Coding</a>
@@ -122,6 +131,7 @@
         <tr>
           <td>IN</td>
           <td>codeableConcept</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -137,6 +147,7 @@
         <tr>
           <td>IN</td>
           <td>date</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#dateTime">dateTime</a>
@@ -152,6 +163,7 @@
         <tr>
           <td>IN</td>
           <td>abstract</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -169,6 +181,7 @@
         <tr>
           <td>IN</td>
           <td>displayLanguage</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -184,6 +197,7 @@
         <tr>
           <td>OUT</td>
           <td>result</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#boolean">boolean</a>
@@ -199,6 +213,7 @@
         <tr>
           <td>OUT</td>
           <td>message</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -214,6 +229,7 @@
         <tr>
           <td>OUT</td>
           <td>display</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -229,6 +245,7 @@
         <tr>
           <td>OUT</td>
           <td>code</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -244,6 +261,7 @@
         <tr>
           <td>OUT</td>
           <td>system</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -259,6 +277,7 @@
         <tr>
           <td>OUT</td>
           <td>version</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -274,6 +293,7 @@
         <tr>
           <td>OUT</td>
           <td>codeableConcept</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -289,6 +309,7 @@
         <tr>
           <td>OUT</td>
           <td>issues</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="operationoutcome.html">OperationOutcome</a>
@@ -302,7 +323,6 @@
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -312,13 +332,13 @@
     <valueCode value="normative"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ValidateCode"/>
   <title value="Code System based Validation"/>
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -347,6 +367,7 @@
   <parameter>
     <name value="url"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="CodeSystem URL. The server must know the code system (e.g. it is defined explicitly in the server'scode systems, or it is known implicitly by the server"/>
@@ -355,6 +376,7 @@
   <parameter>
     <name value="codeSystem"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The codeSystem is provided directly as part of the request. Servers may choose not to accept code systems in this fashion. This parameter is used when the client wants the server to check against a code system that is not stored on the server"/>
@@ -371,6 +393,7 @@
   <parameter>
     <name value="version"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The version of the code system, if one was provided in the source data"/>

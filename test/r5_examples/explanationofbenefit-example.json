@@ -129,7 +129,9 @@
               }
             ]
           },
-          "value": 0.80
+          "quantity": {
+            "value": 0.80
+          }
         },
         {
           "category": {
@@ -258,7 +260,9 @@
                       }
                     ]
                   },
-                  "value": 0.90
+                  "quantity": {
+                    "value": 0.90
+                  }
                 },
                 {
                   "category": {

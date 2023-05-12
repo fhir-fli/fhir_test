@@ -13,7 +13,7 @@
     }
   ],
   "version": "1",
-  "name": "PATIENT-LINK-RESPONSE",
+  "name": "PATIENTLINKRESPONSE",
   "title": "Link Patients Response",
   "status": "draft",
   "experimental": true,

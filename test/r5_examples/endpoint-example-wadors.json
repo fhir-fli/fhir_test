@@ -17,13 +17,17 @@
     }
   ],
   "name": "PACS Hospital DICOM WADO-RS endpoint",
-  "payloadType": [
+  "payload": [
     {
-      "text": "DICOM WADO-RS"
+      "type": [
+        {
+          "text": "DICOM WADO-RS"
+        }
+      ],
+      "mimeType": [
+        "application/dicom"
+      ]
     }
-  ],
-  "payloadMimeType": [
-    "application/dicom"
   ],
   "address": "https://pacs.hospital.org/wado-rs",
   "meta": {

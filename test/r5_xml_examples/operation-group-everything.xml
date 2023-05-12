@@ -16,6 +16,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -31,6 +34,7 @@
         <tr>
           <td>IN</td>
           <td>start</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#date">date</a>
@@ -46,6 +50,7 @@
         <tr>
           <td>IN</td>
           <td>end</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#date">date</a>
@@ -61,6 +66,7 @@
         <tr>
           <td>IN</td>
           <td>_since</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#instant">instant</a>
@@ -76,6 +82,7 @@
         <tr>
           <td>IN</td>
           <td>_type</td>
+          <td/>
           <td>0..*</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -91,6 +98,7 @@
         <tr>
           <td>IN</td>
           <td>_count</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#integer">integer</a>
@@ -106,6 +114,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="bundle.html">Bundle</a>
@@ -155,13 +164,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/Group-everything"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Everything"/>
   <title value="Fetch a group of Patient Records"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>

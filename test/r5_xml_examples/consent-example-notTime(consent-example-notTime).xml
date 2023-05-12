@@ -43,13 +43,13 @@
       <code value="INFA"/>
     </coding>
   </regulatoryBasis>
-    <provision>
-    <type value="permit"/>
+
+  <decision value="permit"/>
   <provision>
     <period>
       <start value="2015-01-01"/>
       <end value="2015-02-01"/>
     </period>
   </provision>
-  </provision>
+
 </Consent>

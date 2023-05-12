@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>specimenDefinition</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="specimendefinition.html">SpecimenDefinition</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>subject</td>
+          <td/>
           <td>1..*</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -64,6 +69,7 @@
         <tr>
           <td>IN</td>
           <td>collector</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
@@ -81,6 +87,7 @@
         <tr>
           <td>IN</td>
           <td>userType</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -96,6 +103,7 @@
         <tr>
           <td>IN</td>
           <td>userLanguage</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -111,6 +119,7 @@
         <tr>
           <td>IN</td>
           <td>userTaskContext</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -126,6 +135,7 @@
         <tr>
           <td>IN</td>
           <td>setting</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -141,6 +151,7 @@
         <tr>
           <td>IN</td>
           <td>settingContext</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
@@ -156,6 +167,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="specimen.html">Specimen</a>
@@ -182,13 +194,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/SpecimenDefinition-apply"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Apply"/>
   <title value="Apply"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -218,6 +230,7 @@
   <parameter>
     <name value="specimenDefinition"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
     <documentation value="The specimen definition to be applied. If the operation is invoked at the instance level, this parameter is not allowed; if the operation is invoked at the type level, this parameter is required"/>

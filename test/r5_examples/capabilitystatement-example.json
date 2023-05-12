@@ -3,11 +3,11 @@
   "id": "example",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n\t\t\t\u003cp\u003eThe EHR Server supports the following transactions for the resource Person: read, vread, \n        update, history, search(name,gender), create and updates.\u003c/p\u003e\n\t\t\t\u003cp\u003eThe EHR System supports the following message: admin-notify::Person.\u003c/p\u003e\n\t\t\t\u003cp\u003eThe EHR Application has a \n        \u003ca href\u003d\"http://fhir.hl7.org/base/Profilebc054d23-75e1-4dc6-aca5-838b6b1ac81d/_history/b5fdd9fc-b021-4ea1-911a-721a60663796\"\u003egeneral document profile\u003c/a\u003e.\n      \u003c/p\u003e\n\t\t\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n\t\t\t\n      \u003cp\u003eThe EHR Server supports the following transactions for the resource Person: read, vread, \n        update, history, search(name,gender), create and updates.\u003c/p\u003e\n\t\t\t\n      \u003cp\u003eThe EHR System supports the following message: admin-notify::Person.\u003c/p\u003e\n\t\t\t\n      \u003cp\u003eThe EHR Application has a \n        \n        \u003ca href\u003d\"http://fhir.hl7.org/base/Profilebc054d23-75e1-4dc6-aca5-838b6b1ac81d/_history/b5fdd9fc-b021-4ea1-911a-721a60663796\"\u003egeneral document profile\u003c/a\u003e.\n      \n      \u003c/p\u003e\n\t\t\n    \u003c/div\u003e"
   },
   "url": "urn:uuid:68d043b5-9ecf-4559-a57a-396e0d452311",
   "version": "20130510",
-  "name": "ACME-EHR",
+  "name": "ACMEEHR",
   "title": "ACME EHR capability statement",
   "status": "draft",
   "experimental": true,
@@ -81,7 +81,7 @@
     "es"
   ],
   "implementationGuide": [
-    "http://hl7.org/fhir/us/lab"
+    "http://example.org/fhir/us/lab"
   ],
   "rest": [
     {

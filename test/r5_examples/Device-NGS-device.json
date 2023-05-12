@@ -13,9 +13,9 @@
   ],
   "status": "active",
   "manufacturer": "Illumina",
-  "deviceName": [
+  "name": [
     {
-      "name": "NextSeq 550 Instrument",
+      "value": "NextSeq 550 Instrument",
       "type": "user-friendly-name"
     }
   ],

@@ -106,7 +106,9 @@
               }
             ]
           },
-          "value": 80.00
+          "quantity": {
+            "value": 80.00
+          }
         },
         {
           "category": {
@@ -147,7 +149,9 @@
               }
             ]
           },
-          "value": 80.00
+          "quantity": {
+            "value": 80.00
+          }
         },
         {
           "category": {
@@ -188,7 +192,9 @@
                   }
                 ]
               },
-              "value": 80.00
+              "quantity": {
+                "value": 80.00
+              }
             },
             {
               "category": {
@@ -305,7 +311,9 @@
               }
             ]
           },
-          "value": 80.00
+          "quantity": {
+            "value": 80.00
+          }
         },
         {
           "category": {
@@ -370,7 +378,9 @@
               }
             ]
           },
-          "value": 80.00
+          "quantity": {
+            "value": 80.00
+          }
         },
         {
           "category": {
@@ -442,7 +452,9 @@
               }
             ]
           },
-          "value": 80.00
+          "quantity": {
+            "value": 80.00
+          }
         },
         {
           "category": {
@@ -510,7 +522,14 @@
   "processNote": [
     {
       "number": 101,
-      "type": "print",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/note-type",
+            "code": "print"
+          }
+        ]
+      },
       "text": "Package codes are not permitted. Codes replaced by Insurer.",
       "language": {
         "coding": [

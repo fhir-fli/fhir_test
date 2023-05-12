@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "diet-type",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -42,7 +42,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.2.206"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "DietCodes",
   "title": "Diet Codes",
   "status": "draft",
@@ -58,7 +58,7 @@
       ]
     }
   ],
-  "description": "Codes that can be used to indicate the type of food being ordered for a patient. This value set is provided as a suggestive example. It includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 182922004 (Dietary regime (regime/therapy)) ",
+  "description": "Codes that can be used to indicate the type of food being ordered for a patient. This value set is provided as a suggestive example. It includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 182922004 (Dietary regime (regime/therapy))",
   "jurisdiction": [
     {
       "coding": [

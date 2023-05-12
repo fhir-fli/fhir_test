@@ -5,12 +5,12 @@
   <text>
     <status value="extensions"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h2>statusCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-verificationresult-status)</h2>
+      <h2>VerificationResultStatusCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-verificationresult-status)</h2>
       <p>Mapping from 
-        <a href="valueset-verificationresult-status.html">http://hl7.org/fhir/ValueSet/verificationresult-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-verificationresult-status.html">Verification Result status</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
-      <p>DRAFT. Published on 2018-06-06T00:06:02+10:00 by HL7 (FHIR Project) (
+      <p>DRAFT. Published on 2018-06-05T14:06:02Z by HL7 (FHIR Project) (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>, 
         <a href="mailto:fhir@lists.hl7.org">fhir@lists.hl7.org</a>). 
       </p>
@@ -35,6 +35,13 @@
           <td>
             <b>Target Code</b>
           </td>
+        </tr>
+        <tr>
+          <td>entered-in-error</td>
+          <td>
+            <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
+          </td>
+          <td>error</td>
         </tr>
         <tr>
           <td>attested</td>
@@ -82,12 +89,12 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-verificationresult-status"/>
-  <version value="5.0.0-snapshot3"/>
-  <name value="statusCanonicalMap"/>
-  <title value="Canonical Mapping for &quot;status&quot;"/>
+  <version value="5.0.0-cibuild"/>
+  <name value="VerificationResultStatusCanonicalMap"/>
+  <title value="Canonical Mapping for &quot;Verification Result status&quot;"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2018-06-06T00:06:02+10:00"/>
+  <date value="2018-06-05T14:06:02+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -112,6 +119,13 @@
   <group>
     <source value="http://hl7.org/fhir/CodeSystem/verificationresult-status"/>
     <target value="http://hl7.org/fhir/resource-status"/>
+    <element>
+      <code value="entered-in-error"/>
+      <target>
+        <code value="error"/>
+        <relationship value="equivalent"/>
+      </target>
+    </element>
     <element>
       <code value="attested"/>
       <target>

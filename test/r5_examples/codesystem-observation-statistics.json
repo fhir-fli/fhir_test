@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "observation-statistics",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
@@ -29,9 +29,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.1.395"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "StatisticsCode",
-  "title": "StatisticsCode",
+  "title": "Statistics Code",
   "status": "active",
   "experimental": false,
   "date": "2022-12-01T09:29:23+11:00",

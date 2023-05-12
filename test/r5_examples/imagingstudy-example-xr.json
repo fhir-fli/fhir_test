@@ -62,11 +62,6 @@
   "referrer": {
     "reference": "Practitioner/example"
   },
-  "interpreter": [
-    {
-      "reference": "Practitioner/example"
-    }
-  ],
   "endpoint": [
     {
       "reference": "Endpoint/example-wadors"

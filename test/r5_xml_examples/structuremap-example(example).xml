@@ -7,23 +7,80 @@
       <display value="test health data"/>
     </security>
   </meta>
-  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: StructureMap</b><a name="example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource StructureMap "example" </p></div><p><b>url</b>: <code>http://hl7.org/fhir/StructureMap/example</code></p><p><b>identifier</b>: id: urn:oid:2.16.840.1.113883.4.642.13.2</p><p><b>version</b>: 0.1</p><p><b>name</b>: ExampleMap</p><p><b>title</b>: Example Map</p><p><b>status</b>: draft</p><p><b>date</b>: 2017-03-09</p><p><b>publisher</b>: HL7 FHIR Standard</p><p><b>contact</b>: <a href="http://hl7.org/fhir">http://hl7.org/fhir</a></p><p><b>description</b>: Example Structure Map</p><p><b>jurisdiction</b>: Oceania <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (m49.htm#009)</span></p><blockquote><p><b>group</b></p><p><b>name</b>: Examples</p><p><b>documentation</b>: test -&gt; testValue</p><h3>Inputs</h3><table class="grid"><tr><td>-</td><td><b>Name</b></td><td><b>Mode</b></td></tr><tr><td>*</td><td>test</td><td>source</td></tr></table><blockquote><p><b>rule</b></p><p><b>name</b>: rule1</p><h3>Sources</h3><table class="grid"><tr><td>-</td><td><b>Context</b></td><td><b>Type</b></td><td><b>Element</b></td><td><b>Variable</b></td></tr><tr><td>*</td><td>Source</td><td>SourceClassA</td><td>test</td><td>t</td></tr></table><h3>Targets</h3><table class="grid"><tr><td>-</td><td><b>Context</b></td><td><b>Element</b></td><td><b>Transform</b></td></tr><tr><td>*</td><td>Destination</td><td>testValue</td><td>copy</td></tr></table></blockquote></blockquote></div></text><url value="http://hl7.org/fhir/StructureMap/example"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <pre class="fml">
+
+        <span style="color: #cc00cc">/// 
+          <b>url</b> = 
+        </span>
+        <span style="color: blue">'http://hl7.org/fhir/StructureMap/example'</span>
+
+        <span style="color: #cc00cc">/// 
+          <b>name</b> = 
+        </span>
+        <span style="color: blue">'ExampleMap'</span>
+
+        <span style="color: #cc00cc">/// 
+          <b>title</b> = 
+        </span>
+        <span style="color: blue">'Example Map'</span>
+
+        <span style="color: #cc00cc">/// 
+          <b>status</b> = 
+        </span>
+        <span style="color: blue">'draft'</span>
+
+
+        <span style="color: navy">// </span>
+        <span style="color: green">test -&gt; testValue</span>
+
+        <b>group </b>Examples
+        <span style="color: navy">(</span>
+        <b>source</b> 
+        <span style="color: maroon">testSrc</span>, 
+        <b>target</b> 
+        <span style="color: maroon">testTgt</span>
+        <span style="color: navy">)</span>
+        <span style="color: navy"> {
+</span>  testSrc.test
+        <span style="color: navy"> : </span>SourceClassA
+        <b> as </b>
+        <span style="color: maroon">t</span>
+        <span style="color: navy">
+          <b> -&gt; </b>
+        </span>testTgt.testValue = 
+        <b>copy</b>
+        <span style="color: navy">(</span>
+        <span style="color: navy">)</span> 
+        <i>"rule1"</i>
+        <span style="color: navy">;</span>
+
+        <span style="color: navy">}
+
+</span>
+      </pre>
+    </div>
+  </text>
+  <url value="http://hl7.org/fhir/StructureMap/example"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.13.2"/>
   </identifier>
-  <version value="0.1"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ExampleMap"/>
   <title value="Example Map"/>
   <status value="draft"/>
+  <experimental value="true"/>
   <date value="2017-03-09"/>
-  <publisher value="HL7 FHIR Standard"/> 
-  <contact> 
-    <telecom> 
-      <system value="url"/> 
-      <value value="http://hl7.org/fhir"/> 
-    </telecom> 
-  </contact>   
+  <publisher value="HL7 FHIR Standard"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
   <description value="Example Structure Map"/>
   <jurisdiction>
     <coding>
@@ -36,23 +93,26 @@
     <name value="Examples"/>
     <documentation value="test -&gt; testValue"/>
     <input>
-      <name value="test"/>
+      <name value="testSrc"/>
       <mode value="source"/>
+    </input>
+    <input>
+      <name value="testTgt"/>
+      <mode value="target"/>
     </input>
     <rule>
       <name value="rule1"/>
       <source>
-        <context value="Source"/>
+        <context value="testSrc"/>
         <type value="SourceClassA"/>
         <element value="test"/>
         <variable value="t"/>
       </source>
       <target>
-        <context value="Destination"/>
+        <context value="testTgt"/>
         <element value="testValue"/>
         <transform value="copy"/>
       </target>
     </rule>
   </group>
-  
 </StructureMap>

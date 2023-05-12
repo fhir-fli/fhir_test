@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "cited-artifact-classification-type",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
@@ -17,7 +17,7 @@
       "valueCode": "cds"
     },
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-classification",
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
       "valueCode": "trial-use"
     },
     {
@@ -32,9 +32,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.1885"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "CitedArtifactClassificationType",
-  "title": "CitedArtifactClassificationType",
+  "title": "Cited Artifact Classification Type",
   "status": "active",
   "experimental": false,
   "date": "2021-03-11T10:55:11.085+11:00",

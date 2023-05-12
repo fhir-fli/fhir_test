@@ -23,7 +23,7 @@
       "valueCode": "trial-use"
     },
     {
-      "url": "http://hl7.org/fhir/build/StructureDefinition/summary",
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/profile-summary",
       "valueString": "**mustSupport**\n\nWhen this profile has defined an element as mustSupport, the sender must provide the element value when available, and the receiver must accept the element value, persist the value and when appropriate, provide function as defined in the profile. When mustSupport is defined at a complex element level, all sub-elements inherit mustSupport."
     }
   ],
@@ -34,7 +34,7 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.5.1212"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ComputableValueSet",
   "title": "Computable ValueSet",
   "status": "draft",
@@ -42,7 +42,7 @@
   "date": "2020-12-28T16:55:11+11:00",
   "publisher": "HL7",
   "description": "Defines a computable value set as one that SHALL have an expression-based definition (i.e. a value set defined intensionally using expressions of the code systems involved) and MAY have an expansion included. The expression-based definition SHALL be represented in only one of three ways; using the compose element, using the expression extension, or using the rules-text extension to provide a step-by-step process for expanding the value set definition",
-  "fhirVersion": "5.0.0",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "rim",
@@ -89,7 +89,7 @@
             "key": "cnl-0",
             "severity": "warning",
             "human": "Name should be usable as an identifier for the module by machine processing applications such as code generation",
-            "expression": "name.exists() implies name.matches(\u0027[A-Z]([A-Za-z0-9_]){1,254}\u0027)",
+            "expression": "name.exists() implies name.matches(\u0027^[A-Z]([A-Za-z0-9_]){1,254}$\u0027)",
             "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
@@ -104,12 +104,12 @@
         "isSummary": false,
         "mapping": [
           {
-            "identity": "rim",
-            "map": "N/A"
+            "identity": "w5",
+            "map": "conformance.behavior,conformance.terminology"
           },
           {
-            "identity": "w5",
-            "map": "conformance.terminology"
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
@@ -176,7 +176,7 @@
         "path": "ValueSet.implicitRules",
         "short": "A set of rules under which this content was created",
         "definition": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
-        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
         "min": 0,
         "max": "1",
         "base": {
@@ -200,7 +200,7 @@
         ],
         "mustSupport": false,
         "isModifier": true,
-        "isModifierReason": "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it\u0027s meaning or interpretation",
+        "isModifierReason": "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies its meaning or interpretation",
         "isSummary": true
       },
       {
@@ -236,10 +236,6 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
-              "valueCanonical": "http://hl7.org/fhir/ValueSet/all-languages"
-            },
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
               "valueString": "Language"
             },
@@ -248,9 +244,15 @@
               "valueBoolean": true
             }
           ],
-          "strength": "preferred",
-          "description": "IETF language tag",
-          "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+          "strength": "required",
+          "description": "IETF language tag for a human language",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild",
+          "additional": [
+            {
+              "purpose": "starter",
+              "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+            }
+          ]
         }
       },
       {
@@ -276,6 +278,9 @@
           {
             "code": "Narrative"
           }
+        ],
+        "condition": [
+          "dom-6"
         ],
         "constraint": [
           {
@@ -318,6 +323,12 @@
           {
             "code": "Resource"
           }
+        ],
+        "condition": [
+          "dom-2",
+          "dom-4",
+          "dom-3",
+          "dom-5"
         ],
         "mustSupport": false,
         "isModifier": false,
@@ -552,7 +563,7 @@
         "path": "ValueSet.extension",
         "sliceName": "supplement",
         "short": "Declares dependency on a particular supplment",
-        "definition": "This extension declares that a value set depends on a particular supplement and should not be used in its absence.",
+        "definition": "This extension declares that a value set depends on a particular [CodeSystem supplement](codesystem.html#supplements) and should not be used in its absence.",
         "min": 0,
         "max": "1",
         "base": {
@@ -592,7 +603,7 @@
         "id": "ValueSet.modifierExtension",
         "path": "ValueSet.modifierExtension",
         "short": "Extensions that cannot be ignored",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -662,7 +673,7 @@
             "key": "cnl-1",
             "severity": "warning",
             "human": "URL should not contain | or # - these characters make processing canonical references problematic",
-            "expression": "url.matches(\u0027([^|#])*\u0027)",
+            "expression": "exists() implies matches(\u0027^[^|# ]+$\u0027)",
             "source": "http://hl7.org/fhir/StructureDefinition/ValueSet"
           },
           {
@@ -767,6 +778,44 @@
         ]
       },
       {
+        "id": "ValueSet.versionAlgorithm[x]",
+        "path": "ValueSet.versionAlgorithm[x]",
+        "short": "How to compare versions",
+        "definition": "Indicates the mechanism used to compare versions to determine which ValueSet is more current.",
+        "comment": "If set as a string, this is a FHIRPath expression that has two additional context variables passed in - %version1 and %version2 and will return a negative number if version1 is newer, a positive number if version2 and a 0 if the version ordering can\u0027t be successfully be determined.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "ValueSet.versionAlgorithm[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          },
+          {
+            "code": "Coding"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() \u003e id.count())",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false,
+        "isSummary": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/version-algorithm"
+        }
+      },
+      {
         "id": "ValueSet.name",
         "path": "ValueSet.name",
         "short": "Name for this value set (computer friendly)",
@@ -847,7 +896,7 @@
         "path": "ValueSet.status",
         "short": "draft | active | retired | unknown",
         "definition": "The status of this value set. Enables tracking the life-cycle of the content. The status of the value set applies to the value set definition (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have a state.",
-        "comment": "Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatusDescription](extension-valueset-workflowstatusdescription.html) extension for additional status information related to the editorial process.",
+        "comment": "Allows filtering of value sets that are appropriate for use versus not.See also the [http://hl7.org/fhir/StructureDefinition/valueset-workflowStatusDescription](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-valueset-workflowStatusDescription.html) extension for additional status information related to the editorial process.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "min": 1,
         "max": "1",
         "base": {
@@ -886,7 +935,7 @@
           ],
           "strength": "required",
           "description": "The lifecycle status of an artifact.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0-snapshot3"
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -939,7 +988,7 @@
         "path": "ValueSet.date",
         "short": "Date last changed",
         "definition": "The date (and optionally time) when the value set metadata or content logical definition (.compose) was created or revised.",
-        "comment": "Note that this is not the same as the meta.lastUpdated which is specific to an instance of a value set resource on a server.  Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.",
+        "comment": "Note that this is not the same as the meta.lastUpdated which is specific to an instance of a value set resource on a server.  Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "alias": [
           "Revision Date"
         ],
@@ -1031,7 +1080,7 @@
         "path": "ValueSet.contact",
         "short": "Contact details for the publisher",
         "definition": "Contact details to assist a user in finding and communicating with the publisher.",
-        "comment": "May be a web site, an email address, a telephone number, etc.",
+        "comment": "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "min": 0,
         "max": "*",
         "base": {
@@ -1144,10 +1193,16 @@
       },
       {
         "id": "ValueSet.jurisdiction",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "deprecated"
+          }
+        ],
         "path": "ValueSet.jurisdiction",
         "short": "Intended jurisdiction for value set (if applicable)",
         "definition": "A legal or geographic region in which the value set is intended to be used.",
-        "comment": "It may be possible for the value set to be used in jurisdictions other than those for which it was originally designed or intended.",
+        "comment": "It may be possible for the value set to be used in jurisdictions other than those for which it was originally designed or intended.\n\nDEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new \u0027jurisdiction\u0027 code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#jurisdiction and useContext.valueCodeableConcept indicating the jurisdiction.)",
         "min": 0,
         "max": "*",
         "base": {
@@ -1323,6 +1378,52 @@
         ]
       },
       {
+        "id": "ValueSet.copyrightLabel",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          }
+        ],
+        "path": "ValueSet.copyrightLabel",
+        "short": "Copyright holder and year(s)",
+        "definition": "A short string (\u003c50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. \u0027All rights reserved\u0027, \u0027Some rights reserved\u0027).",
+        "comment": "The (c) symbol should NOT be included in this string. It will be added by software when rendering the notation. Full details about licensing, restrictions, warrantees, etc. goes in the more general \u0027copyright\u0027 element.",
+        "requirements": "Defines the content expected to be rendered in all representations of the artifact.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "ValueSet.copyrightLabel",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() \u003e id.count())",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mustSupport": false,
+        "isModifier": false,
+        "isSummary": false
+      },
+      {
         "id": "ValueSet.approvalDate",
         "extension": [
           {
@@ -1333,7 +1434,7 @@
         "path": "ValueSet.approvalDate",
         "short": "When the ValueSet was approved by publisher",
         "definition": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.",
-        "comment": "The \u0027date\u0027 element may be more recent than the approval date because of minor changes or editorial corrections.",
+        "comment": "The \u0027date\u0027 element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "min": 0,
         "max": "1",
         "base": {
@@ -1374,9 +1475,9 @@
           }
         ],
         "path": "ValueSet.lastReviewDate",
-        "short": "When the ValueSet was last reviewed",
+        "short": "When the ValueSet was last reviewed by the publisher",
         "definition": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.",
-        "comment": "If specified, this date follows the original approval date.",
+        "comment": "If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "requirements": "Gives a sense of how \"current\" the content is.  Resources that have not been reviewed in a long time may have a risk of being less appropriate/relevant.",
         "min": 0,
         "max": "1",
@@ -1420,7 +1521,7 @@
         "path": "ValueSet.effectivePeriod",
         "short": "When the ValueSet is expected to be used",
         "definition": "The period during which the ValueSet content was or is planned to be in active use.",
-        "comment": "The effective period for a ValueSet determines when the content is applicable for usage and is independent of publication and review dates. For example, a valueset intended to be used for the year 2016 might be published in 2015.",
+        "comment": "The effective period for a ValueSet determines when the content is applicable for usage and is independent of publication and review dates. For example, a valueset intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "requirements": "Allows establishing a transition before a resource comes into effect and also allows for a sunsetting process when new versions of the ValueSet are or are expected to be used instead.",
         "min": 0,
         "max": "1",
@@ -1458,13 +1559,13 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "trial-use"
+            "valueCode": "deprecated"
           }
         ],
         "path": "ValueSet.topic",
-        "short": "E.g. Education, Treatment, Assessment, etc.",
+        "short": "E.g. Education, Treatment, Assessment, etc",
         "definition": "Descriptions related to the content of the ValueSet. Topics provide a high-level categorization as well as keywords for the ValueSet that can be useful for filtering and searching.",
-        "comment": "This element provides topical categorization and keywords for the ValueSet, as opposed to the more structured context-of-use information provided in the useContext element",
+        "comment": "DEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new \u0027topic\u0027 code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#topic and useContext.valueCodeableConcept indicating the topic)",
         "requirements": "Repositories must be able to determine how to categorize the ValueSet so that it can be found by topical and keyword searches.",
         "min": 0,
         "max": "*",
@@ -1583,7 +1684,8 @@
         ],
         "path": "ValueSet.reviewer",
         "short": "Who reviewed the ValueSet",
-        "definition": "An individual or organization primarily responsible for review of some aspect of the ValueSet.",
+        "definition": "An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the ValueSet.",
+        "comment": "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "min": 0,
         "max": "*",
         "base": {
@@ -1619,7 +1721,8 @@
         ],
         "path": "ValueSet.endorser",
         "short": "Who endorsed the ValueSet",
-        "definition": "An individual or organization responsible for officially endorsing the ValueSet for use in some setting.",
+        "definition": "An individual or organization asserted by the publisher to be responsible for officially endorsing the ValueSet for use in some setting.",
+        "comment": "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
         "min": 0,
         "max": "*",
         "base": {
@@ -1654,7 +1757,7 @@
           }
         ],
         "path": "ValueSet.relatedArtifact",
-        "short": "Additional documentation, citations, etc.",
+        "short": "Additional documentation, citations, etc",
         "definition": "Related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor and successor artifacts.",
         "comment": "Each related artifact is either an attachment, or a reference to another resource, but not both.",
         "requirements": "A ValueSet must be able to provide enough information for consumers of the content (and/or interventions or results produced by the content) to be able to determine and understand the justification for and evidence in support of the content.",
@@ -1743,6 +1846,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1756,7 +1862,7 @@
         "id": "ValueSet.compose.extension",
         "path": "ValueSet.compose.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1803,7 +1909,7 @@
         "id": "ValueSet.compose.modifierExtension",
         "path": "ValueSet.compose.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -2007,6 +2113,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2020,7 +2129,7 @@
         "id": "ValueSet.compose.include.extension",
         "path": "ValueSet.compose.include.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2067,7 +2176,7 @@
         "id": "ValueSet.compose.include.modifierExtension",
         "path": "ValueSet.compose.include.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -2132,8 +2241,8 @@
           }
         ],
         "condition": [
-          "vsd-1",
-          "vsd-2"
+          "vsd-2",
+          "vsd-1"
         ],
         "constraint": [
           {
@@ -2216,6 +2325,7 @@
           }
         ],
         "condition": [
+          "vsd-2",
           "vsd-3"
         ],
         "constraint": [
@@ -2263,6 +2373,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2276,7 +2389,7 @@
         "id": "ValueSet.compose.include.concept.extension",
         "path": "ValueSet.compose.include.concept.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2323,7 +2436,7 @@
         "id": "ValueSet.compose.include.concept.modifierExtension",
         "path": "ValueSet.compose.include.concept.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -2373,7 +2486,7 @@
         "id": "ValueSet.compose.include.concept.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -2513,6 +2626,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2526,7 +2642,7 @@
         "id": "ValueSet.compose.include.concept.designation.extension",
         "path": "ValueSet.compose.include.concept.designation.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2573,7 +2689,7 @@
         "id": "ValueSet.compose.include.concept.designation.modifierExtension",
         "path": "ValueSet.compose.include.concept.designation.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -2652,10 +2768,6 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
-              "valueCanonical": "http://hl7.org/fhir/ValueSet/all-languages"
-            },
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
               "valueString": "Language"
             },
@@ -2664,9 +2776,15 @@
               "valueBoolean": true
             }
           ],
-          "strength": "preferred",
-          "description": "IETF language tag",
-          "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+          "strength": "required",
+          "description": "IETF language tag for a human language",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild",
+          "additional": [
+            {
+              "purpose": "starter",
+              "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+            }
+          ]
         }
       },
       {
@@ -2686,6 +2804,9 @@
           {
             "code": "Coding"
           }
+        ],
+        "condition": [
+          "vsd-11"
         ],
         "constraint": [
           {
@@ -2713,6 +2834,12 @@
       },
       {
         "id": "ValueSet.compose.include.concept.designation.additionalUse",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "ValueSet.compose.include.concept.designation.additionalUse",
         "short": "Additional ways how this designation would be used",
         "definition": "Additional codes that detail how this designation would be used, if there is more than one use.",
@@ -2728,6 +2855,9 @@
           {
             "code": "Coding"
           }
+        ],
+        "condition": [
+          "vsd-11"
         ],
         "constraint": [
           {
@@ -2802,6 +2932,7 @@
           }
         ],
         "condition": [
+          "vsd-2",
           "vsd-3"
         ],
         "constraint": [
@@ -2849,6 +2980,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2862,7 +2996,7 @@
         "id": "ValueSet.compose.include.filter.extension",
         "path": "ValueSet.compose.include.filter.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2909,7 +3043,7 @@
         "id": "ValueSet.compose.include.filter.modifierExtension",
         "path": "ValueSet.compose.include.filter.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -2959,7 +3093,7 @@
         "id": "ValueSet.compose.include.filter.property",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -3036,7 +3170,7 @@
           ],
           "strength": "required",
           "description": "The kind of operation to perform as a part of a property based filter.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/filter-operator|5.0.0-snapshot3"
+          "valueSet": "http://hl7.org/fhir/ValueSet/filter-operator|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -3049,7 +3183,7 @@
         "id": "ValueSet.compose.include.filter.value",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -3133,6 +3267,12 @@
       },
       {
         "id": "ValueSet.compose.include.copyright",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "ValueSet.compose.include.copyright",
         "short": "A copyright statement for the specific code system included in the value set",
         "definition": "A copyright statement for the specific code system asserted by the containing ValueSet.compose.include element\u0027s system value (if the associated ValueSet.compose.include.version element is not present); or the code system and version combination (if the associated ValueSet.compose.include.version element is present).",
@@ -3181,9 +3321,6 @@
           "max": "*"
         },
         "contentReference": "http://hl7.org/fhir/StructureDefinition/ValueSet#ValueSet.compose.include",
-        "condition": [
-          "vsd-2"
-        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -3205,6 +3342,12 @@
       },
       {
         "id": "ValueSet.compose.property",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "ValueSet.compose.property",
         "short": "Property to return if client doesn\u0027t override",
         "definition": "A property to return in the expansion, if the client doesn\u0027t ask for any particular properties. May be either a code from the code system definition (convenient) or a the formal URI that refers to the property. The special value \u0027*\u0027 means all properties known to the server.",
@@ -3291,6 +3434,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -3304,7 +3450,7 @@
         "id": "ValueSet.expansion.extension",
         "path": "ValueSet.expansion.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -3351,7 +3497,7 @@
         "id": "ValueSet.expansion.modifierExtension",
         "path": "ValueSet.expansion.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -3430,6 +3576,12 @@
       },
       {
         "id": "ValueSet.expansion.next",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "ValueSet.expansion.next",
         "short": "Opaque urls for paging through expansion results",
         "definition": "As per paging Search results, the next URLs are opaque to the client, have no dictated structure, and only the server understands them.",
@@ -3610,6 +3762,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -3623,7 +3778,7 @@
         "id": "ValueSet.expansion.parameter.extension",
         "path": "ValueSet.expansion.parameter.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -3670,7 +3825,7 @@
         "id": "ValueSet.expansion.parameter.modifierExtension",
         "path": "ValueSet.expansion.parameter.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -3797,6 +3952,12 @@
       },
       {
         "id": "ValueSet.expansion.property",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "ValueSet.expansion.property",
         "short": "Additional information supplied about each concept",
         "definition": "A property defines an additional slot through which additional information can be provided about a concept.",
@@ -3851,6 +4012,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -3864,7 +4028,7 @@
         "id": "ValueSet.expansion.property.extension",
         "path": "ValueSet.expansion.property.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -3911,7 +4075,7 @@
         "id": "ValueSet.expansion.property.modifierExtension",
         "path": "ValueSet.expansion.property.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -3961,7 +4125,7 @@
         "id": "ValueSet.expansion.property.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -4100,6 +4264,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -4113,7 +4280,7 @@
         "id": "ValueSet.expansion.contains.extension",
         "path": "ValueSet.expansion.contains.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -4160,7 +4327,7 @@
         "id": "ValueSet.expansion.contains.modifierExtension",
         "path": "ValueSet.expansion.contains.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -4223,6 +4390,9 @@
             "code": "uri"
           }
         ],
+        "condition": [
+          "vsd-10"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -4255,6 +4425,9 @@
           }
         ],
         "meaningWhenMissing": "If this is not populated, systems can assume that the concept it not abstract. This SHALL always be populated for abstract concepts",
+        "condition": [
+          "vsd-9"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -4272,7 +4445,7 @@
         "id": "ValueSet.expansion.contains.inactive",
         "path": "ValueSet.expansion.contains.inactive",
         "short": "If concept is inactive in the code system",
-        "definition": "If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).",
+        "definition": "If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether a concept is inactive (and it may depend on the context of use).",
         "comment": "This should only have a value if the concept is inactive.",
         "min": 0,
         "max": "1",
@@ -4334,7 +4507,7 @@
         "id": "ValueSet.expansion.contains.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -4354,7 +4527,9 @@
           }
         ],
         "condition": [
-          "vsd-6"
+          "vsd-6",
+          "vsd-9",
+          "vsd-10"
         ],
         "constraint": [
           {
@@ -4433,6 +4608,10 @@
         "id": "ValueSet.expansion.contains.property",
         "extension": [
           {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          },
+          {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name",
             "valueString": "ConceptProperty"
           }
@@ -4491,6 +4670,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -4504,7 +4686,7 @@
         "id": "ValueSet.expansion.contains.property.extension",
         "path": "ValueSet.expansion.contains.property.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -4551,7 +4733,7 @@
         "id": "ValueSet.expansion.contains.property.modifierExtension",
         "path": "ValueSet.expansion.contains.property.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -4601,7 +4783,7 @@
         "id": "ValueSet.expansion.contains.property.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -4637,7 +4819,7 @@
         "id": "ValueSet.expansion.contains.property.value[x]",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -4749,6 +4931,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -4762,7 +4947,7 @@
         "id": "ValueSet.expansion.contains.property.subProperty.extension",
         "path": "ValueSet.expansion.contains.property.subProperty.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -4809,7 +4994,7 @@
         "id": "ValueSet.expansion.contains.property.subProperty.modifierExtension",
         "path": "ValueSet.expansion.contains.property.subProperty.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -4859,7 +5044,7 @@
         "id": "ValueSet.expansion.contains.property.subProperty.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -4895,7 +5080,7 @@
         "id": "ValueSet.expansion.contains.property.subProperty.value[x]",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -4974,6 +5159,12 @@
       },
       {
         "id": "ValueSet.scope",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "ValueSet.scope",
         "short": "Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description",
         "definition": "Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description.",
@@ -5028,6 +5219,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -5041,7 +5235,7 @@
         "id": "ValueSet.scope.extension",
         "path": "ValueSet.scope.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -5088,7 +5282,7 @@
         "id": "ValueSet.scope.modifierExtension",
         "path": "ValueSet.scope.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [

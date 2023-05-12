@@ -5,12 +5,35 @@
     {
       "resourceType": "ValueSet",
       "id": "vs2",
+      "name": "Type options for ActivityDefinition.versionAlgorithm[x]",
+      "status": "active",
+      "description": "Type options for ActivityDefinition.versionAlgorithm[x]",
+      "expansion": {
+        "identifier": "urn:uuid:62efbefb-3fac-441f-b50e-ba89b80667c2",
+        "timestamp": "2023-03-31T19:26:27+00:00",
+        "contains": [
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "string",
+            "display": "string"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Coding",
+            "display": "Coding"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "vs3",
       "name": "Type options for ActivityDefinition.subject[x]",
       "status": "active",
       "description": "Type options for ActivityDefinition.subject[x]",
       "expansion": {
-        "identifier": "urn:uuid:8f58ca3b-b35e-4bcb-b8a4-f4a56abb2fb4",
-        "timestamp": "2022-12-14T07:15:55+11:00",
+        "identifier": "urn:uuid:b41dc58c-d72c-4926-94a7-1b4809f551b8",
+        "timestamp": "2023-03-31T19:26:27+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -57,13 +80,13 @@
     },
     {
       "resourceType": "ValueSet",
-      "id": "vs3",
+      "id": "vs4",
       "name": "Type options for ActivityDefinition.timing[x]",
       "status": "active",
       "description": "Type options for ActivityDefinition.timing[x]",
       "expansion": {
-        "identifier": "urn:uuid:6f91b79b-d29a-4e94-9971-1c6e88a5e73a",
-        "timestamp": "2022-12-14T07:15:55+11:00",
+        "identifier": "urn:uuid:c1f808b6-daad-416a-8030-481e8387216f",
+        "timestamp": "2023-03-31T19:26:27+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -90,13 +113,13 @@
     },
     {
       "resourceType": "ValueSet",
-      "id": "vs4",
+      "id": "vs5",
       "name": "Type options for ActivityDefinition.asNeeded[x]",
       "status": "active",
       "description": "Type options for ActivityDefinition.asNeeded[x]",
       "expansion": {
-        "identifier": "urn:uuid:1d7c1254-2b59-42f2-b030-aaada33f95d4",
-        "timestamp": "2022-12-14T07:15:55+11:00",
+        "identifier": "urn:uuid:54ebc153-a971-413c-98cf-c81f0060df54",
+        "timestamp": "2023-03-31T19:26:27+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -113,13 +136,13 @@
     },
     {
       "resourceType": "ValueSet",
-      "id": "vs5",
+      "id": "vs6",
       "name": "Type options for ActivityDefinition.product[x]",
       "status": "active",
       "description": "Type options for ActivityDefinition.product[x]",
       "expansion": {
-        "identifier": "urn:uuid:00e4a100-61f6-4c5b-a28a-7df2e87b1be8",
-        "timestamp": "2022-12-14T07:15:55+11:00",
+        "identifier": "urn:uuid:ab0fddab-99a5-4d62-9bea-6dcea7f841e4",
+        "timestamp": "2023-03-31T19:26:27+00:00",
         "contains": [
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -128,13 +151,18 @@
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
+            "code": "Ingredient",
+            "display": "Ingredient"
+          },
+          {
+            "system": "http://hl7.org/fhir/fhir-types",
             "code": "Substance",
             "display": "Substance"
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
-            "code": "Ingredient",
-            "display": "Ingredient"
+            "code": "SubstanceDefinition",
+            "display": "SubstanceDefinition"
           },
           {
             "system": "http://hl7.org/fhir/fhir-types",
@@ -151,10 +179,10 @@
       "system": "urn:ietf:rfc:3986"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International (Clinical Decision Support)",
   "item": [
     {
@@ -293,7 +321,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.implicitRules-flyover",
-              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+              "text": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc. Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
               "type": "display"
             },
             {
@@ -346,7 +374,7 @@
               "type": "coding",
               "required": false,
               "repeats": false,
-              "answerConstraint": "optionsOnly"
+              "answerConstraint": "optionsOrType"
             }
           ]
         },
@@ -435,7 +463,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.extension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -463,7 +491,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.modifierExtension-flyover",
-              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+              "text": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
               "type": "display"
             }
           ]
@@ -608,6 +636,88 @@
               "type": "string",
               "required": false,
               "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            }
+          ],
+          "linkId": "ActivityDefinition.versionAlgorithm[x]",
+          "text": "How to compare versions",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ActivityDefinition.versionAlgorithm[x]-flyover",
+              "text": "Indicates the mechanism used to compare versions to determine which is more current. If set as a string, this is a FHIRPath expression that has two additional context variables passed in - %version1 and %version2 and will return a negative number if version1 is newer, a positive number if version2 and a 0 if the version ordering can\u0027t be successfully be determined.",
+              "type": "display"
+            },
+            {
+              "linkId": "ActivityDefinition.versionAlgorithm[x]._type",
+              "text": "type",
+              "type": "coding",
+              "required": false,
+              "repeats": false,
+              "answerConstraint": "optionsOnly",
+              "answerValueSet": "#vs2",
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                      "valueString": "string"
+                    }
+                  ],
+                  "linkId": "ActivityDefinition.versionAlgorithm[x]._null",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "ActivityDefinition.versionAlgorithm[x]._null.value",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+                      "valueString": "Coding"
+                    }
+                  ],
+                  "linkId": "ActivityDefinition.versionAlgorithm[x]._null",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "ActivityDefinition.versionAlgorithm[x]._null.value",
+                      "type": "coding",
+                      "required": false,
+                      "repeats": false,
+                      "answerConstraint": "optionsOnly"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -779,7 +889,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.status-flyover",
-              "text": "The status of this activity definition. Enables tracking the life-cycle of the content. Allows filtering of activity definitions that are appropriate for use versus not.",
+              "text": "The status of this activity definition. Enables tracking the life-cycle of the content. Allows filtering of activity definitions that are appropriate for use versus not.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -875,7 +985,7 @@
               "required": false,
               "repeats": false,
               "answerConstraint": "optionsOnly",
-              "answerValueSet": "#vs2",
+              "answerValueSet": "#vs3",
               "item": [
                 {
                   "extension": [
@@ -918,7 +1028,7 @@
                       "extension": [
                         {
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                          "valueCode": "Group, MedicinalProductDefinition, SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition, PackagedProductDefinition, PackagedProductDefinition"
+                          "valueCode": "Group, MedicinalProductDefinition, SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition, PackagedProductDefinition"
                         },
                         {
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -986,7 +1096,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.date-flyover",
-              "text": "The date  (and optionally time) when the activity definition was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes. The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the activity definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.",
+              "text": "The date  (and optionally time) when the activity definition was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes. The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the activity definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1051,7 +1161,7 @@
           "item": [
             {
               "linkId": "ActivityDefinition.contact-display",
-              "text": "May be a web site, an email address, a telephone number, etc.",
+              "text": "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1181,7 +1291,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.jurisdiction-flyover",
-              "text": "A legal or geographic region in which the activity definition is intended to be used. It may be possible for the activity definition to be used in jurisdictions other than those for which it was originally designed or intended.",
+              "text": "A legal or geographic region in which the activity definition is intended to be used. It may be possible for the activity definition to be used in jurisdictions other than those for which it was originally designed or intended.\n\nDEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new \u0027jurisdiction\u0027 code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#jurisdiction and useContext.valueCodeableConcept indicating the jurisdiction.)",
               "type": "display"
             },
             {
@@ -1321,12 +1431,56 @@
                 }
               ],
               "linkId": "ActivityDefinition.copyright-flyover",
-              "text": "A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.",
+              "text": "A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition. The short copyright declaration (e.g. (c) \u00272015+ xyz organization\u0027 should be sent in the copyrightLabel element.",
               "type": "display"
             },
             {
               "linkId": "ActivityDefinition.copyright.value",
               "text": "Use and/or publishing restrictions",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-maxOccurs",
+              "valueInteger": 1
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType",
+              "valueString": "string"
+            }
+          ],
+          "linkId": "ActivityDefinition.copyrightLabel",
+          "type": "group",
+          "required": false,
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "ActivityDefinition.copyrightLabel-flyover",
+              "text": "A short string (\u003c50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. \u0027All rights reserved\u0027, \u0027Some rights reserved\u0027). The (c) symbol should NOT be included in this string. It will be added by software when rendering the notation. Full details about licensing, restrictions, warrantees, etc. goes in the more general \u0027copyright\u0027 element.",
+              "type": "display"
+            },
+            {
+              "linkId": "ActivityDefinition.copyrightLabel.value",
+              "text": "Copyright holder and year(s)",
               "type": "string",
               "required": false,
               "repeats": false
@@ -1365,7 +1519,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.approvalDate-flyover",
-              "text": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage. The \u0027date\u0027 element may be more recent than the approval date because of minor changes or editorial corrections.",
+              "text": "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage. The \u0027date\u0027 element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1409,12 +1563,12 @@
                 }
               ],
               "linkId": "ActivityDefinition.lastReviewDate-flyover",
-              "text": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date. If specified, this date follows the original approval date.",
+              "text": "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date. If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
               "linkId": "ActivityDefinition.lastReviewDate.value",
-              "text": "When the activity definition was last reviewed",
+              "text": "When the activity definition was last reviewed by the publisher",
               "type": "dateTime",
               "required": false,
               "repeats": false
@@ -1454,7 +1608,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.effectivePeriod-flyover",
-              "text": "The period during which the activity definition content was or is planned to be in active use. The effective period for a activity definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.",
+              "text": "The period during which the activity definition content was or is planned to be in active use. The effective period for an activity definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a activity intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
               "type": "display"
             },
             {
@@ -1481,7 +1635,7 @@
             }
           ],
           "linkId": "ActivityDefinition.topic",
-          "text": "E.g. Education, Treatment, Assessment, etc.",
+          "text": "E.g. Education, Treatment, Assessment, etc",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -1502,7 +1656,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.topic-flyover",
-              "text": "Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.",
+              "text": "Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching. DEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new \u0027topic\u0027 code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#topic and useContext.valueCodeableConcept indicating the topic)",
               "type": "display"
             },
             {
@@ -1586,6 +1740,11 @@
           "repeats": true,
           "item": [
             {
+              "linkId": "ActivityDefinition.reviewer-display",
+              "text": "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
+              "type": "display"
+            },
+            {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -1601,7 +1760,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.reviewer-flyover",
-              "text": "An individual or organization primarily responsible for review of some aspect of the content.",
+              "text": "An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the content.",
               "type": "display"
             }
           ]
@@ -1613,6 +1772,11 @@
           "required": false,
           "repeats": true,
           "item": [
+            {
+              "linkId": "ActivityDefinition.endorser-display",
+              "text": "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
+              "type": "display"
+            },
             {
               "extension": [
                 {
@@ -1629,14 +1793,14 @@
                 }
               ],
               "linkId": "ActivityDefinition.endorser-flyover",
-              "text": "An individual or organization responsible for officially endorsing the content for use in some setting.",
+              "text": "An individual or organization asserted by the publisher to be responsible for officially endorsing the content for use in some setting.",
               "type": "display"
             }
           ]
         },
         {
           "linkId": "ActivityDefinition.relatedArtifact",
-          "text": "Additional documentation, citations, etc.",
+          "text": "Additional documentation, citations, etc",
           "type": "group",
           "required": false,
           "repeats": true,
@@ -1739,7 +1903,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.kind-flyover",
-              "text": "A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource. May determine what types of extensions are permitted.",
+              "text": "A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest. The kind element may only specify Request resource types to facilitate considering user input as part of processing the result of any automated clinical reasoning processes. To support creation of event resources, such as Observations, RiskAssessments, and DetectedIssues, use a Task resource with the focus of the task set to the event resource to be created. Note that the kind of resource to be created may determine what types of extensions are permitted.",
               "type": "display"
             },
             {
@@ -2022,7 +2186,7 @@
               "required": false,
               "repeats": false,
               "answerConstraint": "optionsOnly",
-              "answerValueSet": "#vs3",
+              "answerValueSet": "#vs4",
               "item": [
                 {
                   "extension": [
@@ -2243,7 +2407,7 @@
               "required": false,
               "repeats": false,
               "answerConstraint": "optionsOnly",
-              "answerValueSet": "#vs4",
+              "answerValueSet": "#vs5",
               "item": [
                 {
                   "extension": [
@@ -2426,7 +2590,7 @@
                     }
                   ],
                   "linkId": "ActivityDefinition.participant.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -2454,7 +2618,7 @@
                     }
                   ],
                   "linkId": "ActivityDefinition.participant.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -2587,7 +2751,7 @@
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                      "valueCode": "CareTeam, Device, DeviceDefinition, Endpoint, Group, HealthcareService, Location, Organization, Patient, Practitioner, PractitionerRole, RelatedPerson, RelatedPerson"
+                      "valueCode": "CareTeam, Device, DeviceDefinition, Endpoint, Group, HealthcareService, Location, Organization, Patient, Practitioner, PractitionerRole, RelatedPerson"
                     },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -2614,7 +2778,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.participant.role",
-              "text": "E.g. Nurse, Surgeon, Parent, etc.",
+              "text": "E.g. Nurse, Surgeon, Parent, etc",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -2667,7 +2831,7 @@
                 }
               ],
               "linkId": "ActivityDefinition.participant.function",
-              "text": "E.g. Author, Reviewer, Witness, etc.",
+              "text": "E.g. Author, Reviewer, Witness, etc",
               "type": "group",
               "required": false,
               "repeats": true,
@@ -2749,7 +2913,7 @@
               "required": false,
               "repeats": false,
               "answerConstraint": "optionsOnly",
-              "answerValueSet": "#vs5",
+              "answerValueSet": "#vs6",
               "item": [
                 {
                   "extension": [
@@ -2765,7 +2929,7 @@
                       "extension": [
                         {
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceResource",
-                          "valueCode": "Medication, Substance, Ingredient, Ingredient"
+                          "valueCode": "Medication, Ingredient, Substance, SubstanceDefinition"
                         },
                         {
                           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-referenceFilter",
@@ -3228,7 +3392,7 @@
                     }
                   ],
                   "linkId": "ActivityDefinition.dynamicValue.extension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -3256,7 +3420,7 @@
                     }
                   ],
                   "linkId": "ActivityDefinition.dynamicValue.modifierExtension-flyover",
-                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+                  "text": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself). There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
                   "type": "display"
                 }
               ]
@@ -3297,7 +3461,7 @@
                     }
                   ],
                   "linkId": "ActivityDefinition.dynamicValue.path-flyover",
-                  "text": "The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression. The specified path SHALL be a FHIRPath resolveable on the specified target type of the ActivityDefinition, and SHALL consist only of identifiers, constant indexers, and a restricted subset of functions. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). The path attribute contains a [Simple FHIRPath Subset](fhirpath.html#simple) that allows path traversal, but not calculation.",
+                  "text": "The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression. The specified path SHALL be a FHIRPath resolvable on the specified target type of the ActivityDefinition, and SHALL consist only of identifiers, constant indexers, and a restricted subset of functions. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). The path attribute contains a [Simple FHIRPath Subset](fhirpath.html#simple) that allows path traversal, but not calculation.",
                   "type": "display"
                 },
                 {

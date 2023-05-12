@@ -34,7 +34,7 @@
             <a name="http---terminology.hl7.org-CodeSystem-v3-ActMood-CRT"> </a>1
           </td>
           <td style="white-space:nowrap">  
-            <a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ActMood.html#v3-ActMood-CRT">CRT</a>
+            <a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ActMood.html#v3-ActMood-CRT">CRT</a>
           </td>
           <td>http://terminology.hl7.org/CodeSystem/v3-ActMood</td>
           <td>criterion</td>
@@ -58,7 +58,7 @@
             <a name="http---terminology.hl7.org-CodeSystem-v3-ActMood-EXPEC"> </a>1
           </td>
           <td style="white-space:nowrap">  
-            <a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ActMood.html#v3-ActMood-EXPEC">EXPEC</a>
+            <a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ActMood.html#v3-ActMood-EXPEC">EXPEC</a>
           </td>
           <td>http://terminology.hl7.org/CodeSystem/v3-ActMood</td>
           <td>expectation</td>
@@ -80,7 +80,7 @@
             <a name="http---terminology.hl7.org-CodeSystem-v3-ActMood-GOL"> </a>2
           </td>
           <td style="white-space:nowrap">    
-            <a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ActMood.html#v3-ActMood-GOL">GOL</a>
+            <a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ActMood.html#v3-ActMood-GOL">GOL</a>
           </td>
           <td>http://terminology.hl7.org/CodeSystem/v3-ActMood</td>
           <td>goal</td>
@@ -104,7 +104,7 @@
             <a name="http---terminology.hl7.org-CodeSystem-v3-ActMood-RSK"> </a>2
           </td>
           <td style="white-space:nowrap">    
-            <a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ActMood.html#v3-ActMood-RSK">RSK</a>
+            <a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ActMood.html#v3-ActMood-RSK">RSK</a>
           </td>
           <td>http://terminology.hl7.org/CodeSystem/v3-ActMood</td>
           <td>risk</td>
@@ -124,7 +124,7 @@
             <a name="http---terminology.hl7.org-CodeSystem-v3-ActMood-OPT"> </a>1
           </td>
           <td style="white-space:nowrap">  
-            <a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ActMood.html#v3-ActMood-OPT">OPT</a>
+            <a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ActMood.html#v3-ActMood-OPT">OPT</a>
           </td>
           <td>http://terminology.hl7.org/CodeSystem/v3-ActMood</td>
           <td>option</td>
@@ -145,7 +145,7 @@
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.3.3146"/>
   </identifier>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ExampleInactive"/>
   <title value="Example with inactive codes"/>
   <status value="draft"/>

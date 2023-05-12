@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "conceptmap-properties",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00"
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00"
   },
   "text": {
     "status": "generated",
@@ -19,7 +19,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/conceptmap-properties",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ConceptMapProperties",
   "title": "FHIR Defined ConceptMap Properties",
   "status": "draft",

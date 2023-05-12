@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,18 +35,18 @@
         <tr>
           <td>IN</td>
           <td>query</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="datatypes.html#string">string</a>
           </td>
           <td/>
-          <td>
-            <div/>
-          </td>
+          <td/>
         </tr>
         <tr>
           <td>OUT</td>
           <td>result</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="binary.html">Binary</a>
@@ -57,7 +60,6 @@
           </td>
         </tr>
       </table>
-      <div/>
     </div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -67,13 +69,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/Resource-graphql"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Graphql"/>
   <title value="Execute a graphql statement"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>

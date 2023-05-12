@@ -41,17 +41,15 @@
       ]
     }
   ],
-  "provision": {
-    "type": "permit",
-    "provision": [
-      {
-        "period": {
-          "start": "2015-01-01",
-          "end": "2015-02-01"
-        }
+  "decision": "permit",
+  "provision": [
+    {
+      "period": {
+        "start": "2015-01-01",
+        "end": "2015-02-01"
       }
-    ]
-  },
+    }
+  ],
   "meta": {
     "tag": [
       {

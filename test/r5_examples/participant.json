@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/Participant",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "Participant",
   "title": "participant",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "rim",
@@ -88,10 +88,10 @@
       {
         "id": "Participant.identifier",
         "path": "Participant.identifier",
-        "short": "Business Identifier for participant",
-        "definition": "Business identifiers assigned to this participant by one of the applications involved.  These identifiers remain constant as the resource is updated and propagates from server to server.",
+        "short": "Business Identifier for {{title}}",
+        "definition": "Business identifiers assigned to this {{title}} by one of the applications involved.  These identifiers remain constant as the resource is updated and propagates from server to server.",
         "comment": "Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.",
-        "requirements": "Allows identification of the participant as it is known by various participating systems and in a way that remains consistent across servers.",
+        "requirements": "Allows identification of the {{title}} as it is known by various participating systems and in a way that remains consistent across servers.",
         "min": 0,
         "max": "*",
         "base": {
@@ -125,8 +125,8 @@
       {
         "id": "Participant.active",
         "path": "Participant.active",
-        "short": "Whether the participant is currently active",
-        "definition": "Whether this participant record is in active use.",
+        "short": "Whether the {{title}} is currently active",
+        "definition": "Whether this {{title}} record is in active use.",
         "min": 0,
         "max": "1",
         "base": {
@@ -160,8 +160,8 @@
       {
         "id": "Participant.name",
         "path": "Participant.name",
-        "short": "A name for the participant",
-        "definition": "Description of participant as presented to a consumer while searching.",
+        "short": "A name for the {{title}}",
+        "definition": "Description of the {{title}} as presented to a consumer while searching.",
         "min": 0,
         "max": "1",
         "base": {

@@ -3,7 +3,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="MedicinalProductDefinition"/>
   <meta>
-    <lastUpdated value="2022-12-14T07:12:54.019+11:00"/>
+    <lastUpdated value="2023-03-31T19:23:11.471+00:00"/>
   </meta>
   <text>
     <status value="generated"/>
@@ -26,7 +26,7 @@
             <a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a>
             <span style="float: right">
               <a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format">
-                <img src="help16.png" alt="doco" style="background-color: inherit"/>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/>
               </a>
             </span>
           </th>
@@ -54,8 +54,8 @@
             <a href="resource.html#Resource" title="The base language in which the resource is written.">language</a>, 
             <a href="domainresource.html#DomainResource" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a>, 
             <a href="domainresource.html#DomainResource" title="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, nor can they have their own independent transaction scope. This is allowed to be a Parameters resource if and only if it is referenced by a resource that provides context/meaning.">contained</a>, 
-            <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a>, 
-            <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).">modifierExtension</a>
+            <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">extension</a>, 
+            <a href="domainresource.html#DomainResource" title="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).">modifierExtension</a>
           </td>
         </tr>
 
@@ -96,8 +96,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Regulatory type, e.g. Investigational or Authorized
-            <br/>
-            <a href="valueset-medicinal-product-type.html">MedicinalProductType</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-type.html">Medicinal Product Type</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -119,8 +119,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">If this medicine applies to human or veterinary uses
-            <br/>
-            <a href="valueset-medicinal-product-domain.html">MedicinalProductDomain</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-domain.html">Medicinal Product Domain</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -163,7 +163,7 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The status within the lifecycle of this product record
-            <br/>
+            <br/>Binding: 
             <a href="valueset-publication-status.html">PublicationStatus</a> (
             <a href="terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">Preferred</a>)
             <br/>
@@ -226,8 +226,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The dose form for a single part product, or combined form of a multiple part product
-            <br/>
-            <a href="valueset-combined-dose-form.html">CombinedDoseForm</a> (
+            <br/>Binding: 
+            <a href="valueset-combined-dose-form.html">Combined Dose Form</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -249,7 +249,7 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The path by which the product is taken into or makes contact with the body
-            <br/>
+            <br/>Binding: 
             <a href="valueset-route-codes.html">SNOMED CT Route Codes</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
@@ -293,8 +293,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The legal status of supply of the medicinal product as classified by the regulator
-            <br/>
-            <a href="valueset-legal-status-of-supply.html">LegalStatusOfSupply</a> (
+            <br/>Binding: 
+            <a href="valueset-legal-status-of-supply.html">Legal Status Of Supply</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -316,8 +316,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Whether the Medicinal Product is subject to additional monitoring for regulatory reasons
-            <br/>
-            <a href="valueset-medicinal-product-additional-monitoring.html">AdditionalMonitoring</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-additional-monitoring.html">Additional Monitoring</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -328,7 +328,7 @@
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAYAAAABxvaqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIs1vtcMQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAE0lEQVQI12P4//8/AxMDAwNdCABMPwMo2ctnoQAAAABJRU5ErkJggg==" alt="." style="background-color: inherit" class="hierarchy"/>
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/>
             <img src="data:image/png;base64,R0lGODlhEAAQAPZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///wD/ACH5BAEKAH8ALAAAAAAQABAAAAemgH+CgxeFF4OIhBdKGwFChYl/hYwbdkoBPnaQkosbG3d3VEpSUlonUoY1Gzo6QkI8SrGxWBOFG4uySgY5ZWR3PFy2hnaWZXC/PHcPwkpJk1ShoHcxhQEXSUmtFy6+0iSFVResrjoTPDzdcoU+F65CduVU6KAhhQa3F8Tx8nchBoYuqoTLZoAKFRIhqGwqJAULFx0GYpBQeChRIR4TJm6KJMhQRUSBAAA7" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> 
-            <span title="MedicinalProductDefinition.specialMeasures : Whether the Medicinal Product is subject to special measures for regulatory reasons, such as a requirement to conduct post-authorisation studies.">specialMeasures</span>
+            <span title="MedicinalProductDefinition.specialMeasures : Whether the Medicinal Product is subject to special measures for regulatory reasons, such as a requirement to conduct post-authorization studies.">specialMeasures</span>
             <a name="MedicinalProductDefinition.specialMeasures"> </a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">
@@ -339,8 +339,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Whether the Medicinal Product is subject to special measures for regulatory reasons
-            <br/>
-            <a href="valueset-medicinal-product-special-measures.html">SpecialMeasures</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-special-measures.html">Special Measures</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
             <br/>
@@ -363,8 +363,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">If authorised for use in children
-            <br/>
-            <a href="valueset-medicinal-product-pediatric-use.html">PediatricUse</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-pediatric-use.html">Pediatric Use</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -386,8 +386,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Allows the product to be classified by various systems
-            <br/>
-            <a href="valueset-medicinal-product-classification.html">ProductClassification</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-classification.html">Product Classification</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
             <br/>
@@ -431,8 +431,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Package type for the product
-            <br/>
-            <a href="valueset-medicinal-product-package-type.html">MedicinalProductPackageType</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-package-type.html">Medicinal Product Package Type</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
             <br/>
@@ -478,7 +478,7 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The ingredients of this medicinal product - when not detailed in other resources
-            <br/>
+            <br/>Binding: 
             <a href="valueset-substance-codes.html">SNOMED CT Substance Codes</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
@@ -503,7 +503,7 @@
             <a href="substancedefinition.html">SubstanceDefinition</a>)
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Any component of the drug product which is not the chemical entity defined as the drug substance, or an excipient in the drug product
-            <br/>
+            <br/>Binding: 
             <a href="valueset-substance-codes.html">SNOMED CT Substance Codes</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
@@ -593,8 +593,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Allows the contact to be classified, for example QPPV, Pharmacovigilance Enquiry Information
-            <br/>
-            <a href="valueset-medicinal-product-contact-type.html">ProductContactType</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-contact-type.html">Product Contact Type</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -661,7 +661,7 @@
             <a href="datatypes.html#Coding">Coding</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A code that this product is known by, within some formal terminology
-            <br/>
+            <br/>Binding: 
             <a href="valueset-medication-codes.html">SNOMED CT Medication Codes</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
@@ -728,8 +728,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Type of product name, such as rINN, BAN, Proprietary, Non-Proprietary
-            <br/>
-            <a href="valueset-medicinal-product-name-type.html">ProductNameType</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-name-type.html">Product Name Type</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -797,8 +797,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Identifying type for this part of the name (e.g. strength part)
-            <br/>
-            <a href="valueset-medicinal-product-name-part-type.html">ProductNamePartType</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-name-part-type.html">Product Name Part Type</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -844,7 +844,7 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Country code for where this name applies
-            <br/>
+            <br/>Binding: 
             <a href="valueset-country.html">Country ValueSet</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
@@ -869,7 +869,7 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Jurisdiction code for where this name applies
-            <br/>
+            <br/>Binding: 
             <a href="valueset-jurisdiction.html">Jurisdiction ValueSet</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
@@ -894,10 +894,25 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Language code for this name
-            <br/>
-            <a href="valueset-languages.html">Common Languages</a> (
-            <a href="terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">Preferred</a> but limited to 
-            <a href="valueset-all-languages.html">AllLanguages</a>)
+            <br/>Binding: 
+            <a href="valueset-all-languages.html">All Languages</a> (
+            <a href="terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set.">Required</a>)
+            <table class="grid">
+              <tr>
+                <td style="font-size: 11px">
+                  <b>Additional Bindings</b>
+                </td>
+                <td style="font-size: 11px">Purpose</td>
+              </tr>
+              <tr>
+                <td style="font-size: 11px">
+                  <a href="valueset-languages.html" title="http://hl7.org/fhir/ValueSet/languages">Common Languages</a>
+                </td>
+                <td style="font-size: 11px">
+                  <a href="valueset-additional-binding-purpose.html#additional-binding-purpose-starter" title="This value set is a good set of codes to start with when designing your system">Starter Set</a>
+                </td>
+              </tr>
+            </table>
             <br/>
           </td>
         </tr>
@@ -962,8 +977,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">The type of relationship, for instance branded to generic or virtual to actual product
-            <br/>
-            <a href="valueset-medicinal-product-cross-reference-type.html">ProductCrossReferenceType</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-cross-reference-type.html">Product Cross Reference Type</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -1074,8 +1089,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Specifies whether this process is considered proprietary or confidential
-            <br/>
-            <a href="valueset-medicinal-product-confidentiality.html">ProductConfidentiality</a> (
+            <br/>Binding: 
+            <a href="valueset-medicinal-product-confidentiality.html">Product Confidentiality</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -1119,8 +1134,8 @@
             <a href="datatypes.html#CodeableConcept">CodeableConcept</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">A code expressing the type of characteristic
-            <br/>
-            <a href="valueset-product-characteristic-codes.html">ProductCharacteristic</a> (
+            <br/>Binding: 
+            <a href="valueset-product-characteristic-codes.html">Product Characteristic</a> (
             <a href="terminologies.html#example" title="Instances are not expected or even encouraged to draw from the specified value set.  The value set merely provides examples of the types of concepts intended to be included.">Example</a>)
             <br/>
           </td>
@@ -1169,12 +1184,12 @@
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzIZgEiYEgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAIElEQVQ4y2P8//8/AyWAiYFCMGrAqAGjBowaMGoAAgAALL0DKYQ0DPIAAAAASUVORK5CYII=" alt="." style="background-color: inherit" class="hierarchy"/>
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYeFzI3XJ6V3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAANklEQVQ4y+2RsQ0AIAzDav7/2VzQwoCY4iWbZSmo1QGoUgNMghvWaIejPQW/CrrNCylIwcOCDYfLNRcNer4SAAAAAElFTkSuQmCC" alt="." style="background-color: inherit" class="hierarchy"/>
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVQ4y2P8//8/AyWAhYFCMAgMuHjx4n+KXaCv+I0szW8WpCG8kFO1lGFKW/SIjAUYgxz/MzAwMDC+nqhDUTQyjuYFBgCNmhP4OvTRgwAAAABJRU5ErkJggg==" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> 
-            <span title="A sequence of Unicode characters">valueString</span>
+            <span title="A string that may contain Github Flavored Markdown syntax for optional processing by a mark down presentation engine">valueMarkdown</span>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">
-            <a href="datatypes.html#string">string</a>
+            <a href="datatypes.html#markdown">markdown</a>
           </td>
           <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/>
         </tr>
@@ -1268,16 +1283,13 @@
           <td colspan="5" class="hierarchy">
             <br/>
             <a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format">
-              <img src="help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format
             </a>
           </td>
         </tr>
       </table>
     </div>
   </text>
-  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-category">
-    <valueString value="Specialized.Medication Definition"/>
-  </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
     <valueCode value="trial-use"/>
   </extension>
@@ -1291,11 +1303,11 @@
     <valueCode value="brr"/>
   </extension>
   <url value="http://hl7.org/fhir/StructureDefinition/MedicinalProductDefinition"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="MedicinalProductDefinition"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="Health Level Seven International (Biomedical Research and Regulation)"/>
   <contact>
     <telecom>
@@ -1317,21 +1329,21 @@
       <display value="World"/>
     </coding>
   </jurisdiction>
-  <fhirVersion value="5.0.0-snapshot3"/>
-  <mapping>
-    <identity value="rim"/>
-    <uri value="http://hl7.org/v3"/>
-    <name value="RIM Mapping"/>
-  </mapping>
-  <mapping>
-    <identity value="idmp"/>
-    <uri value="https://en.wikipedia.org/wiki/Identification_of_medicinal_products"/>
-    <name value="IDMP Mapping"/>
-  </mapping>
+  <fhirVersion value="5.0.0-cibuild"/>
   <mapping>
     <identity value="w5"/>
     <uri value="http://hl7.org/fhir/fivews"/>
     <name value="FiveWs Pattern Mapping"/>
+  </mapping>
+  <mapping>
+    <identity value="idmp"/>
+    <uri value="https://www.iso.org/obp/ui/#iso:std:iso:11615"/>
+    <name value="IDMP Mapping"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM Mapping"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -1361,7 +1373,7 @@
         <key value="dom-3"/>
         <severity value="error"/>
         <human value="If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource"/>
-        <expression value="contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().ofType(canonical) | %resource.descendants().ofType(uri) | %resource.descendants().ofType(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()"/>
+        <expression value="contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().ofType(canonical) | %resource.descendants().ofType(uri) | %resource.descendants().ofType(url))) or descendants().where(reference = '#').exists() or descendants().where(ofType(canonical) = '#').exists() or descendants().where(ofType(canonical) = '#').exists()).not()).trace('unmatched', id).empty()"/>
         <source value="http://hl7.org/fhir/StructureDefinition/DomainResource"/>
       </constraint>
       <constraint>
@@ -1396,19 +1408,15 @@
       <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
-        <map value="Entity. Role, or Act"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT']"/>
-      </mapping>
-      <mapping>
-        <identity value="idmp"/>
-        <map value="Medicinal Product and Investigational Medicinal Product"/>
+        <map value="Entity, Role, or Act,ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT']"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
         <map value="administrative.medication"/>
+      </mapping>
+      <mapping>
+        <identity value="idmp"/>
+        <map value="Medicinal Product and Investigational Medicinal Product"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.id">
@@ -1463,7 +1471,7 @@
       <path value="MedicinalProductDefinition.implicitRules"/>
       <short value="A set of rules under which this content was created"/>
       <definition value="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc."/>
-      <comment value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc."/>
+      <comment value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1483,7 +1491,7 @@
       </constraint>
       <mustSupport value="false"/>
       <isModifier value="true"/>
-      <isModifierReason value="This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation"/>
+      <isModifierReason value="This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies its meaning or interpretation"/>
       <isSummary value="true"/>
     </element>
     <element id="MedicinalProductDefinition.language">
@@ -1512,18 +1520,19 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet">
-          <valueCanonical value="http://hl7.org/fhir/ValueSet/all-languages"/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
           <valueBoolean value="true"/>
         </extension>
-        <strength value="preferred"/>
-        <description value="IETF language tag"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <strength value="required"/>
+        <description value="IETF language tag for a human language"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild"/>
+        <additional>
+          <purpose value="starter"/>
+          <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        </additional>
       </binding>
     </element>
     <element id="MedicinalProductDefinition.text">
@@ -1545,6 +1554,7 @@
       <type>
         <code value="Narrative"/>
       </type>
+      <condition value="dom-6"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1578,6 +1588,10 @@
       <type>
         <code value="Resource"/>
       </type>
+      <condition value="dom-2"/>
+      <condition value="dom-4"/>
+      <condition value="dom-3"/>
+      <condition value="dom-5"/>
       <mustSupport value="false"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -1589,7 +1603,7 @@
     <element id="MedicinalProductDefinition.extension">
       <path value="MedicinalProductDefinition.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -1628,7 +1642,7 @@
     <element id="MedicinalProductDefinition.modifierExtension">
       <path value="MedicinalProductDefinition.modifierExtension"/>
       <short value="Extensions that cannot be ignored"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -1696,12 +1710,12 @@
         <map value="FiveWs.class"/>
       </mapping>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.MPID, Investigational Medicinal Product.IMPID"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.type">
@@ -1737,12 +1751,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asSpecializedKind.generalizedMaterialKind.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(indicates if this is Medicinal Product or an Investigational Medicinal Product)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asSpecializedKind.generalizedMaterialKind.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.domain">
@@ -1778,12 +1792,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-domain"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{domain}'].value"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{domain}'].value"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.version">
@@ -1811,12 +1825,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Header.Version Number"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.status">
@@ -1856,11 +1870,11 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/publication-status"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
+        <identity value="idmp"/>
         <map value="n/a"/>
       </mapping>
       <mapping>
-        <identity value="idmp"/>
+        <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
@@ -1889,11 +1903,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
+        <identity value="idmp"/>
         <map value="n/a"/>
       </mapping>
       <mapping>
-        <identity value="idmp"/>
+        <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
@@ -1922,12 +1936,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].desc"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].desc"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.combinedPharmaceuticalDoseForm">
@@ -1963,12 +1977,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/combined-dose-form"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].formCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Combined Pharmaceutical Dose Form"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].formCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.route">
@@ -2004,12 +2018,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/route-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].productOf.reconstitution.consumable.administerableMaterial.consumedIn.substanceAdministration1.routeCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Pharmaceutical Product.Route of Administration"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].productOf.reconstitution.consumable.administerableMaterial.consumedIn.substanceAdministration1.routeCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.indication">
@@ -2037,12 +2051,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].consumedIn.substanceAdministration1.reason.indicationObservationCriterion[@code='{Observation_MedicalProblem}'].value.originalText.@value"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(roll up of all text in Therapeutic Indication.Indication Text, for common case where information is not granular)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].consumedIn.substanceAdministration1.reason.indicationObservationCriterion[@code='{Observation_MedicalProblem}'].value.originalText.@value"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.legalStatusOfSupply">
@@ -2078,12 +2092,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/legal-status-of-supply"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorisation}'].pertinentInformation.policy.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Marketing Authorisation.Legal Status of Supply (moved here for practicality)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorization}'].pertinentInformation.policy.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.additionalMonitoringIndicator">
@@ -2119,18 +2133,18 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-additional-monitoring"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Additional Monitoring Indicator"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.specialMeasures">
       <path value="MedicinalProductDefinition.specialMeasures"/>
       <short value="Whether the Medicinal Product is subject to special measures for regulatory reasons"/>
-      <definition value="Whether the Medicinal Product is subject to special measures for regulatory reasons, such as a requirement to conduct post-authorisation studies."/>
+      <definition value="Whether the Medicinal Product is subject to special measures for regulatory reasons, such as a requirement to conduct post-authorization studies."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -2156,16 +2170,16 @@
           <valueString value="SpecialMeasures"/>
         </extension>
         <strength value="example"/>
-        <description value="Extra measures defined for a Medicinal Product, such as a requirement to conduct post-authorisation studies."/>
+        <description value="Extra measures defined for a Medicinal Product, such as a requirement to conduct post-authorization studies."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-special-measures"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code[@nullFlavor='OTH'].displayName"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Special Measures"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code[@nullFlavor='OTH'].displayName"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.pediatricUseIndicator">
@@ -2201,12 +2215,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-pediatric-use"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Pediatric Use Indicator"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.classification">
@@ -2242,12 +2256,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-classification"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct/asSpecializedKind/generalizedMaterialKind/code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Classification.Value"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct/asSpecializedKind/generalizedMaterialKind/code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.marketingStatus">
@@ -2275,12 +2289,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorisation}'].statusCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Marketing Status"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorization}'].statusCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.packagedMedicinalProduct">
@@ -2316,12 +2330,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-package-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asContent.containerPackagedProduct.asContent.containerPackagedProduct.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Packaged Medicinal Product"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asContent.containerPackagedProduct.asContent.containerPackagedProduct.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.comprisedOf">
@@ -2351,12 +2365,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.formCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufactured Item"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.formCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.ingredient">
@@ -2392,12 +2406,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/substance-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].ingredient.ingredientSubstance.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Ingredient (see also FHIR Ingredient resource)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].ingredient.ingredientSubstance.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.impurity">
@@ -2434,12 +2448,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/substance-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="(to do)"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="(to do)"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.attachedDocument">
@@ -2468,12 +2482,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Attached Document"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.masterFile">
@@ -2502,12 +2516,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Master File"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.contact">
@@ -2535,12 +2549,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.contact.id">
@@ -2562,6 +2576,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -2572,7 +2587,7 @@
     <element id="MedicinalProductDefinition.contact.extension">
       <path value="MedicinalProductDefinition.contact.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -2610,7 +2625,7 @@
     <element id="MedicinalProductDefinition.contact.modifierExtension">
       <path value="MedicinalProductDefinition.contact.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -2681,12 +2696,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-contact-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.contact.contact">
@@ -2716,12 +2731,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.clinicalTrial">
@@ -2750,12 +2765,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.monitoringProgram"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Investigational Medicinal Product.Clinical Trial Status"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.monitoringProgram"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.code">
@@ -2791,12 +2806,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medication-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name">
@@ -2824,12 +2839,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product Name"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.id">
@@ -2851,6 +2866,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -2861,7 +2877,7 @@
     <element id="MedicinalProductDefinition.name.extension">
       <path value="MedicinalProductDefinition.name.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -2899,7 +2915,7 @@
     <element id="MedicinalProductDefinition.name.modifierExtension">
       <path value="MedicinalProductDefinition.name.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -2962,12 +2978,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product Name.Full Name"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.type">
@@ -3003,12 +3019,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-name-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.part">
@@ -3036,12 +3052,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(any and all of the name parts e.g. Medicinal Product Name.Formulation Part)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.part.id">
@@ -3063,6 +3079,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3073,7 +3090,7 @@
     <element id="MedicinalProductDefinition.name.part.extension">
       <path value="MedicinalProductDefinition.name.part.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -3111,7 +3128,7 @@
     <element id="MedicinalProductDefinition.name.part.modifierExtension">
       <path value="MedicinalProductDefinition.name.part.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -3174,12 +3191,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(text of any of the name parts e.g. Medicinal Product Name.Formulation Part)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.part.type">
@@ -3215,12 +3232,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(which of the name parts this is e.g. Formulation Part)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage">
@@ -3248,12 +3265,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Country / Language"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage.id">
@@ -3275,6 +3292,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3285,7 +3303,7 @@
     <element id="MedicinalProductDefinition.name.usage.extension">
       <path value="MedicinalProductDefinition.name.usage.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -3323,7 +3341,7 @@
     <element id="MedicinalProductDefinition.name.usage.modifierExtension">
       <path value="MedicinalProductDefinition.name.usage.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -3397,12 +3415,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/country"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Country / Language.Country"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage.jurisdiction">
@@ -3441,12 +3459,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/jurisdiction"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Country / Language.Jurisdiction"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage.language">
@@ -3474,26 +3492,27 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet">
-          <valueCanonical value="http://hl7.org/fhir/ValueSet/all-languages"/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
           <valueBoolean value="true"/>
         </extension>
-        <strength value="preferred"/>
-        <description value="IETF language tag"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <strength value="required"/>
+        <description value="IETF language tag for a human language"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild"/>
+        <additional>
+          <purpose value="starter"/>
+          <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        </additional>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.name.@xml:lang"/>
-      </mapping>
       <mapping>
         <identity value="idmp"/>
         <map value="Country / Language.Language"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.name.@xml:lang"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.crossReference">
@@ -3521,12 +3540,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Cross-Reference"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.crossReference.id">
@@ -3548,6 +3567,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3558,7 +3578,7 @@
     <element id="MedicinalProductDefinition.crossReference.extension">
       <path value="MedicinalProductDefinition.crossReference.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -3596,7 +3616,7 @@
     <element id="MedicinalProductDefinition.crossReference.modifierExtension">
       <path value="MedicinalProductDefinition.crossReference.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -3660,12 +3680,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.definingMaterialKind.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Cross-Reference"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.definingMaterialKind.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.crossReference.type">
@@ -3701,12 +3721,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-cross-reference-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Cross-Reference"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation">
@@ -3734,12 +3754,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.id">
@@ -3761,6 +3781,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3771,7 +3792,7 @@
     <element id="MedicinalProductDefinition.operation.extension">
       <path value="MedicinalProductDefinition.operation.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -3809,7 +3830,7 @@
     <element id="MedicinalProductDefinition.operation.modifierExtension">
       <path value="MedicinalProductDefinition.operation.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -3874,12 +3895,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation.Operation Type"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.effectiveDate">
@@ -3907,12 +3928,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.effectiveTime"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation.Effective Date"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.effectiveTime"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.organization">
@@ -3941,12 +3962,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.participation.organzation"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturer / Establishment (Organisation)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.participation.organzation"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.confidentialityIndicator">
@@ -3982,12 +4003,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-confidentiality"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.confidentialityCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation.Confidentiality Indicator"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.confidentialityCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.characteristic">
@@ -4015,12 +4036,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Package Item (Container).Physical Characteristics"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.characteristic.id">
@@ -4042,6 +4063,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -4052,7 +4074,7 @@
     <element id="MedicinalProductDefinition.characteristic.extension">
       <path value="MedicinalProductDefinition.characteristic.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -4090,7 +4112,7 @@
     <element id="MedicinalProductDefinition.characteristic.modifierExtension">
       <path value="MedicinalProductDefinition.characteristic.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -4161,19 +4183,19 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/product-characteristic-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}']"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Physical Characteristics, all attributes"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}']"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.characteristic.value[x]">
       <path value="MedicinalProductDefinition.characteristic.value[x]"/>
       <short value="A value for the characteristic"/>
       <definition value="A value for the characteristic.text."/>
-      <comment value="String is intended to be used only when the item cannot ever reasonably be coded. Otherwise, for cases where a code is not available, but is feasible, use CodeableConcept. (temporary text to make build work: The usage of CodeableConcept is for concepts that are normally coded but for which a code is not available - for example a device implant size that is not standardized. The property string is for text characteristics, e.g. long descriptions, warnings, etc.)."/>
+      <comment value="Text, as markdown, is intended to be used only when the item cannot ever reasonably be coded. Otherwise, for cases where a code is not available, but is feasible, use CodeableConcept.text."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -4185,7 +4207,7 @@
         <code value="CodeableConcept"/>
       </type>
       <type>
-        <code value="string"/>
+        <code value="markdown"/>
       </type>
       <type>
         <code value="Quantity"/>
@@ -4213,12 +4235,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}'].value"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Physical Characteristics, attribute's value"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}'].value"/>
       </mapping>
     </element>
   </snapshot>
@@ -4232,16 +4254,16 @@
       <mustSupport value="false"/>
       <isModifier value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT']"/>
+        <identity value="w5"/>
+        <map value="administrative.medication"/>
       </mapping>
       <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product and Investigational Medicinal Product"/>
       </mapping>
       <mapping>
-        <identity value="w5"/>
-        <map value="administrative.medication"/>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT']"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.identifier">
@@ -4262,12 +4284,12 @@
         <map value="FiveWs.class"/>
       </mapping>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.MPID, Investigational Medicinal Product.IMPID"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.type">
@@ -4291,12 +4313,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asSpecializedKind.generalizedMaterialKind.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(indicates if this is Medicinal Product or an Investigational Medicinal Product)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asSpecializedKind.generalizedMaterialKind.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.domain">
@@ -4320,12 +4342,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-domain"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{domain}'].value"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{domain}'].value"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.version">
@@ -4341,12 +4363,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Header.Version Number"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.status">
@@ -4374,11 +4396,11 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/publication-status"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
+        <identity value="idmp"/>
         <map value="n/a"/>
       </mapping>
       <mapping>
-        <identity value="idmp"/>
+        <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
@@ -4395,11 +4417,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
+        <identity value="idmp"/>
         <map value="n/a"/>
       </mapping>
       <mapping>
-        <identity value="idmp"/>
+        <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
     </element>
@@ -4416,12 +4438,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].desc"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].desc"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.combinedPharmaceuticalDoseForm">
@@ -4445,12 +4467,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/combined-dose-form"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].formCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Combined Pharmaceutical Dose Form"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].formCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.route">
@@ -4474,12 +4496,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/route-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].productOf.reconstitution.consumable.administerableMaterial.consumedIn.substanceAdministration1.routeCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Pharmaceutical Product.Route of Administration"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].productOf.reconstitution.consumable.administerableMaterial.consumedIn.substanceAdministration1.routeCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.indication">
@@ -4495,12 +4517,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].consumedIn.substanceAdministration1.reason.indicationObservationCriterion[@code='{Observation_MedicalProblem}'].value.originalText.@value"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(roll up of all text in Therapeutic Indication.Indication Text, for common case where information is not granular)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].consumedIn.substanceAdministration1.reason.indicationObservationCriterion[@code='{Observation_MedicalProblem}'].value.originalText.@value"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.legalStatusOfSupply">
@@ -4524,12 +4546,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/legal-status-of-supply"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorisation}'].pertinentInformation.policy.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Marketing Authorisation.Legal Status of Supply (moved here for practicality)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorization}'].pertinentInformation.policy.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.additionalMonitoringIndicator">
@@ -4553,18 +4575,18 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-additional-monitoring"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Additional Monitoring Indicator"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.specialMeasures">
       <path value="MedicinalProductDefinition.specialMeasures"/>
       <short value="Whether the Medicinal Product is subject to special measures for regulatory reasons"/>
-      <definition value="Whether the Medicinal Product is subject to special measures for regulatory reasons, such as a requirement to conduct post-authorisation studies."/>
+      <definition value="Whether the Medicinal Product is subject to special measures for regulatory reasons, such as a requirement to conduct post-authorization studies."/>
       <min value="0"/>
       <max value="*"/>
       <type>
@@ -4578,16 +4600,16 @@
           <valueString value="SpecialMeasures"/>
         </extension>
         <strength value="example"/>
-        <description value="Extra measures defined for a Medicinal Product, such as a requirement to conduct post-authorisation studies."/>
+        <description value="Extra measures defined for a Medicinal Product, such as a requirement to conduct post-authorization studies."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-special-measures"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code[@nullFlavor='OTH'].displayName"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Special Measures"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code[@nullFlavor='OTH'].displayName"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.pediatricUseIndicator">
@@ -4611,12 +4633,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-pediatric-use"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Pediatric Use Indicator"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.policy.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.classification">
@@ -4640,12 +4662,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-classification"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct/asSpecializedKind/generalizedMaterialKind/code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Classification.Value"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct/asSpecializedKind/generalizedMaterialKind/code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.marketingStatus">
@@ -4661,12 +4683,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorisation}'].statusCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Marketing Status"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.approval[@code='{Approval_MarketingAuthorization}'].statusCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.packagedMedicinalProduct">
@@ -4690,12 +4712,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-package-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asContent.containerPackagedProduct.asContent.containerPackagedProduct.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Packaged Medicinal Product"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asContent.containerPackagedProduct.asContent.containerPackagedProduct.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.comprisedOf">
@@ -4713,12 +4735,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.formCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufactured Item"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.formCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.ingredient">
@@ -4742,12 +4764,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/substance-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].ingredient.ingredientSubstance.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product.Ingredient (see also FHIR Ingredient resource)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].ingredient.ingredientSubstance.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.impurity">
@@ -4772,12 +4794,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/substance-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="(to do)"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="(to do)"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.attachedDocument">
@@ -4794,12 +4816,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Attached Document"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.masterFile">
@@ -4816,12 +4838,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Master File"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.document"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.contact">
@@ -4837,12 +4859,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.contact.type">
@@ -4866,12 +4888,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-contact-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.contact.contact">
@@ -4889,12 +4911,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.assignedEntity.assignedOrganization.contactParty"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.clinicalTrial">
@@ -4911,12 +4933,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.monitoringProgram"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Investigational Medicinal Product.Clinical Trial Status"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.monitoringProgram"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.code">
@@ -4940,12 +4962,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medication-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct[classCode='MMAT'].code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name">
@@ -4961,12 +4983,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product Name"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.productName">
@@ -4982,12 +5004,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Medicinal Product Name.Full Name"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.type">
@@ -5011,12 +5033,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-name-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.part">
@@ -5032,12 +5054,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(any and all of the name parts e.g. Medicinal Product Name.Formulation Part)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.part.part">
@@ -5053,12 +5075,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(text of any of the name parts e.g. Medicinal Product Name.Formulation Part)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.name.suffix"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.part.type">
@@ -5082,12 +5104,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="(which of the name parts this is e.g. Formulation Part)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage">
@@ -5103,12 +5125,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Country / Language"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage.country">
@@ -5135,12 +5157,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/country"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Country / Language.Country"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage.jurisdiction">
@@ -5167,12 +5189,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/jurisdiction"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Country / Language.Jurisdiction"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.assigningTerritory.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.name.usage.language">
@@ -5188,26 +5210,27 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet">
-          <valueCanonical value="http://hl7.org/fhir/ValueSet/all-languages"/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
           <valueBoolean value="true"/>
         </extension>
-        <strength value="preferred"/>
-        <description value="IETF language tag"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <strength value="required"/>
+        <description value="IETF language tag for a human language"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild"/>
+        <additional>
+          <purpose value="starter"/>
+          <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        </additional>
       </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.name.@xml:lang"/>
-      </mapping>
       <mapping>
         <identity value="idmp"/>
         <map value="Country / Language.Language"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asNamedEntity.name.@xml:lang"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.crossReference">
@@ -5223,12 +5246,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Cross-Reference"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.crossReference.product">
@@ -5245,12 +5268,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.definingMaterialKind.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Cross-Reference"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.definingMaterialKind.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.crossReference.type">
@@ -5274,12 +5297,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-cross-reference-type"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Product Cross-Reference"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].manufacturedProduct.asEquivalentEntity.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation">
@@ -5295,12 +5318,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.type">
@@ -5318,12 +5341,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.code"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation.Operation Type"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.code"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.effectiveDate">
@@ -5339,12 +5362,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.effectiveTime"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation.Effective Date"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.effectiveTime"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.organization">
@@ -5361,12 +5384,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.participation.organzation"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturer / Establishment (Organisation)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.participation.organzation"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.operation.confidentialityIndicator">
@@ -5390,12 +5413,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicinal-product-confidentiality"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.confidentialityCode"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Manufacturing / Business Operation.Confidentiality Indicator"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.action.confidentialityCode"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.characteristic">
@@ -5411,12 +5434,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Package Item (Container).Physical Characteristics"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.characteristic.type">
@@ -5440,26 +5463,26 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/product-characteristic-codes"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}']"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Physical Characteristics, all attributes"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}']"/>
       </mapping>
     </element>
     <element id="MedicinalProductDefinition.characteristic.value[x]">
       <path value="MedicinalProductDefinition.characteristic.value[x]"/>
       <short value="A value for the characteristic"/>
       <definition value="A value for the characteristic.text."/>
-      <comment value="String is intended to be used only when the item cannot ever reasonably be coded. Otherwise, for cases where a code is not available, but is feasible, use CodeableConcept. (temporary text to make build work: The usage of CodeableConcept is for concepts that are normally coded but for which a code is not available - for example a device implant size that is not standardized. The property string is for text characteristics, e.g. long descriptions, warnings, etc.)."/>
+      <comment value="Text, as markdown, is intended to be used only when the item cannot ever reasonably be coded. Otherwise, for cases where a code is not available, but is feasible, use CodeableConcept.text."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
       <type>
-        <code value="string"/>
+        <code value="markdown"/>
       </type>
       <type>
         <code value="Quantity"/>
@@ -5480,12 +5503,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}'].value"/>
-      </mapping>
-      <mapping>
         <identity value="idmp"/>
         <map value="Physical Characteristics, attribute's value"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="ManufacturedProduct[classCode='MANU'].subjectOf.characteristic[@code='{type}'].value"/>
       </mapping>
     </element>
   </differential>

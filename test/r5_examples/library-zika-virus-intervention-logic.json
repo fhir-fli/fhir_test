@@ -12,6 +12,7 @@
     }
   ],
   "version": "1.0.0",
+  "name": "ZikaVirusInterventionLogic",
   "title": "Zika Virus Intervention Logic",
   "status": "active",
   "experimental": true,

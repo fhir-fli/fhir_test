@@ -3,11 +3,12 @@
   "id": "example-Stroke-Thrombolysis-Trialists-2014-2016-IPD-MA-Cohort",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n\t\t  \u003cp\u003e\n\t\t\tStroke Thrombolysis Trialists’ Collaborators Group collection used for individual patient data meta-analysis\n\t\t  \u003c/p\u003e\n\t\t\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n\t\t  \n      \u003cp\u003e\n\t\t\tStroke Thrombolysis Trialists’ Collaborators Group collection used for individual patient data meta-analysis\n\t\t  \u003c/p\u003e\n\t\t\n    \u003c/div\u003e"
   },
-  "name": "Stroke Thrombolysis Trialists’ 2014-2016 IPD-MA Cohort",
+  "name": "StrokeThrombolysisTrialists20142016IPDMACohort",
   "title": "Stroke Thrombolysis Trialists’ Collaborators Group collection used for individual patient data meta-analysis",
   "status": "draft",
+  "description": "Stroke Thrombolysis Trialists’ Collaborators Group collection used for individual patient data meta-analysis",
   "relatedArtifact": [
     {
       "type": "citation",

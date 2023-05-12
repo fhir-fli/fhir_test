@@ -288,10 +288,12 @@
     ],
     "text": "TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal"
   },
-  "subject": {
-    "reference": "Patient/example",
-    "display": "Pam Taylor"
-  },
+  "subject": [
+    {
+      "reference": "Patient/example",
+      "display": "Pam Taylor"
+    }
+  ],
   "entry": [
     {
       "item": {

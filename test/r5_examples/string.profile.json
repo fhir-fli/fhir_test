@@ -13,14 +13,26 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
       "valueCode": "4.0.0"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "has-length"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "do-translations"
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/string",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "string",
   "status": "active",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "HL7 FHIR Standard",
   "contact": [
     {
@@ -44,7 +56,7 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "kind": "primitive-type",
   "abstract": false,
   "type": "string",
@@ -110,7 +122,7 @@
         "id": "string.extension",
         "path": "string.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -171,7 +183,7 @@
               },
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                "valueString": "[ \\r\\n\\t\\S]+"
+                "valueString": "^[\\s\\S]+$"
               }
             ],
             "code": "http://hl7.org/fhirpath/System.String"
@@ -213,7 +225,7 @@
               },
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/regex",
-                "valueString": "[ \\r\\n\\t\\S]+"
+                "valueString": "^[\\s\\S]+$"
               }
             ],
             "code": "http://hl7.org/fhirpath/System.String"

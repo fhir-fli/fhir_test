@@ -31,8 +31,10 @@
       </productCodeableConcept>
     </ActivityDefinition>
   </contained>
+  <name value="ThisExampleIllustratesRelationshipsBetweenActions"/>
   <title value="This example illustrates relationships between actions."/>
   <status value="draft"/>
+  <description value="This example illustrates relationships between actions."/>
   <action>
     <groupingBehavior value="logical-group"/>
     <selectionBehavior value="all"/>

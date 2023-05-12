@@ -161,7 +161,7 @@
       <referenceSourceType>
          <coding>
             <system value="http://referencesourcetypeOID"/>
-            <code value="MarketingAuthorisationApplication"/>
+            <code value="MarketingAuthorizationApplication"/>
          </coding>
       </referenceSourceType>
       <referenceSourceClass>
@@ -453,7 +453,7 @@
          <referenceSourceType>
             <coding>
                <system value="http://referencesourcetypeOID"/>
-               <code value="MarketingAuthorisationApplication"/>
+               <code value="MarketingAuthorizationApplication"/>
             </coding>
          </referenceSourceType>
          <referenceSourceClass>

@@ -2,14 +2,23 @@
   "resourceType": "ValueSet",
   "id": "all-time-units",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00"
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
   },
   "text": {
     "status": "generated",
     "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\u003cul\u003e\u003cli\u003eInclude codes from \u003ca href\u003d\"http://unitsofmeasure.org\"\u003e\u003ccode\u003ehttp://unitsofmeasure.org\u003c/code\u003e\u003c/a\u003e where canonical  \u003d  a\u003c/li\u003e\u003c/ul\u003e\u003c/div\u003e"
   },
   "url": "http://hl7.org/fhir/ValueSet/all-time-units",
-  "version": "5.0.0-snapshot3",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.4.642.3.3304"
+    }
+  ],
+  "version": "5.0.0-cibuild",
   "name": "AllUCUMExpressionForTime",
   "title": "All UCUM Expression for Time",
   "status": "draft",

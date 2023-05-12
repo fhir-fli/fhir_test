@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/Event",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "Event",
   "title": "event",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -41,12 +41,12 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "v2",
       "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
+      "name": "HL7 V2 Mapping"
     },
     {
       "identity": "rim",
@@ -116,7 +116,7 @@
       {
         "id": "Event.identifier",
         "path": "Event.identifier",
-        "short": "Business Identifier for {{title}}",
+        "short": "Business identifier for {{title}}",
         "definition": "Business identifiers assigned to this {{title}} by the performer and/or other systems.  These identifiers remain constant as the resource is updated and propagates from server to server.",
         "comment": "Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.",
         "requirements": "Allows identification of the {{title}} as it is known by various participating systems and in a way that remains consistent across servers.",
@@ -184,7 +184,6 @@
               "http://hl7.org/fhir/StructureDefinition/CarePlan",
               "http://hl7.org/fhir/StructureDefinition/Claim",
               "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/Contract",
               "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest",
               "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
               "http://hl7.org/fhir/StructureDefinition/EnrollmentRequest",
@@ -194,6 +193,8 @@
               "http://hl7.org/fhir/StructureDefinition/RequestOrchestration",
               "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
               "http://hl7.org/fhir/StructureDefinition/SupplyRequest",
+              "http://hl7.org/fhir/StructureDefinition/Task",
+              "http://hl7.org/fhir/StructureDefinition/Transport",
               "http://hl7.org/fhir/StructureDefinition/VisionPrescription"
             ]
           }
@@ -225,7 +226,7 @@
         "path": "Event.partOf",
         "short": "Part of referenced event",
         "definition": "A larger event of which this particular {{title}} is a component or step.",
-        "comment": "Not to be used to link an {{title}} to an Encounter - use \u0027context\u0027 for that.\n\n[The allowed reference resources may be adjusted as appropriate for the event resource].",
+        "comment": "Not to be used to link an {{title}} to an Encounter - use \u0027context\u0027 for that.[The allowed reference resources may be adjusted as appropriate for the event resource].",
         "requirements": "[E.g. Drug administration as part of a procedure, procedure as part of observation, etc.].",
         "alias": [
           "container"
@@ -241,6 +242,7 @@
           {
             "code": "Reference",
             "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/AdverseEvent",
               "http://hl7.org/fhir/StructureDefinition/AuditEvent",
               "http://hl7.org/fhir/StructureDefinition/ChargeItem",
               "http://hl7.org/fhir/StructureDefinition/ClaimResponse",
@@ -248,27 +250,31 @@
               "http://hl7.org/fhir/StructureDefinition/Communication",
               "http://hl7.org/fhir/StructureDefinition/Composition",
               "http://hl7.org/fhir/StructureDefinition/Consent",
+              "http://hl7.org/fhir/StructureDefinition/Contract",
               "http://hl7.org/fhir/StructureDefinition/Coverage",
               "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityResponse",
               "http://hl7.org/fhir/StructureDefinition/DetectedIssue",
+              "http://hl7.org/fhir/StructureDefinition/DeviceDispense",
               "http://hl7.org/fhir/StructureDefinition/DeviceUsage",
               "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
-              "http://hl7.org/fhir/StructureDefinition/DocumentManifest",
               "http://hl7.org/fhir/StructureDefinition/DocumentReference",
               "http://hl7.org/fhir/StructureDefinition/Encounter",
               "http://hl7.org/fhir/StructureDefinition/EnrollmentResponse",
               "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare",
               "http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit",
               "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
+              "http://hl7.org/fhir/StructureDefinition/GenomicStudy",
               "http://hl7.org/fhir/StructureDefinition/GuidanceResponse",
               "http://hl7.org/fhir/StructureDefinition/ImagingSelection",
               "http://hl7.org/fhir/StructureDefinition/ImagingStudy",
               "http://hl7.org/fhir/StructureDefinition/Immunization",
               "http://hl7.org/fhir/StructureDefinition/ImmunizationEvaluation",
               "http://hl7.org/fhir/StructureDefinition/InventoryReport",
+              "http://hl7.org/fhir/StructureDefinition/Invoice",
               "http://hl7.org/fhir/StructureDefinition/MedicationAdministration",
               "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
-              "http://hl7.org/fhir/StructureDefinition/MedicationUsage",
+              "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+              "http://hl7.org/fhir/StructureDefinition/MessageHeader",
               "http://hl7.org/fhir/StructureDefinition/NutritionIntake",
               "http://hl7.org/fhir/StructureDefinition/Observation",
               "http://hl7.org/fhir/StructureDefinition/PaymentNotice",
@@ -352,7 +358,7 @@
         "path": "Event.status",
         "short": "preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error | unknown",
         "definition": "The current state of the {{title}}.",
-        "comment": "A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation\n\nUnknown does not represent \"other\" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.",
+        "comment": "A nominal state-transition diagram can be found in the (Event pattern)[event.html#statemachine] documentation\n\nUnknown does not represent \"other\" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.",
         "min": 1,
         "max": "1",
         "base": {
@@ -380,7 +386,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying the lifecycle stage of an event."
             },
             {
@@ -389,7 +395,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/event-status|5.0.0-snapshot3"
+          "description": "Codes identifying the lifecycle stage of an event.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/event-status|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -442,7 +449,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying the reason for the current state of an event."
             },
             {
@@ -450,7 +457,8 @@
               "valueString": "EventStatusReason"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes identifying the reason for the current state of an event."
         },
         "mapping": [
           {
@@ -524,7 +532,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes indicating the details of what is/was done.  These will vary significantly based on the type of event resource and will often be example/preferred rather than extensible/required."
             },
             {
@@ -532,7 +540,8 @@
               "valueString": "EventCode"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes indicating the details of what is/was done.  These will vary significantly based on the type of event resource and will often be example/preferred rather than extensible/required."
         },
         "mapping": [
           {
@@ -602,7 +611,7 @@
         "short": "Individual service was done for/to",
         "definition": "The individual or set of individuals the action is being or was performed on.",
         "comment": "[For resources that aren\u0027t patient-specific, the set of allowed resources may be extended to include other things.  Group should generally be retained unless there\u0027s certainty this resource won\u0027t be used for veterinary, research or public health settings where Group may be necessary (e.g. this cage of rats/crate of chickens, group of people in a 5 mile radious of the incident, etc.)].",
-        "requirements": "Links the {{title}} to the Patient context.",
+        "requirements": "Links the {{title}} to the Patient context.  May also affect access control.",
         "alias": [
           "patient"
         ],
@@ -644,7 +653,7 @@
           },
           {
             "identity": "w5",
-            "map": "FiveWs.subject"
+            "map": "FiveWs.subject[x]"
           }
         ]
       },
@@ -654,7 +663,7 @@
         "short": "Encounter the {{title}} is part of",
         "definition": "The Encounter during which this {{title}} was created or to which the creation of this record is tightly associated.",
         "comment": "This will typically be the encounter the {{title}} was created during, but some {{title}}s may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter (e.g. pre-admission lab tests).",
-        "requirements": "Links the {{title}} to the Encounter context.",
+        "requirements": "Links the {{title}} to the Encounter context.  May also affect access control.",
         "alias": [
           "context"
         ],
@@ -910,7 +919,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes that describe the specific involvement of a performer in an event.  E.g. Primary vs. secondary vs. supervising, etc."
             },
             {
@@ -918,7 +927,8 @@
               "valueString": "EventPerformerFunction"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes that describe the specific involvement of a performer in an event.  E.g. Primary vs. secondary vs. supervising, etc."
         }
       },
       {
@@ -1058,7 +1068,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying why this event was necessary.  These may be clinical reasons (e.g. diagnoses, symptoms) and/or administrative reasons.  While the detailed constraints of relevant reasons will vary by resource, some degree of consistency across resources around recommended codes would be desirable."
             },
             {
@@ -1066,7 +1076,8 @@
               "valueString": "EventReason"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes identifying why this event was necessary.  These may be clinical reasons (e.g. diagnoses, symptoms) and/or administrative reasons.  While the detailed constraints of relevant reasons will vary by resource, some degree of consistency across resources around recommended codes would be desirable."
         },
         "mapping": [
           {

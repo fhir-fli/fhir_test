@@ -71,6 +71,32 @@
       ]
     }
   ],
+  "characteristic": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/service-mode",
+          "code": "in-person",
+          "display": "In Person"
+        },
+        {
+          "system": "http://hl7.org/fhir/service-mode",
+          "code": "videoconference",
+          "display": "Video Conference"
+        }
+      ]
+    }
+  ],
+  "communication": [
+    {
+      "coding": [
+        {
+          "system": "urn:ietf:bcp:47",
+          "code": "en"
+        }
+      ]
+    }
+  ],
   "availability": [
     {
       "availableTime": [

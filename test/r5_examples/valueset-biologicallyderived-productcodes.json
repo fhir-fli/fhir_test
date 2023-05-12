@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "biologicallyderived-productcodes",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-04-01T06:23:11.471+11:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -32,9 +32,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3125"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "BiologicallyDerivedProductCodes",
-  "title": "BiologicallyDerivedProductCodes",
+  "title": "Biologically Derived Product Codes",
   "status": "draft",
   "experimental": true,
   "date": "2020-12-28T16:55:11+11:00",

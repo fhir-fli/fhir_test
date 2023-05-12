@@ -3,7 +3,7 @@
   "id": "example",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      Burgers UMC, South Wing, second floor Physiotherapy Schedule\n    \u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      Burgers UMC, South Wing, second floor Physiotherapy Schedule\n\t\t\u003c/div\u003e"
   },
   "identifier": [
     {
@@ -48,6 +48,7 @@
       ]
     }
   ],
+  "name": "Burgers UMC, South Wing - Immunizations",
   "actor": [
     {
       "reference": "Location/1",

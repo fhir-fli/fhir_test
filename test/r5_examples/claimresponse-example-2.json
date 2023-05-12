@@ -50,7 +50,14 @@
   "processNote": [
     {
       "number": 1,
-      "type": "display",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/note-type",
+            "code": "display"
+          }
+        ]
+      },
       "text": "Invalid claim",
       "language": {
         "coding": [

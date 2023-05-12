@@ -12,15 +12,7 @@
       "value": "urn:uuid:1111-1111-1111-1112"
     }
   ],
-  "status": {
-    "coding": [
-      {
-        "system": "http://hl7.org/fhir/genomicstudy-status",
-        "code": "registered",
-        "display": "Registered"
-      }
-    ]
-  },
+  "status": "registered",
   "type": [
     {
       "coding": [
@@ -130,9 +122,6 @@
         ]
       },
       "title": "Simple variant analysis",
-      "subject": {
-        "reference": "Patient/genomicPatient"
-      },
       "specimen": [
         {
           "reference": "Specimen/genomicSpecimen"
@@ -240,9 +229,6 @@
         ]
       },
       "title": "CNV analysis",
-      "subject": {
-        "reference": "Patient/genomicPatient"
-      },
       "specimen": [
         {
           "reference": "Specimen/genomicSpecimen"

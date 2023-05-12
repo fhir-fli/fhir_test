@@ -3,7 +3,7 @@
   "id": "example",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\u003cp\u003e\u003cb\u003eGenerated Narrative: StructureMap\u003c/b\u003e\u003ca name\u003d\"example\"\u003e \u003c/a\u003e\u003c/p\u003e\u003cdiv style\u003d\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"\u003e\u003cp style\u003d\"margin-bottom: 0px\"\u003eResource StructureMap \u0026quot;example\u0026quot; \u003c/p\u003e\u003c/div\u003e\u003cp\u003e\u003cb\u003eurl\u003c/b\u003e: \u003ccode\u003ehttp://hl7.org/fhir/StructureMap/example\u003c/code\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003eidentifier\u003c/b\u003e: id: urn:oid:2.16.840.1.113883.4.642.13.2\u003c/p\u003e\u003cp\u003e\u003cb\u003eversion\u003c/b\u003e: 0.1\u003c/p\u003e\u003cp\u003e\u003cb\u003ename\u003c/b\u003e: ExampleMap\u003c/p\u003e\u003cp\u003e\u003cb\u003etitle\u003c/b\u003e: Example Map\u003c/p\u003e\u003cp\u003e\u003cb\u003estatus\u003c/b\u003e: draft\u003c/p\u003e\u003cp\u003e\u003cb\u003edate\u003c/b\u003e: 2017-03-09\u003c/p\u003e\u003cp\u003e\u003cb\u003epublisher\u003c/b\u003e: HL7 FHIR Standard\u003c/p\u003e\u003cp\u003e\u003cb\u003econtact\u003c/b\u003e: \u003ca href\u003d\"http://hl7.org/fhir\"\u003ehttp://hl7.org/fhir\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003edescription\u003c/b\u003e: Example Structure Map\u003c/p\u003e\u003cp\u003e\u003cb\u003ejurisdiction\u003c/b\u003e: Oceania \u003cspan style\u003d\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"\u003e (m49.htm#009)\u003c/span\u003e\u003c/p\u003e\u003cblockquote\u003e\u003cp\u003e\u003cb\u003egroup\u003c/b\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003ename\u003c/b\u003e: Examples\u003c/p\u003e\u003cp\u003e\u003cb\u003edocumentation\u003c/b\u003e: test -\u0026gt; testValue\u003c/p\u003e\u003ch3\u003eInputs\u003c/h3\u003e\u003ctable class\u003d\"grid\"\u003e\u003ctr\u003e\u003ctd\u003e-\u003c/td\u003e\u003ctd\u003e\u003cb\u003eName\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eMode\u003c/b\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e*\u003c/td\u003e\u003ctd\u003etest\u003c/td\u003e\u003ctd\u003esource\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\u003cblockquote\u003e\u003cp\u003e\u003cb\u003erule\u003c/b\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003ename\u003c/b\u003e: rule1\u003c/p\u003e\u003ch3\u003eSources\u003c/h3\u003e\u003ctable class\u003d\"grid\"\u003e\u003ctr\u003e\u003ctd\u003e-\u003c/td\u003e\u003ctd\u003e\u003cb\u003eContext\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eType\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eElement\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eVariable\u003c/b\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e*\u003c/td\u003e\u003ctd\u003eSource\u003c/td\u003e\u003ctd\u003eSourceClassA\u003c/td\u003e\u003ctd\u003etest\u003c/td\u003e\u003ctd\u003et\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\u003ch3\u003eTargets\u003c/h3\u003e\u003ctable class\u003d\"grid\"\u003e\u003ctr\u003e\u003ctd\u003e-\u003c/td\u003e\u003ctd\u003e\u003cb\u003eContext\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eElement\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eTransform\u003c/b\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e*\u003c/td\u003e\u003ctd\u003eDestination\u003c/td\u003e\u003ctd\u003etestValue\u003c/td\u003e\u003ctd\u003ecopy\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\u003c/blockquote\u003e\u003c/blockquote\u003e\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \u003cpre class\u003d\"fml\"\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003eurl\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027http://hl7.org/fhir/StructureMap/example\u0027\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003ename\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027ExampleMap\u0027\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003etitle\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027Example Map\u0027\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003estatus\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027draft\u0027\u003c/span\u003e\n\n\n        \u003cspan style\u003d\"color: navy\"\u003e// \u003c/span\u003e\n        \u003cspan style\u003d\"color: green\"\u003etest -\u0026gt; testValue\u003c/span\u003e\n\n        \u003cb\u003egroup \u003c/b\u003eExamples\n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\n        \u003cb\u003esource\u003c/b\u003e \n        \u003cspan style\u003d\"color: maroon\"\u003etestSrc\u003c/span\u003e, \n        \u003cb\u003etarget\u003c/b\u003e \n        \u003cspan style\u003d\"color: maroon\"\u003etestTgt\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e {\n\u003c/span\u003e  testSrc.test\n        \u003cspan style\u003d\"color: navy\"\u003e : \u003c/span\u003eSourceClassA\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003et\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etestTgt.testValue \u003d \n        \u003cb\u003ecopy\u003c/b\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;rule1\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: navy\"\u003e}\n\n\u003c/span\u003e\n      \u003c/pre\u003e\n    \u003c/div\u003e"
   },
   "url": "http://hl7.org/fhir/StructureMap/example",
   "identifier": [
@@ -12,10 +12,11 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.13.2"
     }
   ],
-  "version": "0.1",
+  "version": "5.0.0-cibuild",
   "name": "ExampleMap",
   "title": "Example Map",
   "status": "draft",
+  "experimental": true,
   "date": "2017-03-09",
   "publisher": "HL7 FHIR Standard",
   "contact": [
@@ -46,8 +47,12 @@
       "documentation": "test -\u003e testValue",
       "input": [
         {
-          "name": "test",
+          "name": "testSrc",
           "mode": "source"
+        },
+        {
+          "name": "testTgt",
+          "mode": "target"
         }
       ],
       "rule": [
@@ -55,7 +60,7 @@
           "name": "rule1",
           "source": [
             {
-              "context": "Source",
+              "context": "testSrc",
               "type": "SourceClassA",
               "element": "test",
               "variable": "t"
@@ -63,7 +68,7 @@
           ],
           "target": [
             {
-              "context": "Destination",
+              "context": "testTgt",
               "element": "testValue",
               "transform": "copy"
             }

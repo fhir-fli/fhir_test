@@ -2,14 +2,14 @@
   "resourceType": "ValueSet",
   "id": "genomicstudy-methodtype",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-04-01T06:23:11.471+11:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
   },
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \n      \n      \u003cul\u003e\n        \n        \n        \u003cli\u003eInclude major method category, method category, and primary test methodology codes defined in \n          \n          \n          \u003ca href\u003d\"http://terminology.hl7.org/3.1.0/CodeSystem-GTR.html\"\u003e\n            \n            \n            \u003ccode\u003ehttp://terminology.hl7.org/3.1.0/CodeSystem-GTR.html\u003c/code\u003e\n          \n          \n          \u003c/a\u003e\n        \n        \n        \u003c/li\u003e\n      \n      \n      \u003c/ul\u003e\n    \n    \n    \u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \n      \n      \n      \u003cul\u003e\n        \n        \n        \n        \u003cli\u003eInclude major method category, method category, and primary test methodology codes defined in \n          \n          \n          \n          \u003ca href\u003d\"http://terminology.hl7.org/3.1.0/CodeSystem-GTR.html\"\u003e\n            \n            \n            \n            \u003ccode\u003ehttp://terminology.hl7.org/3.1.0/CodeSystem-GTR.html\u003c/code\u003e\n          \n          \n          \n          \u003c/a\u003e\n        \n        \n        \n        \u003c/li\u003e\n      \n      \n      \n      \u003c/ul\u003e\n    \n    \n    \n    \u003c/div\u003e"
   },
   "extension": [
     {
@@ -32,9 +32,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3085"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "GenomicStudyMethodType",
-  "title": "GenomicStudyMethodType",
+  "title": "Genomic Study Method Type",
   "status": "draft",
   "experimental": true,
   "date": "2022-08-16T13:55:11-05:00",

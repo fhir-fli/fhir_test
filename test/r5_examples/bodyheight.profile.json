@@ -8,7 +8,7 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-summary",
-      "valueMarkdown": "#### Complete Summary of the Mandatory Requirements\r\r1.  One code in `Observation.code` which must have\r    -   a fixed `Observation.code.coding.system`\u003d**\u0027http ://loinc.org\u0027**\r    -   a fixed  `Observation.code.coding.code`\u003d **\u00278302-2\u0027**\r    -   8306-3 -Body height - lying (i.e., body length - typically used for infants) MAY be included as an additional observation code  - Other additional Codings are allowed in `Observation.code`- e.g. more specific LOINC\r        Codes, SNOMED CT concepts, system specific codes. All codes\r        SHALL have an system value\r1. Either one Observation.valueQuantity or, if there is no value, one code in Observation.DataAbsentReason\r   - Each Observation.valueQuantity must have:\r     - One numeric value in Observation.valueQuantity.value\r     - a fixed Observation.valueQuantity.system\u003d\"http://unitsofmeasure.org\"\r     - a UCUM unit code in Observation.valueQuantity.code \u003d **\u0027cm\u0027, or \u0027[in_i]\u0027**"
+      "valueMarkdown": "#### Complete Summary of the Mandatory Requirements\r\r1.  One code in `Observation.code` which must have\r    -   a fixed `Observation.code.coding.system`\u003d**\u0027http ://loinc.org\u0027**\r    -   a fixed  `Observation.code.coding.code`\u003d **\u00278302-2\u0027**\r    -   8306-3 -Body height - lying (i.e., body length - typically used for infants) MAY be included as an additional observation code  - Other additional Codings are allowed in `Observation.code`- e.g. more specific LOINC\r        Codes, SNOMED CT concepts, system specific codes. All codes\r        SHALL have a system value\r1. Either one Observation.valueQuantity or, if there is no value, one code in Observation.DataAbsentReason\r   - Each Observation.valueQuantity must have:\r     - One numeric value in Observation.valueQuantity.value\r     - a fixed Observation.valueQuantity.system\u003d\"http://unitsofmeasure.org\"\r     - a UCUM unit code in Observation.valueQuantity.code \u003d **\u0027cm\u0027, or \u0027[in_i]\u0027**"
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
@@ -23,8 +23,8 @@
       "valueCode": "trial-use"
     },
     {
-      "url": "http://hl7.org/fhir/build/StructureDefinition/summary",
-      "valueString": "#### Complete Summary of the Mandatory Requirements\r\r1.  One code in `Observation.code` which must have\r    -   a fixed `Observation.code.coding.system`\u003d**\u0027http ://loinc.org\u0027**\r    -   a fixed  `Observation.code.coding.code`\u003d **\u00278302-2\u0027**\r    -   8306-3 -Body height - lying (i.e., body length - typically used for infants) MAY be included as an additional observation code  - Other additional Codings are allowed in `Observation.code`- e.g. more specific LOINC\r        Codes, SNOMED CT concepts, system specific codes. All codes\r        SHALL have an system value\r1. Either one Observation.valueQuantity or, if there is no value, one code in Observation.DataAbsentReason\r   - Each Observation.valueQuantity must have:\r     - One numeric value in Observation.valueQuantity.value\r     - a fixed Observation.valueQuantity.system\u003d\"http://unitsofmeasure.org\"\r     - a UCUM unit code in Observation.valueQuantity.code \u003d **\u0027cm\u0027, or \u0027[in_i]\u0027**"
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/profile-summary",
+      "valueString": "#### Complete Summary of the Mandatory Requirements\r\r1.  One code in `Observation.code` which must have\r    -   a fixed `Observation.code.coding.system`\u003d**\u0027http ://loinc.org\u0027**\r    -   a fixed  `Observation.code.coding.code`\u003d **\u00278302-2\u0027**\r    -   8306-3 -Body height - lying (i.e., body length - typically used for infants) MAY be included as an additional observation code  - Other additional Codings are allowed in `Observation.code`- e.g. more specific LOINC\r        Codes, SNOMED CT concepts, system specific codes. All codes\r        SHALL have a system value\r1. Either one Observation.valueQuantity or, if there is no value, one code in Observation.DataAbsentReason\r   - Each Observation.valueQuantity must have:\r     - One numeric value in Observation.valueQuantity.value\r     - a fixed Observation.valueQuantity.system\u003d\"http://unitsofmeasure.org\"\r     - a UCUM unit code in Observation.valueQuantity.code \u003d **\u0027cm\u0027, or \u0027[in_i]\u0027**"
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/bodyheight",
@@ -34,8 +34,8 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.5.1463"
     }
   ],
-  "version": "5.0.0-snapshot3",
-  "name": "observation-bodyheight",
+  "version": "5.0.0-cibuild",
+  "name": "Observationbodyheight",
   "title": "Observation Body Height Profile",
   "status": "draft",
   "experimental": false,
@@ -52,7 +52,7 @@
     }
   ],
   "description": "FHIR Body Height Profile",
-  "fhirVersion": "5.0.0",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "workflow",
@@ -67,7 +67,7 @@
     {
       "identity": "v2",
       "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
+      "name": "HL7 V2 Mapping"
     },
     {
       "identity": "rim",
@@ -123,7 +123,7 @@
             "key": "dom-3",
             "severity": "error",
             "human": "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
-            "expression": "contained.where(((\u0027#\u0027+id in (%resource.descendants().reference | %resource.descendants().ofType(canonical) | %resource.descendants().ofType(uri) | %resource.descendants().ofType(url))) or descendants().where(reference \u003d \u0027#\u0027).exists() or descendants().where(as(canonical) \u003d \u0027#\u0027).exists() or descendants().where(as(canonical) \u003d \u0027#\u0027).exists()).not()).trace(\u0027unmatched\u0027, id).empty()",
+            "expression": "contained.where(((\u0027#\u0027+id in (%resource.descendants().reference | %resource.descendants().ofType(canonical) | %resource.descendants().ofType(uri) | %resource.descendants().ofType(url))) or descendants().where(reference \u003d \u0027#\u0027).exists() or descendants().where(ofType(canonical) \u003d \u0027#\u0027).exists() or descendants().where(ofType(canonical) \u003d \u0027#\u0027).exists()).not()).trace(\u0027unmatched\u0027, id).empty()",
             "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
           },
           {
@@ -167,8 +167,15 @@
           {
             "key": "obs-7",
             "severity": "error",
-            "human": "If Observation.code is the same as an Observation.component.code then the value element associated with the code SHALL NOT be present",
+            "human": "If Observation.component.code is the same as Observation.code, then Observation.value SHALL NOT be present (the Observation.component.value[x] holds the value).",
             "expression": "value.empty() or component.code.where(coding.intersect(%resource.code.coding).exists()).empty()",
+            "source": "http://hl7.org/fhir/StructureDefinition/Observation"
+          },
+          {
+            "key": "obs-8",
+            "severity": "error",
+            "human": "bodyStructure SHALL only be present if Observation.bodySite is not present",
+            "expression": "bodySite.exists() implies bodyStructure.empty()",
             "source": "http://hl7.org/fhir/StructureDefinition/Observation"
           },
           {
@@ -185,11 +192,15 @@
         "mapping": [
           {
             "identity": "rim",
-            "map": "Entity. Role, or Act"
+            "map": "Entity, Role, or Act,Observation[classCode\u003dOBS, moodCode\u003dEVN]"
           },
           {
             "identity": "workflow",
             "map": "Event"
+          },
+          {
+            "identity": "w5",
+            "map": "clinical.diagnostics"
           },
           {
             "identity": "sct-concept",
@@ -198,14 +209,6 @@
           {
             "identity": "v2",
             "map": "OBX"
-          },
-          {
-            "identity": "rim",
-            "map": "Observation[classCode\u003dOBS, moodCode\u003dEVN]"
-          },
-          {
-            "identity": "w5",
-            "map": "clinical.diagnostics"
           }
         ]
       },
@@ -272,7 +275,7 @@
         "path": "Observation.implicitRules",
         "short": "A set of rules under which this content was created",
         "definition": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.",
-        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it\u0027s narrative along with other profiles, value sets, etc.",
+        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc.",
         "min": 0,
         "max": "1",
         "base": {
@@ -296,7 +299,7 @@
         ],
         "mustSupport": false,
         "isModifier": true,
-        "isModifierReason": "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it\u0027s meaning or interpretation",
+        "isModifierReason": "This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies its meaning or interpretation",
         "isSummary": true
       },
       {
@@ -332,10 +335,6 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
-              "valueCanonical": "http://hl7.org/fhir/ValueSet/all-languages"
-            },
-            {
               "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
               "valueString": "Language"
             },
@@ -344,9 +343,15 @@
               "valueBoolean": true
             }
           ],
-          "strength": "preferred",
-          "description": "IETF language tag",
-          "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+          "strength": "required",
+          "description": "IETF language tag for a human language",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild",
+          "additional": [
+            {
+              "purpose": "starter",
+              "valueSet": "http://hl7.org/fhir/ValueSet/languages"
+            }
+          ]
         }
       },
       {
@@ -372,6 +377,9 @@
           {
             "code": "Narrative"
           }
+        ],
+        "condition": [
+          "dom-6"
         ],
         "constraint": [
           {
@@ -415,6 +423,12 @@
             "code": "Resource"
           }
         ],
+        "condition": [
+          "dom-2",
+          "dom-4",
+          "dom-3",
+          "dom-5"
+        ],
         "mustSupport": false,
         "isModifier": false,
         "isSummary": false,
@@ -429,7 +443,7 @@
         "id": "Observation.extension",
         "path": "Observation.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -477,7 +491,7 @@
         "id": "Observation.modifierExtension",
         "path": "Observation.modifierExtension",
         "short": "Extensions that cannot be ignored",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -574,6 +588,12 @@
       },
       {
         "id": "Observation.instantiates[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "Observation.instantiates[x]",
         "short": "Instantiates FHIR ObservationDefinition",
         "definition": "The reference to a FHIR ObservationDefinition resource that provides the definition that is adhered to in whole or in part by this Observation instance.",
@@ -680,6 +700,12 @@
       },
       {
         "id": "Observation.triggeredBy",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "Observation.triggeredBy",
         "short": "Triggering observation(s)",
         "definition": "Identifies the observation(s) that triggered the performance of this observation.",
@@ -744,6 +770,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -757,7 +786,7 @@
         "id": "Observation.triggeredBy.extension",
         "path": "Observation.triggeredBy.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -804,7 +833,7 @@
         "id": "Observation.triggeredBy.modifierExtension",
         "path": "Observation.triggeredBy.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -927,7 +956,7 @@
           ],
           "strength": "required",
           "description": "The type of TriggeredBy Observation.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/observation-triggeredbytype|5.0.0-snapshot3"
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-triggeredbytype|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -994,7 +1023,7 @@
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/MedicationAdministration",
               "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
-              "http://hl7.org/fhir/StructureDefinition/MedicationUsage",
+              "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
               "http://hl7.org/fhir/StructureDefinition/Procedure",
               "http://hl7.org/fhir/StructureDefinition/Immunization",
               "http://hl7.org/fhir/StructureDefinition/ImagingStudy",
@@ -1247,6 +1276,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1270,7 +1302,7 @@
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1385,6 +1417,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1408,7 +1443,7 @@
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1546,7 +1581,7 @@
         "id": "Observation.category:VSCat.coding.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -1567,6 +1602,9 @@
           }
         ],
         "fixedCode": "vital-signs",
+        "condition": [
+          "cod-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -1621,6 +1659,9 @@
           {
             "code": "string"
           }
+        ],
+        "condition": [
+          "cod-1"
         ],
         "constraint": [
           {
@@ -1771,6 +1812,9 @@
             "code": "CodeableConcept"
           }
         ],
+        "condition": [
+          "obs-7"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -1786,7 +1830,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "This identifies the vital sign result type."
             },
             {
@@ -1851,6 +1895,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1874,7 +1921,7 @@
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2048,6 +2095,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2071,7 +2121,7 @@
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2208,7 +2258,7 @@
         "id": "Observation.code.coding:BodyHeightCode.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -2229,6 +2279,9 @@
           }
         ],
         "fixedCode": "8302-2",
+        "condition": [
+          "cod-1"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -2282,6 +2335,9 @@
           {
             "code": "string"
           }
+        ],
+        "condition": [
+          "cod-1"
         ],
         "constraint": [
           {
@@ -2459,10 +2515,6 @@
           {
             "identity": "rim",
             "map": "participation[typeCode\u003dRTGT]"
-          },
-          {
-            "identity": "w5",
-            "map": "FiveWs.subject"
           }
         ]
       },
@@ -2477,7 +2529,7 @@
         "path": "Observation.focus",
         "short": "What the observation is about, when it is not about the subject of record",
         "definition": "The actual focus of an observation when it is not the patient of record representing something or someone associated with the patient such as a spouse, parent, fetus, or donor. For example, fetus observations in a mother\u0027s record.  The focus of an observation could also be an existing condition,  an intervention, the subject\u0027s diet,  another observation of the subject,  or a body structure such as tumor or implanted device.   An example use case would be using the Observation resource to capture whether the mother is trained to change her child\u0027s tracheostomy tube. In this example, the child is the patient of record and the mother is the focus.",
-        "comment": "Typically, an observation is made about the subject - a patient, or group of patients, location, or device - and the distinction between the subject and what is directly measured for an observation is specified in the observation code itself ( e.g., \"Blood Glucose\") and does not need to be represented separately using this element.  Use `specimen` if a reference to a specimen is required.  If a code is required instead of a resource use either  `bodysite` for bodysites or the standard extension [focusCode](extension-observation-focuscode.html).",
+        "comment": "Typically, an observation is made about the subject - a patient, or group of patients, location, or device - and the distinction between the subject and what is directly measured for an observation is specified in the observation code itself ( e.g., \"Blood Glucose\") and does not need to be represented separately using this element.  Use `specimen` if a reference to a specimen is required.  If a code is required instead of a resource use either  `bodysite` for bodysites or the standard extension [http://hl7.org/fhir/StructureDefinition/observation-focusCode](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-observation-focusCode.html).",
         "min": 0,
         "max": "*",
         "base": {
@@ -2517,10 +2569,6 @@
           {
             "identity": "rim",
             "map": "participation[typeCode\u003dSBJ]"
-          },
-          {
-            "identity": "w5",
-            "map": "FiveWs.subject"
           }
         ]
       },
@@ -2564,7 +2612,7 @@
         "mapping": [
           {
             "identity": "workflow",
-            "map": "Event.context"
+            "map": "Event.encounter"
           },
           {
             "identity": "w5",
@@ -2763,7 +2811,7 @@
         },
         "short": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
         "definition": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
-        "comment": "- An observation may have:\n  1.  a single value here\n  1.  both a value and a set of related or component values\n  1.  only a set of related or component values.\n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "comment": "- An observation may have:\n  1.  a single value here\n  1.  both a value and a set of related or component values\n  1.  only a set of related or component values.\n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- The usage of valueReference is restricted to the MolecularSequence resource when used as a definitional resource, not as a patient-specific finding. .\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type\u003d\"PQ\" (CONF:7305).",
         "min": 0,
         "max": "1",
@@ -2808,10 +2856,17 @@
           },
           {
             "code": "Attachment"
+          },
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MolecularSequence"
+            ]
           }
         ],
         "condition": [
           "obs-7",
+          "obs-6",
           "vs-2"
         ],
         "constraint": [
@@ -2851,7 +2906,7 @@
         "sliceName": "valueQuantity",
         "short": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
         "definition": "Vital Signs value are recorded using the Quantity data type. For supporting observations such as Cuff size could use other datatypes such as CodeableConcept.",
-        "comment": "- An observation may have:\n  1.  a single value here\n  1.  both a value and a set of related or component values\n  1.  only a set of related or component values.\n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "comment": "- An observation may have:\n  1.  a single value here\n  1.  both a value and a set of related or component values\n  1.  only a set of related or component values.\n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- The usage of valueReference is restricted to the MolecularSequence resource when used as a definitional resource, not as a patient-specific finding. .\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type\u003d\"PQ\" (CONF:7305).",
         "min": 0,
         "max": "1",
@@ -2867,6 +2922,7 @@
         ],
         "condition": [
           "obs-7",
+          "obs-6",
           "vs-2"
         ],
         "constraint": [
@@ -2926,6 +2982,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2949,7 +3008,7 @@
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -3068,7 +3127,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "How the Quantity should be understood and represented."
             },
             {
@@ -3077,7 +3136,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator|5.0.0-snapshot3"
+          "description": "How the Quantity should be understood and represented.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -3190,7 +3250,7 @@
         "id": "Observation.value[x]:valueQuantity.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -3211,6 +3271,9 @@
             "code": "code"
           }
         ],
+        "condition": [
+          "qty-3"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -3226,7 +3289,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Common UCUM units for body length measures such as Body Height and Head Circumference."
             },
             {
@@ -3313,7 +3376,7 @@
       {
         "id": "Observation.interpretation",
         "path": "Observation.interpretation",
-        "short": "High, low, normal, etc.",
+        "short": "High, low, normal, etc",
         "definition": "A categorical assessment of an observation value.  For example, high, low, normal.",
         "comment": "Historically used for laboratory results (known as \u0027abnormal flag\u0027 ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.",
         "requirements": "For some results, particularly numeric results, an interpretation is necessary to fully understand the significance of a result.",
@@ -3434,6 +3497,9 @@
             "code": "CodeableConcept"
           }
         ],
+        "condition": [
+          "obs-8"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -3449,7 +3515,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes describing anatomical locations. May include laterality."
             },
             {
@@ -3482,6 +3548,12 @@
       },
       {
         "id": "Observation.bodyStructure",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "Observation.bodyStructure",
         "short": "Observed body structure",
         "definition": "Indicates the body structure on the subject\u0027s body where the observation was made (i.e. the target site).",
@@ -3501,6 +3573,9 @@
             ]
           }
         ],
+        "condition": [
+          "obs-8"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -3508,13 +3583,6 @@
             "human": "All FHIR elements must have a @value or children",
             "expression": "hasValue() or (children().count() \u003e id.count())",
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "obs-8",
-            "severity": "error",
-            "human": "bodyStructure SHALL only be present if Observation.bodySite is not present",
-            "expression": "bodyStructure.empty() or bodySite.empty()",
-            "source": "http://hl7.org/fhir/StructureDefinition/Observation"
           }
         ],
         "mustSupport": false,
@@ -3614,7 +3682,7 @@
             "key": "obs-9",
             "severity": "error",
             "human": "If Observation.specimen is a reference to Group, the group can only have specimens",
-            "expression": "reference \u003d \u0027Group\u0027 implies member.entity.resolve() is Specimen",
+            "expression": "(reference.resolve().exists() and reference.resolve() is Group) implies reference.resolve().member.entity.resolve().all($this is Specimen)",
             "source": "http://hl7.org/fhir/StructureDefinition/Observation"
           }
         ],
@@ -3643,8 +3711,8 @@
       {
         "id": "Observation.device",
         "path": "Observation.device",
-        "short": "(Measurement) Device",
-        "definition": "The device used to generate the observation data.",
+        "short": "A reference to the device that generates the measurements or the device settings for the device",
+        "definition": "A reference to the device that generates the measurements or the device settings for the device.",
         "comment": "Note that this is not meant to represent a device involved in the transmission of the result, e.g., a gateway.  Such devices may be documented using the Provenance resource where relevant.",
         "min": 0,
         "max": "1",
@@ -3768,6 +3836,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -3781,7 +3852,7 @@
         "id": "Observation.referenceRange.extension",
         "path": "Observation.referenceRange.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -3828,7 +3899,7 @@
         "id": "Observation.referenceRange.modifierExtension",
         "path": "Observation.referenceRange.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -3968,6 +4039,12 @@
       },
       {
         "id": "Observation.referenceRange.normalValue",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "Observation.referenceRange.normalValue",
         "short": "Normal value, if relevant",
         "definition": "The value of the normal value of the reference range.",
@@ -3982,9 +4059,6 @@
           {
             "code": "CodeableConcept"
           }
-        ],
-        "condition": [
-          "obs-3"
         ],
         "constraint": [
           {
@@ -4022,6 +4096,12 @@
       },
       {
         "id": "Observation.referenceRange.type",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          }
+        ],
         "path": "Observation.referenceRange.type",
         "short": "Reference range qualifier",
         "definition": "Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.",
@@ -4185,8 +4265,11 @@
         },
         "type": [
           {
-            "code": "string"
+            "code": "markdown"
           }
+        ],
+        "condition": [
+          "obs-3"
         ],
         "constraint": [
           {
@@ -4324,6 +4407,9 @@
             "code": "BackboneElement"
           }
         ],
+        "condition": [
+          "obs-7"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -4380,6 +4466,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -4393,7 +4482,7 @@
         "id": "Observation.component.extension",
         "path": "Observation.component.extension",
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -4440,7 +4529,7 @@
         "id": "Observation.component.modifierExtension",
         "path": "Observation.component.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element\u0027s descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "requirements": "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension).",
         "alias": [
@@ -4505,6 +4594,9 @@
             "code": "CodeableConcept"
           }
         ],
+        "condition": [
+          "obs-7"
+        ],
         "constraint": [
           {
             "key": "ele-1",
@@ -4520,7 +4612,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "This identifies the vital sign result type."
             },
             {
@@ -4554,9 +4646,19 @@
       {
         "id": "Observation.component.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Vital Sign Value recorded with UCUM",
-        "definition": "Vital Sign Value recorded with UCUM.",
-        "comment": "Used when observation has a set of component observations:\n-  An observation may have both a value (e.g. an  Apgar score) and component observations (the observations from which the Apgar score was derived). \n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Vital Sign Value",
+        "definition": "Vital Sign Value.",
+        "comment": "Used when observation has a set of component observations:\n-  An observation may have both a value (e.g. an  Apgar score) and component observations (the observations from which the Apgar score was derived). \n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- The usage of valueReference is restricted to the MolecularSequence resource when used as a definitional resource, not as a patient-specific finding. .\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "9. SHALL contain exactly one [1..1] value with @xsi:type\u003d\"PQ\" (CONF:7305).",
         "min": 0,
         "max": "1",
@@ -4601,6 +4703,12 @@
           },
           {
             "code": "Attachment"
+          },
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MolecularSequence"
+            ]
           }
         ],
         "condition": [
@@ -4618,10 +4726,61 @@
         "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| \u003c 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX-2, OBX-5, OBX-6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "short": "Vital Sign Value recorded with UCUM",
+        "definition": "Vital Sign Value recorded with UCUM.",
+        "comment": "Used when observation has a set of component observations:\n-  An observation may have both a value (e.g. an  Apgar score) and component observations (the observations from which the Apgar score was derived). \n-  If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- If a value is present, the datatype for this element should be determined by the `code`.\n-  *CodeableConcept* with just a text would be used instead of a string if the field was usually coded, or if the type associated with the `code` defines a coded value.\n-  *Attachment* is used if the observation result value is a binary file such as an image.  If the observation result value is derived from the binary file (for example \u0027X\u0027 detected and here is the the proof in this image), the binary file may be directly represented using *DocumentReference* and referenced by `derivedFrom`.\n- The usage of valueReference is restricted to the MolecularSequence resource when used as a definitional resource, not as a patient-specific finding. .\n- For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() \u003e id.count())",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false,
+        "isSummary": true,
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Common UCUM units for recording Vital Signs."
             },
             {
@@ -4672,7 +4831,6 @@
           }
         ],
         "condition": [
-          "obs-6",
           "vs-3"
         ],
         "constraint": [
@@ -4716,7 +4874,7 @@
       {
         "id": "Observation.component.interpretation",
         "path": "Observation.component.interpretation",
-        "short": "High, low, normal, etc.",
+        "short": "High, low, normal, etc",
         "definition": "A categorical assessment of an observation value.  For example, high, low, normal.",
         "comment": "Historically used for laboratory results (known as \u0027abnormal flag\u0027 ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.",
         "requirements": "For some results, particularly numeric results, an interpretation is necessary to fully understand the significance of a result.",
@@ -4944,7 +5102,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Common UCUM units for body length measures such as Body Height and Head Circumference."
             },
             {

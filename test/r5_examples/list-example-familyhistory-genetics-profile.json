@@ -243,10 +243,12 @@
       }
     ]
   },
-  "subject": {
-    "reference": "Patient/example",
-    "display": "Peter Patient"
-  },
+  "subject": [
+    {
+      "reference": "Patient/example",
+      "display": "Peter Patient"
+    }
+  ],
   "entry": [
     {
       "item": {

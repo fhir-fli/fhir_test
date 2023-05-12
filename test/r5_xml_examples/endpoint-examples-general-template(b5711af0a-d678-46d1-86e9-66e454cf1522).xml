@@ -36,13 +36,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="CarePlan"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/fhir+xml"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="CarePlan"/>
+            </coding>
+          </type>
+          <mimeType value="application/fhir+xml"/>
+        </payload>
         <address value="https://sqlonfhir-dstu2.azurewebsites.net/fhir"/>
       </Endpoint>
     </resource>
@@ -73,13 +75,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="QuestionnaireResponse"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/fhir+xml"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="QuestionnaireResponse"/>
+            </coding>
+          </type>
+          <mimeType value="application/fhir+xml"/>
+        </payload>
         <address value="https://sqlonfhir-dstu2.azurewebsites.net/fhir"/>
       </Endpoint>
     </resource>
@@ -110,13 +114,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="ServiceRequest"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/fhir+xml"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="ServiceRequest"/>
+            </coding>
+          </type>
+          <mimeType value="application/fhir+xml"/>
+        </payload>
         <address value="https://sqlonfhir-dstu2.azurewebsites.net/fhir"/>
       </Endpoint>
     </resource>
@@ -147,13 +153,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="ServiceRequest QuestionnaireResponse"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/fhir+json"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="ServiceRequest QuestionnaireResponse"/>
+            </coding>
+          </type>
+          <mimeType value="application/fhir+json"/>
+        </payload>
         <address value="https://open.epic.com/Interface/FHIR"/>
       </Endpoint>
     </resource>
@@ -184,13 +192,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST PUT DELETE" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="ServiceRequest"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/fhir+xml"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="ServiceRequest"/>
+            </coding>
+          </type>
+          <mimeType value="application/fhir+xml"/>
+        </payload>
         <address value="mailto:subscriptions@example.org"/>
       </Endpoint>
     </resource>
@@ -221,13 +231,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="CDA-EventSummary"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/pdf"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="CDA-EventSummary"/>
+            </coding>
+          </type>
+          <mimeType value="application/pdf"/>
+        </payload>
         <address value="https://sqlonfhir-dstu2.azurewebsites.net/fhir"/>
       </Endpoint>
     </resource>
@@ -241,7 +253,7 @@
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">
               v2 referral Requests, REF-I12<br/>
-              Address: 127.0.0.1</div>
+              Address: mllp://127.0.0.1:4001</div>
         </text>
         <status value="active"/>
         <connectionType>
@@ -258,14 +270,16 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="REF-I12"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/hl7-v2"/>
-        <address value="127.0.0.1"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="REF-I12"/>
+            </coding>
+          </type>
+          <mimeType value="x-application/hl7-v2+er7"/>
+        </payload>
+        <address value="mllp://127.0.0.1:4001"/>
       </Endpoint>
     </resource>
   </entry> 
@@ -295,13 +309,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="GET OPTIONS" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/dicom; variant=DICOM WADO-RS"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
+            </coding>
+          </type>
+          <mimeType value="application/dicom; variant=DICOM WADO-RS"/>
+        </payload>
         <address value="https://pacs.hospital.org/dicomweb"/>
       </Endpoint>
     </resource>
@@ -332,13 +348,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="GET OPTIONS" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/dicom; variant=DICOM QIDO-RS"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
+            </coding>
+          </type>
+          <mimeType value="application/dicom; variant=DICOM QIDO-RS"/>
+        </payload>
         <address value="https://pacs.hospital.org/dicomweb"/>
       </Endpoint>
     </resource>
@@ -369,13 +387,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="POST OPTIONS" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/dicom; variant=DICOM STOW-RS"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
+            </coding>
+          </type>
+          <mimeType value="application/dicom; variant=DICOM STOW-RS"/>
+        </payload>
         <address value="https://pacs.hospital.org/dicomweb"/>
       </Endpoint>
     </resource>
@@ -406,13 +426,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="GET PUT POST DELETE OPTIONS" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/dicom; variant=DICOM STOW-RS"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
+            </coding>
+          </type>
+          <mimeType value="application/dicom; variant=DICOM STOW-RS"/>
+        </payload>
         <address value="https://pacs.hospital.org/dicomweb"/>
       </Endpoint>
     </resource>
@@ -443,13 +465,15 @@
           <system value="http://hl7.org/fhir/http-verb" />
           <code value="GET" />
         </method> -->
-        <payloadType>
-          <coding>
-                <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
-            <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
-          </coding>
-        </payloadType>
-        <payloadMimeType value="application/dicom; variant=DICOM WADO-URI"/>
+        <payload>
+          <type>
+            <coding>
+                  <!-- <system value="http://hl7.org/fhir/fhir-types" /> -->
+              <code value="varies (application/dicom, application/dicom+xml, image/jpeg, and many more)"/>
+            </coding>
+          </type>
+          <mimeType value="application/dicom; variant=DICOM WADO-URI"/>
+        </payload>
         <address value="https://pacs.hospital.org/wadoUri"/>
       </Endpoint>
     </resource>

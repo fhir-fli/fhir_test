@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "message-events",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00"
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00"
   },
   "text": {
     "status": "generated",
@@ -27,12 +27,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/message-events",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "MessageEvent",
   "title": "MessageEvent",
   "status": "active",
   "experimental": true,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "HL7 (FHIR Project)",
   "contact": [
     {

@@ -100,7 +100,6 @@
               "status": "additional",
               "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n\n              \u003ctable\u003e\n\n                \u003cthead\u003e\n\n                  \u003ctr\u003e\n\n                    \u003ctd\u003eMedication\u003c/td\u003e\n\n                    \u003ctd\u003eLast Change\u003c/td\u003e\n\n                    \u003ctd\u003eLast ChangeReason\u003c/td\u003e\n\n                  \u003c/tr\u003e\n\n                \u003c/thead\u003e\n\n                \u003ctbody\u003e\n\n                  \u003ctr\u003e\n\n                    \u003ctd\u003eTheophylline 200mg BD after meals\u003c/td\u003e\n\n                    \u003ctd\u003econtinued\u003c/td\u003e\n\n                  \u003c/tr\u003e\n\n                  \u003ctr\u003e\n\n                    \u003ctd\u003eVentolin Inhaler\u003c/td\u003e\n\n                    \u003ctd\u003estopped\u003c/td\u003e\n\n                    \u003ctd\u003eGetting side effect of tremor\u003c/td\u003e\n\n                  \u003c/tr\u003e\n\n                \u003c/tbody\u003e\n\n              \u003c/table\u003e\n\n            \u003c/div\u003e"
             },
-            "mode": "working",
             "entry": [
               {
                 "reference": "urn:uuid:124a6916-5d84-4b8c-b250-10cefb8e6e86"
@@ -321,58 +320,56 @@
             }
           }
         ],
-        "dose": {
-          "dosageInstruction": [
-            {
-              "additionalInstruction": [
+        "dosageInstruction": [
+          {
+            "additionalInstruction": [
+              {
+                "text": "Take with Food"
+              }
+            ],
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
                 {
-                  "text": "Take with Food"
-                }
-              ],
-              "timing": {
-                "repeat": {
-                  "frequency": 2,
-                  "period": 1,
-                  "periodUnit": "d"
-                }
-              },
-              "route": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "394899003",
-                    "display": "oral administration of treatment"
-                  }
-                ]
-              },
-              "doseAndRate": [
-                {
-                  "type": {
-                    "coding": [
-                      {
-                        "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
-                        "code": "ordered",
-                        "display": "Ordered"
-                      }
-                    ]
-                  },
-                  "doseQuantity": {
-                    "value": 1,
-                    "unit": "tablet",
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-                    "code": "TAB"
-                  }
+                  "system": "http://snomed.info/sct",
+                  "code": "394899003",
+                  "display": "oral administration of treatment"
                 }
               ]
-            }
-          ]
-        }
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                  "code": "TAB"
+                }
+              }
+            ]
+          }
+        ]
       }
     },
     {
       "fullUrl": "urn:uuid:673f8db5-0ffd-4395-9657-6da00420bbc1",
       "resource": {
-        "resourceType": "MedicationUsage",
+        "resourceType": "MedicationStatement",
         "text": {
           "status": "generated",
           "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n\n            \u003cp\u003eVentolin inhaler discontinued\u003c/p\u003e\n\n          \u003c/div\u003e"

@@ -9,7 +9,7 @@
       <display value="test health data"/>
     </security>
   </meta>
-  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: OrganizationAffiliation</b><a name="orgrole2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource OrganizationAffiliation "orgrole2" </p></div><p><b>identifier</b>: member hospital: hosp32 (use: SECONDARY)</p><p><b>active</b>: true</p><p><b>organization</b>: <span title="  this record is active  "><a href="broken-link.html">http://hl7.org/fhir/ig/vhdir/Organization/monumentHIE: Monument Health Information Exchange</a></span></p><p><b>participatingOrganization</b>: <a href="broken-link.html">http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers: Founding Fathers Memorial Hospital</a></p><p><b>code</b>: Hospital member <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="codesystem-organization-role.html">OrganizationAffiliationRole</a>#member "Member")</span></p><p><b>endpoint</b>: <a href="broken-link.html">http://hl7.org/fhir/ig/vhdir/Endpoint/foundingfathersHIE: Founding Fathers Memorial Hospital HIE endpoint</a></p></div></text><identifier>     <!--   internal business ID for Founding Fathers Memorial Hospital assigned by Monument HIE   -->
+  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: OrganizationAffiliation</b><a name="orgrole2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource OrganizationAffiliation "orgrole2" </p></div><p><b>identifier</b>: member hospital: hosp32 (use: SECONDARY)</p><p><b>active</b>: true</p><p><b>organization</b>: <span title="  this record is active  "><span>: Monument Health Information Exchange</span></span></p><p><b>participatingOrganization</b>: <span>: Founding Fathers Memorial Hospital</span></p><p><b>code</b>: Hospital member <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="codesystem-organization-role.html">Organization Affiliation Role</a>#member "Member")</span></p><p><b>endpoint</b>: <span>: Founding Fathers Memorial Hospital HIE endpoint</span></p></div></text><identifier>     <!--   internal business ID for Founding Fathers Memorial Hospital assigned by Monument HIE   -->
         <use value="secondary"/>
         <type>
             <text value="member hospital"/>
@@ -17,7 +17,7 @@
         <system value="http://example.org/www.monumentHIE.com"/>
         <value value="hosp32"/>
         <assigner>
-            <reference value="http://hl7.org/fhir/ig/vhdir/Organization/monumentHIE"/>
+                <!--   <reference value="http://hl7.org/fhir/ig/vhdir/Organization/monumentHIE"/>   -->
             <display value="Monument Health Information Exchange"/>
         </assigner>
     </identifier>
@@ -25,12 +25,12 @@
     <active value="true"/>     <!--   this record is active   -->
 
     <organization>     <!--   Reference to the resource describing the HIE   -->
-        <reference value="http://hl7.org/fhir/ig/vhdir/Organization/monumentHIE"/>
+            <!--   <reference value="http://hl7.org/fhir/ig/vhdir/Organization/monumentHIE"/>   -->
         <display value="Monument Health Information Exchange"/>
     </organization>
 
     <participatingOrganization>     <!--   Founding Fathers participates in the HIE   -->
-        <reference value="http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers"/>
+            <!--   <reference value="http://hl7.org/fhir/ig/vhdir/Organization/foundingfathers"/>   -->
         <display value="Founding Fathers Memorial Hospital"/>
     </participatingOrganization>
 
@@ -44,7 +44,7 @@
     </code>
 
     <endpoint>     <!--   Reference to the endpoint for sending data to Founding Fathers through the HIE   -->
-        <reference value="http://hl7.org/fhir/ig/vhdir/Endpoint/foundingfathersHIE"/>
+            <!--   <reference value="http://hl7.org/fhir/ig/vhdir/Endpoint/foundingfathersHIE"/>   -->
         <display value="Founding Fathers Memorial Hospital HIE endpoint"/>
     </endpoint>
 

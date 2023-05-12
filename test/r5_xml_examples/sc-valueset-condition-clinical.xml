@@ -7,8 +7,8 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ConditionClinicalStatusCodesCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-condition-clinical)</h2>
       <p>Mapping from 
-        <a href="valueset-condition-clinical.html">http://hl7.org/fhir/ValueSet/condition-clinical</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-condition-clinical.html">Condition Clinical Status Codes</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <p>DRAFT. Published on ?ngen-10? by FHIR Project team (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>). 
@@ -20,7 +20,7 @@
       <br/>
       <p>
         <b>Group 1</b>Mapping from 
-        <a href="http://terminology.hl7.org/4.0.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a> to 
+        <a href="http://terminology.hl7.org/5.1.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a> to 
         <a href="codesystem-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <table class="grid">
@@ -81,7 +81,7 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-condition-clinical"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ConditionClinicalStatusCodesCanonicalMap"/>
   <title value="Canonical Mapping for &quot;Condition Clinical Status Codes&quot;"/>
   <status value="draft"/>

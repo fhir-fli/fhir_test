@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/Product",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "Product",
   "title": "product",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "rim",
@@ -51,7 +51,7 @@
     {
       "identity": "v2",
       "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
+      "name": "HL7 V2 Mapping"
     },
     {
       "identity": "w5",
@@ -128,7 +128,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying the lifecycle stage of a product."
             },
             {
@@ -137,7 +137,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/product-status|5.0.0-snapshot3"
+          "description": "Codes identifying the lifecycle stage of a product.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/product-status|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -242,7 +243,7 @@
         "id": "Product.manufacturer",
         "path": "Product.manufacturer",
         "short": "Manufacturer, representative or officially responsible for the product",
-        "definition": "The organisation (manufacturer, representative or legal authorisation holder) that is responsible for the device.",
+        "definition": "The organisation (manufacturer, representative or legal authorization holder) that is responsible for the device.",
         "min": 0,
         "max": "*",
         "base": {
@@ -475,7 +476,7 @@
           },
           {
             "identity": "w5",
-            "map": "FiveWs.subject"
+            "map": "FiveWs.subject[x]"
           }
         ]
       },

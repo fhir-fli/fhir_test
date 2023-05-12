@@ -28,431 +28,211 @@
       </p>
       <table class="grid">
         <tr>
-          <td colspan="4">
-            <b>Source Concept Details</b>
+          <td>
+            <b>Source Code</b>
           </td>
           <td>
             <b>Relationship</b>
           </td>
-          <td colspan="5">
-            <b>Target Concept Details</b>
+          <td>
+            <b>Target Code</b>
           </td>
         </tr>
         <tr>
-          <td colspan="2">
-            <b>Codes</b> from 
-          </td>
-          <td>
-            <b>segment-map</b>
-          </td>
-          <td>
-            <b>references</b>
-          </td>
-          <td/>
-          <td colspan="2">
-            <b>Codes</b> from 
-          </td>
-          <td>
-            <b>antlr</b>
-          </td>
-          <td>
-            <b>fhirpath</b>
-          </td>
-          <td>
-            <b>narrative</b>
-          </td>
-        </tr>
-        <tr>
-          <td style="border-right-width: 0px">ADT_A04.MSH</td>
-          <td style="border-left-width: 0px">Message Header</td>
-          <td>MSH[Bundle]</td>
-          <td/>
+          <td>ADT_A04.MSH (Message Header)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Bundle</td>
-          <td style="border-left-width: 0px">Bundle</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Bundle</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.MSH</td>
-          <td style="border-left-width: 0px">Message Header</td>
-          <td>MSH[MessageHeader]</td>
-          <td/>
+          <td>ADT_A04.MSH (Message Header)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">MessageHeader[1]</td>
-          <td style="border-left-width: 0px">MessageHeader[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>MessageHeader[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.MSH</td>
-          <td style="border-left-width: 0px">Message Header</td>
-          <td>MSH[Provenance]</td>
-          <td>Provenance.target=Bundle; Provenance.target=MessageHeader[MSH]</td>
+          <td>ADT_A04.MSH (Message Header)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Provenance[1]</td>
-          <td style="border-left-width: 0px">Provenance[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Provenance[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.SFT</td>
-          <td style="border-left-width: 0px">Software Segment</td>
-          <td>SFT[MessageHeader]</td>
-          <td/>
+          <td>ADT_A04.SFT (Software Segment)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">MessageHeader[1]</td>
-          <td style="border-left-width: 0px">MessageHeader[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>MessageHeader[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.EVN</td>
-          <td style="border-left-width: 0px">Event Type</td>
-          <td>EVN[Provenance]</td>
-          <td>Provenance.target=Bundle; Provenance.target=MessageHeader[MSH]</td>
+          <td>ADT_A04.EVN (Event Type)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Provenance[3]</td>
-          <td style="border-left-width: 0px">Provenance[3]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Provenance[3]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.PID</td>
-          <td style="border-left-width: 0px">Patient Identification</td>
-          <td>PID[Patient]</td>
-          <td/>
+          <td>ADT_A04.PID (Patient Identification)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Patient[1]</td>
-          <td style="border-left-width: 0px">Patient[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Patient[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.PD1</td>
-          <td style="border-left-width: 0px">Additional Demographics</td>
-          <td>PD1[Patient]</td>
-          <td/>
+          <td>ADT_A04.PD1 (Additional Demographics)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Patient[1]</td>
-          <td style="border-left-width: 0px">Patient[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Patient[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04:follow:PID.ARV</td>
-          <td style="border-left-width: 0px">Access Restrictions</td>
-          <td>ARV[Patient]</td>
-          <td>Resource=Patient[1]</td>
+          <td>ADT_A04:follow:PID.ARV (Access Restrictions)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Patient[1]</td>
-          <td style="border-left-width: 0px">Patient[1]</td>
-          <td>IF ARV-1 IN ("PID", "PD1") AND ARV-3 NOT VALUED</td>
-          <td/>
-          <td/>
+          <td>Patient[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04:follow:PID.ROL</td>
-          <td style="border-left-width: 0px">Role</td>
-          <td>ROL[Patient-PractitionerRole]</td>
-          <td/>
+          <td>ADT_A04:follow:PID.ROL (Role)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Patient[1]</td>
-          <td style="border-left-width: 0px">Patient[1]</td>
-          <td>IF ROL-3.1 EQUALS "PP" AND ROL-3.3 EQUALS "HL70443"</td>
-          <td>(element("3.1")="PP")and(element("3.3")="HL70443")</td>
-          <td/>
+          <td>Patient[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04:follow:PID.ROL</td>
-          <td style="border-left-width: 0px">Role</td>
-          <td>ROL[RelatedPerson]</td>
-          <td>RelatedPerson[1].patient.reference=Patient[1].id</td>
+          <td>ADT_A04:follow:PID.ROL (Role)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">RelatedPerson[1]</td>
-          <td style="border-left-width: 0px">RelatedPerson[1]</td>
-          <td>IF ROL-3.1 NOT EQUALS  "PP" OR ROL-3.3 NOT EQUALS "HL70443"</td>
-          <td>(element("3.1")!="PP")or(element("3.3")!="HL70443")</td>
-          <td>While most likely all other HL70443 values go to RelatedPerson, the implementation needs to determine whether that is fully accurate.</td>
+          <td>RelatedPerson[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.NEXT_OF_KIN.NK1</td>
-          <td style="border-left-width: 0px">Next of Kin / Associated Parties</td>
-          <td>NK1[RelatedPerson]</td>
-          <td>RelatedPerson[2].patient.reference=Patient[1].id</td>
+          <td>ADT_A04.NEXT_OF_KIN.NK1 (Next of Kin / Associated Parties)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">RelatedPerson[2]</td>
-          <td style="border-left-width: 0px">RelatedPerson[2]</td>
-          <td/>
-          <td/>
-          <td>The FHIR location will depend on the nature of the data being exchanged and how the systems use next of kin data</td>
+          <td>RelatedPerson[2]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.NEXT_OF_KIN.NK1</td>
-          <td style="border-left-width: 0px">Next of Kin / Associated Parties</td>
-          <td>NK1[Patient]</td>
-          <td/>
+          <td>ADT_A04.NEXT_OF_KIN.NK1 (Next of Kin / Associated Parties)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Patient[1]</td>
-          <td style="border-left-width: 0px">Patient[1]</td>
-          <td/>
-          <td/>
-          <td>The FHIR location will depend on the nature of the data being exchanged and how the systems use next of kin data</td>
+          <td>Patient[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.PV1</td>
-          <td style="border-left-width: 0px">Patient Visit</td>
-          <td>PV1[Encounter]</td>
-          <td>Encounter[1].subject.reference=Patient[1].id</td>
+          <td>ADT_A04.PV1 (Patient Visit)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Encounter[1]</td>
-          <td style="border-left-width: 0px">Encounter[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Encounter[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.PV1</td>
-          <td style="border-left-width: 0px">Patient Visit</td>
-          <td>PV1[Patient]</td>
-          <td/>
+          <td>ADT_A04.PV1 (Patient Visit)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Patient[1]</td>
-          <td style="border-left-width: 0px">Patient[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Patient[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.PV2</td>
-          <td style="border-left-width: 0px">Patient Visit - Additional Info.</td>
-          <td>PV2[Encounter]</td>
-          <td/>
+          <td>ADT_A04.PV2 (Patient Visit - Additional Info.)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Encounter[1]</td>
-          <td style="border-left-width: 0px">Encounter[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Encounter[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04:follow:PV1.ARV</td>
-          <td style="border-left-width: 0px">Access Restrictions</td>
-          <td>ARV[Encounter]</td>
-          <td>Resource=Encounter[1]</td>
+          <td>ADT_A04:follow:PV1.ARV (Access Restrictions)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Encounter[1]</td>
-          <td style="border-left-width: 0px">Encounter[1]</td>
-          <td>IF ARV-1 IN ("PV1", "PV2") AND ARV-3 NOT VALUED</td>
-          <td/>
-          <td/>
+          <td>Encounter[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.ROL</td>
-          <td style="border-left-width: 0px">Role</td>
-          <td>ROL[Encounter-PractitionerRole]</td>
-          <td/>
+          <td>ADT_A04.ROL (Role)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Encounter[1]</td>
-          <td style="border-left-width: 0px">Encounter[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Encounter[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.OBSERVATIONADT_A04.OBX</td>
-          <td style="border-left-width: 0px">Observation/Result</td>
-          <td>OBX[Observation]</td>
-          <td>Observation.subject.reference=Patient[1].id</td>
+          <td>ADT_A04.OBSERVATIONADT_A04.OBX (Observation/Result)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Observation</td>
-          <td style="border-left-width: 0px">Observation</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Observation</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.OBSERVATIONADT_A04.OBX</td>
-          <td style="border-left-width: 0px">Observation/Result</td>
-          <td>OBX[Observation-Component]</td>
-          <td>Observation.subject.reference=Patient[1].id</td>
+          <td>ADT_A04.OBSERVATIONADT_A04.OBX (Observation/Result)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Observation</td>
-          <td style="border-left-width: 0px">Observation</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Observation</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.AL1</td>
-          <td style="border-left-width: 0px">Allergy Information</td>
-          <td>AL1[AllergyIntolerance]</td>
-          <td>AllergyIntolerance.patient.reference=Patient[1].id</td>
+          <td>ADT_A04.AL1 (Allergy Information)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">AllergyIntolerance</td>
-          <td style="border-left-width: 0px">AllergyIntolerance</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>AllergyIntolerance</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.DG1</td>
-          <td style="border-left-width: 0px">Diagnosis Information</td>
-          <td>DG1[Condition]</td>
-          <td>Condition.subject.reference=Patient[1].id</td>
+          <td>ADT_A04.DG1 (Diagnosis Information)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Condition</td>
-          <td style="border-left-width: 0px">Condition</td>
-          <td/>
-          <td/>
-          <td>If in context of the patient</td>
+          <td>Condition</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.DG1</td>
-          <td style="border-left-width: 0px">Diagnosis Information</td>
-          <td>DG1[Encounter]</td>
-          <td>Encounter[1].diagnosis.reference=Condition[1].id</td>
+          <td>ADT_A04.DG1 (Diagnosis Information)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Encounter[1]</td>
-          <td style="border-left-width: 0px">Encounter[1]</td>
-          <td>IF DG1-6 EQUALS "admitting"</td>
-          <td/>
-          <td/>
+          <td>Encounter[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.DG1</td>
-          <td style="border-left-width: 0px">Diagnosis Information</td>
-          <td>DG1[Encounter]</td>
-          <td>Encounter[1].diagnosis.reference=Condition[1].id</td>
+          <td>ADT_A04.DG1 (Diagnosis Information)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Encounter[1]</td>
-          <td style="border-left-width: 0px">Encounter[1]</td>
-          <td/>
-          <td/>
-          <td>If in context of an encounter</td>
+          <td>Encounter[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.DG1</td>
-          <td style="border-left-width: 0px">Diagnosis Information</td>
-          <td>DG1[EpisodeOfCare]</td>
-          <td>EpisodeOfCare.diagnosis.reference=Condition[1].id</td>
+          <td>ADT_A04.DG1 (Diagnosis Information)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">EpisodeOfCare[1]</td>
-          <td style="border-left-width: 0px">EpisodeOfCare[1]</td>
-          <td/>
-          <td/>
-          <td>If in context of a episode of care</td>
+          <td>EpisodeOfCare[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.PROCEDUREADT_A04.PR1</td>
-          <td style="border-left-width: 0px">Procedures</td>
-          <td>PR1[Procedure]</td>
-          <td>Procedure.subject.reference=Patient[1].id</td>
+          <td>ADT_A04.PROCEDUREADT_A04.PR1 (Procedures)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Procedure</td>
-          <td style="border-left-width: 0px">Procedure</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Procedure</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.INSURANCEADT_A04.IN1</td>
-          <td style="border-left-width: 0px">Insurance</td>
-          <td>IN1[Coverage]</td>
-          <td>Coverage.subscriber.reference=Patient[1].id</td>
+          <td>ADT_A04.INSURANCEADT_A04.IN1 (Insurance)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Coverage[1]</td>
-          <td style="border-left-width: 0px">Coverage[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Coverage[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.INSURANCEADT_A04.IN2</td>
-          <td style="border-left-width: 0px">Insurance Additional Info.</td>
-          <td>IN2[Coverage]</td>
-          <td/>
+          <td>ADT_A04.INSURANCEADT_A04.IN2 (Insurance Additional Info.)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Coverage[1]</td>
-          <td style="border-left-width: 0px">Coverage[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Coverage[1]</td>
         </tr>
         <tr>
-          <td style="border-right-width: 0px">ADT_A04.INSURANCEADT_A04.IN3</td>
-          <td style="border-left-width: 0px">Insurance Additional Info - Cert.</td>
-          <td>IN3[Coverage]</td>
-          <td/>
+          <td>ADT_A04.INSURANCEADT_A04.IN3 (Insurance Additional Info - Cert.)</td>
           <td>
             <a href="codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a>
           </td>
-          <td style="border-right-width: 0px">Coverage[1]</td>
-          <td style="border-left-width: 0px">Coverage[1]</td>
-          <td/>
-          <td/>
-          <td/>
+          <td>Coverage[1]</td>
         </tr>
       </table>
     </div>
@@ -462,8 +242,9 @@
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.14.2"/>
   </identifier>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="MessageADT_A04toBundle"/>
+  <title value="Message A D T_ A04to Bundle"/>
   <status value="active"/>
   <experimental value="true"/>
   <date value="2020-08-12"/>
@@ -490,6 +271,26 @@
     </coding>
   </jurisdiction>
   <copyright value="Copyright (c) 2020, HL7 International, Inc., All Rights Reserved."/>
+  <property>
+    <code value="segment-map"/>
+    <type value="string"/>
+  </property>
+  <property>
+    <code value="references"/>
+    <type value="string"/>
+  </property>
+  <property>
+    <code value="antlr"/>
+    <type value="string"/>
+  </property>
+  <property>
+    <code value="fhirpath"/>
+    <type value="string"/>
+  </property>
+  <property>
+    <code value="narrative"/>
+    <type value="string"/>
+  </property>
   <group>
     <element>
       <code value="ADT_A04.MSH"/>
@@ -498,10 +299,10 @@
         <code value="Bundle"/>
         <display value="Bundle"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="MSH[Bundle]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -511,10 +312,10 @@
         <code value="MessageHeader[1]"/>
         <display value="MessageHeader[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="MSH[MessageHeader]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -524,14 +325,14 @@
         <code value="Provenance[1]"/>
         <display value="Provenance[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="MSH[Provenance]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Provenance.target=Bundle; Provenance.target=MessageHeader[MSH]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -541,10 +342,10 @@
         <code value="MessageHeader[1]"/>
         <display value="MessageHeader[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="SFT[MessageHeader]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -554,14 +355,14 @@
         <code value="Provenance[3]"/>
         <display value="Provenance[3]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="EVN[Provenance]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Provenance.target=Bundle; Provenance.target=MessageHeader[MSH]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -571,10 +372,10 @@
         <code value="Patient[1]"/>
         <display value="Patient[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="PID[Patient]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -584,10 +385,10 @@
         <code value="Patient[1]"/>
         <display value="Patient[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="PD1[Patient]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -597,18 +398,18 @@
         <code value="Patient[1]"/>
         <display value="Patient[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="ARV[Patient]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Resource=Patient[1]"/>
-        </dependsOn>
-        <product>
-          <property value="antlr"/>
+        </property>
+        <property>
+          <code value="antlr"/>
           <valueString value="IF ARV-1 IN (&#34;PID&#34;, &#34;PD1&#34;) AND ARV-3 NOT VALUED"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -618,18 +419,18 @@
         <code value="Patient[1]"/>
         <display value="Patient[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="ROL[Patient-PractitionerRole]"/>
-        </dependsOn>
-        <product>
-          <property value="antlr"/>
+        </property>
+        <property>
+          <code value="antlr"/>
           <valueString value="IF ROL-3.1 EQUALS &#34;PP&#34; AND ROL-3.3 EQUALS &#34;HL70443&#34;"/>
-        </product>
-        <product>
-          <property value="fhirpath"/>
+        </property>
+        <property>
+          <code value="fhirpath"/>
           <valueString value="(element(&#34;3.1&#34;)=&#34;PP&#34;)and(element(&#34;3.3&#34;)=&#34;HL70443&#34;)"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -639,26 +440,26 @@
         <code value="RelatedPerson[1]"/>
         <display value="RelatedPerson[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="ROL[RelatedPerson]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="RelatedPerson[1].patient.reference=Patient[1].id"/>
-        </dependsOn>
-        <product>
-          <property value="antlr"/>
+        </property>
+        <property>
+          <code value="antlr"/>
           <valueString value="IF ROL-3.1 NOT EQUALS  &#34;PP&#34; OR ROL-3.3 NOT EQUALS &#34;HL70443&#34;"/>
-        </product>
-        <product>
-          <property value="fhirpath"/>
+        </property>
+        <property>
+          <code value="fhirpath"/>
           <valueString value="(element(&#34;3.1&#34;)!=&#34;PP&#34;)or(element(&#34;3.3&#34;)!=&#34;HL70443&#34;)"/>
-        </product>
-        <product>
-          <property value="narrative"/>
+        </property>
+        <property>
+          <code value="narrative"/>
           <valueString value="While most likely all other HL70443 values go to RelatedPerson, the implementation needs to determine whether that is fully accurate."/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -668,18 +469,18 @@
         <code value="RelatedPerson[2]"/>
         <display value="RelatedPerson[2]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="NK1[RelatedPerson]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="RelatedPerson[2].patient.reference=Patient[1].id"/>
-        </dependsOn>
-        <product>
-          <property value="narrative"/>
+        </property>
+        <property>
+          <code value="narrative"/>
           <valueString value="The FHIR location will depend on the nature of the data being exchanged and how the systems use next of kin data"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -689,14 +490,14 @@
         <code value="Patient[1]"/>
         <display value="Patient[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="NK1[Patient]"/>
-        </dependsOn>
-        <product>
-          <property value="narrative"/>
+        </property>
+        <property>
+          <code value="narrative"/>
           <valueString value="The FHIR location will depend on the nature of the data being exchanged and how the systems use next of kin data"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -706,14 +507,14 @@
         <code value="Encounter[1]"/>
         <display value="Encounter[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="PV1[Encounter]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Encounter[1].subject.reference=Patient[1].id"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -723,10 +524,10 @@
         <code value="Patient[1]"/>
         <display value="Patient[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="PV1[Patient]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -736,10 +537,10 @@
         <code value="Encounter[1]"/>
         <display value="Encounter[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="PV2[Encounter]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -749,18 +550,18 @@
         <code value="Encounter[1]"/>
         <display value="Encounter[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="ARV[Encounter]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Resource=Encounter[1]"/>
-        </dependsOn>
-        <product>
-          <property value="antlr"/>
+        </property>
+        <property>
+          <code value="antlr"/>
           <valueString value="IF ARV-1 IN (&#34;PV1&#34;, &#34;PV2&#34;) AND ARV-3 NOT VALUED"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -770,10 +571,10 @@
         <code value="Encounter[1]"/>
         <display value="Encounter[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="ROL[Encounter-PractitionerRole]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -783,14 +584,14 @@
         <code value="Observation"/>
         <display value="Observation"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="OBX[Observation]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Observation.subject.reference=Patient[1].id"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -800,14 +601,14 @@
         <code value="Observation"/>
         <display value="Observation"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="OBX[Observation-Component]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Observation.subject.reference=Patient[1].id"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -817,14 +618,14 @@
         <code value="AllergyIntolerance"/>
         <display value="AllergyIntolerance"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="AL1[AllergyIntolerance]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="AllergyIntolerance.patient.reference=Patient[1].id"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -834,18 +635,18 @@
         <code value="Condition"/>
         <display value="Condition"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="DG1[Condition]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Condition.subject.reference=Patient[1].id"/>
-        </dependsOn>
-        <product>
-          <property value="narrative"/>
+        </property>
+        <property>
+          <code value="narrative"/>
           <valueString value="If in context of the patient"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -855,18 +656,18 @@
         <code value="Encounter[1]"/>
         <display value="Encounter[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="DG1[Encounter]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Encounter[1].diagnosis.reference=Condition[1].id"/>
-        </dependsOn>
-        <product>
-          <property value="antlr"/>
+        </property>
+        <property>
+          <code value="antlr"/>
           <valueString value="IF DG1-6 EQUALS &#34;admitting&#34;"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -876,18 +677,18 @@
         <code value="Encounter[1]"/>
         <display value="Encounter[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="DG1[Encounter]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Encounter[1].diagnosis.reference=Condition[1].id"/>
-        </dependsOn>
-        <product>
-          <property value="narrative"/>
+        </property>
+        <property>
+          <code value="narrative"/>
           <valueString value="If in context of an encounter"/>
-        </product>
+        </property>
       </target>
     </element>
     <element>
@@ -897,18 +698,18 @@
         <code value="EpisodeOfCare[1]"/>
         <display value="EpisodeOfCare[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="DG1[EpisodeOfCare]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="EpisodeOfCare.diagnosis.reference=Condition[1].id"/>
-        </dependsOn>
-        <product>
-          <property value="narrative"/>
-          <valueString value="If in context of a episode of care"/>
-        </product>
+        </property>
+        <property>
+          <code value="narrative"/>
+          <valueString value="If in context of an episode of care"/>
+        </property>
       </target>
     </element>
     <element>
@@ -918,14 +719,14 @@
         <code value="Procedure"/>
         <display value="Procedure"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="PR1[Procedure]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Procedure.subject.reference=Patient[1].id"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -935,14 +736,14 @@
         <code value="Coverage[1]"/>
         <display value="Coverage[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="IN1[Coverage]"/>
-        </dependsOn>
-        <dependsOn>
-          <property value="references"/>
+        </property>
+        <property>
+          <code value="references"/>
           <valueString value="Coverage.subscriber.reference=Patient[1].id"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -952,10 +753,10 @@
         <code value="Coverage[1]"/>
         <display value="Coverage[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="IN2[Coverage]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
     <element>
@@ -965,10 +766,10 @@
         <code value="Coverage[1]"/>
         <display value="Coverage[1]"/>
         <relationship value="equivalent"/>
-        <dependsOn>
-          <property value="segment-map"/>
+        <property>
+          <code value="segment-map"/>
           <valueString value="IN3[Coverage]"/>
-        </dependsOn>
+        </property>
       </target>
     </element>
   </group>

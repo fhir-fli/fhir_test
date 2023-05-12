@@ -50,7 +50,7 @@
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.4.1824"/>
   </identifier>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ExampleMetadata"/>
   <title value="Metadata Example"/>
   <status value="draft"/>
@@ -93,7 +93,7 @@
     </telecom>
   </editor>
   <reviewer>
-    <name value="Society for Creative Codesystem Review"/>
+    <name value="Society for Creative CodeSystem Review"/>
     <telecom>
       <system value="url"/>
       <value value="http://example.org/sccr"/>

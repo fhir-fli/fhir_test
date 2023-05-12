@@ -118,7 +118,13 @@
       "resource": {
         "resourceType": "Bundle",
         "id": "fb6ed6cb-324e-4588-87cd-0c92c68986ca",
-        "type": "searchset"
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "http://example.org/fhir/Patient?somefilter\u003dwhatever"
+          }
+        ]
       },
       "response": {
         "status": "200 OK"

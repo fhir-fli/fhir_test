@@ -13,9 +13,11 @@
   ],
   "status": "current",
   "mode": "changes",
-  "subject": {
-    "reference": "Patient/example"
-  },
+  "subject": [
+    {
+      "reference": "Patient/example"
+    }
+  ],
   "encounter": {
     "reference": "Encounter/example"
   },

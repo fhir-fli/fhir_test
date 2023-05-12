@@ -46,8 +46,8 @@
   "performer": [
     {
       "actor": {
-        "reference": "Practitioner/f204",
-        "display": "Carla Espinosa"
+        "reference": "CareTeam/example",
+        "display": "Maternity CareTeam"
       },
       "onBehalfOf": {
         "reference": "Organization/f001",

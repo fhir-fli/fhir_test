@@ -3,10 +3,12 @@
   "id": "component-b-example",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003eScreening for Depression\n    \u003cp\u003eThis measure example is used to illustrate how a composite measure can be constructured. This measure is one component of the composite measure.\u003c/p\u003e\u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003eScreening for Depression\n    \n      \u003cp\u003eThis measure example is used to illustrate how a composite measure can be constructured. This measure is one component of the composite measure.\u003c/p\u003e\n    \u003c/div\u003e"
   },
+  "name": "ScreeningForDepression",
   "title": "Screening for Depression",
   "status": "draft",
+  "description": "Screening for Depression",
   "scoring": {
     "coding": [
       {

@@ -13,7 +13,7 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/StructureDefinition/elementdefinition-de"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="DataElement constraint on ElementDefinition data type"/>
   <status value="draft"/>
   <experimental value="false"/>
@@ -33,11 +33,11 @@
       <display value="World"/>
     </coding>
   </jurisdiction>
-  <fhirVersion value="5.0.0-snapshot3"/>
+  <fhirVersion value="5.0.0-cibuild"/>
   <mapping>
     <identity value="v2"/>
     <uri value="http://hl7.org/v2"/>
-    <name value="HL7 v2 Mapping"/>
+    <name value="HL7 V2 Mapping"/>
   </mapping>
   <mapping>
     <identity value="rim"/>
@@ -151,14 +151,14 @@
       <constraint>
         <key value="eld-19"/>
         <severity value="error"/>
-        <human value="Element names cannot include some special characters with a max of 64 characters,"/>
+        <human value="Element path SHALL be expressed as a set of '.'-separated components with each component restricted to a maximum of 64 characters and with some limits on the allowed choice of characters"/>
         <expression value="path.matches('^[^\\s\\.,:;\\\'&quot;\\/|?!@#$%&amp;*()\\[\\]{}]{1,64}(\\.[^\\s\\.,:;\\\'&quot;\\/|?!@#$%&amp;*()\\[\\]{}]{1,64}(\\[x\\])?(\\:[^\\s\\.]+)?)*$')"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ElementDefinition"/>
       </constraint>
       <constraint>
         <key value="eld-20"/>
         <severity value="warning"/>
-        <human value="Element names should be simple alphanumerics with a max of 64 characters or code generation tools may be broken"/>
+        <human value="The first component of the path should be UpperCamelCase.  Additional components (following a '.') should be lowerCamelCase.  If this syntax is not adhered to, code generation tools may be broken. Logical models may be less concerned about this implication."/>
         <expression value="path.matches('^[A-Za-z][A-Za-z0-9]{0,63}(\\.[a-z][A-Za-z0-9]{0,63}(\\[x])?)*$')"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ElementDefinition"/>
       </constraint>
@@ -213,15 +213,11 @@
       <isModifier value="false"/>
       <mapping>
         <identity value="rim"/>
-        <map value="n/a"/>
+        <map value="n/a,Observation[classCode=OBS, moodCode=DEFN]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
         <map value="OM1"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Observation[classCode=OBS, moodCode=DEFN]"/>
       </mapping>
       <mapping>
         <identity value="iso11179"/>
@@ -250,6 +246,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -268,7 +265,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -386,7 +383,7 @@
     <element id="ElementDefinition.modifierExtension">
       <path value="ElementDefinition.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -438,6 +435,8 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="eld-19"/>
+      <condition value="eld-20"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -485,14 +484,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="How a property is represented when serialized."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="PropertyRepresentation"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/property-representation|5.0.0-snapshot3"/>
+        <description value="How a property is represented when serialized."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/property-representation|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="v2"/>
@@ -523,6 +523,8 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="eld-22"/>
+      <condition value="eld-16"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -564,6 +566,7 @@
       <type>
         <code value="boolean"/>
       </type>
+      <condition value="eld-22"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -596,7 +599,7 @@
       <path value="ElementDefinition.label"/>
       <short value="Name for element to display with or prompt for element"/>
       <definition value="A single preferred label which is the text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form."/>
-      <comment value="See also the extension (http://hl7.org/fhir/StructureDefinition/elementdefinition-question)[extension-elementdefinition-question.html]."/>
+      <comment value="See also the extension [http://hl7.org/fhir/StructureDefinition/elementdefinition-question](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-elementdefinition-question.html)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -651,13 +654,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="Codes that indicate the meaning of a data element."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ElementDefinitionCode"/>
         </extension>
         <strength value="example"/>
+        <description value="Codes that indicate the meaning of a data element."/>
         <valueSet value="http://loinc.org/vs"/>
       </binding>
       <mapping>
@@ -688,6 +692,7 @@
       <type>
         <code value="Element"/>
       </type>
+      <condition value="eld-25"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -724,6 +729,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -742,7 +748,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -828,6 +834,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -846,7 +853,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -906,14 +913,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="How an element value is interpreted when discrimination is evaluated."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="DiscriminatorType"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/discriminator-type|5.0.0-snapshot3"/>
+        <description value="How an element value is interpreted when discrimination is evaluated."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/discriminator-type|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -1003,6 +1011,7 @@
         <code value="boolean"/>
       </type>
       <meaningWhenMissing value="Order is not required unless specified"/>
+      <condition value="eld-25"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1036,6 +1045,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="eld-25"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1046,14 +1056,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="How slices are interpreted when evaluating an instance."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="SlicingRules"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/resource-slicing-rules|5.0.0-snapshot3"/>
+        <description value="How slices are interpreted when evaluating an instance."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/resource-slicing-rules|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -1322,7 +1333,6 @@
       <type>
         <code value="string"/>
       </type>
-      <condition value="eld-3"/>
       <condition value="eld-2"/>
       <constraint>
         <key value="eld-3"/>
@@ -1356,7 +1366,7 @@
     <element id="ElementDefinition.base">
       <path value="ElementDefinition.base"/>
       <short value="Base definition information for tools"/>
-      <definition value="Information about the base definition of the element, provided to make it unnecessary for tools to trace the deviation of the element through the derived and related profiles. When the element definition is not the original definition of an element - i.g. either in a constraint on another type, or for elements from a super type in a snap shot - then the information in provided in the element definition may be different to the base definition. On the original definition of the element, it will be same."/>
+      <definition value="Information about the base definition of the element, provided to make it unnecessary for tools to trace the deviation of the element through the derived and related profiles. When the element definition is not the original definition of an element - e.g. either in a constraint on another type, or for elements from a super type in a snap shot - then the information in provided in the element definition may be different to the base definition. On the original definition of the element, it will be same."/>
       <comment value="The base information does not carry any information that could not be determined from the path and related profiles, but making this determination requires both that the related profiles are available, and that the algorithm to determine them be available. For tooling simplicity, the base information must always be populated in element definitions in snap shots, even if it is the same."/>
       <min value="0"/>
       <max value="1"/>
@@ -1404,6 +1414,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -1422,7 +1433,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -1604,6 +1615,10 @@
         <code value="Element"/>
       </type>
       <condition value="eld-13"/>
+      <condition value="eld-7"/>
+      <condition value="eld-6"/>
+      <condition value="eld-11"/>
+      <condition value="eld-5"/>
       <constraint>
         <key value="eld-4"/>
         <severity value="error"/>
@@ -1662,6 +1677,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -1680,7 +1696,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -1730,6 +1746,10 @@
       <type>
         <code value="uri"/>
       </type>
+      <condition value="eld-11"/>
+      <condition value="eld-13"/>
+      <condition value="eld-4"/>
+      <condition value="eld-17"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1740,7 +1760,7 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="List of all Types for ElementDefinition.type.code."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -1750,6 +1770,7 @@
           <valueBoolean value="true"/>
         </extension>
         <strength value="extensible"/>
+        <description value="List of all Types for ElementDefinition.type.code."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/elementdefinition-types"/>
       </binding>
       <mapping>
@@ -1769,7 +1790,7 @@
       <path value="ElementDefinition.type.profile"/>
       <short value="Profiles (StructureDefinition or IG) - one must apply"/>
       <definition value="Identifies a profile structure or implementation Guide that applies to the datatype this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the type SHALL conform to at least one profile defined in the implementation guide."/>
-      <comment value="It is possible to profile  backbone element (e.g. part of a resource), using the [profile-element](extension-elementdefinition-profile-element.html) extension."/>
+      <comment value="It is possible to profile  backbone element (e.g. part of a resource), using the [http://hl7.org/fhir/StructureDefinition/elementdefinition-profile-element](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-elementdefinition-profile-element.html) extension."/>
       <min value="0"/>
       <max value="0"/>
       <base>
@@ -1816,6 +1837,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ImplementationGuide"/>
       </type>
+      <condition value="eld-17"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1860,14 +1882,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="How resource references can be aggregated."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="AggregationMode"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/resource-aggregation-mode|5.0.0-snapshot3"/>
+        <description value="How resource references can be aggregated."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/resource-aggregation-mode|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -1903,14 +1926,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="Whether a reference needs to be version specific or version independent, or whether either can be used."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ReferenceVersionRules"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/reference-version-rules|5.0.0-snapshot3"/>
+        <description value="Whether a reference needs to be version specific or version independent, or whether either can be used."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/reference-version-rules|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -2092,6 +2116,7 @@
         <code value="Meta"/>
       </type>
       <condition value="eld-15"/>
+      <condition value="eld-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2157,6 +2182,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="eld-25"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2348,6 +2374,7 @@
       <condition value="eld-5"/>
       <condition value="eld-6"/>
       <condition value="eld-8"/>
+      <condition value="eld-24"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2572,6 +2599,7 @@
       <type>
         <code value="Element"/>
       </type>
+      <condition value="eld-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2604,6 +2632,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -2622,7 +2651,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -2666,7 +2695,7 @@
       </extension>
       <path value="ElementDefinition.example.label"/>
       <short value="Describes the purpose of this example"/>
-      <definition value="Describes the purpose of this example amoung the set of examples."/>
+      <definition value="Describes the purpose of this example among the set of examples."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2886,7 +2915,7 @@
       <path value="ElementDefinition.minValue[x]"/>
       <short value="Minimum Allowed Value (for some types)"/>
       <definition value="The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity."/>
-      <comment value="Except for date/date/instant, the type of the minValue[x] SHALL be the same as the specified type of the element. For the date/dateTime/instant values, the type of minValue[x] SHALL be either the same, or a [Duration](datatypes.html#Duration) which specifies a relative time limit to the current time. The duration value is positive, and is subtracted from the current clock to determine the minimum allowable value.   A minimum value for a Quantity is interpreted as an canonical minimum - e.g. you cannot provide 100mg if the minimum value is 10g."/>
+      <comment value="Except for date/date/instant, the type of the minValue[x] SHALL be the same as the specified type of the element. For the date/dateTime/instant values, the type of minValue[x] SHALL be either the same, or a [Duration](datatypes.html#Duration) which specifies a relative time limit to the current time. The duration value is positive, and is subtracted from the current clock to determine the minimum allowable value.   A minimum value for a Quantity is interpreted as a canonical minimum - e.g. you cannot provide 100mg if the minimum value is 10g."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2924,6 +2953,7 @@
       <type>
         <code value="Quantity"/>
       </type>
+      <condition value="eld-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2942,7 +2972,7 @@
       <path value="ElementDefinition.maxValue[x]"/>
       <short value="Maximum Allowed Value (for some types)"/>
       <definition value="The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity."/>
-      <comment value="Except for date/date/instant, the type of the maxValue[x] SHALL be the same as the specified type of the element. For the date/dateTime/instant values, the type of maxValue[x] SHALL be either the same, or a [Duration](datatypes.html#Duration) which specifies a relative time limit to the current time. The duration value is positive, and is added to the current clock to determine the maximum allowable value.   A maximum value for a Quantity is interpreted as an canonical maximum - e.g. you cannot provide 10g if the maximum value is 50mg."/>
+      <comment value="Except for date/date/instant, the type of the maxValue[x] SHALL be the same as the specified type of the element. For the date/dateTime/instant values, the type of maxValue[x] SHALL be either the same, or a [Duration](datatypes.html#Duration) which specifies a relative time limit to the current time. The duration value is positive, and is added to the current clock to determine the maximum allowable value.   A maximum value for a Quantity is interpreted as a canonical maximum - e.g. you cannot provide 10g if the maximum value is 50mg."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2980,6 +3010,7 @@
       <type>
         <code value="Quantity"/>
       </type>
+      <condition value="eld-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2997,7 +3028,7 @@
     <element id="ElementDefinition.maxLength">
       <path value="ElementDefinition.maxLength"/>
       <short value="Max length for string type data"/>
-      <definition value="Indicates the maximum length in characters that is permitted to be present in conformant instances and which is expected to be supported by conformant consumers that support the element. ```maxLength``` SHOULD only be used on primitive data types that have a string representation (see [Datatype characteristics](extension-structuredefinition-type-characteristics.html))."/>
+      <definition value="Indicates the maximum length in characters that is permitted to be present in conformant instances and which is expected to be supported by conformant consumers that support the element. ```maxLength``` SHOULD only be used on primitive data types that have a string representation (see [http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-structuredefinition-type-characteristics.html))."/>
       <comment value="Receivers are not required to reject instances that exceed the maximum length.  The full length could be stored.  In some cases, data might be truncated, though truncation should be undertaken with care and an understanding of the consequences of doing so. If not specified, there is no conformance expectation for length support."/>
       <min value="0"/>
       <max value="1"/>
@@ -3009,6 +3040,7 @@
       <type>
         <code value="integer"/>
       </type>
+      <condition value="eld-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3074,6 +3106,7 @@
       <type>
         <code value="Element"/>
       </type>
+      <condition value="eld-14"/>
       <constraint>
         <key value="eld-21"/>
         <severity value="warning"/>
@@ -3124,6 +3157,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3142,7 +3176,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -3250,6 +3284,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="eld-26"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3260,14 +3295,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="SHALL applications comply with this constraint?"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ConstraintSeverity"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/constraint-severity|5.0.0-snapshot3"/>
+        <description value="SHALL applications comply with this constraint?"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/constraint-severity|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="rim"/>
@@ -3275,6 +3311,9 @@
       </mapping>
     </element>
     <element id="ElementDefinition.constraint.suppress">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="trial-use"/>
+      </extension>
       <path value="ElementDefinition.constraint.suppress"/>
       <short value="Suppress warning or hint in profile"/>
       <definition value="If true, indicates that the warning or best practice guideline should be suppressed."/>
@@ -3289,6 +3328,7 @@
       <type>
         <code value="boolean"/>
       </type>
+      <condition value="eld-26"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3354,6 +3394,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="eld-21"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3405,7 +3446,7 @@
       <path value="ElementDefinition.mustHaveValue"/>
       <short value="For primitives, that a value must be present - not replaced by an extension"/>
       <definition value="Specifies for a primitive data type that the value of the data type cannot be replaced by an extension."/>
-      <comment value="Typical extensions that can be provided in place of a the value are [data-absent-reason](extension-data-absent-reason.html),  [nullflavor](extension-iso21090-nullflavor.html),  [OriginalText](extension-originaltext.html), and [expression](extension-cqf-expression.html). Note that this element has no meaning when a value is provided, and extensions can be provided in addition to a value."/>
+      <comment value="Typical extensions that can be provided in place of a the value are [http://hl7.org/fhir/StructureDefinition/data-absent-reason](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-data-absent-reason.html),  [http://hl7.org/fhir/StructureDefinition/iso21090-nullFlavor](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-iso21090-nullFlavor.html),  [http://hl7.org/fhir/StructureDefinition/originalText](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-originalText.html), and [http://hl7.org/fhir/StructureDefinition/cqf-expression](https://build.fhir.org/ig/HL7/fhir-extensions/StructureDefinition-cqf-expression.html). Note that this element has no meaning when a value is provided, and extensions can be provided in addition to a value."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -3416,6 +3457,7 @@
       <type>
         <code value="boolean"/>
       </type>
+      <condition value="eld-28"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3445,7 +3487,8 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
       </type>
-      <meaningWhenMissing value="If this element is missing, then any extension can be used if it's context is appropriate"/>
+      <meaningWhenMissing value="If this element is missing, then any extension can be used if its context is appropriate"/>
+      <condition value="eld-28"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3491,311 +3534,11 @@
         <map value="??"/>
       </mapping>
     </element>
-    <element id="ElementDefinition.obligation">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation"/>
-      <short value="Documents obligations for applications making use of this element"/>
-      <definition value="Documents obligations that apply to applications implementing this element. The obligations relate to application behaviour, not the content of the element itself in the resource instances that contain this element."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="ElementDefinition.obligation"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Element"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
-    <element id="ElementDefinition.obligation.id">
-      <path value="ElementDefinition.obligation.id"/>
-      <representation value="xmlAttr"/>
-      <short value="Unique id for inter-element referencing"/>
-      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="ElementDefinition.obligation.extension">
-      <path value="ElementDefinition.obligation.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <description value="Extensions are always sliced by (at least) url"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-    </element>
-    <element id="ElementDefinition.obligation.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.code"/>
-      <short value="Combination code describing the nature of the obligation"/>
-      <definition value="Codes, potentially combination code, that describe the obligations that apply to implementing applications."/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="ElementDefinition.obligation.code"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Coding"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
-          <valueString value="Codes, potentially combination code, that describe an obligation that applies to implementing applications."/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="ObligationCodes"/>
-        </extension>
-        <strength value="extensible"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/obligation"/>
-      </binding>
-    </element>
-    <element id="ElementDefinition.obligation.actor">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.actor"/>
-      <short value="Actor(s) this obligation applies to (all actors if none)"/>
-      <definition value="Actor(s) to which the obligation applies."/>
-      <comment value="If not actors are specified, then the obligation applies to all implementations."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="ElementDefinition.obligation.actor"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ActorDefinition"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
-    <element id="ElementDefinition.obligation.documentation">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.documentation"/>
-      <short value="Documentation of the purpose or application of the obligation"/>
-      <definition value="Human readable documentation of the purpose or application of the obligation."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="ElementDefinition.obligation.documentation"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="markdown"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
-    <element id="ElementDefinition.obligation.usage">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.usage"/>
-      <short value="Qualifies the usage - jurisdiction, gender, workflow status etc"/>
-      <definition value="Qualifies the usage of the obligation. Typically obligations are qualified by jurisdiction, but they may also be qualified by gender, workflow status, clinical domain etc. The information to decide whether a usege context applies is usually outside the resource, determined by context, and this might present challenges for validation tooling."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="ElementDefinition.obligation.usage"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="UsageContext"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
-    <element id="ElementDefinition.obligation.filter">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.filter"/>
-      <short value="Limits obligation to some repeats by FHIRPath"/>
-      <definition value="A FHIRPath expression that restricts to the obligation to one of a set of repeats."/>
-      <comment value="This might be used to indicate obligations that apply to home phone number, and not to other phone numbers, for example."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="ElementDefinition.obligation.filter"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
-    <element id="ElementDefinition.obligation.filterDocumentation">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.filterDocumentation"/>
-      <short value="Ddescribes the intent of the filter (short)"/>
-      <definition value="Documents the FHIRPath expression for the benefit of users who are not familiar with FHIRPath."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="ElementDefinition.obligation.filterDocumentation"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="string"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
-    <element id="ElementDefinition.obligation.process">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
-      <path value="ElementDefinition.obligation.process"/>
-      <short value="The obligation only applies when perfomring the indicated process"/>
-      <definition value="A process that the obligation applies to. This might a canonical URL for an OperationDefinition, or some other reference."/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="ElementDefinition.obligation.process"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="uri"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-    </element>
     <element id="ElementDefinition.isModifier">
       <path value="ElementDefinition.isModifier"/>
       <short value="If this modifies the meaning of other elements"/>
-      <definition value="If true, the value of this element affects the interpretation of the element or resource that contains it, and the value of the element cannot be ignored. Typically, this is used for status, negation and qualification codes. The effect of this is that the element cannot be ignored by systems: they SHALL either recognize the element and process it, and/or a pre-determination has been made that it is not relevant to their particular system."/>
-      <comment value="Only the definition of an element can set IsModifier true - either the specification itself or where an extension is originally defined. Once set, it cannot be changed in derived profiles. An element/extension that has isModifier=true SHOULD also have a minimum cardinality of 1, so that there is no lack of clarity about what to do if it is missing. If it can be missing, the definition SHALL make the meaning of a missing element clear."/>
+      <definition value="If true, the value of this element affects the interpretation of the element or resource that contains it, and the value of the element cannot be ignored. Typically, this is used for status, negation and qualification codes. The effect of this is that the element cannot be ignored by systems: they SHALL either recognize the element and process it, and/or a pre-determination has been made that it is not relevant to their particular system. When used on the root element in an extension definition, this indicates whether or not the extension is a modifier extension."/>
+      <comment value="Only the definition of an element can set IsModifier true - either the specification itself or where an extension is originally defined. Once set, it cannot be changed in derived profiles (except in the special case of the defining a new extension). An element/extension that has isModifier=true SHOULD also have a minimum cardinality of 1, so that there is no lack of clarity about what to do if it is missing. If it can be missing, the definition SHALL make the meaning of a missing element clear."/>
       <requirements value="Allows elements to be introduced into a specification that can't safely be ignored by applications that don't recognize them."/>
       <min value="0"/>
       <max value="0"/>
@@ -3808,6 +3551,7 @@
         <code value="boolean"/>
       </type>
       <meaningWhenMissing value="An element is not a modifier element unless it is explicitly specified to be one"/>
+      <condition value="eld-18"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3840,6 +3584,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="eld-18"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -3908,6 +3653,7 @@
         <code value="Element"/>
       </type>
       <condition value="eld-11"/>
+      <condition value="eld-5"/>
       <constraint>
         <key value="eld-12"/>
         <severity value="error"/>
@@ -3962,6 +3708,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3980,7 +3727,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -4042,7 +3789,7 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="Indication of the degree of conformance expectations associated with a binding."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -4052,7 +3799,8 @@
           <valueBoolean value="true"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/binding-strength|5.0.0-snapshot3"/>
+        <description value="Indication of the degree of conformance expectations associated with a binding."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/binding-strength|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="v2"/>
@@ -4083,6 +3831,7 @@
       <type>
         <code value="markdown"/>
       </type>
+      <condition value="eld-23"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4118,6 +3867,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type>
       <condition value="eld-12"/>
+      <condition value="eld-23"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4185,6 +3935,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -4203,7 +3954,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -4239,9 +3990,6 @@
       </mapping>
     </element>
     <element id="ElementDefinition.binding.additional.purpose">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
       <path value="ElementDefinition.binding.additional.purpose"/>
       <short value="maximum | minimum | required | extensible | candidate | current | preferred | ui | starter | component"/>
       <definition value="The use of this additional binding."/>
@@ -4266,20 +4014,18 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="The use of an additional binding."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="AdditionalBindingPurpose"/>
         </extension>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/additional-binding-purpose|5.0.0-snapshot3"/>
+        <description value="The use of an additional binding."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/additional-binding-purpose|5.0.0-cibuild"/>
       </binding>
     </element>
     <element id="ElementDefinition.binding.additional.valueSet">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
       <path value="ElementDefinition.binding.additional.valueSet"/>
       <short value="The value set for the additional binding"/>
       <definition value="The valueSet that is being bound for the purpose."/>
@@ -4305,9 +4051,6 @@
       <isSummary value="true"/>
     </element>
     <element id="ElementDefinition.binding.additional.documentation">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
       <path value="ElementDefinition.binding.additional.documentation"/>
       <short value="Documentation of the purpose of use of the binding"/>
       <definition value="Documentation of the purpose of use of the bindingproviding additional information about how it is intended to be used."/>
@@ -4332,9 +4075,6 @@
       <isSummary value="true"/>
     </element>
     <element id="ElementDefinition.binding.additional.shortDoco">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
       <path value="ElementDefinition.binding.additional.shortDoco"/>
       <short value="Concise documentation - for summary tables"/>
       <definition value="Concise documentation - for summary tables."/>
@@ -4359,11 +4099,8 @@
       <isSummary value="true"/>
     </element>
     <element id="ElementDefinition.binding.additional.usage">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
       <path value="ElementDefinition.binding.additional.usage"/>
-      <short value="Qualifies the usage - jurisdiction, gender, workflow status etc"/>
+      <short value="Qualifies the usage - jurisdiction, gender, workflow status etc."/>
       <definition value="Qualifies the usage of the binding. Typically bindings are qualified by jurisdiction, but they may also be qualified by gender, workflow status, clinical domain etc. The information to decide whether a usege context applies is usually outside the resource, determined by context, and this might present challenges for validation tooling."/>
       <comment value="This specification does not define exactly how the context is determined for the usage; typically, this will be described in implementation guides."/>
       <min value="0"/>
@@ -4387,9 +4124,6 @@
       <isSummary value="true"/>
     </element>
     <element id="ElementDefinition.binding.additional.any">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="trial-use"/>
-      </extension>
       <path value="ElementDefinition.binding.additional.any"/>
       <short value="Whether binding can applies to all repeats, or just one"/>
       <definition value="Whether the binding applies to all repeats, or just to any one of them. This is only relevant for elements that can repeat."/>
@@ -4430,6 +4164,7 @@
       <type>
         <code value="Element"/>
       </type>
+      <condition value="eld-27"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4470,6 +4205,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -4488,7 +4224,7 @@
         <rules value="open"/>
       </slicing>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -4537,6 +4273,7 @@
       <type>
         <code value="id"/>
       </type>
+      <condition value="eld-27"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -4576,7 +4313,7 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/build/StructureDefinition/binding-definition">
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
           <valueString value="The mime type of an attachment. Any valid mime type is allowed."/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -4587,7 +4324,7 @@
         </extension>
         <strength value="required"/>
         <description value="BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/mimetypes|5.0.0-snapshot3"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/mimetypes|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="rim"/>

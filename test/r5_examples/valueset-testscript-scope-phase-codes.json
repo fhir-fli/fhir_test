@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "testscript-scope-phase-codes",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -22,7 +22,7 @@
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-      "valueInteger": 2
+      "valueInteger": 4
     }
   ],
   "url": "http://hl7.org/fhir/ValueSet/testscript-scope-phase-codes",
@@ -32,11 +32,11 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3056"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "TestScriptScopePhaseType",
-  "title": "TestScriptScopePhaseType",
+  "title": "Test Script Scope Phase Type",
   "status": "draft",
-  "experimental": false,
+  "experimental": true,
   "date": "2021-01-25T17:01:24-04:00",
   "publisher": "HL7 (FHIR Project)",
   "contact": [

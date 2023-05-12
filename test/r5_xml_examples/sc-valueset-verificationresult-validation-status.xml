@@ -7,10 +7,10 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ValidationStatusCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-verificationresult-validation-status)</h2>
       <p>Mapping from 
-        <a href="valueset-verificationresult-validation-status.html">http://hl7.org/fhir/ValueSet/verificationresult-validation-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-verificationresult-validation-status.html">validation-status</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
-      <p>DRAFT. Published on 2018-06-06T00:06:02+10:00 by HL7 (FHIR Project) (
+      <p>DRAFT. Published on 2018-06-05T14:06:02Z by HL7 (FHIR Project) (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>, 
         <a href="mailto:fhir@lists.hl7.org">fhir@lists.hl7.org</a>). 
       </p>
@@ -21,7 +21,7 @@
       <br/>
       <p>
         <b>Group 1</b>Mapping from 
-        <a href="http://terminology.hl7.org/4.0.0/CodeSystem-validation-status.html">Validation-status</a> to 
+        <a href="http://terminology.hl7.org/5.1.0/CodeSystem-validation-status.html">Validation-status</a> to 
         <a href="codesystem-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <table class="grid">
@@ -61,12 +61,12 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-verificationresult-validation-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ValidationStatusCanonicalMap"/>
   <title value="Canonical Mapping for &quot;validation-status&quot;"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2018-06-06T00:06:02+10:00"/>
+  <date value="2018-06-05T14:06:02+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>

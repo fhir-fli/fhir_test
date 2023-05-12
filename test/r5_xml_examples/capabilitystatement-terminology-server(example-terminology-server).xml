@@ -10,7 +10,7 @@
   <text>
     <status value="extensions"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h2>ACMETerminologyService—CapabilityStatement</h2>
+      <h2>ACMETerminologyServiceCapabilityStatement</h2>
       <div>
         <p>Example capability statement for a Terminology Server. A server can support more fucntionality than defined here, but this is the minimum amount</p>
 
@@ -92,17 +92,18 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/CapabilityStatement/terminology-server"/>
-  <version value="5.0.0-snapshot3"/>
-  <name value="ACMETerminologyService—CapabilityStatement"/>
+  <version value="5.0.0-cibuild"/>
+  <name value="ACMETerminologyServiceCapabilityStatement"/>
   <title value="ACME Terminology Service — Capability Statement"/>
   <status value="draft"/>
+  <experimental value="true"/>
   <date value="2022-09-01"/>
   <description value="Example capability statement for a Terminology Server. A server can support more fucntionality than defined here, but this is the minimum amount"/>
   <kind value="instance"/>
   <implementation>
     <description value="The ACME FHIR Terminology Server"/>
   </implementation>
-  <fhirVersion value="5.0.0-snapshot3"/>
+  <fhirVersion value="5.0.0-cibuild"/>
   <format value="json"/>
   <format value="xml"/>
   <rest>

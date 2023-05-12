@@ -20,7 +20,7 @@
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.5.1115"/>
   </identifier>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ShareableConceptMap"/>
   <title value="Shareable ConceptMap"/>
   <status value="draft"/>
@@ -28,7 +28,7 @@
   <date value="2020-12-28T16:55:11+11:00"/>
   <publisher value="HL7"/>
   <description value="Enforces the minimum information set for the concept map metadata required by HL7 and other organizations that share and publish concept maps"/>
-  <fhirVersion value="5.0.0"/>
+  <fhirVersion value="5.0.0-cibuild"/>
   <mapping>
     <identity value="rim"/>
     <uri value="http://hl7.org/v3"/>
@@ -70,19 +70,19 @@
         <key value="cnl-0"/>
         <severity value="warning"/>
         <human value="Name should be usable as an identifier for the module by machine processing applications such as code generation"/>
-        <expression value="name.exists() implies name.matches('[A-Z]([A-Za-z0-9_]){1,254}')"/>
+        <expression value="name.exists() implies name.matches('^[A-Z]([A-Za-z0-9_]){1,254}$')"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
       </constraint>
       <mustSupport value="false"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
+        <identity value="w5"/>
+        <map value="conformance.behavior,conformance.terminology"/>
       </mapping>
       <mapping>
-        <identity value="w5"/>
-        <map value="conformance.terminology"/>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="ConceptMap.id">
@@ -136,7 +136,7 @@
       <path value="ConceptMap.implicitRules"/>
       <short value="A set of rules under which this content was created"/>
       <definition value="A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc."/>
-      <comment value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of it's narrative along with other profiles, value sets, etc."/>
+      <comment value="Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. Often, when used, the URL is a reference to an implementation guide that defines these special rules as part of its narrative along with other profiles, value sets, etc."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -156,7 +156,7 @@
       </constraint>
       <mustSupport value="false"/>
       <isModifier value="true"/>
-      <isModifierReason value="This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation"/>
+      <isModifierReason value="This element is labeled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies its meaning or interpretation"/>
       <isSummary value="true"/>
     </element>
     <element id="ConceptMap.language">
@@ -185,18 +185,19 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet">
-          <valueCanonical value="http://hl7.org/fhir/ValueSet/all-languages"/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
           <valueBoolean value="true"/>
         </extension>
-        <strength value="preferred"/>
-        <description value="IETF language tag"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <strength value="required"/>
+        <description value="IETF language tag for a human language"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/all-languages|5.0.0-cibuild"/>
+        <additional>
+          <purpose value="starter"/>
+          <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        </additional>
       </binding>
     </element>
     <element id="ConceptMap.text">
@@ -218,6 +219,7 @@
       <type>
         <code value="Narrative"/>
       </type>
+      <condition value="dom-6"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -251,6 +253,10 @@
       <type>
         <code value="Resource"/>
       </type>
+      <condition value="dom-2"/>
+      <condition value="dom-4"/>
+      <condition value="dom-3"/>
+      <condition value="dom-5"/>
       <mustSupport value="false"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -335,7 +341,7 @@
     <element id="ConceptMap.modifierExtension">
       <path value="ConceptMap.modifierExtension"/>
       <short value="Extensions that cannot be ignored"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -393,7 +399,7 @@
         <key value="cnl-1"/>
         <severity value="warning"/>
         <human value="URL should not contain | or # - these characters make processing canonical references problematic"/>
-        <expression value="url.matches('([^|#])*')"/>
+        <expression value="exists() implies matches('^[^|# ]+$')"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
       </constraint>
       <constraint>
@@ -476,6 +482,39 @@
         <map value="FiveWs.version"/>
       </mapping>
     </element>
+    <element id="ConceptMap.versionAlgorithm[x]">
+      <path value="ConceptMap.versionAlgorithm[x]"/>
+      <short value="How to compare versions"/>
+      <definition value="Indicates the mechanism used to compare versions to determine which ConceptMap is more current."/>
+      <comment value="If set as a string, this is a FHIRPath expression that has two additional context variables passed in - %version1 and %version2 and will return a negative number if version1 is newer, a positive number if version2 and a 0 if the version ordering can't be successfully be determined."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.versionAlgorithm[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <binding>
+        <strength value="extensible"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/version-algorithm"/>
+      </binding>
+    </element>
     <element id="ConceptMap.name">
       <path value="ConceptMap.name"/>
       <short value="Name for this concept map (computer friendly)"/>
@@ -540,7 +579,7 @@
       <path value="ConceptMap.status"/>
       <short value="draft | active | retired | unknown"/>
       <definition value="The status of this concept map. Enables tracking the life-cycle of the content."/>
-      <comment value="Allows filtering of concept maps that are appropriate for use versus not."/>
+      <comment value="Allows filtering of concept maps that are appropriate for use versus not.&#xA;&#xA;See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -551,6 +590,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -571,7 +611,7 @@
         </extension>
         <strength value="required"/>
         <description value="The lifecycle status of an artifact."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/publication-status|5.0.0-snapshot3"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/publication-status|5.0.0-cibuild"/>
       </binding>
       <mapping>
         <identity value="w5"/>
@@ -614,7 +654,7 @@
       <path value="ConceptMap.date"/>
       <short value="Date last changed"/>
       <definition value="The date  (and optionally time) when the concept map was last significantly changed. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes."/>
-      <comment value="The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the concept map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource."/>
+      <comment value="The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the concept map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.&#xA;&#xA;See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <alias value="Revision Date"/>
       <min value="0"/>
       <max value="1"/>
@@ -682,7 +722,7 @@
       <path value="ConceptMap.contact"/>
       <short value="Contact details for the publisher"/>
       <definition value="Contact details to assist a user in finding and communicating with the publisher."/>
-      <comment value="May be a web site, an email address, a telephone number, etc."/>
+      <comment value="May be a web site, an email address, a telephone number, etc.&#xA;&#xA;See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -768,10 +808,13 @@
       <isSummary value="true"/>
     </element>
     <element id="ConceptMap.jurisdiction">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="deprecated"/>
+      </extension>
       <path value="ConceptMap.jurisdiction"/>
       <short value="Intended jurisdiction for concept map (if applicable)"/>
       <definition value="A legal or geographic region in which the concept map is intended to be used."/>
-      <comment value="It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended."/>
+      <comment value="It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended.&#xA;&#xA;DEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new 'jurisdiction' code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#jurisdiction and useContext.valueCodeableConcept indicating the jurisdiction.)"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -883,11 +926,44 @@
         <map value="no-gen-base"/>
       </mapping>
     </element>
+    <element id="ConceptMap.copyrightLabel">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="ConceptMap.copyrightLabel"/>
+      <short value="Copyright holder and year(s)"/>
+      <definition value="A short string (&lt;50 characters), suitable for inclusion in a page footer that identifies the copyright holder, effective period, and optionally whether rights are resctricted. (e.g. 'All rights reserved', 'Some rights reserved')."/>
+      <comment value="The (c) symbol should NOT be included in this string. It will be added by software when rendering the notation. Full details about licensing, restrictions, warrantees, etc. goes in the more general 'copyright' element."/>
+      <requirements value="Defines the content expected to be rendered in all representations of the artifact."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.copyrightLabel"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="ConceptMap.approvalDate">
       <path value="ConceptMap.approvalDate"/>
       <short value="When the ConceptMap was approved by publisher"/>
       <definition value="The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage."/>
-      <comment value="The 'date' element may be more recent than the approval date because of minor changes or editorial corrections."/>
+      <comment value="The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.&#xA;&#xA;See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -915,9 +991,9 @@
     </element>
     <element id="ConceptMap.lastReviewDate">
       <path value="ConceptMap.lastReviewDate"/>
-      <short value="When the ConceptMap was last reviewed"/>
+      <short value="When the ConceptMap was last reviewed by the publisher"/>
       <definition value="The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date."/>
-      <comment value="If specified, this date follows the original approval date."/>
+      <comment value="If specified, this date follows the original approval date.&#xA;&#xA;See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <requirements value="Gives a sense of how &quot;current&quot; the content is.  Resources that have not been reviewed in a long time may have a risk of being less appropriate/relevant."/>
       <min value="0"/>
       <max value="1"/>
@@ -948,7 +1024,7 @@
       <path value="ConceptMap.effectivePeriod"/>
       <short value="When the ConceptMap is expected to be used"/>
       <definition value="The period during which the ConceptMap content was or is planned to be in active use."/>
-      <comment value="The effective period for a ConceptMap  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015."/>
+      <comment value="The effective period for a ConceptMap  determines when the content is applicable for usage and is independent of publication and review dates. For example, a map intended to be used for the year 2016 might be published in 2015.&#xA;&#xA;See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <requirements value="Allows establishing a transition before a resource comes into effect and also allows for a sunsetting process when new versions of the ConceptMap are or are expected to be used instead."/>
       <min value="0"/>
       <max value="1"/>
@@ -976,10 +1052,13 @@
       </mapping>
     </element>
     <element id="ConceptMap.topic">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="deprecated"/>
+      </extension>
       <path value="ConceptMap.topic"/>
-      <short value="E.g. Education, Treatment, Assessment, etc."/>
+      <short value="E.g. Education, Treatment, Assessment, etc"/>
       <definition value="Descriptions related to the content of the ConceptMap. Topics provide a high-level categorization as well as keywords for the ConceptMap that can be useful for filtering and searching."/>
-      <comment value="This element provides topical categorization and keywords for the ConceptMap, as opposed to the more structured context-of-use information provided in the useContext element"/>
+      <comment value="DEPRECATION NOTE: For consistency, implementations are encouraged to migrate to using the new 'topic' code in the useContext element.  (I.e. useContext.code indicating http://terminology.hl7.org/CodeSystem/usage-context-type#topic and useContext.valueCodeableConcept indicating the topic)"/>
       <requirements value="Repositories must be able to determine how to categorize the ConceptMap so that it can be found by topical and keyword searches."/>
       <min value="0"/>
       <max value="*"/>
@@ -1062,7 +1141,8 @@
     <element id="ConceptMap.reviewer">
       <path value="ConceptMap.reviewer"/>
       <short value="Who reviewed the ConceptMap"/>
-      <definition value="An individual or organization primarily responsible for review of some aspect of the ConceptMap."/>
+      <definition value="An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the ConceptMap."/>
+      <comment value="See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1087,7 +1167,8 @@
     <element id="ConceptMap.endorser">
       <path value="ConceptMap.endorser"/>
       <short value="Who endorsed the ConceptMap"/>
-      <definition value="An individual or organization responsible for officially endorsing the ConceptMap for use in some setting."/>
+      <definition value="An individual or organization asserted by the publisher to be responsible for officially endorsing the ConceptMap for use in some setting."/>
+      <comment value="See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1111,7 +1192,7 @@
     </element>
     <element id="ConceptMap.relatedArtifact">
       <path value="ConceptMap.relatedArtifact"/>
-      <short value="Additional documentation, citations, etc."/>
+      <short value="Additional documentation, citations, etc"/>
       <definition value="Related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor and successor artifacts."/>
       <comment value="Each related artifact is either an attachment, or a reference to another resource, but not both."/>
       <requirements value="A ConceptMap must be able to provide enough information for consumers of the content (and/or interventions or results produced by the content) to be able to determine and understand the justification for and evidence in support of the content."/>
@@ -1135,6 +1216,532 @@
       <mustSupport value="false"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
+    </element>
+    <element id="ConceptMap.property">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Property"/>
+      </extension>
+      <path value="ConceptMap.property"/>
+      <short value="Additional properties of the mapping"/>
+      <definition value="A property defines a slot through which additional information can be provided about a map from source -&gt; target."/>
+      <comment value="Properties may be used to supply for example, mapping priority, provenance, presentation hints, flag as experimental, and additional documentation. Multiple occurrences of ConceptMap.group.element.target.property may occur for a ConceptMap.property where ConceptMap.group.element.target.property.code is the same and the values in ConceptMap.group.element.target.property.value differ."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="ConceptMap.property"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="cmd-11"/>
+        <severity value="error"/>
+        <human value="If the property type is code, a system SHALL be specified"/>
+        <expression value="type = 'code' implies system.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
+      </constraint>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.property.id">
+      <path value="ConceptMap.property.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <condition value="ele-1"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.property.extension">
+      <path value="ConceptMap.property.extension"/>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.property.modifierExtension">
+      <path value="ConceptMap.property.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.property.code">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="ConceptMap.property.code"/>
+      <short value="Identifies the property on the mappings, and when referred to in the $translate operation"/>
+      <definition value="A code that is used to identify the property. The code is used internally (in ConceptMap.group.element.target.property.code) and also in the $translate operation."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.property.code"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.property.uri">
+      <path value="ConceptMap.property.uri"/>
+      <short value="Formal identifier for the property"/>
+      <definition value="Reference to the formal meaning of the property."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.property.uri"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.property.description">
+      <path value="ConceptMap.property.description"/>
+      <short value="Why the property is defined, and/or what it conveys"/>
+      <definition value="A description of the property - why it is defined, and how its value might be used."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.property.description"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.property.type">
+      <path value="ConceptMap.property.type"/>
+      <short value="Coding | string | integer | boolean | dateTime | decimal | code"/>
+      <definition value="The type of the property value."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.property.type"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <condition value="cmd-11"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="PropertyType"/>
+        </extension>
+        <strength value="required"/>
+        <description value="The type of a property value."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/conceptmap-property-type|5.0.0-cibuild"/>
+      </binding>
+    </element>
+    <element id="ConceptMap.property.system">
+      <path value="ConceptMap.property.system"/>
+      <short value="The CodeSystem from which code values come"/>
+      <definition value="The CodeSystem that defines the codes from which values of type ```code``` in property values."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.property.system"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="canonical"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
+      </type>
+      <condition value="cmd-11"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.additionalAttribute">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="AdditionalAttribute"/>
+      </extension>
+      <path value="ConceptMap.additionalAttribute"/>
+      <short value="Definition of an additional attribute to act as a data source or target"/>
+      <definition value="An additionalAttribute defines an additional data element found in the source or target data model where the data will come from or be mapped to. Some mappings are based on data in addition to the source data element, where codes in multiple fields are combined to a single field (or vice versa)."/>
+      <comment value="Additional attributes are used to define additional data elements where mapping data can be found. For an example, see [Specimen Type v2 -&gt; SNOMED CT Mapping(conceptmap-example-specimen-type.html)"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="ConceptMap.additionalAttribute"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.additionalAttribute.id">
+      <path value="ConceptMap.additionalAttribute.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <condition value="ele-1"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.additionalAttribute.extension">
+      <path value="ConceptMap.additionalAttribute.extension"/>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.additionalAttribute.modifierExtension">
+      <path value="ConceptMap.additionalAttribute.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.additionalAttribute.code">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="ConceptMap.additionalAttribute.code"/>
+      <short value="Identifies this additional attribute through this resource"/>
+      <definition value="A code that is used to identify this additional data attribute. The code is used internally in ConceptMap.group.element.target.dependsOn.attribute and ConceptMap.group.element.target.product.attribute."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.additionalAttribute.code"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.additionalAttribute.uri">
+      <path value="ConceptMap.additionalAttribute.uri"/>
+      <short value="Formal identifier for the data element referred to in this attribte"/>
+      <definition value="Reference to the formal definition of the source/target data element. For elements defined by the FHIR specification, or using a FHIR logical model, the correct format is {canonical-url}#{element-id}."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.additionalAttribute.uri"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="uri"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.additionalAttribute.description">
+      <path value="ConceptMap.additionalAttribute.description"/>
+      <short value="Why the additional attribute is defined, and/or what the data element it refers to is"/>
+      <definition value="A description of the additional attribute and/or the data element it refers to - why it is defined, and how the value might be used in mappings, and a discussion of issues associated with the use of the data element."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.additionalAttribute.description"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+    </element>
+    <element id="ConceptMap.additionalAttribute.type">
+      <path value="ConceptMap.additionalAttribute.type"/>
+      <short value="code | Coding | string | boolean | Quantity"/>
+      <definition value="The type of the source data contained in this concept map for this data element."/>
+      <comment value="When the source or target is not content defined by FHIR, some additional application logic might be required to map from the FHIR Datatype to the externally defined content"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.additionalAttribute.type"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="true"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ConceptMapmapAttributeType"/>
+        </extension>
+        <strength value="required"/>
+        <description value="The type of a mapping attribute value."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/conceptmap-attribute-type|5.0.0-cibuild"/>
+      </binding>
     </element>
     <element id="ConceptMap.sourceScope[x]">
       <path value="ConceptMap.sourceScope[x]"/>
@@ -1239,6 +1846,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -1249,7 +1857,7 @@
     <element id="ConceptMap.group.extension">
       <path value="ConceptMap.group.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -1287,7 +1895,7 @@
     <element id="ConceptMap.group.modifierExtension">
       <path value="ConceptMap.group.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -1404,7 +2012,7 @@
         <key value="cmd-4"/>
         <severity value="error"/>
         <human value="If noMap is present, target SHALL NOT be present"/>
-        <expression value="(noMap.exists() and target.empty()) or noMap.empty()"/>
+        <expression value="(noMap.exists() and noMap=true) implies target.empty()"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
       </constraint>
       <constraint>
@@ -1443,6 +2051,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -1453,7 +2062,7 @@
     <element id="ConceptMap.group.element.extension">
       <path value="ConceptMap.group.element.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -1491,7 +2100,7 @@
     <element id="ConceptMap.group.element.modifierExtension">
       <path value="ConceptMap.group.element.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -1530,7 +2139,7 @@
       </mapping>
     </element>
     <element id="ConceptMap.group.element.code">
-      <extension url="http://hl7.org/fhir/build/StructureDefinition/no-binding">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
         <valueBoolean value="true"/>
       </extension>
       <path value="ConceptMap.group.element.code"/>
@@ -1546,6 +2155,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1585,8 +2195,9 @@
     </element>
     <element id="ConceptMap.group.element.valueSet">
       <path value="ConceptMap.group.element.valueSet"/>
-      <short value="Identifies elements being mapped"/>
-      <definition value="The set of codes being mapped."/>
+      <short value="Identifies the set of concepts being mapped"/>
+      <definition value="The set of concepts from the ConceptMap.group.source code system which are all being mapped to the target as part of this mapping rule."/>
+      <comment value="If the value set expansion is empty then there are no source concepts to map in this rule."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1598,6 +2209,7 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type>
+      <condition value="cmd-5"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1613,6 +2225,7 @@
       <path value="ConceptMap.group.element.noMap"/>
       <short value="No mapping to a target concept for this source concept"/>
       <definition value="If noMap = true this indicates that no mapping to a target concept exists for this source concept."/>
+      <comment value="If noMap = true, then the behavior of ConceptMap.group.unmapped (if present) does not apply."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1623,6 +2236,7 @@
       <type>
         <code value="boolean"/>
       </type>
+      <condition value="cmd-4"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1652,11 +2266,12 @@
       <type>
         <code value="BackboneElement"/>
       </type>
+      <condition value="cmd-4"/>
       <constraint>
         <key value="cmd-1"/>
         <severity value="error"/>
         <human value="If the map is source-is-broader-than-target or not-related-to, there SHALL be some comments, unless the status is 'draft'"/>
-        <expression value="comment.exists() or (status = draft) or relationship.empty() or ((relationship != 'source-is-broader-than-target') and (relationship != 'not-related-to'))"/>
+        <expression value="comment.exists() or (%resource.status = 'draft') or relationship.empty() or ((relationship != 'source-is-broader-than-target') and (relationship != 'not-related-to'))"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
       </constraint>
       <constraint>
@@ -1695,6 +2310,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -1705,7 +2321,7 @@
     <element id="ConceptMap.group.element.target.extension">
       <path value="ConceptMap.group.element.target.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -1743,7 +2359,7 @@
     <element id="ConceptMap.group.element.target.modifierExtension">
       <path value="ConceptMap.group.element.target.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -1782,7 +2398,7 @@
       </mapping>
     </element>
     <element id="ConceptMap.group.element.target.code">
-      <extension url="http://hl7.org/fhir/build/StructureDefinition/no-binding">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
         <valueBoolean value="true"/>
       </extension>
       <path value="ConceptMap.group.element.target.code"/>
@@ -1798,6 +2414,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-7"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1837,8 +2454,9 @@
     </element>
     <element id="ConceptMap.group.element.target.valueSet">
       <path value="ConceptMap.group.element.target.valueSet"/>
-      <short value="Identifies the set of target elements"/>
-      <definition value="The set of codes that the map refers to."/>
+      <short value="Identifies the set of target concepts"/>
+      <definition value="The set of concepts from the ConceptMap.group.target code system which are all being mapped to as part of this mapping rule. The effect of using this data element is the same as having multiple ConceptMap.group.element.target elements with one for each concept in the ConceptMap.group.element.target.valueSet value set."/>
+      <comment value="If the the value set expansion is empty then the source concept(s) are unmapped and the behavior of ConceptMap.group.unmapped (if present) applies."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1850,6 +2468,7 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type>
+      <condition value="cmd-7"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1876,6 +2495,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1896,7 +2516,7 @@
         </extension>
         <strength value="required"/>
         <description value="The relationship between concepts."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/concept-map-relationship|5.0.0-snapshot3"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/concept-map-relationship|5.0.0-cibuild"/>
       </binding>
     </element>
     <element id="ConceptMap.group.element.target.comment">
@@ -1925,13 +2545,220 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
     </element>
+    <element id="ConceptMap.group.element.target.property">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="MappingProperty"/>
+      </extension>
+      <path value="ConceptMap.group.element.target.property"/>
+      <short value="Property value for the source -&gt; target mapping"/>
+      <definition value="A property value for this source -&gt; target mapping."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="ConceptMap.group.element.target.property"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ConceptMap.group.element.target.property.id">
+      <path value="ConceptMap.group.element.target.property.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <condition value="ele-1"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.group.element.target.property.extension">
+      <path value="ConceptMap.group.element.target.property.extension"/>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.group.element.target.property.modifierExtension">
+      <path value="ConceptMap.group.element.target.property.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="ConceptMap.group.element.target.property.code">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="ConceptMap.group.element.target.property.code"/>
+      <short value="Reference to ConceptMap.property.code"/>
+      <definition value="A reference to a mapping property defined in ConceptMap.property."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.group.element.target.property.code"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ConceptMap.group.element.target.property.value[x]">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="ConceptMap.group.element.target.property.value[x]"/>
+      <short value="Value of the property for this concept"/>
+      <definition value="The value of this property. If the type chosen for this element is 'code', then the property SHALL be defined in a ConceptMap.property element."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ConceptMap.group.element.target.property.value[x]"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Coding"/>
+      </type>
+      <type>
+        <code value="string"/>
+      </type>
+      <type>
+        <code value="integer"/>
+      </type>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <type>
+        <code value="decimal"/>
+      </type>
+      <type>
+        <code value="code"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="ConceptMap.group.element.target.dependsOn">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="OtherElement"/>
       </extension>
       <path value="ConceptMap.group.element.target.dependsOn"/>
       <short value="Other properties required for this mapping"/>
-      <definition value="A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified property can be resolved, and it has the specified value."/>
+      <definition value="A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified data attribute can be resolved, and it has the specified value."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1978,6 +2805,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -1988,7 +2816,7 @@
     <element id="ConceptMap.group.element.target.dependsOn.extension">
       <path value="ConceptMap.group.element.target.dependsOn.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -2026,7 +2854,7 @@
     <element id="ConceptMap.group.element.target.dependsOn.modifierExtension">
       <path value="ConceptMap.group.element.target.dependsOn.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -2064,19 +2892,22 @@
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="ConceptMap.group.element.target.dependsOn.property">
-      <path value="ConceptMap.group.element.target.dependsOn.property"/>
-      <short value="A reference to a property that may be required to refine the mapping"/>
-      <definition value="A reference to a property that holds a value the map depends on. This value can be supplied to the $translate operation to select the appropriate targets."/>
+    <element id="ConceptMap.group.element.target.dependsOn.attribute">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
+        <valueBoolean value="true"/>
+      </extension>
+      <path value="ConceptMap.group.element.target.dependsOn.attribute"/>
+      <short value="A reference to a mapping attribute defined in ConceptMap.additionalAttribute"/>
+      <definition value="A reference to the additional attribute that holds a value the map depends on."/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="ConceptMap.group.element.target.dependsOn.property"/>
+        <path value="ConceptMap.group.element.target.dependsOn.attribute"/>
         <min value="1"/>
         <max value="1"/>
       </base>
       <type>
-        <code value="uri"/>
+        <code value="code"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -2091,8 +2922,9 @@
     </element>
     <element id="ConceptMap.group.element.target.dependsOn.value[x]">
       <path value="ConceptMap.group.element.target.dependsOn.value[x]"/>
-      <short value="Value of the referenced property"/>
-      <definition value="Property value that the map depends on."/>
+      <short value="Value of the referenced data element"/>
+      <definition value="Data element value that the map depends on / produces."/>
+      <comment value="If the data type is a code, then the code system is .group.source for .dependsOn.valueCode and .group.target for .product.valueCode."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2110,23 +2942,12 @@
         <code value="string"/>
       </type>
       <type>
-        <code value="integer"/>
-      </type>
-      <type>
         <code value="boolean"/>
       </type>
       <type>
-        <code value="dateTime"/>
+        <code value="Quantity"/>
       </type>
-      <type>
-        <code value="decimal"/>
-      </type>
-      <type>
-        <code value="uri"/>
-      </type>
-      <type>
-        <code value="id"/>
-      </type>
+      <condition value="cmd-6"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2140,8 +2961,8 @@
     </element>
     <element id="ConceptMap.group.element.target.dependsOn.valueSet">
       <path value="ConceptMap.group.element.target.dependsOn.valueSet"/>
-      <short value="The mapping depends on a property with a value from this value set"/>
-      <definition value="This mapping applies if the property value is a code from this value set."/>
+      <short value="The mapping depends on a data element with a value from this value set"/>
+      <definition value="This mapping applies if the data element value is a code from this value set."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2153,6 +2974,7 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type>
+      <condition value="cmd-6"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2166,8 +2988,8 @@
     </element>
     <element id="ConceptMap.group.element.target.product">
       <path value="ConceptMap.group.element.target.product"/>
-      <short value="Other properties that this mapping also produces"/>
-      <definition value="Product is the output of a ConceptMap that provides additional values relevant to the interpretation of the mapping target."/>
+      <short value="Other data elements that this mapping also produces"/>
+      <definition value="Product is the output of a ConceptMap that provides additional values that go in other attributes / data elemnts of the target data."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -2189,9 +3011,9 @@
     </element>
     <element id="ConceptMap.group.unmapped">
       <path value="ConceptMap.group.unmapped"/>
-      <short value="What to do when there is no mapping target for the source concept"/>
-      <definition value="What to do when there is no mapping to a target concept from the source concept.  This provides the &quot;default&quot; to be applied when there is no target concept mapping specified.  The 'unmapped' element is ignored if a code is specified to have relationship = not-related-to."/>
-      <comment value="This only applies if the source code has a system value that matches the system defined for the group."/>
+      <short value="What to do when there is no mapping target for the source concept and ConceptMap.group.element.noMap is not true"/>
+      <definition value="What to do when there is no mapping to a target concept from the source concept and ConceptMap.group.element.noMap is not true. This provides the &quot;default&quot; to be applied when there is no target concept mapping specified or the expansion of ConceptMap.group.element.target.valueSet is empty."/>
+      <comment value="The 'unmapped' element is ignored if a code is specified to have relationship = not-related-to or if ConceptMap.group.element.noMap = true."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -2266,6 +3088,7 @@
         </extension>
         <code value="http://hl7.org/fhirpath/System.String"/>
       </type>
+      <condition value="ele-1"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -2276,7 +3099,7 @@
     <element id="ConceptMap.group.unmapped.extension">
       <path value="ConceptMap.group.unmapped.extension"/>
       <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <alias value="extensions"/>
       <alias value="user content"/>
@@ -2314,7 +3137,7 @@
     <element id="ConceptMap.group.unmapped.modifierExtension">
       <path value="ConceptMap.group.unmapped.modifierExtension"/>
       <short value="Extensions that cannot be ignored even if unrecognized"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
       <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](extensibility.html#modifierExtension)."/>
       <alias value="extensions"/>
@@ -2366,6 +3189,11 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-3"/>
+      <condition value="cmd-2"/>
+      <condition value="cmd-8"/>
+      <condition value="cmd-9"/>
+      <condition value="cmd-10"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2382,11 +3210,11 @@
         </extension>
         <strength value="required"/>
         <description value="Defines which action to take if there is no match in the group."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode|5.0.0-snapshot3"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode|5.0.0-cibuild"/>
       </binding>
     </element>
     <element id="ConceptMap.group.unmapped.code">
-      <extension url="http://hl7.org/fhir/build/StructureDefinition/no-binding">
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/no-binding">
         <valueBoolean value="true"/>
       </extension>
       <path value="ConceptMap.group.unmapped.code"/>
@@ -2402,6 +3230,8 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-2"/>
+      <condition value="cmd-8"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2428,6 +3258,7 @@
       <type>
         <code value="string"/>
       </type>
+      <condition value="cmd-8"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2454,6 +3285,8 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type>
+      <condition value="cmd-2"/>
+      <condition value="cmd-8"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2480,6 +3313,7 @@
       <type>
         <code value="code"/>
       </type>
+      <condition value="cmd-9"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2500,7 +3334,7 @@
         </extension>
         <strength value="required"/>
         <description value="The default relationship value to apply between the source and target concepts when no concept mapping is specified."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/concept-map-relationship|5.0.0-snapshot3"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/concept-map-relationship|5.0.0-cibuild"/>
       </binding>
     </element>
     <element id="ConceptMap.group.unmapped.otherMap">
@@ -2518,6 +3352,8 @@
         <code value="canonical"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
       </type>
+      <condition value="cmd-3"/>
+      <condition value="cmd-10"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -2557,6 +3393,10 @@
       <path value="ConceptMap.version"/>
       <min value="1"/>
       <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="ConceptMap.versionAlgorithm[x]">
+      <path value="ConceptMap.versionAlgorithm[x]"/>
       <mustSupport value="true"/>
     </element>
     <element id="ConceptMap.name">

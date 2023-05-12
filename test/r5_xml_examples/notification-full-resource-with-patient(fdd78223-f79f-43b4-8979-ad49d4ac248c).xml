@@ -42,7 +42,7 @@
           <versionId value="1"/>
           <lastUpdated value="2019-08-07T10:49:22Z"/>
         </meta>
-        <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Encounter</b><a name="2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Encounter "2" Version "1" Updated "2019-08-07T10:49:22Z" </p></div><p><b>status</b>: in-progress</p><p><b>class</b>: virtual <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ActCode.html">ActCode</a>#VR)</span></p><p><b>subject</b>: <a href="broken-link.html">Patient/ABC</a></p></div></text><status value="in-progress"/>
+        <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Encounter</b><a name="2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Encounter "2" Version "1" Updated "2019-08-07T10:49:22Z" </p></div><p><b>status</b>: in-progress</p><p><b>class</b>: virtual <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ActCode.html">ActCode</a>#VR)</span></p><p><b>subject</b>: <a href="broken-link.html">Patient/ABC</a></p></div></text><status value="in-progress"/>
         <class>
 			<coding>
 				<system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>

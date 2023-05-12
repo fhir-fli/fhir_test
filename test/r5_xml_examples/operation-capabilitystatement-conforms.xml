@@ -16,6 +16,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -31,6 +34,7 @@
         <tr>
           <td>IN</td>
           <td>left</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#canonical">canonical</a>
@@ -46,6 +50,7 @@
         <tr>
           <td>IN</td>
           <td>right</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#canonical">canonical</a>
@@ -61,6 +66,7 @@
         <tr>
           <td>IN</td>
           <td>mode</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#code">code</a>
@@ -76,6 +82,7 @@
         <tr>
           <td>OUT</td>
           <td>issues</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="operationoutcome.html">OperationOutcome</a>
@@ -91,6 +98,7 @@
         <tr>
           <td>OUT</td>
           <td>union</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="capabilitystatement.html">CapabilityStatement</a>
@@ -106,6 +114,7 @@
         <tr>
           <td>OUT</td>
           <td>intersection</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="capabilitystatement.html">CapabilityStatement</a>
@@ -136,13 +145,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/CapabilityStatement-conforms"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Conforms"/>
   <title value="Test if a server implements a client's required operations"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>

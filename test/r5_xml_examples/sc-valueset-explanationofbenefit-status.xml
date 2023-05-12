@@ -7,10 +7,10 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ExplanationOfBenefitStatusCanonicalMap (http://hl7.org/fhir/ConceptMap/sc-explanationofbenefit-status)</h2>
       <p>Mapping from 
-        <a href="valueset-explanationofbenefit-status.html">http://hl7.org/fhir/ValueSet/explanationofbenefit-status</a> to 
-        <a href="valueset-resource-status.html">http://hl7.org/fhir/ValueSet/resource-status</a>
+        <a href="valueset-explanationofbenefit-status.html">Explanation Of Benefit Status</a> to 
+        <a href="valueset-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
-      <p>DRAFT. Published on 2020-12-28T16:55:11+11:00 by HL7 (FHIR Project) (
+      <p>DRAFT. Published on 2020-12-28T05:55:11Z by HL7 (FHIR Project) (
         <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>, 
         <a href="mailto:fhir@lists.hl7.org">fhir@lists.hl7.org</a>). 
       </p>
@@ -21,7 +21,7 @@
       <br/>
       <p>
         <b>Group 1</b>Mapping from 
-        <a href="codesystem-explanationofbenefit-status.html">ExplanationOfBenefitStatus</a> to 
+        <a href="codesystem-explanationofbenefit-status.html">Explanation Of Benefit Status</a> to 
         <a href="codesystem-resource-status.html">Canonical Status Codes for FHIR Resources</a>
       </p>
       <table class="grid">
@@ -68,12 +68,12 @@
     </div>
   </text>
   <url value="http://hl7.org/fhir/ConceptMap/sc-explanationofbenefit-status"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="ExplanationOfBenefitStatusCanonicalMap"/>
-  <title value="Canonical Mapping for &quot;ExplanationOfBenefitStatus&quot;"/>
+  <title value="Canonical Mapping for &quot;Explanation Of Benefit Status&quot;"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2020-12-28T16:55:11+11:00"/>
+  <date value="2020-12-28T05:55:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>

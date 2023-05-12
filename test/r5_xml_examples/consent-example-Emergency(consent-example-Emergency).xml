@@ -43,12 +43,22 @@
       <code value="INFA"/>
     </coding>
   </regulatoryBasis>
+  <decision value="deny"/>
   <provision>
-      <!--  this is opt-out - e.g. nothing approved unless otherwise stated.  -->
-    <type value="deny"/>
-    <provision>
       <!--  deny Artis University Medical Center specifically  -->
-      <type value="deny"/>
+    <actor>
+      <role>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+          <code value="CST"/>
+        </coding>
+      </role>
+      <reference>
+        <reference value="Organization/f201"/>
+      </reference>
+    </actor>
+    <provision>
+        <!--  permit Artis University Medical Center for Emergency Treatment  -->
       <actor>
         <role>
           <coding>
@@ -60,25 +70,10 @@
           <reference value="Organization/f201"/>
         </reference>
       </actor>
-      <provision>
-        <!--  permit Artis University Medical Center for Emergency Treatment  -->
-        <type value="permit"/>
-        <actor>
-          <role>
-            <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-              <code value="CST"/>
-            </coding>
-          </role>
-          <reference>
-            <reference value="Organization/f201"/>
-          </reference>
-        </actor>
-        <purpose>
-          <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-          <code value="ETREAT"/>
-        </purpose>
-      </provision>
+      <purpose>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+        <code value="ETREAT"/>
+      </purpose>
     </provision>
   </provision>
 </Consent>

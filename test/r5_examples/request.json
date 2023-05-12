@@ -12,12 +12,12 @@
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/Request",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "Request",
   "title": "request",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "Health Level Seven International fhir",
   "contact": [
     {
@@ -41,12 +41,12 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "v2",
       "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
+      "name": "HL7 V2 Mapping"
     },
     {
       "identity": "rim",
@@ -170,7 +170,6 @@
               "http://hl7.org/fhir/StructureDefinition/CarePlan",
               "http://hl7.org/fhir/StructureDefinition/Claim",
               "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/Contract",
               "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest",
               "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
               "http://hl7.org/fhir/StructureDefinition/EnrollmentRequest",
@@ -180,6 +179,8 @@
               "http://hl7.org/fhir/StructureDefinition/RequestOrchestration",
               "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
               "http://hl7.org/fhir/StructureDefinition/SupplyRequest",
+              "http://hl7.org/fhir/StructureDefinition/Task",
+              "http://hl7.org/fhir/StructureDefinition/Transport",
               "http://hl7.org/fhir/StructureDefinition/VisionPrescription"
             ]
           }
@@ -234,7 +235,6 @@
               "http://hl7.org/fhir/StructureDefinition/CarePlan",
               "http://hl7.org/fhir/StructureDefinition/Claim",
               "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/Contract",
               "http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest",
               "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
               "http://hl7.org/fhir/StructureDefinition/EnrollmentRequest",
@@ -244,6 +244,8 @@
               "http://hl7.org/fhir/StructureDefinition/RequestOrchestration",
               "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
               "http://hl7.org/fhir/StructureDefinition/SupplyRequest",
+              "http://hl7.org/fhir/StructureDefinition/Task",
+              "http://hl7.org/fhir/StructureDefinition/Transport",
               "http://hl7.org/fhir/StructureDefinition/VisionPrescription"
             ]
           }
@@ -348,7 +350,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying the lifecycle stage of a request."
             },
             {
@@ -357,7 +359,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/request-status|5.0.0-snapshot3"
+          "description": "Codes identifying the lifecycle stage of a request.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-status|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -410,7 +413,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying the reason for the current state of a request."
             },
             {
@@ -418,7 +421,8 @@
               "valueString": "RequestStatusReason"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes identifying the reason for the current state of a request."
         },
         "mapping": [
           {
@@ -464,7 +468,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes indicating the degree of authority/intentionality associated with a request."
             },
             {
@@ -473,7 +477,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/request-intent|5.0.0-snapshot3"
+          "description": "Codes indicating the degree of authority/intentionality associated with a request.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-intent|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -522,7 +527,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Identifies the level of importance to be assigned to actioning the request."
             },
             {
@@ -531,7 +536,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/request-priority|5.0.0-snapshot3"
+          "description": "Identifies the level of importance to be assigned to actioning the request.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-priority|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -649,7 +655,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes indicating the details of what is being requested.  These will vary significantly based on the type of request resource and will often be example/preferred rather than extensible/required."
             },
             {
@@ -657,7 +663,8 @@
               "valueString": "RequestCode"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes indicating the details of what is being requested.  These will vary significantly based on the type of request resource and will often be example/preferred rather than extensible/required."
         },
         "mapping": [
           {
@@ -769,7 +776,7 @@
           },
           {
             "identity": "w5",
-            "map": "FiveWs.subject"
+            "map": "FiveWs.subject[x]"
           }
         ]
       },
@@ -1064,7 +1071,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Identifies types of practitioners, devices or other agents that should fulfill a request.  While the detailed constraints of relevant agents will vary by resource, some degree of consistency around recommended codes across request and definition resources would be desirable."
             },
             {
@@ -1072,7 +1079,8 @@
               "valueString": "PerformerType"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Identifies types of practitioners, devices or other agents that should fulfill a request.  While the detailed constraints of relevant agents will vary by resource, some degree of consistency around recommended codes across request and definition resources would be desirable."
         },
         "mapping": [
           {
@@ -1164,7 +1172,7 @@
               "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
               "http://hl7.org/fhir/StructureDefinition/Organization",
               "http://hl7.org/fhir/StructureDefinition/Location",
-              "http://hl7.org/fhir/StructureDefinition/HealthCareService",
+              "http://hl7.org/fhir/StructureDefinition/HealthcareService",
               "http://hl7.org/fhir/StructureDefinition/CareTeam",
               "http://hl7.org/fhir/StructureDefinition/Device",
               "http://hl7.org/fhir/StructureDefinition/Endpoint"
@@ -1221,7 +1229,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "Codes identifying why this request was necessary.  These may be clinical reasons (e.g. diagnoses, symptoms) and/or administrative reasons.  While the detailed constraints of relevant reasons will vary by resource, some degree of consistency across resources around recommended codes would be desirable."
             },
             {
@@ -1229,7 +1237,8 @@
               "valueString": "RequestReason"
             }
           ],
-          "strength": "example"
+          "strength": "example",
+          "description": "Codes identifying why this request was necessary.  These may be clinical reasons (e.g. diagnoses, symptoms) and/or administrative reasons.  While the detailed constraints of relevant reasons will vary by resource, some degree of consistency across resources around recommended codes would be desirable."
         },
         "mapping": [
           {
@@ -1377,7 +1386,7 @@
         "path": "Request.relevantHistory",
         "short": "Key events in history of {{title}}",
         "definition": "Links to Provenance records for past versions of this resource or fulfilling request or event resources that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the resource.",
-        "comment": "This element does not point to the Provenance associated with the *current* version of the resource - as it would be created after this version existed.  The Provenance for the current version can be retrieved with a _revinclude.  Referenced provenances should adhere to the provenance-relevant-history profile.\n\nSee additional guidance [here](request.html#history).",
+        "comment": "This element does not point to the Provenance associated with the *current* version of the resource - as it would be created after this version existed.  The Provenance for the current version can be retrieved with a _revinclude.  Referenced provenances SHOULD adhere to the [provenance-relevant-history profile](provenance-relevant-history.html).\n\nSee additional guidance [here](request.html#history).",
         "alias": [
           "eventHistory"
         ],

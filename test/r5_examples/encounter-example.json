@@ -20,6 +20,19 @@
   "subject": {
     "reference": "Patient/example"
   },
+  "subjectStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/encounter-subject-status",
+        "code": "receiving-care"
+      }
+    ]
+  },
+  "careTeam": [
+    {
+      "reference": "Encounter/example"
+    }
+  ],
   "meta": {
     "tag": [
       {

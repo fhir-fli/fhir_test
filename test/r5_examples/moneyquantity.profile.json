@@ -13,14 +13,30 @@
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
       "valueCode": "4.0.0"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "has-range"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "is-continuous"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "has-units"
     }
   ],
   "url": "http://hl7.org/fhir/StructureDefinition/MoneyQuantity",
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "MoneyQuantity",
   "status": "active",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "publisher": "HL7 FHIR Standard",
   "contact": [
     {
@@ -44,12 +60,12 @@
       ]
     }
   ],
-  "fhirVersion": "5.0.0-snapshot3",
+  "fhirVersion": "5.0.0-cibuild",
   "mapping": [
     {
       "identity": "v2",
       "uri": "http://hl7.org/v2",
-      "name": "HL7 v2 Mapping"
+      "name": "HL7 V2 Mapping"
     },
     {
       "identity": "rim",
@@ -103,15 +119,11 @@
         "mapping": [
           {
             "identity": "rim",
-            "map": "n/a"
+            "map": "n/a,PQ, IVL\u003cPQ\u003e, MO, CO, depending on the values"
           },
           {
             "identity": "v2",
             "map": "SN (see also Range) or CQ"
-          },
-          {
-            "identity": "rim",
-            "map": "PQ, IVL\u003cPQ\u003e, MO, CO, depending on the values"
           }
         ]
       },
@@ -141,6 +153,9 @@
             "code": "http://hl7.org/fhirpath/System.String"
           }
         ],
+        "condition": [
+          "ele-1"
+        ],
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -164,7 +179,7 @@
           "rules": "open"
         },
         "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -282,7 +297,7 @@
         "binding": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/build/StructureDefinition/binding-definition",
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
               "valueString": "How the Quantity should be understood and represented."
             },
             {
@@ -291,7 +306,8 @@
             }
           ],
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator|5.0.0-snapshot3"
+          "description": "How the Quantity should be understood and represented.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator|5.0.0-cibuild"
         },
         "mapping": [
           {
@@ -401,7 +417,7 @@
         "id": "Quantity.code",
         "extension": [
           {
-            "url": "http://hl7.org/fhir/build/StructureDefinition/no-binding",
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
             "valueBoolean": true
           }
         ],
@@ -421,6 +437,9 @@
           {
             "code": "code"
           }
+        ],
+        "condition": [
+          "qty-3"
         ],
         "constraint": [
           {

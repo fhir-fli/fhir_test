@@ -7,7 +7,11 @@
       <display value="test health data"/>
     </security>
   </meta>
-  <type value="message"/>
+  <identifier>
+		<system value="urn:example-org:sender.identifiers"/>
+		<value value="efdd254b-0e09-4164-883e-35cf3871715f"/>
+	</identifier>
+	<type value="message"/>
 	<timestamp value="2015-07-14T11:15:33+10:00"/>
 	<entry>
 		<fullUrl value="urn:uuid:267b18ce-3d37-4581-9baa-6fada338038b"/>
@@ -36,18 +40,8 @@
 					<code value="patient-link"/>
 				</eventCoding>
 				<source>
-					<endpoint value="http://example.org/clients/ehr-lite"/>
+					<endpointUrl value="http://example.org/clients/ehr-lite"/>
 				</source>
-
-				<responsible>
-					<reference value="http://acme.com/ehr/fhir/Practitioner/2323-33-4"/>
-				</responsible>
-				<response>
-					<identifier>
-						<value value="efdd254b-0e09-4164-883e-35cf3871715f"/>
-					</identifier>
-					<code value="ok"/>
-				</response>	
 		  <!--   this message is posted to http://acme.com/ehr/fhir, 
              with an event 'link' to link 2 patient records, and nominates
              2 patients on the server   -->

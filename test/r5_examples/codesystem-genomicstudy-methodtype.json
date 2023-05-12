@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "genomicstudy-methodtype",
   "meta": {
-    "lastUpdated": "2022-12-13T15:12:54-05:00",
+    "lastUpdated": "2023-03-31T14:23:11-05:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
@@ -22,7 +22,7 @@
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-      "valueInteger": 0
+      "valueInteger": 1
     }
   ],
   "url": "http://hl7.org/fhir/genomicstudy-methodtype",
@@ -32,9 +32,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.1979"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "GenomicStudyMethodType",
-  "title": "GenomicStudyMethodType",
+  "title": "Genomic Study Method Type",
   "status": "active",
   "experimental": true,
   "date": "2022-08-16T16:49:24-05:00",

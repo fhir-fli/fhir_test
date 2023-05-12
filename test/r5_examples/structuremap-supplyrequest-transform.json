@@ -3,7 +3,7 @@
   "id": "supplyrequest-transform",
   "text": {
     "status": "generated",
-    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\nmap \u0026quot;http://hl7.org/fhir/StructureMap/supplyrequest-transform\u0026quot; \u003d supplyRequestTransform\n\nuses \u0026quot;http://hl7.org/fhir/StructureDefinition/ActivityDefinition\u0026quot; as source\nuses \u0026quot;http://hl7.org/fhir/StructureDefinition/SupplyRequest\u0026quot; as target\n\ngroup main\n  input \u0026quot;source\u0026quot;: ActivityDefinition as source\n  input \u0026quot;target\u0026quot;: SupplyRequest as target\n\n  \u0026quot;status\u0026quot;: for source.id make target.status \u003d \u0027draft\u0027\n  \u0026quot;category\u0026quot;: for source.id make target.category \u003d \u0027non-stock\u0027\n  \u0026quot;priority\u0026quot;: for source.id make target.priority \u003d \u0027routine\u0027\n  \u0026quot;quantity\u0026quot;: for source.quantity make target.orderedItem.quantity\n  \u0026quot;item\u0026quot;: for source.code make target.orderedItem.itemCodeableConcept\n  \u0026quot;when\u0026quot;: for source.id make target.occurrenceDateTime \u003d Now()\n  \u0026quot;authoredOn\u0026quot;: for source.id make target.authoredOn \u003d Now()\n    \u003c/div\u003e"
+    "div": "\u003cdiv xmlns\u003d\"http://www.w3.org/1999/xhtml\"\u003e\n      \u003cpre class\u003d\"fml\"\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003eurl\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027http://hl7.org/fhir/StructureMap/supplyrequest-transform\u0027\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003ename\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027TransformFromAnActivityDefinitionToASupplyRequest\u0027\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003etitle\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027Transform from an ActivityDefinition to a SupplyRequest\u0027\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: #cc00cc\"\u003e/// \n          \u003cb\u003estatus\u003c/b\u003e \u003d \n        \u003c/span\u003e\n        \u003cspan style\u003d\"color: blue\"\u003e\u0027draft\u0027\u003c/span\u003e\n\n\n        \u003cb\u003euses\u003c/b\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e \u0026quot;\u003c/span\u003e\n        \u003ca href\u003d\"activitydefinition.html\" title\u003d\"ActivityDefinition\"\u003ehttp://hl7.org/fhir/StructureDefinition/ActivityDefinition\u003c/a\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\u0026quot; \u003c/span\u003e\n        \u003cb\u003eas \u003c/b\u003e\n        \u003cb\u003esource\u003c/b\u003e\n\n        \u003cb\u003euses\u003c/b\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e \u0026quot;\u003c/span\u003e\n        \u003ca href\u003d\"supplyrequest.html\" title\u003d\"SupplyRequest\"\u003ehttp://hl7.org/fhir/StructureDefinition/SupplyRequest\u003c/a\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\u0026quot; \u003c/span\u003e\n        \u003cb\u003eas \u003c/b\u003e\n        \u003cb\u003etarget\u003c/b\u003e\n\n\n        \u003cb\u003egroup \u003c/b\u003emain\n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\n        \u003cb\u003esource\u003c/b\u003e \n        \u003cspan style\u003d\"color: maroon\"\u003esource\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e : \u003c/span\u003eActivityDefinition, \n        \u003cb\u003etarget\u003c/b\u003e \n        \u003cspan style\u003d\"color: maroon\"\u003etarget\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e : \u003c/span\u003eSupplyRequest\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e {\n\u003c/span\u003e  source.id\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etarget.status \u003d \n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\u0027draft\u0027\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;status\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n  source.id\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etarget.category \u003d \n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\u0027non-stock\u0027\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;category\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n  source.id\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etarget.priority \u003d \n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\u0027routine\u0027\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;priority\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n  source.quantity\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etarget.category \u003d \n        \u003cb\u003ecopy\u003c/b\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n  source.code\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003e target.item \u003d \n        \u003cb\u003ecreate\u003c/b\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003eb\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e, \u003c/span\u003e b.concept \u003d \n        \u003cb\u003ecopy\u003c/b\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;item\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n  source.id\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etarget.occurrence \u003d \n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003enow()\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;when\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n  source.id\n        \u003cb\u003e as \u003c/b\u003e\n        \u003cspan style\u003d\"color: maroon\"\u003ea\u003c/span\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e\n          \u003cb\u003e -\u0026gt; \u003c/b\u003e\n        \u003c/span\u003etarget.authoredOn \u003d \n        \u003cspan style\u003d\"color: navy\"\u003e(\u003c/span\u003enow()\n        \u003cspan style\u003d\"color: navy\"\u003e)\u003c/span\u003e \n        \u003ci\u003e\u0026quot;authoredOn\u0026quot;\u003c/i\u003e\n        \u003cspan style\u003d\"color: navy\"\u003e;\u003c/span\u003e\n\n        \u003cspan style\u003d\"color: navy\"\u003e}\n\n\u003c/span\u003e\n      \u003c/pre\u003e\n    \u003c/div\u003e"
   },
   "url": "http://hl7.org/fhir/StructureMap/supplyrequest-transform",
   "identifier": [
@@ -12,15 +12,19 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.13.1"
     }
   ],
-  "name": "Transform from an ActivityDefinition to a SupplyRequest",
+  "version": "5.0.0-cibuild",
+  "name": "TransformFromAnActivityDefinitionToASupplyRequest",
+  "title": "Transform from an ActivityDefinition to a SupplyRequest",
   "status": "draft",
+  "experimental": true,
+  "description": "Transform from an ActivityDefinition to a SupplyRequest",
   "structure": [
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/activitydefinition",
+      "url": "http://hl7.org/fhir/StructureDefinition/ActivityDefinition",
       "mode": "source"
     },
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/supplyrequest",
+      "url": "http://hl7.org/fhir/StructureDefinition/SupplyRequest",
       "mode": "target"
     }
   ],
@@ -135,7 +139,13 @@
           "target": [
             {
               "context": "target",
-              "element": "orderedItem.itemCodeableConcept",
+              "element": "item",
+              "variable": "b",
+              "transform": "create"
+            },
+            {
+              "context": "b",
+              "element": "concept",
               "transform": "copy"
             }
           ]
@@ -152,7 +162,7 @@
           "target": [
             {
               "context": "target",
-              "element": "occurrenceDateTime",
+              "element": "occurrence",
               "transform": "evaluate",
               "parameter": [
                 {

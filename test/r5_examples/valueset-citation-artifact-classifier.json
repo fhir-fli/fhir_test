@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "citation-artifact-classifier",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
     ]
@@ -17,16 +17,12 @@
       "valueCode": "fhir"
     },
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-activity",
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
       "valueCode": "trial-use"
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
       "valueInteger": 1
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode": "trial-use"
     }
   ],
   "url": "http://hl7.org/fhir/ValueSet/citation-artifact-classifier",
@@ -36,9 +32,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.3.3092"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "CitationArtifactClassifier",
-  "title": "CitationArtifactClassifier",
+  "title": "Citation Artifact Classifier",
   "status": "draft",
   "experimental": true,
   "date": "2021-03-11T10:55:11.085+11:00",

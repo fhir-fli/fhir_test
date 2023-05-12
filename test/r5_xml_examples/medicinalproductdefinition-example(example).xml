@@ -41,7 +41,7 @@
 						<td>*</td>
 						<td><span title="Codes: {http://ema.europa.eu/example/countryCode EU}">EU</span></td>
 						<td><span title="Codes: {http://ema.europa.eu/example/jurisdictionCode EU}">EU</span></td>
-						<td><span title="Codes: {http://tools.ietf.org/html/bcp47}">EN</span></td>
+						<td><span title="Codes: {urn:ietf:bcp:47}">EN</span></td>
 					</tr>
 				</table>
 			</blockquote>
@@ -119,7 +119,7 @@
 			</jurisdiction>
 			<language>
 				<coding>
-					<system value="http://tools.ietf.org/html/bcp47"/>
+					<system value="urn:ietf:bcp:47"/>
 					<code value="en"/>
 				</coding>
 			</language>

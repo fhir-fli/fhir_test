@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "concept-subsumption-outcome",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
@@ -24,11 +24,12 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.1239"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "ConceptSubsumptionOutcome",
   "title": "Concept Subsumption Outcome code system",
   "status": "draft",
   "experimental": true,
+  "publisher": "HL7 International",
   "description": "Codes indicating the results of a subsumption check between codes. In the context of this CodeSystem, subsumption is defined in the FHIR specification under Resource Types - CodeSystem.",
   "jurisdiction": [
     {

@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "note-type",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00"
+    "lastUpdated": "2023-03-31T19:23:11.471+00:00"
   },
   "text": {
     "status": "generated",
@@ -19,7 +19,7 @@
     },
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-      "valueInteger": 2
+      "valueInteger": 4
     }
   ],
   "url": "http://hl7.org/fhir/note-type",
@@ -29,12 +29,12 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.16"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "NoteType",
   "title": "NoteType",
   "status": "draft",
   "experimental": false,
-  "date": "2022-12-14T07:12:54+11:00",
+  "date": "2023-03-31T19:23:11+00:00",
   "description": "The presentation types of notes.",
   "jurisdiction": [
     {

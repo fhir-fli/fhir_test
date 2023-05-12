@@ -13,9 +13,9 @@
   ],
   "status": "active",
   "manufacturer": "Vanderbilt Genetics Institute",
-  "deviceName": [
+  "name": [
     {
-      "name": "Triodenovo Software",
+      "value": "Triodenovo Software",
       "type": "user-friendly-name"
     }
   ],

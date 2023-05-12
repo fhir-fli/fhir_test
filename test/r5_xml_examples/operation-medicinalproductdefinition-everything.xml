@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>_since</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#instant">instant</a>
@@ -47,6 +51,7 @@
         <tr>
           <td>IN</td>
           <td>_count</td>
+          <td/>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#integer">integer</a>
@@ -62,6 +67,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="bundle.html">Bundle</a>
@@ -107,13 +113,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/MedicinalProductDefinition-everything"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Everything"/>
   <title value="Fetch Product Record"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -125,7 +131,7 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
-  <description value="This operation is used to return all the information related to one or more products described in the resource or context on which this operation is invoked. The response is a bundle of type &quot;searchset&quot;. At a minimum, the product resource(s) itself is returned, along with any other resources that the server has that are related to the products(s), and that are available for the given user. This is typically the marketing authorisations, ingredients, packages, therapeutic indications and so on. The server also returns whatever resources are needed to support the records - e.g. linked organizations, document references etc."/>
+  <description value="This operation is used to return all the information related to one or more products described in the resource or context on which this operation is invoked. The response is a bundle of type &quot;searchset&quot;. At a minimum, the product resource(s) itself is returned, along with any other resources that the server has that are related to the products(s), and that are available for the given user. This is typically the marketing authorizations, ingredients, packages, therapeutic indications and so on. The server also returns whatever resources are needed to support the records - e.g. linked organizations, document references etc."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

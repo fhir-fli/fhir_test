@@ -191,7 +191,7 @@
         "link": [
           {
             "relation": "self",
-            "url": "http://test.fhir.org/r5/MedicationUsage?_format\u003dapplication/fhir+xml\u0026search-id\u003d804eee4a-0a54-4414-9c07-169952f929\u0026\u0026patient\u003dexample\u0026_list\u003d%24current%2Dmedications\u0026_sort\u003d_id"
+            "url": "http://test.fhir.org/r5/MedicationStatement?_format\u003dapplication/fhir+xml\u0026search-id\u003d804eee4a-0a54-4414-9c07-169952f929\u0026\u0026patient\u003dexample\u0026_list\u003d%24current%2Dmedications\u0026_sort\u003d_id"
           }
         ]
       },
@@ -257,7 +257,7 @@
         "link": [
           {
             "relation": "self",
-            "url": "http://test.fhir.org/r5/MedicationUsage?_format\u003dapplication/fhir+xml\u0026search-id\u003d31d4af75-cdcf-4f85-9666-4bafadebb5\u0026\u0026patient\u003dexample\u0026_sort\u003d_id"
+            "url": "http://test.fhir.org/r5/MedicationStatement?_format\u003dapplication/fhir+xml\u0026search-id\u003d31d4af75-cdcf-4f85-9666-4bafadebb5\u0026\u0026patient\u003dexample\u0026_sort\u003d_id"
           }
         ]
       },

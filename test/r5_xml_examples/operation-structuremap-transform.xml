@@ -17,6 +17,9 @@
             <b>Name</b>
           </td>
           <td>
+            <b>Scope</b>
+          </td>
+          <td>
             <b>Cardinality</b>
           </td>
           <td>
@@ -32,6 +35,7 @@
         <tr>
           <td>IN</td>
           <td>source</td>
+          <td>type</td>
           <td>0..1</td>
           <td>
             <a href="datatypes.html#uri">uri</a>
@@ -39,7 +43,55 @@
           <td/>
           <td>
             <div>
-              <p>The structure map to apply. This is only needed if the operation is invoked at the resource level. If the $transform operation is invoked on a particular structure map, this will be ignored by the server</p>
+              <p>The structure map to apply. This is only needed if the operation is invoked at the resource level and no structureMap has been provided. If the $transform operation is invoked on a particular structure map, this will be ignored by the server</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>sourceMap</td>
+          <td/>
+          <td>0..1</td>
+          <td>
+            <a href="structuremap.html">StructureMap</a>
+          </td>
+          <td/>
+          <td>
+            <div>
+              <p>The structure map to apply. This is only needed when the operation is invoked at the resource level and no URI has been provided.</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>supportingMap</td>
+          <td/>
+          <td>0..*</td>
+          <td>
+            <a href="structuremap.html">StructureMap</a>
+          </td>
+          <td/>
+          <td>
+            <div>
+              <p>StructureMap resources that support the source map. If a source URL is provided, the map can be provided in this parameter (or it can be provided as sourceMap).</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>srcMap</td>
+          <td/>
+          <td>0..*</td>
+          <td>
+            <a href="datatypes.html#string">string</a>
+          </td>
+          <td/>
+          <td>
+            <div>
+              <p>The same as structureMap, but the resource is provided in the mapping language rather than as a structureMap.</p>
 
             </div>
           </td>
@@ -47,6 +99,7 @@
         <tr>
           <td>IN</td>
           <td>content</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="resource.html">Resource</a>
@@ -62,6 +115,7 @@
         <tr>
           <td>OUT</td>
           <td>return</td>
+          <td/>
           <td>1..1</td>
           <td>
             <a href="resource.html">Resource</a>
@@ -90,13 +144,13 @@
     <valueCode value="trial-use"/>
   </extension>
   <url value="http://hl7.org/fhir/OperationDefinition/StructureMap-transform"/>
-  <version value="5.0.0-snapshot3"/>
+  <version value="5.0.0-cibuild"/>
   <name value="Transform"/>
   <title value="Model Instance Transformation"/>
   <status value="draft"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2022-12-14T07:12:54+11:00"/>
+  <date value="2023-03-31T19:23:11+00:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
@@ -126,10 +180,35 @@
   <parameter>
     <name value="source"/>
     <use value="in"/>
+    <scope value="type"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="The structure map to apply. This is only needed if the operation is invoked at the resource level. If the $transform operation is invoked on a particular structure map, this will be ignored by the server"/>
+    <documentation value="The structure map to apply. This is only needed if the operation is invoked at the resource level and no structureMap has been provided. If the $transform operation is invoked on a particular structure map, this will be ignored by the server"/>
     <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="sourceMap"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The structure map to apply. This is only needed when the operation is invoked at the resource level and no URI has been provided."/>
+    <type value="StructureMap"/>
+  </parameter>
+  <parameter>
+    <name value="supportingMap"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="StructureMap resources that support the source map. If a source URL is provided, the map can be provided in this parameter (or it can be provided as sourceMap)."/>
+    <type value="StructureMap"/>
+  </parameter>
+  <parameter>
+    <name value="srcMap"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="The same as structureMap, but the resource is provided in the mapping language rather than as a structureMap."/>
+    <type value="string"/>
   </parameter>
   <parameter>
     <name value="content"/>

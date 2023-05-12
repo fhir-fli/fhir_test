@@ -45,35 +45,34 @@
       <code value="INFA"/>
     </coding>
   </regulatoryBasis>
+  <decision value="permit"/>
+
   <provision>
-    <type value="permit"/>
-    <provision>
-        <!--  no read or write access for this org  -->
-      <type value="deny"/>
-      <actor>
-        <role>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-            <code value="PRCP"/>
-              <!--  PRCP: recipient of the information  -->
-          </coding>
-        </role>
-        <reference>
-          <reference value="Organization/f001"/>
-        </reference>
-      </actor>
-      <action>
+      <!--  no read or write access for this org  -->
+    <actor>
+      <role>
         <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
-          <code value="access"/>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+          <code value="PRCP"/>
+            <!--  PRCP: recipient of the information  -->
         </coding>
-      </action>
-      <action>
-        <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
-          <code value="correct"/>
-        </coding>
-      </action>
-    </provision>
+      </role>
+      <reference>
+        <reference value="Organization/f001"/>
+      </reference>
+    </actor>
+    <action>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
+        <code value="access"/>
+      </coding>
+    </action>
+    <action>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
+        <code value="correct"/>
+      </coding>
+    </action>
   </provision>
+
 </Consent>

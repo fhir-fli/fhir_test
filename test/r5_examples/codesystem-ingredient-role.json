@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "ingredient-role",
   "meta": {
-    "lastUpdated": "2022-12-14T07:12:54.019+11:00",
+    "lastUpdated": "2023-04-01T06:23:11.471+11:00",
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
@@ -32,9 +32,9 @@
       "value": "urn:oid:2.16.840.1.113883.4.642.4.2080"
     }
   ],
-  "version": "5.0.0-snapshot3",
+  "version": "5.0.0-cibuild",
   "name": "IngredientRole",
-  "title": "IngredientRole",
+  "title": "Ingredient Role",
   "status": "active",
   "experimental": false,
   "date": "2021-01-05T10:01:24+11:00",
