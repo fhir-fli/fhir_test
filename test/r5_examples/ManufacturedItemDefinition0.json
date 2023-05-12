@@ -1,0 +1,1 @@
+{"resourceType":"ManufacturedItemDefinition","id":"tabletItem","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\t\t\t(left blank to stop example creating something automatically)\n\t\t\t\t\t</div>"},"status":"active","manufacturedDoseForm":{"coding":[{"system":"http://example.org.uk/fhir/doseform","code":"tablet"}]}}
