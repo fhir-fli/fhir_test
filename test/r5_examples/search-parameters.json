@@ -1109,57 +1109,6 @@
           "VisionPrescription"
         ],
         "_base": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -1167,20 +1116,7 @@
                 "valueCode": "normative"
               }
             ]
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          }
         ],
         "type": "token",
         "expression": "Account.identifier | AdverseEvent.identifier | AllergyIntolerance.identifier | Appointment.identifier | AppointmentResponse.identifier | Basic.identifier | BodyStructure.identifier | CarePlan.identifier | CareTeam.identifier | ChargeItem.identifier | Claim.identifier | ClaimResponse.identifier | ClinicalImpression.identifier | Communication.identifier | CommunicationRequest.identifier | Composition.identifier | Condition.identifier | Consent.identifier | Contract.identifier | Coverage.identifier | CoverageEligibilityRequest.identifier | CoverageEligibilityResponse.identifier | DetectedIssue.identifier | DeviceRequest.identifier | DeviceUsage.identifier | DiagnosticReport.identifier | DocumentReference.identifier | Encounter.identifier | EnrollmentRequest.identifier | EpisodeOfCare.identifier | ExplanationOfBenefit.identifier | FamilyMemberHistory.identifier | Flag.identifier | Goal.identifier | GuidanceResponse.identifier | ImagingSelection.identifier | ImagingStudy.identifier | Immunization.identifier | ImmunizationEvaluation.identifier | ImmunizationRecommendation.identifier | Invoice.identifier | List.identifier | MeasureReport.identifier | Medication.identifier | MedicationAdministration.identifier | MedicationDispense.identifier | MedicationRequest.identifier | MedicationStatement.identifier | MolecularSequence.identifier | NutritionIntake.identifier | NutritionOrder.identifier | Observation.identifier | Person.identifier | Procedure.identifier | QuestionnaireResponse.identifier | RelatedPerson.identifier | RequestOrchestration.identifier | ResearchSubject.identifier | RiskAssessment.identifier | ServiceRequest.identifier | Specimen.identifier | SupplyDelivery.identifier | SupplyRequest.identifier | Task.identifier | VisionPrescription.identifier",
@@ -1422,57 +1358,6 @@
           "VisionPrescription"
         ],
         "_base": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -1480,21 +1365,7 @@
                 "valueCode": "normative"
               }
             ]
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          }
         ],
         "type": "reference",
         "expression": "Account.subject.where(resolve() is Patient) | AdverseEvent.subject.where(resolve() is Patient) | AllergyIntolerance.patient | Appointment.participant.actor.where(resolve() is Patient) | Appointment.subject.where(resolve() is Patient) | AppointmentResponse.actor.where(resolve() is Patient) | AuditEvent.patient | Basic.subject.where(resolve() is Patient) | BodyStructure.patient | CarePlan.subject.where(resolve() is Patient) | CareTeam.subject.where(resolve() is Patient) | ChargeItem.subject.where(resolve() is Patient) | Claim.patient | ClaimResponse.patient | ClinicalImpression.subject.where(resolve() is Patient) | Communication.subject.where(resolve() is Patient) | CommunicationRequest.subject.where(resolve() is Patient) | Composition.subject.where(resolve() is Patient) | Condition.subject.where(resolve() is Patient) | Consent.subject.where(resolve() is Patient) | Contract.subject.where(resolve() is Patient) | Coverage.beneficiary | CoverageEligibilityRequest.patient | CoverageEligibilityResponse.patient | DetectedIssue.subject.where(resolve() is Patient) | DeviceRequest.subject.where(resolve() is Patient) | DeviceUsage.patient | DiagnosticReport.subject.where(resolve() is Patient) | DocumentReference.subject.where(resolve() is Patient) | Encounter.subject.where(resolve() is Patient) | EnrollmentRequest.candidate | EpisodeOfCare.patient | ExplanationOfBenefit.patient | FamilyMemberHistory.patient | Flag.subject.where(resolve() is Patient) | Goal.subject.where(resolve() is Patient) | GuidanceResponse.subject.where(resolve() is Patient) | ImagingSelection.subject.where(resolve() is Patient) | ImagingStudy.subject.where(resolve() is Patient) | Immunization.patient | ImmunizationEvaluation.patient | ImmunizationRecommendation.patient | Invoice.subject.where(resolve() is Patient) | List.subject.where(resolve() is Patient) | MeasureReport.subject.where(resolve() is Patient) | MedicationAdministration.subject.where(resolve() is Patient) | MedicationDispense.subject.where(resolve() is Patient) | MedicationRequest.subject.where(resolve() is Patient) | MedicationStatement.subject.where(resolve() is Patient) | MolecularSequence.subject.where(resolve() is Patient) | NutritionIntake.subject.where(resolve() is Patient) | NutritionOrder.subject.where(resolve() is Patient) | Observation.subject.where(resolve() is Patient) | Person.link.target.where(resolve() is Patient) | Procedure.subject.where(resolve() is Patient) | Provenance.patient | QuestionnaireResponse.subject.where(resolve() is Patient) | RelatedPerson.patient | RequestOrchestration.subject.where(resolve() is Patient) | ResearchSubject.subject.where(resolve() is Patient) | RiskAssessment.subject.where(resolve() is Patient) | ServiceRequest.subject.where(resolve() is Patient) | Specimen.subject.where(resolve() is Patient) | SupplyDelivery.patient | SupplyRequest.deliverFor | Task.for.where(resolve() is Patient) | VisionPrescription.patient",
@@ -2126,8 +1997,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -2136,8 +2005,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -2146,20 +2013,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2168,10 +2021,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2180,9 +2029,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2279,8 +2125,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -2289,8 +2133,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -2299,20 +2141,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2321,10 +2149,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2333,9 +2157,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2529,8 +2350,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -2539,8 +2358,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -2549,19 +2366,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2570,10 +2374,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -2582,10 +2382,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3139,8 +2935,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -3149,8 +2943,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -3159,18 +2951,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3179,10 +2959,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3191,9 +2967,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3373,33 +3146,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                "valueCode": "normative"
-              }
-            ]
-          },
-          null,
-          null,
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                "valueCode": "normative"
-              }
-            ]
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3416,12 +3162,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3430,9 +3170,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3441,7 +3178,6 @@
               }
             ]
           },
-          null,
           {
             "extension": [
               {
@@ -3450,9 +3186,22 @@
               }
             ]
           },
-          null,
-          null,
-          null,
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                "valueCode": "normative"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                "valueCode": "normative"
+              }
+            ]
+          },
           {
             "extension": [
               {
@@ -3461,7 +3210,6 @@
               }
             ]
           },
-          null,
           {
             "extension": [
               {
@@ -3554,8 +3302,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -3564,8 +3310,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -3574,16 +3318,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3592,10 +3326,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3604,9 +3334,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3756,7 +3483,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -3765,7 +3491,6 @@
               }
             ]
           },
-          null,
           {
             "extension": [
               {
@@ -3774,18 +3499,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3794,10 +3507,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -3806,9 +3515,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4131,8 +3837,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -4141,8 +3845,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -4151,20 +3853,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4173,10 +3861,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4185,9 +3869,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4289,8 +3970,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -4299,8 +3978,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -4309,22 +3986,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4333,11 +3994,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4346,9 +4002,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4357,7 +4010,6 @@
               }
             ]
           },
-          null,
           {
             "extension": [
               {
@@ -4673,8 +4325,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -4683,8 +4333,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -4693,16 +4341,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4711,10 +4349,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4723,10 +4357,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4893,8 +4523,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -4903,8 +4531,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -4913,21 +4539,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4936,11 +4547,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4949,9 +4555,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -4960,7 +4563,6 @@
               }
             ]
           },
-          null,
           {
             "extension": [
               {
@@ -5057,8 +4659,6 @@
           "ValueSet"
         ],
         "_base": [
-          null,
-          null,
           {
             "extension": [
               {
@@ -5067,8 +4667,6 @@
               }
             ]
           },
-          null,
-          null,
           {
             "extension": [
               {
@@ -5077,19 +4675,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -5098,10 +4683,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -5110,10 +4691,6 @@
               }
             ]
           },
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -6089,24 +5666,6 @@
           "Task"
         ],
         "_base": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -6114,10 +5673,7 @@
                 "valueCode": "normative"
               }
             ]
-          },
-          null,
-          null,
-          null
+          }
         ],
         "type": "token",
         "expression": "AdverseEvent.code | AllergyIntolerance.code | AllergyIntolerance.reaction.substance | AuditEvent.code | Basic.code | ChargeItem.code | Condition.code | DetectedIssue.code | DeviceRequest.code.concept | DiagnosticReport.code | FamilyMemberHistory.condition.code | ImagingSelection.status | List.code | Medication.code | MedicationAdministration.medication.concept | MedicationDispense.medication.concept | MedicationRequest.medication.concept | MedicationStatement.medication.concept | NutritionIntake.code | Observation.code | Procedure.code | RequestOrchestration.code | Task.code",
@@ -6203,28 +5759,6 @@
           "SupplyRequest"
         ],
         "_base": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -6232,11 +5766,7 @@
                 "valueCode": "normative"
               }
             ]
-          },
-          null,
-          null,
-          null,
-          null
+          }
         ],
         "type": "date",
         "expression": "AdverseEvent.occurrence.ofType(dateTime) | AdverseEvent.occurrence.ofType(Period) | AdverseEvent.occurrence.ofType(Timing) | AllergyIntolerance.recordedDate | (start | requestedPeriod.start).first() | AuditEvent.recorded | CarePlan.period | ClinicalImpression.date | Composition.date | Consent.date | DiagnosticReport.effective.ofType(dateTime) | DiagnosticReport.effective.ofType(Period) | DocumentReference.date | Encounter.actualPeriod | EpisodeOfCare.period | FamilyMemberHistory.date | Flag.period | (Immunization.occurrence.ofType(dateTime)) | ImmunizationEvaluation.date | ImmunizationRecommendation.date | Invoice.date | List.date | MeasureReport.date | NutritionIntake.occurrence.ofType(dateTime) | NutritionIntake.occurrence.ofType(Period) | Observation.effective.ofType(dateTime) | Observation.effective.ofType(Period) | Observation.effective.ofType(Timing) | Observation.effective.ofType(instant) | Procedure.occurrence.ofType(dateTime) | Procedure.occurrence.ofType(Period) | Procedure.occurrence.ofType(Timing) | ResearchSubject.period | (RiskAssessment.occurrence.ofType(dateTime)) | SupplyRequest.authoredOn",
@@ -9450,26 +8980,6 @@
           "VisionPrescription"
         ],
         "_base": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           {
             "extension": [
               {
@@ -9477,15 +8987,7 @@
                 "valueCode": "normative"
               }
             ]
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          }
         ],
         "type": "reference",
         "expression": "AuditEvent.encounter | CarePlan.encounter | ChargeItem.encounter | Claim.item.encounter | ClinicalImpression.encounter | Communication.encounter | CommunicationRequest.encounter | Composition.encounter | Condition.encounter | DeviceRequest.encounter | DiagnosticReport.encounter | EncounterHistory.encounter | ExplanationOfBenefit.item.encounter | Flag.encounter | ImagingStudy.encounter | List.encounter | MedicationDispense.encounter | MedicationStatement.encounter | NutritionIntake.encounter | NutritionOrder.encounter | Observation.encounter | Procedure.encounter | Provenance.encounter | QuestionnaireResponse.encounter | RequestOrchestration.encounter | RiskAssessment.encounter | ServiceRequest.encounter | Task.encounter | VisionPrescription.encounter",
@@ -62298,7 +61800,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -62385,7 +61886,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -62472,7 +61972,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -62559,7 +62058,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -62646,7 +62144,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -62733,7 +62230,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -62819,7 +62315,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63035,7 +62530,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63128,7 +62622,6 @@
           "Practitioner"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63199,7 +62692,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63346,7 +62838,6 @@
           "Practitioner"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63710,7 +63201,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63805,7 +63295,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
@@ -63893,7 +63382,6 @@
           "RelatedPerson"
         ],
         "_base": [
-          null,
           {
             "extension": [
               {
