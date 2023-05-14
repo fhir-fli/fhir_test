@@ -25,7 +25,7 @@ Future<void> main() async {
               .toLowerCase()
               .contains("nutritionproduct")) {
         Resource? newResource;
-        if (resource.id == null || resource.id == '') {
+        if (resource.fhirId == null || resource.fhirId == '') {
           newResource = resource.newId();
         } else {
           newResource = resource;
