@@ -1,119 +1,115 @@
-<?xml version="1.0" encoding="UTF-8"?><PractitionerRole xmlns="http://hl7.org/fhir">
-	<id value="example"/>
-
-	<meta>
+<?xml version="1.0" encoding="UTF-8"?><SubstanceDefinition xmlns="http://hl7.org/fhir">
+   <id value="example"/>
+   <meta>
     <security>
       <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
       <code value="HTEST"/>
       <display value="test health data"/>
     </security>
   </meta>
-  <text>
-		<status value="generated"/>
-		<div xmlns="http://www.w3.org/1999/xhtml">
-			<p>
-				Dr Adam Careful is a Referring Practitioner for Acme Hospital from 1-Jan 2012 to 31-Mar
-				2012
-			</p>
-		</div>
-	</text>
-
-	<identifier>
-		<system value="http://www.acme.org/practitioners"/>
-		<value value="23"/>
-	</identifier>
-	<active value="true"/>
-	<period>
-		<start value="2012-01-01"/>
-		<end value="2012-03-31"/>
-	</period>
-	<practitioner>
-		<reference value="Practitioner/example"/>
-		<display value="Dr Adam Careful"/>
-	</practitioner>
-	<organization>
-		<reference value="Organization/f001"/>
-	</organization>
-
-	  <!--  Referring Practitioner for the first 3 months of 2012  -->
-	<code>
-		<coding>
-			<system value="http://terminology.hl7.org/CodeSystem/v2-0286"/>
-			<code value="RP"/>
-		</coding>
-	</code>
-	<specialty>
-		<coding>
-			<system value="http://snomed.info/sct"/>
-			<code value="408443003"/>
-			<display value="General medical practice"/>
-		</coding>
-	</specialty>
-
-	<location>
-		<reference value="Location/1"/>
-		<display value="South Wing, second floor"/>
-	</location>
-	<healthcareService>
-		<reference value="HealthcareService/example"/>
-	</healthcareService>
-	<contact>
-		<telecom>
-			<system value="phone"/>
-			<value value="(03) 5555 6473"/>
-			<use value="work"/>
-		</telecom>
-		<telecom>
-			<system value="email"/>
-			<value value="adam.southern@example.org"/>
-			<use value="work"/>
-		</telecom>
-	</contact>
-	<characteristic>
-		<coding>
-			<system value="http://hl7.org/fhir/service-mode"/>
-			<code value="in-person"/>
-			<display value="In Person"/>
-		</coding>
-		<coding>
-			<system value="http://hl7.org/fhir/service-mode"/>
-			<code value="videoconference"/>
-			<display value="Video Conference"/>
-		</coding>
-	</characteristic>
-	<communication>
-		<coding>
-			<system value="urn:ietf:bcp:47"/>
-			<code value="en"/>
-		</coding>
-	</communication>
-	<availability>
-		<availableTime>
-			<daysOfWeek value="mon"/>
-			<daysOfWeek value="tue"/>
-			<daysOfWeek value="wed"/>
-			<availableStartTime value="09:00:00"/>
-			<availableEndTime value="16:30:00"/>
-		</availableTime>
-		<availableTime>
-			<daysOfWeek value="thu"/>
-			<daysOfWeek value="fri"/>
-			<availableStartTime value="09:00:00"/>
-			<availableEndTime value="12:00:00"/>
-		</availableTime>
-		<notAvailableTime>
-			<description value="Adam will be on extended leave during May 2017"/>
-			<during>
-				<start value="2017-05-01"/>
-				<end value="2017-05-20"/>
-			</during>
-		</notAvailableTime>
-		<notAvailableTime>
-			<description value="Adam is generally unavailable on public holidays and during the Christmas/New Year break"/>
-		</notAvailableTime>
-	</availability>
-	<endpoint>
-		  <!--  Endpoint that handles the v2 messaging for the external organization  -->
-		<reference value="Endpoint/example"/>
-	</endpoint>
-</PractitionerRole>
+  <text><status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: SubstanceDefinition</b><a name="example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource SubstanceDefinition "example" </p></div><p><b>identifier</b>: id: 100000099270</p><p><b>status</b>: Current <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Status#200000005004)</span></p><p><b>classification</b>: Chemical <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (SubstanceType#100000075670)</span></p><p><b>domain</b>: Human use <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Domain#100000000012)</span></p><h3>Codes</h3><table class="grid"><tr><td>-</td><td><b>Code</b></td></tr><tr><td>*</td><td>SUB99611MIG <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Substance#SUB99611MIG)</span></td></tr></table><blockquote><p><b>name</b></p><p><b>name</b>: PARACETAMOL</p><p><b>status</b>: Current <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Status#200000005004)</span></p><p><b>preferred</b>: true</p><p><b>language</b>: English <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ietf3066.html">Tags for the Identification of Languages</a>#en)</span></p></blockquote><blockquote><p><b>name</b></p><p><b>name</b>: ΠΑΡΑΚΕΤΑΜΌΛΗ</p><p><b>status</b>: Current <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Status#200000005004)</span></p><p><b>preferred</b>: false</p><p><b>language</b>: Greek <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ietf3066.html">Tags for the Identification of Languages</a>#el)</span></p></blockquote><blockquote><p><b>name</b></p><p><b>name</b>: ПАРАЦЕТАМОЛ</p><p><b>status</b>: Current <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Status#200000005004)</span></p><p><b>preferred</b>: false</p><p><b>language</b>: Bulgarian <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ietf3066.html">Tags for the Identification of Languages</a>#bg)</span></p></blockquote><blockquote><p><b>name</b></p><p><b>name</b>: ACETAMINOPHEN</p><p><b>status</b>: Current <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (Status#200000005004)</span></p><p><b>preferred</b>: false</p><p><b>language</b>: English <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.1.0/CodeSystem-v3-ietf3066.html">Tags for the Identification of Languages</a>#en)</span></p></blockquote></div></text><identifier>
+      <system value="http://example.europa.eu/fhir/SMSId"/>
+      <value value="100000099270"/>
+   </identifier>
+   <status>
+      <coding>
+         <system value="http://example.europa.eu/fhir/Status"/>
+         <code value="200000005004"/>
+         <display value="Current"/>
+      </coding>
+   </status>
+   <classification>
+      <coding>
+         <system value="http://example.europa.eu/fhir/SubstanceType"/>
+         <code value="100000075670"/>
+         <display value="Chemical"/>
+      </coding>
+   </classification>
+   <domain>
+      <coding>
+         <system value="http://example.europa.eu/fhir/Domain"/>
+         <code value="100000000012"/>
+         <display value="Human use"/>
+      </coding>
+   </domain>
+   <code>
+      <code>
+         <coding>
+            <system value="http://example.europa.eu/fhir/Substance"/>
+            <code value="SUB99611MIG"/>
+         </coding>
+      </code>
+   </code>
+   <name>
+      <name value="PARACETAMOL"/>
+      <status>
+         <coding>
+            <system value="http://example.europa.eu/fhir/Status"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+         </coding>
+      </status>
+      <preferred value="true"/>
+      <language>
+         <coding>
+         	<system value="urn:ietf:bcp:47"/>
+            <code value="en"/>
+            <display value="English"/>
+         </coding>
+      </language>
+   </name>
+   <name>
+      <name value="ΠΑΡΑΚΕΤΑΜΌΛΗ"/>
+      <status>
+         <coding>
+            <system value="http://example.europa.eu/fhir/Status"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+         </coding>
+      </status>
+      <preferred value="false"/>
+      <language>
+         <coding>
+         	<system value="urn:ietf:bcp:47"/>
+            <code value="el"/>
+            <display value="Greek"/>
+         </coding>
+      </language>
+   </name>
+   <name>
+      <name value="ПАРАЦЕТАМОЛ"/>
+      <status>
+         <coding>
+            <system value="http://example.europa.eu/fhir/Status"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+         </coding>
+      </status>
+      <preferred value="false"/>
+      <language>
+         <coding>
+         	<system value="urn:ietf:bcp:47"/>
+            <code value="bg"/>
+            <display value="Bulgarian"/>
+         </coding>
+      </language>
+   </name>
+   <name>
+      <name value="ACETAMINOPHEN"/>
+      <status>
+         <coding>
+            <system value="http://example.europa.eu/fhir/Status"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+         </coding>
+      </status>
+      <preferred value="false"/>
+      <language>
+         <coding>
+         	<system value="urn:ietf:bcp:47"/>
+            <code value="en"/>
+            <display value="English"/>
+         </coding>
+      </language>
+   </name>
+</SubstanceDefinition>
