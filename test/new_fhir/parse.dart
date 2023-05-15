@@ -266,7 +266,7 @@ Future<void> main() async {
               ' it is neither a yaml string nor a yaml map.');
 
   /// Factory constructor, accepts [Map<String, dynamic>] as an argument
-  factory $className.fromJson(Map<String, dynamic> json) =>
+  factory $className.fromJson(Map<String, dynamic> json, [    SerializationManager? serializationManager,]) =>
       _\$${className}FromJson(json);
 
   /// Acts like a constructor, returns a [$className], accepts a
@@ -311,6 +311,7 @@ import 'dart:convert';
 
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:serverpod_serialization/serverpod_serialization.dart';
 import 'package:yaml/yaml.dart';
 
 // Project imports:
@@ -354,6 +355,7 @@ import 'dart:convert';
 
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:serverpod_serialization/serverpod_serialization.dart';
 import 'package:yaml/yaml.dart';
 
 // Project imports:
