@@ -137,18 +137,18 @@ Future roundtripTestXml() async {
   /// JSON. If there are any resources that are not equivalent, these aare printed
   ///  out in the debug console.
   group('XML', () {
-    // test(
-    //   '\n****R4 XML is being Validated****',
-    //   () async {
-    //     var testList = await r4XmlValidation();
+    test(
+      '\n****R4 XML is being Validated****',
+      () async {
+        var testList = await r4XmlValidation();
 
-    //     print(
-    //         'Invalid examples: ${testList.isEmpty ? 'none' : testList.join('\n')}');
+        print(
+            'Invalid examples: ${testList.isEmpty ? 'none' : testList.join('\n')}');
 
-    //     expect(testList.isEmpty, true);
-    //   },
-    //   timeout: Timeout(Duration(minutes: 25)),
-    // );
+        expect(testList.isEmpty, true);
+      },
+      timeout: Timeout(Duration(minutes: 25)),
+    );
 
     test(
       '\n****R5 XML is being Validated****',

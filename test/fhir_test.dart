@@ -5,7 +5,7 @@ import 'roundtrip_test.dart';
 Future<void> main() async {
   primitiveTest();
   resourceTest();
-  // await roundtripTestJson();
-  // await roundtripTestYaml();
+  await roundtripTestJson();
+  await roundtripTestYaml();
   await roundtripTestXml();
 }

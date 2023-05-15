@@ -141,6 +141,8 @@ Future<List<String>> r5ValidationXml() async {
     if (!DeepCollectionEquality()
         .equals(xmlResource.toJson(), jsonResource.toJson())) {
       string.add(file.path);
+      // await File('test1.json').writeAsString(jsonEncode(xmlResource.toJson()));
+      // await File('test2.json').writeAsString(jsonEncode(jsonResource.toJson()));
     }
     if (!DeepCollectionEquality()
         .equals(jsonResource.toJson(), xmlResource.toJson())) {
