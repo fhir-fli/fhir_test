@@ -10,12 +10,16 @@ Future<List<String>> dstu2Validation() async {
       if (!DeepCollectionEquality()
           .equals(resource.toJson(), jsonDecode(contents))) {
         string.add(file.path);
+        print(file.path);
+        print(jsonEncode(resource.toJson));
+        print(jsonDecode(contents));
       }
       if (!DeepCollectionEquality()
           .equals(jsonDecode(contents), resource.toJson())) {
         string.add(file.path);
       }
     } catch (e) {
+      print(e);
       final errorContents = jsonDecode(contents);
       print(
           'Error with file $file\nResource: ${errorContents["resourceType"]}/${errorContents["id"]}');
