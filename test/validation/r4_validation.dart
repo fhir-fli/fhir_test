@@ -4,6 +4,7 @@ Future<List<String>> r4Validation() async {
   var dir = Directory('./test/r4_examples');
   var string = <String>[];
   for (var file in await dir.list().toList()) {
+    print(file.path);
     var contents = await File(file.path).readAsString();
     try {
       var resource = r4.Resource.fromJson(jsonDecode(contents));

@@ -4,6 +4,7 @@ Future<List<String>> stu3Validation() async {
   var dir = Directory('./test/stu3_examples');
   var string = <String>[];
   for (var file in await dir.list().toList()) {
+    print(file.path);
     var contents = await File(file.path).readAsString();
     try {
       var resource = stu3.Resource.fromJson(jsonDecode(contents));
