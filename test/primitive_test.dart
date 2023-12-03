@@ -4,12 +4,12 @@ import 'package:test/test.dart';
 void primitiveTest() {
   test('fdtyearstring', () {
     expect(FhirDateTime('2020').toString(), '2020');
-    expect(FhirDateTime('2020').precision, DateTimePrecision.YYYY);
+    expect(FhirDateTime('2020').precision, DateTimePrecision.yyyy);
     expect(FhirDateTime('2020').value, DateTime(2020));
   });
   test('fdtyearmonthstring', () {
     expect(FhirDateTime('2020-12').toString(), '2020-12');
-    expect(FhirDateTime('2020-12').precision, DateTimePrecision.YYYYMM);
+    expect(FhirDateTime('2020-12').precision, DateTimePrecision.yyyy_MM);
     expect(FhirDateTime('2020-12').value, DateTime(2020, 12));
     expect(() => FhirDateTime('2020-Bla'), returnsNormally);
     expect(FhirDateTime('2020-Bla').isValid, false);
@@ -24,15 +24,15 @@ void primitiveTest() {
     expect(FhirDateTime(DateTime.now()).precision, DateTimePrecision.FULL);
     expect(FhirDateTime(DateTime.now()).isValid, true);
     expect(
-        FhirDateTime.fromDateTime(DateTime(2000, 10), DateTimePrecision.YYYYMM)
+        FhirDateTime.fromDateTime(DateTime(2000, 10), DateTimePrecision.yyyyMM)
             .toString(),
         '2000-10');
 
-    expect(FhirDateTime(FhirDate('2020')).precision, DateTimePrecision.YYYY);
+    expect(FhirDateTime(FhirDate('2020')).precision, DateTimePrecision.yyyy);
     expect(
-        FhirDateTime(FhirDate('2020-10')).precision, DateTimePrecision.YYYYMM);
+        FhirDateTime(FhirDate('2020-10')).precision, DateTimePrecision.yyyyMM);
     expect(FhirDateTime(FhirDate('2020-10-01')).precision,
-        DateTimePrecision.YYYYMMDD);
+        DateTimePrecision.yyyyMMDD);
 
     final zuluTime = FhirDateTime(DateTime.utc(1973)).toString();
     expect(zuluTime.contains('Z'), true);
@@ -46,22 +46,22 @@ void primitiveTest() {
 
   test('dateyearstring', () {
     expect(FhirDate('2020').toString(), '2020');
-    expect(FhirDate('2020').precision, DatePrecision.YYYY);
+    expect(FhirDate('2020').precision, DatePrecision.yyyy);
     expect(FhirDate('2020').value, DateTime(2020));
   });
   test('dateyearmonthstring', () {
     expect(FhirDate('2020-12').toString(), '2020-12');
-    expect(FhirDate('2020-12').precision, DatePrecision.YYYYMM);
+    expect(FhirDate('2020-12').precision, DatePrecision.yyyyMM);
     expect(FhirDate('2020-12').value, DateTime(2020, 12));
     expect(() => FhirDate('2020-Bla'), returnsNormally);
     expect(FhirDate('2020-Bla').isValid, false);
     expect(FhirDate('2020-Bla').value, null);
   });
   test('date', () {
-    expect(FhirDate(DateTime.now()).precision, DatePrecision.YYYYMMDD);
+    expect(FhirDate(DateTime.now()).precision, DatePrecision.yyyyMMDD);
     expect(FhirDate(DateTime.now()).isValid, true);
     expect(
-        FhirDate.fromDateTime(DateTime(2000, 10), DatePrecision.YYYYMM)
+        FhirDate.fromDateTime(DateTime(2000, 10), DatePrecision.yyyyMM)
             .toString(),
         '2000-10');
   });
