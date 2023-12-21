@@ -4,14 +4,13 @@ Future<List<String>> dstu2Validation() async {
   var dir = Directory('./test/dstu2_examples');
   var string = <String>[];
   for (var file in await dir.list().toList()) {
-    print(file.path);
     var contents = await File(file.path).readAsString();
     try {
       var resource = dstu2.Resource.fromJson(jsonDecode(contents));
       if (!DeepCollectionEquality()
           .equals(resource.toJson(), jsonDecode(contents))) {
         string.add(file.path);
-        print(file.path);
+
         print(jsonEncode(resource.toJson));
         print(jsonDecode(contents));
       }

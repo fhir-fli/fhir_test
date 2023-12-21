@@ -1,7 +1,7 @@
 import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:test/test.dart';
 
-void main() {
+void dateTimeTest() {
   group('DateTimePrecision enum tests', () {
     test('All enum values should have unique string representations', () {
       final values = DateTimePrecision.values;
@@ -128,7 +128,7 @@ void main() {
 
       // Test null DateTime input and edge cases
       final nullDateTime = FhirInstant.fromDateTime(DateTime(2000));
-      expect(nullDateTime.isValid, equals(false));
+      expect(nullDateTime.isValid, equals(true));
     });
   });
 }

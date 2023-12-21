@@ -4,7 +4,6 @@ Future<List<String>> r5Validation() async {
   var dir = Directory('./test/r5_examples');
   var string = <String>[];
   for (var file in await dir.list().toList()) {
-    print(file.path);
     var contents = await File(file.path).readAsString();
     try {
       var resource = r5.Resource.fromJson(jsonDecode(contents));
