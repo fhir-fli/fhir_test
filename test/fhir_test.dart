@@ -13,7 +13,7 @@ Future<void> main() async {
   fhirTimeTest();
   fhirInstantTest();
   resourceTest();
-  // await roundtripTestJson();
-  // await roundtripTestYaml();
+  await roundtripTestJson();
+  await roundtripTestYaml();
   // await roundtripTestXml();
 }
