@@ -21,18 +21,18 @@ void primitiveTest() {
     expect(FhirDateTime('1905-08-23').isValid, true);
     expect(FhirDateTime('2015-02-07T13:28:17-05:00').isValid, true);
     expect(FhirDateTime('2017-01-01T00:00:00.000Z').isValid, true);
-    expect(FhirDateTime(DateTime.now()).precision, DateTimePrecision.FULL);
+    expect(FhirDateTime(DateTime.now()).precision, DateTimePrecision.full);
     expect(FhirDateTime(DateTime.now()).isValid, true);
     expect(
-        FhirDateTime.fromDateTime(DateTime(2000, 10), DateTimePrecision.yyyyMM)
+        FhirDateTime.fromDateTime(DateTime(2000, 10), DateTimePrecision.yyyy_MM)
             .toString(),
         '2000-10');
 
     expect(FhirDateTime(FhirDate('2020')).precision, DateTimePrecision.yyyy);
     expect(
-        FhirDateTime(FhirDate('2020-10')).precision, DateTimePrecision.yyyyMM);
+        FhirDateTime(FhirDate('2020-10')).precision, DateTimePrecision.yyyy_MM);
     expect(FhirDateTime(FhirDate('2020-10-01')).precision,
-        DateTimePrecision.yyyyMMDD);
+        DateTimePrecision.yyyy_MM_dd);
 
     final zuluTime = FhirDateTime(DateTime.utc(1973)).toString();
     expect(zuluTime.contains('Z'), true);
@@ -46,22 +46,22 @@ void primitiveTest() {
 
   test('dateyearstring', () {
     expect(FhirDate('2020').toString(), '2020');
-    expect(FhirDate('2020').precision, DatePrecision.yyyy);
+    expect(FhirDate('2020').precision, DateTimePrecision.yyyy);
     expect(FhirDate('2020').value, DateTime(2020));
   });
   test('dateyearmonthstring', () {
     expect(FhirDate('2020-12').toString(), '2020-12');
-    expect(FhirDate('2020-12').precision, DatePrecision.yyyyMM);
+    expect(FhirDate('2020-12').precision, DateTimePrecision.yyyy_MM);
     expect(FhirDate('2020-12').value, DateTime(2020, 12));
     expect(() => FhirDate('2020-Bla'), returnsNormally);
     expect(FhirDate('2020-Bla').isValid, false);
     expect(FhirDate('2020-Bla').value, null);
   });
   test('date', () {
-    expect(FhirDate(DateTime.now()).precision, DatePrecision.yyyyMMDD);
+    expect(FhirDate(DateTime.now()).precision, DateTimePrecision.yyyy_MM_dd);
     expect(FhirDate(DateTime.now()).isValid, true);
     expect(
-        FhirDate.fromDateTime(DateTime(2000, 10), DatePrecision.yyyyMM)
+        FhirDate.fromDateTime(DateTime(2000, 10), DateTimePrecision.yyyy_MM)
             .toString(),
         '2000-10');
   });
