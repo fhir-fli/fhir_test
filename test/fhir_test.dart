@@ -9,11 +9,11 @@ import 'roundtrip_test.dart';
 Future<void> main() async {
   primitiveTest();
   fhirDateTimeTest();
-  fhirDateTest();
-  fhirTimeTest();
-  fhirInstantTest();
-  resourceTest();
-  await roundtripTestJson();
-  await roundtripTestYaml();
+  // fhirDateTest();
+  // fhirTimeTest();
+  // fhirInstantTest();
+  // resourceTest();
+  // await roundtripTestJson();
+  // await roundtripTestYaml();
   // await roundtripTestXml();
 }

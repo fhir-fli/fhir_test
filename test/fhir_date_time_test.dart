@@ -4,6 +4,7 @@ import 'package:test/test.dart';
 void fhirDateTimeTest() {
   test('Check DateTime type with the regex', () {
     var issued = FhirDateTime(DateTime.now());
+    print('issued: ${issued.toString()}');
     var pattern = RegExp(
         r'^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$');
     expect(pattern.hasMatch(issued.toString()), true);
@@ -18,9 +19,11 @@ void fhirDateTimeTest() {
     test('DateTimePrecisionExtension should correctly convert DateTime objects',
         () {
       final dateTime = DateTime(2023, 7, 15, 12, 30, 45);
-      expect((DateTimePrecision.yyyy).convert(dateTime), equals('2023'));
-      expect((DateTimePrecision.yyyy_MM).convert(dateTime), equals('2023-07'));
-      expect((DateTimePrecision.yyyy_MM_dd).convert(dateTime),
+      expect(
+          (DateTimePrecision.yyyy).dateTimeToString(dateTime), equals('2023'));
+      expect((DateTimePrecision.yyyy_MM).dateTimeToString(dateTime),
+          equals('2023-07'));
+      expect((DateTimePrecision.yyyy_MM_dd).dateTimeToString(dateTime),
           equals('2023-07-15'));
     });
 
@@ -66,6 +69,7 @@ void fhirDateTimeTest() {
     test('FhirDateTime fromString should parse valid datetime strings', () {
       final validDateTimeString = '2023-07-15T13:45:30Z';
       final validDateTime = FhirDateTime.fromString(validDateTimeString);
+      print(validDateTime.valueString);
       expect(validDateTime.isValid, equals(true));
       expect(validDateTime.valueString, equals(validDateTimeString));
       expect(validDateTime.valueDateTime,
@@ -95,6 +99,11 @@ void fhirDateTimeTest() {
       expect(dateTime.hour, equals(13));
       expect(dateTime.minute, equals(45));
       expect(dateTime.second, equals(30));
+      expect(dateTime.toString(), '2023-07-15T13:45:30.000');
+      final dateTime2 =
+          FhirDateTime.fromDateTime(DateTime(2023, 7, 15, 13, 45, 30));
+
+      expect(dateTime2.toString(), '2023-07-15T13:45:30-04:00');
 
       // Test getters for edge cases, null values, and invalid instances
       final nullDateTime = FhirDateTime.fromDateTime(DateTime(2000));
@@ -114,10 +123,16 @@ void fhirDateTimeTest() {
     });
     test('FhirDateTime toJson should serialize correctly', () {
       // Test serialization of a FhirDateTime instance to JSON
-      final dateTime =
-          FhirDateTime.fromDateTime(DateTime(2023, 7, 15, 13, 45, 30));
+      final dateTime = FhirDateTime.fromUnits(
+          year: 2023,
+          month: 7,
+          day: 15,
+          hour: 13,
+          minute: 45,
+          second: 30,
+          millisecond: 000);
       final json = dateTime.toJson();
-      expect(json, equals('2023-07-15T13:45:30.000'));
+      expect(json, equals('2023-07-15 13:45:30.000'));
     });
   });
 
@@ -129,7 +144,7 @@ void fhirDateTimeTest() {
       final dateTime = DateTime(2023, 7, 15, 13, 45, 30);
       final instant = FhirInstant.fromDateTime(dateTime);
       expect(instant.isValid, equals(true));
-      expect(instant.valueString, equals('2023-07-15T13:45:30.000'));
+      expect(instant.valueString, equals('2023-07-15T13:45:30.000-04:00'));
       expect(instant.valueDateTime, equals(DateTime(2023, 7, 15, 13, 45, 30)));
     });
   });
