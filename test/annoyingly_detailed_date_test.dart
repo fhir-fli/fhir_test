@@ -124,7 +124,7 @@ void main() {
   final dateyyyyMMddTzzDateTimeFromStringFromJson =
       FhirDate.fromJson(yyyyMMddTzzDateTimeFromString);
   final dateyyyyMMddTZFromUnits =
-      FhirDate.fromUnits(year: 2012, month: 1, day: 31);
+      FhirDate.fromUnits(year: 2012, month: 1, day: 31, isUtc: true);
   final dateyyyyMMddTZFromYaml = FhirDate.fromYaml(yyyyMMddTZ);
 
   final dateyyyyMMddTZZ = FhirDate(yyyyMMddTZZ);
@@ -143,6 +143,7 @@ void main() {
       FhirDate.fromUnits(year: 2012, month: 1, day: 31);
   final dateyyyyMMddTZZFromYaml = FhirDate.fromYaml(yyyyMMddTZZ);
 
+  print('********************************************************************');
   final dateyyyyMMddTHH = FhirDate(yyyyMMddTHH);
   final dateyyyyMMddTHHDateTime = FhirDate(yyyyMMddTHHDateTime);
   final dateyyyyMMddTHHDateTimeFromString =
@@ -386,10 +387,10 @@ void main() {
       test('dateyyyyDateTime', () {
         expect(dateyyyyDateTime.isValid, isTrue);
         expect(dateyyyyDateTime.valueString, equals('$yyyy-01-01'));
-        expect(dateyyyyDateTime.valueDateTime, equals(yyyyDateTime));
+        expect(dateyyyyDateTime.valueDateTime, equals(yyyyMMDateTime));
         expect(dateyyyyDateTime.toString(), equals('$yyyy-01-01'));
-        expect(dateyyyyDateTime.toJson(), equals('$yyyy-01-01'));
-        expect(dateyyyyDateTime.toYaml(), equals('$yyyy-01-01'));
+        expect(dateyyyyDateTime.toJson(), equals('$yyyyMM-01 00:00:00.000'));
+        expect(dateyyyyDateTime.toYaml(), equals('$yyyyMM-01 00:00:00.000'));
       });
       test('dateyyyyDateTimeFromString', () {
         expect(dateyyyyDateTimeFromString.isValid, isTrue);
@@ -439,10 +440,10 @@ void main() {
             equals(yyyyDateTime));
         expect(dateyyyyDateTimeFromStringFromJson.toString(),
             equals('$yyyy-01-01'));
-        expect(
-            dateyyyyDateTimeFromStringFromJson.toJson(), equals('$yyyy-01-01'));
-        expect(
-            dateyyyyDateTimeFromStringFromJson.toYaml(), equals('$yyyy-01-01'));
+        expect(dateyyyyDateTimeFromStringFromJson.toJson(),
+            equals('$yyyyMM-01 00:00:00.000'));
+        expect(dateyyyyDateTimeFromStringFromJson.toYaml(),
+            equals('$yyyyMM-01 00:00:00.000'));
       });
       test('dateyyyyFromUnits', () {
         expect(dateyyyyFromUnits.isValid, isTrue);
@@ -473,13 +474,15 @@ void main() {
 
       // TODO(Dokotela): reasonable that this test fails without specifying precision
       // in the constructor?
-      test('dateyyyyMMDateTime', () {
+      test(
+          'dateyyyyMMDateTime - no precision given, assume full DateTime input',
+          () {
         expect(dateyyyyMMDateTime.isValid, isTrue);
         expect(dateyyyyMMDateTime.valueString, equals('$yyyyMM-01'));
         expect(dateyyyyMMDateTime.valueDateTime, equals(yyyyMMDateTime));
         expect(dateyyyyMMDateTime.toString(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTime.toJson(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTime.toYaml(), equals('$yyyyMM-01'));
+        expect(dateyyyyMMDateTime.toJson(), equals(yyyyMMDateTime.toString()));
+        expect(dateyyyyMMDateTime.toYaml(), equals(yyyyMMDateTime.toString()));
       });
       test('dateyyyyMMDateTimeFromString', () {
         expect(dateyyyyMMDateTimeFromString.isValid, isTrue);
@@ -520,8 +523,10 @@ void main() {
         expect(
             dateyyyyMMDateTimeFromJson.valueDateTime, equals(yyyyMMDateTime));
         expect(dateyyyyMMDateTimeFromJson.toString(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTimeFromJson.toJson(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTimeFromJson.toYaml(), equals('$yyyyMM-01'));
+        expect(dateyyyyMMDateTimeFromJson.toJson(),
+            equals(yyyyMMDateTime.toString()));
+        expect(dateyyyyMMDateTimeFromJson.toYaml(),
+            equals(yyyyMMDateTime.toString()));
       });
       test('dateyyyyMMDateTimeFromStringFromJson', () {
         expect(dateyyyyMMDateTimeFromStringFromJson.isValid, isTrue);
@@ -559,22 +564,30 @@ void main() {
         expect(dateyyyyMMdd.toJson(), equals(yyyyMMdd));
         expect(dateyyyyMMdd.toYaml(), equals(yyyyMMdd));
       });
-      test('dateyyyyMMddDateTime', () {
+      test(
+          'dateyyyyMMddDateTime - no precision given, assumes full dateTime input',
+          () {
         expect(dateyyyyMMddDateTime.isValid, isTrue);
         expect(dateyyyyMMddDateTime.valueString, equals(yyyyMMdd));
         expect(dateyyyyMMddDateTime.valueDateTime, equals(yyyyMMddDateTime));
         expect(dateyyyyMMddDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTime.toYaml(), equals(yyyyMMdd));
+        expect(
+            dateyyyyMMddDateTime.toJson(), equals('${yyyyMMdd} 00:00:00.000'));
+        expect(
+            dateyyyyMMddDateTime.toYaml(), equals('${yyyyMMdd} 00:00:00.000'));
       });
-      test('dateyyyyMMddDateTimeFromString', () {
+      test(
+          'dateyyyyMMddDateTimeFromString - no precision given, have to assume full DateTime input',
+          () {
         expect(dateyyyyMMddDateTimeFromString.isValid, isTrue);
         expect(dateyyyyMMddDateTimeFromString.valueString, equals(yyyyMMdd));
         expect(dateyyyyMMddDateTimeFromString.valueDateTime,
             equals(yyyyMMddDateTime));
         expect(dateyyyyMMddDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddDateTimeFromString.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddDateTimeFromString.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddFromString', () {
         expect(dateyyyyMMddFromString.isValid, isTrue);
@@ -590,8 +603,10 @@ void main() {
         expect(
             dateyyyyMMddFromDateTime.valueDateTime, equals(yyyyMMddDateTime));
         expect(dateyyyyMMddFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddFromDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddFromDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddFromJson', () {
         expect(dateyyyyMMddFromJson.isValid, isTrue);
@@ -607,8 +622,10 @@ void main() {
         expect(dateyyyyMMddDateTimeFromJson.valueDateTime,
             equals(yyyyMMddDateTime));
         expect(dateyyyyMMddDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddDateTimeFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddDateTimeFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddDateTimeFromStringFromJson', () {
         expect(dateyyyyMMddDateTimeFromStringFromJson.isValid, isTrue);
@@ -618,10 +635,10 @@ void main() {
             equals(yyyyMMddDateTime));
         expect(dateyyyyMMddDateTimeFromStringFromJson.toString(),
             equals(yyyyMMdd));
-        expect(
-            dateyyyyMMddDateTimeFromStringFromJson.toJson(), equals(yyyyMMdd));
-        expect(
-            dateyyyyMMddDateTimeFromStringFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddDateTimeFromStringFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddDateTimeFromStringFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddFromUnits', () {
         expect(dateyyyyMMddFromUnits.isValid, isTrue);
@@ -647,17 +664,21 @@ void main() {
         expect(dateyyyyMMddTZ.valueString, equals(yyyyMMdd));
         expect(dateyyyyMMddTZ.valueDateTime, equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTZ.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZ.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZ.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZ.toJson(), equals(yyyyMMddTZ));
+        expect(dateyyyyMMddTZ.toYaml(), equals(yyyyMMddTZ));
       });
-      test('dateyyyyMMddTzzDateTime', () {
+      test(
+          'dateyyyyMMddTzzDateTime - no precision given, so must assume full DateTime input',
+          () {
         expect(dateyyyyMMddTzzDateTime.isValid, isTrue);
         expect(dateyyyyMMddTzzDateTime.valueString, equals(yyyyMMdd));
         expect(
             dateyyyyMMddTzzDateTime.valueDateTime, equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTzzDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTzzDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddTzzDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddTzzDateTimeFromString', () {
         expect(dateyyyyMMddTzzDateTimeFromString.isValid, isTrue);
@@ -665,8 +686,10 @@ void main() {
         expect(dateyyyyMMddTzzDateTimeFromString.valueDateTime,
             equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTzzDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTzzDateTimeFromString.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddTzzDateTimeFromString.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddTZFromString', () {
         expect(dateyyyyMMddTZFromString.isValid, isTrue);
@@ -674,8 +697,8 @@ void main() {
         expect(dateyyyyMMddTZFromString.valueDateTime,
             equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTZFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZFromString.toJson(), equals(yyyyMMddTZ));
+        expect(dateyyyyMMddTZFromString.toYaml(), equals(yyyyMMddTZ));
       });
       test('dateyyyyMMddTZFromDateTime', () {
         expect(dateyyyyMMddTZFromDateTime.isValid, isTrue);
@@ -683,8 +706,10 @@ void main() {
         expect(dateyyyyMMddTZFromDateTime.valueDateTime,
             equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTZFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZFromDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddTZFromDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddTZFromJson', () {
         expect(dateyyyyMMddTZFromJson.isValid, isTrue);
@@ -692,8 +717,8 @@ void main() {
         expect(
             dateyyyyMMddTZFromJson.valueDateTime, equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTZFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZFromJson.toJson(), equals(yyyyMMddTZ));
+        expect(dateyyyyMMddTZFromJson.toYaml(), equals(yyyyMMddTZ));
       });
       test('dateyyyyMMddTzzDateTimeFromJson', () {
         expect(dateyyyyMMddTzzDateTimeFromJson.isValid, isTrue);
@@ -701,8 +726,10 @@ void main() {
         expect(dateyyyyMMddTzzDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTzzDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTzzDateTimeFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(dateyyyyMMddTzzDateTimeFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddTzzDateTimeFromStringFromJson', () {
         expect(dateyyyyMMddTzzDateTimeFromStringFromJson.isValid, isTrue);
@@ -713,9 +740,9 @@ void main() {
         expect(dateyyyyMMddTzzDateTimeFromStringFromJson.toString(),
             equals(yyyyMMdd));
         expect(dateyyyyMMddTzzDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMdd));
+            equals('${yyyyMMdd} 00:00:00.000'));
         expect(dateyyyyMMddTzzDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMdd));
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
       test('dateyyyyMMddTZFromUnits', () {
         expect(dateyyyyMMddTZFromUnits.isValid, isTrue);
@@ -732,8 +759,8 @@ void main() {
         expect(
             dateyyyyMMddTZFromYaml.valueDateTime, equals(yyyyMMddTzzDateTime));
         expect(dateyyyyMMddTZFromYaml.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromYaml.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromYaml.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZFromYaml.toJson(), equals(yyyyMMddTZ));
+        expect(dateyyyyMMddTZFromYaml.toYaml(), equals(yyyyMMddTZ));
       });
     });
     group('yyyyMMddTZZ - 2012-01-31T-04:00', () {
@@ -743,8 +770,8 @@ void main() {
         expect(dateyyyyMMddTZZ.valueString, equals(yyyyMMdd));
         expect(dateyyyyMMddTZZ.valueDateTime, equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZ.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZ.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZ.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZ.toJson(), equals(yyyyMMddTZZ));
+        expect(dateyyyyMMddTZZ.toYaml(), equals(yyyyMMddTZZ));
       });
       test('dateyyyyMMddTZZDateTime', () {
         expect(dateyyyyMMddTZZDateTime.isValid, isTrue);
@@ -752,8 +779,10 @@ void main() {
         expect(
             dateyyyyMMddTZZDateTime.valueDateTime, equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZDateTime.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(dateyyyyMMddTZZDateTime.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
       });
       test('dateyyyyMMddTZZDateTimeFromString', () {
         expect(dateyyyyMMddTZZDateTimeFromString.isValid, isTrue);
@@ -761,8 +790,10 @@ void main() {
         expect(dateyyyyMMddTZZDateTimeFromString.valueDateTime,
             equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZDateTimeFromString.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(dateyyyyMMddTZZDateTimeFromString.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
       });
       test('dateyyyyMMddTZZFromString', () {
         expect(dateyyyyMMddTZZFromString.isValid, isTrue);
@@ -770,8 +801,8 @@ void main() {
         expect(dateyyyyMMddTZZFromString.valueDateTime,
             equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZFromString.toJson(), equals('2012-01-31T-04:00'));
+        expect(dateyyyyMMddTZZFromString.toYaml(), equals('2012-01-31T-04:00'));
       });
       test('dateyyyyMMddTZZFromDateTime', () {
         expect(dateyyyyMMddTZZFromDateTime.isValid, isTrue);
@@ -779,8 +810,10 @@ void main() {
         expect(dateyyyyMMddTZZFromDateTime.valueDateTime,
             equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZFromDateTime.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(dateyyyyMMddTZZFromDateTime.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
       });
       test('dateyyyyMMddTZZFromJson', () {
         expect(dateyyyyMMddTZZFromJson.isValid, isTrue);
@@ -788,8 +821,8 @@ void main() {
         expect(
             dateyyyyMMddTZZFromJson.valueDateTime, equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZFromJson.toJson(), equals(yyyyMMddTZZ));
+        expect(dateyyyyMMddTZZFromJson.toYaml(), equals(yyyyMMddTZZ));
       });
       test('dateyyyyMMddTZZDateTimeFromJson', () {
         expect(dateyyyyMMddTZZDateTimeFromJson.isValid, isTrue);
@@ -797,8 +830,10 @@ void main() {
         expect(dateyyyyMMddTZZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTZZDateTimeFromJson.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(dateyyyyMMddTZZDateTimeFromJson.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
       });
       test('dateyyyyMMddTZZDateTimeFromStringFromJson', () {
         expect(dateyyyyMMddTZZDateTimeFromStringFromJson.isValid, isTrue);
@@ -809,9 +844,9 @@ void main() {
         expect(dateyyyyMMddTZZDateTimeFromStringFromJson.toString(),
             equals(yyyyMMdd));
         expect(dateyyyyMMddTZZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMdd));
+            equals(yyyyMMddTZZDateTime.toString()));
         expect(dateyyyyMMddTZZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMdd));
+            equals(yyyyMMddTZZDateTime.toString()));
       });
       test('dateyyyyMMddTZZFromUnits', () {
         expect(dateyyyyMMddTZZFromUnits.isValid, isTrue);
@@ -836,10 +871,10 @@ void main() {
       test('dateyyyyMMddTHH', () {
         expect(dateyyyyMMddTHH.isValid, isTrue);
         expect(dateyyyyMMddTHH.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHH.valueDateTime, equals(yyyyMMddTHHDateTime));
+        expect(dateyyyyMMddTHH.valueDateTime, yyyyMMddTHHDateTime);
         expect(dateyyyyMMddTHH.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHH.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHH.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHH.toJson(), equals(yyyyMMddTHH));
+        expect(dateyyyyMMddTHH.toYaml(), equals(yyyyMMddTHH));
       });
       test('dateyyyyMMddTHHDateTime', () {
         expect(dateyyyyMMddTHHDateTime.isValid, isTrue);
@@ -847,8 +882,10 @@ void main() {
         expect(
             dateyyyyMMddTHHDateTime.valueDateTime, equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHDateTime.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(dateyyyyMMddTHHDateTime.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
       });
       test('dateyyyyMMddTHHDateTimeFromString', () {
         expect(dateyyyyMMddTHHDateTimeFromString.isValid, isTrue);
@@ -856,8 +893,10 @@ void main() {
         expect(dateyyyyMMddTHHDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHDateTimeFromString.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(dateyyyyMMddTHHDateTimeFromString.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
       });
       test('dateyyyyMMddTHHFromString', () {
         expect(dateyyyyMMddTHHFromString.isValid, isTrue);
@@ -865,8 +904,8 @@ void main() {
         expect(dateyyyyMMddTHHFromString.valueDateTime,
             equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromString.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHFromString.toJson(), equals(yyyyMMddTHH));
+        expect(dateyyyyMMddTHHFromString.toYaml(), equals(yyyyMMddTHH));
       });
       test('dateyyyyMMddTHHFromDateTime', () {
         expect(dateyyyyMMddTHHFromDateTime.isValid, isTrue);
@@ -874,8 +913,10 @@ void main() {
         expect(dateyyyyMMddTHHFromDateTime.valueDateTime,
             equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromDateTime.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHFromDateTime.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(dateyyyyMMddTHHFromDateTime.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
       });
       test('dateyyyyMMddTHHFromJson', () {
         expect(dateyyyyMMddTHHFromJson.isValid, isTrue);
@@ -883,8 +924,8 @@ void main() {
         expect(
             dateyyyyMMddTHHFromJson.valueDateTime, equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHFromJson.toJson(), equals(yyyyMMddTHH));
+        expect(dateyyyyMMddTHHFromJson.toYaml(), equals(yyyyMMddTHH));
       });
       test('dateyyyyMMddTHHDateTimeFromJson', () {
         expect(dateyyyyMMddTHHDateTimeFromJson.isValid, isTrue);
@@ -892,8 +933,10 @@ void main() {
         expect(dateyyyyMMddTHHDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHDateTimeFromJson.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(dateyyyyMMddTHHDateTimeFromJson.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
       });
       test('dateyyyyMMddTHHDateTimeFromStringFromJson', () {
         expect(dateyyyyMMddTHHDateTimeFromStringFromJson.isValid, isTrue);
@@ -904,15 +947,15 @@ void main() {
         expect(dateyyyyMMddTHHDateTimeFromStringFromJson.toString(),
             equals(yyyyMMdd));
         expect(dateyyyyMMddTHHDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMdd));
+            equals(yyyyMMddTHHDateTime.toString()));
         expect(dateyyyyMMddTHHDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMdd));
+            equals(yyyyMMddTHHDateTime.toString()));
       });
       test('dateyyyyMMddTHHFromUnits', () {
         expect(dateyyyyMMddTHHFromUnits.isValid, isTrue);
         expect(dateyyyyMMddTHHFromUnits.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromUnits.valueDateTime,
-            equals(yyyyMMddTHHDateTime));
+        expect(
+            dateyyyyMMddTHHFromUnits.valueDateTime, equals(yyyyMMddDateTime));
         expect(dateyyyyMMddTHHFromUnits.toString(), equals(yyyyMMdd));
         expect(dateyyyyMMddTHHFromUnits.toJson(), equals(yyyyMMdd));
         expect(dateyyyyMMddTHHFromUnits.toYaml(), equals(yyyyMMdd));
@@ -923,8 +966,8 @@ void main() {
         expect(
             dateyyyyMMddTHHFromYaml.valueDateTime, equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHFromYaml.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromYaml.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromYaml.toYaml(), equals(yyyyMMdd));
+        expect(dateyyyyMMddTHHFromYaml.toJson(), equals(yyyyMMddTHH));
+        expect(dateyyyyMMddTHHFromYaml.toYaml(), equals(yyyyMMddTHH));
       });
     });
     group('yyyyMMddTHHZ - 2012-01-31T12:30+04:00', () {
