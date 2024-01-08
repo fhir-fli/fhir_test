@@ -21,28 +21,25 @@ void primitiveTest() {
     expect(FhirDateTime('1905-08-23').isValid, true);
     expect(FhirDateTime('2015-02-07T13:28:17-05:00').isValid, true);
     expect(FhirDateTime('2017-01-01T00:00:00.000Z').isValid, true);
-    expect(FhirDateTime(DateTime.now()).precision, DateTimePrecision.full);
+    expect(FhirDateTime(DateTime.now()).precision, DateTimePrecision.dateTime);
     expect(FhirDateTime(DateTime.now()).isValid, true);
-    expect(
-        FhirDateTime.fromDateTime(DateTime(2000, 10), DateTimePrecision.yyyy_MM)
-            .toString(),
-        '2000-10');
-
+    expect(FhirDateTime.fromDateTime(DateTime(2000, 10)).toString(),
+        '2000-10-01 00:00:00.000');
     expect(FhirDateTime(FhirDate('2020')).precision, DateTimePrecision.yyyy);
     expect(
         FhirDateTime(FhirDate('2020-10')).precision, DateTimePrecision.yyyy_MM);
     expect(FhirDateTime(FhirDate('2020-10-01')).precision,
         DateTimePrecision.yyyy_MM_dd);
-
     final zuluTime = FhirDateTime(DateTime.utc(1973)).toString();
+    print('zuluTime: $zuluTime');
     expect(zuluTime.contains('Z'), true);
-
     final localDateTime = DateTime.parse('2015-02-07T13:28:17');
-    var localDateTimeString =
-        FhirDateTime(localDateTime).toStringWithTimezone();
+    final localDateTimeString = FhirDateTime(localDateTime).toString();
+
+    /// If there's no timzeone in the input, we shouldn't have any in the output
     expect(
         localDateTimeString.contains(RegExp(r'[\+|-][0-2][0-9]:[0-6][0-9]$')),
-        true);
+        false);
   });
 
   test('dateyearstring', () {
@@ -61,16 +58,13 @@ void primitiveTest() {
   test('date', () {
     expect(FhirDate(DateTime.now()).precision, DateTimePrecision.yyyy_MM_dd);
     expect(FhirDate(DateTime.now()).isValid, true);
-    expect(
-        FhirDate.fromDateTime(DateTime(2000, 10), DateTimePrecision.yyyy_MM)
-            .toString(),
-        '2000-10');
+    expect(FhirDate.fromDateTime(DateTime(2000, 10)).toString(), '2000-10-01');
   });
 
   test('instant', () {
     expect(FhirInstant('2015-02-07T13:28:17.239+02:00').isValid, true);
     expect(FhirInstant('2017-01-01T00:00:00Z').isValid, true);
-    expect(FhirInstant('2020-12').toString(), '2020-12');
+    expect(FhirInstant('2020-12').toJson(), '2020-12');
     expect(FhirInstant('2020-12').isValid, false);
     expect(FhirInstant('2020-12').value, null);
     expect(FhirInstant(DateTime.now()).isValid, true);
@@ -143,6 +137,8 @@ void primitiveTest() {
     expect(FhirDecimal(1).toString(), '1');
     expect(FhirDecimal(1).toJson(), 1);
     expect(FhirDecimal(1).value, 1.0);
+
+    /// Because Decimals aren't allowed to take in strings
     // expect(Decimal('1.0').toString(), '1.0');
     // expect(Decimal('1.0').toJson(), '1.0');
     // expect(Decimal('1.0').value, 1.0);
@@ -208,6 +204,8 @@ void primitiveTest() {
     expect(FhirInteger(1).toString(), '1');
     expect(FhirInteger(1).toJson(), 1);
     expect(FhirInteger(1).value, 1);
+
+    /// Because Integers aren't allowed to take in strings
     // expect(Integer('1.0').toString(), '1.0');
     // expect(Integer('1.0').toJson(), '1.0');
     // expect(Integer('1.0').value, null);

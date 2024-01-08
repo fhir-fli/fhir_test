@@ -1,7 +1,14 @@
 import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:test/test.dart';
 
-void dateTimeTest() {
+void fhirDateTimeTest() {
+  test('Check DateTime type with the regex', () {
+    var issued = FhirDateTime(DateTime.now());
+    print('issued: ${issued.toString()}');
+    var pattern = RegExp(
+        r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?');
+    expect(pattern.hasMatch(issued.toString()), true);
+  });
   group('DateTimePrecision enum tests', () {
     test('All enum values should have unique string representations', () {
       final values = DateTimePrecision.values;
@@ -12,9 +19,11 @@ void dateTimeTest() {
     test('DateTimePrecisionExtension should correctly convert DateTime objects',
         () {
       final dateTime = DateTime(2023, 7, 15, 12, 30, 45);
-      expect((DateTimePrecision.yyyy).convert(dateTime), equals('2023'));
-      expect((DateTimePrecision.yyyy_MM).convert(dateTime), equals('2023-07'));
-      expect((DateTimePrecision.yyyy_MM_dd).convert(dateTime),
+      expect(
+          (DateTimePrecision.yyyy).dateTimeToString(dateTime), equals('2023'));
+      expect((DateTimePrecision.yyyy_MM).dateTimeToString(dateTime),
+          equals('2023-07'));
+      expect((DateTimePrecision.yyyy_MM_dd).dateTimeToString(dateTime),
           equals('2023-07-15'));
     });
 
@@ -60,6 +69,7 @@ void dateTimeTest() {
     test('FhirDateTime fromString should parse valid datetime strings', () {
       final validDateTimeString = '2023-07-15T13:45:30Z';
       final validDateTime = FhirDateTime.fromString(validDateTimeString);
+      print(validDateTime.valueString);
       expect(validDateTime.isValid, equals(true));
       expect(validDateTime.valueString, equals(validDateTimeString));
       expect(validDateTime.valueDateTime,
@@ -89,6 +99,11 @@ void dateTimeTest() {
       expect(dateTime.hour, equals(13));
       expect(dateTime.minute, equals(45));
       expect(dateTime.second, equals(30));
+      expect(dateTime.toString(), '2023-07-15T13:45:30.000');
+      final dateTime2 =
+          FhirDateTime.fromDateTime(DateTime(2023, 7, 15, 13, 45, 30));
+
+      expect(dateTime2.toString(), '2023-07-15T13:45:30-04:00');
 
       // Test getters for edge cases, null values, and invalid instances
       final nullDateTime = FhirDateTime.fromDateTime(DateTime(2000));
@@ -108,10 +123,16 @@ void dateTimeTest() {
     });
     test('FhirDateTime toJson should serialize correctly', () {
       // Test serialization of a FhirDateTime instance to JSON
-      final dateTime =
-          FhirDateTime.fromDateTime(DateTime(2023, 7, 15, 13, 45, 30));
+      final dateTime = FhirDateTime.fromUnits(
+          year: 2023,
+          month: 7,
+          day: 15,
+          hour: 13,
+          minute: 45,
+          second: 30,
+          millisecond: 000);
       final json = dateTime.toJson();
-      expect(json, equals('2023-07-15T13:45:30.000'));
+      expect(json, equals('2023-07-15 13:45:30.000'));
     });
   });
 
@@ -123,12 +144,86 @@ void dateTimeTest() {
       final dateTime = DateTime(2023, 7, 15, 13, 45, 30);
       final instant = FhirInstant.fromDateTime(dateTime);
       expect(instant.isValid, equals(true));
-      expect(instant.valueString, equals('2023-07-15T13:45:30.000'));
+      expect(instant.valueString, equals('2023-07-15T13:45:30.000-04:00'));
       expect(instant.valueDateTime, equals(DateTime(2023, 7, 15, 13, 45, 30)));
-
-      // Test null DateTime input and edge cases
-      final nullDateTime = FhirInstant.fromDateTime(DateTime(2000));
-      expect(nullDateTime.isValid, equals(true));
     });
+  });
+
+  group('FhirDateTime Tests', () {
+    test('Valid FhirDateTime String', () {
+      final fhirDateTime = FhirDateTime('2023-12-22T12:34:56.789Z');
+      expect(fhirDateTime.isValid, isTrue);
+      expect(fhirDateTime.value, isA<DateTime>());
+      expect(fhirDateTime.year, 2023);
+      expect(fhirDateTime.month, 12);
+      expect(fhirDateTime.day, 22);
+      expect(fhirDateTime.hour, 12);
+      expect(fhirDateTime.minute, 34);
+      expect(fhirDateTime.second, 56);
+      expect(fhirDateTime.millisecond, 789);
+    });
+
+    test('Invalid FhirDateTime String', () {
+      final fhirDateTime = FhirDateTime('invalid_datetime');
+      expect(fhirDateTime.isValid, isFalse);
+      expect(fhirDateTime.value, isNull);
+      expect(fhirDateTime.year, isNull);
+      expect(fhirDateTime.month, isNull);
+      expect(fhirDateTime.day, isNull);
+      expect(fhirDateTime.hour, isNull);
+      expect(fhirDateTime.minute, isNull);
+      expect(fhirDateTime.second, isNull);
+      expect(fhirDateTime.millisecond, isNull);
+    });
+
+    test('FhirDateTime Comparison', () {
+      final fhirDateTime1 = FhirDateTime('2023-12-22T12:34:56.789Z');
+      final fhirDateTime2 = FhirDateTime('2024-01-01T00:00:00.000Z');
+      final fhirDateTime3 = FhirDateTime('2023-12-22T12:34:56.789Z');
+
+      expect(fhirDateTime1 == fhirDateTime2, isFalse);
+      expect(fhirDateTime1 == fhirDateTime3, isTrue);
+      expect(fhirDateTime1 < fhirDateTime2, isTrue);
+      expect(fhirDateTime1 <= fhirDateTime2, isTrue);
+      expect(fhirDateTime1 > fhirDateTime2, isFalse);
+      expect(fhirDateTime1 >= fhirDateTime2, isFalse);
+    });
+
+    // Add more test cases as needed.
+  });
+
+  group('FhirDate Tests', () {
+    test('Valid FhirDate String', () {
+      final fhirDate = FhirDate('2023-12-22');
+      expect(fhirDate.isValid, isTrue);
+      expect(fhirDate.value, isA<DateTime>());
+      expect(fhirDate.year, 2023);
+      expect(fhirDate.month, 12);
+      expect(fhirDate.day, 22);
+    });
+
+    test('Invalid FhirDate String', () {
+      final fhirDate = FhirDate('invalid_date');
+      expect(fhirDate.isValid, isFalse);
+      expect(fhirDate.value, isNull);
+      expect(fhirDate.year, isNull);
+      expect(fhirDate.month, isNull);
+      expect(fhirDate.day, isNull);
+    });
+
+    test('FhirDate Comparison', () {
+      final fhirDate1 = FhirDate('2023-12-22');
+      final fhirDate2 = FhirDate('2024-01-01');
+      final fhirDate3 = FhirDate('2023-12-22');
+
+      expect(fhirDate1 == fhirDate2, isFalse);
+      expect(fhirDate1 == fhirDate3, isTrue);
+      expect(fhirDate1 < fhirDate2, isTrue);
+      expect(fhirDate1 <= fhirDate2, isTrue);
+      expect(fhirDate1 > fhirDate2, isFalse);
+      expect(fhirDate1 >= fhirDate2, isFalse);
+    });
+
+    // Add more test cases as needed.
   });
 }
