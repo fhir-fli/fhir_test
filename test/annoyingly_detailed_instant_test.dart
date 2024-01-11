@@ -3,2334 +3,2805 @@ import 'package:fhir/primitive_types/instant.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final yyyy = '2012';
-  final yyyyDateTime = DateTime(2012);
-  final yyyyDateTimeFromString = DateTime.parse('2012-01-01');
-  final yyyyMM = '2012-01';
-  final yyyyMMDateTime = DateTime(2012, 1);
-  final yyyyMMDateTimeFromString = DateTime.parse('2012-01-01');
-  final yyyyMMdd = '2012-01-31';
-  final yyyyMMddDateTime = DateTime(2012, 1, 31);
-  final yyyyMMddDateTimeFromString = DateTime.parse('2012-01-31');
-  final yyyyMMddTZ = '2012-01-31T';
-  final yyyyMMddTzzDateTime = DateTime(2012, 1, 31);
-  final yyyyMMddTzzDateTimeFromString = DateTime.parse('2012-01-31');
-  final yyyyMMddTZZ = '2012-01-31T-04:00';
-  final yyyyMMddTZZDateTime = DateTime(2012, 1, 31);
-  final yyyyMMddTZZDateTimeFromString = DateTime.parse('2012-01-31');
-  final yyyyMMddTHH = '2012-01-31T12';
-  final yyyyMMddTHHDateTime = DateTime(2012, 1, 31, 12);
-  final yyyyMMddTHHDateTimeFromString = DateTime.parse('2012-01-31T12');
-  final yyyyMMddTHHZ = '2012-01-31T12Z';
-  final yyyyMMddTHHZDateTime = DateTime(2012, 1, 31, 12);
-  final yyyyMMddTHHZDateTimeFromString = DateTime.parse('2012-01-31T12Z');
-  final yyyyMMddTHHZZ = '2012-01-31T12-04:00';
-  final yyyyMMddTHHZZDateTime = DateTime(2012, 1, 31, 12);
-  final yyyyMMddTHHZZDateTimeFromString = DateTime.parse('2012-01-31T12-04:00');
-  final yyyyMMddTHHmm = '2012-01-31T12:30';
-  final yyyyMMddTHHmmDateTime = DateTime(2012, 1, 31, 12, 30);
-  final yyyyMMddTHHmmDateTimeFromString = DateTime.parse('2012-01-31T12:30');
-  final yyyyMMddTHHmmZ = '2012-01-31T12:30Z';
-  final yyyyMMddTHHmmZDateTime = DateTime(2012, 1, 31, 12, 30);
-  final yyyyMMddTHHmmZDateTimeFromString = DateTime.parse('2012-01-31T12:30Z');
-  final yyyyMMddTHHmmZZ = '2012-01-31T12:30-04:00';
-  final yyyyMMddTHHmmZZDateTime = DateTime(2012, 1, 31, 12, 30);
-  final yyyyMMddTHHmmZZDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30-04:00');
-  final yyyyMMddTHHmmss = '2012-01-31T12:30:59';
-  final yyyyMMddTHHmmssDateTime = DateTime(2012, 1, 31, 12, 30, 59);
-  final yyyyMMddTHHmmssDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59');
-  final yyyyMMddTHHmmssZ = '2012-01-31T12:30:59Z';
-  final yyyyMMddTHHmmssZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
-  final yyyyMMddTHHmmssZDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59Z');
-  final yyyyMMddTHHmmssZZ = '2012-01-31T12:30:59-04:00';
-  final yyyyMMddTHHmmssZZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
-  final yyyyMMddTHHmmssZZDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59-04:00');
-  final yyyyMMddTHHmmssSSS = '2012-01-31T12:30:59.001';
-  final yyyyMMddTHHmmssSSSDateTime = DateTime(2012, 1, 31, 12, 30, 59, 1);
-  final yyyyMMddTHHmmssSSSDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59.001');
-  final yyyyMMddTHHmmssSSSZ = '2012-01-31T12:30:59.010Z';
-  final yyyyMMddTHHmmssSSSZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 10);
-  final yyyyMMddTHHmmssSSSZDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59.010Z');
-  final yyyyMMddTHHmmssSSSZZ = '2012-01-31T12:30:59.100-04:00';
-  final yyyyMMddTHHmmssSSSZZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 100);
-  final yyyyMMddTHHmmssSSSZZDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59.100-04:00');
-  final instant = '2012-01-31T12:30:59.111-04:00';
-  final instantDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111);
-  final instantDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59.111-04:00');
-  final dateTime = '2012-01-31T12:30:59.11111-04:00';
-  final dateTimeDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111);
-  final dateTimeDateTimeFromString =
-      DateTime.parse('2012-01-31T12:30:59.11111-04:00');
-
-  final dateyyyy = FhirInstant(yyyy);
-  final dateyyyyDateTime = FhirInstant(yyyyDateTime);
-  final dateyyyyDateTimeFromString =
-      FhirInstant(yyyyDateTimeFromString, DateTimePrecision.yyyy);
-  final dateyyyyFromString = FhirInstant.fromString(yyyy);
-  final dateyyyyFromDateTime =
-      FhirInstant.fromDateTime(yyyyDateTime, DateTimePrecision.yyyy);
-  final dateyyyyFromJson = FhirInstant.fromJson(yyyy);
-  final dateyyyyDateTimeFromJson =
-      FhirInstant.fromJson(yyyyDateTime, DateTimePrecision.yyyy);
-  final dateyyyyDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyDateTimeFromString);
-  final dateyyyyFromYaml = FhirInstant.fromYaml(yyyy);
-
-  final dateyyyyMM = FhirInstant(yyyyMM);
-  final dateyyyyMMDateTime = FhirInstant(yyyyMMDateTime);
-  final dateyyyyMMDateTimeFromString =
-      FhirInstant(yyyyMMDateTimeFromString, DateTimePrecision.yyyy_MM);
-  final dateyyyyMMFromString = FhirInstant.fromString(yyyyMM);
-  final dateyyyyMMFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMDateTime, DateTimePrecision.yyyy_MM);
-  final dateyyyyMMFromJson = FhirInstant.fromJson(yyyyMM);
-  final dateyyyyMMDateTimeFromJson = FhirInstant.fromJson(yyyyMMDateTime);
-  final dateyyyyMMDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMDateTimeFromString, DateTimePrecision.yyyy_MM);
-  final dateyyyyMMFromYaml = FhirInstant.fromYaml(yyyyMM);
-
-  final dateyyyyMMdd = FhirInstant(yyyyMMdd);
-  final dateyyyyMMddDateTime = FhirInstant(yyyyMMddDateTime);
-  final dateyyyyMMddDateTimeFromString =
-      FhirInstant(yyyyMMddDateTimeFromString);
-  final dateyyyyMMddFromString = FhirInstant.fromString(yyyyMMdd);
-  final dateyyyyMMddFromDateTime = FhirInstant.fromDateTime(yyyyMMddDateTime);
-  final dateyyyyMMddFromJson = FhirInstant.fromJson(yyyyMMdd);
-  final dateyyyyMMddDateTimeFromJson = FhirInstant.fromJson(yyyyMMddDateTime);
-  final dateyyyyMMddDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddDateTimeFromString);
-  final dateyyyyMMddFromYaml = FhirInstant.fromYaml(yyyyMMdd);
-
-  final dateyyyyMMddTZ = FhirInstant(yyyyMMddTZ);
-  final dateyyyyMMddTzzDateTime = FhirInstant(yyyyMMddTzzDateTime);
-  final dateyyyyMMddTzzDateTimeFromString =
-      FhirInstant(yyyyMMddTzzDateTimeFromString);
-  final dateyyyyMMddTZFromString = FhirInstant.fromString(yyyyMMddTZ);
-  final dateyyyyMMddTZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTzzDateTime);
-  final dateyyyyMMddTZFromJson = FhirInstant.fromJson(yyyyMMddTZ);
-  final dateyyyyMMddTzzDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTzzDateTime);
-  final dateyyyyMMddTzzDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTzzDateTimeFromString);
-  final dateyyyyMMddTZFromYaml = FhirInstant.fromYaml(yyyyMMddTZ);
-
-  final dateyyyyMMddTZZ = FhirInstant(yyyyMMddTZZ);
-  final dateyyyyMMddTZZDateTime = FhirInstant(yyyyMMddTZZDateTime);
-  final dateyyyyMMddTZZDateTimeFromString =
-      FhirInstant(yyyyMMddTZZDateTimeFromString);
-  final dateyyyyMMddTZZFromString = FhirInstant.fromString(yyyyMMddTZZ);
-  final dateyyyyMMddTZZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTZZDateTime);
-  final dateyyyyMMddTZZFromJson = FhirInstant.fromJson(yyyyMMddTZZ);
-  final dateyyyyMMddTZZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTZZDateTime);
-  final dateyyyyMMddTZZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTZZDateTimeFromString);
-  final dateyyyyMMddTZZFromYaml = FhirInstant.fromYaml(yyyyMMddTZZ);
-
-  final dateyyyyMMddTHH = FhirInstant(yyyyMMddTHH);
-  final dateyyyyMMddTHHDateTime = FhirInstant(yyyyMMddTHHDateTime);
-  final dateyyyyMMddTHHDateTimeFromString =
-      FhirInstant(yyyyMMddTHHDateTimeFromString);
-  final dateyyyyMMddTHHFromString = FhirInstant.fromString(yyyyMMddTHH);
-  final dateyyyyMMddTHHFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHDateTime);
-  final dateyyyyMMddTHHFromJson = FhirInstant.fromJson(yyyyMMddTHH);
-  final dateyyyyMMddTHHDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHDateTime);
-  final dateyyyyMMddTHHDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHDateTimeFromString);
-  final dateyyyyMMddTHHFromYaml = FhirInstant.fromYaml(yyyyMMddTHH);
-
-  final dateyyyyMMddTHHZ = FhirInstant(yyyyMMddTHHZ);
-  final dateyyyyMMddTHHZDateTime = FhirInstant(yyyyMMddTHHZDateTime);
-  final dateyyyyMMddTHHZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHZDateTimeFromString);
-  final dateyyyyMMddTHHZFromString = FhirInstant.fromString(yyyyMMddTHHZ);
-  final dateyyyyMMddTHHZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHZDateTime);
-  final dateyyyyMMddTHHZFromJson = FhirInstant.fromJson(yyyyMMddTHHZ);
-  final dateyyyyMMddTHHZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHZDateTime);
-  final dateyyyyMMddTHHZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHZDateTimeFromString);
-  final dateyyyyMMddTHHZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHZ);
-
-  final dateyyyyMMddTHHZZ = FhirInstant(yyyyMMddTHHZZ);
-  final dateyyyyMMddTHHZZDateTime = FhirInstant(yyyyMMddTHHZZDateTime);
-  final dateyyyyMMddTHHZZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHZZDateTimeFromString);
-  final dateyyyyMMddTHHZZFromString = FhirInstant.fromString(yyyyMMddTHHZZ);
-  final dateyyyyMMddTHHZZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHZZDateTime);
-  final dateyyyyMMddTHHZZFromJson = FhirInstant.fromJson(yyyyMMddTHHZZ);
-  final dateyyyyMMddTHHZZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHZZDateTime);
-  final dateyyyyMMddTHHZZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHZZDateTimeFromString);
-  final dateyyyyMMddTHHZZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHZZ);
-
-  final dateyyyyMMddTHHmm = FhirInstant(yyyyMMddTHHmm);
-  final dateyyyyMMddTHHmmDateTime = FhirInstant(yyyyMMddTHHmmDateTime);
-  final dateyyyyMMddTHHmmDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmDateTimeFromString);
-  final dateyyyyMMddTHHmmFromString = FhirInstant.fromString(yyyyMMddTHHmm);
-  final dateyyyyMMddTHHmmFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmDateTime);
-  final dateyyyyMMddTHHmmFromJson = FhirInstant.fromJson(yyyyMMddTHHmm);
-  final dateyyyyMMddTHHmmDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmDateTime);
-  final dateyyyyMMddTHHmmDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmDateTimeFromString);
-  final dateyyyyMMddTHHmmFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmm);
-
-  final dateyyyyMMddTHHmmZ = FhirInstant(yyyyMMddTHHmmZ);
-  final dateyyyyMMddTHHmmZDateTime = FhirInstant(yyyyMMddTHHmmZDateTime);
-  final dateyyyyMMddTHHmmZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmZDateTimeFromString);
-  final dateyyyyMMddTHHmmZFromString = FhirInstant.fromString(yyyyMMddTHHmmZ);
-  final dateyyyyMMddTHHmmZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmZDateTime);
-  final dateyyyyMMddTHHmmZFromJson = FhirInstant.fromJson(yyyyMMddTHHmmZ);
-  final dateyyyyMMddTHHmmZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmZDateTime);
-  final dateyyyyMMddTHHmmZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmZDateTimeFromString);
-  final dateyyyyMMddTHHmmZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmmZ);
-
-  final dateyyyyMMddTHHmmZZ = FhirInstant(yyyyMMddTHHmmZZ);
-  final dateyyyyMMddTHHmmZZDateTime = FhirInstant(yyyyMMddTHHmmZZDateTime);
-  final dateyyyyMMddTHHmmZZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmZZDateTimeFromString);
-  final dateyyyyMMddTHHmmZZFromString = FhirInstant.fromString(yyyyMMddTHHmmZZ);
-  final dateyyyyMMddTHHmmZZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmZZDateTime);
-  final dateyyyyMMddTHHmmZZFromJson = FhirInstant.fromJson(yyyyMMddTHHmmZZ);
-  final dateyyyyMMddTHHmmZZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmZZDateTime);
-  final dateyyyyMMddTHHmmZZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmZZDateTimeFromString);
-  final dateyyyyMMddTHHmmZZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmmZZ);
-
-  final dateyyyyMMddTHHmmss = FhirInstant(yyyyMMddTHHmmss);
-  final dateyyyyMMddTHHmmssDateTime = FhirInstant(yyyyMMddTHHmmssDateTime);
-  final dateyyyyMMddTHHmmssDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmssDateTimeFromString);
-  final dateyyyyMMddTHHmmssFromString = FhirInstant.fromString(yyyyMMddTHHmmss);
-  final dateyyyyMMddTHHmmssFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmssDateTime);
-  final dateyyyyMMddTHHmmssFromJson = FhirInstant.fromJson(yyyyMMddTHHmmss);
-  final dateyyyyMMddTHHmmssDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssDateTime);
-  final dateyyyyMMddTHHmmssDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssDateTimeFromString);
-  final dateyyyyMMddTHHmmssFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      timezoneOffset: DateTime.timestamp().timeZoneOffset.inHours);
-  final dateyyyyMMddTHHmmssFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmmss);
-
-  final dateyyyyMMddTHHmmssZ = FhirInstant(yyyyMMddTHHmmssZ);
-  final dateyyyyMMddTHHmmssZDateTime = FhirInstant(yyyyMMddTHHmmssZDateTime);
-  final dateyyyyMMddTHHmmssZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmssZDateTimeFromString);
-  final dateyyyyMMddTHHmmssZFromString =
-      FhirInstant.fromString(yyyyMMddTHHmmssZ);
-  final dateyyyyMMddTHHmmssZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmssZDateTime);
-  final dateyyyyMMddTHHmmssZFromJson = FhirInstant.fromJson(yyyyMMddTHHmmssZ);
-  final dateyyyyMMddTHHmmssZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssZDateTime);
-  final dateyyyyMMddTHHmmssZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssZDateTimeFromString);
-  final dateyyyyMMddTHHmmssZFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      timezoneOffset: 0,
-      isUTC: true);
-  final dateyyyyMMddTHHmmssZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmmssZ);
-
-  final dateyyyyMMddTHHmmssZZ = FhirInstant(yyyyMMddTHHmmssZZ);
-  final dateyyyyMMddTHHmmssZZDateTime = FhirInstant(yyyyMMddTHHmmssZZDateTime);
-  final dateyyyyMMddTHHmmssZZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmssZZDateTimeFromString);
-  final dateyyyyMMddTHHmmssZZFromString =
-      FhirInstant.fromString(yyyyMMddTHHmmssZZ);
-  final dateyyyyMMddTHHmmssZZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmssZZDateTime);
-  final dateyyyyMMddTHHmmssZZFromJson = FhirInstant.fromJson(yyyyMMddTHHmmssZZ);
-  final dateyyyyMMddTHHmmssZZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssZZDateTime);
-  final dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssZZDateTimeFromString);
-  final dateyyyyMMddTHHmmssZZFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      timezoneOffset: -4);
-  final dateyyyyMMddTHHmmssZZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmmssZZ);
-
-  final dateyyyyMMddTHHmmssSSS = FhirInstant(yyyyMMddTHHmmssSSS);
-  final dateyyyyMMddTHHmmssSSSDateTime =
-      FhirInstant(yyyyMMddTHHmmssSSSDateTime);
-  final dateyyyyMMddTHHmmssSSSDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmssSSSDateTimeFromString);
-  final dateyyyyMMddTHHmmssSSSFromString =
-      FhirInstant.fromString(yyyyMMddTHHmmssSSS);
-  final dateyyyyMMddTHHmmssSSSFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmssSSSDateTime);
-  final dateyyyyMMddTHHmmssSSSFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSS);
-  final dateyyyyMMddTHHmmssSSSDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSDateTime);
-  final dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSDateTimeFromString);
-  final dateyyyyMMddTHHmmssSSSFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      millisecond: 111,
-      timezoneOffset: DateTime.now().timeZoneOffset.inHours);
-  final dateyyyyMMddTHHmmssSSSFromYaml =
-      FhirInstant.fromYaml(yyyyMMddTHHmmssSSS);
-
-  final dateyyyyMMddTHHmmssSSSZ = FhirInstant(yyyyMMddTHHmmssSSSZ);
-  final dateyyyyMMddTHHmmssSSSZDateTime =
-      FhirInstant(yyyyMMddTHHmmssSSSZDateTime);
-  final dateyyyyMMddTHHmmssSSSZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmssSSSZDateTimeFromString);
-  final dateyyyyMMddTHHmmssSSSZFromString =
-      FhirInstant.fromString(yyyyMMddTHHmmssSSSZ);
-  final dateyyyyMMddTHHmmssSSSZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmssSSSZDateTime);
-  final dateyyyyMMddTHHmmssSSSZFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSZ);
-  final dateyyyyMMddTHHmmssSSSZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSZDateTime);
-  final dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSZDateTimeFromString);
-  final dateyyyyMMddTHHmmssSSSZFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      millisecond: 111,
-      timezoneOffset: 0,
-      isUTC: true);
-  final dateyyyyMMddTHHmmssSSSZFromYaml =
-      FhirInstant.fromYaml(yyyyMMddTHHmmssSSSZ);
-
-  final dateyyyyMMddTHHmmssSSSZZ = FhirInstant(yyyyMMddTHHmmssSSSZZ);
-  final dateyyyyMMddTHHmmssSSSZZDateTime =
-      FhirInstant(yyyyMMddTHHmmssSSSZZDateTime);
-  final dateyyyyMMddTHHmmssSSSZZDateTimeFromString =
-      FhirInstant(yyyyMMddTHHmmssSSSZZDateTimeFromString);
-  final dateyyyyMMddTHHmmssSSSZZFromString =
-      FhirInstant.fromString(yyyyMMddTHHmmssSSSZZ);
-  final dateyyyyMMddTHHmmssSSSZZFromDateTime =
-      FhirInstant.fromDateTime(yyyyMMddTHHmmssSSSZZDateTime);
-  final dateyyyyMMddTHHmmssSSSZZFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSZZ);
-  final dateyyyyMMddTHHmmssSSSZZDateTimeFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSZZDateTime);
-  final dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson =
-      FhirInstant.fromJson(yyyyMMddTHHmmssSSSZZDateTimeFromString);
-  final dateyyyyMMddTHHmmssSSSZZFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      millisecond: 111,
-      timezoneOffset: -4,
-      isUTC: false);
-  final dateyyyyMMddTHHmmssSSSZZFromYaml =
-      FhirInstant.fromYaml(yyyyMMddTHHmmssSSSZZ);
-
-  final dateInstant = FhirInstant(instant);
-  final dateInstantDateTime = FhirInstant(instantDateTime);
-  final dateInstantDateTimeFromString = FhirInstant(instantDateTimeFromString);
-  final dateInstantFromString = FhirInstant.fromString(instant);
-  final dateInstantFromDateTime = FhirInstant.fromDateTime(instantDateTime);
-  final dateInstantFromJson = FhirInstant.fromJson(instant);
-  final dateInstantDateTimeFromJson = FhirInstant.fromJson(instantDateTime);
-  final dateInstantDateTimeFromStringFromJson =
-      FhirInstant.fromJson(instantDateTimeFromString);
-  final dateInstantFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      millisecond: 111,
-      timezoneOffset: 0,
-      isUTC: true);
-  final dateInstantFromYaml = FhirInstant.fromYaml(instant);
-
-  final dateDateTime = FhirInstant(dateTime);
-  final dateDateTimeDateTime = FhirInstant(dateTimeDateTime);
-  final dateDateTimeDateTimeFromString =
-      FhirInstant(dateTimeDateTimeFromString);
-  final dateDateTimeFromString = FhirInstant.fromString(dateTime);
-  final dateDateTimeFromDateTime = FhirInstant.fromDateTime(dateTimeDateTime);
-  final dateDateTimeFromJson = FhirInstant.fromJson(dateTime);
-  final dateDateTimeDateTimeFromJson = FhirInstant.fromJson(dateTimeDateTime);
-  final dateDateTimeDateTimeFromStringFromJson =
-      FhirInstant.fromJson(dateTimeDateTimeFromString);
-  final dateDateTimeFromUnits = FhirInstant.fromUnits(
-      year: 2012,
-      month: 1,
-      day: 31,
-      hour: 12,
-      minute: 30,
-      second: 59,
-      millisecond: 111,
-      microsecond: 11,
-      timezoneOffset: 0,
-      isUTC: true);
-  final dateDateTimeFromYaml = FhirInstant.fromYaml(dateTime);
-
   group('FhirInstant Tests', () {
+    final timezoneOffsetInt = DateTime.now().timeZoneOffset.inHours;
+    final timezoneOffsetString = timezoneOffsetInt < 0
+        ? '-${timezoneOffsetInt.abs().toString().padLeft(2, '0')}:00'
+        : '+${timezoneOffsetInt.abs().toString().padLeft(2, '0')}:00';
     group('yyyy - 2012', () {
-      test('dateyyyy', () {
-        expect(dateyyyy.isValid, isFalse);
-        expect(dateyyyy.valueString, equals(yyyy));
-        expect(dateyyyy.valueDateTime, isNull);
-        expect(dateyyyy.toString(), equals(yyyy));
-        expect(dateyyyy.toJson(), equals(yyyy));
-        expect(dateyyyy.toYaml(), equals(yyyy));
+      final yyyy = '2012';
+      final yyyyDateTime = DateTime(2012);
+      final yyyyDateTimeFromString = DateTime.parse('2012-01-01');
+
+      final instantyyyy = FhirInstant(yyyy);
+      test('instantyyyy', () {
+        expect(instantyyyy.isValid, isTrue);
+        expect(instantyyyy.valueString, equals(yyyy));
+        expect(instantyyyy.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyy.toString(), equals(yyyy));
+        expect(instantyyyy.toJson(), equals(yyyy));
+        expect(instantyyyy.toYaml(), equals(yyyy));
       });
 
-      test('dateyyyyDateTime', () {
-        expect(dateyyyyDateTime.isValid, isFalse);
-        expect(dateyyyyDateTime.valueString, equals('$yyyy-01-01'));
-        expect(dateyyyyDateTime.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyDateTime.toString(), equals('$yyyy-01-01'));
-        expect(dateyyyyDateTime.toJson(), equals('$yyyy-01-01'));
-        expect(dateyyyyDateTime.toYaml(), equals('$yyyy-01-01'));
+      // TODO(Dokotela): reasonable that this test fails without specifying
+      // precision in the constructor?
+      final instantyyyyDateTime = FhirInstant(yyyyDateTime);
+      test('instantyyyyDateTime', () {
+        expect(instantyyyyDateTime.isValid, isTrue);
+        expect(instantyyyyDateTime.valueString, equals('$yyyy-01-01'));
+        expect(instantyyyyDateTime.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyDateTime.toString(), equals('$yyyy-01-01'));
+        expect(
+            instantyyyyDateTime.toJson(), equals('$yyyy-01-01 00:00:00.000'));
+        expect(
+            instantyyyyDateTime.toYaml(), equals('$yyyy-01-01 00:00:00.000'));
       });
-      test('dateyyyyDateTimeFromString', () {
-        expect(dateyyyyDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyDateTimeFromString.valueString, equals(yyyy));
-        expect(dateyyyyDateTimeFromString.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyDateTimeFromString.toString(), equals(yyyy));
-        expect(dateyyyyDateTimeFromString.toJson(), equals(yyyy));
-        expect(dateyyyyDateTimeFromString.toYaml(), equals(yyyy));
+      final instantyyyyDateTimeFromString =
+          FhirInstant(yyyyDateTimeFromString, DateTimePrecision.yyyy);
+      test('instantyyyyDateTimeFromString', () {
+        expect(instantyyyyDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyDateTimeFromString.valueString, equals(yyyy));
+        expect(
+            instantyyyyDateTimeFromString.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyDateTimeFromString.toString(), equals(yyyy));
+        expect(instantyyyyDateTimeFromString.toJson(), equals(yyyy));
+        expect(instantyyyyDateTimeFromString.toYaml(), equals(yyyy));
       });
-      test('dateyyyyFromString', () {
-        expect(dateyyyyFromString.isValid, isFalse);
-        expect(dateyyyyFromString.valueString, equals(yyyy));
-        expect(dateyyyyFromString.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyFromString.toString(), equals(yyyy));
-        expect(dateyyyyFromString.toJson(), equals(yyyy));
-        expect(dateyyyyFromString.toYaml(), equals(yyyy));
+      final instantyyyyFromString = FhirInstant.fromString(yyyy);
+      test('instantyyyyFromString', () {
+        expect(instantyyyyFromString.isValid, isTrue);
+        expect(instantyyyyFromString.valueString, equals(yyyy));
+        expect(instantyyyyFromString.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyFromString.toString(), equals(yyyy));
+        expect(instantyyyyFromString.toJson(), equals(yyyy));
+        expect(instantyyyyFromString.toYaml(), equals(yyyy));
       });
-      test('dateyyyyFromDateTime', () {
-        expect(dateyyyyFromDateTime.isValid, isFalse);
-        expect(dateyyyyFromDateTime.valueString, equals(yyyy));
-        expect(dateyyyyFromDateTime.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyFromDateTime.toString(), equals(yyyy));
-        expect(dateyyyyFromDateTime.toJson(), equals(yyyy));
-        expect(dateyyyyFromDateTime.toYaml(), equals(yyyy));
+      final instantyyyyFromDateTime =
+          FhirInstant.fromDateTime(yyyyDateTime, DateTimePrecision.yyyy);
+      test('instantyyyyFromDateTime', () {
+        expect(instantyyyyFromDateTime.isValid, isTrue);
+        expect(instantyyyyFromDateTime.valueString, equals(yyyy));
+        expect(instantyyyyFromDateTime.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyFromDateTime.toString(), equals(yyyy));
+        expect(instantyyyyFromDateTime.toJson(), equals(yyyy));
+        expect(instantyyyyFromDateTime.toYaml(), equals(yyyy));
       });
-      test('dateyyyyFromJson', () {
-        expect(dateyyyyFromJson.isValid, isFalse);
-        expect(dateyyyyFromJson.valueString, equals(yyyy));
-        expect(dateyyyyFromJson.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyFromJson.toString(), equals(yyyy));
-        expect(dateyyyyFromJson.toJson(), equals(yyyy));
-        expect(dateyyyyFromJson.toYaml(), equals(yyyy));
+      final instantyyyyFromJson = FhirInstant.fromJson(yyyy);
+      test('instantyyyyFromJson', () {
+        expect(instantyyyyFromJson.isValid, isTrue);
+        expect(instantyyyyFromJson.valueString, equals(yyyy));
+        expect(instantyyyyFromJson.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyFromJson.toString(), equals(yyyy));
+        expect(instantyyyyFromJson.toJson(), equals(yyyy));
+        expect(instantyyyyFromJson.toYaml(), equals(yyyy));
       });
-      test('dateyyyyDateTimeFromJson', () {
-        expect(dateyyyyDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyDateTimeFromJson.valueString, equals(yyyy));
-        expect(dateyyyyDateTimeFromJson.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyDateTimeFromJson.toString(), equals(yyyy));
-        expect(dateyyyyDateTimeFromJson.toJson(), equals(yyyy));
-        expect(dateyyyyDateTimeFromJson.toYaml(), equals(yyyy));
+      final instantyyyyDateTimeFromJson =
+          FhirInstant.fromJson(yyyyDateTime, DateTimePrecision.yyyy);
+      test('instantyyyyDateTimeFromJson', () {
+        expect(instantyyyyDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyDateTimeFromJson.valueString, equals(yyyy));
+        expect(instantyyyyDateTimeFromJson.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyDateTimeFromJson.toString(), equals(yyyy));
+        expect(instantyyyyDateTimeFromJson.toJson(), equals(yyyy));
+        expect(instantyyyyDateTimeFromJson.toYaml(), equals(yyyy));
       });
-      test('dateyyyyDateTimeFromStringFromJson', () {
-        expect(dateyyyyDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyDateTimeFromStringFromJson.valueString,
+      final instantyyyyDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyDateTimeFromString);
+      test('instantyyyyDateTimeFromStringFromJson', () {
+        expect(instantyyyyDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyDateTimeFromStringFromJson.valueString,
             equals('$yyyy-01-01'));
-        expect(dateyyyyDateTimeFromStringFromJson.valueDateTime,
+        expect(instantyyyyDateTimeFromStringFromJson.valueDateTime,
             equals(yyyyDateTime));
-        expect(dateyyyyDateTimeFromStringFromJson.toString(),
+        expect(instantyyyyDateTimeFromStringFromJson.toString(),
             equals('$yyyy-01-01'));
-        expect(
-            dateyyyyDateTimeFromStringFromJson.toJson(), equals('$yyyy-01-01'));
-        expect(
-            dateyyyyDateTimeFromStringFromJson.toYaml(), equals('$yyyy-01-01'));
-      });
-      test('dateyyyyFromYaml', () {
-        expect(dateyyyyFromYaml.isValid, isFalse);
-        expect(dateyyyyFromYaml.valueString, equals(yyyy));
-        expect(dateyyyyFromYaml.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyFromYaml.toString(), equals(yyyy));
-        expect(dateyyyyFromYaml.toJson(), equals(yyyy));
-        expect(dateyyyyFromYaml.toYaml(), equals(yyyy));
-      });
-    });
-    group('yyyyMM - 2012-01', () {
-      test('dateyyyyMM', () {
-        expect(dateyyyyMM.isValid, isFalse);
-        expect(dateyyyyMM.valueString, equals(yyyyMM));
-        expect(dateyyyyMM.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMM.toString(), equals(yyyyMM));
-        expect(dateyyyyMM.toJson(), equals(yyyyMM));
-        expect(dateyyyyMM.toYaml(), equals(yyyyMM));
+        expect(instantyyyyDateTimeFromStringFromJson.toJson(),
+            equals('$yyyy-01-01 00:00:00.000'));
+        expect(instantyyyyDateTimeFromStringFromJson.toYaml(),
+            equals('$yyyy-01-01 00:00:00.000'));
       });
 
-      test('dateyyyyMMDateTime', () {
-        expect(dateyyyyMMDateTime.isValid, isFalse);
-        expect(dateyyyyMMDateTime.valueString, equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTime.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMDateTime.toString(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTime.toJson(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTime.toYaml(), equals('$yyyyMM-01'));
+      final instantyyyyFromYaml = FhirInstant.fromYaml(yyyy);
+      test('instantyyyyFromYaml', () {
+        expect(instantyyyyFromYaml.isValid, isTrue);
+        expect(instantyyyyFromYaml.valueString, equals(yyyy));
+        expect(instantyyyyFromYaml.valueDateTime, equals(yyyyDateTime));
+        expect(instantyyyyFromYaml.toString(), equals(yyyy));
+        expect(instantyyyyFromYaml.toJson(), equals(yyyy));
+        expect(instantyyyyFromYaml.toYaml(), equals(yyyy));
       });
-      test('dateyyyyMMDateTimeFromString', () {
-        expect(dateyyyyMMDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMDateTimeFromString.valueString, equals(yyyyMM));
+    });
+    final yyyyMM = '2012-01';
+    final yyyyMMDateTime = DateTime(2012, 1);
+    final yyyyMMDateTimeFromString = DateTime.parse('2012-01-01');
+
+    group('yyyyMM - 2012-01', () {
+      final instantyyyyMM = FhirInstant(yyyyMM);
+      test('instantyyyyMM', () {
+        expect(instantyyyyMM.isValid, isTrue);
+        expect(instantyyyyMM.valueString, equals(yyyyMM));
+        expect(instantyyyyMM.valueDateTime, equals(yyyyMMDateTime));
+        expect(instantyyyyMM.toString(), equals(yyyyMM));
+        expect(instantyyyyMM.toJson(), equals(yyyyMM));
+        expect(instantyyyyMM.toYaml(), equals(yyyyMM));
+      });
+
+      // TODO(Dokotela): reasonable that this test fails without specifying precision
+      // in the constructor?
+      final instantyyyyMMDateTime = FhirInstant(yyyyMMDateTime);
+      test(
+          'instantyyyyMMDateTime - no precision given, assume full DateTime input',
+          () {
+        expect(instantyyyyMMDateTime.isValid, isTrue);
+        expect(instantyyyyMMDateTime.valueString, equals('$yyyyMM-01'));
+        expect(instantyyyyMMDateTime.valueDateTime, equals(yyyyMMDateTime));
+        expect(instantyyyyMMDateTime.toString(), equals('$yyyyMM-01'));
         expect(
-            dateyyyyMMDateTimeFromString.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMDateTimeFromString.toString(), equals(yyyyMM));
-        expect(dateyyyyMMDateTimeFromString.toJson(), equals(yyyyMM));
-        expect(dateyyyyMMDateTimeFromString.toYaml(), equals(yyyyMM));
-      });
-      test('dateyyyyMMFromString', () {
-        expect(dateyyyyMMFromString.isValid, isFalse);
-        expect(dateyyyyMMFromString.valueString, equals(yyyyMM));
-        expect(dateyyyyMMFromString.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMFromString.toString(), equals(yyyyMM));
-        expect(dateyyyyMMFromString.toJson(), equals(yyyyMM));
-        expect(dateyyyyMMFromString.toYaml(), equals(yyyyMM));
-      });
-      test('dateyyyyMMFromDateTime', () {
-        expect(dateyyyyMMFromDateTime.isValid, isFalse);
-        expect(dateyyyyMMFromDateTime.valueString, equals(yyyyMM));
-        expect(dateyyyyMMFromDateTime.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMFromDateTime.toString(), equals(yyyyMM));
-        expect(dateyyyyMMFromDateTime.toJson(), equals(yyyyMM));
-        expect(dateyyyyMMFromDateTime.toYaml(), equals(yyyyMM));
-      });
-      test('dateyyyyMMFromJson', () {
-        expect(dateyyyyMMFromJson.isValid, isFalse);
-        expect(dateyyyyMMFromJson.valueString, equals(yyyyMM));
-        expect(dateyyyyMMFromJson.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMFromJson.toString(), equals(yyyyMM));
-        expect(dateyyyyMMFromJson.toJson(), equals(yyyyMM));
-        expect(dateyyyyMMFromJson.toYaml(), equals(yyyyMM));
-      });
-      test('dateyyyyMMDateTimeFromJson', () {
-        expect(dateyyyyMMDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMDateTimeFromJson.valueString, equals('$yyyyMM-01'));
+            instantyyyyMMDateTime.toJson(), equals(yyyyMMDateTime.toString()));
         expect(
-            dateyyyyMMDateTimeFromJson.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMDateTimeFromJson.toString(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTimeFromJson.toJson(), equals('$yyyyMM-01'));
-        expect(dateyyyyMMDateTimeFromJson.toYaml(), equals('$yyyyMM-01'));
+            instantyyyyMMDateTime.toYaml(), equals(yyyyMMDateTime.toString()));
       });
-      test('dateyyyyMMDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMDateTimeFromStringFromJson.isValid, isFalse);
-        expect(
-            dateyyyyMMDateTimeFromStringFromJson.valueString, equals(yyyyMM));
-        expect(dateyyyyMMDateTimeFromStringFromJson.valueDateTime,
+      final instantyyyyMMDateTimeFromString =
+          FhirInstant(yyyyMMDateTimeFromString, DateTimePrecision.yyyy_MM);
+      test('instantyyyyMMDateTimeFromString', () {
+        expect(instantyyyyMMDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMDateTimeFromString.valueString, equals(yyyyMM));
+        expect(instantyyyyMMDateTimeFromString.valueDateTime,
             equals(yyyyMMDateTime));
-        expect(dateyyyyMMDateTimeFromStringFromJson.toString(), equals(yyyyMM));
-        expect(dateyyyyMMDateTimeFromStringFromJson.toJson(), equals(yyyyMM));
-        expect(dateyyyyMMDateTimeFromStringFromJson.toYaml(), equals(yyyyMM));
+        expect(instantyyyyMMDateTimeFromString.toString(), equals(yyyyMM));
+        expect(instantyyyyMMDateTimeFromString.toJson(), equals(yyyyMM));
+        expect(instantyyyyMMDateTimeFromString.toYaml(), equals(yyyyMM));
       });
-      test('dateyyyyMMFromYaml', () {
-        expect(dateyyyyMMFromYaml.isValid, isFalse);
-        expect(dateyyyyMMFromYaml.valueString, equals(yyyyMM));
-        expect(dateyyyyMMFromYaml.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMFromYaml.toString(), equals(yyyyMM));
-        expect(dateyyyyMMFromYaml.toJson(), equals(yyyyMM));
-        expect(dateyyyyMMFromYaml.toYaml(), equals(yyyyMM));
+      final instantyyyyMMFromString = FhirInstant.fromString(yyyyMM);
+      test('instantyyyyMMFromString', () {
+        expect(instantyyyyMMFromString.isValid, isTrue);
+        expect(instantyyyyMMFromString.valueString, equals(yyyyMM));
+        expect(instantyyyyMMFromString.valueDateTime, equals(yyyyMMDateTime));
+        expect(instantyyyyMMFromString.toString(), equals(yyyyMM));
+        expect(instantyyyyMMFromString.toJson(), equals(yyyyMM));
+        expect(instantyyyyMMFromString.toYaml(), equals(yyyyMM));
+      });
+      final instantyyyyMMFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMDateTime, DateTimePrecision.yyyy_MM);
+      test('instantyyyyMMFromDateTime', () {
+        expect(instantyyyyMMFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMFromDateTime.valueString, equals(yyyyMM));
+        expect(instantyyyyMMFromDateTime.valueDateTime, equals(yyyyMMDateTime));
+        expect(instantyyyyMMFromDateTime.toString(), equals(yyyyMM));
+        expect(instantyyyyMMFromDateTime.toJson(), equals(yyyyMM));
+        expect(instantyyyyMMFromDateTime.toYaml(), equals(yyyyMM));
+      });
+      final instantyyyyMMFromJson = FhirInstant.fromJson(yyyyMM);
+      test('instantyyyyMMFromJson', () {
+        expect(instantyyyyMMFromJson.isValid, isTrue);
+        expect(instantyyyyMMFromJson.valueString, equals(yyyyMM));
+        expect(instantyyyyMMFromJson.valueDateTime, equals(yyyyMMDateTime));
+        expect(instantyyyyMMFromJson.toString(), equals(yyyyMM));
+        expect(instantyyyyMMFromJson.toJson(), equals(yyyyMM));
+        expect(instantyyyyMMFromJson.toYaml(), equals(yyyyMM));
+      });
+      final instantyyyyMMDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMDateTime);
+      test('instantyyyyMMDateTimeFromJson', () {
+        expect(instantyyyyMMDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMDateTimeFromJson.valueString, equals('$yyyyMM-01'));
+        expect(instantyyyyMMDateTimeFromJson.valueDateTime,
+            equals(yyyyMMDateTime));
+        expect(instantyyyyMMDateTimeFromJson.toString(), equals('$yyyyMM-01'));
+        expect(instantyyyyMMDateTimeFromJson.toJson(),
+            equals(yyyyMMDateTime.toString()));
+        expect(instantyyyyMMDateTimeFromJson.toYaml(),
+            equals(yyyyMMDateTime.toString()));
+      });
+      final instantyyyyMMDateTimeFromStringFromJson = FhirInstant.fromJson(
+          yyyyMMDateTimeFromString, DateTimePrecision.yyyy_MM);
+      test('instantyyyyMMDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMDateTimeFromStringFromJson.valueString,
+            equals(yyyyMM));
+        expect(instantyyyyMMDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMDateTime));
+        expect(
+            instantyyyyMMDateTimeFromStringFromJson.toString(), equals(yyyyMM));
+        expect(
+            instantyyyyMMDateTimeFromStringFromJson.toJson(), equals(yyyyMM));
+        expect(
+            instantyyyyMMDateTimeFromStringFromJson.toYaml(), equals(yyyyMM));
+      });
+      final instantyyyyMMFromYaml = FhirInstant.fromYaml(yyyyMM);
+      test('instantyyyyMMFromYaml', () {
+        expect(instantyyyyMMFromYaml.isValid, isTrue);
+        expect(instantyyyyMMFromYaml.valueString, equals(yyyyMM));
+        expect(instantyyyyMMFromYaml.valueDateTime, equals(yyyyMMDateTime));
+        expect(instantyyyyMMFromYaml.toString(), equals(yyyyMM));
+        expect(instantyyyyMMFromYaml.toJson(), equals(yyyyMM));
+        expect(instantyyyyMMFromYaml.toYaml(), equals(yyyyMM));
       });
     });
+
+    final yyyyMMdd = '2012-01-31';
+    final yyyyMMddDateTime = DateTime(2012, 1, 31);
+    final yyyyMMddDateTimeFromString = DateTime.parse('2012-01-31');
+
     group('yyyyMMdd - 2012-01-31', () {
-      test('dateyyyyMMdd', () {
-        expect(dateyyyyMMdd.isValid, isFalse);
-        expect(dateyyyyMMdd.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMdd.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMdd.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMdd.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMdd.toYaml(), equals(yyyyMMdd));
+      final instantyyyyMMdd = FhirInstant(yyyyMMdd);
+
+      test('instantyyyyMMdd', () {
+        expect(instantyyyyMMdd.isValid, isTrue);
+        expect(instantyyyyMMdd.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMdd.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantyyyyMMdd.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMdd.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMdd.toYaml(), equals(yyyyMMdd));
       });
-      test('dateyyyyMMddDateTime', () {
-        expect(dateyyyyMMddDateTime.isValid, isFalse);
-        expect(dateyyyyMMddDateTime.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTime.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTime.toYaml(), equals(yyyyMMdd));
+      final instantyyyyMMddDateTime = FhirInstant(yyyyMMddDateTime);
+
+      test(
+          'instantyyyyMMddDateTime - no precision given, assumes full instantTime input',
+          () {
+        expect(instantyyyyMMddDateTime.isValid, isTrue);
+        expect(instantyyyyMMddDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTime.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(instantyyyyMMddDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
-      test('dateyyyyMMddDateTimeFromString', () {
-        expect(dateyyyyMMddDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddDateTimeFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromString.valueDateTime,
+      final instantyyyyMMddDateTimeFromString =
+          FhirInstant(yyyyMMddDateTimeFromString);
+
+      test(
+          'instantyyyyMMddDateTimeFromString - no precision given, have to assume full DateTime input',
+          () {
+        expect(instantyyyyMMddDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTimeFromString.valueDateTime,
             equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromString.toYaml(), equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTimeFromString.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(instantyyyyMMddDateTimeFromString.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
-      test('dateyyyyMMddFromString', () {
-        expect(dateyyyyMMddFromString.isValid, isFalse);
-        expect(dateyyyyMMddFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddFromString.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddFromDateTime', () {
-        expect(dateyyyyMMddFromDateTime.isValid, isFalse);
-        expect(dateyyyyMMddFromDateTime.valueString, equals(yyyyMMdd));
+      final instantyyyyMMddFromString = FhirInstant.fromString(yyyyMMdd);
+
+      test('instantyyyyMMddFromString', () {
+        expect(instantyyyyMMddFromString.isValid, isTrue);
+        expect(instantyyyyMMddFromString.valueString, equals(yyyyMMdd));
         expect(
-            dateyyyyMMddFromDateTime.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromDateTime.toYaml(), equals(yyyyMMdd));
+            instantyyyyMMddFromString.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromString.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromString.toYaml(), equals(yyyyMMdd));
       });
-      test('dateyyyyMMddFromJson', () {
-        expect(dateyyyyMMddFromJson.isValid, isFalse);
-        expect(dateyyyyMMddFromJson.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddFromJson.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromJson.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddDateTimeFromJson', () {
-        expect(dateyyyyMMddDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMddDateTimeFromJson.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromJson.valueDateTime,
+      final instantyyyyMMddFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddDateTime);
+
+      test('instantyyyyMMddFromDateTime', () {
+        expect(instantyyyyMMddFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddFromDateTime.valueDateTime,
             equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(instantyyyyMMddFromDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
-      test('dateyyyyMMddDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddDateTimeFromStringFromJson.valueString,
+      final instantyyyyMMddFromJson = FhirInstant.fromJson(yyyyMMdd);
+
+      test('instantyyyyMMddFromJson', () {
+        expect(instantyyyyMMddFromJson.isValid, isTrue);
+        expect(instantyyyyMMddFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddFromJson.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromJson.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromJson.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddDateTime);
+
+      test('instantyyyyMMddDateTimeFromJson', () {
+        expect(instantyyyyMMddDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTimeFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(instantyyyyMMddDateTimeFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+      });
+      final instantyyyyMMddDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddDateTimeFromString);
+
+      test('instantyyyyMMddDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddDateTimeFromStringFromJson.valueString,
             equals(yyyyMMdd));
-        expect(dateyyyyMMddDateTimeFromStringFromJson.valueDateTime,
+        expect(instantyyyyMMddDateTimeFromStringFromJson.valueDateTime,
             equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddDateTimeFromStringFromJson.toString(),
+        expect(instantyyyyMMddDateTimeFromStringFromJson.toString(),
             equals(yyyyMMdd));
-        expect(
-            dateyyyyMMddDateTimeFromStringFromJson.toJson(), equals(yyyyMMdd));
-        expect(
-            dateyyyyMMddDateTimeFromStringFromJson.toYaml(), equals(yyyyMMdd));
+        expect(instantyyyyMMddDateTimeFromStringFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000'));
+        expect(instantyyyyMMddDateTimeFromStringFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000'));
       });
-      test('dateyyyyMMddFromYaml', () {
-        expect(dateyyyyMMddFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddFromYaml.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddFromYaml.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddFromYaml.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromYaml.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddFromYaml.toYaml(), equals(yyyyMMdd));
+      final instantyyyyMMddFromYaml = FhirInstant.fromYaml(yyyyMMdd);
+      test('instantyyyyMMddFromYaml', () {
+        expect(instantyyyyMMddFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddFromYaml.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromYaml.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddFromYaml.toYaml(), equals(yyyyMMdd));
       });
     });
-    group('yyyyMMddTZ - 2012-01-31TZ', () {
-      test('dateyyyyMMddTZ', () {
-        expect(dateyyyyMMddTZ.isValid, isFalse);
-        expect(dateyyyyMMddTZ.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZ.valueDateTime, equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTZ.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZ.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZ.toYaml(), equals(yyyyMMdd));
+
+    final yyyyMMddTZ = '2012-01-31TZ';
+    final yyyyMMddTZDateTime = DateTime.utc(2012, 1, 31);
+    final yyyyMMddTZDateTimeFromString = DateTime.parse('2012-01-31')
+        .toUtc()
+        .add(Duration(hours: DateTime.now().timeZoneOffset.inHours));
+
+    group('yyyyMMddTZ - 2012-01-31T', () {
+      // TODO(Dokotela): reasonable that this truncates the output?
+      final instantyyyyMMddTZ = FhirInstant(yyyyMMddTZ);
+
+      test('instantyyyyMMddTZ', () {
+        expect(instantyyyyMMddTZ.isValid, isTrue);
+        expect(instantyyyyMMddTZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZ.valueDateTime, equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZ.toJson(), equals(yyyyMMddTZ));
+        expect(instantyyyyMMddTZ.toYaml(), equals(yyyyMMddTZ));
       });
-      test('dateyyyyMMddTzzDateTime', () {
-        expect(dateyyyyMMddTzzDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTzzDateTime.valueString, equals(yyyyMMdd));
+      final instantyyyyMMddTZDateTime = FhirInstant(yyyyMMddTZDateTime);
+
+      test(
+          'instantyyyyMMddTZDateTime - no precision given, so must assume full DateTime input',
+          () {
+        expect(instantyyyyMMddTZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTime.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+        expect(instantyyyyMMddTZDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+      });
+      final instantyyyyMMddTZDateTimeFromString =
+          FhirInstant(yyyyMMddTZDateTimeFromString);
+
+      test('instantyyyyMMddTZDateTimeFromString', () {
+        expect(instantyyyyMMddTZDateTimeFromString.isValid, isTrue);
         expect(
-            dateyyyyMMddTzzDateTime.valueDateTime, equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTzzDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTime.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTzzDateTimeFromString', () {
-        expect(dateyyyyMMddTzzDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddTzzDateTimeFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromString.valueDateTime,
-            equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTzzDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZFromString', () {
-        expect(dateyyyyMMddTZFromString.isValid, isFalse);
-        expect(dateyyyyMMddTZFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromString.valueDateTime,
-            equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTZFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZFromDateTime', () {
-        expect(dateyyyyMMddTZFromDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTZFromDateTime.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromDateTime.valueDateTime,
-            equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTZFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromDateTime.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZFromJson', () {
-        expect(dateyyyyMMddTZFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTZFromJson.valueString, equals(yyyyMMdd));
+            instantyyyyMMddTZDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTZDateTime));
         expect(
-            dateyyyyMMddTZFromJson.valueDateTime, equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTZFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromJson.toYaml(), equals(yyyyMMdd));
+            instantyyyyMMddTZDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTimeFromString.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+        expect(instantyyyyMMddTZDateTimeFromString.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
       });
-      test('dateyyyyMMddTzzDateTimeFromJson', () {
-        expect(dateyyyyMMddTzzDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTzzDateTimeFromJson.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTzzDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+      final instantyyyyMMddTZFromString = FhirInstant.fromString(yyyyMMddTZ);
+
+      test('instantyyyyMMddTZFromString', () {
+        expect(instantyyyyMMddTZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromString.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromString.toJson(), equals(yyyyMMddTZ));
+        expect(instantyyyyMMddTZFromString.toYaml(), equals(yyyyMMddTZ));
       });
-      test('dateyyyyMMddTzzDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTzzDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTzzDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromStringFromJson.valueDateTime,
-            equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTzzDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMdd));
-        expect(dateyyyyMMddTzzDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMdd));
+      final instantyyyyMMddTZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTZDateTime);
+
+      test('instantyyyyMMddTZFromDateTime', () {
+        expect(instantyyyyMMddTZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromDateTime.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromDateTime.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+        expect(instantyyyyMMddTZFromDateTime.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
       });
-      test('dateyyyyMMddTZFromYaml', () {
-        expect(dateyyyyMMddTZFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddTZFromYaml.valueString, equals(yyyyMMdd));
-        expect(
-            dateyyyyMMddTZFromYaml.valueDateTime, equals(yyyyMMddTzzDateTime));
-        expect(dateyyyyMMddTZFromYaml.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromYaml.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZFromYaml.toYaml(), equals(yyyyMMdd));
+      final instantyyyyMMddTZFromJson = FhirInstant.fromJson(yyyyMMddTZ);
+
+      test('instantyyyyMMddTZFromJson', () {
+        expect(instantyyyyMMddTZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromJson.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromJson.toJson(), equals(yyyyMMddTZ));
+        expect(instantyyyyMMddTZFromJson.toYaml(), equals(yyyyMMddTZ));
+      });
+      final instantyyyyMMddTZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTZDateTime);
+
+      test('instantyyyyMMddTZDateTimeFromJson', () {
+        expect(instantyyyyMMddTZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTZDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTimeFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+        expect(instantyyyyMMddTZDateTimeFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+      });
+      final instantyyyyMMddTZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTZDateTimeFromString);
+
+      test('instantyyyyMMddTZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTZDateTimeFromStringFromJson.toJson(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+        expect(instantyyyyMMddTZDateTimeFromStringFromJson.toYaml(),
+            equals('${yyyyMMdd} 00:00:00.000Z'));
+      });
+
+      final instantyyyyMMddTZFromYaml = FhirInstant.fromYaml(yyyyMMddTZ);
+      test('instantyyyyMMddTZFromYaml', () {
+        expect(instantyyyyMMddTZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromYaml.valueDateTime,
+            equals(yyyyMMddTZDateTime));
+        expect(instantyyyyMMddTZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZFromYaml.toJson(), equals(yyyyMMddTZ));
+        expect(instantyyyyMMddTZFromYaml.toYaml(), equals(yyyyMMddTZ));
       });
     });
-    group('yyyyMMddTZZ - 2012-01-31T-04:00', () {
-      test('dateyyyyMMddTZZ', () {
-        expect(dateyyyyMMddTZZ.isValid, isFalse);
-        expect(dateyyyyMMddTZZ.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZ.valueDateTime, equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZ.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZ.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZ.toYaml(), equals(yyyyMMdd));
+
+    final yyyyMMddTZZ = '2012-01-31T$timezoneOffsetString';
+    final yyyyMMddTZZDateTime = DateTime(2012, 1, 31);
+    final yyyyMMddTZZDateTimeFromString = DateTime.parse('2012-01-31');
+
+    group('yyyyMMddTZZ - 2012-01-31T$timezoneOffsetString', () {
+      // TODO(Dokotela): reasonable to truncate output?
+      final instantyyyyMMddTZZ = FhirInstant(yyyyMMddTZZ);
+
+      test('instantyyyyMMddTZZ', () {
+        expect(instantyyyyMMddTZZ.isValid, isTrue);
+        expect(instantyyyyMMddTZZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZ.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddTZZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZ.toJson(), equals(yyyyMMddTZZ));
+        expect(instantyyyyMMddTZZ.toYaml(), equals(yyyyMMddTZZ));
       });
-      test('dateyyyyMMddTZZDateTime', () {
-        expect(dateyyyyMMddTZZDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTZZDateTime.valueString, equals(yyyyMMdd));
+      final instantyyyyMMddTZZDateTime = FhirInstant(yyyyMMddTZZDateTime);
+
+      test('instantyyyyMMddTZZDateTime', () {
+        expect(instantyyyyMMddTZZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTZZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTime.valueDateTime,
+            equals(yyyyMMddTZZDateTime));
+        expect(instantyyyyMMddTZZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTime.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(instantyyyyMMddTZZDateTime.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
+      });
+      final instantyyyyMMddTZZDateTimeFromString =
+          FhirInstant(yyyyMMddTZZDateTimeFromString);
+
+      test('instantyyyyMMddTZZDateTimeFromString', () {
+        expect(instantyyyyMMddTZZDateTimeFromString.isValid, isTrue);
         expect(
-            dateyyyyMMddTZZDateTime.valueDateTime, equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTime.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZZDateTimeFromString', () {
-        expect(dateyyyyMMddTZZDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddTZZDateTimeFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromString.valueDateTime,
+            instantyyyyMMddTZZDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTimeFromString.valueDateTime,
             equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZZFromString', () {
-        expect(dateyyyyMMddTZZFromString.isValid, isFalse);
-        expect(dateyyyyMMddTZZFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromString.valueDateTime,
-            equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZZFromDateTime', () {
-        expect(dateyyyyMMddTZZFromDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTZZFromDateTime.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromDateTime.valueDateTime,
-            equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromDateTime.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTZZFromJson', () {
-        expect(dateyyyyMMddTZZFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTZZFromJson.valueString, equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTZZFromJson.valueDateTime, equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromJson.toYaml(), equals(yyyyMMdd));
+            instantyyyyMMddTZZDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTimeFromString.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(instantyyyyMMddTZZDateTimeFromString.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
       });
-      test('dateyyyyMMddTZZDateTimeFromJson', () {
-        expect(dateyyyyMMddTZZDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTZZDateTimeFromJson.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromJson.valueDateTime,
+      final instantyyyyMMddTZZFromString = FhirInstant.fromString(yyyyMMddTZZ);
+
+      test('instantyyyyMMddTZZFromString', () {
+        expect(instantyyyyMMddTZZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTZZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromString.valueDateTime,
             equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromString.toJson(),
+            equals('2012-01-31T$timezoneOffsetString'));
+        expect(instantyyyyMMddTZZFromString.toYaml(),
+            equals('2012-01-31T$timezoneOffsetString'));
       });
-      test('dateyyyyMMddTZZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTZZDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTZZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromStringFromJson.valueDateTime,
+      final instantyyyyMMddTZZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTZZDateTime);
+
+      test('instantyyyyMMddTZZFromDateTime', () {
+        expect(instantyyyyMMddTZZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTZZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromDateTime.valueDateTime,
             equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromDateTime.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(instantyyyyMMddTZZFromDateTime.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
       });
-      test('dateyyyyMMddTZZFromYaml', () {
-        expect(dateyyyyMMddTZZFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddTZZFromYaml.valueString, equals(yyyyMMdd));
+      final instantyyyyMMddTZZFromJson = FhirInstant.fromJson(yyyyMMddTZZ);
+
+      test('instantyyyyMMddTZZFromJson', () {
+        expect(instantyyyyMMddTZZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTZZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromJson.valueDateTime,
+            equals(yyyyMMddTZZDateTime));
+        expect(instantyyyyMMddTZZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromJson.toJson(), equals(yyyyMMddTZZ));
+        expect(instantyyyyMMddTZZFromJson.toYaml(), equals(yyyyMMddTZZ));
+      });
+      final instantyyyyMMddTZZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTZZDateTime);
+
+      test('instantyyyyMMddTZZDateTimeFromJson', () {
+        expect(instantyyyyMMddTZZDateTimeFromJson.isValid, isTrue);
         expect(
-            dateyyyyMMddTZZFromYaml.valueDateTime, equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZFromYaml.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromYaml.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTZZFromYaml.toYaml(), equals(yyyyMMdd));
+            instantyyyyMMddTZZDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddTZZDateTime));
+        expect(instantyyyyMMddTZZDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTimeFromJson.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(instantyyyyMMddTZZDateTimeFromJson.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
+      });
+      final instantyyyyMMddTZZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTZZDateTimeFromString);
+
+      test('instantyyyyMMddTZZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTZZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTZZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTZZDateTime));
+        expect(instantyyyyMMddTZZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZDateTimeFromStringFromJson.toJson(),
+            equals(yyyyMMddTZZDateTime.toString()));
+        expect(instantyyyyMMddTZZDateTimeFromStringFromJson.toYaml(),
+            equals(yyyyMMddTZZDateTime.toString()));
+      });
+      final instantyyyyMMddTZZFromYaml = FhirInstant.fromYaml(yyyyMMddTZZ);
+
+      test('instantyyyyMMddTZZFromYaml', () {
+        expect(instantyyyyMMddTZZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTZZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromYaml.valueDateTime,
+            equals(yyyyMMddTZZDateTime));
+        expect(instantyyyyMMddTZZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTZZFromYaml.toJson(), equals(yyyyMMddTZZ));
+        expect(instantyyyyMMddTZZFromYaml.toYaml(), equals(yyyyMMddTZZ));
       });
     });
+
+    final yyyyMMddTHH = '2012-01-31T12';
+    final yyyyMMddTHHDateTime = DateTime(2012, 1, 31, 12);
+    final yyyyMMddTHHDateTimeFromString = DateTime.parse('2012-01-31T12');
+
     group('yyyyMMddTHH - 2012-01-31T12', () {
-      test('dateyyyyMMddTHH', () {
-        expect(dateyyyyMMddTHH.isValid, isFalse);
-        expect(dateyyyyMMddTHH.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHH.valueDateTime, equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHH.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHH.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHH.toYaml(), equals(yyyyMMdd));
+      final instantyyyyMMddTHH = FhirInstant(yyyyMMddTHH);
+
+      test('instantyyyyMMddTHH', () {
+        expect(instantyyyyMMddTHH.isValid, isTrue);
+        expect(instantyyyyMMddTHH.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHH.valueDateTime, yyyyMMddTHHDateTime);
+        expect(instantyyyyMMddTHH.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHH.toJson(), equals(yyyyMMddTHH));
+        expect(instantyyyyMMddTHH.toYaml(), equals(yyyyMMddTHH));
       });
-      test('dateyyyyMMddTHHDateTime', () {
-        expect(dateyyyyMMddTHHDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTHHDateTime.valueString, equals(yyyyMMdd));
+      final instantyyyyMMddTHHDateTime = FhirInstant(yyyyMMddTHHDateTime);
+
+      test('instantyyyyMMddTHHDateTime', () {
+        expect(instantyyyyMMddTHHDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHDateTime.valueDateTime,
+            equals(yyyyMMddTHHDateTime));
+        expect(instantyyyyMMddTHHDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHDateTime.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(instantyyyyMMddTHHDateTime.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
+      });
+      final instantyyyyMMddTHHDateTimeFromString =
+          FhirInstant(yyyyMMddTHHDateTimeFromString);
+
+      test('instantyyyyMMddTHHDateTimeFromString', () {
+        expect(instantyyyyMMddTHHDateTimeFromString.isValid, isTrue);
         expect(
-            dateyyyyMMddTHHDateTime.valueDateTime, equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTime.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTHHDateTimeFromString', () {
-        expect(dateyyyyMMddTHHDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHDateTimeFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromString.valueDateTime,
+            instantyyyyMMddTHHDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHDateTimeFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTHHFromString', () {
-        expect(dateyyyyMMddTHHFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHFromString.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromString.valueDateTime,
-            equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHFromString.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromString.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromString.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTHHFromDateTime', () {
-        expect(dateyyyyMMddTHHFromDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTHHFromDateTime.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromDateTime.valueDateTime,
-            equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHFromDateTime.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromDateTime.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromDateTime.toYaml(), equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTHHFromJson', () {
-        expect(dateyyyyMMddTHHFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHFromJson.valueString, equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHFromJson.valueDateTime, equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromJson.toYaml(), equals(yyyyMMdd));
+            instantyyyyMMddTHHDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHDateTimeFromString.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(instantyyyyMMddTHHDateTimeFromString.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
       });
-      test('dateyyyyMMddTHHDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHDateTimeFromJson.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromJson.valueDateTime,
+      final instantyyyyMMddTHHFromString = FhirInstant.fromString(yyyyMMddTHH);
+
+      test('instantyyyyMMddTHHFromString', () {
+        expect(instantyyyyMMddTHHFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromString.valueDateTime,
             equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHDateTimeFromJson.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromJson.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromJson.toYaml(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromString.toJson(), equals(yyyyMMddTHH));
+        expect(instantyyyyMMddTHHFromString.toYaml(), equals(yyyyMMddTHH));
       });
-      test('dateyyyyMMddTHHDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHDateTimeFromStringFromJson.valueString,
+      final instantyyyyMMddTHHFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHDateTime);
+
+      test('instantyyyyMMddTHHFromDateTime', () {
+        expect(instantyyyyMMddTHHFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromDateTime.valueDateTime,
+            equals(yyyyMMddTHHDateTime));
+        expect(instantyyyyMMddTHHFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromDateTime.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(instantyyyyMMddTHHFromDateTime.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
+      });
+      final instantyyyyMMddTHHFromJson = FhirInstant.fromJson(yyyyMMddTHH);
+
+      test('instantyyyyMMddTHHFromJson', () {
+        expect(instantyyyyMMddTHHFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromJson.valueDateTime,
+            equals(yyyyMMddTHHDateTime));
+        expect(instantyyyyMMddTHHFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromJson.toJson(), equals(yyyyMMddTHH));
+        expect(instantyyyyMMddTHHFromJson.toYaml(), equals(yyyyMMddTHH));
+      });
+      final instantyyyyMMddTHHDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHDateTime);
+
+      test('instantyyyyMMddTHHDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHDateTimeFromJson.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddTHHDateTime));
+        expect(instantyyyyMMddTHHDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHDateTimeFromJson.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(instantyyyyMMddTHHDateTimeFromJson.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
+      });
+      final instantyyyyMMddTHHDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHDateTimeFromString);
+
+      test('instantyyyyMMddTHHDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHDateTimeFromStringFromJson.valueString,
             equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromStringFromJson.valueDateTime,
+        expect(instantyyyyMMddTHHDateTimeFromStringFromJson.valueDateTime,
             equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHDateTimeFromStringFromJson.toString(),
+        expect(instantyyyyMMddTHHDateTimeFromStringFromJson.toString(),
             equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromStringFromJson.toJson(),
+        expect(instantyyyyMMddTHHDateTimeFromStringFromJson.toJson(),
+            equals(yyyyMMddTHHDateTime.toString()));
+        expect(instantyyyyMMddTHHDateTimeFromStringFromJson.toYaml(),
+            equals(yyyyMMddTHHDateTime.toString()));
+      });
+      final instantyyyyMMddTHHFromYaml = FhirInstant.fromYaml(yyyyMMddTHH);
+      test('instantyyyyMMddTHHFromYaml', () {
+        expect(instantyyyyMMddTHHFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromYaml.valueDateTime,
+            equals(yyyyMMddTHHDateTime));
+        expect(instantyyyyMMddTHHFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHFromYaml.toJson(), equals(yyyyMMddTHH));
+        expect(instantyyyyMMddTHHFromYaml.toYaml(), equals(yyyyMMddTHH));
+      });
+    });
+
+    final yyyyMMddTHHZ = '2012-01-31T12Z';
+    final yyyyMMddTHHZDateTime = DateTime.utc(2012, 1, 31, 12);
+    final yyyyMMddTHHZDateTimeFromString = DateTime.parse('2012-01-31T12Z');
+
+    group('yyyyMMddTHHZ - 2012-01-31TZ', () {
+      final instantyyyyMMddTHHZ = FhirInstant(yyyyMMddTHHZ);
+
+      test('instantyyyyMMddTHHZ', () {
+        expect(instantyyyyMMddTHHZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZ.valueDateTime, equals(yyyyMMddTHHZDateTime));
+        expect(instantyyyyMMddTHHZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZ.toJson(), equals(yyyyMMddTHHZ));
+        expect(instantyyyyMMddTHHZ.toYaml(), equals(yyyyMMddTHHZ));
+      });
+      final instantyyyyMMddTHHZDateTime = FhirInstant(yyyyMMddTHHZDateTime);
+
+      test('instantyyyyMMddTHHZDateTime', () {
+        expect(instantyyyyMMddTHHZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZDateTime.valueDateTime,
+            equals(yyyyMMddTHHZDateTime));
+        expect(instantyyyyMMddTHHZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZDateTime.toJson(),
+            equals(instantyyyyMMddTHHZDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHZDateTime.toYaml(),
+            equals(instantyyyyMMddTHHZDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHZDateTimeFromString);
+
+      test('instantyyyyMMddTHHZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHZDateTimeFromString.valueString,
             equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHDateTimeFromStringFromJson.toYaml(),
+        expect(instantyyyyMMddTHHZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTHHZDateTime));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHZDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHZDateTimeFromString.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHZFromString =
+          FhirInstant.fromString(yyyyMMddTHHZ);
+
+      test('instantyyyyMMddTHHZFromString', () {
+        expect(instantyyyyMMddTHHZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromString.valueDateTime,
+            equals(yyyyMMddTHHZDateTime));
+        expect(instantyyyyMMddTHHZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromString.toJson(), equals(yyyyMMddTHHZ));
+        expect(instantyyyyMMddTHHZFromString.toYaml(), equals(yyyyMMddTHHZ));
+      });
+      final instantyyyyMMddTHHZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHZDateTime);
+
+      test('instantyyyyMMddTHHZFromDateTime', () {
+        expect(instantyyyyMMddTHHZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromDateTime.valueDateTime,
+            equals(yyyyMMddTHHZDateTime));
+        expect(instantyyyyMMddTHHZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHZFromDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHZFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHZFromDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHZFromJson = FhirInstant.fromJson(yyyyMMddTHHZ);
+
+      test('instantyyyyMMddTHHZFromJson', () {
+        expect(instantyyyyMMddTHHZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromJson.valueDateTime,
+            equals(yyyyMMddTHHZDateTime));
+        expect(instantyyyyMMddTHHZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromJson.toJson(), equals(yyyyMMddTHHZ));
+        expect(instantyyyyMMddTHHZFromJson.toYaml(), equals(yyyyMMddTHHZ));
+      });
+      final instantyyyyMMddTHHZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHZDateTime);
+
+      test('instantyyyyMMddTHHZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHZDateTimeFromJson.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHZDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddTHHZDateTime));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromJson.toJson(),
+            equals(
+                instantyyyyMMddTHHZDateTimeFromJson.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromJson.toYaml(),
+            equals(
+                instantyyyyMMddTHHZDateTimeFromJson.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHZDateTimeFromString);
+
+      test('instantyyyyMMddTHHZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHZDateTimeFromStringFromJson.valueString,
             equals(yyyyMMdd));
-      });
-      test('dateyyyyMMddTHHFromYaml', () {
-        expect(dateyyyyMMddTHHFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddTHHFromYaml.valueString, equals(yyyyMMdd));
-        expect(
-            dateyyyyMMddTHHFromYaml.valueDateTime, equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHFromYaml.toString(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromYaml.toJson(), equals(yyyyMMdd));
-        expect(dateyyyyMMddTHHFromYaml.toYaml(), equals(yyyyMMdd));
-      });
-    });
-    group('yyyyMMddTHHZ - 2012-01-31T12Z', () {
-      test('dateyyyyMMddTHHZ', () {
-        expect(dateyyyyMMddTHHZ.isValid, isFalse);
-        expect(dateyyyyMMddTHHZ.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZ.valueDateTime, equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZ.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZ.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZ.toYaml(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZDateTime', () {
-        expect(dateyyyyMMddTHHZDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTHHZDateTime.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTime.valueDateTime,
+        expect(instantyyyyMMddTHHZDateTimeFromStringFromJson.valueDateTime,
             equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZDateTime.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTime.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTime.toYaml(), equals(yyyyMMddTHHZ));
+        expect(instantyyyyMMddTHHZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHZDateTimeFromStringFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHZDateTimeFromStringFromJson.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHZDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHZ);
+      test('instantyyyyMMddTHHZFromYaml', () {
+        expect(instantyyyyMMddTHHZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromYaml.valueDateTime,
             equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHZ));
-        expect(
-            dateyyyyMMddTHHZDateTimeFromString.toJson(), equals(yyyyMMddTHHZ));
-        expect(
-            dateyyyyMMddTHHZDateTimeFromString.toYaml(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZFromString', () {
-        expect(dateyyyyMMddTHHZFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHZFromString.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromString.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZFromString.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromString.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromString.toYaml(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZFromDateTime', () {
-        expect(dateyyyyMMddTHHZFromDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTHHZFromDateTime.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromDateTime.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZFromDateTime.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromDateTime.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromDateTime.toYaml(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZFromJson', () {
-        expect(dateyyyyMMddTHHZFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHZFromJson.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromJson.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZFromJson.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromJson.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromJson.toYaml(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHZDateTimeFromJson.isValid, isFalse);
-        expect(
-            dateyyyyMMddTHHZDateTimeFromJson.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(
-            dateyyyyMMddTHHZDateTimeFromJson.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromJson.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromJson.toYaml(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHZDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromStringFromJson.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZFromYaml', () {
-        expect(dateyyyyMMddTHHZFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddTHHZFromYaml.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromYaml.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZFromYaml.toString(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromYaml.toJson(), equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromYaml.toYaml(), equals(yyyyMMddTHHZ));
+        expect(instantyyyyMMddTHHZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZFromYaml.toJson(), equals(yyyyMMddTHHZ));
+        expect(instantyyyyMMddTHHZFromYaml.toYaml(), equals(yyyyMMddTHHZ));
       });
     });
-    group('yyyyMMddTHHZZ - 2012-01-31T12+04:00', () {
-      test('dateyyyyMMddTHHZZ', () {
-        expect(dateyyyyMMddTHHZZ.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZ.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZ.valueDateTime, equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZ.toString(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZ.toJson(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZ.toYaml(), equals(yyyyMMddTHHZZ));
+
+    final yyyyMMddTHHZZ = '2012-01-31T12$timezoneOffsetString';
+    final yyyyMMddTHHZZDateTime = DateTime(2012, 1, 31, 12);
+    final yyyyMMddTHHZZDateTimeFromString =
+        DateTime.parse('2012-01-31T12$timezoneOffsetString');
+
+    group('yyyyMMddTHHZZ - 2012-01-31T12:30${DateTime.now().timeZoneOffset}',
+        () {
+      final instantyyyyMMddTHHZZ = FhirInstant(yyyyMMddTHHZZ);
+
+      test('instantyyyyMMddTHHZZ', () {
+        expect(instantyyyyMMddTHHZZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZ.valueString, equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZZ.valueDateTime, equals(yyyyMMddTHHZZDateTime));
+        expect(instantyyyyMMddTHHZZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZ.toJson(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZ.toYaml(), equals(yyyyMMddTHHZZ));
       });
-      test('dateyyyyMMddTHHZZDateTime', () {
-        expect(dateyyyyMMddTHHZZDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZDateTime.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTime.valueDateTime,
+      final instantyyyyMMddTHHZZDateTime = FhirInstant(yyyyMMddTHHZZDateTime);
+      test('instantyyyyMMddTHHZZDateTime', () {
+        expect(instantyyyyMMddTHHZZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZDateTime.valueDateTime?.toUtc(),
+            equals(yyyyMMddTHHZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHZZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZDateTime.toJson(),
+            equals(instantyyyyMMddTHHZZDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHZZDateTime.toYaml(),
+            equals(instantyyyyMMddTHHZZDateTime.valueDateTime.toString()));
+      });
+
+      final instantyyyyMMddTHHZZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHZZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHZZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTHHZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHZZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHZZDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHZZDateTimeFromString.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHZZFromString =
+          FhirInstant.fromString(yyyyMMddTHHZZ);
+
+      test('instantyyyyMMddTHHZZFromString', () {
+        expect(instantyyyyMMddTHHZZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromString.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZDateTime.toString(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTime.toJson(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTime.toYaml(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromString.toJson(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromString.toYaml(), equals(yyyyMMddTHHZZ));
       });
-      test('dateyyyyMMddTHHZZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHZZDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHZZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHZZDateTime);
+
+      test('instantyyyyMMddTHHZZFromDateTime', () {
+        expect(instantyyyyMMddTHHZZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHZZFromDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHZZFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHZZFromDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHZZFromString', () {
-        expect(dateyyyyMMddTHHZZFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZFromString.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromString.valueDateTime,
+      final instantyyyyMMddTHHZZFromJson = FhirInstant.fromJson(yyyyMMddTHHZZ);
+
+      test('instantyyyyMMddTHHZZFromJson', () {
+        expect(instantyyyyMMddTHHZZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromJson.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZFromString.toString(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromString.toJson(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromString.toYaml(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromJson.toJson(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromJson.toYaml(), equals(yyyyMMddTHHZZ));
       });
-      test('dateyyyyMMddTHHZZFromDateTime', () {
-        expect(dateyyyyMMddTHHZZFromDateTime.isValid, isFalse);
+      final instantyyyyMMddTHHZZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHZZDateTime);
+
+      test('instantyyyyMMddTHHZZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHZZDateTimeFromJson.isValid, isTrue);
         expect(
-            dateyyyyMMddTHHZZFromDateTime.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromDateTime.valueDateTime,
+            instantyyyyMMddTHHZZDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZFromDateTime.toString(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromDateTime.toJson(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromDateTime.toYaml(), equals(yyyyMMddTHHZZ));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromJson.toJson(),
+            equals(
+                instantyyyyMMddTHHZZDateTimeFromJson.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromJson.toYaml(),
+            equals(
+                instantyyyyMMddTHHZZDateTimeFromJson.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHZZFromJson', () {
-        expect(dateyyyyMMddTHHZZFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZFromJson.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromJson.valueDateTime,
+      final instantyyyyMMddTHHZZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHZZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHZZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHZZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHZZDateTimeFromStringFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHZZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHZZDateTimeFromStringFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHZZFromYaml = FhirInstant.fromYaml(yyyyMMddTHHZZ);
+      test('instantyyyyMMddTHHZZFromYaml', () {
+        expect(instantyyyyMMddTHHZZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHZZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromYaml.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZFromJson.toString(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromJson.toJson(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromJson.toYaml(), equals(yyyyMMddTHHZZ));
-      });
-      test('dateyyyyMMddTHHZZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHZZDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHZZ));
-        expect(
-            dateyyyyMMddTHHZZDateTimeFromJson.toJson(), equals(yyyyMMddTHHZZ));
-        expect(
-            dateyyyyMMddTHHZZDateTimeFromJson.toYaml(), equals(yyyyMMddTHHZZ));
-      });
-      test('dateyyyyMMddTHHZZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHZZDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromStringFromJson.valueDateTime,
-            equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHZZ));
-      });
-      test('dateyyyyMMddTHHZZFromYaml', () {
-        expect(dateyyyyMMddTHHZZFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddTHHZZFromYaml.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromYaml.valueDateTime,
-            equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZFromYaml.toString(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromYaml.toJson(), equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromYaml.toYaml(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHZZFromYaml.toJson(), equals(yyyyMMddTHHZZ));
+        expect(instantyyyyMMddTHHZZFromYaml.toYaml(), equals(yyyyMMddTHHZZ));
       });
     });
-    group('yyyyMMddTHHmm - 2012-01-31T12:30', () {
-      test('dateyyyyMMddTHHmm', () {
-        expect(dateyyyyMMddTHHmm.isValid, isFalse);
-        expect(dateyyyyMMddTHHmm.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmm.valueDateTime, equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmm.toString(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmm.toJson(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmm.toYaml(), equals(yyyyMMddTHHmm));
+
+    final yyyyMMddTHHmm = '2012-01-31T12:30';
+    final yyyyMMddTHHmmDateTime = DateTime(2012, 1, 31, 12, 30);
+    final yyyyMMddTHHmmDateTimeFromString = DateTime.parse('2012-01-31T12:30');
+
+    group('yyyyMMddTHHmm - 2012-01-31T12:30+04:00', () {
+      final instantyyyyMMddTHHmm = FhirInstant(yyyyMMddTHHmm);
+
+      test('instantyyyyMMddTHHmm', () {
+        expect(instantyyyyMMddTHHmm.isValid, isTrue);
+        expect(instantyyyyMMddTHHmm.valueString, equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmm.valueDateTime, equals(yyyyMMddTHHmmDateTime));
+        expect(instantyyyyMMddTHHmm.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmm.toJson(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmm.toYaml(), equals(yyyyMMddTHHmm));
       });
-      test('dateyyyyMMddTHHmmDateTime', () {
-        expect(dateyyyyMMddTHHmmDateTime.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmDateTime.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmDateTime = FhirInstant(yyyyMMddTHHmmDateTime);
+
+      test('instantyyyyMMddTHHmmDateTime', () {
+        expect(instantyyyyMMddTHHmmDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmDateTime.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmDateTime.toString(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTime.toJson(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTime.toYaml(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmDateTimeFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHmmDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmDateTimeFromString.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmDateTimeFromString.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmFromString', () {
-        expect(dateyyyyMMddTHHmmFromString.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmFromString.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromString.valueDateTime,
+      final instantyyyyMMddTHHmmFromString =
+          FhirInstant.fromString(yyyyMMddTHHmm);
+      test('instantyyyyMMddTHHmmFromString', () {
+        expect(instantyyyyMMddTHHmmFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromString.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmFromString.toString(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromString.toJson(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromString.toYaml(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromString.toJson(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromString.toYaml(), equals(yyyyMMddTHHmm));
       });
-      test('dateyyyyMMddTHHmmFromDateTime', () {
-        expect(dateyyyyMMddTHHmmFromDateTime.isValid, isFalse);
-        expect(
-            dateyyyyMMddTHHmmFromDateTime.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmDateTime);
+
+      test('instantyyyyMMddTHHmmFromDateTime', () {
+        expect(instantyyyyMMddTHHmmFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmFromDateTime.toString(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromDateTime.toJson(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromDateTime.toYaml(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmFromDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmFromDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmFromJson', () {
-        expect(dateyyyyMMddTHHmmFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmFromJson.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmFromJson = FhirInstant.fromJson(yyyyMMddTHHmm);
+
+      test('instantyyyyMMddTHHmmFromJson', () {
+        expect(instantyyyyMMddTHHmmFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromJson.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmFromJson.toString(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromJson.toJson(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromJson.toYaml(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromJson.toJson(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromJson.toYaml(), equals(yyyyMMddTHHmm));
       });
-      test('dateyyyyMMddTHHmmDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmDateTimeFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmDateTime);
+
+      test('instantyyyyMMddTHHmmDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmDateTimeFromJson.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmm));
         expect(
-            dateyyyyMMddTHHmmDateTimeFromJson.toJson(), equals(yyyyMMddTHHmm));
+            instantyyyyMMddTHHmmDateTimeFromJson.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmDateTimeFromJson.toYaml(), equals(yyyyMMddTHHmm));
+            instantyyyyMMddTHHmmDateTimeFromJson.toJson(),
+            equals(
+                instantyyyyMMddTHHmmDateTimeFromJson.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHmmDateTimeFromJson.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmDateTimeFromJson.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHmmDateTimeFromStringFromJson.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromStringFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHmmDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmDateTimeFromStringFromJson.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmDateTimeFromStringFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmDateTimeFromStringFromJson.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmFromYaml', () {
-        expect(dateyyyyMMddTHHmmFromYaml.isValid, isFalse);
-        expect(dateyyyyMMddTHHmmFromYaml.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmFromYaml = FhirInstant.fromYaml(yyyyMMddTHHmm);
+
+      test('instantyyyyMMddTHHmmFromYaml', () {
+        expect(instantyyyyMMddTHHmmFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromYaml.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmFromYaml.toString(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromYaml.toJson(), equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromYaml.toYaml(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmFromYaml.toJson(), equals(yyyyMMddTHHmm));
+        expect(instantyyyyMMddTHHmmFromYaml.toYaml(), equals(yyyyMMddTHHmm));
       });
     });
-    group('yyyyMMddTHHmmZ - 2012-01-31T12:30Z', () {
-      test('dateyyyyMMddTHHmmZ', () {
-        expect(dateyyyyMMddTHHmmZ.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZ.valueString, equals(yyyyMMddTHHmmZ));
-        expect(
-            dateyyyyMMddTHHmmZ.valueDateTime, equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZ.toString(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZ.toJson(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZ.toYaml(), equals(yyyyMMddTHHmmZ));
-      });
-      test('dateyyyyMMddTHHmmZDateTime', () {
-        expect(dateyyyyMMddTHHmmZDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZDateTime.valueString, equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTime.valueDateTime,
+
+    final yyyyMMddTHHmmZ = '2012-01-31T12:30Z';
+    final yyyyMMddTHHmmZDateTime = DateTime.utc(2012, 1, 31, 12, 30);
+    final yyyyMMddTHHmmZDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30Z');
+
+    group('yyyyMMddTHHmmZ - 2012-01-31T12:30+04:00', () {
+      final instantyyyyMMddTHHmmZ = FhirInstant(yyyyMMddTHHmmZ);
+
+      test('instantyyyyMMddTHHmmZ', () {
+        expect(instantyyyyMMddTHHmmZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZ.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZDateTime.toString(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTime.toJson(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTime.toYaml(), equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZ.toJson(), equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZ.toYaml(), equals(yyyyMMddTHHmmZ));
       });
-      test('dateyyyyMMddTHHmmZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmZDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHmmZDateTime = FhirInstant(yyyyMMddTHHmmZDateTime);
+
+      test('instantyyyyMMddTHHmmZDateTime', () {
+        expect(instantyyyyMMddTHHmmZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZDateTime.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmZDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmZDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmZDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmZFromString', () {
-        expect(dateyyyyMMddTHHmmZFromString.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmZFromString.valueString, equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromString.valueDateTime,
+      final instantyyyyMMddTHHmmZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZFromString.toString(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromString.toJson(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromString.toYaml(), equals(yyyyMMddTHHmmZ));
-      });
-      test('dateyyyyMMddTHHmmZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmZFromDateTime.valueString, equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromDateTime.valueDateTime,
+            instantyyyyMMddTHHmmZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmZDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmZDateTimeFromString.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmZFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmZ);
+
+      test('instantyyyyMMddTHHmmZFromString', () {
+        expect(instantyyyyMMddTHHmmZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromString.valueDateTime,
+            equals(yyyyMMddTHHmmZDateTime));
+        expect(instantyyyyMMddTHHmmZFromString.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZFromString.toJson(), equals(yyyyMMddTHHmmZ));
+        expect(
+            instantyyyyMMddTHHmmZFromString.toYaml(), equals(yyyyMMddTHHmmZ));
+      });
+      final instantyyyyMMddTHHmmZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmZDateTime);
+
+      test('instantyyyyMMddTHHmmZFromDateTime', () {
+        expect(instantyyyyMMddTHHmmZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromDateTime.valueDateTime,
+            equals(yyyyMMddTHHmmZDateTime));
+        expect(instantyyyyMMddTHHmmZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmZFromDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmZFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmZFromDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHmmZFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmZ);
+
+      test('instantyyyyMMddTHHmmZFromJson', () {
+        expect(instantyyyyMMddTHHmmZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmZDateTime));
+        expect(instantyyyyMMddTHHmmZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromJson.toJson(), equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZFromJson.toYaml(), equals(yyyyMMddTHHmmZ));
+      });
+      final instantyyyyMMddTHHmmZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmZDateTime);
+
+      test('instantyyyyMMddTHHmmZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
         expect(
-            dateyyyyMMddTHHmmZFromDateTime.toString(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromDateTime.toJson(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromDateTime.toYaml(), equals(yyyyMMddTHHmmZ));
+            instantyyyyMMddTHHmmZDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmZDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmZDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmZDateTimeFromJson.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmZFromJson', () {
-        expect(dateyyyyMMddTHHmmZFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZFromJson.valueString, equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHmmZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZDateTimeFromStringFromJson.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZFromJson.toString(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromJson.toJson(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromJson.toYaml(), equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmZDateTimeFromStringFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmZDateTimeFromStringFromJson.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmZDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmZFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmZ);
+
+      test('instantyyyyMMddTHHmmZFromYaml', () {
+        expect(instantyyyyMMddTHHmmZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromYaml.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromJson.toYaml(),
-            equals(yyyyMMddTHHmmZ));
-      });
-      test('dateyyyyMMddTHHmmZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHmmZDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromStringFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHmmZ));
-      });
-      test('dateyyyyMMddTHHmmZFromYaml', () {
-        expect(dateyyyyMMddTHHmmZFromYaml.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZFromYaml.valueString, equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromYaml.valueDateTime,
-            equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZFromYaml.toString(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromYaml.toJson(), equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromYaml.toYaml(), equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZFromYaml.toJson(), equals(yyyyMMddTHHmmZ));
+        expect(instantyyyyMMddTHHmmZFromYaml.toYaml(), equals(yyyyMMddTHHmmZ));
       });
     });
-    group('yyyyMMddTHHmmZZ - 2012-01-31T12:30+04:00', () {
-      test('dateyyyyMMddTHHmmZZ', () {
-        expect(dateyyyyMMddTHHmmZZ.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZZ.valueString, equals(yyyyMMddTHHmmZZ));
-        expect(
-            dateyyyyMMddTHHmmZZ.valueDateTime, equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZ.toString(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZ.toJson(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZ.toYaml(), equals(yyyyMMddTHHmmZZ));
-      });
-      test('dateyyyyMMddTHHmmZZDateTime', () {
-        expect(dateyyyyMMddTHHmmZZDateTime.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmZZDateTime.valueString, equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTime.valueDateTime,
+
+    final yyyyMMddTHHmmZZ = '2012-01-31T12:30-05:00';
+    final yyyyMMddTHHmmZZDateTime = DateTime(2012, 1, 31, 12, 30).toUtc();
+    final yyyyMMddTHHmmZZDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30-05:00');
+
+    group('yyyyMMddTHHmmZZ - 2012-01-31T12:30$timezoneOffsetString', () {
+      final instantyyyyMMddTHHmmZZ = FhirInstant(yyyyMMddTHHmmZZ);
+
+      test('instantyyyyMMddTHHmmZZ', () {
+        expect(instantyyyyMMddTHHmmZZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZ.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZDateTime.toString(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTime.toJson(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTime.toYaml(), equals(yyyyMMddTHHmmZZ));
+        expect(instantyyyyMMddTHHmmZZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZ.toJson(), equals(yyyyMMddTHHmmZZ));
+        expect(instantyyyyMMddTHHmmZZ.toYaml(), equals(yyyyMMddTHHmmZZ));
       });
-      test('dateyyyyMMddTHHmmZZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmZZDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHmmZZDateTime =
+          FhirInstant(yyyyMMddTHHmmZZDateTime);
+
+      test('instantyyyyMMddTHHmmZZDateTime', () {
+        expect(instantyyyyMMddTHHmmZZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZDateTime.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmZZ));
+        expect(instantyyyyMMddTHHmmZZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmZZDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmZZDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmZZDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmZZFromString', () {
-        expect(dateyyyyMMddTHHmmZZFromString.isValid, isTrue);
+      final instantyyyyMMddTHHmmZZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmZZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmZZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTHHmmZZDateTime));
+        expect(instantyyyyMMddTHHmmZZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmZZFromString.valueString, equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromString.valueDateTime,
-            equals(yyyyMMddTHHmmZZDateTime));
+            instantyyyyMMddTHHmmZZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmZZDateTimeFromString.valueDateTime
+                .toString()));
         expect(
-            dateyyyyMMddTHHmmZZFromString.toString(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromString.toJson(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromString.toYaml(), equals(yyyyMMddTHHmmZZ));
+            instantyyyyMMddTHHmmZZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmZZDateTimeFromString.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmZZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmZZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmZZFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmZZ);
+
+      test('instantyyyyMMddTHHmmZZFromString', () {
+        expect(instantyyyyMMddTHHmmZZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZFromString.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZFromDateTime.toString(),
-            equals(yyyyMMddTHHmmZZ));
+        expect(instantyyyyMMddTHHmmZZFromString.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmZZFromDateTime.toJson(), equals(yyyyMMddTHHmmZZ));
+            instantyyyyMMddTHHmmZZFromString.toJson(), equals(yyyyMMddTHHmmZZ));
         expect(
-            dateyyyyMMddTHHmmZZFromDateTime.toYaml(), equals(yyyyMMddTHHmmZZ));
+            instantyyyyMMddTHHmmZZFromString.toYaml(), equals(yyyyMMddTHHmmZZ));
       });
-      test('dateyyyyMMddTHHmmZZFromJson', () {
-        expect(dateyyyyMMddTHHmmZZFromJson.isValid, isTrue);
+      final instantyyyyMMddTHHmmZZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmZZDateTime);
+
+      test('instantyyyyMMddTHHmmZZFromDateTime', () {
+        expect(instantyyyyMMddTHHmmZZFromDateTime.isValid, isTrue);
         expect(
-            dateyyyyMMddTHHmmZZFromJson.valueString, equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromJson.valueDateTime,
+            instantyyyyMMddTHHmmZZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZFromJson.toString(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromJson.toJson(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromJson.toYaml(), equals(yyyyMMddTHHmmZZ));
-      });
-      test('dateyyyyMMddTHHmmZZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmZZDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromJson.toYaml(),
-            equals(yyyyMMddTHHmmZZ));
-      });
-      test('dateyyyyMMddTHHmmZZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHmmZZDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromStringFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHmmZZ));
-      });
-      test('dateyyyyMMddTHHmmZZFromYaml', () {
-        expect(dateyyyyMMddTHHmmZZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZFromDateTime.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmZZFromYaml.valueString, equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromYaml.valueDateTime,
+            instantyyyyMMddTHHmmZZFromDateTime.toJson(),
+            equals(
+                instantyyyyMMddTHHmmZZFromDateTime.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHmmZZFromDateTime.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmZZFromDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHmmZZFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmZZ);
+
+      test('instantyyyyMMddTHHmmZZFromJson', () {
+        expect(instantyyyyMMddTHHmmZZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZFromJson.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZFromYaml.toString(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromYaml.toJson(), equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromYaml.toYaml(), equals(yyyyMMddTHHmmZZ));
+        expect(instantyyyyMMddTHHmmZZFromJson.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZZFromJson.toJson(), equals(yyyyMMddTHHmmZZ));
+        expect(
+            instantyyyyMMddTHHmmZZFromJson.toYaml(), equals(yyyyMMddTHHmmZZ));
+      });
+      final instantyyyyMMddTHHmmZZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmZZDateTime);
+
+      test('instantyyyyMMddTHHmmZZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmZZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmZZDateTime));
+        expect(instantyyyyMMddTHHmmZZDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZZDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmZZDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmZZDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmZZDateTimeFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmZZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmZZDateTimeFromStringFromJson', () {
+        expect(
+            instantyyyyMMddTHHmmZZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmZZDateTime));
+        expect(instantyyyyMMddTHHmmZZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmZZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmZZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmZZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmZZFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmZZ);
+
+      test('instantyyyyMMddTHHmmZZFromYaml', () {
+        expect(instantyyyyMMddTHHmmZZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmZZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmZZFromYaml.valueDateTime,
+            equals(yyyyMMddTHHmmZZDateTime));
+        expect(instantyyyyMMddTHHmmZZFromYaml.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmZZFromYaml.toJson(), equals(yyyyMMddTHHmmZZ));
+        expect(
+            instantyyyyMMddTHHmmZZFromYaml.toYaml(), equals(yyyyMMddTHHmmZZ));
       });
     });
-    group('yyyyMMddTHHmmss - 2012-01-31T12:30:59', () {
-      test('dateyyyyMMddTHHmmss', () {
-        expect(dateyyyyMMddTHHmmss.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmss.valueString, equals(yyyyMMddTHHmmss));
-        expect(
-            dateyyyyMMddTHHmmss.valueDateTime, equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmss.toString(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmss.toJson(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmss.toYaml(), equals(yyyyMMddTHHmmss));
-      });
-      test('dateyyyyMMddTHHmmssDateTime', () {
-        expect(dateyyyyMMddTHHmmssDateTime.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssDateTime.valueString, equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTime.valueDateTime,
+
+    final yyyyMMddTHHmmss = '2012-01-31T12:30:59';
+    final yyyyMMddTHHmmssDateTime = DateTime(2012, 1, 31, 12, 30, 59);
+    final yyyyMMddTHHmmssDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59');
+
+    group('yyyyMMddTHHmmss - 2012-01-31T12:30+04:00', () {
+      final instantyyyyMMddTHHmmss = FhirInstant(yyyyMMddTHHmmss);
+      test('instantyyyyMMddTHHmmss', () {
+        expect(instantyyyyMMddTHHmmss.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmss.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmss.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssDateTime.toString(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTime.toJson(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTime.toYaml(), equals(yyyyMMddTHHmmss));
+        expect(instantyyyyMMddTHHmmss.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmss.toJson(), equals(yyyyMMddTHHmmss));
+        expect(instantyyyyMMddTHHmmss.toYaml(), equals(yyyyMMddTHHmmss));
       });
-      test('dateyyyyMMddTHHmmssDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmssDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHmmssDateTime =
+          FhirInstant(yyyyMMddTHHmmssDateTime);
+
+      test('instantyyyyMMddTHHmmssDateTime', () {
+        expect(instantyyyyMMddTHHmmssDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmss));
+        expect(instantyyyyMMddTHHmmssDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmssDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmssFromString', () {
-        expect(dateyyyyMMddTHHmmssFromString.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssFromString.valueString, equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromString.valueDateTime,
+      final instantyyyyMMddTHHmmssDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmssDateTimeFromString);
+      test('instantyyyyMMddTHHmmssDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmssDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
+        expect(instantyyyyMMddTHHmmssDateTimeFromString.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssFromString.toString(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromString.toJson(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromString.toYaml(), equals(yyyyMMddTHHmmss));
+            instantyyyyMMddTHHmmssDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmssDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmssDateTimeFromString.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmssFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssFromDateTime.valueString,
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmssFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmss);
+
+      test('instantyyyyMMddTHHmmssFromString', () {
+        expect(instantyyyyMMddTHHmmssFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromString.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssFromDateTime.toString(),
-            equals(yyyyMMddTHHmmss));
+        expect(instantyyyyMMddTHHmmssFromString.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssFromDateTime.toJson(), equals(yyyyMMddTHHmmss));
+            instantyyyyMMddTHHmmssFromString.toJson(), equals(yyyyMMddTHHmmss));
         expect(
-            dateyyyyMMddTHHmmssFromDateTime.toYaml(), equals(yyyyMMddTHHmmss));
+            instantyyyyMMddTHHmmssFromString.toYaml(), equals(yyyyMMddTHHmmss));
       });
-      test('dateyyyyMMddTHHmmssFromJson', () {
-        expect(dateyyyyMMddTHHmmssFromJson.isValid, isTrue);
+      final instantyyyyMMddTHHmmssFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmssDateTime);
+
+      test('instantyyyyMMddTHHmmssFromDateTime', () {
+        expect(instantyyyyMMddTHHmmssFromDateTime.isValid, isTrue);
         expect(
-            dateyyyyMMddTHHmmssFromJson.valueString, equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromJson.valueDateTime,
+            instantyyyyMMddTHHmmssFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssFromJson.toString(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromJson.toJson(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromJson.toYaml(), equals(yyyyMMddTHHmmss));
-      });
-      test('dateyyyyMMddTHHmmssDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmssDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromJson.toYaml(),
-            equals(yyyyMMddTHHmmss));
-      });
-      test('dateyyyyMMddTHHmmssDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHmmssDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromStringFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHmmss));
-      });
-      test('dateyyyyMMddTHHmmssFromUnits', () {
-        expect(dateyyyyMMddTHHmmssFromUnits.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssFromDateTime.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssFromUnits.valueString, equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromUnits.valueDateTime,
-            equals(yyyyMMddTHHmmssDateTime));
+            instantyyyyMMddTHHmmssFromDateTime.toJson(),
+            equals(
+                instantyyyyMMddTHHmmssFromDateTime.valueDateTime.toString()));
         expect(
-            dateyyyyMMddTHHmmssFromUnits.toString(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromUnits.toJson(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromUnits.toYaml(), equals(yyyyMMddTHHmmss));
+            instantyyyyMMddTHHmmssFromDateTime.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmssFromDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmssFromYaml', () {
-        expect(dateyyyyMMddTHHmmssFromYaml.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssFromYaml.valueString, equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmssFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmss);
+
+      test('instantyyyyMMddTHHmmssFromJson', () {
+        expect(instantyyyyMMddTHHmmssFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssFromYaml.toString(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromYaml.toJson(), equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromYaml.toYaml(), equals(yyyyMMddTHHmmss));
+        expect(instantyyyyMMddTHHmmssFromJson.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssFromJson.toJson(), equals(yyyyMMddTHHmmss));
+        expect(
+            instantyyyyMMddTHHmmssFromJson.toYaml(), equals(yyyyMMddTHHmmss));
+      });
+      final instantyyyyMMddTHHmmssDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssDateTime);
+      test('instantyyyyMMddTHHmmssDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmssDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssDateTimeFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssDateTime));
+        expect(instantyyyyMMddTHHmmssDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssDateTimeFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssDateTimeFromStringFromJson', () {
+        expect(
+            instantyyyyMMddTHHmmssDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssDateTime));
+        expect(instantyyyyMMddTHHmmssDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          timezoneOffset: timezoneOffsetInt);
+      test('instantyyyyMMddTHHmmssFromUnits', () {
+        expect(instantyyyyMMddTHHmmssFromUnits.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromUnits.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddTHHmmssFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromUnits.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddTHHmmssFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmss);
+      test('instantyyyyMMddTHHmmssFromYaml', () {
+        expect(instantyyyyMMddTHHmmssFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssFromYaml.valueDateTime,
+            equals(yyyyMMddTHHmmssDateTime));
+        expect(instantyyyyMMddTHHmmssFromYaml.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssFromYaml.toJson(), equals(yyyyMMddTHHmmss));
+        expect(
+            instantyyyyMMddTHHmmssFromYaml.toYaml(), equals(yyyyMMddTHHmmss));
       });
     });
-    group('yyyyMMddTHHmmssZ - 2012-01-31T12:30:59Z', () {
-      test('dateyyyyMMddTHHmmssZ', () {
-        expect(dateyyyyMMddTHHmmssZ.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZ.valueString, equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZ.valueDateTime,
+
+    final yyyyMMddTHHmmssZ = '2012-01-31T12:30:59Z';
+    final yyyyMMddTHHmmssZDateTime = DateTime.utc(2012, 1, 31, 12, 30, 59);
+    final yyyyMMddTHHmmssZDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59Z');
+
+    group('yyyyMMddTHHmmssZ - 2012-01-31T12:30+04:00', () {
+      final instantyyyyMMddTHHmmssZ = FhirInstant(yyyyMMddTHHmmssZ);
+
+      test('instantyyyyMMddTHHmmssZ', () {
+        expect(instantyyyyMMddTHHmmssZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZ.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
-        expect(dateyyyyMMddTHHmmssZ.toString(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZ.toJson(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZ.toYaml(), equals(yyyyMMddTHHmmssZ));
+        expect(instantyyyyMMddTHHmmssZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZ.toJson(), equals(yyyyMMddTHHmmssZ));
+        expect(instantyyyyMMddTHHmmssZ.toYaml(), equals(yyyyMMddTHHmmssZ));
       });
-      test('dateyyyyMMddTHHmmssZDateTime', () {
-        expect(dateyyyyMMddTHHmmssZDateTime.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssZDateTime.valueString, equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmssZDateTime =
+          FhirInstant(yyyyMMddTHHmmssZDateTime);
+
+      test('instantyyyyMMddTHHmmssZDateTime', () {
+        expect(instantyyyyMMddTHHmmssZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
-        expect(
-            dateyyyyMMddTHHmmssZDateTime.toString(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTime.toJson(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTime.toYaml(), equals(yyyyMMddTHHmmssZ));
+        expect(instantyyyyMMddTHHmmssZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssZDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmssZDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssZDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmssZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmssZDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHmmssZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmssZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmssZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmssZ));
-      });
-      test('dateyyyyMMddTHHmmssZFromString', () {
-        expect(dateyyyyMMddTHHmmssZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZFromString.valueString,
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssZDateTime));
-        expect(dateyyyyMMddTHHmmssZFromString.toString(),
-            equals(yyyyMMddTHHmmssZ));
+        expect(instantyyyyMMddTHHmmssZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssZFromString.toJson(), equals(yyyyMMddTHHmmssZ));
+            instantyyyyMMddTHHmmssZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmssZDateTimeFromString.valueDateTime
+                .toString()));
         expect(
-            dateyyyyMMddTHHmmssZFromString.toYaml(), equals(yyyyMMddTHHmmssZ));
+            instantyyyyMMddTHHmmssZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmssZDateTimeFromString.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmssZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmssZFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmssZ);
+
+      FhirInstant.fromYaml(yyyyMMddTHHmmssZ);
+      test('instantyyyyMMddTHHmmssZFromString', () {
+        expect(instantyyyyMMddTHHmmssZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromString.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
-        expect(dateyyyyMMddTHHmmssZFromDateTime.toString(),
+        expect(instantyyyyMMddTHHmmssZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromString.toJson(),
             equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromDateTime.toJson(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssZ));
-      });
-      test('dateyyyyMMddTHHmmssZFromJson', () {
-        expect(dateyyyyMMddTHHmmssZFromJson.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssZFromJson.valueString, equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssZDateTime));
-        expect(
-            dateyyyyMMddTHHmmssZFromJson.toString(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromJson.toJson(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromJson.toYaml(), equals(yyyyMMddTHHmmssZ));
-      });
-      test('dateyyyyMMddTHHmmssZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmssZDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssZDateTime));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromJson.toYaml(),
+        expect(instantyyyyMMddTHHmmssZFromString.toYaml(),
             equals(yyyyMMddTHHmmssZ));
       });
-      test('dateyyyyMMddTHHmmssZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHmmssZDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromStringFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmssZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmssZDateTime);
+
+      test('instantyyyyMMddTHHmmssZFromDateTime', () {
+        expect(instantyyyyMMddTHHmmssZFromDateTime.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromStringFromJson.toString(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZDateTimeFromStringFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssZ));
+        expect(
+            instantyyyyMMddTHHmmssZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssZFromDateTime.toJson(),
+            equals(
+                instantyyyyMMddTHHmmssZFromDateTime.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHmmssZFromDateTime.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmssZFromDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmssZFromUnits', () {
-        expect(dateyyyyMMddTHHmmssZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZFromUnits.valueString,
-            equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromUnits.valueDateTime,
+      final instantyyyyMMddTHHmmssZFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssZ);
+
+      test('instantyyyyMMddTHHmmssZFromJson', () {
+        expect(instantyyyyMMddTHHmmssZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
+        expect(instantyyyyMMddTHHmmssZFromJson.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssZFromUnits.toString(), equals(yyyyMMddTHHmmssZ));
+            instantyyyyMMddTHHmmssZFromJson.toJson(), equals(yyyyMMddTHHmmssZ));
         expect(
-            dateyyyyMMddTHHmmssZFromUnits.toJson(), equals(yyyyMMddTHHmmssZ));
-        expect(
-            dateyyyyMMddTHHmmssZFromUnits.toYaml(), equals(yyyyMMddTHHmmssZ));
+            instantyyyyMMddTHHmmssZFromJson.toYaml(), equals(yyyyMMddTHHmmssZ));
       });
-      test('dateyyyyMMddTHHmmssZFromYaml', () {
-        expect(dateyyyyMMddTHHmmssZFromYaml.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssZFromYaml.valueString, equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmssZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssZDateTime);
+
+      test('instantyyyyMMddTHHmmssZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmssZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
+        expect(instantyyyyMMddTHHmmssZDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssZFromYaml.toString(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromYaml.toJson(), equals(yyyyMMddTHHmmssZ));
-        expect(dateyyyyMMddTHHmmssZFromYaml.toYaml(), equals(yyyyMMddTHHmmssZ));
+            instantyyyyMMddTHHmmssZDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssZDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssZDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssZDateTimeFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssZDateTimeFromStringFromJson', () {
+        expect(
+            instantyyyyMMddTHHmmssZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssZDateTime));
+        expect(instantyyyyMMddTHHmmssZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssZFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          timezoneOffset: 0,
+          isUTC: true);
+
+      test('instantyyyyMMddTHHmmssZFromUnits', () {
+        expect(instantyyyyMMddTHHmmssZFromUnits.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromUnits.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddTHHmmssZFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromUnits.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddTHHmmssZFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmssZ);
+      test('instantyyyyMMddTHHmmssZFromYaml', () {
+        expect(instantyyyyMMddTHHmmssZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZFromYaml.valueDateTime,
+            equals(yyyyMMddTHHmmssZDateTime));
+        expect(instantyyyyMMddTHHmmssZFromYaml.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssZFromYaml.toJson(), equals(yyyyMMddTHHmmssZ));
+        expect(
+            instantyyyyMMddTHHmmssZFromYaml.toYaml(), equals(yyyyMMddTHHmmssZ));
       });
     });
-    group('yyyyMMddTHHmmssZZ - 2012-01-31T12:30:59+04:00', () {
-      test('dateyyyyMMddTHHmmssZZ', () {
-        expect(dateyyyyMMddTHHmmssZZ.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZ.valueString, equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZ.valueDateTime,
+
+    final yyyyMMddTHHmmssZZ = '2012-01-31T12:30:59$timezoneOffsetString';
+    final yyyyMMddTHHmmssZZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
+    final yyyyMMddTHHmmssZZDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59$timezoneOffsetString');
+
+    group('yyyyMMddTHHmmssZZ - 2012-01-31T12:30:59$timezoneOffsetString', () {
+      final instantyyyyMMddTHHmmssZZ = FhirInstant(yyyyMMddTHHmmssZZ);
+
+      test('instantyyyyMMddTHHmmssZZ', () {
+        expect(instantyyyyMMddTHHmmssZZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZ.valueDateTime,
             equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZ.toString(), equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZ.toJson(), equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZ.toYaml(), equals(yyyyMMddTHHmmssZZ));
+        expect(instantyyyyMMddTHHmmssZZ.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZ.toJson(), equals(yyyyMMddTHHmmssZZ));
+        expect(instantyyyyMMddTHHmmssZZ.toYaml(), equals(yyyyMMddTHHmmssZZ));
       });
-      test('dateyyyyMMddTHHmmssZZDateTime', () {
-        expect(dateyyyyMMddTHHmmssZZDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZDateTime.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmssZZDateTime =
+          FhirInstant(yyyyMMddTHHmmssZZDateTime);
+
+      test('instantyyyyMMddTHHmmssZZDateTime', () {
+        expect(instantyyyyMMddTHHmmssZZDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZDateTime.toString(),
-            equals(yyyyMMddTHHmmssZZ));
+        expect(instantyyyyMMddTHHmmssZZDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssZZDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmssZZDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssZZDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHmmssZZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmssZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssZZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTHHmmssZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssZZDateTime.toJson(), equals(yyyyMMddTHHmmssZZ));
+            instantyyyyMMddTHHmmssZZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmssZZDateTimeFromString.valueDateTime
+                .toString()));
         expect(
-            dateyyyyMMddTHHmmssZZDateTime.toYaml(), equals(yyyyMMddTHHmmssZZ));
+            instantyyyyMMddTHHmmssZZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmssZZDateTimeFromString.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmssZZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmssZZ));
-      });
-      test('dateyyyyMMddTHHmmssZZFromString', () {
-        expect(dateyyyyMMddTHHmmssZZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZFromString.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZFromString.toString(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromString.toJson(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromString.toYaml(),
-            equals(yyyyMMddTHHmmssZZ));
-      });
-      test('dateyyyyMMddTHHmmssZZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssZZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromDateTime.valueDateTime,
-            equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZFromDateTime.toString(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromDateTime.toJson(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssZZ));
-      });
-      test('dateyyyyMMddTHHmmssZZFromJson', () {
-        expect(dateyyyyMMddTHHmmssZZFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZFromJson.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZFromJson.toString(),
-            equals(yyyyMMddTHHmmssZZ));
+      final instantyyyyMMddTHHmmssZZFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmssZZ);
+
+      test('instantyyyyMMddTHHmmssZZFromString', () {
+        expect(instantyyyyMMddTHHmmssZZFromString.isValid, isTrue);
         expect(
-            dateyyyyMMddTHHmmssZZFromJson.toJson(), equals(yyyyMMddTHHmmssZZ));
-        expect(
-            dateyyyyMMddTHHmmssZZFromJson.toYaml(), equals(yyyyMMddTHHmmssZZ));
-      });
-      test('dateyyyyMMddTHHmmssZZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromJson.valueDateTime,
+            instantyyyyMMddTHHmmssZZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromString.valueDateTime,
             equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromJson.toString(),
+        expect(instantyyyyMMddTHHmmssZZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromString.toJson(),
             equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromJson.toYaml(),
+        expect(instantyyyyMMddTHHmmssZZFromString.toYaml(),
             equals(yyyyMMddTHHmmssZZ));
       });
-      test('dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson', () {
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson.valueDateTime,
+      final instantyyyyMMddTHHmmssZZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmssZZDateTime);
+
+      test('instantyyyyMMddTHHmmssZZFromDateTime', () {
+        expect(instantyyyyMMddTHHmmssZZFromDateTime.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssZZFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson.toString(),
+        expect(
+            instantyyyyMMddTHHmmssZZFromDateTime.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssZZFromDateTime.toJson(),
+            equals(
+                instantyyyyMMddTHHmmssZZFromDateTime.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHmmssZZFromDateTime.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmssZZFromDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHmmssZZFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssZZ);
+
+      test('instantyyyyMMddTHHmmssZZFromJson', () {
+        expect(instantyyyyMMddTHHmmssZZFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssZZDateTime));
+        expect(instantyyyyMMddTHHmmssZZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromJson.toJson(),
             equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZDateTimeFromStringFromJson.toYaml(),
+        expect(instantyyyyMMddTHHmmssZZFromJson.toYaml(),
             equals(yyyyMMddTHHmmssZZ));
       });
-      test('dateyyyyMMddTHHmmssZZFromUnits', () {
-        expect(dateyyyyMMddTHHmmssZZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZFromUnits.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromUnits.valueDateTime,
+      final instantyyyyMMddTHHmmssZZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssZZDateTime);
+
+      test('instantyyyyMMddTHHmmssZZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZFromUnits.toString(),
-            equals(yyyyMMddTHHmmssZZ));
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssZZFromUnits.toJson(), equals(yyyyMMddTHHmmssZZ));
+            instantyyyyMMddTHHmmssZZDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssZZDateTimeFromJson.valueDateTime
+                .toString()));
         expect(
-            dateyyyyMMddTHHmmssZZFromUnits.toYaml(), equals(yyyyMMddTHHmmssZZ));
+            instantyyyyMMddTHHmmssZZDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssZZDateTimeFromJson.valueDateTime
+                .toString()));
       });
-      test('dateyyyyMMddTHHmmssZZFromYaml', () {
-        expect(dateyyyyMMddTHHmmssZZFromYaml.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssZZFromYaml.valueString,
-            equals(yyyyMMddTHHmmssZZ));
-        expect(dateyyyyMMddTHHmmssZZFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson', () {
+        expect(
+            instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssZZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssZZFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          timezoneOffset: timezoneOffsetInt);
+
+      test('instantyyyyMMddTHHmmssZZFromUnits', () {
+        expect(instantyyyyMMddTHHmmssZZFromUnits.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromUnits.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddTHHmmssZZFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromUnits.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddTHHmmssZZFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmssZZ);
+      test('instantyyyyMMddTHHmmssZZFromYaml', () {
+        expect(instantyyyyMMddTHHmmssZZFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssZZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromYaml.valueDateTime,
             equals(yyyyMMddTHHmmssZZDateTime));
-        expect(dateyyyyMMddTHHmmssZZFromYaml.toString(),
+        expect(instantyyyyMMddTHHmmssZZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssZZFromYaml.toJson(),
             equals(yyyyMMddTHHmmssZZ));
-        expect(
-            dateyyyyMMddTHHmmssZZFromYaml.toJson(), equals(yyyyMMddTHHmmssZZ));
-        expect(
-            dateyyyyMMddTHHmmssZZFromYaml.toYaml(), equals(yyyyMMddTHHmmssZZ));
+        expect(instantyyyyMMddTHHmmssZZFromYaml.toYaml(),
+            equals(yyyyMMddTHHmmssZZ));
       });
     });
-    group('yyyyMMddTHHmmssSSS - 2012-01-31T12:30:59.111', () {
-      test('dateyyyyMMddTHHmmssSSS', () {
-        expect(dateyyyyMMddTHHmmssSSS.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSS.valueString, equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSS.valueDateTime,
+
+    final yyyyMMddTHHmmssSSS = '2012-01-31T12:30:59.001';
+    final yyyyMMddTHHmmssSSSDateTime = DateTime(2012, 1, 31, 12, 30, 59, 1);
+    final yyyyMMddTHHmmssSSSDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59.001');
+
+    group('yyyyMMddTHHmmssSSS - 2012-01-31T12:30+04:00', () {
+      final instantyyyyMMddTHHmmssSSS = FhirInstant(yyyyMMddTHHmmssSSS);
+
+      test('instantyyyyMMddTHHmmssSSS', () {
+        expect(instantyyyyMMddTHHmmssSSS.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSS.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSS.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSS.toString(), equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSS.toJson(), equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSS.toYaml(), equals(yyyyMMddTHHmmssSSS));
+        expect(instantyyyyMMddTHHmmssSSS.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSS.toJson(), equals(yyyyMMddTHHmmssSSS));
+        expect(instantyyyyMMddTHHmmssSSS.toYaml(), equals(yyyyMMddTHHmmssSSS));
       });
-      test('dateyyyyMMddTHHmmssSSSDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTime.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSDateTime =
+          FhirInstant(yyyyMMddTHHmmssSSSDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSDateTime', () {
+        expect(instantyyyyMMddTHHmmssSSSDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSDateTime.toString(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTime.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssSSS));
+        expect(instantyyyyMMddTHHmmssSSSDateTime.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSDateTime.valueDateTime.toString()));
+        expect(instantyyyyMMddTHHmmssSSSDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSDateTime.valueDateTime.toString()));
       });
-      test('dateyyyyMMddTHHmmssSSSDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromString.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmssSSSDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssSSSDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromString.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmssSSS));
-      });
-      test('dateyyyyMMddTHHmmssSSSFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSFromString.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSFromString.toString(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromString.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromString.toYaml(),
-            equals(yyyyMMddTHHmmssSSS));
-      });
-      test('dateyyyyMMddTHHmmssSSSFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.toString(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssSSS));
-      });
-      test('dateyyyyMMddTHHmmssSSSFromJson', () {
-        expect(dateyyyyMMddTHHmmssSSSFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSFromJson.toString(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssSSS));
-      });
-      test('dateyyyyMMddTHHmmssSSSDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssSSS));
-      });
-      test('dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromString.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.valueDateTime,
+            instantyyyyMMddTHHmmssSSSDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSDateTimeFromString.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmssSSS);
+
+      test('instantyyyyMMddTHHmmssSSSFromString', () {
+        expect(instantyyyyMMddTHHmmssSSSFromString.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromString.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.toString(),
+        expect(
+            instantyyyyMMddTHHmmssSSSFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromString.toJson(),
             equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSFromString.toYaml(),
             equals(yyyyMMddTHHmmssSSS));
       });
-      test('dateyyyyMMddTHHmmssSSSFromUnits', () {
-        expect(dateyyyyMMddTHHmmssSSSFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSFromUnits.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromUnits.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmssSSSDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSFromDateTime', () {
+        expect(instantyyyyMMddTHHmmssSSSFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSFromDateTime.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSFromUnits.toString(),
+        expect(
+            instantyyyyMMddTHHmmssSSSFromDateTime.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSFromDateTime.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSFromDateTime.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSS);
+
+      test('instantyyyyMMddTHHmmssSSSFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSDateTime));
+        expect(instantyyyyMMddTHHmmssSSSFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromJson.toJson(),
             equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromUnits.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromUnits.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSFromJson.toYaml(),
             equals(yyyyMMddTHHmmssSSS));
       });
-      test('dateyyyyMMddTHHmmssSSSFromYaml', () {
-        expect(dateyyyyMMddTHHmmssSSSFromYaml.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSFromYaml.valueString,
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
-        expect(dateyyyyMMddTHHmmssSSSFromYaml.toString(),
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSDateTimeFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.isValid,
+            isTrue);
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSDateTime));
+        expect(instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          millisecond: 1,
+          timezoneOffset: timezoneOffsetInt);
+
+      test('instantyyyyMMddTHHmmssSSSFromUnits', () {
+        expect(instantyyyyMMddTHHmmssSSSFromUnits.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromUnits.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(instantyyyyMMddTHHmmssSSSFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromUnits.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddTHHmmssSSSFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmssSSS);
+      test('instantyyyyMMddTHHmmssSSSFromYaml', () {
+        expect(instantyyyyMMddTHHmmssSSSFromYaml.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromYaml.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSDateTime));
+        expect(instantyyyyMMddTHHmmssSSSFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSFromYaml.toJson(),
             equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromYaml.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
-        expect(dateyyyyMMddTHHmmssSSSFromYaml.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSFromYaml.toYaml(),
             equals(yyyyMMddTHHmmssSSS));
       });
     });
-    group('yyyyMMddTHHmmssSSSZ - 2012-01-31T12:30:59.111Z', () {
-      test('dateyyyyMMddTHHmmssSSSZ', () {
-        expect(dateyyyyMMddTHHmmssSSSZ.isValid, isTrue);
+
+    final yyyyMMddTHHmmssSSSZ = '2012-01-31T12:30:59.010Z';
+    final yyyyMMddTHHmmssSSSZDateTime =
+        DateTime.utc(2012, 1, 31, 12, 30, 59, 10);
+    final yyyyMMddTHHmmssSSSZDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59.010Z');
+
+    group('yyyyMMddTHHmmssSSSZ - 2012-01-31T12:30:59.010Z', () {
+      final instantyyyyMMddTHHmmssSSSZ = FhirInstant(yyyyMMddTHHmmssSSSZ);
+
+      test('instantyyyyMMddTHHmmssSSSZ', () {
+        expect(instantyyyyMMddTHHmmssSSSZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZ.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHmmssSSSZ.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssSSSZ.valueString, equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZ.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZ.toString(), equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZ.toJson(), equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZ.toYaml(), equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSZDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTime.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZDateTime.toString(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTime.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZFromString.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZFromString.toString(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromString.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromString.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromDateTime.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZFromDateTime.toString(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromDateTime.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZFromJson', () {
-        expect(dateyyyyMMddTHHmmssSSSZFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZFromJson.toString(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson', () {
+            instantyyyyMMddTHHmmssSSSZ.toJson(), equals(yyyyMMddTHHmmssSSSZ));
         expect(
-            dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.valueDateTime,
+            instantyyyyMMddTHHmmssSSSZ.toYaml(), equals(yyyyMMddTHHmmssSSSZ));
+      });
+      final instantyyyyMMddTHHmmssSSSZDateTime =
+          FhirInstant(yyyyMMddTHHmmssSSSZDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSZDateTime', () {
+        expect(instantyyyyMMddTHHmmssSSSZDateTime.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.toString(),
+        expect(instantyyyyMMddTHHmmssSSSZDateTime.toString(), equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTime.toJson(),
+            equals(
+                instantyyyyMMddTHHmmssSSSZDateTime.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTime.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmssSSSZDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmssSSSZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssSSSZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZDateTime));
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZDateTimeFromString.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmssSSSZ);
+
+      test('instantyyyyMMddTHHmmssSSSZFromString', () {
+        expect(instantyyyyMMddTHHmmssSSSZFromString.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromString.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromString.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZDateTime));
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromString.toJson(),
             equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSZFromString.toYaml(),
             equals(yyyyMMddTHHmmssSSSZ));
       });
-      test('dateyyyyMMddTHHmmssSSSZFromUnits', () {
-        expect(dateyyyyMMddTHHmmssSSSZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZFromUnits.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromUnits.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmssSSSZDateTime);
+      test('instantyyyyMMddTHHmmssSSSZFromDateTime', () {
+        expect(instantyyyyMMddTHHmmssSSSZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZFromDateTime.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZFromUnits.toString(),
+        expect(instantyyyyMMddTHHmmssSSSZFromDateTime.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZFromDateTime.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZFromDateTime.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSZ);
+
+      test('instantyyyyMMddTHHmmssSSSZFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSZFromJson.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZDateTime));
+        expect(instantyyyyMMddTHHmmssSSSZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromJson.toJson(),
             equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromUnits.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromUnits.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSZFromJson.toYaml(),
             equals(yyyyMMddTHHmmssSSSZ));
       });
-      test('dateyyyyMMddTHHmmssSSSZFromYaml', () {
-        expect(dateyyyyMMddTHHmmssSSSZFromYaml.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZFromYaml.valueString,
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSZDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZFromYaml.toString(),
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZDateTimeFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.isValid,
+            isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZDateTime));
+        expect(instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          millisecond: 10,
+          timezoneOffset: 0,
+          isUTC: true);
+      test('instantyyyyMMddTHHmmssSSSZFromUnits', () {
+        expect(instantyyyyMMddTHHmmssSSSZFromUnits.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromUnits.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromUnits.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddTHHmmssSSSZFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmssSSSZ);
+
+      test('instantyyyyMMddTHHmmssSSSZFromYaml', () {
+        expect(instantyyyyMMddTHHmmssSSSZFromYaml.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromYaml.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZDateTime));
+        expect(instantyyyyMMddTHHmmssSSSZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZFromYaml.toJson(),
             equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromYaml.toJson(),
-            equals(yyyyMMddTHHmmssSSSZ));
-        expect(dateyyyyMMddTHHmmssSSSZFromYaml.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSZFromYaml.toYaml(),
             equals(yyyyMMddTHHmmssSSSZ));
       });
     });
-    group('yyyyMMddTHHmmssSSSZZ - 2012-01-31T12:30:59.111+04:00', () {
-      test('dateyyyyMMddTHHmmssSSSZZ', () {
-        expect(dateyyyyMMddTHHmmssSSSZZ.isValid, isTrue);
+
+    final yyyyMMddTHHmmssSSSZZ = '2012-01-31T12:30:59.100$timezoneOffsetString';
+    final yyyyMMddTHHmmssSSSZZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 100);
+    final yyyyMMddTHHmmssSSSZZDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59.100$timezoneOffsetString');
+
+    group('yyyyMMddTHHmmssSSSZZ - 2012-01-31T12:30+04:00', () {
+      final instantyyyyMMddTHHmmssSSSZZ = FhirInstant(yyyyMMddTHHmmssSSSZZ);
+
+      test('instantyyyyMMddTHHmmssSSSZZ', () {
+        expect(instantyyyyMMddTHHmmssSSSZZ.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZZ.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZ.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZZDateTime));
+        expect(instantyyyyMMddTHHmmssSSSZZ.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssSSSZZ.valueString, equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZ.valueDateTime,
+            instantyyyyMMddTHHmmssSSSZZ.toJson(), equals(yyyyMMddTHHmmssSSSZZ));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZ.toYaml(), equals(yyyyMMddTHHmmssSSSZZ));
+      });
+      final instantyyyyMMddTHHmmssSSSZZDateTime =
+          FhirInstant(yyyyMMddTHHmmssSSSZZDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSZZDateTime', () {
+        expect(instantyyyyMMddTHHmmssSSSZZDateTime.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTime.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZZDateTime));
         expect(
-            dateyyyyMMddTHHmmssSSSZZ.toString(), equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZ.toJson(), equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZ.toYaml(), equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSZZDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTime.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTime.toString(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTime.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZDateTimeFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromString.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromString.toString(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromString.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromString.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSZZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZFromString.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromString.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZFromString.toString(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromString.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromString.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSZZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromDateTime.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZFromDateTime.toString(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromDateTime.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromDateTime.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZFromJson', () {
-        expect(dateyyyyMMddTHHmmssSSSZZFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZFromJson.toString(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZDateTimeFromJson', () {
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromJson.valueDateTime,
-            equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromJson.toString(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromJson.toYaml(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-      });
-      test('dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson', () {
+            instantyyyyMMddTHHmmssSSSZZDateTime.toString(), equals(yyyyMMdd));
         expect(
-            dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.valueDateTime,
+            instantyyyyMMddTHHmmssSSSZZDateTime.toJson(),
+            equals(
+                instantyyyyMMddTHHmmssSSSZZDateTime.valueDateTime.toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTime.toYaml(),
+            equals(
+                instantyyyyMMddTHHmmssSSSZZDateTime.valueDateTime.toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZZDateTimeFromString =
+          FhirInstant(yyyyMMddTHHmmssSSSZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssSSSZZDateTimeFromString', () {
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromString.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromString.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromString.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZZDateTimeFromString.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromString.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZZDateTimeFromString.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZZFromString =
+          FhirInstant.fromString(yyyyMMddTHHmmssSSSZZ);
+
+      test('instantyyyyMMddTHHmmssSSSZZFromString', () {
+        expect(instantyyyyMMddTHHmmssSSSZZFromString.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZZFromString.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromString.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.toString(),
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromString.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromString.toJson(),
             equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSZZFromString.toYaml(),
             equals(yyyyMMddTHHmmssSSSZZ));
       });
-      test('dateyyyyMMddTHHmmssSSSZZFromUnits', () {
-        expect(dateyyyyMMddTHHmmssSSSZZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZFromUnits.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromUnits.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSZZFromDateTime =
+          FhirInstant.fromDateTime(yyyyMMddTHHmmssSSSZZDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSZZFromDateTime', () {
+        expect(instantyyyyMMddTHHmmssSSSZZFromDateTime.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZZFromDateTime.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZFromUnits.toString(),
+        expect(instantyyyyMMddTHHmmssSSSZZFromDateTime.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromDateTime.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZZFromDateTime.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromDateTime.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZZFromDateTime.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZZFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSZZ);
+
+      test('instantyyyyMMddTHHmmssSSSZZFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSZZFromJson.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromJson.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZZDateTime));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromJson.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromJson.toJson(),
             equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromUnits.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromUnits.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSZZFromJson.toYaml(),
             equals(yyyyMMddTHHmmssSSSZZ));
       });
-      test('dateyyyyMMddTHHmmssSSSZZFromYaml', () {
-        expect(dateyyyyMMddTHHmmssSSSZZFromYaml.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmssSSSZZFromYaml.valueString,
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromYaml.valueDateTime,
+      final instantyyyyMMddTHHmmssSSSZZDateTimeFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSZZDateTime);
+
+      test('instantyyyyMMddTHHmmssSSSZZDateTimeFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.isValid, isTrue);
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.valueDateTime,
             equals(yyyyMMddTHHmmssSSSZZDateTime));
-        expect(dateyyyyMMddTHHmmssSSSZZFromYaml.toString(),
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZZDateTimeFromJson.valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson =
+          FhirInstant.fromJson(yyyyMMddTHHmmssSSSZZDateTimeFromString);
+
+      test('instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson', () {
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.isValid,
+            isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZZDateTime.toUtc()));
+        expect(instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.toJson(),
+            equals(instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson.toYaml(),
+            equals(instantyyyyMMddTHHmmssSSSZZDateTimeFromStringFromJson
+                .valueDateTime
+                .toString()));
+      });
+      final instantyyyyMMddTHHmmssSSSZZFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          millisecond: 100,
+          timezoneOffset: timezoneOffsetInt);
+
+      test('instantyyyyMMddTHHmmssSSSZZFromUnits', () {
+        expect(instantyyyyMMddTHHmmssSSSZZFromUnits.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromUnits.valueDateTime,
+            equals(yyyyMMddDateTime));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromUnits.toYaml(), equals(yyyyMMdd));
+      });
+      final instantyyyyMMddTHHmmssSSSZZFromYaml =
+          FhirInstant.fromYaml(yyyyMMddTHHmmssSSSZZ);
+      test('instantyyyyMMddTHHmmssSSSZZFromYaml', () {
+        expect(instantyyyyMMddTHHmmssSSSZZFromYaml.isValid, isTrue);
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromYaml.valueDateTime,
+            equals(yyyyMMddTHHmmssSSSZZDateTime));
+        expect(
+            instantyyyyMMddTHHmmssSSSZZFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantyyyyMMddTHHmmssSSSZZFromYaml.toJson(),
             equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromYaml.toJson(),
-            equals(yyyyMMddTHHmmssSSSZZ));
-        expect(dateyyyyMMddTHHmmssSSSZZFromYaml.toYaml(),
+        expect(instantyyyyMMddTHHmmssSSSZZFromYaml.toYaml(),
             equals(yyyyMMddTHHmmssSSSZZ));
       });
     });
-    group('dateInstant - 2012-01-31T12:30:59.111+04:00', () {
-      test('dateInstant', () {
-        expect(dateInstant.isValid, isTrue);
-        expect(dateInstant.valueString, equals(instant));
-        expect(dateInstant.valueDateTime, equals(instantDateTime));
-        expect(dateInstant.toString(), equals(instant));
-        expect(dateInstant.toJson(), equals(instant));
-        expect(dateInstant.toYaml(), equals(instant));
+
+    final instant = '2012-01-31T12:30:59.111$timezoneOffsetString';
+    final instantDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111);
+    final instantDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59.111$timezoneOffsetString');
+
+    group('instantInstant - 2012-01-31T12:30+04:00', () {
+      final instantInstant = FhirInstant(instant);
+      test('instantInstant', () {
+        expect(instantInstant.isValid, isTrue);
+        expect(instantInstant.valueString, equals(yyyyMMdd));
+        expect(instantInstant.valueDateTime, equals(instantDateTime));
+        expect(instantInstant.toString(), equals(yyyyMMdd));
+        expect(instantInstant.toJson(), equals(instant));
+        expect(instantInstant.toYaml(), equals(instant));
       });
-      test('dateInstantDateTime', () {
-        expect(dateInstantDateTime.isValid, isTrue);
-        expect(dateInstantDateTime.valueString, equals(instant));
-        expect(dateInstantDateTime.valueDateTime, equals(instantDateTime));
-        expect(dateInstantDateTime.toString(), equals(instant));
-        expect(dateInstantDateTime.toJson(), equals(instant));
-        expect(dateInstantDateTime.toYaml(), equals(instant));
+      final instantInstantDateTime = FhirInstant(instantDateTime);
+
+      test('instantInstantDateTime', () {
+        expect(instantInstantDateTime.isValid, isTrue);
+        expect(instantInstantDateTime.valueString, equals(yyyyMMdd));
+        expect(instantInstantDateTime.valueDateTime, equals(instantDateTime));
+        expect(instantInstantDateTime.toString(), equals(yyyyMMdd));
+        expect(instantInstantDateTime.toJson(),
+            equals(instantInstantDateTime.valueDateTime.toString()));
+        expect(instantInstantDateTime.toYaml(),
+            equals(instantInstantDateTime.valueDateTime.toString()));
       });
-      test('dateInstantDateTimeFromString', () {
-        expect(dateInstantDateTimeFromString.isValid, isTrue);
-        expect(dateInstantDateTimeFromString.valueString, equals(instant));
-        expect(dateInstantDateTimeFromString.valueDateTime,
+      final instantInstantDateTimeFromString =
+          FhirInstant(instantDateTimeFromString);
+
+      test('instantInstantDateTimeFromString', () {
+        expect(instantInstantDateTimeFromString.isValid, isTrue);
+        expect(instantInstantDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantInstantDateTimeFromString.valueDateTime,
+            equals(instantDateTime.toUtc()));
+        expect(instantInstantDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantInstantDateTimeFromString.toJson(),
+            equals(instantInstantDateTimeFromString.valueDateTime.toString()));
+        expect(instantInstantDateTimeFromString.toYaml(),
+            equals(instantInstantDateTimeFromString.valueDateTime.toString()));
+      });
+      final instantInstantFromString = FhirInstant.fromString(instant);
+
+      test('instantInstantFromString', () {
+        expect(instantInstantFromString.isValid, isTrue);
+        expect(instantInstantFromString.valueString, equals(yyyyMMdd));
+        expect(instantInstantFromString.valueDateTime, equals(instantDateTime));
+        expect(instantInstantFromString.toString(), equals(yyyyMMdd));
+        expect(instantInstantFromString.toJson(), equals(instant));
+        expect(instantInstantFromString.toYaml(), equals(instant));
+      });
+      final instantInstantFromDateTime =
+          FhirInstant.fromDateTime(instantDateTime);
+      test('instantInstantFromDateTime', () {
+        expect(instantInstantFromDateTime.isValid, isTrue);
+        expect(instantInstantFromDateTime.valueString, equals(yyyyMMdd));
+        expect(
+            instantInstantFromDateTime.valueDateTime, equals(instantDateTime));
+        expect(instantInstantFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantInstantFromDateTime.toJson(),
+            equals(instantInstantFromDateTime.valueDateTime.toString()));
+        expect(instantInstantFromDateTime.toYaml(),
+            equals(instantInstantFromDateTime.valueDateTime.toString()));
+      });
+      final instantInstantFromJson = FhirInstant.fromJson(instant);
+
+      test('instantInstantFromJson', () {
+        expect(instantInstantFromJson.isValid, isTrue);
+        expect(instantInstantFromJson.valueString, equals(yyyyMMdd));
+        expect(instantInstantFromJson.valueDateTime, equals(instantDateTime));
+        expect(instantInstantFromJson.toString(), equals(yyyyMMdd));
+        expect(instantInstantFromJson.toJson(), equals(instant));
+        expect(instantInstantFromJson.toYaml(), equals(instant));
+      });
+      final instantInstantDateTimeFromJson =
+          FhirInstant.fromJson(instantDateTime);
+
+      test('instantInstantDateTimeFromJson', () {
+        expect(instantInstantDateTimeFromJson.isValid, isTrue);
+        expect(instantInstantDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantInstantDateTimeFromJson.valueDateTime,
             equals(instantDateTime));
-        expect(dateInstantDateTimeFromString.toString(), equals(instant));
-        expect(dateInstantDateTimeFromString.toJson(), equals(instant));
-        expect(dateInstantDateTimeFromString.toYaml(), equals(instant));
+        expect(instantInstantDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantInstantDateTimeFromJson.toJson(),
+            equals(instantInstantDateTimeFromJson.valueDateTime.toString()));
+        expect(instantInstantDateTimeFromJson.toYaml(),
+            equals(instantInstantDateTimeFromJson.valueDateTime.toString()));
       });
-      test('dateInstantFromString', () {
-        expect(dateInstantFromString.isValid, isTrue);
-        expect(dateInstantFromString.valueString, equals(instant));
-        expect(dateInstantFromString.valueDateTime, equals(instantDateTime));
-        expect(dateInstantFromString.toString(), equals(instant));
-        expect(dateInstantFromString.toJson(), equals(instant));
-        expect(dateInstantFromString.toYaml(), equals(instant));
-      });
-      test('dateInstantFromDateTime', () {
-        expect(dateInstantFromDateTime.isValid, isTrue);
-        expect(dateInstantFromDateTime.valueString, equals(instant));
-        expect(dateInstantFromDateTime.valueDateTime, equals(instantDateTime));
-        expect(dateInstantFromDateTime.toString(), equals(instant));
-        expect(dateInstantFromDateTime.toJson(), equals(instant));
-        expect(dateInstantFromDateTime.toYaml(), equals(instant));
-      });
-      test('dateInstantFromJson', () {
-        expect(dateInstantFromJson.isValid, isTrue);
-        expect(dateInstantFromJson.valueString, equals(instant));
-        expect(dateInstantFromJson.valueDateTime, equals(instantDateTime));
-        expect(dateInstantFromJson.toString(), equals(instant));
-        expect(dateInstantFromJson.toJson(), equals(instant));
-        expect(dateInstantFromJson.toYaml(), equals(instant));
-      });
-      test('dateInstantDateTimeFromJson', () {
-        expect(dateInstantDateTimeFromJson.isValid, isTrue);
-        expect(dateInstantDateTimeFromJson.valueString, equals(instant));
+      final instantInstantDateTimeFromStringFromJson =
+          FhirInstant.fromJson(instantDateTimeFromString);
+
+      test('instantInstantDateTimeFromStringFromJson', () {
+        expect(instantInstantDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantInstantDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantInstantDateTimeFromStringFromJson.valueDateTime,
+            equals(instantDateTime.toUtc()));
+        expect(instantInstantDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateInstantDateTimeFromJson.valueDateTime, equals(instantDateTime));
-        expect(dateInstantDateTimeFromJson.toString(), equals(instant));
-        expect(dateInstantDateTimeFromJson.toJson(), equals(instant));
-        expect(dateInstantDateTimeFromJson.toYaml(), equals(instant));
-      });
-      test('dateInstantDateTimeFromStringFromJson', () {
-        expect(dateInstantDateTimeFromStringFromJson.isValid, isTrue);
+            instantInstantDateTimeFromStringFromJson.toJson(),
+            equals(instantInstantDateTimeFromStringFromJson.valueDateTime
+                .toString()));
         expect(
-            dateInstantDateTimeFromStringFromJson.valueString, equals(instant));
-        expect(dateInstantDateTimeFromStringFromJson.valueDateTime,
-            equals(instantDateTime));
-        expect(
-            dateInstantDateTimeFromStringFromJson.toString(), equals(instant));
-        expect(dateInstantDateTimeFromStringFromJson.toJson(), equals(instant));
-        expect(dateInstantDateTimeFromStringFromJson.toYaml(), equals(instant));
+            instantInstantDateTimeFromStringFromJson.toYaml(),
+            equals(instantInstantDateTimeFromStringFromJson.valueDateTime
+                .toString()));
       });
-      test('dateInstantFromUnits', () {
-        expect(dateInstantFromUnits.isValid, isTrue);
-        expect(dateInstantFromUnits.valueString, equals(instant));
-        expect(dateInstantFromUnits.valueDateTime, equals(instantDateTime));
-        expect(dateInstantFromUnits.toString(), equals(instant));
-        expect(dateInstantFromUnits.toJson(), equals(instant));
-        expect(dateInstantFromUnits.toYaml(), equals(instant));
+      final instantInstantFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          timezoneOffset: timezoneOffsetInt);
+
+      test('instantInstantFromUnits', () {
+        expect(instantInstantFromUnits.isValid, isTrue);
+        expect(instantInstantFromUnits.valueString, equals(yyyyMMdd));
+        expect(instantInstantFromUnits.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantInstantFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantInstantFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantInstantFromUnits.toYaml(), equals(yyyyMMdd));
       });
-      test('dateInstantFromYaml', () {
-        expect(dateInstantFromYaml.isValid, isTrue);
-        expect(dateInstantFromYaml.valueString, equals(instant));
-        expect(dateInstantFromYaml.valueDateTime, equals(instantDateTime));
-        expect(dateInstantFromYaml.toString(), equals(instant));
-        expect(dateInstantFromYaml.toJson(), equals(instant));
-        expect(dateInstantFromYaml.toYaml(), equals(instant));
+      final instantInstantFromYaml = FhirInstant.fromYaml(instant);
+      test('instantInstantFromYaml', () {
+        expect(instantInstantFromYaml.isValid, isTrue);
+        expect(instantInstantFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantInstantFromYaml.valueDateTime, equals(instantDateTime));
+        expect(instantInstantFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantInstantFromYaml.toJson(), equals(instant));
+        expect(instantInstantFromYaml.toYaml(), equals(instant));
       });
     });
-    group('DateTime - 2012-01-31T12:30:30.59.11111+04:00', () {
-      test('dateDateTime', () {
-        expect(dateDateTime.isValid, isTrue);
-        expect(dateDateTime.valueString, equals(dateTime));
-        expect(dateDateTime.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTime.toString(), equals(dateTime));
-        expect(dateDateTime.toJson(), equals(dateTime));
-        expect(dateDateTime.toYaml(), equals(dateTime));
-      });
-      test('dateDateTimeDateTime', () {
-        expect(dateDateTimeDateTime.isValid, isTrue);
-        expect(dateDateTimeDateTime.valueString, equals(dateTime));
-        expect(dateDateTimeDateTime.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTimeDateTime.toString(), equals(dateTime));
-        expect(dateDateTimeDateTime.toJson(), equals(dateTime));
-        expect(dateDateTimeDateTime.toYaml(), equals(dateTime));
-      });
-      test('dateDateTimeDateTimeFromString', () {
-        expect(dateDateTimeDateTimeFromString.isValid, isTrue);
-        expect(dateDateTimeDateTimeFromString.valueString, equals(dateTime));
-        expect(dateDateTimeDateTimeFromString.valueDateTime,
-            equals(dateTimeDateTime));
-        expect(dateDateTimeDateTimeFromString.toString(), equals(dateTime));
-        expect(dateDateTimeDateTimeFromString.toJson(), equals(dateTime));
-        expect(dateDateTimeDateTimeFromString.toYaml(), equals(dateTime));
-      });
-      test('dateDateTimeFromString', () {
-        expect(dateDateTimeFromString.isValid, isTrue);
-        expect(dateDateTimeFromString.valueString, equals(dateTime));
-        expect(dateDateTimeFromString.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTimeFromString.toString(), equals(dateTime));
-        expect(dateDateTimeFromString.toJson(), equals(dateTime));
-        expect(dateDateTimeFromString.toYaml(), equals(dateTime));
-      });
-      test('dateDateTimeFromDateTime', () {
-        expect(dateDateTimeFromDateTime.isValid, isTrue);
-        expect(dateDateTimeFromDateTime.valueString, equals(dateTime));
+
+    final instantTime = '2012-01-31T12:30:59.111111$timezoneOffsetString';
+    final instantTimeDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111, 111);
+    final instantTimeDateTimeFromString =
+        DateTime.parse('2012-01-31T12:30:59.111111$timezoneOffsetString');
+
+    print('************************************************************');
+    group('DateTime - 2012-01-31T12:30+04:00', () {
+      final instantDateTime = FhirInstant(instantTime);
+
+      test('instantDateTime', () {
+        print('************************************************************');
+        expect(instantDateTime.isValid, isTrue);
+        expect(instantDateTime.valueString, equals(yyyyMMdd));
         expect(
-            dateDateTimeFromDateTime.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTimeFromDateTime.toString(), equals(dateTime));
-        expect(dateDateTimeFromDateTime.toJson(), equals(dateTime));
-        expect(dateDateTimeFromDateTime.toYaml(), equals(dateTime));
+            instantDateTime.valueDateTime, equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTime.toString(), equals(yyyyMMdd));
+        expect(instantDateTime.toJson(), equals(instantTime));
+        expect(instantDateTime.toYaml(), equals(instantTime));
       });
-      test('dateDateTimeFromJson', () {
-        expect(dateDateTimeFromJson.isValid, isTrue);
-        expect(dateDateTimeFromJson.valueString, equals(dateTime));
-        expect(dateDateTimeFromJson.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTimeFromJson.toString(), equals(dateTime));
-        expect(dateDateTimeFromJson.toJson(), equals(dateTime));
-        expect(dateDateTimeFromJson.toYaml(), equals(dateTime));
-      });
-      test('dateDateTimeDateTimeFromJson', () {
-        expect(dateDateTimeDateTimeFromJson.isValid, isTrue);
-        expect(dateDateTimeDateTimeFromJson.valueString, equals(dateTime));
-        expect(dateDateTimeDateTimeFromJson.valueDateTime,
-            equals(dateTimeDateTime));
-        expect(dateDateTimeDateTimeFromJson.toString(), equals(dateTime));
-        expect(dateDateTimeDateTimeFromJson.toJson(), equals(dateTime));
-        expect(dateDateTimeDateTimeFromJson.toYaml(), equals(dateTime));
-      });
-      test('dateDateTimeDateTimeFromStringFromJson', () {
-        expect(dateDateTimeDateTimeFromStringFromJson.isValid, isTrue);
-        expect(dateDateTimeDateTimeFromStringFromJson.valueString,
-            equals(dateTime));
-        expect(dateDateTimeDateTimeFromStringFromJson.valueDateTime,
-            equals(dateTimeDateTime));
-        expect(dateDateTimeDateTimeFromStringFromJson.toString(),
-            equals(dateTime));
+      final instantDateTimeDateTime = FhirInstant(instantTimeDateTime);
+
+      test('instantDateTimeDateTime', () {
+        expect(instantDateTimeDateTime.isValid, isTrue);
+        expect(instantDateTimeDateTime.valueString, equals(yyyyMMdd));
         expect(
-            dateDateTimeDateTimeFromStringFromJson.toJson(), equals(dateTime));
+            instantDateTimeDateTime.valueDateTime, equals(instantTimeDateTime));
+        expect(instantDateTimeDateTime.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeDateTime.toJson(),
+            equals(instantDateTimeDateTime.valueDateTime.toString()));
+        expect(instantDateTimeDateTime.toYaml(),
+            equals(instantDateTimeDateTime.valueDateTime.toString()));
+      });
+      final instantDateTimeDateTimeFromString =
+          FhirInstant(instantTimeDateTimeFromString);
+
+      test('instantDateTimeDateTimeFromString', () {
+        expect(instantDateTimeDateTimeFromString.isValid, isTrue);
+        expect(instantDateTimeDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantDateTimeDateTimeFromString.valueDateTime,
+            equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTimeDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeDateTimeFromString.toJson(),
+            equals(instantDateTimeDateTimeFromString.valueDateTime.toString()));
+        expect(instantDateTimeDateTimeFromString.toYaml(),
+            equals(instantDateTimeDateTimeFromString.valueDateTime.toString()));
+      });
+      final instantDateTimeFromString = FhirInstant.fromString(instantTime);
+
+      test('instantDateTimeFromString', () {
+        expect(instantDateTimeFromString.isValid, isTrue);
+        expect(instantDateTimeFromString.valueString, equals(yyyyMMdd));
+        expect(instantDateTimeFromString.valueDateTime,
+            equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTimeFromString.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeFromString.toJson(), equals(instantTime));
+        expect(instantDateTimeFromString.toYaml(), equals(instantTime));
+      });
+      final instantDateTimeFromDateTime =
+          FhirInstant.fromDateTime(instantTimeDateTime);
+
+      test('instantDateTimeFromDateTime', () {
+        expect(instantDateTimeFromDateTime.isValid, isTrue);
+        expect(instantDateTimeFromDateTime.valueString, equals(yyyyMMdd));
+        expect(instantDateTimeFromDateTime.valueDateTime,
+            equals(instantTimeDateTime));
+        expect(instantDateTimeFromDateTime.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeFromDateTime.toJson(),
+            equals(instantDateTimeFromDateTime.valueDateTime.toString()));
+        expect(instantDateTimeFromDateTime.toYaml(),
+            equals(instantDateTimeFromDateTime.valueDateTime.toString()));
+      });
+      final instantDateTimeFromJson = FhirInstant.fromJson(instantTime);
+
+      test('instantDateTimeFromJson', () {
+        expect(instantDateTimeFromJson.isValid, isTrue);
+        expect(instantDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantDateTimeFromJson.valueDateTime,
+            equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeFromJson.toJson(), equals(instantTime));
+        expect(instantDateTimeFromJson.toYaml(), equals(instantTime));
+      });
+      final instantDateTimeDateTimeFromJson = FhirInstant.fromJson(
+          instantDateTimeFromJson.valueDateTime.toString());
+
+      test('instantDateTimeDateTimeFromJson', () {
+        expect(instantDateTimeDateTimeFromJson.isValid, isTrue);
+        expect(instantDateTimeDateTimeFromJson.valueString, equals(yyyyMMdd));
+        expect(instantDateTimeDateTimeFromJson.valueDateTime,
+            equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTimeDateTimeFromJson.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeDateTimeFromJson.toJson(),
+            equals(instantDateTimeDateTimeFromJson.valueDateTime.toString()));
+        expect(instantDateTimeDateTimeFromJson.toYaml(),
+            equals(instantDateTimeDateTimeFromJson.valueDateTime.toString()));
+      });
+      final instantDateTimeDateTimeFromStringFromJson =
+          FhirInstant.fromJson(instantTimeDateTimeFromString);
+
+      test('instantDateTimeDateTimeFromStringFromJson', () {
+        expect(instantDateTimeDateTimeFromStringFromJson.isValid, isTrue);
+        expect(instantDateTimeDateTimeFromStringFromJson.valueString,
+            equals(yyyyMMdd));
+        expect(instantDateTimeDateTimeFromStringFromJson.valueDateTime,
+            equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTimeDateTimeFromStringFromJson.toString(),
+            equals(yyyyMMdd));
         expect(
-            dateDateTimeDateTimeFromStringFromJson.toYaml(), equals(dateTime));
+            instantDateTimeDateTimeFromStringFromJson.toJson(),
+            equals(instantDateTimeDateTimeFromStringFromJson.valueDateTime
+                .toString()));
+        expect(
+            instantDateTimeDateTimeFromStringFromJson.toYaml(),
+            equals(instantDateTimeDateTimeFromStringFromJson.valueDateTime
+                .toString()));
       });
-      test('dateDateTimeFromUnits', () {
-        expect(dateDateTimeFromUnits.isValid, isTrue);
-        expect(dateDateTimeFromUnits.valueString, equals(dateTime));
-        expect(dateDateTimeFromUnits.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTimeFromUnits.toString(), equals(dateTime));
-        expect(dateDateTimeFromUnits.toJson(), equals(dateTime));
-        expect(dateDateTimeFromUnits.toYaml(), equals(dateTime));
+      final instantDateTimeFromUnits = FhirInstant.fromUnits(
+          year: 2012,
+          month: 1,
+          day: 31,
+          hour: 12,
+          minute: 30,
+          second: 59,
+          millisecond: 111,
+          timezoneOffset: 0);
+
+      test('instantDateTimeFromUnits', () {
+        expect(instantDateTimeFromUnits.isValid, isTrue);
+        expect(instantDateTimeFromUnits.valueString, equals(yyyyMMdd));
+        expect(
+            instantDateTimeFromUnits.valueDateTime, equals(yyyyMMddDateTime));
+        expect(instantDateTimeFromUnits.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeFromUnits.toJson(), equals(yyyyMMdd));
+        expect(instantDateTimeFromUnits.toYaml(), equals(yyyyMMdd));
       });
-      test('dateDateTimeFromYaml', () {
-        expect(dateDateTimeFromYaml.isValid, isTrue);
-        expect(dateDateTimeFromYaml.valueString, equals(dateTime));
-        expect(dateDateTimeFromYaml.valueDateTime, equals(dateTimeDateTime));
-        expect(dateDateTimeFromYaml.toString(), equals(dateTime));
-        expect(dateDateTimeFromYaml.toJson(), equals(dateTime));
-        expect(dateDateTimeFromYaml.toYaml(), equals(dateTime));
+      final instantDateTimeFromYaml = FhirInstant.fromYaml(instantTime);
+      test('instantDateTimeFromYaml', () {
+        expect(instantDateTimeFromYaml.isValid, isTrue);
+        expect(instantDateTimeFromYaml.valueString, equals(yyyyMMdd));
+        expect(instantDateTimeFromYaml.valueDateTime,
+            equals(instantTimeDateTime.toUtc()));
+        expect(instantDateTimeFromYaml.toString(), equals(yyyyMMdd));
+        expect(instantDateTimeFromYaml.toJson(), equals(instantTime));
+        expect(instantDateTimeFromYaml.toYaml(), equals(instantTime));
       });
     });
   });
