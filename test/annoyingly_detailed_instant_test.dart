@@ -4,10 +4,10 @@ import 'package:test/test.dart';
 
 void main() {
   group('FhirInstant Tests', () {
-    final timezoneOffsetInt = DateTime.now().timeZoneOffset.inHours;
-    final timezoneOffsetString = timezoneOffsetInt < 0
-        ? '-${timezoneOffsetInt.abs().toString().padLeft(2, '0')}:00'
-        : '+${timezoneOffsetInt.abs().toString().padLeft(2, '0')}:00';
+    final timeZoneOffsetInt = DateTime.now().timeZoneOffset.inHours;
+    final timeZoneOffsetString = timeZoneOffsetInt < 0
+        ? '-${timeZoneOffsetInt.abs().toString().padLeft(2, '0')}:00'
+        : '+${timeZoneOffsetInt.abs().toString().padLeft(2, '0')}:00';
     group('yyyy - 2012', () {
       final yyyy = '2012';
       final yyyyDateTime = DateTime(2012);
@@ -468,11 +468,11 @@ void main() {
       });
     });
 
-    final yyyyMMddTZZ = '2012-01-31T$timezoneOffsetString';
+    final yyyyMMddTZZ = '2012-01-31T$timeZoneOffsetString';
     final yyyyMMddTZZDateTime = DateTime(2012, 1, 31);
     final yyyyMMddTZZDateTimeFromString = DateTime.parse('2012-01-31');
 
-    group('yyyyMMddTZZ - 2012-01-31T$timezoneOffsetString', () {
+    group('yyyyMMddTZZ - 2012-01-31T$timeZoneOffsetString', () {
       // TODO(Dokotela): reasonable to truncate output?
       final instantyyyyMMddTZZ = FhirInstant(yyyyMMddTZZ);
 
@@ -522,9 +522,9 @@ void main() {
             equals(yyyyMMddTZZDateTime));
         expect(instantyyyyMMddTZZFromString.toString(), equals(yyyyMMdd));
         expect(instantyyyyMMddTZZFromString.toJson(),
-            equals('2012-01-31T$timezoneOffsetString'));
+            equals('2012-01-31T$timeZoneOffsetString'));
         expect(instantyyyyMMddTZZFromString.toYaml(),
-            equals('2012-01-31T$timezoneOffsetString'));
+            equals('2012-01-31T$timeZoneOffsetString'));
       });
       final instantyyyyMMddTZZFromDateTime =
           FhirInstant.fromDateTime(yyyyMMddTZZDateTime);
@@ -855,10 +855,10 @@ void main() {
       });
     });
 
-    final yyyyMMddTHHZZ = '2012-01-31T12$timezoneOffsetString';
+    final yyyyMMddTHHZZ = '2012-01-31T12$timeZoneOffsetString';
     final yyyyMMddTHHZZDateTime = DateTime(2012, 1, 31, 12);
     final yyyyMMddTHHZZDateTimeFromString =
-        DateTime.parse('2012-01-31T12$timezoneOffsetString');
+        DateTime.parse('2012-01-31T12$timeZoneOffsetString');
 
     group('yyyyMMddTHHZZ - 2012-01-31T12:30${DateTime.now().timeZoneOffset}',
         () {
@@ -1282,7 +1282,7 @@ void main() {
     final yyyyMMddTHHmmZZDateTimeFromString =
         DateTime.parse('2012-01-31T12:30-05:00');
 
-    group('yyyyMMddTHHmmZZ - 2012-01-31T12:30$timezoneOffsetString', () {
+    group('yyyyMMddTHHmmZZ - 2012-01-31T12:30$timeZoneOffsetString', () {
       final instantyyyyMMddTHHmmZZ = FhirInstant(yyyyMMddTHHmmZZ);
 
       test('instantyyyyMMddTHHmmZZ', () {
@@ -1579,7 +1579,7 @@ void main() {
           hour: 12,
           minute: 30,
           second: 59,
-          timezoneOffset: timezoneOffsetInt);
+          timeZoneOffset: timeZoneOffsetInt);
       test('instantyyyyMMddTHHmmssFromUnits', () {
         expect(instantyyyyMMddTHHmmssFromUnits.isValid, isTrue);
         expect(instantyyyyMMddTHHmmssFromUnits.valueString, equals(yyyyMMdd));
@@ -1754,8 +1754,8 @@ void main() {
           hour: 12,
           minute: 30,
           second: 59,
-          timezoneOffset: 0,
-          isUTC: true);
+          timeZoneOffset: 0,
+          isUtc: true);
 
       test('instantyyyyMMddTHHmmssZFromUnits', () {
         expect(instantyyyyMMddTHHmmssZFromUnits.isValid, isTrue);
@@ -1781,12 +1781,12 @@ void main() {
       });
     });
 
-    final yyyyMMddTHHmmssZZ = '2012-01-31T12:30:59$timezoneOffsetString';
+    final yyyyMMddTHHmmssZZ = '2012-01-31T12:30:59$timeZoneOffsetString';
     final yyyyMMddTHHmmssZZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
     final yyyyMMddTHHmmssZZDateTimeFromString =
-        DateTime.parse('2012-01-31T12:30:59$timezoneOffsetString');
+        DateTime.parse('2012-01-31T12:30:59$timeZoneOffsetString');
 
-    group('yyyyMMddTHHmmssZZ - 2012-01-31T12:30:59$timezoneOffsetString', () {
+    group('yyyyMMddTHHmmssZZ - 2012-01-31T12:30:59$timeZoneOffsetString', () {
       final instantyyyyMMddTHHmmssZZ = FhirInstant(yyyyMMddTHHmmssZZ);
 
       test('instantyyyyMMddTHHmmssZZ', () {
@@ -1931,7 +1931,7 @@ void main() {
           hour: 12,
           minute: 30,
           second: 59,
-          timezoneOffset: timezoneOffsetInt);
+          timeZoneOffset: timeZoneOffsetInt);
 
       test('instantyyyyMMddTHHmmssZZFromUnits', () {
         expect(instantyyyyMMddTHHmmssZZFromUnits.isValid, isTrue);
@@ -2110,7 +2110,7 @@ void main() {
           minute: 30,
           second: 59,
           millisecond: 1,
-          timezoneOffset: timezoneOffsetInt);
+          timeZoneOffset: timeZoneOffsetInt);
 
       test('instantyyyyMMddTHHmmssSSSFromUnits', () {
         expect(instantyyyyMMddTHHmmssSSSFromUnits.isValid, isTrue);
@@ -2298,8 +2298,8 @@ void main() {
           minute: 30,
           second: 59,
           millisecond: 10,
-          timezoneOffset: 0,
-          isUTC: true);
+          timeZoneOffset: 0,
+          isUtc: true);
       test('instantyyyyMMddTHHmmssSSSZFromUnits', () {
         expect(instantyyyyMMddTHHmmssSSSZFromUnits.isValid, isTrue);
         expect(
@@ -2328,10 +2328,10 @@ void main() {
       });
     });
 
-    final yyyyMMddTHHmmssSSSZZ = '2012-01-31T12:30:59.100$timezoneOffsetString';
+    final yyyyMMddTHHmmssSSSZZ = '2012-01-31T12:30:59.100$timeZoneOffsetString';
     final yyyyMMddTHHmmssSSSZZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 100);
     final yyyyMMddTHHmmssSSSZZDateTimeFromString =
-        DateTime.parse('2012-01-31T12:30:59.100$timezoneOffsetString');
+        DateTime.parse('2012-01-31T12:30:59.100$timeZoneOffsetString');
 
     group('yyyyMMddTHHmmssSSSZZ - 2012-01-31T12:30+04:00', () {
       final instantyyyyMMddTHHmmssSSSZZ = FhirInstant(yyyyMMddTHHmmssSSSZZ);
@@ -2492,7 +2492,7 @@ void main() {
           minute: 30,
           second: 59,
           millisecond: 100,
-          timezoneOffset: timezoneOffsetInt);
+          timeZoneOffset: timeZoneOffsetInt);
 
       test('instantyyyyMMddTHHmmssSSSZZFromUnits', () {
         expect(instantyyyyMMddTHHmmssSSSZZFromUnits.isValid, isTrue);
@@ -2522,10 +2522,10 @@ void main() {
       });
     });
 
-    final instant = '2012-01-31T12:30:59.111$timezoneOffsetString';
+    final instant = '2012-01-31T12:30:59.111$timeZoneOffsetString';
     final instantDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111);
     final instantDateTimeFromString =
-        DateTime.parse('2012-01-31T12:30:59.111$timezoneOffsetString');
+        DateTime.parse('2012-01-31T12:30:59.111$timeZoneOffsetString');
 
     group('instantInstant - 2012-01-31T12:30+04:00', () {
       final instantInstant = FhirInstant(instant);
@@ -2637,7 +2637,7 @@ void main() {
           hour: 12,
           minute: 30,
           second: 59,
-          timezoneOffset: timezoneOffsetInt);
+          timeZoneOffset: timeZoneOffsetInt);
 
       test('instantInstantFromUnits', () {
         expect(instantInstantFromUnits.isValid, isTrue);
@@ -2658,10 +2658,10 @@ void main() {
       });
     });
 
-    final instantTime = '2012-01-31T12:30:59.111111$timezoneOffsetString';
+    final instantTime = '2012-01-31T12:30:59.111111$timeZoneOffsetString';
     final instantTimeDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111, 111);
     final instantTimeDateTimeFromString =
-        DateTime.parse('2012-01-31T12:30:59.111111$timezoneOffsetString');
+        DateTime.parse('2012-01-31T12:30:59.111111$timeZoneOffsetString');
 
     print('************************************************************');
     group('DateTime - 2012-01-31T12:30+04:00', () {
@@ -2782,7 +2782,7 @@ void main() {
           minute: 30,
           second: 59,
           millisecond: 111,
-          timezoneOffset: 0);
+          timeZoneOffset: 0);
 
       test('instantDateTimeFromUnits', () {
         expect(instantDateTimeFromUnits.isValid, isTrue);
