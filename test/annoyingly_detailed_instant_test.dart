@@ -1,427 +1,339 @@
-import 'package:fhir/primitive_types/date_time.dart';
 import 'package:fhir/primitive_types/date_time_precision.dart';
+import 'package:fhir/primitive_types/instant.dart';
 import 'package:test/test.dart';
 
-void annoyinglyDetailedDateTimeTest() {
+void annoyinglyDetailedInstantTest() {
   final offset = timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours);
 
-  group('FhirDateTime Tests', () {
+  group('FhirInstant Tests', () {
     final yyyy = '2012';
     final yyyyDateTime = DateTime(2012);
     group('yyyy - 2012', () {
-      final dateyyyyFromString = FhirDateTime.fromString(yyyy);
+      final dateyyyyFromString = FhirInstant.fromString(yyyy);
+      final yyyyEmptyString = '2012-01-01T00:00:00.000+00:00';
+      final yyyyEmptyTimeZoneString = '2012-01-01T00:00:00.000$offset';
       test('dateyyyyFromString', () {
-        expect(dateyyyyFromString.isValid, isTrue);
-        expect(dateyyyyFromString.valueString, equals(yyyy));
+        expect(dateyyyyFromString.isValid, isFalse);
+        expect(dateyyyyFromString.valueString, equals(yyyyEmptyString));
         expect(dateyyyyFromString.valueDateTime, equals(yyyyDateTime));
         expect(dateyyyyFromString.toJson(), equals(yyyy));
       });
       final dateyyyyFromDateTime =
-          FhirDateTime.fromDateTime(yyyyDateTime, DateTimePrecision.yyyy);
+          FhirInstant.fromDateTime(yyyyDateTime, DateTimePrecision.yyyy);
       test('dateyyyyFromDateTime', () {
-        expect(dateyyyyFromDateTime.isValid, isTrue);
-        expect(dateyyyyFromDateTime.valueString, equals(yyyy));
+        expect(dateyyyyFromDateTime.isValid, isFalse);
+        expect(
+            dateyyyyFromDateTime.valueString, equals(yyyyEmptyTimeZoneString));
         expect(dateyyyyFromDateTime.valueDateTime, equals(yyyyDateTime));
         expect(dateyyyyFromDateTime.toJson(), equals(yyyy));
-      });
-
-      final dateyyyyFromUnits = FhirDateTime.fromUnits(year: 2012);
-
-      test('dateyyyyFromUnits', () {
-        expect(dateyyyyFromUnits.isValid, isTrue);
-        expect(dateyyyyFromUnits.valueString, equals(yyyy));
-        expect(dateyyyyFromUnits.valueDateTime, equals(yyyyDateTime));
-        expect(dateyyyyFromUnits.toJson(), equals(yyyy));
       });
     });
     group('yyyyMM - 2012-01', () {
       final yyyyMM = '2012-01';
       final yyyyMMDateTime = DateTime(2012, 1);
-      final dateyyyyMMFromString = FhirDateTime.fromString(yyyyMM);
+      final dateyyyyMMFromString = FhirInstant.fromString(yyyyMM);
+      final yyyyMMEmptyString = '2012-01-01T00:00:00.000+00:00';
+      final yyyyMMEmptyTimeZoneString = '2012-01-01T00:00:00.000$offset';
       test('dateyyyyMMFromString', () {
-        expect(dateyyyyMMFromString.isValid, isTrue);
-        expect(dateyyyyMMFromString.valueString, equals(yyyyMM));
+        expect(dateyyyyMMFromString.isValid, isFalse);
+        expect(dateyyyyMMFromString.valueString, equals(yyyyMMEmptyString));
         expect(dateyyyyMMFromString.valueDateTime, equals(yyyyMMDateTime));
         expect(dateyyyyMMFromString.toJson(), equals(yyyyMM));
       });
       final dateyyyyMMFromDateTime =
-          FhirDateTime.fromDateTime(yyyyMMDateTime, DateTimePrecision.yyyy_MM);
+          FhirInstant.fromDateTime(yyyyMMDateTime, DateTimePrecision.yyyy_MM);
       test('dateyyyyMMFromDateTime', () {
-        expect(dateyyyyMMFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMFromDateTime.valueString, equals(yyyyMM));
+        expect(dateyyyyMMFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMFromDateTime.valueString,
+            equals(yyyyMMEmptyTimeZoneString));
         expect(dateyyyyMMFromDateTime.valueDateTime, equals(yyyyMMDateTime));
         expect(dateyyyyMMFromDateTime.toJson(), equals(yyyyMM));
-      });
-      final dateyyyyMMFromUnits = FhirDateTime.fromUnits(year: 2012, month: 1);
-      test('dateyyyyMMFromUnits', () {
-        expect(dateyyyyMMFromUnits.isValid, isTrue);
-        expect(dateyyyyMMFromUnits.valueString, equals(yyyyMM));
-        expect(dateyyyyMMFromUnits.valueDateTime, equals(yyyyMMDateTime));
-        expect(dateyyyyMMFromUnits.toJson(), equals(yyyyMM));
       });
     });
     group('yyyyMMdd - 2012-01-31', () {
       final yyyyMMdd = '2012-01-31';
       final yyyyMMddDateTime = DateTime(2012, 1, 31);
-      final dateyyyyMMddFromString = FhirDateTime.fromString(yyyyMMdd);
+      final dateyyyyMMddFromString = FhirInstant.fromString(yyyyMMdd);
+      final yyyyMMddEmptyString = '2012-01-31T00:00:00.000+00:00';
+      final yyyyMMddEmptyTimeZoneString = '2012-01-31T00:00:00.000$offset';
+
       test('dateyyyyMMddFromString', () {
-        expect(dateyyyyMMddFromString.isValid, isTrue);
-        expect(dateyyyyMMddFromString.valueString, equals(yyyyMMdd));
+        expect(dateyyyyMMddFromString.isValid, isFalse);
+        expect(dateyyyyMMddFromString.valueString, equals(yyyyMMddEmptyString));
         expect(dateyyyyMMddFromString.valueDateTime, equals(yyyyMMddDateTime));
         expect(dateyyyyMMddFromString.toJson(), equals(yyyyMMdd));
       });
-      final dateyyyyMMddFromDateTime = FhirDateTime.fromDateTime(
-          yyyyMMddDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS);
+      final dateyyyyMMddFromDateTime = FhirInstant.fromDateTime(
+          yyyyMMddDateTime, DateTimePrecision.yyyy_MM_dd);
       test('dateyyyyMMddFromDateTime', () {
-        expect(dateyyyyMMddFromDateTime.isValid, isTrue);
+        expect(dateyyyyMMddFromDateTime.isValid, isFalse);
         expect(dateyyyyMMddFromDateTime.valueString,
-            equals(yyyyMMddDateTime.toIso8601String()));
+            equals(yyyyMMddEmptyTimeZoneString));
         expect(
             dateyyyyMMddFromDateTime.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddFromDateTime.toJson(),
-            equals(yyyyMMddDateTime.toIso8601String()));
-      });
-      final dateyyyyMMddFromUnits =
-          FhirDateTime.fromUnits(year: 2012, month: 1, day: 31);
-      test('dateyyyyMMddFromUnits', () {
-        expect(dateyyyyMMddFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddFromUnits.valueString, equals(yyyyMMdd));
-        expect(dateyyyyMMddFromUnits.valueDateTime, equals(yyyyMMddDateTime));
-        expect(dateyyyyMMddFromUnits.toJson(), equals(yyyyMMdd));
+        expect(dateyyyyMMddFromDateTime.toJson(), equals(yyyyMMdd));
       });
     });
     group('yyyyMMddT - 2012-01-31T', () {
       final yyyyMMddT = '2012-01-31T';
       final yyyyMMddTDateTime = DateTime(2012, 1, 31);
-      final dateyyyyMMddTFromString = FhirDateTime.fromString(yyyyMMddT);
-      final dateyyyyMMddTFromDateTime = FhirDateTime.fromDateTime(
+      final dateyyyyMMddTFromString = FhirInstant.fromString(yyyyMMddT);
+      final dateyyyyMMddTFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS);
-      final dateyyyyMMddTFromUnits =
-          FhirDateTime.fromUnits(year: 2012, month: 1, day: 31);
-
+      final yyyyMMddTEmptyString = '2012-01-31T00:00:00.000+00:00';
+      final yyyyMMddTEmptyTimeZoneString = '2012-01-31T00:00:00.000$offset';
       test('dateyyyyMMddTFromString', () {
-        expect(dateyyyyMMddTFromString.isValid, isTrue);
-        expect(dateyyyyMMddTFromString.valueString,
-            equals(yyyyMMddT.replaceAll('T', '')));
+        expect(dateyyyyMMddTFromString.isValid, isFalse);
+        expect(
+            dateyyyyMMddTFromString.valueString, equals(yyyyMMddTEmptyString));
         expect(
             dateyyyyMMddTFromString.valueDateTime, equals(yyyyMMddTDateTime));
         expect(dateyyyyMMddTFromString.toJson(), equals(yyyyMMddT));
       });
       test('dateyyyyMMddTFromDateTime', () {
-        expect(dateyyyyMMddTFromDateTime.isValid, isTrue);
+        expect(dateyyyyMMddTFromDateTime.isValid, isFalse);
         expect(dateyyyyMMddTFromDateTime.valueString,
-            equals(yyyyMMddTDateTime.toIso8601String()));
+            equals(yyyyMMddTEmptyTimeZoneString));
         expect(
             dateyyyyMMddTFromDateTime.valueDateTime, equals(yyyyMMddTDateTime));
         expect(dateyyyyMMddTFromDateTime.toJson(),
             equals(yyyyMMddTDateTime.toIso8601String()));
       });
-      test('dateyyyyMMddTFromUnits', () {
-        expect(dateyyyyMMddTFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTFromUnits.valueString,
-            equals(yyyyMMddT.replaceAll('T', '')));
-        expect(dateyyyyMMddTFromUnits.valueDateTime, equals(yyyyMMddTDateTime));
-        expect(dateyyyyMMddTFromUnits.toJson(),
-            equals(yyyyMMddT.replaceAll('T', '')));
-      });
     });
     group('yyyyMMddTZZ - 2012-01-31T$offset', () {
       final yyyyMMddTZZ = '2012-01-31T$offset';
       final yyyyMMddTZZDateTime = DateTime(2012, 1, 31);
-      final dateyyyyMMddTZZFromString = FhirDateTime.fromString(yyyyMMddTZZ);
-      final dateyyyyMMddTZZFromDateTime = FhirDateTime.fromDateTime(
+      final dateyyyyMMddTZZFromString = FhirInstant.fromString(yyyyMMddTZZ);
+      final dateyyyyMMddTZZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTZZDateTime, DateTimePrecision.yyyy_MM_dd_T_ZZ);
-      final dateyyyyMMddTZZFromUnits = FhirDateTime.fromUnits(
-          year: 2012,
-          month: 1,
-          day: 31,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+      final yyyyMMddTZZEmptyTimeZoneString = '2012-01-31T00:00:00.000$offset';
 
       test('dateyyyyMMddTZZFromString', () {
-        expect(dateyyyyMMddTZZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTZZFromString.valueString, equals(yyyyMMddTZZ));
+        expect(dateyyyyMMddTZZFromString.isValid, isFalse);
+        expect(dateyyyyMMddTZZFromString.valueString,
+            equals(yyyyMMddTZZEmptyTimeZoneString));
         expect(dateyyyyMMddTZZFromString.valueDateTime,
             equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZFromString.toJson(), equals(yyyyMMddTZZ));
       });
       test('dateyyyyMMddTZZFromDateTime', () {
-        expect(dateyyyyMMddTZZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTZZFromDateTime.valueString, equals(yyyyMMddTZZ));
+        expect(dateyyyyMMddTZZFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMddTZZFromDateTime.valueString,
+            equals(yyyyMMddTZZEmptyTimeZoneString));
         expect(dateyyyyMMddTZZFromDateTime.valueDateTime,
             equals(yyyyMMddTZZDateTime));
         expect(dateyyyyMMddTZZFromDateTime.toJson(), equals(yyyyMMddTZZ));
-      });
-      test('dateyyyyMMddTZZFromUnits', () {
-        expect(dateyyyyMMddTZZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTZZFromUnits.valueString, equals(yyyyMMddTZZ));
-        expect(dateyyyyMMddTZZFromUnits.valueDateTime,
-            equals(yyyyMMddTZZDateTime));
-        expect(dateyyyyMMddTZZFromUnits.toJson(), equals(yyyyMMddTZZ));
       });
     });
     group('yyyyMMddTHH - 2012-01-31T12', () {
       final yyyyMMddTHH = '2012-01-31T12';
       final yyyyMMddTHHDateTime = DateTime(2012, 1, 31, 12);
-      final dateyyyyMMddTHHFromString = FhirDateTime.fromString(yyyyMMddTHH);
-      final dateyyyyMMddTHHFromDateTime = FhirDateTime.fromDateTime(
+      final dateyyyyMMddTHHFromString = FhirInstant.fromString(yyyyMMddTHH);
+      final dateyyyyMMddTHHFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHDateTime, DateTimePrecision.yyyy_MM_dd_T_HH);
-      final dateyyyyMMddTHHFromUnits =
-          FhirDateTime.fromUnits(year: 2012, month: 1, day: 31, hour: 12);
+      final yyyyMMddTHHEmptyString = '2012-01-31T12:00:00.000+00:00';
+      final yyyyMMddTHHEmptyTimeZoneString = '2012-01-31T12:00:00.000$offset';
 
       test('dateyyyyMMddTHHFromString', () {
-        expect(dateyyyyMMddTHHFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHFromString.valueString, equals(yyyyMMddTHH));
+        expect(dateyyyyMMddTHHFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHFromString.valueString,
+            equals(yyyyMMddTHHEmptyString));
         expect(dateyyyyMMddTHHFromString.valueDateTime,
             equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHFromString.toJson(), equals(yyyyMMddTHH));
       });
       test('dateyyyyMMddTHHFromDateTime', () {
-        expect(dateyyyyMMddTHHFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHFromDateTime.valueString, equals(yyyyMMddTHH));
+        expect(dateyyyyMMddTHHFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMddTHHFromDateTime.valueString,
+            equals(yyyyMMddTHHEmptyTimeZoneString));
         expect(dateyyyyMMddTHHFromDateTime.valueDateTime,
             equals(yyyyMMddTHHDateTime));
         expect(dateyyyyMMddTHHFromDateTime.toJson(), equals(yyyyMMddTHH));
-      });
-      test('dateyyyyMMddTHHFromUnits', () {
-        expect(dateyyyyMMddTHHFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHFromUnits.valueString, equals(yyyyMMddTHH));
-        expect(dateyyyyMMddTHHFromUnits.valueDateTime,
-            equals(yyyyMMddTHHDateTime));
-        expect(dateyyyyMMddTHHFromUnits.toJson(), equals(yyyyMMddTHH));
       });
     });
     group('dateyyyyMMddTHHZ - 2012-01-31T12Z', () {
       final yyyyMMddTHHZ = '2012-01-31T12Z';
       final yyyyMMddTHHZDateTime = DateTime(2012, 1, 31, 12);
-      final dateyyyyMMddTHHZFromString = FhirDateTime.fromString(yyyyMMddTHHZ);
-      final dateyyyyMMddTHHZFromDateTime = FhirDateTime.fromDateTime(
+      final dateyyyyMMddTHHZFromString = FhirInstant.fromString(yyyyMMddTHHZ);
+      final dateyyyyMMddTHHZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_Z);
-      final dateyyyyMMddTHHZFromUnits = FhirDateTime.fromUnits(
-          year: 2012, month: 1, day: 31, hour: 12, isUtc: true);
-
+      final yyyyMMddTHHZEmptyString = '2012-01-31T12:00:00.000+00:00';
+      final yyyyMMddTHHZEmptyTimeZoneString = '2012-01-31T12:00:00.000$offset';
       test('dateyyyyMMddTHHZFromString', () {
-        expect(dateyyyyMMddTHHZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHZFromString.valueString, equals(yyyyMMddTHHZ));
+        expect(dateyyyyMMddTHHZFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHZFromString.valueString,
+            equals(yyyyMMddTHHZEmptyString));
         expect(dateyyyyMMddTHHZFromString.valueDateTime,
             equals(yyyyMMddTHHZDateTime));
         expect(dateyyyyMMddTHHZFromString.toJson(), equals(yyyyMMddTHHZ));
       });
       test('dateyyyyMMddTHHZFromDateTime', () {
-        expect(dateyyyyMMddTHHZFromDateTime.isValid, isTrue);
-        expect(dateyyyyMMddTHHZFromDateTime.valueString, equals(yyyyMMddTHHZ));
+        expect(dateyyyyMMddTHHZFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMddTHHZFromDateTime.valueString,
+            equals(yyyyMMddTHHZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHZDateTime));
         expect(dateyyyyMMddTHHZFromDateTime.toJson(), equals(yyyyMMddTHHZ));
-      });
-      test('dateyyyyMMddTHHZFromUnits', () {
-        expect(dateyyyyMMddTHHZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHZFromUnits.valueString, equals(yyyyMMddTHHZ));
-        expect(dateyyyyMMddTHHZFromUnits.valueDateTime,
-            equals(yyyyMMddTHHZDateTime));
-        expect(dateyyyyMMddTHHZFromUnits.toJson(), equals(yyyyMMddTHHZ));
       });
     });
     group('yyyyMMddTHHZZ - 2012-01-31T12$offset', () {
       final yyyyMMddTHHZZ = '2012-01-31T12$offset';
       final yyyyMMddTHHZZDateTime = DateTime(2012, 1, 31, 12);
-      final dateyyyyMMddTHHZZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHZZ);
-      final dateyyyyMMddTHHZZFromDateTime = FhirDateTime.fromDateTime(
+      final dateyyyyMMddTHHZZFromString = FhirInstant.fromString(yyyyMMddTHHZZ);
+      final dateyyyyMMddTHHZZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHZZDateTime, DateTimePrecision.yyyy_MM_dd_T_HHZZ);
-      final dateyyyyMMddTHHZZFromUnits = FhirDateTime.fromUnits(
-          year: 2012,
-          month: 1,
-          day: 31,
-          hour: 12,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+      final yyyyMMddTHHZZEmptyTimeZoneString = '2012-01-31T12:00:00.000$offset';
 
       test('dateyyyyMMddTHHZZFromString', () {
-        expect(dateyyyyMMddTHHZZFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHZZFromString.valueString, equals(yyyyMMddTHHZZ));
+        expect(dateyyyyMMddTHHZZFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHZZFromString.valueString,
+            equals(yyyyMMddTHHZZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHZZFromString.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
         expect(dateyyyyMMddTHHZZFromString.toJson(), equals(yyyyMMddTHHZZ));
       });
       test('dateyyyyMMddTHHZZFromDateTime', () {
-        expect(dateyyyyMMddTHHZZFromDateTime.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHZZFromDateTime.valueString, equals(yyyyMMddTHHZZ));
+        expect(dateyyyyMMddTHHZZFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMddTHHZZFromDateTime.valueString,
+            equals(yyyyMMddTHHZZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHZZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHZZDateTime));
         expect(dateyyyyMMddTHHZZFromDateTime.toJson(), equals(yyyyMMddTHHZZ));
-      });
-      test('dateyyyyMMddTHHZZFromUnits', () {
-        expect(dateyyyyMMddTHHZZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHZZFromUnits.valueString, equals(yyyyMMddTHHZZ));
-        expect(dateyyyyMMddTHHZZFromUnits.valueDateTime,
-            equals(yyyyMMddTHHZZDateTime));
-        expect(dateyyyyMMddTHHZZFromUnits.toJson(), equals(yyyyMMddTHHZZ));
       });
     });
     group('yyyyMMddTHHmm - 2012-01-31T12:30', () {
       final yyyyMMddTHHmm = '2012-01-31T12:30';
       final yyyyMMddTHHmmDateTime = DateTime(2012, 1, 31, 12, 30);
-      final dateyyyyMMddTHHmmFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmm);
-      final dateyyyyMMddTHHmmFromDateTime = FhirDateTime.fromDateTime(
+      final dateyyyyMMddTHHmmFromString = FhirInstant.fromString(yyyyMMddTHHmm);
+      final dateyyyyMMddTHHmmFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm);
-      final dateyyyyMMddTHHmmFromUnits = FhirDateTime.fromUnits(
-          year: 2012, month: 1, day: 31, hour: 12, minute: 30);
-
+      final yyyyMMddTHHmmEmptyString = '2012-01-31T12:30:00.000+00:00';
+      final yyyyMMddTHHmmEmptyTimeZoneString = '2012-01-31T12:30:00.000$offset';
       test('dateyyyyMMddTHHmmFromString', () {
-        expect(dateyyyyMMddTHHmmFromString.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmFromString.valueString, equals(yyyyMMddTHHmm));
+        expect(dateyyyyMMddTHHmmFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHmmFromString.valueString,
+            equals(yyyyMMddTHHmmEmptyString));
         expect(dateyyyyMMddTHHmmFromString.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
         expect(dateyyyyMMddTHHmmFromString.toJson(), equals(yyyyMMddTHHmm));
       });
       test('dateyyyyMMddTHHmmFromDateTime', () {
-        expect(dateyyyyMMddTHHmmFromDateTime.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmFromDateTime.valueString, equals(yyyyMMddTHHmm));
+        expect(dateyyyyMMddTHHmmFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMddTHHmmFromDateTime.valueString,
+            equals(yyyyMMddTHHmmEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmDateTime));
         expect(dateyyyyMMddTHHmmFromDateTime.toJson(), equals(yyyyMMddTHHmm));
-      });
-      test('dateyyyyMMddTHHmmFromUnits', () {
-        expect(dateyyyyMMddTHHmmFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmFromUnits.valueString, equals(yyyyMMddTHHmm));
-        expect(dateyyyyMMddTHHmmFromUnits.valueDateTime,
-            equals(yyyyMMddTHHmmDateTime));
-        expect(dateyyyyMMddTHHmmFromUnits.toJson(), equals(yyyyMMddTHHmm));
       });
     });
     group('dateyyyyMMddTHHmmZ - 2012-01-31T12:30Z', () {
       final yyyyMMddTHHmmZ = '2012-01-31T12:30Z';
       final yyyyMMddTHHmmZDateTime = DateTime(2012, 1, 31, 12, 30);
       final dateyyyyMMddTHHmmZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmZ);
-      final dateyyyyMMddTHHmmZFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmZ);
+      final dateyyyyMMddTHHmmZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_Z);
-      final dateyyyyMMddTHHmmZFromUnits = FhirDateTime.fromUnits(
-          year: 2012, month: 1, day: 31, hour: 12, minute: 30, isUtc: true);
+      final yyyyMMddTHHmmZEmptyString = '2012-01-31T12:30:00.000+00:00';
+      final yyyyMMddTHHmmZEmptyTimeZoneString =
+          '2012-01-31T12:30:00.000$offset';
 
       test('dateyyyyMMddTHHmmZFromString', () {
-        expect(dateyyyyMMddTHHmmZFromString.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmZFromString.valueString, equals(yyyyMMddTHHmmZ));
+        expect(dateyyyyMMddTHHmmZFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHmmZFromString.valueString,
+            equals(yyyyMMddTHHmmZEmptyString));
         expect(dateyyyyMMddTHHmmZFromString.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
         expect(dateyyyyMMddTHHmmZFromString.toJson(), equals(yyyyMMddTHHmmZ));
       });
       test('dateyyyyMMddTHHmmZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmZFromDateTime.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmZFromDateTime.valueString, equals(yyyyMMddTHHmmZ));
+        expect(dateyyyyMMddTHHmmZFromDateTime.isValid, isFalse);
+        expect(dateyyyyMMddTHHmmZFromDateTime.valueString,
+            equals(yyyyMMddTHHmmZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmZDateTime));
         expect(dateyyyyMMddTHHmmZFromDateTime.toJson(), equals(yyyyMMddTHHmmZ));
-      });
-      test('dateyyyyMMddTHHmmZFromUnits', () {
-        expect(dateyyyyMMddTHHmmZFromUnits.isValid, isTrue);
-        expect(dateyyyyMMddTHHmmZFromUnits.valueString, equals(yyyyMMddTHHmmZ));
-        expect(dateyyyyMMddTHHmmZFromUnits.valueDateTime,
-            equals(yyyyMMddTHHmmZDateTime));
-        expect(dateyyyyMMddTHHmmZFromUnits.toJson(), equals(yyyyMMddTHHmmZ));
       });
     });
     group('dateyyyyMMddTHHmmZZ - 2012-01-31T12:30$offset', () {
       final yyyyMMddTHHmmZZ = '2012-01-31T12:30$offset';
       final yyyyMMddTHHmmZZDateTime = DateTime(2012, 1, 31, 12, 30);
       final dateyyyyMMddTHHmmZZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmZZ);
-      final dateyyyyMMddTHHmmZZFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmZZ);
+      final dateyyyyMMddTHHmmZZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmZZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mmZZ);
-      final dateyyyyMMddTHHmmZZFromUnits = FhirDateTime.fromUnits(
-          year: 2012,
-          month: 1,
-          day: 31,
-          hour: 12,
-          minute: 30,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+      final yyyyMMddTHHmmZZEmptyTimeZoneString =
+          '2012-01-31T12:30:00.000$offset';
 
       test('dateyyyyMMddTHHmmZZFromString', () {
-        expect(dateyyyyMMddTHHmmZZFromString.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmZZFromString.valueString, equals(yyyyMMddTHHmmZZ));
+        expect(dateyyyyMMddTHHmmZZFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHmmZZFromString.valueString,
+            equals(yyyyMMddTHHmmZZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmZZFromString.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
         expect(dateyyyyMMddTHHmmZZFromString.toJson(), equals(yyyyMMddTHHmmZZ));
       });
       test('dateyyyyMMddTHHmmZZFromDateTime', () {
-        expect(dateyyyyMMddTHHmmZZFromDateTime.isValid, isTrue);
+        expect(dateyyyyMMddTHHmmZZFromDateTime.isValid, isFalse);
         expect(dateyyyyMMddTHHmmZZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmZZ));
+            equals(yyyyMMddTHHmmZZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmZZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmZZDateTime));
         expect(
             dateyyyyMMddTHHmmZZFromDateTime.toJson(), equals(yyyyMMddTHHmmZZ));
-      });
-      test('dateyyyyMMddTHHmmZZFromUnits', () {
-        expect(dateyyyyMMddTHHmmZZFromUnits.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmZZFromUnits.valueString, equals(yyyyMMddTHHmmZZ));
-        expect(dateyyyyMMddTHHmmZZFromUnits.valueDateTime,
-            equals(yyyyMMddTHHmmZZDateTime));
-        expect(dateyyyyMMddTHHmmZZFromUnits.toJson(), equals(yyyyMMddTHHmmZZ));
       });
     });
     group('dateyyyyMMddTHHmmss - 2012-01-31T12:30:59', () {
       final yyyyMMddTHHmmss = '2012-01-31T12:30:59';
       final yyyyMMddTHHmmssDateTime = DateTime(2012, 1, 31, 12, 30, 59);
       final dateyyyyMMddTHHmmssFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmss);
-      final dateyyyyMMddTHHmmssFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmss);
+      final dateyyyyMMddTHHmmssFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmssDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss);
-      final dateyyyyMMddTHHmmssFromUnits = FhirDateTime.fromUnits(
-          year: 2012, month: 1, day: 31, hour: 12, minute: 30, second: 59);
+      final yyyyMMddTHHmmssEmptyString = '2012-01-31T12:30:59.000+00:00';
+      final yyyyMMddTHHmmssEmptyTimeZoneString =
+          '2012-01-31T12:30:59.000$offset';
 
       test('dateyyyyMMddTHHmmssFromString', () {
-        expect(dateyyyyMMddTHHmmssFromString.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssFromString.valueString, equals(yyyyMMddTHHmmss));
+        expect(dateyyyyMMddTHHmmssFromString.isValid, isFalse);
+        expect(dateyyyyMMddTHHmmssFromString.valueString,
+            equals(yyyyMMddTHHmmssEmptyString));
         expect(dateyyyyMMddTHHmmssFromString.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
         expect(dateyyyyMMddTHHmmssFromString.toJson(), equals(yyyyMMddTHHmmss));
       });
       test('dateyyyyMMddTHHmmssFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssFromDateTime.isValid, isTrue);
+        expect(dateyyyyMMddTHHmmssFromDateTime.isValid, isFalse);
         expect(dateyyyyMMddTHHmmssFromDateTime.valueString,
-            equals(yyyyMMddTHHmmss));
+            equals(yyyyMMddTHHmmssEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmssFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssDateTime));
         expect(
             dateyyyyMMddTHHmmssFromDateTime.toJson(), equals(yyyyMMddTHHmmss));
-      });
-      test('dateyyyyMMddTHHmmssFromUnits', () {
-        expect(dateyyyyMMddTHHmmssFromUnits.isValid, isTrue);
-        expect(
-            dateyyyyMMddTHHmmssFromUnits.valueString, equals(yyyyMMddTHHmmss));
-        expect(dateyyyyMMddTHHmmssFromUnits.valueDateTime,
-            equals(yyyyMMddTHHmmssDateTime));
-        expect(dateyyyyMMddTHHmmssFromUnits.toJson(), equals(yyyyMMddTHHmmss));
       });
     });
     group('dateyyyyMMddTHHmmssZ - 2012-01-31T12:30:59Z', () {
       final yyyyMMddTHHmmssZ = '2012-01-31T12:30:59Z';
       final yyyyMMddTHHmmssZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
       final dateyyyyMMddTHHmmssZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmssZ);
-      final dateyyyyMMddTHHmmssZFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmssZ);
+      final dateyyyyMMddTHHmmssZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmssZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_Z);
-      final dateyyyyMMddTHHmmssZFromUnits = FhirDateTime.fromUnits(
+      final dateyyyyMMddTHHmmssZEmptyString = '2012-01-31T12:30:59Z';
+      final dateyyyyMMddTHHmmssZEmptyTimeZoneString = '2012-01-31T12:30:59Z';
+      final dateyyyyMMddTHHmmssZFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
           day: 31,
           hour: 12,
           minute: 30,
           second: 59,
-          isUtc: true);
+          isUtc: true,
+          timeZoneOffset: 0);
 
       test('dateyyyyMMddTHHmmssZFromString', () {
         expect(dateyyyyMMddTHHmmssZFromString.isValid, isTrue);
         expect(dateyyyyMMddTHHmmssZFromString.valueString,
-            equals(yyyyMMddTHHmmssZ));
+            equals(dateyyyyMMddTHHmmssZEmptyString));
         expect(dateyyyyMMddTHHmmssZFromString.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
         expect(
@@ -430,7 +342,7 @@ void annoyinglyDetailedDateTimeTest() {
       test('dateyyyyMMddTHHmmssZFromDateTime', () {
         expect(dateyyyyMMddTHHmmssZFromDateTime.isValid, isTrue);
         expect(dateyyyyMMddTHHmmssZFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssZ));
+            equals(dateyyyyMMddTHHmmssZEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmssZFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssZDateTime));
         expect(dateyyyyMMddTHHmmssZFromDateTime.toJson(),
@@ -450,17 +362,17 @@ void annoyinglyDetailedDateTimeTest() {
       final yyyyMMddTHHmmssZZ = '2012-01-31T12:30:59$offset';
       final yyyyMMddTHHmmssZZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
       final dateyyyyMMddTHHmmssZZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmssZZ);
-      final dateyyyyMMddTHHmmssZZFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmssZZ);
+      final dateyyyyMMddTHHmmssZZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmssZZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ssZZ);
-      final dateyyyyMMddTHHmmssZZFromUnits = FhirDateTime.fromUnits(
+      final dateyyyyMMddTHHmmssZZFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
           day: 31,
           hour: 12,
           minute: 30,
           second: 59,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+          timeZoneOffset: stringToTimeZoneOffset(offset)!);
 
       test('dateyyyyMMddTHHmmssZZFromString', () {
         expect(dateyyyyMMddTHHmmssZZFromString.isValid, isTrue);
@@ -494,31 +406,35 @@ void annoyinglyDetailedDateTimeTest() {
       final yyyyMMddTHHmmssSSS = '2012-01-31T12:30:59.001';
       final yyyyMMddTHHmmssSSSDateTime = DateTime(2012, 1, 31, 12, 30, 59, 1);
       final dateyyyyMMddTHHmmssSSSFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmssSSS);
-      final dateyyyyMMddTHHmmssSSSFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmssSSS);
+      final dateyyyyMMddTHHmmssSSSFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmssSSSDateTime,
           DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS);
-      final dateyyyyMMddTHHmmssSSSFromUnits = FhirDateTime.fromUnits(
+      final dateyyyyMMddTHHmmssSSSEmptyString = '2012-01-31T12:30:59.001+00:00';
+      final dateyyyyMMddTHHmmssSSSEmptyTimeZoneString =
+          '2012-01-31T12:30:59.001$offset';
+      final dateyyyyMMddTHHmmssSSSFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
           day: 31,
           hour: 12,
           minute: 30,
           second: 59,
-          millisecond: 1);
+          millisecond: 1,
+          timeZoneOffset: stringToTimeZoneOffset(offset)!);
       test('dateyyyyMMddTHHmmssSSSFromString', () {
-        expect(dateyyyyMMddTHHmmssSSSFromString.isValid, isTrue);
+        expect(dateyyyyMMddTHHmmssSSSFromString.isValid, isFalse);
         expect(dateyyyyMMddTHHmmssSSSFromString.valueString,
-            equals(yyyyMMddTHHmmssSSS));
+            equals(dateyyyyMMddTHHmmssSSSEmptyString));
         expect(dateyyyyMMddTHHmmssSSSFromString.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
         expect(dateyyyyMMddTHHmmssSSSFromString.toJson(),
             equals(yyyyMMddTHHmmssSSS));
       });
       test('dateyyyyMMddTHHmmssSSSFromDateTime', () {
-        expect(dateyyyyMMddTHHmmssSSSFromDateTime.isValid, isTrue);
+        expect(dateyyyyMMddTHHmmssSSSFromDateTime.isValid, isFalse);
         expect(dateyyyyMMddTHHmmssSSSFromDateTime.valueString,
-            equals(yyyyMMddTHHmmssSSS));
+            equals(dateyyyyMMddTHHmmssSSSEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmssSSSFromDateTime.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
         expect(dateyyyyMMddTHHmmssSSSFromDateTime.toJson(),
@@ -527,30 +443,32 @@ void annoyinglyDetailedDateTimeTest() {
       test('dateyyyyMMddTHHmmssSSSFromUnits', () {
         expect(dateyyyyMMddTHHmmssSSSFromUnits.isValid, isTrue);
         expect(dateyyyyMMddTHHmmssSSSFromUnits.valueString,
-            equals(yyyyMMddTHHmmssSSS));
+            equals(dateyyyyMMddTHHmmssSSSEmptyTimeZoneString));
         expect(dateyyyyMMddTHHmmssSSSFromUnits.valueDateTime,
             equals(yyyyMMddTHHmmssSSSDateTime));
         expect(dateyyyyMMddTHHmmssSSSFromUnits.toJson(),
-            equals(yyyyMMddTHHmmssSSS));
+            equals(dateyyyyMMddTHHmmssSSSEmptyTimeZoneString));
       });
     });
     group('yyyyMMddTHHmmssSSSZ - 2012-01-31T12:30:59.010Z', () {
       final yyyyMMddTHHmmssSSSZ = '2012-01-31T12:30:59.010Z';
       final yyyyMMddTHHmmssSSSZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 10);
       final dateyyyyMMddTHHmmssSSSZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmssSSSZ);
-      final dateyyyyMMddTHHmmssSSSZFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmssSSSZ);
+      final dateyyyyMMddTHHmmssSSSZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmssSSSZDateTime,
           DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS_Z);
-      final dateyyyyMMddTHHmmssSSSZFromUnits = FhirDateTime.fromUnits(
-          year: 2012,
-          month: 1,
-          day: 31,
-          hour: 12,
-          minute: 30,
-          second: 59,
-          millisecond: 10,
-          isUtc: true);
+      final dateyyyyMMddTHHmmssSSSZFromUnits = FhirInstant.fromUnits(
+        year: 2012,
+        month: 1,
+        day: 31,
+        hour: 12,
+        minute: 30,
+        second: 59,
+        millisecond: 10,
+        isUtc: true,
+        timeZoneOffset: 0,
+      );
 
       test('dateyyyyMMddTHHmmssSSSZFromString', () {
         expect(dateyyyyMMddTHHmmssSSSZFromString.isValid, isTrue);
@@ -585,11 +503,11 @@ void annoyinglyDetailedDateTimeTest() {
       final yyyyMMddTHHmmssSSSZZDateTime =
           DateTime(2012, 1, 31, 12, 30, 59, 100);
       final dateyyyyMMddTHHmmssSSSZZFromString =
-          FhirDateTime.fromString(yyyyMMddTHHmmssSSSZZ);
-      final dateyyyyMMddTHHmmssSSSZZFromDateTime = FhirDateTime.fromDateTime(
+          FhirInstant.fromString(yyyyMMddTHHmmssSSSZZ);
+      final dateyyyyMMddTHHmmssSSSZZFromDateTime = FhirInstant.fromDateTime(
           yyyyMMddTHHmmssSSSZZDateTime,
           DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSSZZ);
-      final dateyyyyMMddTHHmmssSSSZZFromUnits = FhirDateTime.fromUnits(
+      final dateyyyyMMddTHHmmssSSSZZFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
           day: 31,
@@ -597,7 +515,7 @@ void annoyinglyDetailedDateTimeTest() {
           minute: 30,
           second: 59,
           millisecond: 100,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+          timeZoneOffset: stringToTimeZoneOffset(offset)!);
 
       test('dateyyyyMMddTHHmmssSSSZZFromString', () {
         expect(dateyyyyMMddTHHmmssSSSZZFromString.isValid, isTrue);
@@ -630,10 +548,10 @@ void annoyinglyDetailedDateTimeTest() {
     group('dateInstant - 2012-01-31T12:30:59.111$offset', () {
       final instant = '2012-01-31T12:30:59.111$offset';
       final instantDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111);
-      final dateInstantFromString = FhirDateTime.fromString(instant);
+      final dateInstantFromString = FhirInstant.fromString(instant);
       final dateInstantFromDateTime =
-          FhirDateTime.fromDateTime(instantDateTime, DateTimePrecision.instant);
-      final dateInstantFromUnits = FhirDateTime.fromUnits(
+          FhirInstant.fromDateTime(instantDateTime, DateTimePrecision.instant);
+      final dateInstantFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
           day: 31,
@@ -641,7 +559,7 @@ void annoyinglyDetailedDateTimeTest() {
           minute: 30,
           second: 59,
           millisecond: 111,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+          timeZoneOffset: stringToTimeZoneOffset(offset)!);
 
       test('dateInstantFromString', () {
         expect(dateInstantFromString.isValid, isTrue);
@@ -665,10 +583,11 @@ void annoyinglyDetailedDateTimeTest() {
     group('DateTime - 2012-01-31T12:30:59.111111$offset', () {
       final dateTime = '2012-01-31T12:30:59.111111$offset';
       final dateTimeDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111, 111);
-      final dateDateTimeFromString = FhirDateTime.fromString(dateTime);
-      final dateDateTimeFromDateTime = FhirDateTime.fromDateTime(
+      final dateDateTimeFromString = FhirInstant.fromString(dateTime);
+      final dateDateTimeFromDateTime = FhirInstant.fromDateTime(
           dateTimeDateTime, DateTimePrecision.dateTime);
-      final dateDateTimeFromUnits = FhirDateTime.fromUnits(
+      final dateTimeEmptyTimeZoneString = '2012-01-31T12:30:59.111$offset';
+      final dateDateTimeFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
           day: 31,
@@ -677,24 +596,27 @@ void annoyinglyDetailedDateTimeTest() {
           second: 59,
           millisecond: 111,
           microsecond: 111,
-          timeZoneOffset: stringToTimeZoneOffset(offset));
+          timeZoneOffset: stringToTimeZoneOffset(offset)!);
 
       test('dateDateTimeFromString', () {
-        expect(dateDateTimeFromString.isValid, isTrue);
-        expect(dateDateTimeFromString.valueString, equals(dateTime));
+        expect(dateDateTimeFromString.isValid, isFalse);
+        expect(dateDateTimeFromString.valueString,
+            equals(dateTimeEmptyTimeZoneString));
         expect(dateDateTimeFromString.valueDateTime, equals(dateTimeDateTime));
         expect(dateDateTimeFromString.toJson(), equals(dateTime));
       });
       test('dateDateTimeFromDateTime', () {
-        expect(dateDateTimeFromDateTime.isValid, isTrue);
-        expect(dateDateTimeFromDateTime.valueString, equals(dateTime));
+        expect(dateDateTimeFromDateTime.isValid, isFalse);
+        expect(dateDateTimeFromDateTime.valueString,
+            equals(dateTimeEmptyTimeZoneString));
         expect(
             dateDateTimeFromDateTime.valueDateTime, equals(dateTimeDateTime));
         expect(dateDateTimeFromDateTime.toJson(), equals(dateTime));
       });
       test('dateDateTimeFromUnits', () {
-        expect(dateDateTimeFromUnits.isValid, isTrue);
-        expect(dateDateTimeFromUnits.valueString, equals(dateTime));
+        expect(dateDateTimeFromUnits.isValid, isFalse);
+        expect(dateDateTimeFromUnits.valueString,
+            equals(dateTimeEmptyTimeZoneString));
         expect(dateDateTimeFromUnits.valueDateTime, equals(dateTimeDateTime));
         expect(dateDateTimeFromUnits.toJson(), equals(dateTime));
       });
