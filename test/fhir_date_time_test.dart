@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void fhirDateTimeTest() {
   test('Check DateTime type with the regex', () {
-    var issued = FhirDateTime(DateTime.now());
+    var issued = FhirDateTime.fromDateTime(DateTime.now());
     print('issued: ${issued.toString()}');
     var pattern = RegExp(
         r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?');
@@ -45,7 +45,7 @@ void fhirDateTimeTest() {
       // Test with incomplete units
       expect(
         FhirDate.fromUnits(year: 2023, month: 7),
-        FhirDate('2023-07'),
+        FhirDate.fromString('2023-07'),
       );
     });
   });
@@ -151,7 +151,7 @@ void fhirDateTimeTest() {
 
   group('FhirDateTime Tests', () {
     test('Valid FhirDateTime String', () {
-      final fhirDateTime = FhirDateTime('2023-12-22T12:34:56.789Z');
+      final fhirDateTime = FhirDateTime.fromString('2023-12-22T12:34:56.789Z');
       expect(fhirDateTime.isValid, isTrue);
       expect(fhirDateTime.value, isA<DateTime>());
       expect(fhirDateTime.year, 2023);
@@ -164,7 +164,7 @@ void fhirDateTimeTest() {
     });
 
     test('Invalid FhirDateTime String', () {
-      final fhirDateTime = FhirDateTime('invalid_datetime');
+      final fhirDateTime = FhirDateTime.fromString('invalid_datetime');
       expect(fhirDateTime.isValid, isFalse);
       expect(fhirDateTime.value, isNull);
       expect(fhirDateTime.year, isNull);
@@ -177,9 +177,9 @@ void fhirDateTimeTest() {
     });
 
     test('FhirDateTime Comparison', () {
-      final fhirDateTime1 = FhirDateTime('2023-12-22T12:34:56.789Z');
-      final fhirDateTime2 = FhirDateTime('2024-01-01T00:00:00.000Z');
-      final fhirDateTime3 = FhirDateTime('2023-12-22T12:34:56.789Z');
+      final fhirDateTime1 = FhirDateTime.fromString('2023-12-22T12:34:56.789Z');
+      final fhirDateTime2 = FhirDateTime.fromString('2024-01-01T00:00:00.000Z');
+      final fhirDateTime3 = FhirDateTime.fromString('2023-12-22T12:34:56.789Z');
 
       expect(fhirDateTime1 == fhirDateTime2, isFalse);
       expect(fhirDateTime1 == fhirDateTime3, isTrue);
@@ -194,7 +194,7 @@ void fhirDateTimeTest() {
 
   group('FhirDate Tests', () {
     test('Valid FhirDate String', () {
-      final fhirDate = FhirDate('2023-12-22');
+      final fhirDate = FhirDate.fromString('2023-12-22');
       expect(fhirDate.isValid, isTrue);
       expect(fhirDate.value, isA<DateTime>());
       expect(fhirDate.year, 2023);
@@ -203,7 +203,7 @@ void fhirDateTimeTest() {
     });
 
     test('Invalid FhirDate String', () {
-      final fhirDate = FhirDate('invalid_date');
+      final fhirDate = FhirDate.fromString('invalid_date');
       expect(fhirDate.isValid, isFalse);
       expect(fhirDate.value, isNull);
       expect(fhirDate.year, isNull);
@@ -212,9 +212,9 @@ void fhirDateTimeTest() {
     });
 
     test('FhirDate Comparison', () {
-      final fhirDate1 = FhirDate('2023-12-22');
-      final fhirDate2 = FhirDate('2024-01-01');
-      final fhirDate3 = FhirDate('2023-12-22');
+      final fhirDate1 = FhirDate.fromString('2023-12-22');
+      final fhirDate2 = FhirDate.fromString('2024-01-01');
+      final fhirDate3 = FhirDate.fromString('2023-12-22');
 
       expect(fhirDate1 == fhirDate2, isFalse);
       expect(fhirDate1 == fhirDate3, isTrue);

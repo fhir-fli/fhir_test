@@ -12,7 +12,7 @@ void fhirInstantTest() {
       expect(pattern.hasMatch(issued), true);
     });
     test('Valid FhirInstant String', () {
-      final fhirInstant = FhirInstant('2023-12-22T12:34:56.789Z');
+      final fhirInstant = FhirInstant.fromString('2023-12-22T12:34:56.789Z');
       expect(fhirInstant.isValid, isTrue);
       expect(fhirInstant.value, isA<DateTime>());
       expect(fhirInstant.year, 2023);
@@ -25,7 +25,7 @@ void fhirInstantTest() {
     });
 
     test('Invalid FhirInstant String', () {
-      final fhirInstant = FhirInstant('invalid_instant');
+      final fhirInstant = FhirInstant.fromString('invalid_instant');
       expect(fhirInstant.isValid, isFalse);
       expect(fhirInstant.value, isNull);
       expect(fhirInstant.year, isNull);
@@ -38,9 +38,9 @@ void fhirInstantTest() {
     });
 
     test('FhirInstant Comparison', () {
-      final fhirInstant1 = FhirInstant('2023-12-22T12:34:56.789Z');
-      final fhirInstant2 = FhirInstant('2024-01-01T00:00:00.000Z');
-      final fhirInstant3 = FhirInstant('2023-12-22T12:34:56.789Z');
+      final fhirInstant1 = FhirInstant.fromString('2023-12-22T12:34:56.789Z');
+      final fhirInstant2 = FhirInstant.fromString('2024-01-01T00:00:00.000Z');
+      final fhirInstant3 = FhirInstant.fromString('2023-12-22T12:34:56.789Z');
 
       expect(fhirInstant1 == fhirInstant2, isFalse);
       expect(fhirInstant1 == fhirInstant3, isTrue);
@@ -56,7 +56,7 @@ void fhirInstantTest() {
     });
 
     test('FhirDateTime regex check', () {
-      var issued = FhirDateTime(DateTime.now());
+      var issued = FhirDateTime.fromDateTime(DateTime.now());
       print(issued.toString());
       expect(patternDateTime.hasMatch(issued.toString()), true);
     });
@@ -104,7 +104,7 @@ var resource = r4.Observation(
     text: "Race (observable entity)",
   ),
   subject: const r4.Reference(reference: "Patient/test"),
-  effectiveDateTime: FhirDateTime(DateTime.now()),
+  effectiveDateTime: FhirDateTime.fromDateTime(DateTime.now()),
   issued: FhirInstant.fromDateTime(DateTime.now()),
   valueCodeableConcept: r4.CodeableConcept(coding: <r4.Coding>[
     r4.Coding(
