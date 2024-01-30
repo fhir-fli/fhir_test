@@ -68,8 +68,8 @@ void primitiveTest() {
   });
   test('date', () {
     expect(FhirDate.fromDateTime(DateTime.now()).precision,
-        DateTimePrecision.dateTime);
-    expect(FhirDate.fromDateTime(DateTime.now()).isValid, false);
+        DateTimePrecision.yyyy_MM_dd);
+    expect(FhirDate.fromDateTime(DateTime.now()).isValid, true);
     expect(FhirDate.fromDateTime(DateTime(2000, 10)).toString(), '2000-10-01');
   });
 

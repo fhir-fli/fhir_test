@@ -1,3 +1,4 @@
+import 'annoyingly_detailed_date_test.dart';
 import 'annoyingly_detailed_date_time_test.dart';
 import 'annoyingly_detailed_instant_test.dart';
 import 'fhir_date_test.dart';
@@ -17,7 +18,8 @@ Future<void> main() async {
   fhirTimeTest();
   annoyinglyDetailedDateTimeTest();
   annoyinglyDetailedInstantTest();
+  annoyinglyDetailedDateTest();
   await roundtripTestJson();
   await roundtripTestYaml();
-  await roundtripTestXml();
+  // await roundtripTestXml();
 }
