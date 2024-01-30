@@ -6,7 +6,6 @@ void fhirInstantTest() {
   group('FhirInstant Tests', () {
     test('Check Instant type with the regex', () {
       var issued = FhirInstant.fromDateTime(DateTime.now()).toString();
-      print(issued);
       var pattern = RegExp(
           r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))');
       expect(pattern.hasMatch(issued), true);
@@ -27,14 +26,14 @@ void fhirInstantTest() {
     test('Invalid FhirInstant String', () {
       final fhirInstant = FhirInstant.fromString('invalid_instant');
       expect(fhirInstant.isValid, isFalse);
-      expect(fhirInstant.value, isNull);
-      expect(fhirInstant.year, isNull);
-      expect(fhirInstant.month, isNull);
-      expect(fhirInstant.day, isNull);
-      expect(fhirInstant.hour, isNull);
-      expect(fhirInstant.minute, isNull);
-      expect(fhirInstant.second, isNull);
-      expect(fhirInstant.millisecond, isNull);
+      expect(fhirInstant.value, DateTime(1));
+      expect(fhirInstant.year, 1);
+      expect(fhirInstant.month, 1);
+      expect(fhirInstant.day, 1);
+      expect(fhirInstant.hour, 0);
+      expect(fhirInstant.minute, 0);
+      expect(fhirInstant.second, 0);
+      expect(fhirInstant.millisecond, 0);
     });
 
     test('FhirInstant Comparison', () {
@@ -51,23 +50,19 @@ void fhirInstantTest() {
     });
     test('FhirInstant regex Check', () {
       var issued = FhirInstant.fromDateTime(DateTime.now()).toString();
-      print(issued);
       expect(patternInstant.hasMatch(issued), true);
     });
 
     test('FhirDateTime regex check', () {
       var issued = FhirDateTime.fromDateTime(DateTime.now());
-      print(issued.toString());
       expect(patternDateTime.hasMatch(issued.toString()), true);
     });
 
     test('Observation Issued Format Check', () {
-      print(testJson['issued'].toString());
       expect(patternInstant.hasMatch(testJson['issued'].toString()), true);
     });
 
     test('Observation EffectiveDateTime Format Check', () {
-      print(testJson['effectiveDateTime'].toString());
       expect(patternDateTime.hasMatch(testJson['effectiveDateTime'].toString()),
           true);
     });

@@ -17,7 +17,7 @@ Future<void> main() async {
   fhirTimeTest();
   annoyinglyDetailedDateTimeTest();
   annoyinglyDetailedInstantTest();
-  // await roundtripTestJson();
-  // await roundtripTestYaml();
-  // await roundtripTestXml();
+  await roundtripTestJson();
+  await roundtripTestYaml();
+  await roundtripTestXml();
 }

@@ -15,10 +15,10 @@ void fhirDateTest() {
     test('Invalid FhirDate String', () {
       final fhirDate = FhirDate.fromString('invalid_date');
       expect(fhirDate.isValid, isFalse);
-      expect(fhirDate.value, isNull);
-      expect(fhirDate.year, isNull);
-      expect(fhirDate.month, isNull);
-      expect(fhirDate.day, isNull);
+      expect(fhirDate.value, DateTime(1));
+      expect(fhirDate.year, 1);
+      expect(fhirDate.month, 1);
+      expect(fhirDate.day, 1);
     });
 
     test('FhirDate Comparison', () {

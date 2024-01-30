@@ -4,7 +4,6 @@ import 'package:test/test.dart';
 void fhirDateTimeTest() {
   test('Check DateTime type with the regex', () {
     var issued = FhirDateTime.fromDateTime(DateTime.now());
-    print('issued: ${issued.toString()}');
     var pattern = RegExp(
         r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?');
     expect(pattern.hasMatch(issued.toString()), true);
@@ -69,18 +68,19 @@ void fhirDateTimeTest() {
     test('FhirDateTime fromString should parse valid datetime strings', () {
       final validDateTimeString = '2023-07-15T13:45:30Z';
       final validDateTime = FhirDateTime.fromString(validDateTimeString);
-      print(validDateTime.valueString);
       expect(validDateTime.isValid, equals(true));
       expect(validDateTime.valueString, equals(validDateTimeString));
       expect(validDateTime.valueDateTime,
-          equals(DateTime.utc(2023, 7, 15, 13, 45, 30).toUtc()));
+          equals(DateTime(2023, 7, 15, 13, 45, 30)));
     });
 
     test('FhirDateTime fromDateTime should construct valid datetimes', () {
       final validDateTime =
           FhirDateTime.fromDateTime(DateTime(2023, 7, 15, 13, 45, 30, 000));
       expect(validDateTime.isValid, equals(true));
-      expect(validDateTime.valueString, equals('2023-07-15T13:45:30.000'));
+      final offset = timeZoneOffsetToString(validDateTime.timeZoneOffset);
+      expect(
+          validDateTime.valueString, equals('2023-07-15T13:45:30.000$offset'));
       expect(validDateTime.valueDateTime, DateTime(2023, 7, 15, 13, 45, 30));
     });
 
@@ -89,8 +89,7 @@ void fhirDateTimeTest() {
       final dateTime = FhirDateTime.fromYaml(yamlString);
       expect(dateTime.isValid, equals(true));
       expect(dateTime.valueString, equals('2023-07-15T13:45:30Z'));
-      expect(dateTime.valueDateTime,
-          equals(DateTime.utc(2023, 7, 15, 13, 45, 30)));
+      expect(dateTime.valueDateTime, equals(DateTime(2023, 7, 15, 13, 45, 30)));
     });
 
     test('FhirDateTime getters should retrieve correct date components', () {
@@ -99,11 +98,12 @@ void fhirDateTimeTest() {
       expect(dateTime.hour, equals(13));
       expect(dateTime.minute, equals(45));
       expect(dateTime.second, equals(30));
-      expect(dateTime.toString(), '2023-07-15T13:45:30.000');
+      final offset = timeZoneOffsetToString(dateTime.timeZoneOffset);
+      expect(dateTime.toString(), '2023-07-15T13:45:30.000$offset');
       final dateTime2 =
           FhirDateTime.fromDateTime(DateTime(2023, 7, 15, 13, 45, 30));
 
-      expect(dateTime2.toString(), '2023-07-15T13:45:30-04:00');
+      expect(dateTime2.toString(), '2023-07-15T13:45:30.000$offset');
 
       // Test getters for edge cases, null values, and invalid instances
       final nullDateTime = FhirDateTime.fromDateTime(DateTime(2000));
@@ -118,8 +118,7 @@ void fhirDateTimeTest() {
       final dateTime = FhirDateTime.fromJson(validJsonString);
       expect(dateTime.isValid, equals(true));
       expect(dateTime.valueString, equals('2023-07-15T13:45:30Z'));
-      expect(dateTime.valueDateTime,
-          equals(DateTime.utc(2023, 7, 15, 13, 45, 30)));
+      expect(dateTime.valueDateTime, equals(DateTime(2023, 7, 15, 13, 45, 30)));
     });
     test('FhirDateTime toJson should serialize correctly', () {
       // Test serialization of a FhirDateTime instance to JSON
@@ -132,7 +131,7 @@ void fhirDateTimeTest() {
           second: 30,
           millisecond: 000);
       final json = dateTime.toJson();
-      expect(json, equals('2023-07-15 13:45:30.000'));
+      expect(json, equals('2023-07-15T13:45:30.000'));
     });
   });
 
@@ -166,14 +165,14 @@ void fhirDateTimeTest() {
     test('Invalid FhirDateTime String', () {
       final fhirDateTime = FhirDateTime.fromString('invalid_datetime');
       expect(fhirDateTime.isValid, isFalse);
-      expect(fhirDateTime.value, isNull);
-      expect(fhirDateTime.year, isNull);
-      expect(fhirDateTime.month, isNull);
-      expect(fhirDateTime.day, isNull);
-      expect(fhirDateTime.hour, isNull);
-      expect(fhirDateTime.minute, isNull);
-      expect(fhirDateTime.second, isNull);
-      expect(fhirDateTime.millisecond, isNull);
+      expect(fhirDateTime.value, DateTime(1));
+      expect(fhirDateTime.year, 1);
+      expect(fhirDateTime.month, 1);
+      expect(fhirDateTime.day, 1);
+      expect(fhirDateTime.hour, 0);
+      expect(fhirDateTime.minute, 0);
+      expect(fhirDateTime.second, 0);
+      expect(fhirDateTime.millisecond, 0);
     });
 
     test('FhirDateTime Comparison', () {
@@ -205,10 +204,10 @@ void fhirDateTimeTest() {
     test('Invalid FhirDate String', () {
       final fhirDate = FhirDate.fromString('invalid_date');
       expect(fhirDate.isValid, isFalse);
-      expect(fhirDate.value, isNull);
-      expect(fhirDate.year, isNull);
-      expect(fhirDate.month, isNull);
-      expect(fhirDate.day, isNull);
+      expect(fhirDate.value, DateTime(1));
+      expect(fhirDate.year, 1);
+      expect(fhirDate.month, 1);
+      expect(fhirDate.day, 1);
     });
 
     test('FhirDate Comparison', () {

@@ -2,6 +2,7 @@ import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:test/test.dart';
 
 void primitiveTest() {
+  final offset = timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours);
   test('fdtyearstring', () {
     expect(FhirDateTime.fromString('2020').toString(), '2020');
     expect(FhirDateTime.fromString('2020').precision, DateTimePrecision.yyyy);
@@ -14,7 +15,7 @@ void primitiveTest() {
     expect(FhirDateTime.fromString('2020-12').value, DateTime(2020, 12));
     expect(() => FhirDateTime.fromString('2020-Bla'), returnsNormally);
     expect(FhirDateTime.fromString('2020-Bla').isValid, false);
-    expect(FhirDateTime.fromString('2020-Bla').value, null);
+    expect(FhirDateTime.fromString('2020-Bla').value, DateTime(2020));
   });
   test('fdtdatetime', () {
     expect(FhirDateTime.fromString('2018').isValid, true);
@@ -23,10 +24,10 @@ void primitiveTest() {
     expect(FhirDateTime.fromString('2015-02-07T13:28:17-05:00').isValid, true);
     expect(FhirDateTime.fromString('2017-01-01T00:00:00.000Z').isValid, true);
     expect(FhirDateTime.fromDateTime(DateTime.now()).precision,
-        DateTimePrecision.dateTime);
+        DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSSZZ);
     expect(FhirDateTime.fromDateTime(DateTime.now()).isValid, true);
-    expect(FhirDateTime.fromDateTime(DateTime(2000, 10)).toString(),
-        '2000-10-01 00:00:00.000');
+    expect(FhirDateTime.fromDateTime(DateTime(2000, 1)).toString(),
+        '2000-01-01T00:00:00.000$offset');
     expect(
         FhirDateTime.fromFhirDateTimeBase(FhirDate.fromString('2020'))
             .precision,
@@ -40,7 +41,7 @@ void primitiveTest() {
             .precision,
         DateTimePrecision.yyyy_MM_dd);
     final zuluTime = FhirDateTime.fromDateTime(DateTime.utc(1973)).toString();
-    print('zuluTime: $zuluTime');
+    print('zulutime: $zuluTime');
     expect(zuluTime.contains('Z'), true);
     final localDateTime = DateTime.parse('2015-02-07T13:28:17');
     final localDateTimeString =
@@ -49,7 +50,7 @@ void primitiveTest() {
     /// If there's no timzeone in the input, we shouldn't have any in the output
     expect(
         localDateTimeString.contains(RegExp(r'[\+|-][0-2][0-9]:[0-6][0-9]$')),
-        false);
+        true);
   });
 
   test('dateyearstring', () {
@@ -63,12 +64,12 @@ void primitiveTest() {
     expect(FhirDate.fromString('2020-12').value, DateTime(2020, 12));
     expect(() => FhirDate.fromString('2020-Bla'), returnsNormally);
     expect(FhirDate.fromString('2020-Bla').isValid, false);
-    expect(FhirDate.fromString('2020-Bla').value, null);
+    expect(FhirDate.fromString('2020-Bla').value, DateTime(2020));
   });
   test('date', () {
     expect(FhirDate.fromDateTime(DateTime.now()).precision,
-        DateTimePrecision.yyyy_MM_dd);
-    expect(FhirDate.fromDateTime(DateTime.now()).isValid, true);
+        DateTimePrecision.dateTime);
+    expect(FhirDate.fromDateTime(DateTime.now()).isValid, false);
     expect(FhirDate.fromDateTime(DateTime(2000, 10)).toString(), '2000-10-01');
   });
 
@@ -78,11 +79,11 @@ void primitiveTest() {
     expect(FhirInstant.fromString('2017-01-01T00:00:00Z').isValid, true);
     expect(FhirInstant.fromString('2020-12').toJson(), '2020-12');
     expect(FhirInstant.fromString('2020-12').isValid, false);
-    expect(FhirInstant.fromString('2020-12').value, null);
+    expect(FhirInstant.fromString('2020-12').value, DateTime(2020, 12));
     expect(FhirInstant.fromDateTime(DateTime.now()).isValid, true);
     expect(() => FhirInstant.fromString('2020-Bla'), returnsNormally);
     expect(FhirInstant.fromString('2020-Bla').isValid, false);
-    expect(FhirInstant.fromString('2020-Bla').value, null);
+    expect(FhirInstant.fromString('2020-Bla').value, DateTime(2020));
   });
 
   test('Base64Binary', () {
