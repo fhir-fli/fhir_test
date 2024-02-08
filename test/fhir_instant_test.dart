@@ -5,13 +5,13 @@ import 'package:test/test.dart';
 void fhirInstantTest() {
   group('FhirInstant Tests', () {
     test('Check Instant type with the regex', () {
-      var issued = FhirInstant.fromDateTime(DateTime.now()).toString();
+      var issued = FhirInstant(DateTime.now()).toString();
       var pattern = RegExp(
           r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))');
       expect(pattern.hasMatch(issued), true);
     });
     test('Valid FhirInstant String', () {
-      final fhirInstant = FhirInstant.fromString('2023-12-22T12:34:56.789Z');
+      final fhirInstant = FhirInstant('2023-12-22T12:34:56.789Z');
       expect(fhirInstant.isValid, isTrue);
       expect(fhirInstant.value, isA<DateTime>());
       expect(fhirInstant.year, 2023);
@@ -24,7 +24,7 @@ void fhirInstantTest() {
     });
 
     test('Invalid FhirInstant String', () {
-      final fhirInstant = FhirInstant.fromString('invalid_instant');
+      final fhirInstant = FhirInstant('invalid_instant');
       expect(fhirInstant.isValid, isFalse);
       expect(fhirInstant.value, DateTime(1));
       expect(fhirInstant.year, 1);
@@ -37,9 +37,9 @@ void fhirInstantTest() {
     });
 
     test('FhirInstant Comparison', () {
-      final fhirInstant1 = FhirInstant.fromString('2023-12-22T12:34:56.789Z');
-      final fhirInstant2 = FhirInstant.fromString('2024-01-01T00:00:00.000Z');
-      final fhirInstant3 = FhirInstant.fromString('2023-12-22T12:34:56.789Z');
+      final fhirInstant1 = FhirInstant('2023-12-22T12:34:56.789Z');
+      final fhirInstant2 = FhirInstant('2024-01-01T00:00:00.000Z');
+      final fhirInstant3 = FhirInstant('2023-12-22T12:34:56.789Z');
 
       expect(fhirInstant1 == fhirInstant2, isFalse);
       expect(fhirInstant1 == fhirInstant3, isTrue);
@@ -49,12 +49,12 @@ void fhirInstantTest() {
       expect(fhirInstant1 >= fhirInstant2, isFalse);
     });
     test('FhirInstant regex Check', () {
-      var issued = FhirInstant.fromDateTime(DateTime.now()).toString();
+      var issued = FhirInstant(DateTime.now()).toString();
       expect(patternInstant.hasMatch(issued), true);
     });
 
     test('FhirDateTime regex check', () {
-      var issued = FhirDateTime.fromDateTime(DateTime.now());
+      var issued = FhirDateTime(DateTime.now());
       expect(patternDateTime.hasMatch(issued.toString()), true);
     });
 
@@ -99,8 +99,8 @@ var resource = r4.Observation(
     text: "Race (observable entity)",
   ),
   subject: const r4.Reference(reference: "Patient/test"),
-  effectiveDateTime: FhirDateTime.fromDateTime(DateTime.now()),
-  issued: FhirInstant.fromDateTime(DateTime.now()),
+  effectiveDateTime: FhirDateTime(DateTime.now()),
+  issued: FhirInstant(DateTime.now()),
   valueCodeableConcept: r4.CodeableConcept(coding: <r4.Coding>[
     r4.Coding(
         system: FhirUri('http://snomed.info/sct'),

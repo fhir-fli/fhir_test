@@ -9,7 +9,7 @@ void annoyinglyDetailedInstantTest() {
     final yyyy = '2012';
     final yyyyDateTime = DateTime(2012);
     group('yyyy - 2012', () {
-      final dateyyyyFromString = FhirInstant.fromString(yyyy);
+      final dateyyyyFromString = FhirInstant(yyyy);
       final yyyyEmptyString = '2012-01-01T00:00:00.000+00:00';
       final yyyyEmptyTimeZoneString = '2012-01-01T00:00:00.000$offset';
       test('dateyyyyFromString', () {
@@ -19,7 +19,7 @@ void annoyinglyDetailedInstantTest() {
         expect(dateyyyyFromString.toJson(), equals(yyyy));
       });
       final dateyyyyFromDateTime =
-          FhirInstant.fromDateTime(yyyyDateTime, DateTimePrecision.yyyy);
+          FhirInstant(yyyyDateTime, DateTimePrecision.yyyy);
       test('dateyyyyFromDateTime', () {
         expect(dateyyyyFromDateTime.isValid, isFalse);
         expect(
@@ -31,7 +31,7 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMM - 2012-01', () {
       final yyyyMM = '2012-01';
       final yyyyMMDateTime = DateTime(2012, 1);
-      final dateyyyyMMFromString = FhirInstant.fromString(yyyyMM);
+      final dateyyyyMMFromString = FhirInstant(yyyyMM);
       final yyyyMMEmptyString = '2012-01-01T00:00:00.000+00:00';
       final yyyyMMEmptyTimeZoneString = '2012-01-01T00:00:00.000$offset';
       test('dateyyyyMMFromString', () {
@@ -41,7 +41,7 @@ void annoyinglyDetailedInstantTest() {
         expect(dateyyyyMMFromString.toJson(), equals(yyyyMM));
       });
       final dateyyyyMMFromDateTime =
-          FhirInstant.fromDateTime(yyyyMMDateTime, DateTimePrecision.yyyy_MM);
+          FhirInstant(yyyyMMDateTime, DateTimePrecision.yyyy_MM);
       test('dateyyyyMMFromDateTime', () {
         expect(dateyyyyMMFromDateTime.isValid, isFalse);
         expect(dateyyyyMMFromDateTime.valueString,
@@ -53,7 +53,7 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMdd - 2012-01-31', () {
       final yyyyMMdd = '2012-01-31';
       final yyyyMMddDateTime = DateTime(2012, 1, 31);
-      final dateyyyyMMddFromString = FhirInstant.fromString(yyyyMMdd);
+      final dateyyyyMMddFromString = FhirInstant(yyyyMMdd);
       final yyyyMMddEmptyString = '2012-01-31T00:00:00.000+00:00';
       final yyyyMMddEmptyTimeZoneString = '2012-01-31T00:00:00.000$offset';
 
@@ -63,8 +63,8 @@ void annoyinglyDetailedInstantTest() {
         expect(dateyyyyMMddFromString.valueDateTime, equals(yyyyMMddDateTime));
         expect(dateyyyyMMddFromString.toJson(), equals(yyyyMMdd));
       });
-      final dateyyyyMMddFromDateTime = FhirInstant.fromDateTime(
-          yyyyMMddDateTime, DateTimePrecision.yyyy_MM_dd);
+      final dateyyyyMMddFromDateTime =
+          FhirInstant(yyyyMMddDateTime, DateTimePrecision.yyyy_MM_dd);
       test('dateyyyyMMddFromDateTime', () {
         expect(dateyyyyMMddFromDateTime.isValid, isFalse);
         expect(dateyyyyMMddFromDateTime.valueString,
@@ -77,8 +77,8 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddT - 2012-01-31T', () {
       final yyyyMMddT = '2012-01-31T';
       final yyyyMMddTDateTime = DateTime(2012, 1, 31);
-      final dateyyyyMMddTFromString = FhirInstant.fromString(yyyyMMddT);
-      final dateyyyyMMddTFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTFromString = FhirInstant(yyyyMMddT);
+      final dateyyyyMMddTFromDateTime = FhirInstant(
           yyyyMMddTDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS);
       final yyyyMMddTEmptyString = '2012-01-31T00:00:00.000+00:00';
       final yyyyMMddTEmptyTimeZoneString = '2012-01-31T00:00:00.000$offset';
@@ -103,9 +103,9 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddTZZ - 2012-01-31T$offset', () {
       final yyyyMMddTZZ = '2012-01-31T$offset';
       final yyyyMMddTZZDateTime = DateTime(2012, 1, 31);
-      final dateyyyyMMddTZZFromString = FhirInstant.fromString(yyyyMMddTZZ);
-      final dateyyyyMMddTZZFromDateTime = FhirInstant.fromDateTime(
-          yyyyMMddTZZDateTime, DateTimePrecision.yyyy_MM_dd_T_ZZ);
+      final dateyyyyMMddTZZFromString = FhirInstant(yyyyMMddTZZ);
+      final dateyyyyMMddTZZFromDateTime =
+          FhirInstant(yyyyMMddTZZDateTime, DateTimePrecision.yyyy_MM_dd_T_ZZ);
       final yyyyMMddTZZEmptyTimeZoneString = '2012-01-31T00:00:00.000$offset';
 
       test('dateyyyyMMddTZZFromString', () {
@@ -128,9 +128,9 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddTHH - 2012-01-31T12', () {
       final yyyyMMddTHH = '2012-01-31T12';
       final yyyyMMddTHHDateTime = DateTime(2012, 1, 31, 12);
-      final dateyyyyMMddTHHFromString = FhirInstant.fromString(yyyyMMddTHH);
-      final dateyyyyMMddTHHFromDateTime = FhirInstant.fromDateTime(
-          yyyyMMddTHHDateTime, DateTimePrecision.yyyy_MM_dd_T_HH);
+      final dateyyyyMMddTHHFromString = FhirInstant(yyyyMMddTHH);
+      final dateyyyyMMddTHHFromDateTime =
+          FhirInstant(yyyyMMddTHHDateTime, DateTimePrecision.yyyy_MM_dd_T_HH);
       final yyyyMMddTHHEmptyString = '2012-01-31T12:00:00.000+00:00';
       final yyyyMMddTHHEmptyTimeZoneString = '2012-01-31T12:00:00.000$offset';
 
@@ -154,8 +154,8 @@ void annoyinglyDetailedInstantTest() {
     group('dateyyyyMMddTHHZ - 2012-01-31T12Z', () {
       final yyyyMMddTHHZ = '2012-01-31T12Z';
       final yyyyMMddTHHZDateTime = DateTime(2012, 1, 31, 12);
-      final dateyyyyMMddTHHZFromString = FhirInstant.fromString(yyyyMMddTHHZ);
-      final dateyyyyMMddTHHZFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHZFromString = FhirInstant(yyyyMMddTHHZ);
+      final dateyyyyMMddTHHZFromDateTime = FhirInstant(
           yyyyMMddTHHZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_Z);
       final yyyyMMddTHHZEmptyString = '2012-01-31T12:00:00.000+00:00';
       final yyyyMMddTHHZEmptyTimeZoneString = '2012-01-31T12:00:00.000$offset';
@@ -179,8 +179,8 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddTHHZZ - 2012-01-31T12$offset', () {
       final yyyyMMddTHHZZ = '2012-01-31T12$offset';
       final yyyyMMddTHHZZDateTime = DateTime(2012, 1, 31, 12);
-      final dateyyyyMMddTHHZZFromString = FhirInstant.fromString(yyyyMMddTHHZZ);
-      final dateyyyyMMddTHHZZFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHZZFromString = FhirInstant(yyyyMMddTHHZZ);
+      final dateyyyyMMddTHHZZFromDateTime = FhirInstant(
           yyyyMMddTHHZZDateTime, DateTimePrecision.yyyy_MM_dd_T_HHZZ);
       final yyyyMMddTHHZZEmptyTimeZoneString = '2012-01-31T12:00:00.000$offset';
 
@@ -204,8 +204,8 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddTHHmm - 2012-01-31T12:30', () {
       final yyyyMMddTHHmm = '2012-01-31T12:30';
       final yyyyMMddTHHmmDateTime = DateTime(2012, 1, 31, 12, 30);
-      final dateyyyyMMddTHHmmFromString = FhirInstant.fromString(yyyyMMddTHHmm);
-      final dateyyyyMMddTHHmmFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmFromString = FhirInstant(yyyyMMddTHHmm);
+      final dateyyyyMMddTHHmmFromDateTime = FhirInstant(
           yyyyMMddTHHmmDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm);
       final yyyyMMddTHHmmEmptyString = '2012-01-31T12:30:00.000+00:00';
       final yyyyMMddTHHmmEmptyTimeZoneString = '2012-01-31T12:30:00.000$offset';
@@ -229,9 +229,8 @@ void annoyinglyDetailedInstantTest() {
     group('dateyyyyMMddTHHmmZ - 2012-01-31T12:30Z', () {
       final yyyyMMddTHHmmZ = '2012-01-31T12:30Z';
       final yyyyMMddTHHmmZDateTime = DateTime(2012, 1, 31, 12, 30);
-      final dateyyyyMMddTHHmmZFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmZ);
-      final dateyyyyMMddTHHmmZFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmZFromString = FhirInstant(yyyyMMddTHHmmZ);
+      final dateyyyyMMddTHHmmZFromDateTime = FhirInstant(
           yyyyMMddTHHmmZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_Z);
       final yyyyMMddTHHmmZEmptyString = '2012-01-31T12:30:00.000+00:00';
       final yyyyMMddTHHmmZEmptyTimeZoneString =
@@ -257,9 +256,8 @@ void annoyinglyDetailedInstantTest() {
     group('dateyyyyMMddTHHmmZZ - 2012-01-31T12:30$offset', () {
       final yyyyMMddTHHmmZZ = '2012-01-31T12:30$offset';
       final yyyyMMddTHHmmZZDateTime = DateTime(2012, 1, 31, 12, 30);
-      final dateyyyyMMddTHHmmZZFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmZZ);
-      final dateyyyyMMddTHHmmZZFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmZZFromString = FhirInstant(yyyyMMddTHHmmZZ);
+      final dateyyyyMMddTHHmmZZFromDateTime = FhirInstant(
           yyyyMMddTHHmmZZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mmZZ);
       final yyyyMMddTHHmmZZEmptyTimeZoneString =
           '2012-01-31T12:30:00.000$offset';
@@ -285,9 +283,8 @@ void annoyinglyDetailedInstantTest() {
     group('dateyyyyMMddTHHmmss - 2012-01-31T12:30:59', () {
       final yyyyMMddTHHmmss = '2012-01-31T12:30:59';
       final yyyyMMddTHHmmssDateTime = DateTime(2012, 1, 31, 12, 30, 59);
-      final dateyyyyMMddTHHmmssFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmss);
-      final dateyyyyMMddTHHmmssFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmssFromString = FhirInstant(yyyyMMddTHHmmss);
+      final dateyyyyMMddTHHmmssFromDateTime = FhirInstant(
           yyyyMMddTHHmmssDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss);
       final yyyyMMddTHHmmssEmptyString = '2012-01-31T12:30:59.000+00:00';
       final yyyyMMddTHHmmssEmptyTimeZoneString =
@@ -314,9 +311,8 @@ void annoyinglyDetailedInstantTest() {
     group('dateyyyyMMddTHHmmssZ - 2012-01-31T12:30:59Z', () {
       final yyyyMMddTHHmmssZ = '2012-01-31T12:30:59Z';
       final yyyyMMddTHHmmssZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
-      final dateyyyyMMddTHHmmssZFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmssZ);
-      final dateyyyyMMddTHHmmssZFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmssZFromString = FhirInstant(yyyyMMddTHHmmssZ);
+      final dateyyyyMMddTHHmmssZFromDateTime = FhirInstant(
           yyyyMMddTHHmmssZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_Z);
       final dateyyyyMMddTHHmmssZEmptyString = '2012-01-31T12:30:59Z';
       final dateyyyyMMddTHHmmssZEmptyTimeZoneString = '2012-01-31T12:30:59Z';
@@ -361,9 +357,8 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddTHHmmssZZ - 2012-01-31T12:30:59$offset', () {
       final yyyyMMddTHHmmssZZ = '2012-01-31T12:30:59$offset';
       final yyyyMMddTHHmmssZZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
-      final dateyyyyMMddTHHmmssZZFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmssZZ);
-      final dateyyyyMMddTHHmmssZZFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmssZZFromString = FhirInstant(yyyyMMddTHHmmssZZ);
+      final dateyyyyMMddTHHmmssZZFromDateTime = FhirInstant(
           yyyyMMddTHHmmssZZDateTime, DateTimePrecision.yyyy_MM_dd_T_HH_mm_ssZZ);
       final dateyyyyMMddTHHmmssZZFromUnits = FhirInstant.fromUnits(
           year: 2012,
@@ -405,9 +400,8 @@ void annoyinglyDetailedInstantTest() {
     group('yyyyMMddTHHmmssSSS - 2012-01-31T12:30:59.001', () {
       final yyyyMMddTHHmmssSSS = '2012-01-31T12:30:59.001';
       final yyyyMMddTHHmmssSSSDateTime = DateTime(2012, 1, 31, 12, 30, 59, 1);
-      final dateyyyyMMddTHHmmssSSSFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmssSSS);
-      final dateyyyyMMddTHHmmssSSSFromDateTime = FhirInstant.fromDateTime(
+      final dateyyyyMMddTHHmmssSSSFromString = FhirInstant(yyyyMMddTHHmmssSSS);
+      final dateyyyyMMddTHHmmssSSSFromDateTime = FhirInstant(
           yyyyMMddTHHmmssSSSDateTime,
           DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS);
       final dateyyyyMMddTHHmmssSSSEmptyString = '2012-01-31T12:30:59.001+00:00';
@@ -454,8 +448,8 @@ void annoyinglyDetailedInstantTest() {
       final yyyyMMddTHHmmssSSSZ = '2012-01-31T12:30:59.010Z';
       final yyyyMMddTHHmmssSSSZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 10);
       final dateyyyyMMddTHHmmssSSSZFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmssSSSZ);
-      final dateyyyyMMddTHHmmssSSSZFromDateTime = FhirInstant.fromDateTime(
+          FhirInstant(yyyyMMddTHHmmssSSSZ);
+      final dateyyyyMMddTHHmmssSSSZFromDateTime = FhirInstant(
           yyyyMMddTHHmmssSSSZDateTime,
           DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSS_Z);
       final dateyyyyMMddTHHmmssSSSZFromUnits = FhirInstant.fromUnits(
@@ -503,8 +497,8 @@ void annoyinglyDetailedInstantTest() {
       final yyyyMMddTHHmmssSSSZZDateTime =
           DateTime(2012, 1, 31, 12, 30, 59, 100);
       final dateyyyyMMddTHHmmssSSSZZFromString =
-          FhirInstant.fromString(yyyyMMddTHHmmssSSSZZ);
-      final dateyyyyMMddTHHmmssSSSZZFromDateTime = FhirInstant.fromDateTime(
+          FhirInstant(yyyyMMddTHHmmssSSSZZ);
+      final dateyyyyMMddTHHmmssSSSZZFromDateTime = FhirInstant(
           yyyyMMddTHHmmssSSSZZDateTime,
           DateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSSZZ);
       final dateyyyyMMddTHHmmssSSSZZFromUnits = FhirInstant.fromUnits(
@@ -548,9 +542,9 @@ void annoyinglyDetailedInstantTest() {
     group('dateInstant - 2012-01-31T12:30:59.111$offset', () {
       final instant = '2012-01-31T12:30:59.111$offset';
       final instantDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111);
-      final dateInstantFromString = FhirInstant.fromString(instant);
+      final dateInstantFromString = FhirInstant(instant);
       final dateInstantFromDateTime =
-          FhirInstant.fromDateTime(instantDateTime, DateTimePrecision.instant);
+          FhirInstant(instantDateTime, DateTimePrecision.instant);
       final dateInstantFromUnits = FhirInstant.fromUnits(
           year: 2012,
           month: 1,
@@ -583,9 +577,9 @@ void annoyinglyDetailedInstantTest() {
     group('DateTime - 2012-01-31T12:30:59.111111$offset', () {
       final dateTime = '2012-01-31T12:30:59.111111$offset';
       final dateTimeDateTime = DateTime(2012, 1, 31, 12, 30, 59, 111, 111);
-      final dateDateTimeFromString = FhirInstant.fromString(dateTime);
-      final dateDateTimeFromDateTime = FhirInstant.fromDateTime(
-          dateTimeDateTime, DateTimePrecision.dateTime);
+      final dateDateTimeFromString = FhirInstant(dateTime);
+      final dateDateTimeFromDateTime =
+          FhirInstant(dateTimeDateTime, DateTimePrecision.dateTime);
       final dateTimeEmptyTimeZoneString = '2012-01-31T12:30:59.111$offset';
       final dateDateTimeFromUnits = FhirInstant.fromUnits(
           year: 2012,
