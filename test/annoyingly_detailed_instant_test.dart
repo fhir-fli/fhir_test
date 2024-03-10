@@ -3,7 +3,8 @@ import 'package:fhir/primitive_types/instant.dart';
 import 'package:test/test.dart';
 
 void annoyinglyDetailedInstantTest() {
-  final offset = timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours);
+  final offset =
+      timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours.toDouble());
 
   group('FhirInstant Tests', () {
     final yyyy = '2012';

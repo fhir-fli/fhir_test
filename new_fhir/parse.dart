@@ -4,46 +4,48 @@ import 'dart:io';
 import 'types.dart';
 
 Future<void> main() async {
-  final longString = jsonDecode(await File('fhir.schema.json').readAsString())
-      as Map<String, dynamic>;
-  final definitions = longString['definitions'] as Map<String, dynamic>;
+  final Map<String, dynamic> longString =
+      jsonDecode(await File('fhir.schema6.json').readAsString())
+          as Map<String, dynamic>;
+  final Map<String, dynamic> definitions =
+      longString['definitions'] as Map<String, dynamic>;
   definitions.remove('ResourceList');
-  final typeMap = {
+  final Map<String, Object> typeMap = <String, Object>{
     'primitive_types': '',
     'abstract_types': '',
     'basic_types': '',
     'draft_types': '',
     'general_types': '',
     'metadata_types': '',
-    'resource_types': {
-      'base': {
+    'resource_types': <String, Map<String, String>>{
+      'base': <String, String>{
         'entities1': '',
         'entities2': '',
         'individuals': '',
         'management': '',
         'workflow': '',
       },
-      'clinical': {
+      'clinical': <String, String>{
         'care_provision': '',
         'diagnostics': '',
         'medications': '',
         'request_and_response': '',
         'summary': '',
       },
-      'financial': {
+      'financial': <String, String>{
         'billing': '',
         'general': '',
         'payment': '',
         'support': '',
       },
-      'foundation': {
+      'foundation': <String, String>{
         'conformance': '',
         'documents': '',
         'other': '',
         'security': '',
         'terminology': '',
       },
-      'specialized': {
+      'specialized': <String, String>{
         'definitional_artifacts': '',
         'evidence_based_medicine': '',
         'medication_definition': '',
@@ -53,17 +55,18 @@ Future<void> main() async {
     },
     'special_types': '',
   };
-  for (final key in definitions.keys) {
+  for (final String key in definitions.keys) {
     // print(key);
     if (allTypes[key] != 'primitive_types' &&
         (allTypes.keys.contains(key) ||
             allTypes.keys.contains(key.split('_').first))) {
-      var currentClass = '';
-      final classMap = definitions[key] as Map<String, dynamic>;
-      final activeKey = key.replaceAll('_', '');
+      String currentClass = '';
+      final Map<String, dynamic> classMap =
+          definitions[key] as Map<String, dynamic>;
+      final String activeKey = key.replaceAll('_', '');
 
       /// This is just all the basic class code that is present for all classes
-      final className = activeKey == 'List'
+      final String className = activeKey == 'List'
           ? 'FhirList'
           : activeKey == 'Duration'
               ? 'FhirDuration'
@@ -74,16 +77,16 @@ Future<void> main() async {
           ? 'class $className with Resource, _\$$className {\n'
           : 'class $className with _\$$className {\n';
       currentClass += '/// [$className] ${classMap['description']}\n';
-      currentClass += '$className._();\n';
+      currentClass += 'const $className._();\n';
       currentClass += '/// [$className] ${classMap['description']}\n///\n';
 
       /// Look through the 'properties' values, and copy all of the
       /// descriptions in the comments
-      for (final entryKey
+      for (final String entryKey
           in (classMap['properties'] as Map<String, dynamic>).keys) {
-        final entryValue = (classMap['properties']
+        final Map<String, dynamic> entryValue = (classMap['properties']
             as Map<String, dynamic>)[entryKey] as Map<String, dynamic>;
-        var fieldName = getFieldName(entryKey);
+        String fieldName = getFieldName(entryKey);
         fieldName = '$fieldName${reserved.contains(fieldName) ? "_" : ""}';
         fieldName = entryKey == fieldName
             ? '[$fieldName]'
@@ -91,26 +94,27 @@ Future<void> main() async {
 
         currentClass += '/// $fieldName ${entryValue['description']}\n///\n';
       }
-      currentClass += 'factory $className({\n';
+      currentClass += 'const factory $className({\n';
 
       /// Now we're going to look through the 'properties' values again, and
       /// use all of the information there not just the comments.
-      for (final entryKey
+      for (final String entryKey
           in (classMap['properties'] as Map<String, dynamic>).keys) {
-        final isRequired =
-            (classMap['required'] as List?)?.contains(entryKey) ?? false;
-        final entryValue = (classMap['properties']
+        final bool isRequired =
+            (classMap['required'] as List<dynamic>?)?.contains(entryKey) ??
+                false;
+        final Map<String, dynamic> entryValue = (classMap['properties']
             as Map<String, dynamic>)[entryKey] as Map<String, dynamic>;
 
         /// If it's a resourceType make sure we format the field like this
         if (entryKey == 'resourceType' && allTypes.keys.contains(activeKey)) {
           currentClass += '/// [$entryKey] ${entryValue['description']}\n';
           currentClass +=
-              '@Default(R5ResourceType.${activeKey == "List" ? "FhirList" : activeKey}) '
-              '@JsonKey(unknownEnumValue: R5ResourceType.${activeKey == "List" ? "FhirList" : activeKey})';
-          currentClass += '\nR5ResourceType resourceType,\n';
+              '@Default(R6ResourceType.${activeKey == "List" ? "FhirList" : activeKey}) '
+              '@JsonKey(unknownEnumValue: R6ResourceType.${activeKey == "List" ? "FhirList" : activeKey})';
+          currentClass += '\nR6ResourceType resourceType,\n';
         } else {
-          var fieldName = getFieldName(entryKey);
+          String fieldName = getFieldName(entryKey);
           fieldName = '$fieldName${reserved.contains(fieldName) ? "_" : ""}';
           fieldName = entryKey == fieldName
               ? '[$fieldName]'
@@ -137,12 +141,13 @@ Future<void> main() async {
                 /// to find the type from the fieldName:
                 ///
                 /// e.g. valueDecimal, valueInteger, etc.
-                final typeIndex = primitiveTypes.keys.toList().indexWhere(
-                    (element) =>
+                final int typeIndex = primitiveTypes.keys.toList().indexWhere(
+                    (String element) =>
                         entryKey.toLowerCase().endsWith(element.toLowerCase()));
                 if (typeIndex != -1) {
                   /// Otherwise identify the type of field that it is
-                  final subType = primitiveTypes.values.elementAt(typeIndex);
+                  final String subType =
+                      primitiveTypes.values.elementAt(typeIndex);
 
                   if (!allTypes.keys.contains(subType)) {
                     /// If that type isn't in the list, print it out to find it
@@ -151,7 +156,7 @@ Future<void> main() async {
                   } else {
                     /// otherwise we create the fieldName, leaving off the
                     /// underscore if it's an Extension of a primitiveType
-                    final fieldName = getFieldName(entryKey);
+                    final String fieldName = getFieldName(entryKey);
 
                     /// And if it's a name that's a reserved word in Dart, we
                     /// add an underscore at the end to make it allowed
@@ -177,7 +182,7 @@ Future<void> main() async {
                 if ((entryValue['items'] as Map<String, dynamic>)
                     .keys
                     .contains('enum')) {
-                  final subType =
+                  final String subType =
                       '$key${entryKey.substring(0, 1).toUpperCase()}${entryKey.substring(1)}'
                           .replaceAll('_', '');
                   currentClass += '${isRequired ? "required " : ""}'
@@ -187,13 +192,13 @@ Future<void> main() async {
                   print('F: no Ref for $key.$entryKey');
                 }
               } else {
-                final tempType =
+                final String tempType =
                     (entryValue['items'] as Map<String, dynamic>)[r'$ref']
                         .toString()
                         .split('/')
                         .last;
-                final subType = primitiveTypes[tempType] ?? tempType;
-                final fieldName = getFieldName(entryKey);
+                final String subType = primitiveTypes[tempType] ?? tempType;
+                final String fieldName = getFieldName(entryKey);
                 if (allTypes.keys.contains(subType) ||
                     allTypes.keys.contains(subType.split('_').first)) {
                   currentClass += '${isRequired ? "required " : ""}'
@@ -211,29 +216,30 @@ Future<void> main() async {
               }
             }
           } else if (entryValue.keys.contains('enum')) {
-            final subType =
+            final String subType =
                 '$key${entryKey.substring(0, 1).toUpperCase()}${entryKey.substring(1)}'
                     .replaceAll('_', '');
             currentClass += '${isRequired ? "required " : ""}$subType'
                 '${isRequired ? "" : "?"}'
                 ' $entryKey${reserved.contains(entryKey) ? "_" : ""},\n';
           } else {
-            final tempType = entryValue[r'$ref'].toString().split('/').last;
-            final subType = primitiveTypes[tempType] ?? tempType;
+            final String tempType =
+                entryValue[r'$ref'].toString().split('/').last;
+            final String subType = primitiveTypes[tempType] ?? tempType;
             if (allTypes.keys.contains(subType) ||
                 allTypes.keys.contains(subType.split('_').first)) {
-              final fieldName = getFieldName(entryKey);
+              final String fieldName = getFieldName(entryKey);
               currentClass += '${isRequired ? "required " : ""}'
                   '${inCaseExtension(subType.replaceAll("_", ""))}'
                   '${isRequired ? "" : "?"}'
                   ' $fieldName${reserved.contains(fieldName) ? "_" : ""},\n';
             } else if (subType == 'ResourceList') {
-              final fieldName = getFieldName(entryKey);
+              final String fieldName = getFieldName(entryKey);
               currentClass += '${isRequired ? "required " : ""}Resource'
                   '${isRequired ? "" : "?"}'
                   ' $fieldName${reserved.contains(fieldName) ? "_" : ""},\n';
             } else if (subType == 'FhirDuration') {
-              final fieldName = getFieldName(entryKey);
+              final String fieldName = getFieldName(entryKey);
               currentClass += '${isRequired ? "required " : ""}FhirDuration'
                   '${isRequired ? "" : "?"}'
                   ' $fieldName${reserved.contains(fieldName) ? "_" : ""},\n';
@@ -246,12 +252,11 @@ Future<void> main() async {
           }
         }
       }
-      final mapKey = allTypes[key] ?? allTypes[key.split('_').first];
+      final String? mapKey = allTypes[key] ?? allTypes[key.split('_').first];
       currentClass += '''
   }) = _$className;
 
   /// Produces a Yaml formatted String version of the object
-  ${resourceTypes.keys.contains(mapKey) ? "@override" : ""}
   String toYaml() => json2yaml(toJson());
 
   /// Factory constructor that accepts a [String] in YAML format as an argument
@@ -266,13 +271,13 @@ Future<void> main() async {
               ' it is neither a yaml string nor a yaml map.');
 
   /// Factory constructor, accepts [Map<String, dynamic>] as an argument
-  factory $className.fromJson(Map<String, dynamic> json, [    SerializationManager? serializationManager,]) =>
+  factory $className.fromJson(Map<String, dynamic> json) =>
       _\$${className}FromJson(json);
 
   /// Acts like a constructor, returns a [$className], accepts a
   /// [String] as an argument, mostly because I got tired of typing it out
   factory $className.fromJsonString(String source) {
-    final json = jsonDecode(source);
+    final dynamic json = jsonDecode(source);
     if (json is Map<String, dynamic>) {
       return _\$${className}FromJson(json);
     } else {
@@ -287,14 +292,14 @@ Future<void> main() async {
 }''';
 
       if (resourceTypes.keys.contains(mapKey)) {
-        final tempString = ((typeMap['resource_types']!
+        final dynamic tempString = ((typeMap['resource_types']!
                 as Map<String, dynamic>)[resourceTypes[mapKey]!]
             as Map<String, dynamic>)[mapKey];
         ((typeMap['resource_types']!
                 as Map<String, dynamic>)[resourceTypes[mapKey]!]
             as Map<String, dynamic>)[mapKey!] = '$tempString\n$currentClass';
       } else if (typeMap.keys.contains(mapKey)) {
-        final tempString = typeMap[mapKey]! as String;
+        final String tempString = typeMap[mapKey]! as String;
         typeMap[mapKey!] = '$tempString\n$currentClass';
       } else {
         print('$key : ${allTypes[key]}');
@@ -303,32 +308,33 @@ Future<void> main() async {
     }
   }
 
-  for (final key in typeMap.keys) {
+  for (final String key in typeMap.keys) {
     if (key != 'primitive_types' &&
         key != 'basic_types' &&
         key != 'abstract_types' &&
         key != 'draft_types') {
       if (typeMap[key] is String) {
-        var fileString = '''
+        String fileString = '''
+// ignore_for_file: invalid_annotation_target, sort_unnamed_constructors_first, sort_constructors_first, prefer_mixin
+
 // Dart imports:
 import 'dart:convert';
 
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:yaml/yaml.dart';
 
 // Project imports:
-import '../../r5.dart';
+import '../../r6.dart';
 
 part '$key.enums.dart';
 part '$key.freezed.dart';
 part '$key.g.dart';\n\n${typeMap[key]}\n''';
-        for (final key in replaceStrings.keys) {
+        for (final String key in replaceStrings.keys) {
           fileString = fileString.replaceAll(key, replaceStrings[key]!);
         }
         // fileString = formatComments(fileString);
-        await File('../lib/r5/$key/$key.dart').writeAsString(fileString);
+        await File('../lib/r6/$key/$key.dart').writeAsString(fileString);
       } else {
         ///
         /// Partial map of resourceStrings from the Map initially defined for this
@@ -344,35 +350,37 @@ part '$key.g.dart';\n\n${typeMap[key]}\n''';
         ///   },
         ///
         /// first, our key is 'resource_types' so we pick out that map
-        final resourceTypeMap = typeMap[key]! as Map<String, dynamic>;
+        final Map<String, dynamic> resourceTypeMap =
+            typeMap[key]! as Map<String, dynamic>;
 
         /// Next, we go through each of the groupings of resources, so in our
         /// example above, the first 'resourceKey' is 'base'
-        for (final resourceKey in resourceTypeMap.keys) {
+        for (final String resourceKey in resourceTypeMap.keys) {
           /// Then we go through the keys in that map, again, for the example
           /// above, we go through 'entities1', 'entities2', 'individuals', etc
-          for (final subKey
+          for (final String subKey
               in (resourceTypeMap[resourceKey] as Map<String, dynamic>).keys) {
-            var fileString = '''
+            String fileString = '''
+// ignore_for_file: invalid_annotation_target, sort_unnamed_constructors_first, sort_constructors_first, prefer_mixin
+
 // Dart imports:
 import 'dart:convert';
 
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:yaml/yaml.dart';
 
 // Project imports:
-import '../../../../r5.dart';
+import '../../../../r6.dart';
 
 part '$subKey.freezed.dart';
 part '$subKey.g.dart';\n\n${(resourceTypeMap[resourceKey] as Map<String, dynamic>)[subKey]}\n''';
-            for (final key in replaceStrings.keys) {
+            for (final String key in replaceStrings.keys) {
               fileString = fileString.replaceAll(key, replaceStrings[key]!);
             }
             // fileString = formatComments(fileString);
             await File(
-                    '../lib/r5/resource_types/$resourceKey/$subKey/$subKey.dart')
+                    '../lib/r6/resource_types/$resourceKey/$subKey/$subKey.dart')
                 .writeAsString(fileString);
           }
         }
@@ -387,32 +395,34 @@ String getFieldName(String entryKey) =>
 String inCaseExtension(String field) =>
     field == 'Extension' ? 'FhirExtension' : field;
 
-const primitiveTypes = {
+const Map<String, String> primitiveTypes = <String, String>{
   'string': 'String',
-  'base64Binary': 'Base64Binary',
-  'boolean': 'Boolean',
-  'canonical': 'Canonical',
-  'code': 'Code',
-  'date': 'Date',
-  'decimal': 'Decimal',
+  'base64Binary': 'FhirBase64Binary',
+  'boolean': 'FhirBoolean',
+  'canonical': 'FhirCanonical',
+  'code': 'FhirCode',
+  'date': 'FhirDate',
+  'decimal': 'FhirDecimal',
   'dateTime': 'FhirDateTime',
   'uri': 'FhirUri',
   'url': 'FhirUrl',
-  'id': 'Id',
-  'instant': 'Instant',
-  'integer': 'Integer',
-  'integer64': 'Integer64',
-  'markdown': 'Markdown',
-  'oid': 'Oid',
-  'positiveInt': 'PositiveInt',
-  'time': 'Time',
-  'unsignedInt': 'UnsignedInt',
-  'uuid': 'Uuid',
+  'id': 'FhirId',
+  'instant': 'FhirInstant',
+  'integer': 'FhirInteger',
+  'integer64': 'FhirInteger64',
+  'markdown': 'FhirMarkdown',
+  'oid': 'FhirOid',
+  'positiveInt': 'FhirPositiveInt',
+  'time': 'FhirTime',
+  'unsignedInt': 'FhirUnsignedInt',
+  'uuid': 'FhirUuid',
   'Duration': 'FhirDuration',
-  'xhtml': 'Markdown',
+  'xhtml': 'FhirMarkdown',
+  'Meta': 'FhirMeta',
+  'Expression': 'FhirExpression',
 };
 
-const reserved = [
+const List<String> reserved = <String>[
   'abstract',
   'else',
   'import',
@@ -478,7 +488,7 @@ const reserved = [
   'set',
 ];
 
-const replaceStrings = {
+const Map<String, String> replaceStrings = <String, String>{
   '\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).':
       'Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).',
   '\n\nFor example, an approval to provide a type of services issued by a certifying body (such as the US Joint Commission) to an organization.':

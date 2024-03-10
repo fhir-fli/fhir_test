@@ -1,33 +1,36 @@
 import 'dart:io';
 
 Future<void> main() async {
-  final dir = Directory('.');
-  final fileList =
-      await dir.list(recursive: true).map((event) => event.path).toList();
-  for (final file in fileList) {
-    final newStrings = <String>[];
+  final Directory dir = Directory('.');
+  final List<String> fileList = await dir
+      .list(recursive: true)
+      .map((FileSystemEntity event) => event.path)
+      .toList();
+  for (final String file in fileList) {
+    print(file);
+    final List<String> newStrings = <String>[];
     if (!file.contains('freezed') &&
         !file.contains('.g.') &&
         !file.contains('enum') &&
         !file.contains('comments.dart') &&
         file.endsWith('.dart')) {
-      final fileString = await File(file).readAsString();
-      final stringList = fileString.split('\n');
+      final String fileString = await File(file).readAsString();
+      final List<String> stringList = fileString.split('\n');
 
-      for (final string in stringList) {
+      for (final String string in stringList) {
         if (string.startsWith(comment)) {
           if (string.length <= 80) {
             newStrings.add(string);
           } else {
-            var oldString = string.replaceFirst(comment, '');
+            String oldString = string.replaceFirst(comment, '');
             while ((oldString.length + comment.length) > 80) {
-              final first = oldString.substring(0, 80 - comment.length);
-              var spaceIndex = first.lastIndexOf(' ');
+              final String first = oldString.substring(0, 80 - comment.length);
+              int spaceIndex = first.lastIndexOf(' ');
               spaceIndex = spaceIndex == -1 || spaceIndex < 5
                   ? oldString.indexOf(' ')
                   : spaceIndex;
               spaceIndex = spaceIndex < 5 ? oldString.length : spaceIndex;
-              if (spaceIndex != -1) {
+              if (spaceIndex != -1 && spaceIndex != 0) {
                 newStrings.add('$comment${oldString.substring(0, spaceIndex)}');
                 oldString = oldString.substring(spaceIndex);
               } else {
@@ -41,14 +44,15 @@ Future<void> main() async {
           if (string.length <= 80) {
             newStrings.add(string);
           } else {
-            var oldString = string.replaceFirst(startingComment, '');
+            String oldString = string.replaceFirst(startingComment, '');
             while ((oldString.length + startingComment.length) > 80) {
-              final first = oldString.substring(0, 80 - startingComment.length);
-              var spaceIndex = first.lastIndexOf(' ');
+              final String first =
+                  oldString.substring(0, 80 - startingComment.length);
+              int spaceIndex = first.lastIndexOf(' ');
               spaceIndex = spaceIndex == -1 || spaceIndex < 5
                   ? oldString.indexOf(' ')
                   : spaceIndex;
-              if (spaceIndex != -1) {
+              if (spaceIndex != -1 && spaceIndex != 0) {
                 newStrings.add(
                     '$startingComment${oldString.substring(0, spaceIndex)}');
                 oldString = oldString.substring(spaceIndex);
@@ -63,10 +67,11 @@ Future<void> main() async {
           if (string.length <= 80) {
             newStrings.add(string);
           } else {
-            var oldString = string.replaceFirst(longerComment, '');
+            String oldString = string.replaceFirst(longerComment, '');
             while ((oldString.length + longerComment.length) > 80) {
-              final first = oldString.substring(0, 80 - longerComment.length);
-              var spaceIndex = first.lastIndexOf(' ');
+              final String first =
+                  oldString.substring(0, 80 - longerComment.length);
+              int spaceIndex = first.lastIndexOf(' ');
               spaceIndex = spaceIndex == -1 || spaceIndex < 5
                   ? oldString.indexOf(' ')
                   : spaceIndex;
@@ -95,6 +100,6 @@ Future<void> main() async {
   }
 }
 
-const comment = '  /// ';
-const longerComment = '    /// ';
-const startingComment = '/// ';
+const String comment = '  /// ';
+const String longerComment = '    /// ';
+const String startingComment = '/// ';

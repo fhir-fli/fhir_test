@@ -5,11 +5,13 @@ import 'package:collection/collection.dart';
 import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:fhir/r6.dart' as r6;
 import 'package:fhir/stu3.dart' as stu3;
 
 part 'dstu2_validation.dart';
 part 'r4_validation.dart';
 part 'r5_validation.dart';
+part 'r6_validation.dart';
 part 'stu3_validation.dart';
 part 'utils.dart';
 
@@ -41,6 +43,13 @@ Future<List<String>> r5JsonValidation() async {
   return tested;
 }
 
+Future<List<String>> r6JsonValidation() async {
+  var tested = <String>[];
+  tested.addAll(await r6Validation());
+  print('Completed R6 Json');
+  return tested;
+}
+
 Future<List<String>> dstu2YamlValidation() async {
   var tested = <String>[];
   tested.addAll(await dstu2ValidationYaml());
@@ -69,16 +78,9 @@ Future<List<String>> r5YamlValidation() async {
   return tested;
 }
 
-Future<List<String>> r4XmlValidation() async {
+Future<List<String>> r6YamlValidation() async {
   var tested = <String>[];
-  tested.addAll(await r4ValidationXml());
-  print('Completed R4 XML');
-  return tested;
-}
-
-Future<List<String>> r5XmlValidation() async {
-  var tested = <String>[];
-  tested.addAll(await r5ValidationXml());
-  print('Completed R5 XML');
+  tested.addAll(await r6ValidationYaml());
+  print('Completed R6 Yaml');
   return tested;
 }

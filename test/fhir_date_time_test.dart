@@ -78,7 +78,8 @@ void fhirDateTimeTest() {
       final validDateTime =
           FhirDateTime(DateTime(2023, 7, 15, 13, 45, 30, 000));
       expect(validDateTime.isValid, equals(true));
-      final offset = timeZoneOffsetToString(validDateTime.timeZoneOffset);
+      final offset =
+          timeZoneOffsetToString(validDateTime.timeZoneOffset.toDouble());
       expect(
           validDateTime.valueString, equals('2023-07-15T13:45:30.000$offset'));
       expect(validDateTime.valueDateTime, DateTime(2023, 7, 15, 13, 45, 30));
@@ -97,7 +98,7 @@ void fhirDateTimeTest() {
       expect(dateTime.hour, equals(13));
       expect(dateTime.minute, equals(45));
       expect(dateTime.second, equals(30));
-      final offset = timeZoneOffsetToString(dateTime.timeZoneOffset);
+      final offset = timeZoneOffsetToString(dateTime.timeZoneOffset.toDouble());
       expect(dateTime.toString(), '2023-07-15T13:45:30.000$offset');
       final dateTime2 = FhirDateTime(DateTime(2023, 7, 15, 13, 45, 30));
 

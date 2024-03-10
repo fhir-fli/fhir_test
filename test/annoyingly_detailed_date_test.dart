@@ -3,7 +3,8 @@ import 'package:fhir/primitive_types/date_time_precision.dart';
 import 'package:test/test.dart';
 
 void annoyinglyDetailedDateTest() {
-  final offset = timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours);
+  final offset =
+      timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours.toDouble());
   final yyyyMMdd = '2012-01-31';
   final yyyyMMddDateTime = DateTime(2012, 1, 31);
   group('FhirDate Tests', () {

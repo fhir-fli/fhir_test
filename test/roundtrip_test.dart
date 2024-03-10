@@ -60,6 +60,18 @@ Future roundtripTestJson() async {
         },
         timeout: Timeout(Duration(minutes: 15)),
       );
+      test(
+        '\n****R6 Json is being Validated****',
+        () async {
+          var testList = await r6JsonValidation();
+
+          print(
+              'Invalid examples: ${testList.isEmpty ? 'none' : testList.join('\n')}');
+
+          expect(testList.isEmpty, true);
+        },
+        timeout: Timeout(Duration(minutes: 15)),
+      );
     },
   );
 }
@@ -125,42 +137,18 @@ Future roundtripTestYaml() async {
         },
         timeout: Timeout(Duration(minutes: 25)),
       );
+      test(
+        '\n****R6 Yaml is being Validated****',
+        () async {
+          var testList = await r6YamlValidation();
+
+          print(
+              'Invalid examples: ${testList.isEmpty ? 'none' : testList.join('\n')}');
+
+          expect(testList.isEmpty, true);
+        },
+        timeout: Timeout(Duration(minutes: 25)),
+      );
     },
   );
-}
-
-Future roundtripTestXml() async {
-  /// This one is slightly different because we don't convert back into XML.
-  /// What we do instead is take all of the XML files, read them in as strings,
-  /// convert to XML, which uses both Badgerfish as well as a little code from
-  ///  us, because unsurprisingly, FHIR does not directly translate from XML to
-  /// JSON. If there are any resources that are not equivalent, these aare printed
-  ///  out in the debug console.
-  group('XML', () {
-    test(
-      '\n****R4 XML is being Validated****',
-      () async {
-        var testList = await r4XmlValidation();
-
-        print(
-            'Invalid examples: ${testList.isEmpty ? 'none' : testList.join('\n')}');
-
-        expect(testList.isEmpty, true);
-      },
-      timeout: Timeout(Duration(minutes: 25)),
-    );
-
-    test(
-      '\n****R5 XML is being Validated****',
-      () async {
-        var testList = await r5XmlValidation();
-
-        print(
-            'Invalid examples: ${testList.isEmpty ? 'none' : testList.join('\n')}');
-
-        expect(testList.isEmpty, true);
-      },
-      timeout: Timeout(Duration(minutes: 25)),
-    );
-  });
 }

@@ -2,7 +2,8 @@ import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:test/test.dart';
 
 void primitiveTest() {
-  final offset = timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours);
+  final offset =
+      timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours.toDouble());
   test('fdtyearstring', () {
     expect(FhirDateTime('2020').toString(), '2020');
     expect(FhirDateTime('2020').precision, DateTimePrecision.yyyy);

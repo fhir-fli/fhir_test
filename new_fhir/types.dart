@@ -1,4 +1,4 @@
-const allTypes = {
+const Map<String, String> allTypes = <String, String>{
   'base64Binary': 'primitive_types',
   'boolean': 'primitive_types',
   'canonical': 'primitive_types',
@@ -43,6 +43,22 @@ const allTypes = {
   'Url': 'primitive_types',
   'FhirUrl': 'primitive_types',
   'Uuid': 'primitive_types',
+  'FhirBase64Binary': 'primitive_types',
+  'FhirBoolean': 'primitive_types',
+  'FhirCanonical': 'primitive_types',
+  'FhirCode': 'primitive_types',
+  'FhirDate': 'primitive_types',
+  'FhirDecimal': 'primitive_types',
+  'FhirId': 'primitive_types',
+  'FhirInstant': 'primitive_types',
+  'FhirInteger': 'primitive_types',
+  'FhirInteger64': 'primitive_types',
+  'FhirMarkdown': 'primitive_types',
+  'FhirOid': 'primitive_types',
+  'FhirPositiveInt': 'primitive_types',
+  'FhirTime': 'primitive_types',
+  'FhirUnsignedInt': 'primitive_types',
+  'FhirUuid': 'primitive_types',
   'Xhtml': 'primitive_types',
   'Element': 'basic_types',
   'DataType': 'abstract_types',
@@ -68,11 +84,14 @@ const allTypes = {
   'Duration': 'general_types',
   'ElementDefinition': 'special_types',
   'Expression': 'metadata_types',
+  'FhirExpression': 'metadata_types',
   'ExtendedContactDetail': 'metadata_types',
   'HumanName': 'general_types',
   'Identifier': 'general_types',
   'MarketingStatus': 'draft_types',
+  'RelativeTime': 'special_types',
   'Meta': 'special_types',
+  'FhirMeta': 'special_types',
   'Money': 'general_types',
   'MonetaryComponent': 'metadata_types',
   'MoneyQuantity': 'general_types',
@@ -256,7 +275,7 @@ const allTypes = {
   'SubstanceSourceMaterial': 'medication_definition',
 };
 
-const resourceTypes = {
+const Map<String, String> resourceTypes = <String, String>{
   'conformance': 'foundation',
   'terminology': 'foundation',
   'security': 'foundation',
