@@ -1,0 +1,193 @@
+enum PublicationStatus {
+  @JsonValue('draft')
+draft,
+  @JsonValue('active')
+active,
+  @JsonValue('retired')
+retired,
+  @JsonValue('unknown')
+unknown,
+}
+
+enum EvidenceReportType {
+  @JsonValue('classification')
+classification,
+  @JsonValue('search-results')
+searchresults,
+  @JsonValue('resources-compiled')
+resourcescompiled,
+  @JsonValue('text-structured')
+textstructured,
+}
+
+enum FocusCharacteristicCode {
+  @JsonValue('citation')
+citation,
+  @JsonValue('clinical-outcomes-observed')
+clinicaloutcomesobserved,
+  @JsonValue('population')
+population,
+  @JsonValue('exposure')
+exposure,
+  @JsonValue('comparator')
+comparator,
+  @JsonValue('outcome')
+outcome,
+  @JsonValue('medication-exposures')
+medicationexposures,
+  @JsonValue('study-type')
+studytype,
+}
+
+enum ReportRelationType {
+  @JsonValue('replaces')
+replaces,
+  @JsonValue('amends')
+amends,
+  @JsonValue('appends')
+appends,
+  @JsonValue('transforms')
+transforms,
+  @JsonValue('replacedWith')
+replacedwith,
+  @JsonValue('amendedWith')
+amendedwith,
+  @JsonValue('appendedWith')
+appendedwith,
+  @JsonValue('transformedWith')
+transformedwith,
+}
+
+enum EvidenceReportSection {
+  @JsonValue('Evidence')
+evidence,
+  @JsonValue('Intervention-group-alone-Evidence')
+interventiongroupaloneevidence,
+  @JsonValue('Intervention-vs-Control-Evidence')
+interventionvscontrolevidence,
+  @JsonValue('Control-group-alone-Evidence')
+controlgroupaloneevidence,
+  @JsonValue('EvidenceVariable')
+evidencevariable,
+  @JsonValue('EvidenceVariable-observed')
+evidencevariableobserved,
+  @JsonValue('EvidenceVariable-intended')
+evidencevariableintended,
+  @JsonValue('EvidenceVariable-population')
+evidencevariablepopulation,
+  @JsonValue('EvidenceVariable-exposure')
+evidencevariableexposure,
+  @JsonValue('EvidenceVariable-outcome')
+evidencevariableoutcome,
+  @JsonValue('Efficacy-outcomes')
+efficacyoutcomes,
+  @JsonValue('Harms-outcomes')
+harmsoutcomes,
+  @JsonValue('SampleSize')
+samplesize,
+  @JsonValue('References')
+references,
+  @JsonValue('Assertion')
+assertion,
+  @JsonValue('Reasons')
+reasons,
+  @JsonValue('Certainty-of-Evidence')
+certaintyofevidence,
+  @JsonValue('Evidence-Classifier')
+evidenceclassifier,
+  @JsonValue('Warnings')
+warnings,
+  @JsonValue('Text-Summary')
+textsummary,
+  @JsonValue('SummaryOfBodyOfEvidenceFindings')
+summaryofbodyofevidencefindings,
+  @JsonValue('SummaryOfIndividualStudyFindings')
+summaryofindividualstudyfindings,
+  @JsonValue('Header')
+header,
+  @JsonValue('Tables')
+tables,
+  @JsonValue('Table')
+table,
+  @JsonValue('Row-Headers')
+rowheaders,
+  @JsonValue('Column-Header')
+columnheader,
+  @JsonValue('Column-Headers')
+columnheaders,
+}
+
+enum ListMode {
+  @JsonValue('working')
+working,
+  @JsonValue('snapshot')
+snapshot,
+  @JsonValue('changes')
+changes,
+}
+
+enum EvidenceClassifierCode {
+  @JsonValue('COVID19Specific')
+covid19specific,
+  @JsonValue('COVID19Relevant')
+covid19relevant,
+  @JsonValue('COVID19HumanResearch')
+covid19humanresearch,
+  @JsonValue('OriginalResearch')
+originalresearch,
+  @JsonValue('ResearchSynthesis')
+researchsynthesis,
+  @JsonValue('Guideline')
+guideline,
+  @JsonValue('ResearchProtocol')
+researchprotocol,
+  @JsonValue('NotResearchNotGuideline')
+notresearchnotguideline,
+  @JsonValue('Treatment')
+treatment,
+  @JsonValue('PreventionAndControl')
+preventionandcontrol,
+  @JsonValue('Diagnosis')
+diagnosis,
+  @JsonValue('PrognosisPrediction')
+prognosisprediction,
+  @JsonValue('RatedAsYes')
+ratedasyes,
+  @JsonValue('RatedAsNo')
+ratedasno,
+  @JsonValue('NotAssessed')
+notassessed,
+  @JsonValue('RatedAsRCT')
+ratedasrct,
+  @JsonValue('RatedAsControlledTrial')
+ratedascontrolledtrial,
+  @JsonValue('RatedAsComparativeCohort')
+ratedascomparativecohort,
+  @JsonValue('RatedAsCaseControl')
+ratedascasecontrol,
+  @JsonValue('RatedAsUncontrolledSeries')
+ratedasuncontrolledseries,
+  @JsonValue('RatedAsMixedMethods')
+ratedasmixedmethods,
+  @JsonValue('RatedAsOther')
+ratedasother,
+  @JsonValue('RiskOfBias')
+riskofbias,
+  @JsonValue('NoBlinding')
+noblinding,
+  @JsonValue('AllocConcealNotStated')
+allocconcealnotstated,
+  @JsonValue('EarlyTrialTermination')
+earlytrialtermination,
+  @JsonValue('NoITT')
+noitt,
+  @JsonValue('Preprint')
+preprint,
+  @JsonValue('PreliminaryAnalysis')
+preliminaryanalysis,
+  @JsonValue('BaselineImbalance')
+baselineimbalance,
+  @JsonValue('SubgroupAnalysis')
+subgroupanalysis,
+}
+
