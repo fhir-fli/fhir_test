@@ -50,9 +50,11 @@ Future<void> main() async {
     final types = byType[type]!;
     String resourceString = '';
     for (final resourceType in types) {
-      final fileString =
-          await File('resource_enums/$resourceType.dart').readAsString();
-      resourceString += '\n\n$fileString';
+      if (File('resource_enums/$resourceType.dart').existsSync()) {
+        final fileString =
+            await File('resource_enums/$resourceType.dart').readAsString();
+        resourceString += '\n\n$fileString';
+      }
     }
     await File('enums/$type.enums.dart').writeAsString(resourceString);
   }
