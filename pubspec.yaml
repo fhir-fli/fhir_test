@@ -11,6 +11,7 @@ dependencies:
   fhir_bulk:
     path: ../fhir_bulk
   # fhir_bulk: ^0.11.2
+  http: ^1.2.1
 
 dev_dependencies:
   test: ^1.25.2
