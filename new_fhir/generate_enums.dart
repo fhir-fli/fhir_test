@@ -6,46 +6,46 @@ import 'package:http/http.dart' as http;
 import 'types.dart';
 
 Future<void> main() async {
-  // for (var resource in resources) {
-  //   String resourceEnum = '';
-  //   final structureDefinitionUrl =
-  //       'https://hl7.org/fhir/${resource.toLowerCase()}.profile.json';
-  //   print(structureDefinitionUrl);
-  //   final strutureDefintionResponse = await http.get(
-  //     Uri.parse(structureDefinitionUrl),
-  //   );
-  //   final structureDefinitionMap = json.decode(strutureDefintionResponse.body);
-  //   for (final element
-  //       in structureDefinitionMap['snapshot']?['element'] as List? ?? []) {
-  //     if (element['binding']?['valueSet'] != null &&
-  //         element['binding']?['additional'] == null) {
-  //       String codeSystemUrl = element['binding']['valueSet']
-  //           .toString()
-  //           .split('|')
-  //           .first
-  //           .replaceAll('ValueSet/', '');
-  //       print('CodeSystem: $codeSystemUrl');
-  //       final result = await http.get(Uri.parse(codeSystemUrl), headers: {
-  //         'Content-Type': 'application/fhir+json',
-  //         'Accept': 'application/fhir+json'
-  //       });
-  //       try {
-  //         final codeSystemMap = json.decode(result.body);
-  //         final name = hyphenatedToCamelCase(codeSystemMap['id'].toString());
-  //         String enumString = 'enum $name {\n';
-  //         for (var concept in codeSystemMap['concept'] as List? ?? []) {
-  //           enumString += "  @JsonValue('${concept['code']}')\n"
-  //               "${concept['code'].toString().toLowerCase().replaceAll('_', '').replaceAll('-', '').replaceAll('.', '')},\n";
-  //         }
-  //         enumString += '}\n\n';
-  //         resourceEnum += enumString;
-  //       } catch (e) {
-  //         print('Error: $e');
-  //       }
-  //     }
-  //   }
-  //   await File('resource_enums/$resource.dart').writeAsString(resourceEnum);
-  // }
+  for (var resource in resources) {
+    String resourceEnum = '';
+    final structureDefinitionUrl =
+        'https://hl7.org/fhir/${resource.toLowerCase()}.profile.json';
+    print(structureDefinitionUrl);
+    final strutureDefintionResponse = await http.get(
+      Uri.parse(structureDefinitionUrl),
+    );
+    final structureDefinitionMap = json.decode(strutureDefintionResponse.body);
+    for (final element
+        in structureDefinitionMap['snapshot']?['element'] as List? ?? []) {
+      if (element['binding']?['valueSet'] != null &&
+          element['binding']?['additional'] == null) {
+        String codeSystemUrl = element['binding']['valueSet']
+            .toString()
+            .split('|')
+            .first
+            .replaceAll('ValueSet/', '');
+        print('CodeSystem: $codeSystemUrl');
+        final result = await http.get(Uri.parse(codeSystemUrl), headers: {
+          'Content-Type': 'application/fhir+json',
+          'Accept': 'application/fhir+json'
+        });
+        try {
+          final codeSystemMap = json.decode(result.body);
+          final name = hyphenatedToCamelCase(codeSystemMap['id'].toString());
+          String enumString = 'enum $name {\n';
+          for (var concept in codeSystemMap['concept'] as List? ?? []) {
+            enumString += "  @JsonValue('${concept['code']}')\n"
+                "${concept['code'].toString().toLowerCase().replaceAll('_', '').replaceAll('-', '').replaceAll('.', '')},\n";
+          }
+          enumString += '}\n\n';
+          resourceEnum += enumString;
+        } catch (e) {
+          print('Error: $e');
+        }
+      }
+    }
+    await File('resource_enums/$resource.dart').writeAsString(resourceEnum);
+  }
   for (final type in byType.keys) {
     final types = byType[type]!;
     String resourceString = '';
