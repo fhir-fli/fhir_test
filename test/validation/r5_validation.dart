@@ -21,11 +21,18 @@ Future<List<String>> r5Validation() async {
         fileString += '\n${contents}\n\n${jsonEncode(resource.toJson())}';
         fileString += '\n***************************************************';
         await File('./test/wrong.txt').writeAsString(fileString);
+        await File(
+                './test/wrong/${file.path.split('/').last.replaceAll('.json', '1.json')}')
+            .writeAsString(contents);
+        await File(
+                './test/wrong/${file.path.split('/').last.replaceAll('.json', '2.json')}')
+            .writeAsString(jsonEncode(resource.toJson()));
       }
     } catch (e) {
       final errorContents = jsonDecode(contents);
-      print(
-          'Error with file $file\nResource: ${errorContents["resourceType"]}/${errorContents["id"]}');
+      print('Error with file $file\n'
+          'Resource: ${errorContents["resourceType"]}/${errorContents["id"]}\n'
+          'Error: $e');
     }
   }
   return string;

@@ -21,5 +21,4 @@ Future<void> main() async {
   annoyinglyDetailedDateTest();
   await roundtripTestJson();
   await roundtripTestYaml();
-  // await roundtripTestXml();
 }

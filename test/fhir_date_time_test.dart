@@ -2,8 +2,9 @@ import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:test/test.dart';
 
 void fhirDateTimeTest() {
+  var issued = FhirDateTime(DateTime.now());
+  final offset = timeZoneOffsetToString(issued.timeZoneOffset.toDouble());
   test('Check DateTime type with the regex', () {
-    var issued = FhirDateTime(DateTime.now());
     var pattern = RegExp(
         r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?');
     expect(pattern.hasMatch(issued.toString()), true);
@@ -142,7 +143,7 @@ void fhirDateTimeTest() {
       final dateTime = DateTime(2023, 7, 15, 13, 45, 30);
       final instant = FhirInstant(dateTime);
       expect(instant.isValid, equals(true));
-      expect(instant.valueString, equals('2023-07-15T13:45:30.000-04:00'));
+      expect(instant.valueString, equals('2023-07-15T13:45:30.000$offset'));
       expect(instant.valueDateTime, equals(DateTime(2023, 7, 15, 13, 45, 30)));
     });
   });
