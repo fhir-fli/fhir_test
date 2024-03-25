@@ -1,8 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:fhir/r4.dart';
-import 'package:fhir_bulk/r4.dart';
+import 'package:fhir_r4/fhir_r4.dart';
 
 Future<void> main() async {
   final sofaMap = <String, Sofa>{};
@@ -17,7 +16,7 @@ Future<void> main() async {
   }
 
   Future<void> byFile(String filePath) async {
-    final resources = await FhirBulk.fromFile('ndjson/$filePath.ndjson');
+    final resources = await FhirBulk.fromFile(filePath);
     for (final resource in resources) {
       if (resource is MedicationAdministration) {
         final patient = resource.subject.reference;
@@ -49,7 +48,7 @@ Future<void> main() async {
 
   for (final key in sofaMap.keys) {
     if (!await Directory('ndjson/$key').exists()) {
-      await Directory('ndjson/$key').create();
+      await Directory('ndjson/$key').create(recursive: true);
       await Directory('ndjson/$key/Medication Administration').create();
       await Directory('ndjson/$key/Observation').create();
       await Directory('ndjson/$key/Medications').create();
@@ -59,16 +58,16 @@ Future<void> main() async {
       await File('ndjson/$key/Patient.json')
           .writeAsString(jsonEncode(sofa.patient.toJson()));
       for (final medication in sofa.medications) {
-        await File('ndjson/$key/Medications/med_${medication.fhirId}.json')
+        await File('ndjson/$key/Medications/med_${medication.id}.json')
             .writeAsString(jsonEncode(medication.toJson()));
       }
       for (final medicationAdministration in sofa.medicationAdministrations) {
         await File(
-                'ndjson/$key/Medication Administration/medadmin_${medicationAdministration.fhirId}.json')
+                'ndjson/$key/Medication Administration/medadmin_${medicationAdministration.id}.json')
             .writeAsString(jsonEncode(medicationAdministration.toJson()));
       }
       for (final observation in sofa.observations) {
-        await File('ndjson/$key/Observation/obs_${observation.fhirId}.json')
+        await File('ndjson/$key/Observation/obs_${observation.id}.json')
             .writeAsString(jsonEncode(observation.toJson()));
       }
     }

@@ -1,5 +1,5 @@
-import 'package:fhir/primitive_types/primitive_types.dart';
-import 'package:fhir/r4.dart' as r4;
+import 'package:fhir_primitives/fhir_primitives.dart';
+import 'package:fhir_r4/fhir_r4.dart' as r4;
 import 'package:test/test.dart';
 
 void fhirInstantTest() {

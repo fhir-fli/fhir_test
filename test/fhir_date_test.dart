@@ -1,4 +1,4 @@
-import 'package:fhir/primitive_types/date.dart';
+import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void fhirDateTest() {

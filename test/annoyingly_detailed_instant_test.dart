@@ -1,5 +1,4 @@
-import 'package:fhir/primitive_types/date_time_precision.dart';
-import 'package:fhir/primitive_types/instant.dart';
+import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void annoyinglyDetailedInstantTest() {

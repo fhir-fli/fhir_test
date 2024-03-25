@@ -5,13 +5,20 @@ environment:
 
 dependencies:
   collection: ^1.18.0
-  fhir:
-    path: ../fhir
-  # fhir: ^0.11.3
-  fhir_bulk:
-    path: ../fhir_bulk
-  # fhir_bulk: ^0.11.2
+  fhir_dstu2:
+    path: ../fhir_dstu2
+  fhir_primitives:
+    path: ../fhir_primitives
+  fhir_r4:
+    path: ../fhir_r4
+  fhir_r5: 
+    path: ../fhir_r5
+  fhir_r6:
+    path: ../fhir_r6
+  fhir_stu3:
+    path: ../fhir_stu3
   http: ^1.2.1
+
 
 dev_dependencies:
   test: ^1.25.2
