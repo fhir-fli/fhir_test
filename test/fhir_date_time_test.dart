@@ -1,11 +1,13 @@
+// ignore_for_file: always_specify_types, prefer_const_declarations
+
 import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void fhirDateTimeTest() {
-  var issued = FhirDateTime(DateTime.now());
+  final issued = FhirDateTime(DateTime.now());
   final offset = timeZoneOffsetToString(issued.timeZoneOffset.toDouble());
   test('Check DateTime type with the regex', () {
-    var pattern = RegExp(
+    final pattern = RegExp(
         r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?');
     expect(pattern.hasMatch(issued.toString()), true);
   });
@@ -19,12 +21,12 @@ void fhirDateTimeTest() {
     test(
         'FhirDateTimePrecisionExtension should correctly convert DateTime objects',
         () {
-      final dateTime = DateTime(2023, 7, 15, 12, 30, 45);
-      expect((FhirDateTimePrecision.yyyy).dateTimeToString(dateTime),
+      final DateTime dateTime = DateTime(2023, 7, 15, 12, 30, 45);
+      expect(FhirDateTimePrecision.yyyy.dateTimeToString(dateTime),
           equals('2023'));
-      expect((FhirDateTimePrecision.yyyy_MM).dateTimeToString(dateTime),
+      expect(FhirDateTimePrecision.yyyy_MM.dateTimeToString(dateTime),
           equals('2023-07'));
-      expect((FhirDateTimePrecision.yyyy_MM_dd).dateTimeToString(dateTime),
+      expect(FhirDateTimePrecision.yyyy_MM_dd.dateTimeToString(dateTime),
           equals('2023-07-15'));
     });
 
@@ -77,8 +79,7 @@ void fhirDateTimeTest() {
     });
 
     test('FhirDateTime fromDateTime should construct valid datetimes', () {
-      final validDateTime =
-          FhirDateTime(DateTime(2023, 7, 15, 13, 45, 30, 000));
+      final validDateTime = FhirDateTime(DateTime(2023, 7, 15, 13, 45, 30));
       expect(validDateTime.isValid, equals(true));
       final offset =
           timeZoneOffsetToString(validDateTime.timeZoneOffset.toDouble());

@@ -1,13 +1,15 @@
+// ignore_for_file: always_specify_types
+
 import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void annoyinglyDetailedDateTest() {
   final offset =
-      timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours.toDouble());
-  final yyyyMMdd = '2012-01-31';
+      timeZoneOffsetToString(DateTime(2020).timeZoneOffset.inHours.toDouble());
+  const yyyyMMdd = '2012-01-31';
   final yyyyMMddDateTime = DateTime(2012, 1, 31);
   group('FhirDate Tests', () {
-    final yyyy = '2012';
+    const yyyy = '2012';
     final yyyyDateTime = DateTime(2012);
     group('yyyy - 2012', () {
       final dateyyyyFromString = FhirDate(yyyy);
@@ -36,8 +38,8 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('yyyyMM - 2012-01', () {
-      final yyyyMM = '2012-01';
-      final yyyyMMDateTime = DateTime(2012, 1);
+      const yyyyMM = '2012-01';
+      final yyyyMMDateTime = DateTime(2012);
       final dateyyyyMMFromString = FhirDate(yyyyMM);
       test('dateyyyyMMFromString', () {
         expect(dateyyyyMMFromString.isValid, isTrue);
@@ -88,7 +90,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('yyyyMMddT - 2012-01-31T', () {
-      final yyyyMMddT = '2012-01-31T';
+      const yyyyMMddT = '2012-01-31T';
       final yyyyMMddTDateTime = DateTime(2012, 1, 31);
       final dateyyyyMMddTFromString = FhirDate(yyyyMMddT);
       final dateyyyyMMddTFromDateTime =
@@ -133,7 +135,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('yyyyMMddTHH - 2012-01-31T12', () {
-      final yyyyMMddTHH = '2012-01-31T12';
+      const yyyyMMddTHH = '2012-01-31T12';
       final yyyyMMddTHHDateTime = DateTime(2012, 1, 31, 12);
       final dateyyyyMMddTHHFromString = FhirDate(yyyyMMddTHH);
       final dateyyyyMMddTHHFromDateTime =
@@ -155,7 +157,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('dateyyyyMMddTHHZ - 2012-01-31T12Z', () {
-      final yyyyMMddTHHZ = '2012-01-31T12Z';
+      const yyyyMMddTHHZ = '2012-01-31T12Z';
       final yyyyMMddTHHZDateTime = DateTime(2012, 1, 31, 12);
       final dateyyyyMMddTHHZFromString = FhirDate(yyyyMMddTHHZ);
       final dateyyyyMMddTHHZFromDateTime =
@@ -199,7 +201,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('yyyyMMddTHHmm - 2012-01-31T12:30', () {
-      final yyyyMMddTHHmm = '2012-01-31T12:30';
+      const yyyyMMddTHHmm = '2012-01-31T12:30';
       final yyyyMMddTHHmmDateTime = DateTime(2012, 1, 31, 12, 30);
       final dateyyyyMMddTHHmmFromString = FhirDate(yyyyMMddTHHmm);
       final dateyyyyMMddTHHmmFromDateTime =
@@ -221,7 +223,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('dateyyyyMMddTHHmmZ - 2012-01-31T12:30Z', () {
-      final yyyyMMddTHHmmZ = '2012-01-31T12:30Z';
+      const yyyyMMddTHHmmZ = '2012-01-31T12:30Z';
       final yyyyMMddTHHmmZDateTime = DateTime(2012, 1, 31, 12, 30);
       final dateyyyyMMddTHHmmZFromString = FhirDate(yyyyMMddTHHmmZ);
       final dateyyyyMMddTHHmmZFromDateTime =
@@ -265,7 +267,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('dateyyyyMMddTHHmmss - 2012-01-31T12:30:59', () {
-      final yyyyMMddTHHmmss = '2012-01-31T12:30:59';
+      const yyyyMMddTHHmmss = '2012-01-31T12:30:59';
       final yyyyMMddTHHmmssDateTime = DateTime(2012, 1, 31, 12, 30, 59);
       final dateyyyyMMddTHHmmssFromString = FhirDate(yyyyMMddTHHmmss);
       final dateyyyyMMddTHHmmssFromDateTime =
@@ -287,7 +289,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('dateyyyyMMddTHHmmssZ - 2012-01-31T12:30:59Z', () {
-      final yyyyMMddTHHmmssZ = '2012-01-31T12:30:59Z';
+      const yyyyMMddTHHmmssZ = '2012-01-31T12:30:59Z';
       final yyyyMMddTHHmmssZDateTime = DateTime(2012, 1, 31, 12, 30, 59);
       final dateyyyyMMddTHHmmssZFromString = FhirDate(yyyyMMddTHHmmssZ);
       final dateyyyyMMddTHHmmssZFromDateTime =
@@ -333,7 +335,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('yyyyMMddTHHmmssSSS - 2012-01-31T12:30:59.001', () {
-      final yyyyMMddTHHmmssSSS = '2012-01-31T12:30:59.001';
+      const yyyyMMddTHHmmssSSS = '2012-01-31T12:30:59.001';
       final yyyyMMddTHHmmssSSSDateTime = DateTime(2012, 1, 31, 12, 30, 59, 1);
       final dateyyyyMMddTHHmmssSSSFromString = FhirDate(yyyyMMddTHHmmssSSS);
       final dateyyyyMMddTHHmmssSSSFromDateTime = FhirDate(
@@ -356,7 +358,7 @@ void annoyinglyDetailedDateTest() {
       });
     });
     group('yyyyMMddTHHmmssSSSZ - 2012-01-31T12:30:59.010Z', () {
-      final yyyyMMddTHHmmssSSSZ = '2012-01-31T12:30:59.010Z';
+      const yyyyMMddTHHmmssSSSZ = '2012-01-31T12:30:59.010Z';
       final yyyyMMddTHHmmssSSSZDateTime = DateTime(2012, 1, 31, 12, 30, 59, 10);
       final dateyyyyMMddTHHmmssSSSZFromString = FhirDate(yyyyMMddTHHmmssSSSZ);
       final dateyyyyMMddTHHmmssSSSZFromDateTime =

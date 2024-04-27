@@ -1,9 +1,11 @@
+// ignore_for_file: always_specify_types, prefer_const_declarations
+
 import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void primitiveTest() {
   final offset =
-      timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours.toDouble());
+      timeZoneOffsetToString(DateTime(2020).timeZoneOffset.inHours.toDouble());
   test('fdtyearstring', () {
     expect(FhirDateTime('2020').toString(), '2020');
     expect(FhirDateTime('2020').precision, FhirDateTimePrecision.yyyy);
@@ -26,7 +28,7 @@ void primitiveTest() {
     expect(FhirDateTime(DateTime.now()).precision,
         FhirDateTimePrecision.yyyy_MM_dd_T_HH_mm_ss_SSSZZ);
     expect(FhirDateTime(DateTime.now()).isValid, true);
-    expect(FhirDateTime(DateTime(2000, 1)).toString(),
+    expect(FhirDateTime(DateTime(2000)).toString(),
         '2000-01-01T00:00:00.000$offset');
     expect(
         FhirDateTime(FhirDate('2020')).precision, FhirDateTimePrecision.yyyy);
@@ -35,7 +37,6 @@ void primitiveTest() {
     expect(FhirDateTime(FhirDate('2020-10-01')).precision,
         FhirDateTimePrecision.yyyy_MM_dd);
     final zuluTime = FhirDateTime(DateTime.utc(1973)).toString();
-    print('zulutime: $zuluTime');
     expect(zuluTime.contains('Z'), true);
     final localDateTime = DateTime.parse('2015-02-07T13:28:17');
     final localDateTimeString = FhirDateTime(localDateTime).toString();

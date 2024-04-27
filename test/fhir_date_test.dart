@@ -1,3 +1,5 @@
+// ignore_for_file: always_specify_types, prefer_const_declarations
+
 import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 

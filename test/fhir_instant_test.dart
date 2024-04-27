@@ -1,12 +1,13 @@
+// ignore_for_file: always_specify_types, prefer_const_declarations
+
 import 'package:fhir_primitives/fhir_primitives.dart';
-import 'package:fhir_r4/fhir_r4.dart' as r4;
 import 'package:test/test.dart';
 
 void fhirInstantTest() {
   group('FhirInstant Tests', () {
     test('Check Instant type with the regex', () {
-      var issued = FhirInstant(DateTime.now()).toString();
-      var pattern = RegExp(
+      final issued = FhirInstant(DateTime.now()).toString();
+      final pattern = RegExp(
           r'([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))');
       expect(pattern.hasMatch(issued), true);
     });
@@ -49,22 +50,13 @@ void fhirInstantTest() {
       expect(fhirInstant1 >= fhirInstant2, isFalse);
     });
     test('FhirInstant regex Check', () {
-      var issued = FhirInstant(DateTime.now()).toString();
+      final issued = FhirInstant(DateTime.now()).toString();
       expect(patternInstant.hasMatch(issued), true);
     });
 
     test('FhirDateTime regex check', () {
-      var issued = FhirDateTime(DateTime.now());
+      final issued = FhirDateTime(DateTime.now());
       expect(patternDateTime.hasMatch(issued.toString()), true);
-    });
-
-    test('Observation Issued Format Check', () {
-      expect(patternInstant.hasMatch(testJson['issued'].toString()), true);
-    });
-
-    test('Observation EffectiveDateTime Format Check', () {
-      expect(patternDateTime.hasMatch(testJson['effectiveDateTime'].toString()),
-          true);
     });
   });
 }
@@ -74,38 +66,3 @@ var patternInstant = RegExp(
 
 var patternDateTime = RegExp(
     r'^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$');
-
-var resource = r4.Observation(
-  resourceType: r4.R4ResourceType.Observation,
-  status: FhirCode('final'),
-  category: [
-    r4.CodeableConcept(coding: <r4.Coding>[
-      r4.Coding(
-        system: FhirUri(
-            'http://terminology.hl7.org/CodeSystem/observation-category'),
-        code: FhirCode('survey'),
-        display: 'survey',
-      )
-    ])
-  ],
-  code: r4.CodeableConcept(
-    coding: <r4.Coding>[
-      r4.Coding(
-        system: FhirUri('http://snomed.info'),
-        code: FhirCode('103579009'),
-        display: 'Race',
-      )
-    ],
-    text: "Race (observable entity)",
-  ),
-  subject: const r4.Reference(reference: "Patient/test"),
-  effectiveDateTime: FhirDateTime(DateTime.now()),
-  issued: FhirInstant(DateTime.now()),
-  valueCodeableConcept: r4.CodeableConcept(coding: <r4.Coding>[
-    r4.Coding(
-        system: FhirUri('http://snomed.info/sct'),
-        code: FhirCode('413582008'),
-        display: 'Asian race')
-  ], text: 'Asian race (racial group)'),
-);
-var testJson = resource.toJson();

@@ -1,9 +1,11 @@
+// ignore_for_file: always_specify_types, prefer_const_declarations
+
 import 'package:fhir_primitives/fhir_primitives.dart';
 import 'package:test/test.dart';
 
 void annoyinglyDetailedDateTimeTest() {
   final offset =
-      timeZoneOffsetToString(DateTime.now().timeZoneOffset.inHours.toDouble());
+      timeZoneOffsetToString(DateTime(2020).timeZoneOffset.inHours.toDouble());
 
   group('FhirDateTime Tests', () {
     final yyyy = '2012';
@@ -36,7 +38,7 @@ void annoyinglyDetailedDateTimeTest() {
     });
     group('yyyyMM - 2012-01', () {
       final yyyyMM = '2012-01';
-      final yyyyMMDateTime = DateTime(2012, 1);
+      final yyyyMMDateTime = DateTime(2012);
       final dateyyyyMMFromString = FhirDateTime(yyyyMM);
       test('dateyyyyMMFromString', () {
         expect(dateyyyyMMFromString.isValid, isTrue);
