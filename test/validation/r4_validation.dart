@@ -14,11 +14,25 @@ Future<List<String>> r4Validation() async {
       if (!DeepCollectionEquality()
           .equals(jsonDecode(contents), resource.toJson())) {
         string.add(file.path);
+        print(file.path);
+        var fileString = await File('./test/wrong.txt').readAsString();
+        fileString += '***************************************************';
+        fileString += file.path;
+        fileString += '\n${contents}\n\n${jsonEncode(resource.toJson())}';
+        fileString += '\n***************************************************';
+        await File('./test/wrong.txt').writeAsString(fileString);
+        await File(
+                './test/wrong/${file.path.split('/').last.replaceAll('.json', '1.json')}')
+            .writeAsString(contents);
+        await File(
+                './test/wrong/${file.path.split('/').last.replaceAll('.json', '2.json')}')
+            .writeAsString(jsonEncode(resource.toJson()));
       }
     } catch (e) {
       final errorContents = jsonDecode(contents);
-      print(
-          'Error with file $file\nResource: ${errorContents["resourceType"]}/${errorContents["id"]}');
+      print('Error with file $file\n'
+          'Resource: ${errorContents["resourceType"]}/${errorContents["id"]}\n'
+          'Error: $e');
     }
   }
   return string;
@@ -34,8 +48,6 @@ Future<List<String>> r4ValidationYaml() async {
       var resource = r4.Resource.fromYaml(tempResource.toYaml());
       if (!DeepCollectionEquality()
           .equals(resource.toJson(), jsonDecode(contents))) {
-        print(jsonEncode(resource.toJson()));
-        print(contents);
         string.add(file.path);
       }
       if (!DeepCollectionEquality()
